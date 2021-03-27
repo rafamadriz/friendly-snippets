@@ -1,0 +1,75 @@
+{
+  "contributes": {
+    "snippets": [
+      {
+        "language": "c",
+        "path": "./snippets/c.json"
+      },
+      {
+        "language": "cpp",
+        "path": "./snippets/cpp.json"
+      },
+      {
+        "language": "eruby",
+        "path": "./snippets/erb.json"
+      },
+      {
+        "language": "go",
+        "path": "./snippets/go.json"
+      },
+      {
+        "language": "php",
+        "path": "./snippets/php.json"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/python.json"
+      },
+      {
+        "language": "ruby",
+        "path": "./snippets/ruby.json"
+      },
+      {
+        "language": "rust",
+        "path": "./snippets/rust.json"
+      },
+      {
+        "language": "swift",
+        "path": "./snippets/swift.json"
+      },
+      {
+        "language": ["html", "jade", "pug"],
+        "path": "./snippets/html.json"
+      },
+      {
+        "language": ["css", "scss", "sass", "less", "stylus"],
+        "path": "./snippets/css.json"
+      },
+      {
+        "language": [
+          "javascript",
+          "typescript",
+          "javascriptreact",
+          "typescriptreact"
+        ],
+        "path": "./snippets/javascript/javascript.json"
+      },
+      {
+        "language": ["javascriptreact", "typescriptreact"],
+        "path": "./snippets/javascript/apollo.json"
+      },
+      {
+        "language": ["typescript", "typescriptreact"],
+        "path": "./snippets/javascript/typescript.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/javascript/react.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/javascript/react-ts.json"
+      }
+    ]
+  }
+}
