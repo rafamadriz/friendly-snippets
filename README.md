@@ -27,7 +27,7 @@ You can commit all kinds of useful snippets that you may have for personal use, 
 
 ### Usage
 
-This collection of snippets works with [vim-vsnip](https://github.com/hrsh7th/vim-vsnip) **_(It may work with others snippet plugins but haven't tested)_**, which can load snippets with the same structure and syntax that VSCode snippets extensions uses.
+This collection of snippets works with [vim-vsnip](https://github.com/hrsh7th/vim-vsnip) **_(It may work with others snippet plugins but haven't tested)_**, which can load snippets with the same format and syntax that VSCode snippets extensions uses.
 
 For setting up vim-vsnip refer to this [link](https://github.com/hrsh7th/vim-vsnip#usage).
 
