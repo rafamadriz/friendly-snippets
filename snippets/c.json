@@ -1,0 +1,197 @@
+{
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for (${size_t} ${i} = ${1:0}; ${i} < ${2:length}; ${i}++)",
+      "{",
+      "\t$3",
+      "}"
+    ],
+    "description": "Code snippet for 'for' loop"
+  },
+  "forr": {
+    "prefix": "forr",
+    "body": [
+      "for (int ${i} = ${1:length} - 1; ${i} >= ${2:0}; ${i}--)",
+      "{",
+      "\t$3",
+      "}"
+    ],
+    "description": "Code snippet for reverse 'for' loop"
+  },
+  "while": {
+    "prefix": "while",
+    "body": ["while ($1)", "{", "\t$2", "}"],
+    "description": ""
+  },
+  "if": {
+    "prefix": "if",
+    "body": ["if ($1)", "{", "\t$2", "}"],
+    "description": "Code snippet for if statement"
+  },
+  "else": {
+    "prefix": "else",
+    "body": ["else", "{", "\t$1", "}"],
+    "description": "Code snippet for else statement"
+  },
+  "else if": {
+    "prefix": "else if",
+    "body": ["else if ($1)", "{", "\t$2", "}"],
+    "description": "Code snippet for else-if statement"
+  },
+  "enum": {
+    "prefix": "enum",
+    "body": ["enum ${MyEnum}", "{", "\t$1", "};"],
+    "description": "Code snippet for enum"
+  },
+  "#ifdef": {
+    "prefix": "#ifdef",
+    "body": ["#ifdef ${DEBUG}", "$1", "#endif // ${DEBUG}"],
+    "description": "Code snippet for #ifdef"
+  },
+  "#ifndef": {
+    "prefix": "#ifndef",
+    "body": ["#ifndef ${1:1}", "$2", "#endif // !$1"],
+    "description": "Code snippet for #ifndef"
+  },
+  "#if": {
+    "prefix": "#if",
+    "body": ["#ifdef ${1:0}", "$2", "#endif // $1"],
+    "description": "Code snippet for #if"
+  },
+  "struct": {
+    "prefix": "struct",
+    "body": ["struct ${MyStruct}", "{", "\t$1", "};"],
+    "description": "Code snippet for struct"
+  },
+  "switch": {
+    "prefix": "switch",
+    "body": ["switch (${switch_on})", "{", "default:", "\tbreak;$1", "}"],
+    "description": "Code snippet for switch statement"
+  },
+  "union": {
+    "prefix": "union",
+    "body": ["union ${MyUnion}", "{", "\t$1", "};"],
+    "description": "Code snippet for union"
+  },
+  "#inc": {
+    "prefix": "#inc",
+    "body": ["#include \"$1\""],
+    "description": "Code snippet for #include \" \""
+  },
+  "#inc<": {
+    "prefix": "#inc<",
+    "body": ["#include <$1>"],
+    "description": "Code snippet for #include \" \""
+  },
+  "#def": {
+    "prefix": "#def",
+    "body": ["#define \"$1\" \"$2\" "],
+    "description": "Code snippet for #define \" \""
+  },
+  "Standard Starter Template": {
+    "prefix": "sst",
+    "body": [
+      "#include <stdio.h>",
+      "",
+      "int main (int argc, char *argv[]) {",
+      "   return 0;",
+      "}"
+    ],
+    "description": "A standard starter template for a C program"
+  },
+  "Stdlib Variant Starter Template": {
+    "prefix": "libsst",
+    "body": [
+      "#include <stdio.h>",
+      "#include <stdlib.h>",
+      "",
+      "int main (int argc, char *argv[]) {",
+      "   return EXIT_SUCCESS;",
+      "}"
+    ],
+    "description": "A standard starter template for a C program with stdlib included"
+  },
+  "Do...while loop": {
+    "prefix": "dowhile",
+    "body": ["do {", "$0", "} while($0)"],
+    "description": "Creates a do...while loop"
+  },
+  "Create linked list": {
+    "prefix": "clist",
+    "body": [
+      "typedef struct _node * Link;",
+      "typedef struct _node node;",
+      "struct _node {",
+      "    int value;",
+      "    Link next;",
+      "};"
+    ],
+    "description": "Creates a linked list template"
+  },
+  "Create int function": {
+    "prefix": "intfunc",
+    "body": ["int $1 () {", "   int $0;", "   return $0;", "}"],
+    "description": "Creates a function that returns the int type"
+  },
+  "Create float function": {
+    "prefix": "flfunc",
+    "body": ["float $2 () {", "   float $0;", "   return $0;", "}"],
+    "description": "Creates a function that returns the float type"
+  },
+  "Create double function": {
+    "prefix": "doubfunc",
+    "body": ["double $2 () {", "   double $0;", "   return $0;", "}"],
+    "description": "Creates a function that returns the double type"
+  },
+  "Create string function": {
+    "prefix": "strfunc",
+    "body": ["char[] $1 () {", "   char[] $0 = {};", "   return $0;", "}"],
+    "description": "Creates a function that returns the char array type"
+  },
+  "Create long function": {
+    "prefix": "longfunc",
+    "body": ["long $1 () {", "   long $0;", "   return $0;", "}"],
+    "description": "Creates a function that returns the long type"
+  },
+  "Print variable of type float (2 decimal places)": {
+    "prefix": "pflo",
+    "body": ["printf(\"$0 :>> %.2f\\n\", $0);"],
+    "description": "Calls printf() to log value of variable of type float rounded to 2 decimal places"
+  },
+  "Print variable of type integer": {
+    "prefix": "pint",
+    "body": ["printf(\"$0 :>> %d\\n\", $0);"],
+    "description": "Calls printf() to log value of variable of type signed integer"
+  },
+  "Print variable of type char": {
+    "prefix": "pcha",
+    "body": ["printf(\"$0 :>> %c\\n\", $0);"],
+    "description": "Calls printf() to log value of variable of type char"
+  },
+  "Print variable of type pointer": {
+    "prefix": "ppoint",
+    "body": ["printf(\"$0 :>> %p\\n\", (void *) $0);"],
+    "description": "Calls printf() to log value of variable of type pointer"
+  },
+  "Print variable of type size_t": {
+    "prefix": "psiz",
+    "body": ["printf(\"$0 :>> %zu\\n\", $0);"],
+    "description": "Calls printf() to log value of variable of type size_t"
+  },
+  "Allocate memory using calloc": {
+    "prefix": "cal",
+    "body": [
+      "$1*ptr = ($1*)calloc($2, sizeof($1));",
+      "",
+      "if (ptr == NULL)",
+      "{",
+      "  printf(\"Memory allocation failed!\\n\");",
+      "  exit(0);",
+      "}",
+      "",
+      "free(ptr);"
+    ],
+    "description": "Allocates memory to a pointer variable using calloc(), then deallocates using free()."
+  }
+}
