@@ -1,0 +1,33 @@
+{
+  "useQuery": {
+    "prefix": "uq",
+    "body": ["const { data, loading } = use${1:query}Query()"],
+    "description": "useQuery"
+  },  
+  "useQuery for component": {
+    "prefix": "uqc",
+    "body": ["const { data, loading } = use${TM_FILENAME_BASE}Query()"],
+    "description": "useQuery that loads up data for current component"
+  },
+  "useMutation": {
+    "prefix": "um",
+    "body": [
+      "const [${1:mutationName}, {loading}] = use${1:mutationName}Mutation()"
+    ],
+    "description": "useMutation"
+  },
+  "useQuery with gql": {
+    "prefix": "uqg",
+    "body": ["const { data, loading } = useQuery(gql`${1:query}`)"],
+    "description": "useQuery with raw mutation"
+  },
+  "useMutation with gql": {
+    "prefix": "umg",
+    "body": [
+      "const ${1:mutationName} = useMutation(gql`${1:query}`, {",
+      "  variables: ${1:vars},",
+      "});"
+    ],
+    "description": "useMutation with raw query"
+  }
+}
