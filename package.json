@@ -22,10 +22,6 @@
         "path": "./snippets/php.json"
       },
       {
-        "language": "python",
-        "path": "./snippets/python.json"
-      },
-      {
         "language": "ruby",
         "path": "./snippets/ruby.json"
       },
@@ -69,6 +65,30 @@
       {
         "language": "typescriptreact",
         "path": "./snippets/javascript/react-ts.json"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/python/base.json"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/python/comprehension.json"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/python/debug.json"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/python/python.json"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/python/unittest.json"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/python/tkinter.json"
       }
     ]
   }
