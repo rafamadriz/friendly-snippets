@@ -1,0 +1,22 @@
+{
+    "PDB set trace": {
+        "prefix": "pdb",
+        "body": "import pdb; pdb.set_trace()$0"
+    },
+    "iPDB set trace": {
+        "prefix": "ipdb",
+        "body": "import ipdb; ipdb.set_trace()$0"
+    },
+    "rPDB set trace": {
+        "prefix": "rpdb",
+        "body": "import rpdb2; rpdb2.start_embedded_debugger('${1:debug_password}')$0"
+    },
+    "PuDB set trace": {
+        "prefix": "pudb",
+        "body": "import pudb; pudb.set_trace()$0"
+    },
+    "IPython set trace": {
+        "prefix": "ipydb",
+        "body": "from IPython import embed; embed()$0"
+    }
+}

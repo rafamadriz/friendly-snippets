@@ -1,0 +1,74 @@
+{
+    "Import Tkinter": {
+        "prefix": "imtk",
+        "body": "import Tkinter as tk$0"
+    },
+    "Import tkinter": {
+        "prefix": "imtk3",
+        "body": "import tkinter as tk$0"
+    },
+    "Root configuration": {
+        "prefix": "config",
+        "body": "config(menu=$1)$0"
+    },
+    "Button": {
+        "prefix": "button",
+        "body": "tk.Button(${1:root}, text=\"$2\")$0"
+    },
+    "Label": {
+        "prefix": "label",
+        "body": "tk.Label(${1:root}, text=\"$2\")$0"
+    },
+    "Frame": {
+        "prefix": "frame",
+        "body": "tk.Frame(${1:root})$0"
+    },
+    "Entry": {
+        "prefix": "entry",
+        "body": "tk.Entry(${1:root})$0"
+    },
+    "Grid": {
+        "prefix": "grid",
+        "body": "grid(row=$1, colomn=$2)$0"
+    },
+    "Sticky": {
+        "prefix": "sticky",
+        "body": "sticky=tk.$0"
+    },
+    "Check button": {
+        "prefix": "checkbutton",
+        "body": "tk.Checkbutton(${1:root}, text=\"$2\")$0"
+    },
+    "Main loop": {
+        "prefix": "mainloop",
+        "body": "mainloop()$0"
+    },
+    "Pack": {
+        "prefix": "pack",
+        "body": "pack($1)$0"
+    },
+    "Side": {
+        "prefix": "side",
+        "body": "side=tk.$0"
+    },
+    "Bind": {
+        "prefix": "bind",
+        "body": "bind(\"<Button-${1:1}>\", ${2:fxn})$0"
+    },
+    "Menu": {
+        "prefix": "menu",
+        "body": "tk.menu(${1:root})$0"
+    },
+    "Add cascade": {
+        "prefix": "addcascade",
+        "body": "add_cascade(label=\"$1\", menu=$2)$0"
+    },
+    "Add command": {
+        "prefix": "addcommand",
+        "body": "add_command(label=\"$1\", command=$2)$0"
+    },
+    "Add seperator": {
+        "prefix": "addseperator",
+        "body": "add_separator()$0"
+    }
+}
