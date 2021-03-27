@@ -31,6 +31,22 @@ This collection of snippets works with [vim-vsnip](https://github.com/hrsh7th/vi
 
 For setting up vim-vsnip refer to this [link](https://github.com/hrsh7th/vim-vsnip#usage).
 
+### Install
+
+Packer
+
+```lua
+use "rafamadriz/friendly-snippets"
+use "hrsh7th/vim-vsnip"
+```
+
+Plug
+
+```viml
+Plug 'rafamadriz/friendly-snippets'
+Plug 'hrsh7th/vim-vsnip'
+```
+
 ### Just a few examples of snippets in action
 
 #### HTML
