@@ -20,7 +20,7 @@
   "use": {
     "prefix": "use",
     "body": ["use \"$1\"", "$0"],
-    "description": ""
+    "description": "for adding plugins in packer"
   },
   "req": {
     "prefix": "req",
@@ -34,7 +34,7 @@
   },
   "locreq": {
     "prefix": "locreq",
-    "body": ["local ${1:var} = require(\"${2:module}\"", "$0"],
+    "body": ["local ${1:var} = require(\"${2:module}\")", "$0"],
     "description": "Require module as a variable"
   }
 }
