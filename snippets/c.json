@@ -85,8 +85,8 @@
     "description": "Code snippet for #include \" \""
   },
   "#def": {
-    "prefix": "#def",
-    "body": ["#define \"$1\" \"$2\" "],
+    "prefix": "def",
+    "body": ["#define $1 $2 "],
     "description": "Code snippet for #define \" \""
   },
   "Standard Starter Template": {
