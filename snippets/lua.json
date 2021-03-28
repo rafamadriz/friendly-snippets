@@ -1,6 +1,6 @@
 {
   "mappings": {
-    "preffix": "map",
+    "prefix": "map",
     "body": "u.map(\"$1\"), \"$2\", \"$3\")",
     "description": "mappings"
   }
