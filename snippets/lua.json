@@ -1,7 +1,7 @@
 {
-  "mappings": {
+  "map": {
     "prefix": "map",
-    "body": "u.map(\"$1\"), \"$2\", \"$3\")",
-    "description": "mappings"
+    "body": "u.map(\"${1:mode}\"), \"${2:key}\", \"${3:action}\")",
+    "description": "Create keybindings in neovim config"
   }
 }
