@@ -25,6 +25,7 @@ You can commit all kinds of useful snippets that you may have for personal use, 
 - Ruby
 - Swift
 - Java
+- Fortran
 
 ### Usage
 

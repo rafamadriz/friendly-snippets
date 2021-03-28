@@ -14,6 +14,10 @@
         "path": "./snippets/erb.json"
       },
       {
+        "language": "fortran-modern",
+        "path": "./snippets/fortran.json"
+      },
+      {
         "language": "go",
         "path": "./snippets/go.json"
       },
