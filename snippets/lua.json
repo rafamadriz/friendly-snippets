@@ -9,7 +9,7 @@
   },
   "opt": {
     "prefix": "opt",
-    "body": ["u.opt(\"${1|o,b,w|}\", \"${1:option}\", \"${2:options}\")", "$0"],
+    "body": ["u.opt(\"${1|o,b,w|}\", \"${2:option}\", \"${3:options}\")", "$0"],
     "description": "Adding options to neovim config"
   },
   "vim.g": {
