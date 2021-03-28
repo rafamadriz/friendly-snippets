@@ -24,6 +24,7 @@ You can commit all kinds of useful snippets that you may have for personal use, 
 - Eruby
 - Ruby
 - Swift
+- Java
 
 ### Usage
 
