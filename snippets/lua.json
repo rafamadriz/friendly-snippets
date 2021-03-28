@@ -1,0 +1,7 @@
+{
+  "mappings": {
+    "preffix": "map",
+    "body": "u.map(\"$1\"), \"$2\", \"$3\")",
+    "description": "mappings"
+  }
+}
