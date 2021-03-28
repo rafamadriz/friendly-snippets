@@ -1,7 +1,40 @@
 {
   "map": {
     "prefix": "map",
-    "body": "u.map(\"${1:mode}\"), \"${2:key}\", \"${3:action}\")",
+    "body": [
+      "u.map(\"${1|n,i,v,x,s,o,c,l,!|}\", \"${2:key}\", \"${3:action}\")",
+      "$0"
+    ],
     "description": "Create keybindings in neovim config"
+  },
+  "opt": {
+    "prefix": "opt",
+    "body": ["u.opt(\"${1|o,b,w|}\", \"${1:option}\", \"${2:options}\")", "$0"],
+    "description": "Adding options to neovim config"
+  },
+  "vim.g": {
+    "prefix": "vim.g",
+    "body": ["vim.g.${1:option} = $2", "$0"],
+    "description": "vim global option"
+  },
+  "use": {
+    "prefix": "use",
+    "body": ["use \"$1\"", "$0"],
+    "description": ""
+  },
+  "req": {
+    "prefix": "req",
+    "body": ["require(\"${1:module}\")", "$0"],
+    "description": "Require module"
+  },
+  "loc": {
+    "prefix": "loc",
+    "body": ["local ${1:var} = ${2:foo}", "$0"],
+    "description": "create a variable"
+  },
+  "locreq": {
+    "prefix": "locreq",
+    "body": ["local ${1:var} = require(\"${2:module}\"", "$0"],
+    "description": "Require module as a variable"
   }
 }
