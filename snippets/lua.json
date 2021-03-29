@@ -2,39 +2,38 @@
   "map": {
     "prefix": "map",
     "body": [
-      "u.map(\"${1|n,i,v,x,s,o,c,l,!|}\", \"${2:key}\", \"${3:action}\")",
-      "$0"
+      "u.map(\"${1|n,i,v,x,s,o,c,l,!|}\", \"${2:key}\", \"${3:action}\")"
     ],
     "description": "Create keybindings in neovim config"
   },
   "opt": {
     "prefix": "opt",
-    "body": ["u.opt(\"${1|o,b,w|}\", \"${2:option}\", \"${3:options}\")", "$0"],
+    "body": ["u.opt(\"${1|o,b,w|}\", \"${2:option}\", \"${3:options}\")"],
     "description": "Adding options to neovim config"
   },
   "vim.g": {
     "prefix": "vim.g",
-    "body": ["vim.g.${1:option} = $2", "$0"],
+    "body": ["vim.g.${1:option} = $2"],
     "description": "vim global option"
   },
   "use": {
     "prefix": "use",
-    "body": ["use \"$1\"", "$0"],
+    "body": ["use \"$1\""],
     "description": "for adding plugins in packer"
   },
   "req": {
     "prefix": "req",
-    "body": ["require(\"${1:module}\")", "$0"],
+    "body": ["require(\"${1:module}\")"],
     "description": "Require module"
   },
   "loc": {
     "prefix": "loc",
-    "body": ["local ${1:var} = ${2:foo}", "$0"],
+    "body": ["local ${1:var} = ${2:foo}"],
     "description": "create a variable"
   },
   "locreq": {
     "prefix": "locreq",
-    "body": ["local ${1:var} = require(\"${2:module}\")", "$0"],
+    "body": ["local ${1:var} = require(\"${2:module}\")"],
     "description": "Require module as a variable"
   }
 }
