@@ -1,0 +1,1075 @@
+{
+    "import": {
+        "prefix": "import",
+        "body": [
+            "import $1 from '$2'"
+        ],
+        "description": "import ... from ..."
+    },
+    "vue": {
+        "prefix": "newVue",
+        "body": [
+            "new Vue({",
+            "\t$1",
+            "})"
+        ],
+        "description": "new Vue()"
+    },
+    "silent": {
+        "prefix": "VueConfigSilent",
+        "body": [
+            "Vue.config.silent = ${1:true}"
+        ],
+        "description": "Vue.config.silent"
+    },
+    "optionMergeStrategies": {
+        "prefix": "VueConfigOptionMergeStrategies",
+        "body": [
+            "Vue.config.optionMergeStrategies$1"
+        ],
+        "description": "Vue.config.optionMergeStrategies"
+    },
+    "devtools": {
+        "prefix": "VueConfigDevtools",
+        "body": [
+            "Vue.config.devtools = ${1:true}"
+        ],
+        "description": "Vue.config.devtools"
+    },
+    "errorHandler": {
+        "prefix": "VueConfigErrorHandler",
+        "body": [
+            "Vue.config.errorHandler = function (err, vm, info) {",
+            "\t${1:// handle error}",
+            "}"
+        ],
+        "description": "Vue.config.errorHandler"
+    },
+    "warnHandler": {
+        "prefix": "VueConfigWarnHandler",
+        "body": [
+            "Vue.config.warnHandler = function (msg, vm, trace) {",
+            "\t${1:// handle warn}",
+            "}"
+        ],
+        "description": "Vue.config.warnHandler"
+    },
+    "ignoredElements": {
+        "prefix": "VueConfigIgnoredElements",
+        "body": [
+            "Vue.config.ignoredElements = [",
+            "\t'${1}'",
+            "]$0"
+        ],
+        "description": "Vue.config.ignoredElements"
+    },
+    "keyCodes": {
+        "prefix": "VueConfigKeyCodes",
+        "body": [
+            "Vue.config.keyCodes = {",
+            "\t${1:// camelCase won`t work}",
+            "}"
+        ],
+        "description": "Vue.config.keyCodes"
+    },
+    "performance": {
+        "prefix": "VueConfigPerformance",
+        "body": [
+            "Vue.config.performance = ${1:true}"
+        ],
+        "description": "Vue.config.performance"
+    },
+    "productionTip": {
+        "prefix": "VueConfigProductionTip",
+        "body": [
+            "Vue.config.productionTip = ${1:false}"
+        ],
+        "description": "Vue.config.productionTip"
+    },
+    "extend": {
+        "prefix": "vueExtend",
+        "body": [
+            "Vue.extend({",
+            "\ttemplate:${1:template}",
+            "})"
+        ],
+        "description": "Vue.extend( options )"
+    },
+    "nextTick": {
+        "prefix": "VueNextTick",
+        "body": [
+            "Vue.nextTick({",
+            "\t$1",
+            "})"
+        ],
+        "description": "Vue.nextTick( callback, [context] )"
+    },
+    "nextTickThen": {
+        "prefix": "VueNextTickThen",
+        "body": [
+            "Vue.nextTick({",
+            "\t$1",
+            "}).then(function ($2) {",
+            "\t$3",
+            "})"
+        ],
+        "description": "Vue.nextTick( callback, [context] ).then(function(){ })"
+    },
+    "set": {
+        "prefix": "VueSet",
+        "body": [
+            "Vue.set(${1:target}, ${2:key}, ${3:value})"
+        ],
+        "description": "Vue.set( target, key, value )"
+    },
+    "delete": {
+        "prefix": "VueDelete",
+        "body": [
+            "Vue.delete(${1:target}, ${2:key})"
+        ],
+        "description": "Vue.delete( target, key )"
+    },
+    "directive": {
+        "prefix": "VueDirective",
+        "body": [
+            "Vue.directive(${1:id}${2:, [definition]})"
+        ],
+        "description": "Vue.directive( id, [definition] )"
+    },
+    "filter": {
+        "prefix": "VueFilter",
+        "body": [
+            "Vue.filter(${1:id}${2:, [definition]})"
+        ],
+        "description": "Vue.filter( id, [definition] )"
+    },
+    "component": {
+        "prefix": "VueComponent",
+        "body": [
+            "Vue.component(${1:id}${2:, [definition]})$0"
+        ],
+        "description": "Vue.component( id, [definition] )"
+    },
+    "use": {
+        "prefix": "VueUse",
+        "body": [
+            "Vue.use(${1:plugin})$0"
+        ],
+        "description": "Vue.use( plugin )"
+    },
+    "mixin": {
+        "prefix": "VueMixin",
+        "body": [
+            "Vue.mixin({${1:mixin}})"
+        ],
+        "description": "Vue.mixin( mixin )"
+    },
+    "compile": {
+        "prefix": "VueCompile",
+        "body": [
+            "Vue.compile(${1:template})"
+        ],
+        "description": "Vue.compile( template )"
+    },
+    "observable": {
+        "prefix": "VueObservable",
+        "body": [
+            "Vue.observable({${1:object}})"
+        ],
+        "description": "Vue.observable( object )"
+    },
+    "version": {
+        "prefix": "VueVersion",
+        "body": [
+            "Vue.version$0"
+        ],
+        "description": "Vue.version.split('.')[]"
+    },
+    "data": {
+        "prefix": "data",
+        "body": [
+            "data() {",
+            "\treturn {",
+            "\t\t$1",
+            "\t}",
+            "},$0"
+        ],
+        "description": "The data object for the Vue instance."
+    },
+    "props": {
+        "prefix": "props",
+        "body": [
+            "props"
+        ],
+        "description": "A list/hash of attributes that are exposed to accept data from the parent component. "
+    },
+    "propsData": {
+        "prefix": "propsData",
+        "body": [
+            "propsData"
+        ],
+        "description": "Restriction: only respected in instance creation via `new`. Pass props to an instance during its creation. This is primarily intended to make unit testing easier."
+    },
+    "scopedSlots": {
+        "prefix": "scopedSlots",
+        "body": [
+            "scopedSlots"
+        ],
+        "description": "just a word"
+    },
+    "computed": {
+        "prefix": "computed",
+        "body": [
+            "computed: {",
+            "\t$1",
+            "},$0"
+        ],
+        "description": "Computed properties to be mixed into the Vue instance. "
+    },
+    "methods": {
+        "prefix": "methods",
+        "body": [
+            "methods: {",
+            "\t$1",
+            "},$0"
+        ],
+        "description": "Methods to be mixed into the Vue instance."
+    },
+    "watch": {
+        "prefix": "watch",
+        "body": [
+            "watch: {",
+            "\t$1",
+            "},$0"
+        ],
+        "description": "An object where keys are expressions to watch and values are the corresponding callbacks. The value can also be a string of a method name, or an Object that contains additional options. Note that you should not use an arrow function to define a watcher."
+    },
+    "watchWithOptions": {
+        "prefix": "watchWithOptions",
+        "body": [
+            "${1:key}: {",
+            "\tdeep: ${2:true},",
+            "\timmediate: ${3:true},",
+            "\thandler: function (${4:val}, ${5:oldVal}) {",
+            "\t\t$6",
+            "\t}",
+            "},$0"
+        ],
+        "description": "Vue Watcher with options."
+    },
+    "el": {
+        "prefix": "el",
+        "body": [
+            "el"
+        ],
+        "description": "just a word"
+    },
+    "template": {
+        "prefix": "template",
+        "body": [
+            "template"
+        ],
+        "description": "just a word"
+    },
+    "render": {
+        "prefix": "render",
+        "body": [
+            "render(h) {",
+            "\t$1",
+            "},"
+        ],
+        "description": "An alternative to string templates allowing you to leverage the full programmatic power of JavaScript."
+    },
+    "renderError": {
+        "prefix": "renderError",
+        "body": [
+            "renderError(h, err) {",
+            "\t$1",
+            "},"
+        ],
+        "description": "Provide an alternative render output when the default render function encounters an error."
+    },
+    "beforeCreate": {
+        "prefix": "beforeCreate",
+        "body": [
+            "beforeCreate() {",
+            "\t$1",
+            "},"
+        ],
+        "description": "Type: Function."
+    },
+    "created": {
+        "prefix": "created",
+        "body": [
+            "created() {",
+            "\t$1",
+            "},"
+        ],
+        "description": "Type: Function."
+    },
+    "beforeMount": {
+        "prefix": "beforeMount",
+        "body": [
+            "beforeMount() {",
+            "\t$1",
+            "},"
+        ],
+        "description": "Type: Function."
+    },
+    "mounted": {
+        "prefix": "mounted",
+        "body": [
+            "mounted() {",
+            "\t$1",
+            "},"
+        ],
+        "description": "Type: Function."
+    },
+    "beforeUpdate": {
+        "prefix": "beforeUpdate",
+        "body": [
+            "beforeUpdate() {",
+            "\t$1",
+            "},"
+        ],
+        "description": "Type: Function."
+    },
+    "updated": {
+        "prefix": "updated",
+        "body": [
+            "updated() {",
+            "\t$1",
+            "},"
+        ],
+        "description": "Type: Function."
+    },
+    "activated": {
+        "prefix": "activated",
+        "body": [
+            "activated() {",
+            "\t$1",
+            "},"
+        ],
+        "description": "Type: Function."
+    },
+    "deactivated": {
+        "prefix": "deactivated",
+        "body": [
+            "deactivated() {",
+            "\t$1",
+            "},"
+        ],
+        "description": "Type: Function."
+    },
+    "beforeDestroy": {
+        "prefix": "beforeDestroy",
+        "body": [
+            "beforeDestroy() {",
+            "\t$1",
+            "},"
+        ],
+        "description": "Type: Function."
+    },
+    "destroyed": {
+        "prefix": "destroyed",
+        "body": [
+            "destroyed() {",
+            "\t$1",
+            "},"
+        ],
+        "description": "Type: Function."
+    },
+    "errorCaptured": {
+        "prefix": "errorCaptured",
+        "body": [
+            "errorCaptured: (err, vm, info) => {",
+            "\t$1",
+            "},"
+        ],
+        "description": "Type: (err: Error, vm: Component, info: string) => ?boolean"
+    },
+    "directives": {
+        "prefix": "directives",
+        "body": [
+            "directives"
+        ],
+        "description": "just a word"
+    },
+    "filters": {
+        "prefix": "filters",
+        "body": [
+            "filters"
+        ],
+        "description": "just a word"
+    },
+    "componentWord": {
+        "prefix": "component",
+        "body": [
+            "component"
+        ],
+        "description": "just a word"
+    },
+    "components": {
+        "prefix": "components",
+        "body": [
+            "components"
+        ],
+        "description": "just a word"
+    },
+    "parent": {
+        "prefix": "parent",
+        "body": [
+            "parent"
+        ],
+        "description": "just a word"
+    },
+    "mixins": {
+        "prefix": "mixins",
+        "body": [
+            "mixins"
+        ],
+        "description": "just a word"
+    },
+    "extends": {
+        "prefix": "extends",
+        "body": [
+            "extends"
+        ],
+        "description": "just a word"
+    },
+    "provide": {
+        "prefix": "provide",
+        "body": [
+            "provide"
+        ],
+        "description": "just a word"
+    },
+    "inject": {
+        "prefix": "inject",
+        "body": [
+            "inject"
+        ],
+        "description": "just a word"
+    },
+    "name": {
+        "prefix": "name",
+        "body": [
+            "name"
+        ],
+        "description": "just a word"
+    },
+    "delimiters": {
+        "prefix": "delimiters",
+        "body": [
+            "delimiters"
+        ],
+        "description": "just a word"
+    },
+    "functional": {
+        "prefix": "functional",
+        "body": [
+            "functional"
+        ],
+        "description": "just a word"
+    },
+    "model": {
+        "prefix": "model",
+        "body": [
+            "model"
+        ],
+        "description": "just a word"
+    },
+    "inheritAttrs": {
+        "prefix": "inheritAttrs",
+        "body": [
+            "inheritAttrs"
+        ],
+        "description": "just a word"
+    },
+    "comments": {
+        "prefix": "comments",
+        "body": [
+            "comments"
+        ],
+        "description": "just a word"
+    },
+    "deep": {
+        "prefix": "deep",
+        "body": [
+            "deep"
+        ],
+        "description": "just a word"
+    },
+    "immediate": {
+        "prefix": "immediate",
+        "body": [
+            "immediate"
+        ],
+        "description": "just a word"
+    },
+    "vm.$data": {
+        "prefix": "vmData",
+        "body": [
+            "${1|this,vm|}.\\$data$2"
+        ],
+        "description": "Type: Object. Read only."
+    },
+    "vm.$props": {
+        "prefix": "vmProps",
+        "body": [
+            "${1|this,vm|}.\\$props$2"
+        ],
+        "description": "Type: Object. Read only."
+    },
+    "vm.$el": {
+        "prefix": "vmEl",
+        "body": [
+            "${1|this,vm|}.\\$el$2"
+        ],
+        "description": "Type: HTMLElement. Read only."
+    },
+    "vm.$options": {
+        "prefix": "vmOptions",
+        "body": [
+            "${1|this,vm|}.\\$options$2"
+        ],
+        "description": "Type: Object. Read only."
+    },
+    "vm.$parent": {
+        "prefix": "vmParent",
+        "body": [
+            "${1|this,vm|}.\\$parent$2"
+        ],
+        "description": "Type: Vue instance. Read only."
+    },
+    "vm.$root": {
+        "prefix": "vmRoot",
+        "body": [
+            "${1|this,vm|}.\\$root$2"
+        ],
+        "description": "Type: Vue instance. Read only."
+    },
+    "vm.$children": {
+        "prefix": "vmChildren",
+        "body": [
+            "${1|this,vm|}.\\$children$2"
+        ],
+        "description": "Type: Array<Vue instance>. Read only."
+    },
+    "vm.$slots": {
+        "prefix": "vmSlots",
+        "body": [
+            "${1|this,vm|}.\\$slots$2"
+        ],
+        "description": "Type: Object. Read only."
+    },
+    "vm.$scopedSlots": {
+        "prefix": "vmScopedSlots",
+        "body": [
+            "${1|this,vm|}.\\$scopedSlots.default({",
+            "\t$2",
+            "})"
+        ],
+        "description": "Type: { [name: string]: props => VNode | Array<VNode> }. Read only."
+    },
+    "vm.$refs": {
+        "prefix": "vmRefs",
+        "body": [
+            "${1|this,vm|}.\\$refs$2"
+        ],
+        "description": "Type: Object. Read only."
+    },
+    "vm.$isServer": {
+        "prefix": "vmIsServer",
+        "body": [
+            "${1|this,vm|}.\\$isServer$2"
+        ],
+        "description": "Type: boolean. Read only."
+    },
+    "vm.$attrs": {
+        "prefix": "vmAttrs",
+        "body": [
+            "${1|this,vm|}.\\$attrs$2"
+        ],
+        "description": "Type: { [key: string]: string }. Read only."
+    },
+    "vm.$listeners": {
+        "prefix": "vmListeners",
+        "body": [
+            "${1|this,vm|}.\\$listeners$2"
+        ],
+        "description": "Type: { [key: string]: Function | Array<Function> }. Read only."
+    },
+    "vm.$watch": {
+        "prefix": "vmWatch",
+        "body": [
+            "${1|this,vm|}.\\$watch(${2:expOrFn}, ${3:callback}${4:, [options]})"
+        ],
+        "description": "vm.$watch( expOrFn, callback, [options] )\n Arguments:\n {string | Function} expOrFn\n {Function | Object} callback\n {Object} [options]\n {boolean} [options.deep]\n\t {boolean} [options.immediate]"
+    },
+    "vm.$set": {
+        "prefix": "vmSet",
+        "body": [
+            "${1|this,vm|}.\\$set(${2:target}, ${3:key}, ${4:value})"
+        ],
+        "description": "vm.$set( target, key, value ). This is the alias of the global Vue.set."
+    },
+    "vm.$delete": {
+        "prefix": "vmDelete",
+        "body": [
+            "${1|this,vm|}.\\$delete(${2:target}, ${3:key}). This is the alias of the global Vue.delete."
+        ],
+        "description": "vm.$delete( target, key )"
+    },
+    "vm.$on": {
+        "prefix": "vmOn",
+        "body": [
+            "${1|this,vm|}.\\$on('${2:event}', ${3:callback})$4"
+        ],
+        "description": "vm.$on( event, callback )"
+    },
+    "vm.$once": {
+        "prefix": "vmOnce",
+        "body": [
+            "${1|this,vm|}.\\$once('${2:event}', ${3:callback})$4"
+        ],
+        "description": "vm.$once( event, callback )"
+    },
+    "vm.$off": {
+        "prefix": "vmOff",
+        "body": [
+            "${1|this,vm|}.\\$off('${2:event}', ${3:callback})$4"
+        ],
+        "description": "vm.$off( [event, callback] )"
+    },
+    "vm.$emit": {
+        "prefix": "vmEmit",
+        "body": [
+            "${1|this,vm|}.\\$emit('${2:event}'${3:, […args]})$4"
+        ],
+        "description": "vm.$emit( event, […args] )"
+    },
+    "vm.$mount": {
+        "prefix": "vmMount",
+        "body": [
+            "${1|this,vm|}.\\$mount('$2')"
+        ],
+        "description": "vm.$mount( [elementOrSelector] )"
+    },
+    "vm.$forceUpdate": {
+        "prefix": "vmForceUpdate",
+        "body": [
+            "${1|this,vm|}.\\$forceUpdate()"
+        ],
+        "description": "vm.$forceUpdate()"
+    },
+    "vm.$nextTick": {
+        "prefix": "vmNextTick",
+        "body": [
+            "${1|this,vm|}.\\$nextTick(${2:callback})"
+        ],
+        "description": "vm.$nextTick( callback )"
+    },
+    "vm.$destroy": {
+        "prefix": "vmDestroy",
+        "body": [
+            "${1|this,vm|}.\\$destroy()$2"
+        ],
+        "description": "vm.$destroy()"
+    },
+    "renderer": {
+        "prefix": "renderer",
+        "body": [
+            "const ${1:renderer} = require('vue-server-renderer').createRenderer()$0"
+        ],
+        "description": "require('vue-server-renderer').createRenderer()"
+    },
+    "createRenderer": {
+        "prefix": "createRenderer",
+        "body": [
+            "createRenderer({",
+            "\t$1",
+            "})"
+        ],
+        "description": "createRenderer({ })"
+    },
+    "renderToString": {
+        "prefix": "renderToString",
+        "body": [
+            "renderToString"
+        ],
+        "description": "just a word"
+    },
+    "renderToStream": {
+        "prefix": "renderToStream",
+        "body": [
+            "renderToStream"
+        ],
+        "description": "just a word"
+    },
+    "createBundleRenderer": {
+        "prefix": "createBundleRenderer",
+        "body": [
+            "createBundleRenderer"
+        ],
+        "description": "just a word"
+    },
+    "bundleRenderer.renderToString": {
+        "prefix": "bundleRendererRenderToString",
+        "body": [
+            "bundleRenderer.renderToString"
+        ],
+        "description": "just a word"
+    },
+    "bundleRenderer.renderToStream": {
+        "prefix": "bundleRendererRenderToStream",
+        "body": [
+            "bundleRenderer.renderToStream"
+        ],
+        "description": "just a word"
+    },
+    "preventDefault": {
+        "prefix": "preventDefault",
+        "body": [
+            "preventDefault();",
+            "$1"
+        ],
+        "description": "preventDefault()"
+    },
+    "stopPropagation": {
+        "prefix": "stopPropagation",
+        "body": [
+            "stopPropagation();",
+            "$1"
+        ],
+        "description": "stopPropagation()"
+    },
+    "importVueRouter": {
+        "prefix": "importVueRouter",
+        "body": [
+            "import VueRouter from 'vue-router'"
+        ],
+        "description": "import VueRouter from 'vue-router'"
+    },
+    "newVueRouter": {
+        "prefix": "newVueRouter",
+        "body": [
+            "const ${1:router} = new VueRouter({",
+            "\t$2",
+            "})$0"
+        ],
+        "description": "const router = newVueRouter({ })"
+    },
+    "routerBeforeEach": {
+        "prefix": "routerBeforeEach",
+        "body": [
+            "${1:router}.beforeEach((to, from, next) => {",
+            "\t${2:// to and from are both route objects. must call `next`.}",
+            "})$0"
+        ],
+        "description": "router.beforeEach"
+    },
+    "routerBeforeResolve": {
+        "prefix": "routerBeforeResolve",
+        "body": [
+            "${1:router}.beforeResolve((to, from, next) => {",
+            "\t${2:// to and from are both route objects. must call `next`.}",
+            "})$0"
+        ],
+        "description": "router.beforeResolve"
+    },
+    "routerAfterEach": {
+        "prefix": "routerAfterEach",
+        "body": [
+            "${1:router}.afterEach((to, from) => {",
+            "\t${2:// to and from are both route objects.}",
+            "})$0"
+        ],
+        "description": "router.afterEach"
+    },
+    "routerPush": {
+        "prefix": "routerPush",
+        "body": [
+            "${1:router}.push($2)$0"
+        ],
+        "description": "router.push()"
+    },
+    "routerReplace": {
+        "prefix": "routerReplace",
+        "body": [
+            "${1:router}.replace($2)$0"
+        ],
+        "description": "router.replace()"
+    },
+    "routerGo": {
+        "prefix": "routerGo",
+        "body": [
+            "${1:router}.go($2)$0"
+        ],
+        "description": "router.go()"
+    },
+    "routerBack": {
+        "prefix": "routerBack",
+        "body": [
+            "${1:router}.back($2)$0"
+        ],
+        "description": "router.back()"
+    },
+    "routerForward": {
+        "prefix": "routerForward",
+        "body": [
+            "${1:router}.forward($2)$0"
+        ],
+        "description": "router.forward()"
+    },
+    "routerGetMatchedComponents": {
+        "prefix": "routerGetMatchedComponents",
+        "body": [
+            "${1:router}.getMatchedComponents($2)$0"
+        ],
+        "description": "router.getMatchedComponents()"
+    },
+    "routerResolve": {
+        "prefix": "routerResolve",
+        "body": [
+            "${1:router}.resolve($2)$0"
+        ],
+        "description": "router.resolve()"
+    },
+    "routerAddRoutes": {
+        "prefix": "routerAddRoutes",
+        "body": [
+            "${1:router}.addRoutes($2)$0"
+        ],
+        "description": "router.addRoutes()"
+    },
+    "routerOnReady": {
+        "prefix": "routerOnReady",
+        "body": [
+            "${1:router}.onReady($2)$0"
+        ],
+        "description": "router.onReady()"
+    },
+    "routerOnError": {
+        "prefix": "routerOnError",
+        "body": [
+            "${1:router}.onError($2)$0"
+        ],
+        "description": "router.onError()"
+    },
+    "routes": {
+        "prefix": "routes",
+        "body": [
+            "routes: [$1]$0"
+        ],
+        "description": "routes: []"
+    },
+    "beforeEnter": {
+        "prefix": "beforeEnter",
+        "body": [
+            "beforeEnter: (to, from, next) => {",
+            "\t${1:// ...}",
+            "}"
+        ],
+        "description": "beforeEnter: (to, from, next) => { }"
+    },
+    "beforeRouteEnter": {
+        "prefix": "beforeRouteEnter",
+        "body": [
+            "beforeRouteEnter (to, from, next) {",
+            "\t${1:// ...}",
+            "}"
+        ],
+        "description": "beforeRouteEnter (to, from, next) { }"
+    },
+    "beforeRouteLeave": {
+        "prefix": "beforeRouteLeave",
+        "body": [
+            "beforeRouteLeave (to, from, next) {",
+            "\t${1:// ...}",
+            "}"
+        ],
+        "description": "beforeRouteLeave (to, from, next) { }"
+    },
+    "scrollBehavior": {
+        "prefix": "scrollBehavior",
+        "body": [
+            "scrollBehavior (to, from, savedPosition) {",
+            "\t${1:// ...}",
+            "}"
+        ],
+        "description": "scrollBehavior (to, from, savedPosition) { }"
+    },
+    "path": {
+        "prefix": "path",
+        "body": [
+            "path"
+        ],
+        "description": "just a word"
+    },
+    "alias": {
+        "prefix": "alias",
+        "body": [
+            "alias"
+        ],
+        "description": "just a word"
+    },
+    "mode": {
+        "prefix": "mode",
+        "body": [
+            "mode"
+        ],
+        "description": "just a word"
+    },
+    "children": {
+        "prefix": "children",
+        "body": [
+            "children"
+        ],
+        "description": "just a word"
+    },
+    "meta": {
+        "prefix": "meta",
+        "body": [
+            "meta"
+        ],
+        "description": "just a word"
+    },
+    "newVuexStore": {
+        "prefix": "newVuexStore",
+        "body": [
+            "const ${1:store} = new Vuex.Store({",
+            "\t${2:// ...}",
+            "})"
+        ],
+        "description": "const store = new Vuex.Store({ })"
+    },
+    "state": {
+        "prefix": "state",
+        "body": [
+            "state"
+        ],
+        "description": "just a word"
+    },
+    "getters": {
+        "prefix": "getters",
+        "body": [
+            "getters"
+        ],
+        "description": "just a word"
+    },
+    "mutations": {
+        "prefix": "mutations",
+        "body": [
+            "mutations"
+        ],
+        "description": "just a word"
+    },
+    "actions": {
+        "prefix": "actions",
+        "body": [
+            "actions"
+        ],
+        "description": "just a word"
+    },
+    "modules": {
+        "prefix": "modules",
+        "body": [
+            "modules"
+        ],
+        "description": "just a word"
+    },
+    "plugins": {
+        "prefix": "plugins",
+        "body": [
+            "plugins"
+        ],
+        "description": "just a word"
+    },
+    "commit": {
+        "prefix": "commit",
+        "body": [
+            "commit"
+        ],
+        "description": "just a word"
+    },
+    "dispatch": {
+        "prefix": "dispatch",
+        "body": [
+            "dispatch"
+        ],
+        "description": "just a word"
+    },
+    "replaceState": {
+        "prefix": "replaceState",
+        "body": [
+            "replaceState"
+        ],
+        "description": "just a word"
+    },
+    "subscribe": {
+        "prefix": "subscribe",
+        "body": [
+            "subscribe"
+        ],
+        "description": "just a word"
+    },
+    "registerModule": {
+        "prefix": "registerModule",
+        "body": [
+            "registerModule"
+        ],
+        "description": "just a word"
+    },
+    "unregisterModule": {
+        "prefix": "unregisterModule",
+        "body": [
+            "unregisterModule"
+        ],
+        "description": "just a word"
+    },
+    "hotUpdate": {
+        "prefix": "hotUpdate",
+        "body": [
+            "hotUpdate"
+        ],
+        "description": "just a word"
+    },
+    "mapState": {
+        "prefix": "mapState",
+        "body": [
+            "mapState"
+        ],
+        "description": "just a word"
+    },
+    "mapGetters": {
+        "prefix": "mapGetters",
+        "body": [
+            "mapGetters"
+        ],
+        "description": "just a word"
+    },
+    "mapActions": {
+        "prefix": "mapActions",
+        "body": [
+            "mapActions"
+        ],
+        "description": "just a word"
+    },
+    "mapMutations": {
+        "prefix": "mapMutations",
+        "body": [
+            "mapMutations"
+        ],
+        "description": "just a word"
+    },
+    "asyncData": {
+        "prefix": "asyncData",
+        "body": [
+            "asyncData({${1:isDev}${2:, route}${3:, store}${4:, env}${5:, params}${6:, query}${7:, req}${8:, res}${9:, redirect}${10:, error}}) {",
+            "\t$11",
+            "},"
+        ],
+        "description": "Type: Function."
+    }
+}

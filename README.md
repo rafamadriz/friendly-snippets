@@ -15,6 +15,7 @@ You can commit all kinds of useful snippets that you may have for personal use, 
 - HTML, Pug, Jade
 - CSS, Sass, Less, Stylus
 - Javascript, Typescript, Javascriptreact, Typescriptreact
+- Vue
 - PHP
 - Python
 - C

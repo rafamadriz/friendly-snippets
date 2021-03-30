@@ -79,6 +79,22 @@
         "path": "./snippets/javascript/react-ts.json"
       },
       {
+        "language": "vue",
+        "path": "./snippets/vue/html.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets/vue/pug.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets/vue/javascript.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets/vue/vue.json"
+      },
+      {
         "language": "python",
         "path": "./snippets/python/base.json"
       },
