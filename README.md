@@ -28,6 +28,7 @@ You can commit all kinds of useful snippets that you may have for personal use, 
 - Java
 - Fortran
 - Lua
+- LaTex
 
 ### Usage
 
