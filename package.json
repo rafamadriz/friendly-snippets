@@ -42,7 +42,7 @@
         "path": "./snippets/swift.json"
       },
       {
-        "language": "plaintex",
+        "language": ["plaintex", "tex"],
         "path": "./snippets/latex.json"
       },
       {
