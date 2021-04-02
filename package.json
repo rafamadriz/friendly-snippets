@@ -42,7 +42,7 @@
         "path": "./snippets/swift.json"
       },
       {
-        "language": "latex",
+        "language": "plaintex",
         "path": "./snippets/latex.json"
       },
       {
@@ -50,21 +50,11 @@
         "path": "./snippets/java.json"
       },
       {
-        "language": [
-          "html",
-          "jade",
-          "pug"
-        ],
+        "language": ["html", "jade", "pug"],
         "path": "./snippets/html.json"
       },
       {
-        "language": [
-          "css",
-          "scss",
-          "sass",
-          "less",
-          "stylus"
-        ],
+        "language": ["css", "scss", "sass", "less", "stylus"],
         "path": "./snippets/css.json"
       },
       {
@@ -77,17 +67,11 @@
         "path": "./snippets/javascript/javascript.json"
       },
       {
-        "language": [
-          "javascriptreact",
-          "typescriptreact"
-        ],
+        "language": ["javascriptreact", "typescriptreact"],
         "path": "./snippets/javascript/apollo.json"
       },
       {
-        "language": [
-          "typescript",
-          "typescriptreact"
-        ],
+        "language": ["typescript", "typescriptreact"],
         "path": "./snippets/javascript/typescript.json"
       },
       {
