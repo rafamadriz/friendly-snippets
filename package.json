@@ -42,6 +42,10 @@
         "path": "./snippets/swift.json"
       },
       {
+        "language": "shellscript",
+        "path": "./snippets/shell.json"
+      },
+      {
         "language": ["plaintex", "tex"],
         "path": "./snippets/latex.json"
       },
