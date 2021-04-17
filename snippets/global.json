@@ -1,0 +1,9 @@
+{
+   "diso" : {
+      "prefix" : "diso",
+      "body" : [
+         "${VIM:strftime(\"%Y-%m-%dT%H:%M:%S\")}"
+      ],
+      "description" : "ISO date time stamp"
+   }
+}
