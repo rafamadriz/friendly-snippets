@@ -2,6 +2,10 @@
   "contributes": {
     "snippets": [
       {
+        "language": "",
+        "path": "./snippets/global.json"
+      },
+      {
         "language": "c",
         "path": "./snippets/c.json"
       },
