@@ -14,6 +14,10 @@
         "path": "./snippets/cpp.json"
       },
       {
+        "language": "html",
+        "path": "./snippets/ejs.json"
+      },
+      {
         "language": "eruby",
         "path": "./snippets/erb.json"
       },

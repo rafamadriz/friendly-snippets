@@ -1,0 +1,87 @@
+{
+  "EJS No Output": {
+    "prefix": "ejs",
+    "body": [
+      "<% $1 %> $2"
+    ],
+    "description": "EJS No Output"
+  },
+  "EJS Output Value": {
+    "prefix": "ejsout",
+    "body": [
+      "<%= $1 %> $2"
+    ],
+    "description": "EJS outputs no value"
+  },
+  "EJS Output Escaped": {
+    "prefix": "ejsesc",
+    "body": [
+      "<%- $1 %> $2"
+    ],
+    "description": "EJS outputs value"
+  },
+  "EJS Comment": {
+    "prefix": "ejscom",
+    "body": [
+      "<%# $1 %> $2"
+    ],
+    "description": "EJS comment tag with no output"
+  },
+  "EJS Literal": {
+    "prefix": "ejslit",
+    "body": [
+      "<%% $1 %> $2"
+    ],
+    "description": "EJS outputs a literal '<%'"
+  },
+  "EJS Include": {
+    "prefix": "ejsinc",
+    "body": [
+      "<% include $1 %> $2"
+    ],
+    "description": "EJS include statement"
+  },
+  "EJS For Loop": {
+    "prefix": "ejsfor",
+    "body": [
+      "<% for( let ${1:index} = 0; ${1:index} < ${2:array}.length; ${1:index}++ ) { %>",
+      "$3",
+      "<% } %>"
+    ],
+    "description": "EJS For Loop"
+  },
+  "EJS ForEach": {
+    "prefix": "ejseach",
+    "body": [
+      "<% ${1:array}.forEach(${2:element} => { %>",
+      " $3",
+      "<% }) %>"
+    ],
+    "description": "EJS ForEach Loop"
+  },
+  "EJS If Statement": {
+    "prefix": "ejsif",
+    "body": [
+      "<% if (${1:condition}) { %>",
+      " $2",
+      "<% } %>"
+    ],
+    "description": "EJS if statement"
+  },
+  "EJS Else Statement": {
+    "prefix": "ejselse",
+    "body": [
+      "<% } else { %>",
+      " $1"
+    ],
+    "description": "EJS if statement"
+  },
+  "EJS Else If Statement": {
+    "prefix": "ejselif",
+    "body": [
+      "<% } else if ({$1:condition}) { %>",
+      " $2"
+    ],
+    "description": "EJS if statement"
+  }
+}
