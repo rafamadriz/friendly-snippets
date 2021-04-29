@@ -2,7 +2,7 @@
   "contributes": {
     "snippets": [
       {
-        "language": "",
+        "language": ["plaintext", "markdown", "tex", "html"],
         "path": "./snippets/global.json"
       },
       {
