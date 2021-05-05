@@ -1,11 +1,11 @@
 {
     "PDB set trace": {
         "prefix": "pdb",
-        "body": "import pdb; pdb.set_trace()$0"
+        "body": "__import__('pdb').set_trace()$0"
     },
     "iPDB set trace": {
         "prefix": "ipdb",
-        "body": "import ipdb; ipdb.set_trace()$0"
+        "body": "__import__('ipdb').set_trace()$0"
     },
     "rPDB set trace": {
         "prefix": "rpdb",
@@ -18,5 +18,9 @@
     "IPython set trace": {
         "prefix": "ipydb",
         "body": "from IPython import embed; embed()$0"
+    },
+    "Pretty print": {
+        "prefix": "pprint",
+        "body": "__import__('pprint').pprint(${1:expression}:)$0"
     }
 }
