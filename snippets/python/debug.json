@@ -21,6 +21,6 @@
     },
     "Pretty print": {
         "prefix": "pprint",
-        "body": "__import__('pprint').pprint(${1:expression}:)$0"
+        "body": "__import__('pprint').pprint(${1:expression})$0"
     }
 }
