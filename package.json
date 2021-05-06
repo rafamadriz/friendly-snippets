@@ -54,6 +54,10 @@
         "path": "./snippets/shell.json"
       },
       {
+        "language": "markdown",
+        "path": "./snippets/markdown.json"
+      },
+      {
         "language": ["plaintex", "tex"],
         "path": "./snippets/latex.json"
       },
