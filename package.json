@@ -50,6 +50,10 @@
         "path": "./snippets/swift.json"
       },
       {
+        "language": "sql",
+        "path": "./snippets/sql.json"
+      },
+      {
         "language": "shellscript",
         "path": "./snippets/shell.json"
       },
