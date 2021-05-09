@@ -31,6 +31,7 @@ You can commit all kinds of useful snippets that you may have for personal use, 
 - LaTex
 - Shell
 - Markdown
+- Sql
 
 ### Usage
 

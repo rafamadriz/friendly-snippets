@@ -4,6 +4,11 @@
     "body": ["public static void main(String[] args) {", "\t$0", "}"],
     "description": "Public static main method"
   },
+  "cl": {
+    "prefix": "cl",
+    "body": ["public class ${TM_FILENAME_BASE} {", "\t$0", "}"],
+    "description": "Public class"
+  },
   "sysout": {
     "prefix": "sysout",
     "body": ["System.out.println($0);"],
