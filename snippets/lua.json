@@ -17,7 +17,7 @@
     "description": "Require module"
   },
   "assigment": {
-    "prefix": "l=",
+    "prefix": "ll",
     "body": ["local ${1:varName} = ${0:value}"],
     "description": "create a variable"
   },
