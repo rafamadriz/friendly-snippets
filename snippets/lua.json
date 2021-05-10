@@ -16,6 +16,11 @@
     "body": ["require(\"${1:module}\")"],
     "description": "Require module"
   },
+  "return": {
+    "prefix": "rt",
+    "body": ["return $0"],
+    "description": "return value"
+  },
   "assigment": {
     "prefix": "ll",
     "body": ["local ${1:varName} = ${0:value}"],
