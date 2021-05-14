@@ -1,6 +1,6 @@
 # Friendly Snippets
 
-Snippets collection for a set of different programming languages for faster development. This repository has been forked from couple of VSCode Snippets extensions.
+Snippets collection for a set of different programming languages for faster development.
 
 ## Goal
 
@@ -35,9 +35,9 @@ You can commit all kinds of useful snippets that you may have for personal use, 
 
 ### Usage
 
-This collection of snippets works with [vim-vsnip](https://github.com/hrsh7th/vim-vsnip) **_(It may work with others snippet plugins but haven't tested)_**, which can load snippets with the same format and syntax that VSCode snippets extensions uses.
+This collection of snippets should work with any plugin that supports loading vscode snippets. Like for example [vim-vsnip](https://github.com/hrsh7th/vim-vsnip) and [LuaSnip](https://github.com/L3MON4D3/LuaSnip). For the moment being I recommend using vsnip since LuaSnip is still a bit of work in progress ([refer to this link](https://github.com/rafamadriz/friendly-snippets/issues/14))
 
-For setting up vim-vsnip refer to this [link](https://github.com/hrsh7th/vim-vsnip#usage).
+For setting up vim-vsnip refer to this [link](https://github.com/hrsh7th/vim-vsnip#usage). Alternatively for setting up with LuaSnip see [here](https://github.com/L3MON4D3/LuaSnip#setup) and [here](https://github.com/rafamadriz/friendly-snippets/issues/14)
 
 ### Install
 
