@@ -42,6 +42,10 @@
         "path": "./snippets/ruby.json"
       },
       {
+        "language": "ruby",
+        "path": "./snippets/rails.json"
+      },
+      {
         "language": "rust",
         "path": "./snippets/rust.json"
       },

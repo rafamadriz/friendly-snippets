@@ -1,0 +1,294 @@
+{
+  "Before action": {
+		"prefix": "ba",
+		"body": [
+      "before_action :${0:method}"
+		],
+		"description": "before_action"
+	},
+  "Before validation": {
+		"prefix": "bv",
+		"body": [
+      "before_validation :${0:method}"
+		],
+		"description": "before_validation"
+	},
+  "Before create": {
+		"prefix": "bc",
+		"body": [
+      "before_create :${0:method}"
+		],
+		"description": "before_create"
+	},
+  "Before update": {
+		"prefix": "bu",
+		"body": [
+      "before_update :${0:method}"
+		],
+		"description": "before_update"
+	},
+  "Before save": {
+		"prefix": "bs",
+		"body": [
+      "before_save :${0:method}"
+		],
+		"description": "before_save"
+	},
+  "Before destroy": {
+		"prefix": "bd",
+		"body": [
+      "before_destroy :${0:method}"
+		],
+		"description": "before_destroy"
+	},
+  "After create": {
+		"prefix": "ac",
+		"body": [
+			"after_create :${0:method}"
+		],
+		"description": "after_create"
+	},
+  "After validation": {
+		"prefix": "av",
+		"body": [
+      "after_validation :${0:method}"
+		],
+		"description": "after_validation"
+	},
+  " update": {
+		"prefix": "au",
+		"body": [
+      "after_update :${0:method}"
+		],
+		"description": "after_update"
+	},
+  " save": {
+		"prefix": "as",
+		"body": [
+      "after_save :${0:method}"
+		],
+		"description": "after_create"
+	},
+  " destroy": {
+		"prefix": "ad",
+		"body": [
+      "after_destroy :${0:method}"
+		],
+		"description": "after_destroy"
+	},
+	"Belongs to": {
+		"prefix": "bt",
+		"body": [
+			"belongs_to :${0:association}"
+		],
+		"description": "belongs_to assocation"
+	},
+	"Belongs to polymorphic": {
+		"prefix": "btp",
+		"body": [
+			"belongs_to :${0:association}, polymorphic: true"
+		],
+		"description": "belongs_to polymorphic assocation"
+	},
+	"Create action": {
+		"prefix": "create",
+		"body": [
+			"def create",
+			"\t@${1:model_class_name} = ${2:ModelClassName}.new($1_params)",
+			"\trespond_to do |format|",
+			"\t\tif @$1.save",
+			"\t\t\tformat.html { redirect_to @$1, notice: '$2 created' }",
+			"\t\telse",
+			"\t\t\tformat.html { render :new, status: :unprocessable_entity }",
+			"\t\tend",
+			"\tend",
+			"end"
+		],
+		"description": "def create"
+	},
+	"Destroy action": {
+		"prefix": "destroy",
+		"body": [
+			"def destroy",
+			"\t@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])",
+			"\t@$1.destroy!",
+			"\tredirect_to $1s_path, notice: '$2 removed'",
+			"end"
+		],
+		"description": "def destroy"
+	},
+	"Edit action": {
+		"prefix": "edit",
+		"body": [
+			"def edit",
+			"\t@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])",
+			"end"
+		],
+		"description": "def edit"
+	},
+	"Index action": {
+		"prefix": "index",
+		"body": [
+			"def index",
+			"\t@${1:model_class_name} = ${2:ModelClassName}.all",
+			"end"
+		],
+		"description": "def index"
+	},
+	"New action": {
+		"prefix": "new",
+		"body": [
+			"def new",
+			"\t@${1:model_class_name} = ${2:ModelClassName}.new",
+			"end"
+		],
+		"description": "def new"
+	},
+	"Show action": {
+		"prefix": "show",
+		"body": [
+			"def show",
+			"\t@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])",
+			"end"
+		],
+		"description": "def show"
+	},
+	"Update action": {
+		"prefix": "update",
+		"body": [
+			"def update",
+			"\t@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])",
+			"\trespond_to do |format|",
+			"\t\tif @$1.update($1_params)",
+			"\t\t\tformat.html { redirect_to @$1, notice: '$2 updated' }",
+			"\t\telse",
+			"\t\t\tformat.html { render :edit, status: :unprocessable_entity }",
+			"\t\tend",
+			"\tend",
+			"end"
+		],
+		"description": "def update"
+	},
+	"Model Params": {
+		"prefix": "params",
+		"body": [
+			"def ${1:model_class_name}_params",
+			"\tparams.require(:$1).permit(${2:attributes})",
+			"end"
+		],
+		"description": "def model_params"
+	},
+	"Getting Params": {
+		"prefix": "pa",
+		"body": [
+			"params[:${1:id}]"
+		],
+		"description": "getting params using attribute"
+	},
+	"Delegate to": {
+		"prefix": "dt",
+		"body": [
+			"delegate: :${1:method}, to: :${0:object}"
+		],
+		"description": "delegate to"
+	},
+	"Delegate to with prefix": {
+		"prefix": "dtp",
+		"body": [
+			"delegate: :${1:method}, to: :${2:object}, prefix: :${3:prefix}, allow_nil: ${0:allow_nil}"
+		],
+		"description": "delegate to"
+	},
+	"Scope": {
+		"prefix": "scope",
+		"body": [
+			"scope :${1:name}, -> { where(${2:field}: ${0:value}) }"
+		],
+		"description": "AR scope"
+	},
+	"Validate presence": {
+		"prefix": "vp",
+		"body": [
+			"validates :${1:attribute}, presence: true"
+		],
+		"description": "validates presence"
+	},
+	"Validate uniqueness": {
+		"prefix": "vu",
+		"body": [
+			"validates :${1:attribute}, uniqueness: true"
+		],
+		"description": "validates presence"
+	},
+	"Migration add column": {
+		"prefix": "mac",
+		"body": [
+			"add_column :${1:table_name}, :${2:column_name}, :${0:data_type}"
+		],
+		"description": "Migration add column"
+	},
+	"Migration add index": {
+		"prefix": "mai",
+		"body": [
+			"add_index :${1:table_name}, :${0:column_name}"
+		],
+		"description": "Migration add index"
+	},
+	"Migration remove column": {
+		"prefix": "mrc",
+		"body": [
+			"remove_column :${1:table_name}, :${0:column_name}"
+		],
+		"description": "Migration remove column"
+	},
+	"Migration rename column": {
+		"prefix": "mrnc",
+		"body": [
+			"rename_column :${1:table_name}, :${2:old_column_name}, :${0:new_column_name}"
+		],
+		"description": "Migration rename column"
+	},
+	"Migration change column": {
+		"prefix": "mcc",
+		"body": [
+			"change_column :${1:table_name}, :${2:old_column_name}, :${0:data_type}"
+		],
+		"description": "Migration  change column"
+	},
+	"Has many dependent": {
+		"prefix": "hmd",
+		"body": [
+			"has_many :${1:object}, dependent: :${0:destroy}"
+		],
+		"description": "has_many dependent"
+	},
+	"Has many": {
+		"prefix": "hm",
+		"body": [
+			"has_many :${0:object}"
+		],
+		"description": "has_many association"
+	},
+	"Has many through": {
+		"prefix": "hmt",
+		"body": [
+			"has_many :${1:object}, through: :${0:object}"
+		],
+		"description": "has_many through association"
+	},
+	"Has one": {
+		"prefix": "ho",
+		"body": [
+			"has_one :${0:object}"
+		],
+		"description": "has_one association"
+	},
+	"Has one dependent": {
+		"prefix": "hod",
+		"body": [
+			"has_one :${1:object}, dependent: :${0:destroy}"
+		],
+		"description": "has_one dependent"
+	}
+}
+
