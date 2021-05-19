@@ -69,7 +69,7 @@ Plug 'hrsh7th/vim-vsnip'
 
 ![CSS gif](./media/css.gif)
 
-#### Pyhton
+#### Python
 
 ![Python gif](./media/python.gif)
 
