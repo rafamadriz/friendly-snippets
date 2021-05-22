@@ -1,16 +1,4 @@
 {
-  "map": {
-    "prefix": "map",
-    "body": [
-      "u.map(\"${1|n,i,v,x,s,o,c,l,!|}\", \"${2:key}\", \"${3:action}\")"
-    ],
-    "description": "Create keybindings in neovim config"
-  },
-  "opt": {
-    "prefix": "opt",
-    "body": ["u.opt(\"${1|o,b,w|}\", \"${2:option}\", \"${3:options}\")"],
-    "description": "Adding options to neovim config"
-  },
   "require": {
     "prefix": "req",
     "body": ["require(\"${1:module}\")"],
