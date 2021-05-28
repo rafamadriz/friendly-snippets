@@ -54,6 +54,10 @@
         "path": "./snippets/rust.json"
       },
       {
+        "language": "haskell",
+        "path": "./snippets/haskell.json"
+      },
+      {
         "language": "swift",
         "path": "./snippets/swift.json"
       },
