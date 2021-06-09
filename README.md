@@ -4,17 +4,21 @@ Snippets collection for a set of different programming languages for faster deve
 
 ## Goal
 
-The only goal is to have one community driven repository for all kinds of snippets in all programming languages, this way you can have it all in one place.
+The only goal is to have one community driven repository for all kinds of
+snippets in all programming languages, this way you can have it all in one
+place.
 
 ## Contributing
 
-You can commit all kinds of useful snippets that you may have for personal use, but first make sure that the snippets don't already exist, so we don't have duplicates and it doesn't become a pain to maintain.
+You can commit all kinds of useful snippets that you may have for personal use,
+but first make sure that the snippets don't already exist, so we don't have
+duplicates.
 
 ### Snippets for:
 
 - HTML, Pug, Jade
 - CSS, Sass, Less, Stylus
-- Javascript, Typescript, Javascriptreact, Typescriptreact
+- JavaScript, Typescript, Javascriptreact, Typescriptreact
 - Vue
 - PHP
 - Python
@@ -36,27 +40,27 @@ You can commit all kinds of useful snippets that you may have for personal use, 
 
 ### Usage
 
-This collection of snippets should work with any plugin that supports loading vscode snippets. Like for example [vim-vsnip](https://github.com/hrsh7th/vim-vsnip) and [LuaSnip](https://github.com/L3MON4D3/LuaSnip). For the moment being I recommend using vsnip since LuaSnip is still a bit of work in progress ([refer to this link](https://github.com/rafamadriz/friendly-snippets/issues/14))
+This collection of snippets should work with any plugin that supports loading
+vscode snippets. Like for example:
 
-For setting up vim-vsnip refer to this [link](https://github.com/hrsh7th/vim-vsnip#usage). Alternatively for setting up with LuaSnip see [here](https://github.com/L3MON4D3/LuaSnip#setup) and [here](https://github.com/rafamadriz/friendly-snippets/issues/14)
+- [vim-vsnip](https://github.com/hrsh7th/vim-vsnip)
+- [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+- [coc-snippets](https://github.com/neoclide/coc-snippets)
 
 ### Install
 
-Packer
+Use your plugin manager of choice, e.g.
 
 ```lua
+-- Packer
 use "rafamadriz/friendly-snippets"
-use "hrsh7th/vim-vsnip"
-```
 
-Plug
-
-```viml
+-- Plug
 Plug 'rafamadriz/friendly-snippets'
-Plug 'hrsh7th/vim-vsnip'
-```
 
-### Just a few examples of snippets in action
+-- If you're using coc.nvim, you can use:
+CocInstall https://github.com/rafamadriz/friendly-snippets@main
+```
 
 #### HTML
 
@@ -66,23 +70,14 @@ Plug 'hrsh7th/vim-vsnip'
 
 ![JS gif](./media/js.gif)
 
-#### CSS
-
-![CSS gif](./media/css.gif)
-
-#### Python
-
-![Python gif](./media/python.gif)
-
-#### C
-
-![C gif](./media/c.gif)
+##### NOTE: Using [nvim-compe](https://github.com/hrsh7th/nvim-compe) with [vim-vsnip](https://github.com/hrsh7th/vim-vsnip) on the videos.
 
 ## For for more details go to the [Wiki](https://github.com/rafamadriz/friendly-snippets/wiki)
 
 ## TODO
 
-- Complete the list for all snippets included in the [Wiki](https://github.com/rafamadriz/friendly-snippets/wiki), so it's easier for contributors to see which snippets are already included.
+- Add all included snippets to the
+  [Wiki](https://github.com/rafamadriz/friendly-snippets/wiki).
 
 ## Credits
 

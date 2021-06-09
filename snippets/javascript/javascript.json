@@ -569,7 +569,7 @@
   },
   "return this": {
     "prefix": "rt",
-    "body": "return this"
+    "body": "return ${0:this}"
   },
   "return null": {
     "prefix": "rn",
