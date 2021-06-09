@@ -26,6 +26,7 @@ duplicates.
 - C++
 - Rust
 - Go
+- Haskell
 - Eruby
 - Ruby
 - Swift
