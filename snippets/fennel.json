@@ -29,6 +29,11 @@
     "body": "global )",
     "description": "Create a global"
   },
+  "require": {
+    "prefix": "require",
+    "body": "require :module)",
+    "description": "Require a module"
+  },
   "set": {
     "prefix": "set",
     "body": "set tb value)",
