@@ -38,6 +38,10 @@
         "path": "./snippets/go.json"
       },
       {
+          "language": "fennel",
+          "path": "./snippets/fennel.json"
+      },
+      {
         "language": "php",
         "path": "./snippets/php.json"
       },
