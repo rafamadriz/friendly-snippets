@@ -1,0 +1,37 @@
+{
+  "fn": {
+    "prefix": "fn",
+    "body": "fn name [])",
+    "description": "Create a function"
+  },
+  "let": {
+    "prefix": "let",
+    "body": "let [])",
+    "description": "Create a variable"
+  },
+  "while": {
+    "prefix": "while",
+    "body": "while (condition)\n())",
+    "description": "Create a while loop"
+  },
+  "var": {
+    "prefix": "var",
+    "body": "var name value)",
+    "description": "Create a variable"
+  },
+  "for": {
+    "prefix": "for",
+    "body": "for [i 1 10]\n())",
+    "description": "Create a while loop"
+  },
+  "global": {
+    "prefix": "global",
+    "body": "global )",
+    "description": "Create a global"
+  },
+  "set": {
+    "prefix": "set",
+    "body": "set tb value)",
+    "description": "Set a value in a table"
+  }
+}
