@@ -88,12 +88,12 @@
   },
   "import": {
     "prefix": ["import simple"],
-    "body": ["import ${1:Module} ${2:(${3:f})}$0"],
+    "body": ["import ${1:module} ${2:(${3:f})}$0"],
     "description": "Simple import"
   },
   "import_qualified": {
     "prefix": ["import qual"],
-    "body": ["import qualified ${1:Module} as ${2:name}"],
+    "body": ["import qualified ${1:module} as ${2:name}"],
     "description": "Qualified import"
   },
   "instance": {
@@ -134,13 +134,13 @@
   },
   "module": {
     "prefix": ["mods", "mod simple"],
-    "body": ["Module ${1:mod} where$0"],
+    "body": ["module ${1:mod} where$0"],
     "description": "simple module"
   },
   "module exports": {
     "prefix": ["modu", "mod exports"],
     "body": [
-      "Module ${1:mod} (",
+      "module ${1:mod} (",
       "\t\t${2:export}",
       "\t${3:, ${4:export}}",
       ") where$0"
