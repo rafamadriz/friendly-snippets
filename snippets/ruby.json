@@ -174,6 +174,38 @@
 			"end"
 		]
 	},
+  "class method definition": {
+    "prefix": "defs",
+    "body": [
+      "def self.${1:method_name}",
+      "\t$0",
+      "end"
+    ]
+  },
+  "initialize method definition": {
+    "prefix": "definit",
+    "body": [
+      "def initialize(${1:args})",
+      "\t$0",
+      "end"
+    ]
+  },
+  "method_missing definition": {
+    "prefix": "defmm",
+    "body": [
+      "def method_missing(meth, *args, &blk)",
+      "\t$0",
+      "end"
+    ]
+  },
+  "delegator definition": {
+    "prefix": "defd",
+    "body": "def_delegator :${1:@del_obj}, :${2:del_meth}, :${0:new_name}"
+  },
+  "alias method definition": {
+    "prefix": "am",
+    "body": "alias_method :${1:new_name}, :${0:old_name}"
+  },
 	"Rake Task": {
 		"prefix": "rake",
 		"description": "Create a Rake Task",
@@ -208,5 +240,209 @@
 			"{P"
 		],
 		"body": "{ ${1:|${2:variable}| }$0 "
-	}
+	},
+  "Insert encoding comment": {
+    "prefix": "enc",
+    "body": "# encoding: utf-8$0"
+  },
+  "Insert frozen literal string": {
+    "prefix": "frozen",
+    "body": "# frozen_string_literal:true$0"
+  },
+  "Insert require": {
+    "prefix": "req",
+    "body": "require '${1}'$0"
+  },
+  "Insert require_relative": {
+    "prefix": "reqr",
+    "body": "require_relative '${1}'$0"
+  },
+  "Insert attr_reader": {
+    "prefix": "r",
+    "body": "attr_reader :${0:attr_names}"
+  },
+  "Insert attr_writer": {
+    "prefix": "w",
+    "body": "attr_writer :${0:attr_names}"
+  },
+  "Insert attr_accessor": {
+    "prefix": "rw",
+    "body": "attr_accessor :${0:attr_names}"
+  },
+  "Insert inctance variable cache": {
+    "prefix": "ivc",
+    "body": "@${1:variable_name} ||= ${0:cached_value}"
+  },
+  "Insert each with inline block": {
+    "prefix": "ea",
+    "body": "each { |${1:e}| $0 }"
+  },
+  "Insert each with multiline block": {
+    "prefix": "ead",
+    "body": [
+      "each do |${1:e}|",
+      "\t$0",
+      "end"
+    ]
+  },
+  "Insert each with index inline block": {
+    "prefix": "eawi",
+    "body": "each_with_index { |${1:e}, ${2:i}| $0 }"
+  },
+  "Insert each with index multiline block": {
+    "prefix": "eawid",
+    "body": [
+      "each_with_index do |${1:e}, ${2:i}|",
+      "\t$0",
+      "end"
+    ]
+  },
+  "Insert reduce inline block": {
+    "prefix": "red",
+    "body": "reduce(${1:init}) { |${2:mem}, ${3:var}| $0 }"
+  },
+  "Insert reduce multiline block": {
+    "prefix": "redd",
+    "body": [
+      "reduce(${1:init}) do |${2:mem}, ${3:var}|",
+      "\t$0",
+      "end"
+    ]
+  },
+  "Insert map inline block": {
+    "prefix": "map",
+    "body": "map { |${1:e}| $0 }"
+  },
+  "Insert map multiline block": {
+    "prefix": "mapd",
+    "body": [
+      "map do |${1:e}|",
+      "\t$0",
+      "end"
+    ]
+  },
+  "Insert lambda arrow": {
+    "prefix": "->",
+    "body": "-> { $0 }"
+  },
+  "Insert lambda arrow with arguments": {
+    "prefix": "->a",
+    "body": "->(${1:args}) { $0 }"
+  },
+  "Insert do block": {
+    "prefix": "do",
+    "body": [
+      "do",
+      "\t$0",
+      "end"
+    ]
+  },
+  "Insert do block with variables": {
+    "prefix": "dov",
+    "body": [
+      "do |${1:v}|",
+      "\t$0",
+      "end"
+    ]
+  },
+  "Insert key: value": {
+    "prefix": ":",
+    "body": "${1:key}: ${2:value}"
+  },
+  "Insert inline block": {
+    "prefix": "b",
+    "body": "{ |${1:var}| $0 }"
+  },
+  "Insert byebug call": {
+    "prefix": "debug",
+    "body": "require 'byebug'; byebug"
+  },
+  "Insert pry call": {
+    "prefix": "pry",
+    "body": "require 'pry'; binding.pry"
+  },
+  "Insert RSpec.describe class": {
+    "prefix": "rdesc",
+    "body": [
+      "RSpec.describe ${1:described_class} do",
+      "\t$0",
+      "end"
+    ]
+  },
+  "Insert describe class": {
+    "prefix": "desc",
+    "body": [
+      "describe ${1:described_class} do",
+      "\t$0",
+      "end"
+    ]
+  },
+  "Insert describe block": {
+    "prefix": "descm",
+    "body": [
+      "describe '${1:#method}' do",
+      "\t${0:pending 'Not implemented'}",
+      "end"
+    ]
+  },
+  "Insert context block": {
+    "prefix": "cont",
+    "body": [
+      "context '${1:message}' do",
+      "\t$0",
+      "end"
+    ]
+  },
+  "Insert before block": {
+    "prefix": "bef",
+    "body": [
+      "before :${1:each} do",
+      "\t$0",
+      "end"
+    ]
+  },
+  "Insert let": {
+    "prefix": "let",
+    "body": "let(:${1:object}) { $0 }"
+  },
+  "Insert let!": {
+    "prefix": "let!",
+    "body": "let!(:${1:object}) { $0 }"
+  },
+  "Insert subject definition": {
+    "prefix": "subj",
+    "body": "subject(:${1:name}) { $0 }"
+  },
+  "Insert expect": {
+    "prefix": "exp",
+    "body": "expect(${1:object}).to ${0}"
+  },
+  "Insert expect with block": {
+    "prefix": "expb",
+    "body": "expect { ${1:object} }.to ${0}"
+  },
+  "Insert expect with raise_error": {
+    "prefix": "experr",
+    "body": "expect { ${1:object} }.to raise_error ${2:StandardError}"
+  },
+  "Insert allow": {
+    "prefix": "allow",
+    "body": "allow(${1:object}).to $0"
+  },
+  "Insert shared_examples": {
+    "prefix": "shared",
+    "body": "shared_examples '${0:shared examples name}'"
+  },
+  "Insert it_behaves_like": {
+    "prefix": "ibl",
+    "body": "it_behaves_like '${0:shared examples name}'"
+  },
+  "Insert it block": {
+    "prefix": "it",
+    "body": [
+      "it '${1:spec_name}' do",
+      "\t$0",
+      "end"
+    ]
+  }
 }
