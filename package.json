@@ -26,6 +26,10 @@
         "path": "./snippets/erb.json"
       },
       {
+      "language": "elixir",
+      "path": "./snippets/elixir.json"
+      },
+      {
         "language": "fortran",
         "path": "./snippets/fortran.json"
       },
