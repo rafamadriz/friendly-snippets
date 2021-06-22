@@ -17,7 +17,12 @@
   "var": {
     "prefix": "var",
     "body": "var name value)",
-    "description": "Create a variable"
+    "description": "Create a variable with var"
+  },
+  "local": {
+    "prefix": "local",
+    "body": "local name value)",
+    "description": "Create a variable with local"
   },
   "for": {
     "prefix": "for",
@@ -28,6 +33,11 @@
     "prefix": "global",
     "body": "global )",
     "description": "Create a global"
+  },
+  "require": {
+    "prefix": "require",
+    "body": "require :module)",
+    "description": "Require a module"
   },
   "set": {
     "prefix": "set",
