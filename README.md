@@ -39,6 +39,7 @@ duplicates.
 - Sql
 - Rails
 - Elixir
+- Fennel
 
 ### Usage
 
