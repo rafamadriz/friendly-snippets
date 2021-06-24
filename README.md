@@ -38,6 +38,7 @@ duplicates.
 - Markdown
 - Sql
 - Rails
+- Elixir
 - Fennel
 
 ### Usage
