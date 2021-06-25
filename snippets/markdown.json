@@ -2,32 +2,32 @@
   "header 1": {
     "prefix": "h1",
     "body": ["# ${0}"],
-    "description": "Add header leavel 1"
+    "description": "Add header level 1"
   },
   "header 2": {
     "prefix": "h2",
     "body": ["## ${0}"],
-    "description": "Add header leavel 2"
+    "description": "Add header level 2"
   },
   "header 3": {
     "prefix": "h3",
     "body": ["### ${0}"],
-    "description": "Add header leavel 3"
+    "description": "Add header level 3"
   },
   "header 4": {
     "prefix": "h4",
     "body": ["#### ${0}"],
-    "description": "Add header leavel 4"
+    "description": "Add header level 4"
   },
   "header 5": {
     "prefix": "h5",
     "body": ["##### ${0}"],
-    "description": "Add header leavel 5"
+    "description": "Add header level 5"
   },
   "header 6": {
     "prefix": "h6",
     "body": ["###### ${0}"],
-    "description": "Add header leavel 6"
+    "description": "Add header level 6"
   },
   "Links": {
     "prefix": ["l", "link"],
