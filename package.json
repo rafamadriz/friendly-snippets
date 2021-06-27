@@ -26,8 +26,8 @@
         "path": "./snippets/erb.json"
       },
       {
-      "language": "elixir",
-      "path": "./snippets/elixir.json"
+        "language": "elixir",
+        "path": "./snippets/elixir.json"
       },
       {
         "language": "fortran",
@@ -42,8 +42,8 @@
         "path": "./snippets/go.json"
       },
       {
-          "language": "fennel",
-          "path": "./snippets/fennel.json"
+        "language": "fennel",
+        "path": "./snippets/fennel.json"
       },
       {
         "language": "php",
@@ -74,7 +74,7 @@
         "path": "./snippets/sql.json"
       },
       {
-        "language": "shellscript",
+        "language": ["shellscript", "shell", "sh"],
         "path": "./snippets/shell.json"
       },
       {
