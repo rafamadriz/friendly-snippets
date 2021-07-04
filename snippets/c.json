@@ -89,13 +89,23 @@
     "body": ["#define $1 $2 "],
     "description": "Code snippet for #define \" \""
   },
+  "Main function template": {
+    "prefix": "sst",
+    "body": [
+      "int main (int argc, char *argv[])",
+      "{",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "A standard main function for a C program"
+  },
   "Standard Starter Template": {
     "prefix": "sst",
     "body": [
       "#include <stdio.h>",
       "",
       "int main (int argc, char *argv[]) {",
-      "   return 0;",
+      "\treturn 0;",
       "}"
     ],
     "description": "A standard starter template for a C program"
@@ -107,7 +117,7 @@
       "#include <stdlib.h>",
       "",
       "int main (int argc, char *argv[]) {",
-      "   return EXIT_SUCCESS;",
+      "\treturn EXIT_SUCCESS;",
       "}"
     ],
     "description": "A standard starter template for a C program with stdlib included"
@@ -123,35 +133,35 @@
       "typedef struct _node * Link;",
       "typedef struct _node node;",
       "struct _node {",
-      "    int value;",
-      "    Link next;",
+      "\tint value;",
+      "\tLink next;",
       "};"
     ],
     "description": "Creates a linked list template"
   },
   "Create int function": {
     "prefix": "intfunc",
-    "body": ["int $1 () {", "   int $0;", "   return $0;", "}"],
+    "body": ["int $1 () {", "\tint $0;", "\treturn $0;", "}"],
     "description": "Creates a function that returns the int type"
   },
   "Create float function": {
     "prefix": "flfunc",
-    "body": ["float $2 () {", "   float $0;", "   return $0;", "}"],
+    "body": ["float $2 () {", "\tfloat $0;", "\treturn $0;", "}"],
     "description": "Creates a function that returns the float type"
   },
   "Create double function": {
     "prefix": "doubfunc",
-    "body": ["double $2 () {", "   double $0;", "   return $0;", "}"],
+    "body": ["double $2 () {", "\tdouble $0;", "\treturn $0;", "}"],
     "description": "Creates a function that returns the double type"
   },
   "Create string function": {
     "prefix": "strfunc",
-    "body": ["char[] $1 () {", "   char[] $0 = {};", "   return $0;", "}"],
+    "body": ["char[] $1 () {", "\tchar[] $0 = {};", "\treturn $0;", "}"],
     "description": "Creates a function that returns the char array type"
   },
   "Create long function": {
     "prefix": "longfunc",
-    "body": ["long $1 () {", "   long $0;", "   return $0;", "}"],
+    "body": ["long $1 () {", "\tlong $0;", "\treturn $0;", "}"],
     "description": "Creates a function that returns the long type"
   },
   "Print variable of type float (2 decimal places)": {
@@ -182,12 +192,12 @@
   "Allocate memory using calloc": {
     "prefix": "cal",
     "body": [
-      "$1*ptr = ($1*)calloc($2, sizeof($1));",
+      "$1*ptr = calloc($2, sizeof($1));",
       "",
       "if (ptr == NULL)",
       "{",
-      "  printf(\"Memory allocation failed!\\n\");",
-      "  exit(0);",
+      "\tprintf(\"Memory allocation failed!\\n\");",
+      "\texit(1);",
       "}",
       "",
       "free(ptr);"
