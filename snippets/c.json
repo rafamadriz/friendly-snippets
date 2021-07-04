@@ -90,7 +90,7 @@
     "description": "Code snippet for #define \" \""
   },
   "Main function template": {
-    "prefix": "sst",
+    "prefix": "main",
     "body": [
       "int main (int argc, char *argv[])",
       "{",
