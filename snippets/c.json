@@ -94,6 +94,7 @@
     "body": [
       "int main (int argc, char *argv[])",
       "{",
+      "\t$1",
       "\treturn 0;",
       "}"
     ],
@@ -104,7 +105,9 @@
     "body": [
       "#include <stdio.h>",
       "",
-      "int main (int argc, char *argv[]) {",
+      "int main (int argc, char *argv[])",
+      "{",
+      "\t$1",
       "\treturn 0;",
       "}"
     ],
@@ -116,8 +119,10 @@
       "#include <stdio.h>",
       "#include <stdlib.h>",
       "",
-      "int main (int argc, char *argv[]) {",
-      "\treturn EXIT_SUCCESS;",
+      "int main (int argc, char *argv[])",
+      "{",
+      "\t$1",
+      "\treturn 0;",
       "}"
     ],
     "description": "A standard starter template for a C program with stdlib included"
@@ -141,27 +146,27 @@
   },
   "Create int function": {
     "prefix": "intfunc",
-    "body": ["int $1 () {", "\tint $0;", "\treturn $0;", "}"],
+    "body": ["int $1 ()", "{", "\tint $0;", "\treturn $0;", "}"],
     "description": "Creates a function that returns the int type"
   },
   "Create float function": {
     "prefix": "flfunc",
-    "body": ["float $2 () {", "\tfloat $0;", "\treturn $0;", "}"],
+    "body": ["float $2 ()", "{", "\tfloat $0;", "\treturn $0;", "}"],
     "description": "Creates a function that returns the float type"
   },
   "Create double function": {
     "prefix": "doubfunc",
-    "body": ["double $2 () {", "\tdouble $0;", "\treturn $0;", "}"],
+    "body": ["double $2 ()", "{", "\tdouble $0;", "\treturn $0;", "}"],
     "description": "Creates a function that returns the double type"
   },
   "Create string function": {
     "prefix": "strfunc",
-    "body": ["char[] $1 () {", "\tchar[] $0 = {};", "\treturn $0;", "}"],
+    "body": ["char[] $1 ()", "{", "\tchar[] $0 = {};", "\treturn $0;", "}"],
     "description": "Creates a function that returns the char array type"
   },
   "Create long function": {
     "prefix": "longfunc",
-    "body": ["long $1 () {", "\tlong $0;", "\treturn $0;", "}"],
+    "body": ["long $1 ()", "{", "\tlong $0;", "\treturn $0;", "}"],
     "description": "Creates a function that returns the long type"
   },
   "Print variable of type float (2 decimal places)": {
