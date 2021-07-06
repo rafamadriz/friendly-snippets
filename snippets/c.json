@@ -66,8 +66,13 @@
   },
   "switch": {
     "prefix": "switch",
-    "body": ["switch (${switch_on})", "{", "default:", "\tbreak;$1", "}"],
+    "body": ["switch (${switch_on}) {", "default:", "\tbreak;$1", "}"],
     "description": "Code snippet for switch statement"
+  },
+  "case": {
+    "prefix": "case",
+    "body": ["case $1:", "\t$2", "\tbreak;"],
+    "description": "Code snippet for case branch"
   },
   "union": {
     "prefix": "union",
