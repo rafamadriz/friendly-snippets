@@ -79,17 +79,17 @@
   },
   "#inc": {
     "prefix": "#inc",
-    "body": ["#include \"$1\"", "$2"],
+    "body": ["#include \"$1\"$2"],
     "description": "Code snippet for #include \" \""
   },
   "#inc<": {
     "prefix": "#inc<",
-    "body": ["#include <$1>", "$2"],
+    "body": ["#include <$1>$2"],
     "description": "Code snippet for #include \" \""
   },
   "#def": {
     "prefix": "def",
-    "body": ["#define $1 $2", "$3"],
+    "body": ["#define $1 $2"],
     "description": "Code snippet for #define \" \""
   },
   "Main function template": {
