@@ -2,8 +2,7 @@
   "for": {
     "prefix": "for",
     "body": [
-      "for (${size_t} ${i} = ${1:0}; ${i} < ${2:length}; ${i}++)",
-      "{",
+      "for (${size_t} ${i} = ${1:0}; ${i} < ${2:length}; ${i}++) {",
       "\t$3",
       "}"
     ],
@@ -12,8 +11,7 @@
   "forr": {
     "prefix": "forr",
     "body": [
-      "for (int ${i} = ${1:length} - 1; ${i} >= ${2:0}; ${i}--)",
-      "{",
+      "for (int ${i} = ${1:length} - 1; ${i} >= ${2:0}; ${i}--) {",
       "\t$3",
       "}"
     ],
@@ -21,7 +19,7 @@
   },
   "while": {
     "prefix": "while",
-    "body": ["while ($1)", "{", "\t$2", "}"],
+    "body": ["while ($1) {", "\t$2", "}"],
     "description": ""
   },
   "if": {
@@ -31,17 +29,17 @@
   },
   "else": {
     "prefix": "else",
-    "body": ["else", "{", "\t$1", "}"],
+    "body": ["else {", "\t$1", "}"],
     "description": "Code snippet for else statement"
   },
   "else if": {
     "prefix": "else if",
-    "body": ["else if ($1)", "{", "\t$2", "}"],
+    "body": ["else if ($1) {", "\t$2", "}"],
     "description": "Code snippet for else-if statement"
   },
   "enum": {
     "prefix": "enum",
-    "body": ["enum ${MyEnum}", "{", "\t$1", "};"],
+    "body": ["enum ${MyEnum} {", "\t$1", "};"],
     "description": "Code snippet for enum"
   },
   "#ifdef": {
@@ -61,41 +59,59 @@
   },
   "struct": {
     "prefix": "struct",
-    "body": ["struct ${MyStruct}", "{", "\t$1", "};"],
+    "body": ["struct ${MyStruct} {", "\t$1", "};"],
     "description": "Code snippet for struct"
   },
   "switch": {
     "prefix": "switch",
-    "body": ["switch (${switch_on})", "{", "default:", "\tbreak;$1", "}"],
+    "body": ["switch (${switch_on}) {", "default:", "\tbreak;$1", "}"],
     "description": "Code snippet for switch statement"
+  },
+  "case": {
+    "prefix": "case",
+    "body": ["case $1:", "\t$2", "\tbreak;$3"],
+    "description": "Code snippet for case branch"
   },
   "union": {
     "prefix": "union",
-    "body": ["union ${MyUnion}", "{", "\t$1", "};"],
+    "body": ["union ${MyUnion} {", "\t$1", "};$2"],
     "description": "Code snippet for union"
   },
   "#inc": {
     "prefix": "#inc",
-    "body": ["#include \"$1\""],
+    "body": ["#include \"$1\"$2"],
     "description": "Code snippet for #include \" \""
   },
   "#inc<": {
     "prefix": "#inc<",
-    "body": ["#include <$1>"],
+    "body": ["#include <$1>$2"],
     "description": "Code snippet for #include \" \""
   },
   "#def": {
     "prefix": "def",
-    "body": ["#define $1 $2 "],
+    "body": ["#define $1 $2"],
     "description": "Code snippet for #define \" \""
+  },
+  "Main function template": {
+    "prefix": "main",
+    "body": [
+      "int main (int argc, char *argv[])",
+      "{",
+      "\t$1",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "A standard main function for a C program"
   },
   "Standard Starter Template": {
     "prefix": "sst",
     "body": [
       "#include <stdio.h>",
       "",
-      "int main (int argc, char *argv[]) {",
-      "   return 0;",
+      "int main (int argc, char *argv[])",
+      "{",
+      "\t$1",
+      "\treturn 0;",
       "}"
     ],
     "description": "A standard starter template for a C program"
@@ -106,15 +122,17 @@
       "#include <stdio.h>",
       "#include <stdlib.h>",
       "",
-      "int main (int argc, char *argv[]) {",
-      "   return EXIT_SUCCESS;",
+      "int main (int argc, char *argv[])",
+      "{",
+      "\t$1",
+      "\treturn 0;",
       "}"
     ],
     "description": "A standard starter template for a C program with stdlib included"
   },
   "Do...while loop": {
     "prefix": "dowhile",
-    "body": ["do {", "$0", "} while($0)"],
+    "body": ["do {", "\t$1", "} while($2);"],
     "description": "Creates a do...while loop"
   },
   "Create linked list": {
@@ -123,35 +141,35 @@
       "typedef struct _node * Link;",
       "typedef struct _node node;",
       "struct _node {",
-      "    int value;",
-      "    Link next;",
+      "\tint value;",
+      "\tLink next;",
       "};"
     ],
     "description": "Creates a linked list template"
   },
   "Create int function": {
     "prefix": "intfunc",
-    "body": ["int $1 () {", "   int $0;", "   return $0;", "}"],
+    "body": ["int $1 ()", "{", "\tint $2 = $3;$4", "\treturn $2;", "}"],
     "description": "Creates a function that returns the int type"
   },
   "Create float function": {
     "prefix": "flfunc",
-    "body": ["float $2 () {", "   float $0;", "   return $0;", "}"],
+    "body": ["float $1 ()", "{", "\tfloat $2 = $3;$4", "\treturn $2;", "}"],
     "description": "Creates a function that returns the float type"
   },
   "Create double function": {
     "prefix": "doubfunc",
-    "body": ["double $2 () {", "   double $0;", "   return $0;", "}"],
+    "body": ["double $1 ()", "{", "\tdouble $2 = $3;$4", "\treturn $2;", "}"],
     "description": "Creates a function that returns the double type"
   },
   "Create string function": {
     "prefix": "strfunc",
-    "body": ["char[] $1 () {", "   char[] $0 = {};", "   return $0;", "}"],
+    "body": ["char[] $1 ()", "{", "\tchar[] $2 = {$3};$4", "\treturn $2;", "}"],
     "description": "Creates a function that returns the char array type"
   },
   "Create long function": {
     "prefix": "longfunc",
-    "body": ["long $1 () {", "   long $0;", "   return $0;", "}"],
+    "body": ["long $1 ()", "{", "\tlong $2 = $3;$4", "\treturn $3;", "}"],
     "description": "Creates a function that returns the long type"
   },
   "Print variable of type float (2 decimal places)": {
@@ -182,15 +200,14 @@
   "Allocate memory using calloc": {
     "prefix": "cal",
     "body": [
-      "$1*ptr = ($1*)calloc($2, sizeof($1));",
+      "$1 *$2 = calloc($3, sizeof($1));",
       "",
-      "if (ptr == NULL)",
-      "{",
-      "  printf(\"Memory allocation failed!\\n\");",
-      "  exit(0);",
+      "if (!$2) {",
+      "\tprintf(\"Memory allocation failed!\\n\");",
+      "\t$4;",
       "}",
-      "",
-      "free(ptr);"
+      "$5",
+      "free($2);"
     ],
     "description": "Allocates memory to a pointer variable using calloc(), then deallocates using free()."
   }
