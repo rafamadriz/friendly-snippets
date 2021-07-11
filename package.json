@@ -30,10 +30,6 @@
         "path": "./snippets/elixir.json"
       },
       {
-        "language": "fortran",
-        "path": "./snippets/fortran.json"
-      },
-      {
         "language": "lua",
         "path": "./snippets/lua.json"
       },
@@ -80,10 +76,6 @@
       {
         "language": "markdown",
         "path": "./snippets/markdown.json"
-      },
-      {
-        "language": ["plaintex", "tex"],
-        "path": "./snippets/latex.json"
       },
       {
         "language": "java",
@@ -161,6 +153,50 @@
       {
         "language": "python",
         "path": "./snippets/python/tkinter.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./snippets/jekyll/vscode-jekyll-snippets.json"
+      },
+      {
+        "language": "cobol",
+        "path": "./snippets/cobol/vscode_cobol.json"
+      },
+      {
+        "language": "cobol",
+        "path": "./snippets/cobol/vscode_cobol-compound.json"
+      },
+      {
+        "language": "cobol",
+        "path": "./snippets/cobol/vscode_cobol_dir.json"
+      },
+      {
+        "language": "cobol",
+        "path": "./snippets/cobol/vscode_cobol_jcl.json"
+      },
+      {
+        "language": "fortran",
+        "path": "./snippets/fortran/fortran.json"
+      },
+      {
+        "language": "fortran",
+        "path": "./snippets/fortran/vscode-fortran-support.json"
+      },
+      {
+        "language": ["plaintex", "tex"],
+        "path": "./snippets/latex/latex.json"
+      },
+      {
+        "language": ["plaintex", "tex"],
+        "path": "./snippets/latex/latex-snippets.json"
+      },
+      {
+        "language": ["plaintex", "tex"],
+        "path": "./snippets/latex/vscode-latex-snippets.json"
+      },
+      {
+        "language": ["plaintex", "tex"],
+        "path": "./snippets/latex/vscode-latex-support.json"
       }
     ]
   }
