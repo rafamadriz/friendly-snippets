@@ -40,6 +40,8 @@ duplicates.
 - Rails
 - Elixir
 - Fennel
+- Cobol
+- Jekyll(Markdown)
 
 ### Usage
 
