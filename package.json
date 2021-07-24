@@ -161,6 +161,10 @@
       {
         "language": "python",
         "path": "./snippets/python/tkinter.json"
+      },
+      {
+        "language": "dart",
+        "path": "./snippets/flutter.json"
       }
     ]
   }
