@@ -1,7 +1,0 @@
-{
-  "diso": {
-    "prefix": "diso",
-    "body": ["${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}T${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}"],
-    "description": "ISO date time stamp"
-  }
-}

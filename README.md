@@ -1,45 +1,11 @@
 # Friendly Snippets
 
-Snippets collection for a set of different programming languages for faster development.
-
-## Goal
-
-The only goal is to have one community driven repository for all kinds of
-snippets in all programming languages, this way you can have it all in one
-place.
-
-## Contributing
-
-You can commit all kinds of useful snippets that you may have for personal use,
-but first make sure that the snippets don't already exist, so we don't have
-duplicates.
+Additional Snippets collection for [Friendly Snippets](rafamadriz/friendly-snippets)
 
 ### Snippets for:
 
-- HTML, Pug, Jade
-- CSS, Sass, Less, Stylus
-- JavaScript, Typescript, Javascriptreact, Typescriptreact
-- Vue
-- PHP
-- Python
-- C
-- C++
-- Rust
-- Go
-- Haskell
-- Eruby
-- Ruby
-- Swift
-- Java
 - Fortran
-- Lua
 - LaTex
-- Shell
-- Markdown
-- Sql
-- Rails
-- Elixir
-- Fennel
 - Cobol
 - Jekyll(Markdown)
 
@@ -58,38 +24,19 @@ Use your plugin manager of choice, e.g.
 
 ```lua
 -- Packer
-use "rafamadriz/friendly-snippets"
+use "yorik1984/friendly-snippets"
 
 -- Plug
-Plug 'rafamadriz/friendly-snippets'
-
--- If you're using coc.nvim, you can use:
-CocInstall https://github.com/rafamadriz/friendly-snippets@main
+Plug 'yorik1984/friendly-snippets'
 ```
 
-#### HTML
-
-![HTML gif](./media/html.gif)
-
-#### JS
-
-![JS gif](./media/js.gif)
-
 ##### NOTE: Using [nvim-compe](https://github.com/hrsh7th/nvim-compe) with [vim-vsnip](https://github.com/hrsh7th/vim-vsnip) on the videos.
-
-## For for more details go to the [Wiki](https://github.com/rafamadriz/friendly-snippets/wiki)
-
-## TODO
-
-- Add all included snippets to the
-  [Wiki](https://github.com/rafamadriz/friendly-snippets/wiki).
 
 ## Credits
 
 A good portion of the snippets have been forked from the following repositories:
 
-- [vscode-standardjs-snippets](https://github.com/capaj/vscode-standardjs-snippets)
-- [python-snippets](https://github.com/cstrap/python-snippets)
-- [vs-snippets](https://github.com/kitagry/vs-snippets)
-- [Wscats/html-snippets](https://github.com/Wscats/html-snippets)
-- [Harry-Ross/vscode-c-snippets](https://github.com/Harry-Ross/vscode-c-snippets)
+- [vscode-jekyll-snippets](https://github.com/edheltzel/vscode-jekyll-snippets)
+- [vscode-fortran-support](https://github.com/krvajal/vscode-fortran-support)
+- [vscode_cobol](https://github.com/spgennard/vscode_cobol)
+- [VSCode-LaTeX-Snippets](https://github.com/JeffersonQin/VSCode-LaTeX-Snippets)
