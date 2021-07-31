@@ -40,6 +40,8 @@ duplicates.
 - Rails
 - Elixir
 - Fennel
+- Cobol
+- Jekyll(Markdown)
 
 ### Usage
 
@@ -91,3 +93,7 @@ A good portion of the snippets have been forked from the following repositories:
 - [vs-snippets](https://github.com/kitagry/vs-snippets)
 - [Wscats/html-snippets](https://github.com/Wscats/html-snippets)
 - [Harry-Ross/vscode-c-snippets](https://github.com/Harry-Ross/vscode-c-snippets)
+- [vscode-jekyll-snippets](https://github.com/edheltzel/vscode-jekyll-snippets)
+- [vscode-fortran-support](https://github.com/krvajal/vscode-fortran-support)
+- [vscode_cobol](https://github.com/spgennard/vscode_cobol)
+- [VSCode-LaTeX-Snippets](https://github.com/JeffersonQin/VSCode-LaTeX-Snippets)
