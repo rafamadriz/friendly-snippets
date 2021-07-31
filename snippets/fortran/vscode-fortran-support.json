@@ -1,0 +1,111 @@
+{
+    "Program Skeleton": {
+        "prefix": "program",
+        "body": [
+            "program ${1:name}",
+            "\timplicit none",
+            "\t${0}",
+            "end program ${1:name}"
+        ],
+        "description": "Program Skeleton"
+    },
+    "Module Skeleton": {
+        "prefix": "module",
+        "body": [
+            "module ${1:name}",
+            "\timplicit none",
+            "\t${2}",
+            "contains",
+            "\t${0}",
+            "end module ${1:name}"
+        ],
+        "description": "Create a new module"
+    },
+    "Do Loop": {
+        "prefix": "do",
+        "body": [
+            "do ${1:index} = ${2:start}, ${3:end}",
+            "\t${0}",
+            "end do"
+        ],
+        "description": "Create a do loop"
+    },
+    "Function": {
+        "prefix": "fun",
+        "body": [
+            "function ${1:func}(${2:arg}) result(${3:retval})",
+            "\timplicit none",
+            "\t${4:type} :: ${2:arg}",
+            "\t${4:type} :: ${3:retval}",
+            "\t${0}",
+            "end function ${1:func}"
+        ],
+        "description": "Create a function"
+    },
+    "Subroutine": {
+        "prefix": "sub",
+        "body": [
+            "subroutine ${1:routine}(${2:arg1}, ${3: arg2})",
+            "implicit none",
+            "${4:type1},intent(in) :: ${2:arg1}",
+            "${5:type2},intent(out) :: ${3:arg2}",
+            "${0}",
+            "end subroutine ${1:routine}"
+        ],
+        "description": "Create a subroutine"
+    },
+    "ifs": {
+        "prefix": "if",
+        "body": [
+            "if ( ${1:condition} ) ${0}"
+        ],
+        "description": "if (single line)"
+    },
+    "if": {
+        "prefix": "if",
+        "body": [
+            "if ( ${1:condition} ) then",
+            "\t${0}",
+            "end if"
+        ],
+        "description": "if then"
+    },
+    "elif": {
+        "prefix": "el",
+        "body": [
+            "else if ( ${1:condition} ) then",
+            "\t${0}"
+        ],
+        "description": "else if"
+    },
+    "imp": {
+        "prefix": "imp",
+        "body": [
+            "implicit none",
+            "${0}"
+        ],
+        "description": "implicit none"
+    },
+    "Module documentation header": {
+        "prefix": "modoc",
+        "body": [
+            "!------------------------------------------------------------------------------",
+            "! ${1:Institution}, ${2:Affiliation}",
+            "!------------------------------------------------------------------------------",
+            "!",
+            "! MODULE: ${3: Module name}",
+            "!",
+            "!> @author",
+            "!> ${4:Author Name}}",
+            "!",
+            "! DESCRIPTION: ",
+            "!> ${5: Short module description}",
+            "!",
+            "! REVISION HISTORY:",
+            "! dd Mmm yyyy - Initial Version",
+            "! TODO_dd_mmm_yyyy - TODO_describe_appropriate_changes - TODO_name",
+            "!------------------------------------------------------------------------------"
+        ],
+        "description": "Add module documentation header"
+    }
+}
