@@ -24,10 +24,10 @@ Use your plugin manager of choice, e.g.
 
 ```lua
 -- Packer
-use "yorik1984/friendly-snippets"
+use "yorik1984/more-friendly-snippets"
 
 -- Plug
-Plug 'yorik1984/friendly-snippets'
+Plug 'yorik1984/more-friendly-snippets'
 ```
 
 ##### NOTE: Using [nvim-compe](https://github.com/hrsh7th/nvim-compe) with [vim-vsnip](https://github.com/hrsh7th/vim-vsnip) on the videos.
