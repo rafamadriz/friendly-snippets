@@ -1,6 +1,6 @@
 # Friendly Snippets
 
-Additional Snippets collection for [Friendly Snippets](rafamadriz/friendly-snippets)
+Additional Snippets collection for [Friendly Snippets](https://github.com/rafamadriz/friendly-snippets)
 
 ### Snippets for:
 
