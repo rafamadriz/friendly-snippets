@@ -1,0 +1,26 @@
+{
+	"ep0": {
+		"prefix": "ep0",
+		"body": [
+			"exit program returning ${1:0}"
+		],
+		"description": "exit program returning [0]",
+		"scope": "cobol,acucobol"
+	},
+    "sr0": {
+		"prefix": "sr0",
+		"body": [
+			"stop run returning ${1:0}"
+		],
+		"description": "stop run returing [0]",
+		"scope": "cobol,acucobol"
+	},
+    "gr0": {
+		"prefix": "gr0",
+		"body": [
+			"goback returning ${1:0}"
+		],
+		"description": "goback returning [0]",
+		"scope": "cobol,acucobol"
+	}
+}

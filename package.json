@@ -165,6 +165,42 @@
       {
         "language": "dart",
         "path": "./snippets/flutter.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./snippets/jekyll/vscode-jekyll-snippets.json"
+      },
+      {
+        "language": "cobol",
+        "path": "./snippets/cobol/vscode_cobol.json"
+      },
+      {
+        "language": "cobol",
+        "path": "./snippets/cobol/vscode_cobol-compound.json"
+      },
+      {
+        "language": "cobol",
+        "path": "./snippets/cobol/vscode_cobol_dir.json"
+      },
+      {
+        "language": "cobol",
+        "path": "./snippets/cobol/vscode_cobol_jcl.json"
+      },
+      {
+        "language": "fortran",
+        "path": "./snippets/fortran/vscode-fortran-support.json"
+      },
+      {
+        "language": ["plaintex", "tex"],
+        "path": "./snippets/latex/latex-snippets.json"
+      },
+      {
+        "language": ["plaintex", "tex"],
+        "path": "./snippets/latex/vscode-latex-snippets.json"
+      },
+      {
+        "language": ["plaintex", "tex"],
+        "path": "./snippets/latex/vscode-latex-support.json"
       }
     ]
   }

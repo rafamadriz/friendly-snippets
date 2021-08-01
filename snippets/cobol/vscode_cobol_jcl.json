@@ -1,0 +1,73 @@
+{
+	"Job/ADDRSPC": {
+		"scope": "JCL",
+		"prefix": "ADDRSPC",
+		"body": [
+			"ADDRSPC=${2|VIRT,REAL|}${3|\\,|}"
+		],
+		"description": "ADDRSPC Parameter"
+	},
+	"JOB/BYTES": {
+		"scope": "JCL",
+		"prefix": "BYTES",
+		"body": [
+			"BYTES=${2:500},${3|CANCEL,DUMP,WARNING|}${4|\\,|}"
+		],
+		"description": "BYTES Parameter"
+	},
+	"Job/CARDS": {
+		"scope": "JCL",
+		"prefix": "CARDS",
+		"body": [
+			"CARDS=${2:500},${3|CANCEL,DUMP,WARNING|}${4|\\,|}"
+		],
+		"description": "CARDS Parameter"
+	},
+	"Job/COND": {
+		"scope": "JCL",
+		"prefix": "COND",
+		"body": [
+			"COND=(${2:0},${3|GT,GE,EQ,LT,LE,NE|},${4:STEPNAME})${5|\\,|}"
+		],
+		"description": "COND Parameter"
+	},
+	"Job/DISP": {
+		"scope": "JCL",
+		"prefix": "DISP",
+		"body": [
+			"DISP=${2|NEW,CATLG,DELETE|}"
+		],
+		"description" : "DISP Parameter, NEW = New data set, CATLG = Create a new catalog entry, DELETE = delete data set on abnormal termination"
+	},
+	"Job/LRECL": {
+		"scope": "JCL",
+		"prefix": "LRECL",
+		"body": [
+			"LRECL=${2|80,132|}"
+		],
+		"description" : "LRECL Parameter"
+	},
+	"Job/IEFBR14": {
+		"scope": "JCL",
+		"prefix": "IEFBR14",
+		"body": [
+			"//${2:STEPID01} EXEC PGM=IEFBR14",
+			"$0"
+		],
+		"description" : "IEFBR14 Data set utility"
+	},
+	"Job/IEBGENER ": {
+		"scope": "JCL",
+		"prefix": "IEBGENER ",
+		"body": [
+			"//${2:STEPID01} EXEC PGM=IEBGENER ",
+			"//SYSUT1   DD *",
+			"${3}",
+			"/*",
+			"//SYSUT2   DD      DISP=NEW,DSN=${4:A.B.C)",
+			"//SYSPRINT DD      SYSOUT=*",
+			"$0"
+		],
+		"description" : "IEBGENER create/load a dataset"
+	}
+}

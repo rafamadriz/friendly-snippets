@@ -1,0 +1,49 @@
+{
+	"dialect": {
+		"prefix": "dialect",
+		"body": [
+			"dialect\"${2|ans85,bs2000,bs2000-offload,cob370,cob371,cob372,entcobol,mf,mvs,os390,osvs,vsc21,vsc22,vsc23,vsc24|}\"",
+			"$0"
+		]
+	},
+	"sourceformat": {
+		"prefix": "sourceformat",
+		"body": [
+			"sourceformat\"${2|free,variable,fixed|}\"",
+			"$0"
+		]
+	},
+	"jvmgen": {
+		"prefix": "jvmgen",
+		"body": [
+			"jvmgen\"${2|sub|}\"",
+			"$0"
+		]
+	},
+	"ilgen": {
+		"prefix": "ilgen",
+		"body": [
+			"ilgen\"${2|sub|}\"",
+			"$0"
+		]
+	},
+	"copypath": {
+		"prefix": "copypath",
+		"body": [
+			"copypath\"\\$COBCPY;$1\"",
+			"$0"
+		]
+	},
+	"speed - native" : {
+		"prefix" : "speed",
+		"body" : [
+			"nocheck",
+			"fastcall",
+			"fastinit",
+			"nolinkcheck",
+			"lnkalign",
+			"noparamcountcheck",
+			"$0"
+		]
+	}
+}
