@@ -2,8 +2,8 @@
   "for": {
     "prefix": "for",
     "body": [
-      "for (${size_t} ${i} = ${1:0}; ${i} < ${2:length}; ${i}++) {",
-      "\t$3",
+      "for (${1:size_t} ${2:i} = ${3:0}; $2 < ${4:length}; $2++) {",
+      "\t$0",
       "}"
     ],
     "description": "Code snippet for 'for' loop"
@@ -11,8 +11,8 @@
   "forr": {
     "prefix": "forr",
     "body": [
-      "for (int ${i} = ${1:length} - 1; ${i} >= ${2:0}; ${i}--) {",
-      "\t$3",
+      "for (${1:size_t} ${2:i} = ${3:length} - 1; $2 >= ${4:0}; $2--) {",
+      "\t$0",
       "}"
     ],
     "description": "Code snippet for reverse 'for' loop"
@@ -39,7 +39,7 @@
   },
   "enum": {
     "prefix": "enum",
-    "body": ["enum ${MyEnum} {", "\t$1", "};"],
+    "body": ["enum ${1:MyEnum} {", "\t$0", "};"],
     "description": "Code snippet for enum"
   },
   "#ifdef": {
@@ -62,6 +62,11 @@
     "body": ["struct ${MyStruct} {", "\t$1", "};"],
     "description": "Code snippet for struct"
   },
+  "typedef struct": {
+    "prefix": "structt",
+    "body": ["typedef struct {", "\t$0", "} ${1:MyStruct};"],
+    "description": "Code snippet to define a type with struct"
+  },
   "switch": {
     "prefix": "switch",
     "body": ["switch (${switch_on}) {", "default:", "\tbreak;$1", "}"],
@@ -79,13 +84,13 @@
   },
   "#inc": {
     "prefix": "#inc",
-    "body": ["#include \"$1\"$2"],
+    "body": ["#include \"$1\"$0"],
     "description": "Code snippet for #include \" \""
   },
   "#inc<": {
     "prefix": "#inc<",
-    "body": ["#include <$1>$2"],
-    "description": "Code snippet for #include \" \""
+    "body": ["#include <$1>$0"],
+    "description": "Code snippet for #include < >"
   },
   "#def": {
     "prefix": "def",
@@ -196,6 +201,50 @@
     "prefix": "psiz",
     "body": ["printf(\"$0 :>> %zu\\n\", $0);"],
     "description": "Calls printf() to log value of variable of type size_t"
+  },
+  "printf": {
+    "prefix": "printf",
+    "body": ["printf(\"$1\\n\"$0);"],
+    "description": "Generic printf() snippet"
+  },
+  "sprintf": {
+    "prefix": "sprintf",
+    "body": ["sprintf($1, \"$2\\n\"$0);"],
+    "description": "Generic sprintf() snippet"
+  },
+  "fprintf": {
+    "prefix": "fprintf",
+    "body": ["fprintf(${1:stderr}, \"$2\\n\"$0);"],
+    "description": "Generic fprintf() snippet"
+  },
+  "scanf": {
+    "prefix": "scanf",
+    "body": ["scanf(\"$1\\n\"$0);"],
+    "description": "Generic scanf() snippet"
+  },
+  "sscanf": {
+    "prefix": "sscanf",
+    "body": ["sscanf($1, \"$2\\n\"$0);"],
+    "description": "Generic sscanf() snippet"
+  },
+  "fscanf": {
+    "prefix": "fscanf",
+    "body": ["fscanf($1, \"$2\\n\"$0);"],
+    "description": "Generic fscanf() snippet"
+  },
+  "Allocate memory using malloc": {
+    "prefix": "mal",
+    "body": [
+      "$1 *$2 = malloc($3 * sizeof($1));",
+      "",
+      "if (!$2) {",
+      "\tprintf(\"Memory allocation failed!\\n\");",
+      "\t$4;",
+      "}",
+      "$5",
+      "free($2);"
+    ],
+    "description": "Allocates memory to a pointer variable using malloc(), then deallocates using free()."
   },
   "Allocate memory using calloc": {
     "prefix": "cal",

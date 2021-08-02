@@ -2,9 +2,8 @@
   "for": {
     "prefix": "for",
     "body": [
-      "for (${size_t} ${i} = ${1:0}; ${i} < ${2:length}; ${i}++)",
-      "{",
-      "\t$3",
+      "for (${1:size_t} ${2:i} = ${3:0}; $2 < ${4:length}; $2++) {",
+      "\t$0",
       "}"
     ],
     "description": "Code snippet for 'for' loop"
@@ -12,9 +11,8 @@
   "forr": {
     "prefix": "forr",
     "body": [
-      "for (int ${i} = ${1:length} - 1; ${i} >= ${2:0}; ${i}--)",
-      "{",
-      "\t$3",
+      "for (${1:size_t} ${2:i} = ${3:length} - 1; $2 >= ${4:0}; $2--) {",
+      "\t$0",
       "}"
     ],
     "description": "Code snippet for reverse 'for' loop"
@@ -51,7 +49,7 @@
   },
   "enum": {
     "prefix": "enum",
-    "body": ["enum ${MyEnum}", "{", "\t$1", "};"],
+    "body": ["enum ${1:MyEnum} {", "\t$0", "};"],
     "description": "Code snippet for enum"
   },
   "enum class": {
@@ -163,24 +161,65 @@
     "body": ["std::cout << \"${1:/* message */}\" << std::endl;"],
     "description": "Code snippet for printing to std::cout, provided the header is set"
   },
+  "cin": {
+    "prefix": "cin",
+    "body": ["std::cin >> $1;"],
+    "description": "Code snippet for std::cin, provided the header is set"
+  },
+  "printf": {
+    "prefix": "printf",
+    "body": ["printf(\"$1\\n\"$0);"],
+    "description": "Generic printf() snippet"
+  },
+  "sprintf": {
+    "prefix": "sprintf",
+    "body": ["sprintf($1, \"$2\\n\"$0);"],
+    "description": "Generic sprintf() snippet"
+  },
+  "fprintf": {
+    "prefix": "fprintf",
+    "body": ["fprintf(${1:stderr}, \"$2\\n\"$0);"],
+    "description": "Generic fprintf() snippet"
+  },
+  "scanf": {
+    "prefix": "scanf",
+    "body": ["scanf(\"$1\\n\"$0);"],
+    "description": "Generic scanf() snippet"
+  },
+  "sscanf": {
+    "prefix": "sscanf",
+    "body": ["sscanf($1, \"$2\\n\"$0);"],
+    "description": "Generic sscanf() snippet"
+  },
+  "fscanf": {
+    "prefix": "fscanf",
+    "body": ["fscanf($1, \"$2\\n\"$0);"],
+    "description": "Generic fscanf() snippet"
+  },
   "#inc": {
     "prefix": "#inc",
-    "body": ["#include \"$1\""],
+    "body": ["#include \"$1\"$0"],
     "description": "Code snippet for #include \" \""
   },
   "#inc<": {
     "prefix": "#inc<",
-    "body": ["#include <$1>"],
-    "description": "Code snippet for #include \" \""
+    "body": ["#include <$1>$0"],
+    "description": "Code snippet for #include < >"
   },
   "#def": {
     "prefix": "def",
     "body": ["#define $1 $2 "],
     "description": "Code snippet for #define \" \""
   },
-  "main": {
+  "Main function template": {
     "prefix": "main",
-    "body": ["int main(int argc, const char** argv) {", "    return 0;", "}"],
-    "description": "Code snippet for 'for' loop"
+    "body": [
+      "int main (int argc, char *argv[])",
+      "{",
+      "\t$1",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "A standard main function for a C++ program"
   }
 }
