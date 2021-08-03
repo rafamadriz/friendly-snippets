@@ -4,8 +4,8 @@
     "body": ["public static void main(String[] args) {", "\t$0", "}"],
     "description": "Public static main method"
   },
-  "cl": {
-    "prefix": "cl",
+  "class": {
+    "prefix": "class",
     "body": ["public class ${TM_FILENAME_BASE} {", "\t$0", "}"],
     "description": "Public class"
   },
