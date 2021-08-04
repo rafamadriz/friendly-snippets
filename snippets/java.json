@@ -137,5 +137,15 @@
     "prefix": "prf",
     "body": ["private ${1:String} ${2:name};"],
     "description": "Private field"
+  },
+  "package": {
+    "prefix": "package",
+    "body": ["package ${1:PackageName}"],
+    "description": "Package statement"
+  },
+  "import": {
+    "prefix": "import",
+    "body": ["import ${1:PackageName}"],
+    "description": "Import statement"
   }
 }
