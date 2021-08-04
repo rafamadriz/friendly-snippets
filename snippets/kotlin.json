@@ -32,6 +32,11 @@
   "while": {
     "prefix": "while",
     "body": "while (${1:condition}) {\n\t$0\n}",
-    "description": "Snippet for when expression"
+    "description": "Snippet for while expression"
+  },
+  "do...while": {
+    "prefix": "do",
+    "body": "do {\n\t$1\n} while (${2:condition})",
+    "description": "Snippet for do...while expression"
   }
 }
