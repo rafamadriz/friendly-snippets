@@ -1,0 +1,107 @@
+{
+  "open keyword": {
+    "prefix": "open",
+    "body": [ "open "],
+    "description": "Snippet for open keyword"
+  },
+  "override keyword": {
+    "prefix": "override",
+    "body": [ "override "],
+    "description": "Snippet for override keyword"
+  },
+  "class": {
+    "prefix": "class",
+    "body": ["class ${TM_FILENAME_BASE} {", "\t$0", "}"],
+    "description": "Snippet for class declaration"
+  },
+  "init": {
+    "prefix": "init",
+    "body": ["init {\n\t$0\n}"],
+    "description": "Snippet for init block"
+  },
+  "set": {
+    "prefix": "set",
+    "body": ["set(${1:arg}: ${2:type}) {\n\t$0\n}"],
+    "description": "Snippet for set block"
+  },
+  "get": {
+    "prefix": "get",
+    "body": ["get() ${1:value}"],
+    "description": "Snippet for get block"
+  },
+  "constructor": {
+    "prefix": "constructor",
+    "body": ["constructor(${1:arg}: ${2:type}) {\n\t$0\n}"],
+    "description": "Snippet for constructor function"
+  },
+  "function declaration": {
+    "prefix": "fun",
+    "body": "fun ${1:main}(${2:args} : ${3:Array<String>}) {\n\t$0\n}",
+    "description": "Snippet for function declaration"
+  },
+  "variable declaration": {
+    "prefix": "var",
+    "body": "var ${1:name} = ${2:value}",
+    "description": "Snippet for a variable"
+  },
+  "variable declaration with val": {
+    "prefix": "val",
+    "body": "val ${1:name} = ${2:value}",
+    "description": "Snippet for a variable"
+  },
+  "if": {
+    "prefix": "if",
+    "body": "if (${1:condition}) ${2:value}",
+    "description": "Snippet for if expression"
+  },
+  "if...else": {
+    "prefix": "ifelse",
+    "body": "if (${1:condition}) \n\t${2:value}\nelse\n\t${3:value}",
+    "description": "Snippet for if...else expression"
+  },
+  "when": {
+    "prefix": "when",
+    "body": "when (${1:value}) {\n\t${2:branch} -> ${3:branchValue}\n\n\telse -> ${4:defaultValue}\n}",
+    "description": "Snippet for when expression"
+  },
+  "while": {
+    "prefix": "while",
+    "body": "while (${1:condition}) {\n\t$0\n}",
+    "description": "Snippet for while expression"
+  },
+  "do...while": {
+    "prefix": "do",
+    "body": "do {\n\t$1\n} while (${2:condition})",
+    "description": "Snippet for do...while expression"
+  },
+  "for": {
+    "prefix": "for",
+    "body": "for (${1:i} in ${2:0}..${3:5})\n\t${4:expression}",
+    "description": "Snippet for iterating array with for loop"
+  },
+  "foreach": {
+    "prefix": "foreach",
+    "body": "for (${1:item} in ${2:list})\n\t${3:expression}",
+    "description": "Snippet for iterating array with for loop"
+  },
+  "try...catch": {
+    "prefix": "try",
+    "body": "try {\n\t$1\n} catch(${2:e}: ${3:Type}){\n\t$4\n}",
+    "description": "Snippet for try block"
+  },
+  "finally": {
+    "prefix": "finally",
+    "body": "finally {\n\t$1\n}",
+    "description": "Snippet for finally block"
+  },
+  "package": {
+    "prefix": "package",
+    "body": "package ${1:packageName}",
+    "description": "Snippet for package statement"
+  },
+  "import": {
+    "prefix": "import",
+    "body": "import ${1:packageName}",
+    "description": "Snippet for import statement"
+  }
+}

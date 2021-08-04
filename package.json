@@ -187,6 +187,10 @@
         "path": "./snippets/cobol/vscode_cobol_jcl.json"
       },
       {
+        "language": "kotlin",
+        "path": "./snippets/kotlin.json"
+      },
+      {
         "language": "fortran",
         "path": "./snippets/fortran/vscode-fortran-support.json"
       },
