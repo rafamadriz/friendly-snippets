@@ -1,12 +1,4 @@
 {
-  "setTimeout": {
-    "prefix": "st",
-    "body": "setTimeout(() => {\n\t${0}\n}, ${1:delay})"
-  },
-  "setInterval": {
-    "prefix": "si",
-    "body": "setInterval(() => {\n\t${0}\n}, ${1:delay})"
-  },
   "setImmediate": {
     "prefix": "sim",
     "body": "setImmediate(() => {\n\t${0}\n})"
@@ -359,41 +351,17 @@
     "prefix": "lif",
     "body": "let ${0} \n if (${2:condition}) {\n\t${1}\n}"
   },
-  "if statement": {
-    "prefix": "i",
-    "body": "if (${1:condition}) {\n\t${0}\n}"
-  },
   "else statement": {
     "prefix": "el",
     "body": "else {\n\t${0}\n}"
-  },
-  "if/else statement": {
-    "prefix": "ife",
-    "body": "if (${1:condition}) {\n\t${0}\n} else {\n\t\n}"
   },
   "else if statement": {
     "prefix": "ei",
     "body": "else if (${1:condition}) {\n\t${0}\n}"
   },
-  "for loop": {
-    "prefix": "fl",
-    "body": "for (let ${1:i} = 0, ${2:len} = ${3:iterable}.length; ${1:i} < ${2:len}; ${1:i}++) {\n\t${0}\n}"
-  },
-  "for in loop": {
-    "prefix": "fi",
-    "body": "for (let ${1:key} in ${2:source}) {\n\tif (${2:source}.hasOwnProperty(${1:key})) {\n\t\t${0}\n\t}\n}"
-  },
-  "for of loop": {
-    "prefix": "fo",
-    "body": "for (const ${1:key} of ${2:source}) {\n\t${0}\n}"
-  },
   "while iteration decrementing": {
     "prefix": "wid",
     "body": "let ${1:array}Index = ${1:array}.length\nwhile (${1:array}Index--) {\n\t${0}\n}"
-  },
-  "while loop": {
-    "prefix": "wl",
-    "body": "while (${1:condition}) {\n\t${0}\n}"
   },
   "throw new Error": {
     "prefix": "tn",
