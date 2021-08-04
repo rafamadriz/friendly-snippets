@@ -134,7 +134,7 @@
     "description": "Create new Object"
   },
   "Private field": {
-    "prefix": "prf",
+    "prefix": "private_field",
     "body": ["private ${1:String} ${2:name};"],
     "description": "Private field"
   },
