@@ -42,6 +42,7 @@ duplicates.
 - Fennel
 - Cobol
 - Jekyll(Markdown)
+- Kotlin
 
 ### Usage
 
