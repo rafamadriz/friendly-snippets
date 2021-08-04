@@ -13,5 +13,15 @@
     "prefix": "val",
     "body": "val ${1:name} = ${2:value}",
     "description": "Snippet for a variable"
+  },
+  "if": {
+    "prefix": "if",
+    "body": "if (${1:condition}) ${2:value}",
+    "description": "Snippet for if expression"
+  },
+  "if...else": {
+    "prefix": "ifelse",
+    "body": "if (${1:condition}) \n\t${2:value}\nelse\n\t${3:value}",
+    "description": "Snippet for if...else expression"
   }
 }
