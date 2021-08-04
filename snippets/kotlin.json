@@ -83,5 +83,15 @@
     "prefix": "foreach",
     "body": "for (${1:item} in ${2:list})\n\t${3:expression}",
     "description": "Snippet for iterating array with for loop"
+  },
+  "try...catch": {
+    "prefix": "try",
+    "body": "try {\n\t$1\n} catch(${2:e}: ${3:Type}){\n\t$4\n}",
+    "description": "Snippet for try block"
+  },
+  "finally": {
+    "prefix": "finally",
+    "body": "finally {\n\t$1\n}",
+    "description": "Snippet for finally block"
   }
 }
