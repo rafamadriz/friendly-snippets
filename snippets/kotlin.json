@@ -28,5 +28,10 @@
     "prefix": "when",
     "body": "when (${1:value}) {\n\t${2:branch} -> ${3:branchValue}\n\n\telse -> ${4:defaultValue}\n}",
     "description": "Snippet for when expression"
+  },
+  "while": {
+    "prefix": "while",
+    "body": "while (${1:condition}) {\n\t$0\n}",
+    "description": "Snippet for when expression"
   }
 }
