@@ -1,4 +1,29 @@
 {
+  "class": {
+    "prefix": "class",
+    "body": ["class ${TM_FILENAME_BASE} {", "\t$0", "}"],
+    "description": "Snippet for class declaration"
+  },
+  "init": {
+    "prefix": "init",
+    "body": ["init {\n\t$0\n}"],
+    "description": "Snippet for init block"
+  },
+  "set": {
+    "prefix": "set",
+    "body": ["set(${1:arg}: ${2:type}) {\n\t$0\n}"],
+    "description": "Snippet for set block"
+  },
+  "get": {
+    "prefix": "get",
+    "body": ["get() ${1:value}"],
+    "description": "Snippet for get block"
+  },
+  "constructor": {
+    "prefix": "constructor",
+    "body": ["constructor(${1:arg}: ${2:type}) {\n\t$0\n}"],
+    "description": "Snippet for constructor function"
+  },
   "function declaration": {
     "prefix": "fun",
     "body": "fun ${1:main}(${2:args} : ${3:Array<String>}) {\n\t$0\n}",
