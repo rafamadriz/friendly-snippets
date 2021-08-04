@@ -1,4 +1,14 @@
 {
+  "open keyword": {
+    "prefix": "open",
+    "body": [ "open "],
+    "description": "Snippet for open keyword"
+  },
+  "override keyword": {
+    "prefix": "override",
+    "body": [ "override "],
+    "description": "Snippet for override keyword"
+  },
   "class": {
     "prefix": "class",
     "body": ["class ${TM_FILENAME_BASE} {", "\t$0", "}"],
