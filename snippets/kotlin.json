@@ -23,5 +23,10 @@
     "prefix": "ifelse",
     "body": "if (${1:condition}) \n\t${2:value}\nelse\n\t${3:value}",
     "description": "Snippet for if...else expression"
+  },
+  "when": {
+    "prefix": "when",
+    "body": "when (${1:value}) {\n\t${2:branch} -> ${3:branchValue}\n\n\telse -> ${4:defaultValue}\n}",
+    "description": "Snippet for when expression"
   }
 }
