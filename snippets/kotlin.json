@@ -38,5 +38,15 @@
     "prefix": "do",
     "body": "do {\n\t$1\n} while (${2:condition})",
     "description": "Snippet for do...while expression"
+  },
+  "for": {
+    "prefix": "for",
+    "body": "for (${1:i} in ${2:0}..${3:5})\n\t${4:expression}",
+    "description": "Snippet for iterating array with for loop"
+  },
+  "foreach": {
+    "prefix": "foreach",
+    "body": "for (${1:item} in ${2:list})\n\t${3:expression}",
+    "description": "Snippet for iterating array with for loop"
   }
 }
