@@ -1,7 +1,7 @@
 {
   "function declaration": {
     "prefix": "fun",
-    "body": "fun ${1:main}(${2:args} : ${3:Array<string>}) {\n\t$0\n}",
+    "body": "fun ${1:main}(${2:args} : ${3:Array<String>}) {\n\t$0\n}",
     "description": "Snippet for function declaration"
   },
   "variable declaration": {
