@@ -93,5 +93,15 @@
     "prefix": "finally",
     "body": "finally {\n\t$1\n}",
     "description": "Snippet for finally block"
+  },
+  "package": {
+    "prefix": "package",
+    "body": "package ${1:packageName}",
+    "description": "Snippet for package statement"
+  },
+  "import": {
+    "prefix": "import",
+    "body": "import ${1:packageName}",
+    "description": "Snippet for import statement"
   }
 }
