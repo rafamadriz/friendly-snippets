@@ -1,0 +1,17 @@
+{
+  "function declaration": {
+    "prefix": "fun",
+    "body": "fun ${1:main}(${2:args} : ${3:Array<string>}) {\n\t$0\n}",
+    "description": "Snippet for function declaration"
+  },
+  "variable declaration": {
+    "prefix": "var",
+    "body": "var ${1:name} = ${2:value}",
+    "description": "Snippet for a variable"
+  },
+  "variable declaration with val": {
+    "prefix": "val",
+    "body": "val ${1:name} = ${2:value}",
+    "description": "Snippet for a variable"
+  }
+}
