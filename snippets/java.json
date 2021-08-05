@@ -133,9 +133,29 @@
     "body": ["${0:Object} ${1:foo} = new ${0:Object}();"],
     "description": "Create new Object"
   },
+  "Public field": {
+    "prefix": "public_field",
+    "body": ["public ${1:String} ${2:name};"],
+    "description": "Public field"
+  },
   "Private field": {
-    "prefix": "prf",
+    "prefix": "private_field",
     "body": ["private ${1:String} ${2:name};"],
     "description": "Private field"
+  },
+  "Protected field": {
+    "prefix": "protected_field",
+    "body": ["protected ${1:String} ${2:name};"],
+    "description": "Protected field"
+  },
+  "package": {
+    "prefix": "package",
+    "body": ["package ${1:PackageName}"],
+    "description": "Package statement"
+  },
+  "import": {
+    "prefix": "import",
+    "body": ["import ${1:PackageName}"],
+    "description": "Import statement"
   }
 }
