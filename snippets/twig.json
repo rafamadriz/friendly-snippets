@@ -1,0 +1,536 @@
+{
+  "asset": {
+    "prefix": "asset",
+    "body":
+    "{% set asset = ${1:entry.assetFieldHandle}.one() %}\n\n{% if asset %}\n\t<img src=\"{{ asset.getUrl(\"${2:thumb}\") }}\" width=\"{{ asset.getWidth(\"${2:thumb}\") }}\" height=\"{{ asset.getHeight(\"${2:thumb}\") }}\" alt=\"{{ asset.title }}\">\n{% endif %}",
+    "description": "asset"
+  },
+  "assets": {
+    "prefix": "assets",
+    "body":
+    "{% for image in craft.assets.\n\t.sourceId(\"${1:1}\")\n\t.kind(\"${2:image}\")\n\t.limit(${3:10})\n}).all() %}\n\t<img src=\"{{ image.url${4:(\"${5:thumb}\")} }}\" width=\"${6:200}\" height=\"${7:200}\" alt=\"{{ image.title }}\">\n{% endfor %}\n$0",
+    "description": "craft.assets"
+  },
+  "autoescape": {
+    "prefix": "autoescape",
+    "body": "{% autoescape \"${1:type}\" %}\n\t$0\n{% endautoescape %}",
+    "description": "autoescape"
+  },
+  "blockb": {
+    "prefix": "blockb",
+    "body": "{% block ${1:name} %}\n\t$0\n{% endblock %}",
+    "description": "block (block)"
+  },
+  "block": {
+    "prefix": "block",
+    "body": "{% block ${1:name} %}$0{% endblock %}",
+    "description": "block"
+  },
+  "blockf": {
+    "prefix": "blockf",
+    "body": "{{ block(\"${1:name}\") }}$0",
+    "description": "blockf"
+  },
+  "cache": {
+    "prefix": "cache",
+    "body": "{% cache %}\n\t$1\n{% endcache %}\n$0",
+    "description": "cache"
+  },
+  "case": {
+    "prefix": "case",
+    "body": "{% case \"${1:value}\" %}\n\t$0",
+    "description": "case"
+  },
+  "children": {
+    "prefix": "children",
+    "body": "{% children %}$0",
+    "description": "children"
+  },
+  "ceil": {
+    "prefix": "ceil",
+    "body": "ceil($1)$0",
+    "description": "ceil"
+  },
+  "assetso": {
+    "prefix": "assetso",
+    "body":
+    "{% set assets = craft.assets({\n\tsourceId: \"${1:1}\",\n\tkind: \"${2:image}\",\n\tlimit: ${3:10}\n}).all() %}\n\n{% for image in assets %}\n\t<img src=\"{{ image.url${4:(\"${5:thumb}\")} }}\" width=\"${6:200}\" height=\"${7:200}\" alt=\"{{ image.title }}\">\n{% endfor %}\n$0",
+    "description": "craft.assets - object syntax"
+  },
+  "categorieso": {
+    "prefix": "categorieso",
+    "body":
+    "{% set categories = craft.categories({\n\tgroup: \"${1:categoryGroupHandle}\",\n\tlimit: \"${2:11}\"\n}).all() %}\n\n<ul>\n\t{% nav category in categories %}\n\t\t<li>\n\t\t\t<a href=\"{{ category.url }}\">{{ category.title }}</a>\n\t\t\t{% ifchildren %}\n\t\t\t\t<ul>\n\t\t\t\t\t{% children %}\n\t\t\t\t</ul>\n\t\t\t{% endifchildren %}\n\t\t</li>\n\t{% endnav %}\n</ul>",
+    "description": "craft.categories - object syntax"
+  },
+  "categories": {
+    "prefix": "categories",
+    "body":
+    "<ul>\n\t{% nav category in craft.categories\n\t\t.group(\"${1:categoryGroupHandle}\")\n\t\t.limit(${2:11})\n\t\t.all()\n\t%}\n\t\t<li>\n\t\t\t<a href=\"{{ category.url }}\">{{ category.title }}</a>\n\t\t\t{% ifchildren %}\n\t\t\t\t<ul>\n\t\t\t\t\t{% children %}\n\t\t\t\t</ul>\n\t\t\t{% endifchildren %}\n\t\t</li>\n\t{% endnav %}\n</ul>",
+    "description": "craft.categories"
+  },
+  "entrieso": {
+    "prefix": "entrieso",
+    "body":
+    "{% set entries = craft.entries({\n\tsection: \"${1:sectionName}\",\n\tlimit: \"${2:10}\"\n}).all() %}\n\n{% for entry in entries %}\n\t<a href=\"{{ entry.url }}\">{{ entry.title }}</a>\n{% endfor %}\n$0",
+    "description": "craft.entries - object syntax"
+  },
+  "entries": {
+    "prefix": "entries",
+    "body":
+    "{% for entry in craft.entries\n\t.section(\"${1:sectionName}\")\n\t.limit(${2:10})\n\t.all()\n%}\n\t<a href=\"{{ entry.url }}\">{{ entry.title }}</a>\n{% endfor %}\n$0",
+    "description": "craft.entries"
+  },
+  "t": {
+    "prefix": "t",
+    "body": "{{ $1 | t }}$0",
+    "description": "translate with | t"
+  },
+  "replace": {
+    "prefix": "replace",
+    "body": "{{ ${1:$TM_SELECTED_TEXT} | replace(\"search\", \"replace\") }}$0",
+    "description": "replace with | replace(\"search\", \"replace\")"
+  },
+  "replacex": {
+    "prefix": "replacex",
+    "body":
+    "{{ ${1:$TM_SELECTED_TEXT} | replace(\"/(search)/i\", \"replace\") }}$0",
+    "description": "replace regex with | replace(\"/(search)/i\", \"replace\")"
+  },
+  "split": {
+    "prefix": "split",
+    "body": "{{ ${1:$TM_SELECTED_TEXT} | split(\"\\n\") }}$0",
+    "description": "split on | split (\"\\n\")"
+  },
+  "tagso": {
+    "prefix": "tagso",
+    "body":
+    "{% set tags = craft.tags({\n\tgroup: \"${1:tagGroupHandle}\"\n}).all() %}\n\n<ul>\n\t{% for tag in tags %}\n\t\t<li>{{ tag }}</a></li>\n\t{% endfor %}\n</ul>\n$0",
+    "description": "craft.tags - object syntax"
+  },
+  "tags": {
+    "prefix": "tags",
+    "body":
+    "<ul>\n\t{% for tag in craft.tags.group(\"${1:tagGroupHandle}\").all() %}\n\t\t<li>{{ tag }}</li>\n\t{% endfor %}\n</ul>\n$0",
+    "description": "craft.tags"
+  },
+  "userso": {
+    "prefix": "userso",
+    "body":
+    "{% set users = craft.users({\n\tgroup: \"${1:userGroupHandle}\"\n}).all() %}\n\n{% for user in users %}\n\t{{ user.firstName }} {{ user.lastName }}\n{% endfor %}\n$0",
+    "description": "craft.users - object syntax"
+  },
+  "users": {
+    "prefix": "users",
+    "body":
+    "{% for user in craft.users.group(\"${1:userGroupHandle}\").all() %}\n\t{{ user.firstName }} {{ user.lastName }}\n{% endfor %}\n$0",
+    "description": "craft.users"
+  },
+  "csrf": {
+    "prefix": "csrf",
+    "body": "{{ csrfInput() }}\n$0",
+    "description": "csrf"
+  },
+  "dd": {
+    "prefix": "dd",
+    "body": "<pre>\n\t{{ dump($1) }}\n</pre>\n{% exit %}$0",
+    "description": "dump and die"
+  },
+  "do": {
+    "prefix": "do",
+    "body": "{% do $1 %}$0",
+    "description": "do"
+  },
+  "dojs": {
+    "prefix": "dojs",
+    "body": "{% do view.registerJsFile \"${1:url}\" %}$0",
+    "description": "do js"
+  },
+  "docss": {
+    "prefix": "docss",
+    "body": "{% do view.registerCssFile \"${1:url}\" %}$0",
+    "description": "do css"
+  },
+  "dump": {
+    "prefix": "dump",
+    "body": "<pre>\n\t{{ dump($1) }}\n</pre>",
+    "description": "dump"
+  },
+  "else": {
+    "prefix": "else",
+    "body": "{% else %}\n\t$0",
+    "description": "else"
+  },
+  "embed": {
+    "prefix": "embed",
+    "body": "{% embed \"${1:template}\" %}\n\t$0\n{% endembed %}",
+    "description": "embed"
+  },
+  "endautoescape": {
+    "prefix": "endautoescape",
+    "body": "{% endautoescape %}$0",
+    "description": "endautoescape"
+  },
+  "endblock": {
+    "prefix": "endblock",
+    "body": "{% endblock %}$0",
+    "description": "endblock"
+  },
+  "endcache": {
+    "prefix": "endcache",
+    "body": "{% endcache %}$0",
+    "description": "endcache"
+  },
+  "endembed": {
+    "prefix": "endembed",
+    "body": "{% endembed %}$0",
+    "description": "endembed"
+  },
+  "endfilter": {
+    "prefix": "endfilter",
+    "body": "{% endfilter %}$0",
+    "description": "endfilter"
+  },
+  "endfor": {
+    "prefix": "endfor",
+    "body": "{% endfor %}$0",
+    "description": "endfor"
+  },
+  "endif": {
+    "prefix": "endif",
+    "body": "{% endif %}$0",
+    "description": "endif"
+  },
+  "endifchildren": {
+    "prefix": "endifchildren",
+    "body": "{% endifchildren %}$0",
+    "description": "endifchildren"
+  },
+  "endcss": {
+    "prefix": "endcss",
+    "body": "{% endcss %}$0",
+    "description": "endcss"
+  },
+  "endjs": {
+    "prefix": "endjs",
+    "body": "{% endjs %}$0",
+    "description": "endjs"
+  },
+  "endmacro": {
+    "prefix": "endmacro",
+    "body": "{% endmacro %}$0",
+    "description": "endmacro"
+  },
+  "endnav": {
+    "prefix": "endnav",
+    "body": "{% endnav %}$0",
+    "description": "endnav"
+  },
+  "endset": {
+    "prefix": "endset",
+    "body": "{% endset %}$0",
+    "description": "endset"
+  },
+  "endspaceless": {
+    "prefix": "endspaceless",
+    "body": "{% endspaceless %}$0",
+    "description": "endspaceless"
+  },
+  "endswitch": {
+    "prefix": "endswitch",
+    "body": "{% endswitch %}$0",
+    "description": "endswitch"
+  },
+  "endtrans": {
+    "prefix": "endtrans",
+    "body": "{% endtrans %}$0",
+    "description": "endtrans"
+  },
+  "endverbatim": {
+    "prefix": "endverbatim",
+    "body": "{% endverbatim %}$0",
+    "description": "endverbatim"
+  },
+  "exit": {
+    "prefix": "exit",
+    "body": "{% exit ${1:404} %}",
+    "description": "exit"
+  },
+  "extends": {
+    "prefix": "extends",
+    "body": "{% extends \"${1:template}\" %}$0",
+    "description": "extends"
+  },
+  "filterb": {
+    "prefix": "filterb",
+    "body": "{% filter ${1:name} %}\n\t$0\n{% endfilter %}",
+    "description": "filter (block)"
+  },
+  "filter": {
+    "prefix": "filter",
+    "body": "{% filter ${1:name} %}$0{% endfilter %}",
+    "description": "filter"
+  },
+  "floor": {
+    "prefix": "floor",
+    "body": "floor($1)$0",
+    "description": "floor"
+  },
+  "fore": {
+    "prefix": "fore",
+    "body":
+    "{% for ${1:item} in ${2:items} %}\n\t$3\n{% else %}\n\t$0\n{% endfor %}",
+    "description": "for ... else"
+  },
+  "for": {
+    "prefix": "for",
+    "body": "{% for ${1:item} in ${2:items} %}\n\t$0\n{% endfor %}",
+    "description": "for"
+  },
+  "from": {
+    "prefix": "from",
+    "body": "{% from \"${1:template}\" import \"${2:macro}\" %}$0",
+    "description": "from"
+  },
+  "endbody": {
+    "prefix": "endbody",
+    "body": "{{ endBody() }}\n$0",
+    "description": "endBody"
+  },
+  "head": {
+    "prefix": "head",
+    "body": "{{ head() }}\n$0",
+    "description": "head"
+  },
+  "if": {
+    "prefix": "if",
+    "body": "{% if ${1:condition} %}$2{% endif %}\n$0",
+    "description": "if"
+  },
+  "ifb": {
+    "prefix": "ifb",
+    "body": "{% if ${1:condition} %}\n\t$0\n{% endif %}",
+    "description": "if (block)"
+  },
+  "ife": {
+    "prefix": "ife",
+    "body": "{% if ${1:condition} %}\n\t$2\n{% else %}\n\t$0\n{% endif %}",
+    "description": "if ... else"
+  },
+  "if1": {
+    "prefix": "if",
+    "body": "{% if ${1:condition} %}$0{% endif %}",
+    "description": "if"
+  },
+  "ifchildren": {
+    "prefix": "ifchildren",
+    "body": "{% ifchildren %}\n\t$1\n{% endifchildren %}\n$0",
+    "description": "ifchildren"
+  },
+  "import": {
+    "prefix": "import",
+    "body": "{% import \"${1:template}\" as ${2:name} %}$0",
+    "description": "import"
+  },
+  "importself": {
+    "prefix": "importself",
+    "body": "{% import _self as ${1:name} %}$0",
+    "description": "importself"
+  },
+  "inckv": {
+    "prefix": "inckv",
+    "body":
+    "{% include \"${1:template}\" with {\n\t${2:key}: ${3:\"${4:value}\"}\n} %}\n$0",
+    "description": "include w/ key/value"
+  },
+  "include": {
+    "prefix": "include",
+    "body": "{% include \"${1:template}\" %}$0",
+    "description": "include"
+  },
+  "inc": {
+    "prefix": "inc",
+    "body": "{% include \"${1:template}\" %}$0",
+    "description": "inc"
+  },
+  "incp": {
+    "prefix": "incp",
+    "body": "{% include \"${1:template}\"${2: with ${3:params} }%}$0",
+    "description": "include w/ params"
+  },
+  "css1": {
+    "prefix": "css",
+    "body": "{% do view.registerCssFile(\"${1:/resources/css/global.css}\") %}\n$0",
+    "description": "registerCssFile"
+  },
+  "js": {
+    "prefix": "js",
+    "body": "{% js %}\n\t$1\n{% endjs %}\n$0",
+    "description": "js"
+  },
+  "js1": {
+    "prefix": "js",
+    "body": "{% do view.registerJsFile(\"${1:/resources/js/global.js}\") %}\n$0",
+    "description": "registerJsFile"
+  },
+  "css": {
+    "prefix": "css",
+    "body": "{% css %}\n\t$1\n{% endcss %}\n$0",
+    "description": "css"
+  },
+  "macro": {
+    "prefix": "macro",
+    "body": "{% macro ${1:name}(${2:params}) %}\n\t$0\n{% endmacro %}",
+    "description": "macro"
+  },
+  "matrix": {
+    "prefix": "matrix",
+    "body":
+    "{% for block in ${1:entry.matrixFieldHandle}.all() %}\n\n\t{% if block.type == \"${2:blockHandle}\" %}\n\t\t{{ block.${3:fieldHandle} }}\n\t{% endif %}\n\n\t{% if block.type == \"${4:blockHandle}\" %}\n\t\t{{ block.${5:fieldHandle} }}\n\t{% endif %}\n\n{% endfor %}\n$0",
+    "description": "matrix"
+  },
+  "matrixif": {
+    "prefix": "matrixif",
+    "body":
+    "{% for block in ${1:entry.matrixFieldHandle}.all() %}\n\n\t{% if block.type == \"${2:blockHandle}\" %}\n\t\t{{ block.${3:fieldHandle} }}\n\t{% endif %}\n\n\t{% if block.type == \"${4:blockHandle}\" %}\n\t\t{{ block.${5:fieldHandle} }}\n\t{% endif %}\n\n{% endfor %}\n$0",
+    "description": "matrixif"
+  },
+  "matrixifelse": {
+    "prefix": "matrixifelse",
+    "body":
+    "{% for block in ${1:entry.matrixFieldHandle}.all() %}\n\n\t{% if block.type == \"${2:blockHandle}\" %}\n\n\t\t{{ block.${3:fieldHandle} }}\n\n\t{% elseif block.type == \"${4:blockHandle}\" %}\n\n\t\t$0\n\t\n\t{% endif %}\n\n{% endfor %}",
+    "description": "matrixifelse"
+  },
+  "matrixswitch": {
+    "prefix": "matrixswitch",
+    "body":
+    "{% for block in ${1:entry.matrixFieldHandle}.all() %}\n\n\t{% switch block.type %}\n\n\t\t{% case \"${2:blockHandle}\" %}\n\n\t\t\t{{ block.${3:fieldHandle} }}\n\n\t\t{% case \"${4:blockHandle}\" %}\n\n\t\t\t$0\n\n\t{% endswitch %}\n\n{% endfor %}",
+    "description": "matrixswitch"
+  },
+  "max": {
+    "prefix": "max",
+    "body": "max(${1:$2, $3})$0",
+    "description": "max"
+  },
+  "min": {
+    "prefix": "min",
+    "body": "min(${1:$2, $3})$0",
+    "description": "min"
+  },
+  "nav": {
+    "prefix": "nav",
+    "body": "{% nav ${1:item} in ${2:items} %}\n\t$3\n{% endnav %}\n$0",
+    "description": "nav"
+  },
+  "paginate": {
+    "prefix": "paginate",
+    "body":
+    "{% paginate ${1:elements} as ${2:pageInfo}, ${3:pageEntries} %}\n\n{% for item in ${3:pageEntries} %}\n\t$0\n{% endfor %}\n\n{% if ${2:pageInfo}.prevUrl %}<a href=\"{{ ${2:pageInfo}.prevUrl }}\">Previous Page</a>{% endif %}\n{% if ${2:pageInfo}.nextUrl %}<a href=\"{{ ${2:pageInfo}.nextUrl }}\">Next Page</a>{% endif %}",
+    "description": "paginate simple"
+  },
+  "paginate1": {
+    "prefix": "paginate",
+    "body":
+    "{# PAGINATION\n\t\t\nFor this pagination to work properly, we need to be sure to set\nthe paginateBase variable in the template we are including the \npagination in.\n\n{% set paginateBase = \"/blog/p\" %}\n#}\n\n{% if pageInfo.totalPages > 1 %}\n<ul>\n\t{% if pageInfo.currentPage != \"1\" %}\n\t\t<li><a href=\"{{ paginateBase ~ \"1\" }}\">First Page</a></li>\n\t{% endif %}\n\n\t{% if pageInfo.prevUrl %}\n\t\t<li><a href=\"{{ pageInfo.prevUrl }}\">Previous Page</a></li>\n\t{% endif %}\n\n\t{% for pageNumber in 1..pageInfo.totalPages %}\n\t\t<li {% if pageInfo.currentPage == pageNumber %}class=\"active-page\"{% endif %}>\n\t\t\t<a href=\"{{ paginateBase ~ pageNumber }}\">{{ pageNumber }}</a>\n\t\t</li>\n\t{% endfor %}\n\n\t{% if pageInfo.nextUrl %}\n\t\t<li><a href=\"{{ pageInfo.nextUrl }}\">Next Page</a></li>\n\t{% endif %}\n\n\t{% if pageInfo.currentPage != pageInfo.total %}\n\t\t<li><a href=\"{{ paginateBase ~ pageInfo.total }}\">Last Page</a></li>\n\t{% endif %}\n</ul>\n{% endif %}\n$0",
+    "description": "paginate advanced"
+  },
+  "redirect": {
+    "prefix": "redirect",
+    "body":
+    "{% redirect \"${1:template/path or http://straightupcraft.com}\" %}\n$0",
+    "description": "redirect"
+  },
+  "getparam": {
+    "prefix": "getparam",
+    "body":
+    "craft.app.request.getParam(${1:\"Query String or Post Variable Name\"})\n$0",
+    "description": "request getParam"
+  },
+  "getbodyparam": {
+    "prefix": "getbodyparam",
+    "body": "craft.app.request.getBodyParam(${1:\"postVariableName\"})\n$0",
+    "description": "request getBodyParam"
+  },
+  "getqueryparam": {
+    "prefix": "getqueryparam",
+    "body": "craft.app.request.getQueryParam(${1:\"queryStringName\"})\n$0",
+    "description": "request getQueryParam"
+  },
+  "getsegment": {
+    "prefix": "getsegment",
+    "body": "craft.app.request.getSegment(${1:2})\n$0",
+    "description": "request getSegment"
+  },
+  "requirelogin": {
+    "prefix": "requirelogin",
+    "body": "{% requireLogin %}\n$0",
+    "description": "requireLogin"
+  },
+  "requirepermission": {
+    "prefix": "requirepermission",
+    "body": "{% requirePermission \"${1:spendTheNight}\" %}\n$0",
+    "description": "requirePermission"
+  },
+  "round": {
+    "prefix": "round",
+    "body": "{{ $1 | round(1, 'floor') }}$0",
+    "description": "round"
+  },
+  "setb": {
+    "prefix": "setb",
+    "body": "{% set ${1:var} %}\n\t$0\n{% endset %}",
+    "description": "set (block)"
+  },
+  "set": {
+    "prefix": "set",
+    "body": "{% set ${1:var} = ${2:value} %}$0",
+    "description": "set"
+  },
+  "shuffle": {
+    "prefix": "shuffle",
+    "body": "shuffle($1)$0",
+    "description": "shuffle"
+  },
+  "random": {
+    "prefix": "random",
+    "body": "random($1)$0",
+    "description": "random"
+  },
+  "spaceless": {
+    "prefix": "spaceless",
+    "body": "{% spaceless %}\n\t$0\n{% endspaceless %}",
+    "description": "spaceless"
+  },
+  "switch": {
+    "prefix": "switch",
+    "body":
+    "{% switch ${1:variable} %}\n\n\t{% case \"${2:value1}\" %}\n\t\n\n\t{% case \"${3:value2}\" %}\n\t\n\n\t{% default %}\n\t\n\n{% endswitch %}\n$0",
+    "description": "switch"
+  },
+  "trans": {
+    "prefix": "trans",
+    "body": "{% trans %}$0{% endtrans %}",
+    "description": "trans"
+  },
+  "urla": {
+    "prefix": "urla",
+    "body":
+    "url(\"${1:path}\", ${2:{foo:\"1\", bar:\"2\"\\}}, ${3:\"http\"}, ${4:false})$0",
+    "description": "url w/ arguments"
+  },
+  "url": {
+    "prefix": "url",
+    "body": "url(\"${1:path}\")$0",
+    "description": "url"
+  },
+  "use": {
+    "prefix": "use",
+    "body": "{% use \"${1:template}\" %}$0",
+    "description": "use"
+  },
+  "verbatim": {
+    "prefix": "verbatim",
+    "body": "{% verbatim %}\n\t$0\n{% endverbatim %}",
+    "description": "verbatim"
+  }
+}
