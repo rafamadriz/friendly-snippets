@@ -152,6 +152,11 @@
     ],
     "description": "Creates a linked list template"
   },
+  "Create a function": {
+    "prefix": "func",
+    "body": ["${2:void} ${1:func}(${4:void})", "{", "\t$3", "}"],
+    "description": "Creates a function"
+  },
   "Create int function": {
     "prefix": "intfunc",
     "body": ["int $1 ()", "{", "\tint $2 = $3;$4", "\treturn $2;", "}"],
