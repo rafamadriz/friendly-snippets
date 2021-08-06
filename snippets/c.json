@@ -44,17 +44,17 @@
   },
   "#ifdef": {
     "prefix": "#ifdef",
-    "body": ["#ifdef ${DEBUG}", "$1", "#endif // ${DEBUG}"],
+    "body": ["#ifdef ${DEBUG}", "$1", "#endif /* ${DEBUG} */"],
     "description": "Code snippet for #ifdef"
   },
   "#ifndef": {
     "prefix": "#ifndef",
-    "body": ["#ifndef ${1:1}", "$2", "#endif // !$1"],
+    "body": ["#ifndef ${1:1}", "$2", "#endif /* !$1 */"],
     "description": "Code snippet for #ifndef"
   },
   "#if": {
     "prefix": "#if",
-    "body": ["#if ${1:0}", "$2", "#endif // $1"],
+    "body": ["#if ${1:0}", "$2", "#endif /* $1 */"],
     "description": "Code snippet for #if"
   },
   "struct": {
