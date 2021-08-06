@@ -54,7 +54,7 @@
   },
   "#if": {
     "prefix": "#if",
-    "body": ["#ifdef ${1:0}", "$2", "#endif // $1"],
+    "body": ["#if ${1:0}", "$2", "#endif // $1"],
     "description": "Code snippet for #if"
   },
   "struct": {
