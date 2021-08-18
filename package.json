@@ -209,6 +209,10 @@
       {
         "language": "twig",
         "path": "./snippets/twig.json"
+      },
+      {
+        "language": "r",
+        "path": "./snippets/r.json"
       }
     ]
   }
