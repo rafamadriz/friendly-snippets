@@ -78,7 +78,7 @@
         "path": "./snippets/shell.json"
       },
       {
-        "language": "markdown",
+        "language": ["markdown", "rmd"]},
         "path": "./snippets/markdown.json"
       },
       {
@@ -211,7 +211,7 @@
         "path": "./snippets/twig.json"
       },
       {
-        "language": "r",
+        "language": ["r", "rmd"],
         "path": "./snippets/r.json"
       }
     ]
