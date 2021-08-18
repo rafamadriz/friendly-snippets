@@ -31,6 +31,7 @@
             "setGeneric(\"${1:generic}\", function(${2:x, ...}) {",
             "    standardGeneric(\"${1:generic}\")",
             "})\n"
+        ]
     },
     "setMethod": {
         "prefix": "sm",
