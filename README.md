@@ -43,6 +43,7 @@ duplicates.
 - Cobol
 - Jekyll(Markdown)
 - Kotlin
+- R(Markdown)
 
 ### Usage
 
