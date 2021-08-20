@@ -47,7 +47,6 @@
             "setClass(\"${1:Class}\", slots = c(${2:name = \"type\"}))\n"
         ]
     },
-
     "if": {
         "prefix": "if",
         "body": [
@@ -104,7 +103,6 @@
             ")\n"
         ]
     },
-
     "apply": {
         "prefix": "apply",
         "body": "apply(${1:array}, ${2:margin}, ${3:...})"
@@ -133,12 +131,10 @@
         "prefix": "rapply",
         "body": "rapply(${1:list}, ${2:function})"
     },
-
     "timestamp": {
         "prefix": "ts",
-        "body": "# ${$CURRENT_DAY_NAME_SHORT} ${$CURRENT_MONTH_NAME_SHORT} ${$CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND} ${CURRENT_YEAR} ------------------------------\n"
+        "body": "# ${CURRENT_DAY_NAME_SHORT} ${CURRENT_MONTH_NAME_SHORT} ${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND} ${CURRENT_YEAR} ------------------------------\n"
     },
-
     "shinyapp": {
         "prefix": "shinyapp",
         "body": [
