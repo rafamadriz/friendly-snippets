@@ -24,6 +24,7 @@ duplicates.
 - Python
 - C
 - C++
+- C#
 - Rust
 - Go
 - Haskell

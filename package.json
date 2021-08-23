@@ -6,7 +6,13 @@
   "contributes": {
     "snippets": [
       {
-        "language": ["plaintext", "markdown", "tex", "html", "global"],
+        "language": [
+          "plaintext",
+          "markdown",
+          "tex",
+          "html",
+          "global"
+        ],
         "path": "./snippets/global.json"
       },
       {
@@ -16,6 +22,10 @@
       {
         "language": "cpp",
         "path": "./snippets/cpp.json"
+      },
+      {
+        "language": "csharp",
+        "path": "./snippets/csharp.json"
       },
       {
         "language": "html",
@@ -74,15 +84,25 @@
         "path": "./snippets/sql.json"
       },
       {
-        "language": ["shellscript", "shell", "sh"],
+        "language": [
+          "shellscript",
+          "shell",
+          "sh"
+        ],
         "path": "./snippets/shell.json"
       },
       {
-        "language": ["markdown", "rmd"],
+        "language": [
+          "markdown",
+          "rmd"
+        ],
         "path": "./snippets/markdown.json"
       },
       {
-        "language": ["plaintex", "tex"],
+        "language": [
+          "plaintex",
+          "tex"
+        ],
         "path": "./snippets/latex.json"
       },
       {
@@ -90,11 +110,21 @@
         "path": "./snippets/java.json"
       },
       {
-        "language": ["html", "jade", "pug"],
+        "language": [
+          "html",
+          "jade",
+          "pug"
+        ],
         "path": "./snippets/html.json"
       },
       {
-        "language": ["css", "scss", "sass", "less", "stylus"],
+        "language": [
+          "css",
+          "scss",
+          "sass",
+          "less",
+          "stylus"
+        ],
         "path": "./snippets/css.json"
       },
       {
@@ -107,11 +137,17 @@
         "path": "./snippets/javascript/javascript.json"
       },
       {
-        "language": ["javascriptreact", "typescriptreact"],
+        "language": [
+          "javascriptreact",
+          "typescriptreact"
+        ],
         "path": "./snippets/javascript/apollo.json"
       },
       {
-        "language": ["typescript", "typescriptreact"],
+        "language": [
+          "typescript",
+          "typescriptreact"
+        ],
         "path": "./snippets/javascript/typescript.json"
       },
       {
@@ -195,15 +231,24 @@
         "path": "./snippets/fortran/vscode-fortran-support.json"
       },
       {
-        "language": ["plaintex", "tex"],
+        "language": [
+          "plaintex",
+          "tex"
+        ],
         "path": "./snippets/latex/latex-snippets.json"
       },
       {
-        "language": ["plaintex", "tex"],
+        "language": [
+          "plaintex",
+          "tex"
+        ],
         "path": "./snippets/latex/vscode-latex-snippets.json"
       },
       {
-        "language": ["plaintex", "tex"],
+        "language": [
+          "plaintex",
+          "tex"
+        ],
         "path": "./snippets/latex/vscode-latex-support.json"
       },
       {
@@ -211,7 +256,10 @@
         "path": "./snippets/twig.json"
       },
       {
-        "language": ["r", "rmd"],
+        "language": [
+          "r",
+          "rmd"
+        ],
         "path": "./snippets/r.json"
       }
     ]
