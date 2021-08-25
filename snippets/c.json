@@ -19,22 +19,22 @@
   },
   "while": {
     "prefix": "while",
-    "body": ["while ($1) {", "\t$2", "}"],
+    "body": ["while ($1) {", "\t$0", "}"],
     "description": ""
   },
   "if": {
     "prefix": "if",
-    "body": ["if ($1) {", "\t$2", "}"],
+    "body": ["if ($1) {", "\t$0", "}"],
     "description": "Code snippet for if statement"
   },
   "else": {
     "prefix": "else",
-    "body": ["else {", "\t$1", "}"],
+    "body": ["else {", "\t$0", "}"],
     "description": "Code snippet for else statement"
   },
   "else if": {
     "prefix": "else if",
-    "body": ["else if ($1) {", "\t$2", "}"],
+    "body": ["else if ($1) {", "\t$0", "}"],
     "description": "Code snippet for else-if statement"
   },
   "enum": {
@@ -44,22 +44,22 @@
   },
   "#ifdef": {
     "prefix": "#ifdef",
-    "body": ["#ifdef ${DEBUG}", "$1", "#endif /* ${DEBUG} */"],
+    "body": ["#ifdef ${1:DEBUG}", "$0", "#endif /* $1 */"],
     "description": "Code snippet for #ifdef"
   },
   "#ifndef": {
     "prefix": "#ifndef",
-    "body": ["#ifndef ${1:1}", "$2", "#endif /* !$1 */"],
+    "body": ["#ifndef ${1:DEBUG}", "$0", "#endif /* !$1 */"],
     "description": "Code snippet for #ifndef"
   },
   "#if": {
     "prefix": "#if",
-    "body": ["#if ${1:0}", "$2", "#endif /* $1 */"],
+    "body": ["#if ${1:0}", "$0", "#endif /* $1 */"],
     "description": "Code snippet for #if"
   },
   "struct": {
     "prefix": "struct",
-    "body": ["struct ${MyStruct} {", "\t$1", "};"],
+    "body": ["struct ${1:MyStruct} {", "\t$0", "};"],
     "description": "Code snippet for struct"
   },
   "typedef struct": {
@@ -69,17 +69,17 @@
   },
   "switch": {
     "prefix": "switch",
-    "body": ["switch (${switch_on}) {", "default:", "\tbreak;$1", "}"],
+    "body": ["switch (${1:switch_on}) {", "\tdefault:", "\t\t$0", "\t\tbreak;", "}"],
     "description": "Code snippet for switch statement"
   },
   "case": {
     "prefix": "case",
-    "body": ["case $1:", "\t$2", "\tbreak;$3"],
+    "body": ["case $1:", "\t$0", "\tbreak;"],
     "description": "Code snippet for case branch"
   },
   "union": {
     "prefix": "union",
-    "body": ["union ${MyUnion} {", "\t$1", "};$2"],
+    "body": ["union ${1:MyUnion} {", "\t$0", "};"],
     "description": "Code snippet for union"
   },
   "#inc": {
@@ -94,7 +94,7 @@
   },
   "#def": {
     "prefix": "def",
-    "body": ["#define $1 $2"],
+    "body": ["#define $1"],
     "description": "Code snippet for #define \" \""
   },
   "Main function template": {
@@ -102,7 +102,7 @@
     "body": [
       "int main (int argc, char *argv[])",
       "{",
-      "\t$1",
+      "\t$0",
       "\treturn 0;",
       "}"
     ],
@@ -115,7 +115,7 @@
       "",
       "int main (int argc, char *argv[])",
       "{",
-      "\t$1",
+      "\t$0",
       "\treturn 0;",
       "}"
     ],
@@ -129,14 +129,14 @@
       "",
       "int main (int argc, char *argv[])",
       "{",
-      "\t$1",
+      "\t$0",
       "\treturn 0;",
       "}"
     ],
     "description": "A standard starter template for a C program with stdlib included"
   },
   "Do...while loop": {
-    "prefix": "dowhile",
+    "prefix": "do",
     "body": ["do {", "\t$1", "} while($2);"],
     "description": "Creates a do...while loop"
   },
@@ -224,29 +224,29 @@
   },
   "scanf": {
     "prefix": "scanf",
-    "body": ["scanf(\"$1\\n\"$0);"],
+    "body": ["scanf(\"$1\"$0);"],
     "description": "Generic scanf() snippet"
   },
   "sscanf": {
     "prefix": "sscanf",
-    "body": ["sscanf($1, \"$2\\n\"$0);"],
+    "body": ["sscanf($1, \"$2\"$0);"],
     "description": "Generic sscanf() snippet"
   },
   "fscanf": {
     "prefix": "fscanf",
-    "body": ["fscanf($1, \"$2\\n\"$0);"],
+    "body": ["fscanf($1, \"$2\"$0);"],
     "description": "Generic fscanf() snippet"
   },
   "Allocate memory using malloc": {
     "prefix": "mal",
     "body": [
-      "$1 *$2 = malloc($3 * sizeof($1));",
+      "${1:int} *${2:v} = malloc(${3:1} * sizeof($1));",
       "",
       "if (!$2) {",
-      "\tprintf(\"Memory allocation failed!\\n\");",
+      "\tfprintf(stderr, \"Memory allocation failed!\\n\");",
       "\t$4;",
       "}",
-      "$5",
+      "$0",
       "free($2);"
     ],
     "description": "Allocates memory to a pointer variable using malloc(), then deallocates using free()."
@@ -254,13 +254,13 @@
   "Allocate memory using calloc": {
     "prefix": "cal",
     "body": [
-      "$1 *$2 = calloc($3, sizeof($1));",
+      "${1:int} *${2:v} = calloc(${3:1}, sizeof($1));",
       "",
       "if (!$2) {",
-      "\tprintf(\"Memory allocation failed!\\n\");",
+      "\tfprintf(stderr, \"Memory allocation failed!\\n\");",
       "\t$4;",
       "}",
-      "$5",
+      "$0",
       "free($2);"
     ],
     "description": "Allocates memory to a pointer variable using calloc(), then deallocates using free()."
