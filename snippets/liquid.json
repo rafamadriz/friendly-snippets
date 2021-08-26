@@ -1,0 +1,960 @@
+{
+    "Tag if": {
+        "prefix": "if",
+        "description": "Control flow tag: if",
+        "body": [
+            "{% if ${1:condition} %}",
+            "\t$2",
+            "{% endif %}"
+        ]
+    },
+    "Tag else": {
+        "prefix": "else",
+        "description": "Control flow tag: else",
+        "body": [
+            "{% else %}",
+            "\t"
+        ]
+    },
+    "Tag elsif": {
+        "prefix": "elsif",
+        "description": "Control flow tag: elsif",
+        "body": [
+            "{% elsif ${1:condition} %}",
+            "\t"
+        ]
+    },
+    "Tag if else": {
+        "prefix": "ifelse",
+        "description": "Control flow tag: if else",
+        "body": [
+            "{% if ${1:condition} %}",
+            "\t$2",
+            "{% else %}",
+            "\t$3",
+            "{% endif %}"
+        ]
+    },
+    "Tag unless": {
+        "prefix": "unless",
+        "description": "Control flow tag: unless",
+        "body": [
+            "{% unless ${1:condition} %}",
+            "\t$2",
+            "{% endunless %}"
+        ]
+    },
+    "Tag case": {
+        "prefix": "case",
+        "description": "Control flow tag: case",
+        "body": [
+            "{% case ${1:variable} %}",
+            "\t{% when ${2:condition} %}",
+            "\t\t$3",
+            "\t{% else %}",
+            "\t\t$4",
+            "{% endcase %}"
+        ]
+    },
+    "Tag when": {
+        "prefix": "when",
+        "description": "Control flow tag: when",
+        "body": [
+            "{% when ${1:condition} %}",
+            "$0"
+        ]
+    },
+    "Tag cycle": {
+        "prefix": "cycle",
+        "description": "Iteration tag: cycle",
+        "body": [
+            "{% cycle '${1:odd}', '${2:even}' %}"
+        ]
+    },
+    "Tag cycle group": {
+        "prefix": "cyclegroup",
+        "description": "Iteration tag: cycle group",
+        "body": [
+            "{% cycle '${1:group name}': '${2:odd}', '${3:even}' %}"
+        ]
+    },
+    "Tag for": {
+        "prefix": "for",
+        "description": "Iteration tag: for",
+        "body": [
+            "{% for ${1:item} in ${2:collection} %}",
+            "\t$3",
+            "{% endfor %}"
+        ]
+    },
+    "Tag Option limit": {
+        "prefix": "limit",
+        "description": "For loops option",
+        "body": [
+            "limit: ${1:5}"
+        ]
+    },
+    "Tag Option offset": {
+        "prefix": "offset",
+        "description": "For loops option",
+        "body": [
+            "offset: ${1:0}"
+        ]
+    },
+    "Tag Option reversed": {
+        "prefix": "reversed",
+        "description": "For loops option",
+        "body": [
+            "reversed"
+        ]
+    },
+    "Tag break": {
+        "prefix": "break",
+        "description": "Iteration tag: break",
+        "body": [
+            "{% break %}"
+        ]
+    },
+    "Tag continue": {
+        "prefix": "continue",
+        "description": "Iteration tag: continue",
+        "body": [
+            "{% continue %}"
+        ]
+    },
+    "Tag tablerow": {
+        "prefix": "tablerow",
+        "description": "Iteration tag: tablerow",
+        "body": [
+            "{% tablerow ${1:item} in ${2:collection} cols: ${3:2} %}",
+            "\t$4",
+            "{% endtablerow %}"
+        ]
+    },
+    "Tag assign": {
+        "prefix": "assign",
+        "description": "Variable tag: assign",
+        "body": [
+            "{% assign ${1:variable} = ${2:value} %}"
+        ]
+    },
+    "Tag increment": {
+        "prefix": "increment",
+        "description": "Variable tag: increment",
+        "body": [
+            "{% increment ${1:variable} %}"
+        ]
+    },
+    "Tag decrement": {
+        "prefix": "decrement",
+        "description": "Variable tag: decrement",
+        "body": [
+            "{% decrement ${1:variable} %}"
+        ]
+    },
+    "Tag capture": {
+        "prefix": "capture",
+        "description": "Variable tag: capture",
+        "body": [
+            "{% capture ${1:variable} %}$2{% endcapture %}"
+        ]
+    },
+    "Tag include": {
+        "prefix": "include",
+        "description": "Theme tag: include",
+        "body": [
+            "{% include '${1:snippet}' %}"
+        ]
+    },
+    "Tag include with parameters": {
+        "prefix": "includewith",
+        "description": "Theme tag: include with parameters",
+        "body": [
+            "{% include '${1:snippet}', ${2:variable}: ${3:value} %}"
+        ]
+    },
+    "Tag render": {
+        "prefix": "render",
+        "description": "Theme tag: render",
+        "body": [
+            "{% render '${1:snippet}' %}"
+        ]
+    },
+    "Tag render with parameters": {
+        "prefix": "renderwith",
+        "description": "Theme tag: render with parameters",
+        "body": [
+            "{% render '${1:snippet}', ${2:variable}: ${3:value} %}"
+        ]
+    },
+    "Tag section": {
+        "prefix": "section",
+        "description": "Theme tag: section",
+        "body": [
+            "{% section '${1:snippet}' %}"
+        ]
+    },
+    "Tag raw": {
+        "prefix": "raw",
+        "description": "Theme tag: raw",
+        "body": [
+            "{% raw %}$1{% endraw %}"
+        ]
+    },
+    "Tag layout": {
+        "prefix": "layout",
+        "description": "Theme tag: layout",
+        "body": [
+            "{% layout '${1:layout}' %}"
+        ]
+    },
+    "Tag no layout": {
+        "prefix": "layoutnone",
+        "description": "Theme tag: layout none",
+        "body": [
+            "{% layout none %}"
+        ]
+    },
+    "Tag paginate": {
+        "prefix": "paginate",
+        "description": "Theme tag: paginate",
+        "body": [
+            "{% paginate ${1:collection.products} by ${2:12} %}",
+            "\t{% for ${3:product} in ${1:collection.products} %}",
+            "\t\t$4",
+            "\t{% endfor %}",
+            "{% endpaginate %}"
+        ]
+    },
+    "Tag schema": {
+        "prefix": "schema",
+        "description": "Schema tag: schema",
+        "body": [
+            "{% schema %}",
+            "\t{",
+            "\t\t$1",
+            "\t}",
+            "{% endschema %}"
+        ]
+    },
+    "Tag stylesheet": {
+        "prefix": "stylesheet",
+        "description": "Stylesheet tag: stylesheet",
+        "body": [
+            "{% stylesheet %}",
+            "\t$1",
+            "{% endstylesheet %}"
+        ]
+    },
+    "Tag stylesheet for scss": {
+        "prefix": "stylesheet_scss",
+        "description": "Stylesheet tag: stylesheet for scss",
+        "body": [
+            "{% stylesheet '${1:scss}' %}",
+            "\t$2",
+            "{% endstylesheet %}"
+        ]
+    },
+    "Tag javascript": {
+        "prefix": "javascript",
+        "description": "Javascript tag: javascript",
+        "body": [
+            "{% javascript %}",
+            "\t$4",
+            "{% endjavascript %}"
+        ]
+    },
+    "Tag comment, whitespaced": {
+        "prefix": "comment-",
+        "description": "Comment tag: comment, whitespaced",
+        "body": [
+            "{%- comment -%}$1{%- endcomment -%}"
+        ]
+    },
+    "Tag if, whitespaced": {
+        "prefix": "if-",
+        "description": "Control flow tag: if, whitespaced",
+        "body": [
+            "{%- if ${1:condition} -%}",
+            "\t$2",
+            "{%- endif -%}"
+        ]
+    },
+    "Tag else, whitespaced": {
+        "prefix": "else-",
+        "description": "Control flow tag: else, whitespaced",
+        "body": [
+            "{%- else -%}",
+            "\t"
+        ]
+    },
+    "Tag elsif, whitespaced": {
+        "prefix": "elsif-",
+        "description": "Control flow tag: elsif, whitespaced",
+        "body": [
+            "{%- elsif ${1:condition} -%}",
+            "\t"
+        ]
+    },
+    "Tag if else, whitespaced": {
+        "prefix": "ifelse-",
+        "description": "Control flow tag: if else, whitespaced",
+        "body": [
+            "{%- if ${1:condition} -%}",
+            "\t$2",
+            "{%- else -%}",
+            "\t$3",
+            "{%- endif -%}"
+        ]
+    },
+    "Tag unless, whitespaced": {
+        "prefix": "unless-",
+        "description": "Control flow tag: unless, whitespaced",
+        "body": [
+            "{%- unless ${1:condition} -%}",
+            "\t$2",
+            "{%- endunless -%}"
+        ]
+    },
+    "Tag case, whitespaced": {
+        "prefix": "case-",
+        "description": "Control flow tag: case, whitespaced",
+        "body": [
+            "{%- case ${1:variable} -%}",
+            "\t{%- when ${2:condition} -%}",
+            "\t\t$3",
+            "\t{%- else -%}",
+            "\t\t$4",
+            "{%- endcase -%}"
+        ]
+    },
+    "Tag when, whitespaced": {
+        "prefix": "when-",
+        "description": "Control flow tag: when, whitespaced",
+        "body": [
+            "{%- when ${1:condition} -%}",
+            "$0"
+        ]
+    },
+    "Tag cycle, whitespaced": {
+        "prefix": "cycle-",
+        "description": "Iteration tag: cycle, whitespaced",
+        "body": [
+            "{%- cycle '${1:odd}', '${2:even}' -%}"
+        ]
+    },
+    "Tag cycle group, whitespaced": {
+        "prefix": "cyclegroup-",
+        "description": "Iteration tag: cycle group, whitespaced",
+        "body": [
+            "{%- cycle '${1:group name}': '${2:odd}', '${3:even}' -%}"
+        ]
+    },
+    "Tag for, whitespaced": {
+        "prefix": "for-",
+        "description": "Iteration tag: for, whitespaced",
+        "body": [
+            "{%- for ${1:item} in ${2:collection} -%}",
+            "\t$3",
+            "{%- endfor -%}"
+        ]
+    },
+    "Tag continue, whitespaced": {
+        "prefix": "continue-",
+        "description": "Iteration tag: continue, whitespaced",
+        "body": [
+            "{%- continue -%}"
+        ]
+    },
+    "Tag tablerow, whitespaced": {
+        "prefix": "tablerow-",
+        "description": "Iteration tag: tablerow, whitespaced",
+        "body": [
+            "{%- tablerow ${1:item} in ${2:collection} cols: ${3:2} -%}",
+            "\t$4",
+            "{%- endtablerow -%}"
+        ]
+    },
+    "Tag assign, whitespaced": {
+        "prefix": "assign-",
+        "description": "Variable tag: assign, whitespaced",
+        "body": [
+            "{%- assign ${1:variable} = ${2:value} -%}"
+        ]
+    },
+    "Tag capture, whitespaced": {
+        "prefix": "capture-",
+        "description": "Variable tag: capture, whitespaced",
+        "body": [
+            "{%- capture ${1:variable} -%}$2{%- endcapture -%}"
+        ]
+    },
+    "Filter join": {
+        "prefix": "join",
+        "description": "Array filter: join",
+        "body": "| join: '${1:, }'"
+    },
+    "Filter first": {
+        "prefix": "first",
+        "description": "Array filter: first",
+        "body": "| first"
+    },
+    "Filter last": {
+        "prefix": "last",
+        "description": "Array filter: last",
+        "body": "| last"
+    },
+    "Filter concat": {
+        "prefix": "concat",
+        "description": "Array filter: concat",
+        "body": "| concat: ${1:array}"
+    },
+    "Filter map": {
+        "prefix": "map",
+        "description": "Array filter: map",
+        "body": "| map: '${1:key}'"
+    },
+    "Filter reverse": {
+        "prefix": "reverse",
+        "description": "Array filter or String filter: reverse",
+        "body": "| reverse"
+    },
+    "Filter size": {
+        "prefix": "size",
+        "description": "Array filter: size",
+        "body": "| size"
+    },
+    "Filter sort": {
+        "prefix": "sort",
+        "description": "Array filter: sort",
+        "body": "| sort: '${1:key}'"
+    },
+    "Filter uniq": {
+        "prefix": "uniq",
+        "description": "Array filter: uniq",
+        "body": "| uniq"
+    },
+    "Filter img tag": {
+        "prefix": "img_tag",
+        "description": "HTML filter: img tag",
+        "body": "| img_tag"
+    },
+    "Filter img tag with parameters": {
+        "prefix": "img_tag_param",
+        "description": "HTML filter: img tag with parameters",
+        "body": "| img_tag: '${1:alt}', '${2:class}'"
+    },
+    "Filter script tag": {
+        "prefix": "script_tag",
+        "description": "HTML filter: script tag",
+        "body": "| script_tag"
+    },
+    "Filter stylesheet tag": {
+        "prefix": "stylesheet_tag",
+        "description": "HTML filter: stylesheet tag",
+        "body": "| stylesheet_tag"
+    },
+    "Filter abs": {
+        "prefix": "abs",
+        "description": "Math filter: abs",
+        "body": "| abs"
+    },
+    "Filter ceil": {
+        "prefix": "ceil",
+        "description": "Math filter: ceil",
+        "body": "| ceil"
+    },
+    "Filter divided by": {
+        "prefix": "divided_by",
+        "description": "Math filter: divided by",
+        "body": "| divided_by: ${1:2}"
+    },
+    "Filter floor": {
+        "prefix": "floor",
+        "description": "Math filter: floor",
+        "body": "| floor"
+    },
+    "Filter minus": {
+        "prefix": "minus",
+        "description": "Math filter: minus",
+        "body": "| minus: ${1:1}"
+    },
+    "Filter plus": {
+        "prefix": "plus",
+        "description": "Math filter: plus",
+        "body": "| plus: ${1:1}"
+    },
+    "Filter round": {
+        "prefix": "round",
+        "description": "Math filter: round",
+        "body": "| round: ${1:0}"
+    },
+    "Filter times": {
+        "prefix": "times",
+        "description": "Math filter: times",
+        "body": "| times: ${1:1}"
+    },
+    "Filter modulo": {
+        "prefix": "modulo",
+        "description": "Math filter: modulo",
+        "body": "| modulo: ${1:2}"
+    },
+    "Filter money": {
+        "prefix": "money",
+        "description": "Money filter: money",
+        "body": "| money"
+    },
+    "Filter money with currency": {
+        "prefix": "money_with_currency",
+        "description": "Money filter: money with currency",
+        "body": "| money_with_currency"
+    },
+    "Filter money without trailing zeros": {
+        "prefix": "money_without_trailing_zeros",
+        "description": "Money filter: money without trailing zeros",
+        "body": "| money_without_trailing_zeros"
+    },
+    "Filter money without currency": {
+        "prefix": "money_without_currency",
+        "description": "Money filter: money without currency",
+        "body": "| money_without_currency"
+    },
+    "Filter append": {
+        "prefix": "append",
+        "description": "String filter: append",
+        "body": "| append: '${1:string}'"
+    },
+    "Filter camelcase": {
+        "prefix": "camelcase",
+        "description": "String filter: camelcase",
+        "body": "| camelcase"
+    },
+    "Filter capitalize": {
+        "prefix": "capitalize",
+        "description": "String filter: capitalize",
+        "body": "| capitalize"
+    },
+    "Filter downcase": {
+        "prefix": "downcase",
+        "description": "String filter: downcase",
+        "body": "| downcase"
+    },
+    "Filter escape": {
+        "prefix": "escape",
+        "description": "String filter: escape",
+        "body": "| escape"
+    },
+    "Filter handleize": {
+        "prefix": "handleize",
+        "description": "String filter: handleize",
+        "body": "| handleize"
+    },
+    "Filter md5": {
+        "prefix": "md5",
+        "description": "String filter: md5",
+        "body": "| md5"
+    },
+    "Filter newline to br": {
+        "prefix": "newline_to_br",
+        "description": "String filter: newline to br",
+        "body": "| newline_to_br"
+    },
+    "Filter pluralize": {
+        "prefix": "pluralize",
+        "description": "String filter: pluralize",
+        "body": "| pluralize: '${1:item}', '${2:items}'"
+    },
+    "Filter prepend": {
+        "prefix": "prepend",
+        "description": "String filter: prepend",
+        "body": "| prepend: '${1:string}'"
+    },
+    "Filter remove": {
+        "prefix": "remove",
+        "description": "String filter: remove",
+        "body": "| remove: '${1:string}'"
+    },
+    "Filter remove first": {
+        "prefix": "remove_first",
+        "description": "String filter: remove first",
+        "body": "| remove_first: '${1:string}'"
+    },
+    "Filter replace": {
+        "prefix": "replace",
+        "description": "String filter: replace",
+        "body": "| replace: '${1:target}', '${2:replace}'"
+    },
+    "Filter replace first": {
+        "prefix": "replace_first",
+        "description": "String filter: replace first",
+        "body": "| replace_first: '${1:target}', '${2:replace}'"
+    },
+    "Filter slice": {
+        "prefix": "slice",
+        "description": "String filter: slice",
+        "body": "| slice: ${1:0}, ${2:5}"
+    },
+    "Filter slice single character": {
+        "prefix": "slice_single",
+        "description": "String filter: slice with single parameter",
+        "body": "| slice: ${1:at}"
+    },
+    "Filter split": {
+        "prefix": "split",
+        "description": "String filter: split",
+        "body": "| split: '${1:,}'"
+    },
+    "Filter strip": {
+        "prefix": "strip",
+        "description": "String filter: strip",
+        "body": "| strip"
+    },
+    "Filter lstrip": {
+        "prefix": "lstrip",
+        "description": "String filter: lstrip",
+        "body": "| lstrip"
+    },
+    "Filter rstrip": {
+        "prefix": "rstrip",
+        "description": "String filter: rstrip",
+        "body": "| rstrip"
+    },
+    "Filter strip html": {
+        "prefix": "strip_html",
+        "description": "String filter: strip html",
+        "body": "| strip_html"
+    },
+    "Filter strip newlines": {
+        "prefix": "strip_newlines",
+        "description": "String filter: strip newlines",
+        "body": "| strip_newlines"
+    },
+    "Filter truncate": {
+        "prefix": "truncate",
+        "description": "String filter: truncate",
+        "body": "| truncate: ${1:20}, '${2:...}'"
+    },
+    "Filter truncatewords": {
+        "prefix": "truncatewords",
+        "description": "String filter: truncatewords",
+        "body": "| truncatewords: ${1:5}, '${2:...}'"
+    },
+    "Filter upcase": {
+        "prefix": "upcase",
+        "description": "String filter: upcase",
+        "body": "| upcase"
+    },
+    "Filter url encode": {
+        "prefix": "url_encode",
+        "description": "String filter: url encode",
+        "body": "| url_encode"
+    },
+    "Filter url escape": {
+        "prefix": "url_escape",
+        "description": "String filter: url escape",
+        "body": "| url_escape"
+    },
+    "Filter url param escape": {
+        "prefix": "url_param_escape",
+        "description": "String filter: url param escape",
+        "body": "| url_param_escape"
+    },
+    "Filter asset url": {
+        "prefix": "asset_url",
+        "description": "URL filter: asset url",
+        "body": "| asset_url"
+    },
+    "Filter asset img url": {
+        "prefix": "asset_img_url",
+        "description": "URL filter: asset img url",
+        "body": "| asset_img_url: '${1:medium}'"
+    },
+    "Filter img url": {
+        "prefix": "img_url",
+        "description": "URL filter: img url",
+        "body": "| img_url: '${1:medium}'"
+    },
+    "Shopify Schema": {
+        "prefix": "_schema",
+        "body": [
+            "{% schema %}",
+            "\t{",
+            "\t\t\"name\": \"$1\",",
+            "\t\t\"class\": \"$2\",",
+            "\t\t\"settings\": [",
+            "\t\t$3",
+            "\t\t]",
+            "\t}",
+            "{% endschema %}",
+            ""
+        ]
+    },
+    "Shopify Schema blocks": {
+        "prefix": "_blocks",
+        "body": [
+            "\"blocks\": [",
+            "\t{",
+            "\t\t\"type\": \"$1\",",
+            "\t\t\"name\": \"$2\",",
+            "\t\t\"settings\": [",
+            "\t\t\t$3",
+            "\t\t]",
+            "\t},$4",
+            "]",
+            ""
+        ]
+    },
+    "Shopify Schema text": {
+        "prefix": "_text",
+        "body": [
+            "{",
+            "\t\"type\": \"text\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"default\": \"$3\",",
+            "\t\"info\": \"$4\",",
+            "\t\"placeholder\": \"$5\"",
+            "},$6"
+        ]
+    },
+    "Shopify Schema textarea": {
+        "prefix": "_textarea",
+        "body": [
+            "{",
+            "\t\"type\": \"textarea\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"default\": \"$3\",",
+            "\t\"info\": \"$4\",",
+            "\t\"placeholder\": \"$5\"",
+            "},$6"
+        ]
+    },
+    "Shopify Schema image picker": {
+        "prefix": "_image_picker",
+        "body": [
+            "{",
+            "\t\"type\": \"image_picker\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\"",
+            "},$3"
+        ]
+    },
+    "Shopify Schema radio": {
+        "prefix": "_radio",
+        "body": [
+            "{",
+            "\t\"type\": \"radio\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"options\": [",
+            "\t\t{ \"value\": \"$6\", \"label\": \"$7\" }",
+            "\t],",
+            "\t\"default\": \"$3\",",
+            "\t\"info\": \"$4\"",
+            "},$5"
+        ]
+    },
+    "Shopify Schema select": {
+        "prefix": "_select",
+        "body": [
+            "{",
+            "\t\"type\": \"select\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"options\": [",
+            "\t\t{",
+            "\t\t\"group\": \"$6\",",
+            "\t\t\"value\": \"$7\",",
+            "\t\t\"label\": \"$8\"",
+            "\t\t}",
+            "\t],",
+            "\t\"default\": \"$3\",",
+            "\t\"info\": \"$4\"",
+            "},$5"
+        ]
+    },
+    "Shopify Schema checkbox": {
+        "prefix": "_checkbox",
+        "body": [
+            "{",
+            "\t\"type\": \"checkbox\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"default\": ${3|false,true|},",
+            "\t\"info\": \"$4\"",
+            "},$5"
+        ]
+    },
+    "Shopify Schema range": {
+        "prefix": "_range",
+        "body": [
+            "{",
+            "\t\"type\": \"range\",",
+            "\t\"id\": \"$1\",",
+            "\t\"min\": \"$2\",",
+            "\t\"max\": \"$3\",",
+            "\t\"step\": \"$4\",",
+            "\t\"unit\": \"$5\",",
+            "\t\"label\": \"$6\",",
+            "\t\"default\": \"$7\"",
+            "},$8"
+        ]
+    },
+    "Shopify Schema color": {
+        "prefix": "_color",
+        "body": [
+            "{",
+            "\t\"type\": \"color\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"default\": \"$3\",",
+            "\t\"info\": \"$4\"",
+            "},$5"
+        ]
+    },
+    "Shopify Schema font picker": {
+        "prefix": "_font",
+        "body": [
+            "{",
+            "\t\"type\": \"font_picker\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"info\": \"$3\",",
+            "\t\"default\": \"${4|Abel,Abril Fatface,Agmena,Akko,Alegreya,Alegreya Sans,Alfie,Americana,Amiri,Anonymous Pro,Antique Olive,Arapey,Archivo Narrow,Arimo,Armata,Arvo,Asap,Assistant,Asul,Avenir Next,Avenir Next Rounded,Azbuka,Basic Commercial,Basic Commercial Soft Rounded,Baskerville No 2,Bauer Bodoni,Beefcakes,Bembo Book,Bernhard Modern,Bio Rhyme,Bitter,Bodoni Poster,Burlingame,Cabin,Cachet,Cardamon,Cardo,Carter Sans,Caslon Bold,Caslon Old Face,Catamaran,Centaur,Century Gothic,Chivo,Chong Modern,Claire News,Cooper BT,Courier New,Crimson Text,DIN Neuzeit Grotesk,DIN Next,DIN Next Slab,Daytona,Domine,Dosis,Electra,Eurostile Next,FF Meta,FF Meta Serif,FF Tisa,FF Tisa Sans,FF Unit,FF Unit Rounded,FF Unit Slab,Fette Gotisch,Fira Sans,Fjalla One,Friz Quadrata,Frutiger Serif,Futura,Garamond,Geometric 415,Georgia Pro,Gill Sans Nova,Glegoo,Goudy Old Style,Harmonia Sans,Helvetica,Humanist 521,IBM Plex Sans,ITC Avant Garde Gothic,ITC Benguiat,ITC Berkeley Old Style,ITC Bodoni Seventytwo,ITC Bodoni Twelve,ITC Caslon No 224,ITC Charter,ITC Cheltenham,ITC Clearface,ITC Conduit,ITC Esprit,ITC Founders Caslon,ITC Franklin Gothic,ITC Galliard,ITC Gamma,ITC Goudy Sans,ITC Johnston,ITC Mendoza Roman,ITC Modern No 216,ITC New Baskerville,ITC New Esprit,ITC New Veljovic,ITC Novarese,ITC Officina Sans,ITC Officina Serif,ITC Stepp,ITC Stone Humanist,ITC Stone Informal,ITC Stone Sans II,ITC Stone Serif,ITC Tapioca,Inconsolata,Joanna Nova,Joanna Sans Nova,Josefin Sans,Josefin Slab,Kairos,Kalam,Karla,Kreon,Lato,Laurentian,Libelle,Libre Baskerville,Libre Franklin,Linotype Didot,Linotype Gianotten,Linotype Really,Linotype Syntax Serif,Lobster,Lobster Two,Lora,Lucia,Lucida Grande,Luthersche Fraktur,Madera,Malabar,Mariposa Sans,Maven Pro,Megrim,Melior,Memphis,Memphis Soft Rounded,Mentor Sans,Merriweather Sans,Metro Nova,Modern No 20,Monaco,Monotype Baskerville,Monotype Bodoni,Monotype Century Old Style,Monotype Goudy,Monotype Goudy Modern,Monotype Italian Old Style,Monotype New Clarendon,Monotype News Gothic,Monotype Sabon,Montserrat,Mouse Memoirs,Muli,Mundo Sans,Neo Sans,Neue Aachen,Neue Frutiger 1450,Neue Haas Unica,Neue Swift,Neuton,Neuzeit Office,Neuzeit Office Soft Rounded,Neuzeit S,New Century Schoolbook,News 702,News 705,News Cycle,News Gothic No 2,News Plantin,Nobile,Noticia Text,Noto Serif,Nunito,Nunito Sans,Old Standard TT,Open Sans,Open Sans Condensed,Optima nova,Oswald,Ovo,Oxygen,PMN Caecilia,PT Mono,PT Sans,PT Sans Narrow,PT Serif,Pacifico,Palatino,Parma,Perpetua,Plantin,Playfair Display,Poppins,Prata,Prompt,Quantico,Quattrocento,Quattrocento Sans,Questrial,Quicksand,Quire Sans,Rajdhani,Raleway,Really No 2,Righteous,Roboto,Roboto Condensed,Roboto Mono,Roboto Slab,Rockwell,Rubik,Sabon Next,Sackers Square Gothic,Sagrantino,Scene,Scherzo,Shadows Into Light,Slate,Soho,Soho Gothic,Source Code Pro,Source Sans Pro,Stempel Schneidler,Swiss 721,Swiss 721 Rounded,Tenor Sans,Tiemann,Times New Roman,Tinos,Titillium Web,Trade Gothic,Trade Gothic Next,Trebuchet MS,Twentieth Century,Ubuntu,Unica One,Univers Next,Univers Next Typewriter,Unna,Vala,Varela,Varela Round,Verdana Pro,Volkhov,Vollkorn,Waza,Wola,Work Sans,Ysobel|}\"",
+            "},$5"
+        ]
+    },
+    "Shopify Schema collections dropdown": {
+        "prefix": "_collections",
+        "body": [
+            "{",
+            "\t\"type\": \"collection\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"info\": \"$3\"",
+            "},$4"
+        ]
+    },
+    "Shopify Schema product dropdown": {
+        "prefix": "_product",
+        "body": [
+            "{",
+            "\t\"type\": \"product\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"info\": \"$3\"",
+            "},$4"
+        ]
+    },
+    "Shopify Schema blog dropdown": {
+        "prefix": "_blog",
+        "body": [
+            "{",
+            "\t\"type\": \"blog\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"info\": \"$3\"",
+            "},$4"
+        ]
+    },
+    "Shopify Schema page dropdown": {
+        "prefix": "_page",
+        "body": [
+            "{",
+            "\t\"type\": \"page\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"info\": \"$3\"",
+            "},$4"
+        ]
+    },
+    "Shopify Schema link list dropdown": {
+        "prefix": "_link_list",
+        "body": [
+            "{",
+            "\t\"type\": \"link_list\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"info\": \"$3\"",
+            "},$4"
+        ]
+    },
+    "Shopify Schema url dropdown": {
+        "prefix": "_url",
+        "body": [
+            "{",
+            "\t\"type\": \"url\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"info\": \"$3\"",
+            "},$4"
+        ]
+    },
+    "Shopify Schema video": {
+        "prefix": "_video",
+        "body": [
+            "{",
+            "\t\"type\": \"video_url\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"accept\": [$7\"youtube\", \"vimeo\"],",
+            "\t\"default\": \"$3\",",
+            "\t\"info\": \"$4\",",
+            "\t\"placeholder\": \"$5\"",
+            "},$6"
+        ]
+    },
+    "Shopify Schema richtext": {
+        "prefix": "_richtext",
+        "body": [
+            "{",
+            "\t\"type\": \"richtext\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"default\": \"<p>$3<\/p>\"",
+            "},$4"
+        ]
+    },
+    "Shopify Schema html": {
+        "prefix": "_html",
+        "body": [
+            "{",
+            "\t\"type\": \"html\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"default\": \"<div>$3<\/div>\"",
+            "},$4"
+        ]
+    },
+    "Shopify Schema article": {
+        "prefix": "_article",
+        "body": [
+            "{",
+            "\t\"type\": \"article\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"info\": \"$3\"",
+            "},$4"
+        ]
+    },
+    "Shopify Schema header": {
+        "prefix": "_header",
+        "body": [
+            "{",
+            "\t\"type\": \"header\",",
+            "\t\"content\": \"$1\",",
+            "\t\"info\": \"$2\"",
+            "},$3"
+        ]
+    },
+    "Shopify Schema paragraph": {
+        "prefix": "_paragraph",
+        "body": [
+            "{",
+            "\t\"type\": \"paragraph\",",
+            "\t\"content\": \"$1\"",
+            "},$2"
+        ]
+    }
+}
