@@ -44,6 +44,10 @@
         "path": "./snippets/fortran.json"
       },
       {
+        "language": "liquid",
+        "path": "./snippets/liquid.json"
+      },
+      {
         "language": "lua",
         "path": "./snippets/lua.json"
       },
