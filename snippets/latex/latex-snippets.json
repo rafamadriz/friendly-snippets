@@ -2,11 +2,9 @@
   "Align(ed)": {
     "prefix": "ali",
     "body": [
-      "\\begin{align`echo $1|grep math|",
-      "sed -e 's/.*math.*/ed/'`}",
-      "\t$2",
-      "\\end{align`echo $1|grep math|",
-      "sed -e 's/.*math.*/ed/'`}"
+        "\\begin{align}",
+        "\t$0",
+        "\\end{align}"
     ],
     "description": "Align(ed)"
   },
@@ -63,10 +61,9 @@
     "prefix": "equation",
     "body": [
       "\\begin{equation}",
-      "\t$2",
+      "\t$0",
       "\t\\label{eq:$1}",
-      "\\end{equation}",
-      "$0"
+      "\\end{equation}"
     ],
     "description": "Add a Equation"
   },
@@ -194,11 +191,9 @@
   "Gather(ed)": {
     "prefix": "gat",
     "body": [
-      "\\begin{gather`echo $1|grep math|",
-      "sed -e 's/.*math.*/ed/'`}",
-      "\t$2",
-      "\\end{gather`echo $1|grep math|",
-      "sed -e 's/.*math.*/ed/'`}"
+      "\\begin{gather}",
+      "\t$0",
+      "\\end{gather}"
     ],
     "description": "Gather(ed)"
   },
@@ -282,8 +277,18 @@
       "\t$0",
       "\\end{split}"
     ],
-    "description": "Section"
+    "description": "Split"
   },
+  "Section": {
+    "prefix": "sec",
+    "body": [
+      "\\section{${1:section name}} % (fold)",
+      "\\label{sec:${2:${1/(\\w+)(\\W+$)?|\\W+/${1:?${1:/asciify/downcase}:_}/g}}}",
+      "${0:$TM_SELECTED_TEXT}",
+      "% section $2 (end)"
+    ],
+    "description": "Section"
+  }, 
   "Sub Paragraph": {
     "prefix": "subp",
     "body": [
@@ -445,10 +450,9 @@
   "Enumerate": {
     "prefix": "enumerate",
     "body": [
-      "\\begin{enumerate}",
-      "\t\\item $1",
-      "\\end{enumerate}",
-      "$0"
+      "\\\\begin{enumerate}",
+      "\t\\item $0",
+      "\\\\end{enumerate}"
     ],
     "description": "Add a enumerate"
   },
