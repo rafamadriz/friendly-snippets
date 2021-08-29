@@ -72,11 +72,11 @@ CocInstall https://github.com/rafamadriz/friendly-snippets@main
 
 #### HTML
 
-![HTML gif](./media/html.gif)
+![HTML gif](https://user-images.githubusercontent.com/67771985/131255337-d53f3408-b60d-44a2-93ba-9a3240a7436e.gif)
 
 #### JS
 
-![JS gif](./media/js.gif)
+![JS gif](https://user-images.githubusercontent.com/67771985/131255342-e393165a-e4b1-401e-9084-a782b9dd3fef.gif)
 
 ##### NOTE: Using [nvim-compe](https://github.com/hrsh7th/nvim-compe) with [vim-vsnip](https://github.com/hrsh7th/vim-vsnip) on the videos.
 
