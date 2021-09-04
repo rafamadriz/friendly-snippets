@@ -24,7 +24,10 @@
         "path": "./snippets/cpp.json"
       },
       {
-        "language": "csharp",
+        "language": [
+          "csharp",
+          "cs"
+        ],
         "path": "./snippets/csharp.json"
       },
       {
