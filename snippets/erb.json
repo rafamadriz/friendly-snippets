@@ -70,14 +70,14 @@
 		"description": "each do"
 	},
 	"render": {
-		"prefix": "pe",
+		"prefix": ["pe", "="],
 		"body": [
 			"<%= $1 %>"
 		],
 		"description": "render block pe"
 	},
 	"exec": {
-		"prefix": "er",
+		"prefix": ["er", "%"],
 		"body": [
 			"<% $1 %>"
 		],
