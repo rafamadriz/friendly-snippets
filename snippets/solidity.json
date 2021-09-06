@@ -1,5 +1,5 @@
 {
-	".source.solidity": {
+	
 		"pragma solidity":{
 			"prefix": "pra",
 			"body": "pragma solidity ${1:version};"
@@ -61,5 +61,5 @@
 			"prefix": "for",
 			"body": "for (var ${1:index} = 0; $1 < ${2:array}.length; $1${3:++}) {\n\t$0\n}"
         }
-    }
+
 }
