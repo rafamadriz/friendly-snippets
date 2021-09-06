@@ -87,5 +87,14 @@
 		"body": [
 			"@module external ${1:leftPad}: ${2:(string, int) => string} = \"${3:leftPad}\""
 		]
-	}
+	},
+  "React Component": {
+    "prefix": "react.component",
+    "body": [
+      "@react.component",
+      "let make = (${1}) => {",
+      "\t${2}",
+      "}"
+    ]
+  }
 }
