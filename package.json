@@ -83,6 +83,10 @@
         "path": "./snippets/haskell.json"
       },
       {
+        "language": "solidity",
+        "path": "./snippets/solidity.json"
+      },
+      {
         "language": "swift",
         "path": "./snippets/swift.json"
       },
