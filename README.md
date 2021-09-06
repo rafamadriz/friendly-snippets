@@ -25,6 +25,7 @@ duplicates.
 - C
 - C++
 - C#
+- ReScript
 - Rust
 - Go
 - Haskell

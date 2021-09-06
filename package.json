@@ -67,6 +67,10 @@
         "path": "./snippets/php.json"
       },
       {
+        "language": "rescript",
+        "path": "./snippets/rescript.json"
+      },
+      {
         "language": "ruby",
         "path": "./snippets/ruby.json"
       },
