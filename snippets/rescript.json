@@ -1,0 +1,100 @@
+{
+	"Module": {
+		"prefix": [
+			"module"
+		],
+		"body": [
+			"module ${1:Name} = {",
+			"\t${2:// Module contents}",
+			"}"
+		]
+	},
+	"Switch": {
+		"prefix": [
+			"switch"
+		],
+		"body": [
+			"switch ${1:value} {",
+			"| ${2:pattern1} => ${3:expression}",
+			"${4:| ${5:pattern2} => ${6:expression}}",
+			"}"
+		]
+	},
+	"Try": {
+		"prefix": [
+			"try"
+		],
+		"body": [
+			"try {",
+			"\t${1:expression}",
+			"} catch {",
+			"| ${2:MyException} => ${3:expression}",
+			"}"
+		]
+	},
+	"For Loop": {
+		"prefix": [
+			"for"
+		],
+		"body": [
+			"for ${1:i} in ${2:startValueInclusive} to ${3:endValueInclusive} {",
+			"\t${4:Js.log(${1:i})}",
+			"}"
+		]
+	},
+	"Reverse For Loop": {
+		"prefix": [
+			"for"
+		],
+		"body": [
+			"for ${1:i} in ${2:startValueInclusive} downto ${3:endValueInclusive} {",
+			"\t${4:Js.log(${1:i})}",
+			"}"
+		]
+	},
+	"Global External Object": {
+		"prefix": [
+			"@bs",
+			"external"
+		],
+		"body": [
+			"@val external ${1:setTimeout}: ${2:(unit => unit, int) => float} = \"${3:setTimeout}\""
+		]
+	},
+	"Global External Module": {
+		"prefix": [
+			"@bs",
+			"external"
+		],
+		"body": [
+			"@scope(\"${1:Math}\") @val external ${2:random}: ${3:unit => float} = \"${4:random}\""
+		]
+	},
+	"JS Module External": {
+		"prefix": [
+			"@bs",
+			"external"
+		],
+		"body": [
+			"@module(\"${1:path}\") external ${2:dirname}: ${3:string => string} = \"${4:dirname}\""
+		]
+	},
+	"JS Module Default External": {
+		"prefix": [
+			"@bs",
+			"external"
+		],
+		"body": [
+			"@module external ${1:leftPad}: ${2:(string, int) => string} = \"${3:leftPad}\""
+		]
+	},
+  "React Component": {
+    "prefix": "react.component",
+    "body": [
+      "@react.component",
+      "let make = (${1}) => {",
+      "\t${2}",
+      "}"
+    ]
+  }
+}
