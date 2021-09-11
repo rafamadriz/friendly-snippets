@@ -177,14 +177,14 @@
   "Algorithm:Ref": {
     "prefix": "algo:ref",
     "body": [
-      "${1:Algorithm}~\\ref{${2:algo:}}$0"
+      "${1:Algorithm}~\\ref{algo:$2}$0"
     ],
     "desciption": "Ref for Algorithm"
   },
   "Figure:Ref": {
     "prefix": "figure:ref",
     "body": [
-      "${1:Figure}~\\ref{${2:fig:}}$0"
+      "${1:Figure}~\\ref{fig:$2}$0"
     ],
     "description": "Ref for Figure"
   },
@@ -209,7 +209,7 @@
   "Listing:Ref": {
     "prefix": "listing:ref",
     "body": [
-      "${1:Listing}~\\ref{${2:lst:}}$0"
+      "${1:Listing}~\\ref{lst:$2}$0"
     ],
     "description": "Listing"
   },
@@ -266,7 +266,7 @@
   "Section:Ref": {
     "prefix": "section:ref",
     "body": [
-      "${1:Section}~\\ref{${2:sec:}}$0"
+      "${1:Section}~\\ref{sec:$2}$0"
     ],
     "description": "Section Reference"
   },
@@ -322,7 +322,7 @@
   "Table:Ref": {
     "prefix": "table:ref",
     "body": [
-      "${1:Table}~\\ref{${2:tab:}}$0"
+      "${1:Table}~\\ref{tab:$2}$0"
     ],
     "description": "Table Reference"
   },
@@ -348,13 +348,11 @@
     "prefix": "figure",
     "body": [
       "\\begin{figure}",
-      "\t\\begin{small}",
-      "\t\t\\begin{center}",
-      "\t\t\t\\includegraphics[width=0.95\\textwidth]{figures/$1}",
-      "\t\t\\end{center}",
-      "\t\t\\caption{$3}",
-      "\t\t\\label{fig:$4}",
-      "\t\\end{small}",
+      "\t\\begin{center}",
+      "\t\t\\includegraphics[width=0.95\\textwidth]{figures/$1}",
+      "\t\\end{center}",
+      "\t\\caption{$3}",
+      "\t\\label{fig:$4}",
       "\\end{figure}",
       "$0"
     ],
@@ -388,22 +386,20 @@
     "prefix": "table",
     "body": [
       "\\begin{table}",
-      "\t\\begin{small}",
-      "\t\t\\caption{$1}",
-      "\t\t\\label{tab:$2}",
-      "\t\t\\begin{center}",
-      "\t\t\t\\begin{tabular}[c]{l|l}",
-      "\t\t\t\t\\hline",
-      "\t\t\t\t\\multicolumn{1}{c|}{\\textbf{$3}} & ",
-      "\t\t\t\t\\multicolumn{1}{c}{\\textbf{$4}} \\\\\\\\",
-      "\t\t\t\t\\hline",
-      "\t\t\t\ta & b \\\\\\\\",
-      "\t\t\t\tc & d \\\\\\\\",
-      "\t\t\t\t$5",
-      "\t\t\t\t\\hline",
-      "\t\t\t\\end{tabular}",
-      "\t\t\\end{center}",
-      "\t\\end{small}",
+      "\t\\caption{$1}",
+      "\t\\label{tab:$2}",
+      "\t\\begin{center}",
+      "\t\t\\begin{tabular}[c]{l|l}",
+      "\t\t\t\\hline",
+      "\t\t\t\\multicolumn{1}{c|}{\\textbf{$3}} & ",
+      "\t\t\t\\multicolumn{1}{c}{\\textbf{$4}} \\\\\\\\",
+      "\t\t\t\\hline",
+      "\t\t\ta & b \\\\\\\\",
+      "\t\t\tc & d \\\\\\\\",
+      "\t\t\t$5",
+      "\t\t\t\\hline",
+      "\t\t\\end{tabular}",
+      "\t\\end{center}",
       "\\end{table}",
       "$0"
     ],

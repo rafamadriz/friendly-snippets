@@ -260,13 +260,6 @@
         "path": "./snippets/latex/vscode-latex-snippets.json"
       },
       {
-        "language": [
-          "plaintex",
-          "tex"
-        ],
-        "path": "./snippets/latex/vscode-latex-support.json"
-      },
-      {
         "language": "twig",
         "path": "./snippets/twig.json"
       },
