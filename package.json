@@ -269,6 +269,10 @@
           "rmd"
         ],
         "path": "./snippets/r.json"
+      },
+      {
+        "language": "org",
+        "path": "./snippets/org.json"
       }
     ]
   }
