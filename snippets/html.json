@@ -421,7 +421,7 @@
     },
     "img": {
         "prefix": "img",
-        "body": "<img src=\"$1\" alt=\"$2\">$3",
+        "body": "<img src=\"$1\" alt=\"$2\"/>$3",
         "description": "HTML - Defines an image",
         "scope": "text.html"
     },
