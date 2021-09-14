@@ -387,5 +387,10 @@
       "}"
     ],
     "description": "Creates an async Method structure"
+  },
+  "cls": {
+    "prefix": "cls",
+    "body": ["${1:public} class ${2:$TM_FILENAME_BASE}", "{", "\t$0", "}"],
+    "description": "Create new class"
   }
 }
