@@ -1,17 +1,29 @@
 {
   "defmodule": {
     "prefix": "defmodule",
-    "body": "defmodule Name do\n\nend",
+    "body": [
+      "defmodule ${1:Name} do",
+      "  $0",
+      "end"
+    ],
     "description": "Define a module"
   },
   "def": {
     "prefix": "def",
-    "body": "def name() do\n\nend",
+    "body": [
+      "def ${1:name}() do",
+      "  $0",
+      "end"
+    ],
     "description": "Define a function"
   },
   "defp": {
     "prefix": "defp",
-    "body": "defp name() do\n\nend",
+    "body": [
+      "defp ${1:name}() do",
+      "  $0",
+      "end"
+    ],
     "description": "Define a private function"
   }
 }
