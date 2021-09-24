@@ -31,6 +31,10 @@
         "path": "./snippets/csharp.json"
       },
       {
+        "language": "gitcommit",
+        "path": "./snippets/gitcommit.json"
+      },
+      {
         "language": "html",
         "path": "./snippets/ejs.json"
       },
