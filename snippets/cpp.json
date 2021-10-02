@@ -198,17 +198,17 @@
   },
   "#inc": {
     "prefix": "#inc",
-    "body": ["#include \"$1\"$0"],
+    "body": ["#include \"$0\""],
     "description": "Code snippet for #include \" \""
   },
   "#inc<": {
     "prefix": "#inc<",
-    "body": ["#include <$1>$0"],
+    "body": ["#include <$0>"],
     "description": "Code snippet for #include < >"
   },
   "#def": {
     "prefix": "def",
-    "body": ["#define $1"],
+    "body": ["#define $0"],
     "description": "Code snippet for #define \" \""
   },
   "Main function template": {
