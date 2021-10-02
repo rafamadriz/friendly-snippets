@@ -1,0 +1,53 @@
+{
+  "fix": {
+    "prefix": "fix",
+    "body": "fix($1): $2",
+    "description": "fix conventional commit"
+  },
+  "feat": {
+    "prefix": "feat",
+    "body": "feat($1): $2",
+    "description": "feat conventional commit"
+  },
+  "chore": {
+    "prefix": "chore",
+    "body": "chore($1): $2",
+    "description": "chore conventional commit"
+  },
+  "docs": {
+    "prefix": "docs",
+    "body": "docs($1): $2",
+    "description": "docs conventional commit"
+  },
+  "improvement": {
+    "prefix": "improvement",
+    "body": "improvement($1): $2",
+    "description": "improvement conventional commit"
+  },
+  "perf": {
+    "prefix": "perf",
+    "body": "perf($1): $2",
+    "description": "perf conventional commit"
+  },
+  "refactor": {
+    "prefix": "refactor",
+    "body": "refactor($1): $2",
+    "description": "refactor conventional commit"
+  },
+  "test": {
+    "prefix": "test",
+    "body": "test($1): $2",
+    "description": "test conventional commit"
+  },
+  "ci": {
+    "prefix": "ci",
+    "body": "ci($1): $2",
+    "description": "ci conventional commit"
+  },
+  "build": {
+    "prefix": "build",
+    "body": "build($1): $2",
+    "description": "build conventional commit"
+  }
+}
+
