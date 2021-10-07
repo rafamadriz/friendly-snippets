@@ -273,6 +273,10 @@
       {
         "language": "org",
         "path": "./snippets/org.json"
+      },
+      {
+        "language": "gdscript",
+        "path": "./snippets/gdscript.json"
       }
     ]
   }
