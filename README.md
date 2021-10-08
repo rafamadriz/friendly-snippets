@@ -28,6 +28,7 @@ duplicates.
 - ReScript
 - Rust
 - Go
+- GDScript (Godot)
 - Haskell
 - Eruby
 - Ruby
