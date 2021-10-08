@@ -142,14 +142,14 @@
   "export variables": {
     "prefix": "export",
 		"body": [
-      "export(${1:type}${2:,other_configs}) var ${3:name}${4: = default}${5: setget }"
+      "export(${1:type}${2:,other_configs}) var ${3:name}${4: = }${5:}${6: setget }"
     ]
   },
 
   "define variables": {
     "prefix": "var",
 		"body": [
-      "var ${1:name}${2: = default}${3: setget }"
+      "var ${1:name}${2: = }${3:}${4: setget }"
     ]
   },
 
