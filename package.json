@@ -16,6 +16,10 @@
         "path": "./snippets/global.json"
       },
       {
+        "language": "gitcommit",
+        "path": "./snippets/gitcommit.json"
+      },
+      {
         "language": "c",
         "path": "./snippets/c.json"
       },

@@ -1,0 +1,27 @@
+{
+  "feat": {
+    "prefix": "feat",
+    "body": "feat(${1:something}): ${2:description}",
+    "description": "new feature"
+  },
+  "fix": {
+    "prefix": "fix",
+    "body": "fix(${1:something}): ${2:description}",
+    "description": "quick fix"
+  },
+  "refactor": {
+    "prefix": "refactor",
+    "body": "refactor(${1:something}): ${2:description}",
+    "description": "refactored something"
+  },
+  "chore": {
+    "prefix": "chore",
+    "body": "chore(${1:something}): ${2:description}",
+    "description": "changed something boring"
+  },
+  "ci": {
+    "prefix": "ci",
+    "body": "ci(${1:something}): ${2:description}",
+    "description": "changed something related to the ci"
+  }
+}
