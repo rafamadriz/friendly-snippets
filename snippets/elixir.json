@@ -25,5 +25,13 @@
       "end"
     ],
     "description": "Define a private function"
-  }
+  },
+  "IO.inspect": {
+    "prefix": "ins",
+    "body": "IO.inspect(${0})",
+  },
+  "IO.inspect with label": {
+    "prefix": "insl",
+    "body": "IO.inspect(${0}, label: \"${1}\")",
+  },
 }
