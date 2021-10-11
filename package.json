@@ -31,7 +31,10 @@
         "path": "./snippets/csharp.json"
       },
       {
-        "language": "gitcommit",
+        "language": [
+          "gitcommit",
+          "NeogitCommitMessage"
+        ],
         "path": "./snippets/gitcommit.json"
       },
       {
