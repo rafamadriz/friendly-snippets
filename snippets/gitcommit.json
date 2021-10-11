@@ -1,0 +1,96 @@
+{
+    "conventional commit": {
+        "prefix": "cc",
+        "body": [
+            "${1:type}(${2:scope}): ${3:title}",
+            "",
+            "$0"
+        ]
+    },
+    "fix conventional commit": {
+        "prefix": "fix",
+        "body": [
+            "fix(${1:scope}): ${2:title}",
+            "",
+            "$0"
+        ]
+    },
+    "feat conventional commit": {
+        "prefix": "feat",
+        "body": [
+            "feat(${1:scope}): ${2:title}",
+            "",
+            "$0"
+        ]
+    },
+    "build conventional commit": {
+        "prefix": "build",
+        "body": [
+            "build(${1:scope}): ${2:title}",
+            "",
+            "$0"
+        ]
+    },
+    "chore conventional commit": {
+        "prefix": "chore",
+        "body": [
+            "chore(${1:scope}): ${2:title}",
+            "",
+            "$0"
+        ]
+    },
+    "ci conventional commit": {
+        "prefix": "ci",
+        "body": [
+            "ci(${1:scope}): ${2:title}",
+            "",
+            "$0"
+        ]
+    },
+    "docs conventional commit": {
+        "prefix": "docs",
+        "body": [
+            "docs(${1:scope}): ${2:title}",
+            "",
+            "$0"
+        ]
+    },
+    "style conventional commit": {
+        "prefix": "style",
+        "body": [
+            "style(${1:scope}): ${2:title}",
+            "",
+            "$0"
+        ]
+    },
+    "refactor conventional commit": {
+        "prefix": "refactor",
+        "body": [
+            "refactor(${1:scope}): ${2:title}",
+            "",
+            "$0"
+        ]
+    },
+    "perf conventional commit": {
+        "prefix": "perf",
+        "body": [
+            "perf(${1:scope}): ${2:title}",
+            "",
+            "$0"
+        ]
+    },
+    "test conventional commit": {
+        "prefix": "test",
+        "body": [
+            "test(${1:scope}): ${2:title}",
+            "",
+            "$0"
+        ]
+    },
+    "breaking change conventional commit footer": {
+        "prefix": "BREAK",
+        "body": [
+            "BREAKING CHANGE: $0"
+        ]
+    }
+}
