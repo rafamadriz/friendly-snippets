@@ -1,0 +1,200 @@
+{
+	"Inner class": {
+		"prefix": "class",
+		"body": [
+			"class $1 extends ${2:Reference}",
+			"\t$3"
+		]
+	},
+
+	"Print messages to console": {
+		"prefix": "pr",
+		"body": [
+			"print($1)"
+		]
+	},
+
+	"_ready method of Node": {
+		"prefix": "ready",
+		"body": [
+			"func _ready():",
+			"\t${1:pass}"
+		]
+	},
+
+	"_init method of Object": {
+		"prefix": "init",
+		"body": [
+			"func _init():",
+			"\t${1:pass}"
+		]
+	},
+
+	"_process method of Node": {
+		"prefix": "process",
+		"body": [
+      "func _process(delta):",
+      "\t${1:pass}"
+    ]
+	},
+
+	"_input method of Node": {
+		"prefix": "input",
+		"body": [
+      "func _input(event):",
+      "\t${1:pass}"
+    ]
+	},
+
+  "_input_event method of Node": {
+		"prefix": "inpute",
+		"body": [
+      "func _input_event(event):",
+      "\t${1:pass}"
+    ]
+  },
+
+    "_draw method of Node": {
+      "prefix": "draw",
+      "body": [
+        "func _draw():",
+        "\t${1:pass}"
+      ]
+    },
+
+  "_gui_input method of Node": {
+    "prefix": "guii",
+    "body": [
+      "func _gui_input(event):",
+      "\t${1:pass}"
+    ]
+  },
+
+	"for loop": {
+		"prefix": "for",
+		"body": [
+      "for $1 in $2:",
+      "\t${3:pass}"
+    ]
+	},
+
+  "for range loop": {
+		"prefix": "for",
+		"body": [
+      "for $1 in range(${2:start}{$3:,end}):",
+      "\t${4:pass}"
+    ]
+	},
+
+  "if elif else": {
+    "prefix": "if",
+		"body": [
+      "if ${1:condition}:",
+      "\t${3:pass}",
+      "elif ${2:condition}:",
+      "\t${4:pass}",
+      "else:",
+      "\t${5:pass}"
+    ]
+  },
+
+  "if else": {
+    "prefix": "if",
+		"body": [
+      "if ${1:condition}:",
+      "\t${2:pass}",
+      "else:",
+      "\t${3:pass}"
+    ]
+  },
+
+  "if": {
+    "prefix": "if",
+		"body": [
+      "if ${1:condition}:",
+      "\t${2:pass}"
+    ]
+  },
+
+  "while": {
+    "prefix": "while",
+		"body": [
+      "while ${1:condition}:",
+      "\t${2:pass}"
+    ]
+  },
+
+  "function define": {
+    "prefix": "func",
+		"body": [
+      "func ${1:method}(${2:args}):",
+      "\t${3:pass}"
+    ]
+  },
+
+  "signal declaration": {
+    "prefix": "signal",
+		"body": [
+      "signal ${1:signalname}(${2:args})"
+    ]
+  },
+
+  "export variables": {
+    "prefix": "export",
+		"body": [
+      "export(${1:type}${2:,other_configs}) var ${3:name}${4: = }${5:}${6: setget }"
+    ]
+  },
+
+  "define variables": {
+    "prefix": "var",
+		"body": [
+      "var ${1:name}${2: = }${3:}${4: setget }"
+    ]
+  },
+
+  "define onready variables": {
+    "prefix": "onready",
+		"body": [
+      "onready var ${1:name} = get_node($2)"
+    ]
+  },
+
+  "Is instance of a class or script": {
+    "prefix": "is",
+    "body": [
+      "${1:instance} is ${2:class}"
+    ]
+  },
+
+  "element in array": {
+    "prefix": "in",
+		"body": [
+      "${1:element} in ${$2:array}"
+    ]
+  },
+
+  "GDScript template": {
+    "prefix": "gdscript",
+		"body": [
+      "extends ${1:BaseClass}",
+      "",
+      "# class member variables go here, for example:",
+      "# var a = 2",
+      "# var b = \"textvar\"",
+      "",
+      "func _ready():",
+      "\t# Called every time the node is added to the scene.",
+      "\t# Initialization here",
+      "\tpass",
+      ""
+    ]
+  },
+
+  "pass statement": {
+    "prefix": "pass",
+    "body": [
+      "pass"
+    ]
+  }
+}

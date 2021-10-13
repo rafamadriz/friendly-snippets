@@ -31,6 +31,13 @@
         "path": "./snippets/csharp.json"
       },
       {
+        "language": [
+          "gitcommit",
+          "NeogitCommitMessage"
+        ],
+        "path": "./snippets/gitcommit.json"
+      },
+      {
         "language": "html",
         "path": "./snippets/ejs.json"
       },
@@ -271,8 +278,16 @@
         "path": "./snippets/r.json"
       },
       {
+        "language": "rmd",
+        "path": "./snippets/rmarkdown.json"
+      },
+      {
         "language": "org",
         "path": "./snippets/org.json"
+      },
+      {
+        "language": "gdscript",
+        "path": "./snippets/gdscript.json"
       }
     ]
   }
