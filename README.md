@@ -30,6 +30,7 @@ duplicates.
 - Go
 - GDScript (Godot)
 - Haskell
+- Elixir
 - Eruby
 - Ruby
 - Swift
