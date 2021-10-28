@@ -2,16 +2,13 @@
 
 Snippets collection for a set of different programming languages for faster development.
 
-## Goal
-
 The only goal is to have one community driven repository for all kinds of
 snippets in all programming languages, this way you can have it all in one
 place.
 
 ## Contributing
 
-You can commit all kinds of useful snippets that you may have for personal use,
-but first make sure that the snippets don't already exist, so we don't have
+First make sure that the snippets don't already exist, so we don't have
 duplicates.
 
 ### Snippets for:
@@ -83,7 +80,39 @@ CocInstall https://github.com/rafamadriz/friendly-snippets@main
 
 ##### NOTE: Using [nvim-compe](https://github.com/hrsh7th/nvim-compe) with [vim-vsnip](https://github.com/hrsh7th/vim-vsnip) on the videos.
 
-## For for more details go to the [Wiki](https://github.com/rafamadriz/friendly-snippets/wiki)
+### Snippets for:
+
+- HTML, Pug, Jade
+- CSS, Sass, Less, Stylus
+- JavaScript, Typescript, Javascriptreact, Typescriptreact
+- Vue
+- PHP
+- Python
+- C
+- C++
+- C#
+- ReScript
+- Rust
+- Go
+- GDScript (Godot)
+- Haskell
+- Eruby
+- Ruby
+- Swift
+- Java
+- Fortran
+- Lua
+- LaTex
+- Shell
+- Markdown
+- Sql
+- Rails
+- Elixir
+- Fennel
+- Cobol
+- Jekyll(Markdown)
+- Kotlin
+- R(Markdown)
 
 ## TODO
 

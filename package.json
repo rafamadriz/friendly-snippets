@@ -54,6 +54,10 @@
         "path": "./snippets/fortran.json"
       },
       {
+        "language": "glsl",
+        "path": "./snippets/glsl.json"
+      },
+      {
         "language": "liquid",
         "path": "./snippets/liquid.json"
       },
