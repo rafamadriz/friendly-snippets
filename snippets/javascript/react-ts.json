@@ -29,12 +29,12 @@
   },
   "reactFunctionComponent": {
     "prefix": "rfc",
-    "body": "import React from 'react'\n\nexport const ${TM_FILENAME_BASE}: React.FC<{}> = () => {\n\treturn (\n\t\t<div>\n\t\t\t$0\n\t\t</div>\n\t)\n}",
+    "body": "import React from 'react'\n\nexport const ${TM_FILENAME_BASE} = (props : {}) => {\n\treturn (\n\t\t<div>\n\t\t\t$0\n\t\t</div>\n\t)\n}",
     "description": "Creates a React functional component without PropTypes"
   },
   "reactFunctionComponentWithEmotion": {
     "prefix": "rfce",
-    "body": "import { css } from '@emotion/core'\nimport React from 'react'\n\nexport const ${TM_FILENAME_BASE}: React.FC<{}> = () => {\n\treturn (\n\t\t<div css={css``}>\n\t\t\t$0\n\t\t</div>\n\t)\n}",
+    "body": "import { css } from '@emotion/core'\nimport React from 'react'\n\nexport const ${TM_FILENAME_BASE} = (props: {}) => {\n\treturn (\n\t\t<div css={css``}>\n\t\t\t$0\n\t\t</div>\n\t)\n}",
     "description": "Creates a React functional component with emotion import"
   },
   "classConstructor": {
