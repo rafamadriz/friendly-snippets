@@ -11,41 +11,6 @@ place.
 First make sure that the snippets don't already exist, so we don't have
 duplicates.
 
-### Snippets for:
-
-- HTML, Pug, Jade
-- CSS, Sass, Less, Stylus
-- JavaScript, Typescript, Javascriptreact, Typescriptreact
-- Vue
-- PHP
-- Python
-- C
-- C++
-- C#
-- ReScript
-- Rust
-- Go
-- GDScript (Godot)
-- Haskell
-- Elixir
-- Eruby
-- Ruby
-- Swift
-- Java
-- Fortran
-- Lua
-- LaTex
-- Shell
-- Markdown
-- Sql
-- Rails
-- Elixir
-- Fennel
-- Cobol
-- Jekyll(Markdown)
-- Kotlin
-- R(Markdown)
-
 ### Usage
 
 This collection of snippets should work with any plugin that supports loading
@@ -96,6 +61,7 @@ CocInstall https://github.com/rafamadriz/friendly-snippets@main
 - Go
 - GDScript (Godot)
 - Haskell
+- Elixir
 - Eruby
 - Ruby
 - Swift
