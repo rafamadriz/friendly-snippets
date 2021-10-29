@@ -61,6 +61,7 @@ CocInstall https://github.com/rafamadriz/friendly-snippets@main
 - Go
 - GDScript (Godot)
 - Haskell
+- Elixir
 - Eruby
 - Ruby
 - Swift
