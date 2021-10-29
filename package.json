@@ -50,6 +50,10 @@
         "path": "./snippets/elixir.json"
       },
       {
+        "language": "eelixir",
+        "path": "./snippets/eelixir.json"
+      },
+      {
         "language": "fortran",
         "path": "./snippets/fortran.json"
       },
