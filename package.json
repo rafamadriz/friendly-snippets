@@ -168,13 +168,6 @@
       },
       {
         "language": [
-          "javascriptreact",
-          "typescriptreact"
-        ],
-        "path": "./snippets/javascript/apollo.json"
-      },
-      {
-        "language": [
           "typescript",
           "typescriptreact"
         ],
@@ -251,10 +244,6 @@
       {
         "language": "kotlin",
         "path": "./snippets/kotlin.json"
-      },
-      {
-        "language": "fortran",
-        "path": "./snippets/fortran/vscode-fortran-support.json"
       },
       {
         "language": [
