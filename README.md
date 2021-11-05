@@ -23,7 +23,8 @@ vscode snippets. Like for example:
 ### Add snippets from a framework to a filetype.
 
 There's extra snippets included in this repo but they are not added default,
-since it would irrelevant for people not using those frameworks. See [`snippets/frameworks`](https://github.com/rafamadriz/friendly-snippets/tree/main/snippets/frameworks)
+since it would be irrelevant for people not using those frameworks. See
+[`snippets/frameworks`](https://github.com/rafamadriz/friendly-snippets/tree/main/snippets/frameworks)
 
 For example: if you want to add rails snippets to ruby.
 
