@@ -38,8 +38,8 @@
         "path": "./snippets/gitcommit.json"
       },
       {
-        "language": "html",
-        "path": "./snippets/ejs.json"
+        "language": "ejs",
+        "path": "./snippets/frameworks/ejs.json"
       },
       {
         "language": "eruby",
@@ -90,8 +90,8 @@
         "path": "./snippets/ruby.json"
       },
       {
-        "language": "ruby",
-        "path": "./snippets/rails.json"
+        "language": "rails",
+        "path": "./snippets/frameworks/rails.json"
       },
       {
         "language": "rust",
@@ -225,16 +225,12 @@
         "path": "./snippets/python/unittest.json"
       },
       {
-        "language": "python",
-        "path": "./snippets/python/tkinter.json"
+        "language": "flutter",
+        "path": "./snippets/frameworks/flutter.json"
       },
       {
-        "language": "dart",
-        "path": "./snippets/flutter.json"
-      },
-      {
-        "language": "markdown",
-        "path": "./snippets/jekyll/vscode-jekyll-snippets.json"
+        "language": "jekyll",
+        "path": "./snippets/frameworks/jekyll.json"
       },
       {
         "language": "cobol",
@@ -276,7 +272,7 @@
       },
       {
         "language": "twig",
-        "path": "./snippets/twig.json"
+        "path": "./snippets/frameworks/twig.json"
       },
       {
         "language": [

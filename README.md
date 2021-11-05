@@ -20,6 +20,29 @@ vscode snippets. Like for example:
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 - [coc-snippets](https://github.com/neoclide/coc-snippets)
 
+### Add snippets from a framework to a filetype.
+
+There's extra snippets included in this repo but they are not added default,
+since it would irrelevant for people not using those frameworks. See `[snippets/frameworks]()`
+
+For example: if you want to add rails snippets to ruby.
+
+With LuaSnip:
+
+```lua
+require'luasnip'.filetype_extend("ruby", {"rails"})
+```
+
+This method is going to work globally on all open buffers with `ruby` filetype.
+Alternatively you can do `set filetype=ruby.rails` so it only works on a
+specific buffer, but this is going to mess up with syntax highlighting.
+
+With vim-vsnip:
+
+```viml
+let g:vsnip_filetypes.rails = ['ruby']
+```
+
 ### Install
 
 Use your plugin manager of choice, e.g.
