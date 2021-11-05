@@ -43,6 +43,8 @@ With vim-vsnip:
 let g:vsnip_filetypes.rails = ['ruby']
 ```
 
+For more info related to this change see #88
+
 ### Install
 
 Use your plugin manager of choice, e.g.
