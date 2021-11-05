@@ -183,19 +183,19 @@
       },
       {
         "language": "vue",
-        "path": "./snippets/vue/html.json"
+        "path": "./snippets/frameworks/vue/html.json"
       },
       {
         "language": "vue",
-        "path": "./snippets/vue/pug.json"
+        "path": "./snippets/frameworks/vue/pug.json"
       },
       {
         "language": "vue",
-        "path": "./snippets/vue/javascript.json"
+        "path": "./snippets/frameworks/vue/javascript.json"
       },
       {
         "language": "vue",
-        "path": "./snippets/vue/vue.json"
+        "path": "./snippets/frameworks/vue/vue.json"
       },
       {
         "language": "python",
