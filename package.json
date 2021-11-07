@@ -162,7 +162,8 @@
           "javascript",
           "typescript",
           "javascriptreact",
-          "typescriptreact"
+          "typescriptreact",
+          "vue"
         ],
         "path": "./snippets/javascript/javascript.json"
       },
