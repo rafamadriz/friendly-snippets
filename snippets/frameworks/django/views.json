@@ -80,8 +80,8 @@
   "Django AdminView":{
     "prefix": "adminview",
     "body": [
-      "@regeister($1)",
-      "class ${1:ModelName}Admin(generic.FormView):",
+      "@admin.register($1)",
+      "class ${1:ModelName}Admin(admin.ModelAdmin):",
       "\tlist_display = ${2:\"pk\",}",
       "\tsearch_fields = ${3:\"pk\",}",
       "\tlist_filter = ${4:\"FilterFields\",}"
@@ -91,7 +91,7 @@
   "Django AdminTabularInline":{
     "prefix": "tabularinline",
     "body": [
-      "class ${1:ModelName}Inline(generic.TabularInline):",
+      "class ${1:ModelName}Inline(admin.TabularInline):",
       "\tmodel = ${2:$1}",
       "\tmin_num = ${4:0}",
       "\tmax_num = ${4:8}",
@@ -102,7 +102,7 @@
   "Django AdminStackedInline":{
     "prefix": "stackedinline",
     "body": [
-      "class ${1:ModelName}Inline(generic.StackedInline):",
+      "class ${1:ModelName}Inline(admin.StackedInline):",
       "\tmodel = ${2:$1}",
       "\tmin_num = ${4:0}",
       "\tmax_num = ${4:8}",
