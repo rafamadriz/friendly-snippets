@@ -26,7 +26,7 @@
   "Django DeleteView":{
     "prefix": "deleteview",
     "body": [
-      "class ${1:ModelName}DeleteView(generic.UpdateView):",
+      "class ${1:ModelName}DeleteView(generic.DeleteView):",
       "\tmodel = ${2:$1}",
       "\n\tdef get_success_url(self):",
       "\t\treturn reverse(\"${3:$1:list}\")",
