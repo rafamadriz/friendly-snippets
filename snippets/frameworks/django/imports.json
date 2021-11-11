@@ -1,0 +1,43 @@
+{
+  "Import forms":{
+    "prefix": "di-forms",
+    "body": "from django import forms",
+    "description": "Import Django ``forms``"
+  },
+  "Import models":{
+    "prefix": "di-model",
+    "body": "from django import models",
+    "description": "Import Django ``models``"
+  },
+  "Import get_user_model":{
+    "prefix": "di-getusermodel",
+    "body": "from django.contrib.auth import get_user_model",
+    "description": "Import Django ``get_user_model``"
+  },
+  "Import generic views":{
+    "prefix": "di-generic",
+    "body": "from django.views import generic",
+    "description": "Import Django ``generic``"
+  },
+  "Import JsonResponse":{
+    "prefix": "di-jsonresponse",
+    "body": "from django.http import JsonResponse",
+    "description": "Import Django ``JsonResponse``"
+  },
+  "Import reverse":{
+    "prefix": "di-reverse",
+    "body": "from django.urls import reverse",
+    "description": "Import Django ``reverse``"
+  },
+  "Import reverse_lazy":{
+    "prefix": "di-reverse_lazy",
+    "body": "from django.urls import revers_lazy",
+    "description": "Import Django ``revers_lazy``"
+  },
+  
+  "Import messages":{
+    "prefix": "di-messages",
+    "body": "from django.contrib import messages",
+    "description": "Import Django ``messages``"
+  }
+}
