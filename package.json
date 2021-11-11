@@ -220,23 +220,23 @@
         "path": "./snippets/python/unittest.json"
       },
       {
-        "language": "python",
+        "language": "django",
         "path": "./snippets/frameworks/django/imports.json"
       },
       {
-        "language": "python",
+        "language": "django",
         "path": "./snippets/frameworks/django/forms.json"
       },
       {
-        "language": "python",
+        "language": "django",
         "path": "./snippets/frameworks/django/models.json"
       },
       {
-        "language": "python",
+        "language": "django",
         "path": "./snippets/frameworks/django/views.json"
       },
       {
-        "language": "python",
+        "language": "django",
         "path": "./snippets/frameworks/django/filetemplates.json"
       },
       {
