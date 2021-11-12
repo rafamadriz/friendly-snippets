@@ -220,6 +220,26 @@
         "path": "./snippets/python/unittest.json"
       },
       {
+        "language": "django",
+        "path": "./snippets/frameworks/django/imports.json"
+      },
+      {
+        "language": "django",
+        "path": "./snippets/frameworks/django/forms.json"
+      },
+      {
+        "language": "django",
+        "path": "./snippets/frameworks/django/models.json"
+      },
+      {
+        "language": "django",
+        "path": "./snippets/frameworks/django/views.json"
+      },
+      {
+        "language": "django",
+        "path": "./snippets/frameworks/django/filetemplates.json"
+      },
+      {
         "language": "flutter",
         "path": "./snippets/frameworks/flutter.json"
       },

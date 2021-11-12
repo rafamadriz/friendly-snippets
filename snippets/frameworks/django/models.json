@@ -1,0 +1,183 @@
+{
+  "Django Simple Model": {
+    "prefix": "smodel",
+    "body": [
+      "class ${1:ModelName}(models.Model):",
+      "\t# Define $1 fields here",
+      "\t${2}",
+      "\n\tclass Meta:",
+      "\t\tordering = [\"${3:-pk}\"]",
+      "\t\tverbose_name = \"${4:$1}\"",
+      "\t\tverbose_name_plural = \"${5:$1s}\"",
+      "\n\tdef __str__(self):",
+      "\t\treturn ${6:super().__str__()}",
+      "\n\t# Define $1 properties here",
+      "\t${0}"
+    ],
+    "description": "Django Simple Model with properties and attributes"
+  },
+  "Django Full Model": {
+    "prefix": "model",
+    "body": [
+      "class ${1:ModelName}(models.Model):",
+      "\t# Define $1 fields here",
+      "\t${2}",
+      "\n\tclass Meta:",
+      "\t\tordering = [\"${3:-pk}\"]",
+      "\t\tverbose_name = \"${4:$1}\"",
+      "\t\tverbose_name_plural = \"${5:$1s}\"",
+      "\n\tdef __str__(self):",
+      "\t\treturn ${6:super().__str__()}",
+      "\n\tdef save(self, *args, **kwargs):",
+      "\t\treturn ${7:super().save(*args, **kwargs)}",
+      "\n\tdef get_absolute_url(self):",
+      "\t\treturn reverse('${8:view_or_url_name}', kwargs={${9:'pk'}: ${10: self.pk}})",
+      "\n\t# Define $1 properties here",
+      "\t${0}"
+    ],
+    "description": "Django Full Model with properties and attributes"
+  },
+  
+  "Models AutoField":{
+    "prefix": "mauto",
+    "body": "${1:FIELDNAME} = models.AutoField(${2})",
+    "description": "Django model ``AutoField``"
+  },
+  "Models BigIntegerField":{
+    "prefix": "mbigint",
+    "body": "${1:FIELDNAME} = models.AutoField(${2})",
+    "description": "Django model ``AutoField``"
+  },
+  "Models BinaryField":{
+    "prefix": "mbinary",
+    "body": "${1:FIELDNAME} = models.BinaryField(${2})",
+    "description": "Django model ``BinaryField``"
+  },
+  "Models Boolean":{
+    "prefix": "mbool",
+    "body": "${1:FIELDNAME} = models.BooleanField(default=${2:False})",
+    "description": "Django model ``BooleanField``"
+  },
+  "Models CharField":{
+    "prefix": "mchar",
+    "body": "${1:FieldName} = models.CharField(max_length=${2:32})",
+    "description": "Django model ``CharField``"
+  },
+  "Models CommaSeparatedIntegerField":{
+    "prefix": "mcomma",
+    "body": "${1:FIELDNAME} = models.CommaSeparatedIntegerField(max_length=${2})",
+    "description": "Django model ``CommaSeparatedIntegerField``"
+  },
+  "Models DateField":{
+    "prefix": "mdate",
+    "body": "${1:FIELDNAME} = models.DateField(auto_now_add=${2:True}, auto_now=${3:False}})",
+    "description": "Django model ``DateField``"
+  },
+  "Models DateTimeField":{
+    "prefix": "mdatetime",
+    "body": "${1:FIELDNAME} = models.DateTimeField(auto_now_add=${2:True}, auto_now=${3:False})",
+    "description": "Django model ``DateTimeField``"
+  },
+  "Models DecimalField":{
+    "prefix": "mdecimal",
+    "body": "${1:FIELDNAME} = models.DecimalField(max_digits=${2}, decimal_places=${3})",
+    "description": "Django model ``DecimalField``"
+  },
+  "Models EmailField":{
+    "prefix": "memail",
+    "body": "${1:FIELDNAME} = models.EmailField(${2})",
+    "description": "Django model ``EmailField``"
+  },
+  "Models FileField":{
+    "prefix": "mfile",
+    "body": "${1:FIELDNAME} = models.FileField(upload_to=${2:path/for/upload})",
+    "description": "Django model ``FileField``"
+  },
+  "Models FilePathField":{
+    "prefix": "mfilepath",
+    "body": "${1:FIELDNAME} = models.FilePathField(path=${2:\"/abs/path/to/dir\"}${3:, max_length=100}${4:, match=\"*.ext\"}${4:, recursive=True})",
+    "description": "Django model ``FilePathField``"
+  },
+  "Models FloatField":{
+    "prefix": "mfloat",
+    "body": "${1:FIELDNAME} = models.FloatField(${2})",
+    "description": "Django model ``FloatField``"
+  },
+  "Models ImageField":{
+    "prefix": "mimg",
+    "body": "${1:FIELDNAME} = models.ImageField(upload_to=${2:path/for/upload}${3:, height_field=height, width_field=width}${4:, max_length=100})",
+    "description": "Django model ``ImageField``"
+  },
+  "Models IntegerField":{
+    "prefix": "mint",
+    "body": "${1:FIELDNAME} = models.IntegerField(${2})",
+    "description": "Django model ``IntegerField``"
+  },
+  "Models IPAddressField":{
+    "prefix": "mip",
+    "body": "${1:FIELDNAME} = models.IPAddressField(${2})",
+    "description": "Django model ``IPAddressField``"
+  },
+  "Models NullBooleanField":{
+    "prefix": "mnullboolean",
+    "body": "${1:FIELDNAME} = models.NullBooleanField(${2})",
+    "description": "Django model ``NullBooleanField``"
+  },
+  "Models PositiveIntegerField":{
+    "prefix": "mposint",
+    "body": "${1:FIELDNAME} = models.PositiveIntegerField(${2})",
+    "description": "Django model ``PositiveIntegerField``"
+  },
+  "Models PositiveSmallIntegerField":{
+    "prefix": "mpossmallint",
+    "body": "${1:FIELDNAME} = models.PositiveSmallIntegerField(${2})",
+    "description": "Django model ``PositiveSmallIntegerField``"
+  },
+  "Models SlugField":{
+    "prefix": "mslug",
+    "body": "${1:FIELDNAME} = models.SlugField(${2})",
+    "description": "Django model ``SlugField``"
+  },
+  "Models SmallIntegerField":{
+    "prefix": "msmallint",
+    "body": "${1:FIELDNAME} = models.SmallIntegerField(${2})",
+    "description": "Django model ``SmallIntegerField``"
+  },
+  "Models TextField":{
+    "prefix": "mtext",
+    "body": "${1:FIELDNAME} = models.TextField(${2})",
+    "description": "Django model ``TextField``"
+  },
+  "Models TimeField":{
+    "prefix": "mtime",
+    "body": "${1:FIELDNAME} = models.TimeField(auto_now_add=${2:True}, auto_now=${3:False})",
+    "description": "Django model ``TimeField``"
+  },
+  "Models URLField":{
+    "prefix": "murl",
+    "body": "${1:FIELDNAME} = models.URLField(verify_exists=${2:False})",
+    "description": "Django model ``URLField``"
+  },
+  "Models XMLField":{
+    "prefix": "mxml",
+    "body": "${1:FIELDNAME} = models.XMLField(schema_path=${2:None})",
+    "description": "Django model ``XMLField``"
+  },
+  
+  "Models ForeignKey":{
+    "prefix": "fk",
+    "body": "${1:FIELDNAME} = models.ForeignKey(${2:OtherModel}, on_delete=models.${3:CASCADE}, related_name=\"${4:RelatedName}\" ${0:, limit_choices_to=})",
+    "description": "Django model ``ForeignKey``"
+  },
+  "Models ManyToManyField":{
+    "prefix": "m2m",
+    "body": "${1:FIELDNAME} = models.ManyToManyField(${2:OtherModel}, related_name=\"${3:RelatedName}\" ${0:, limit_choices_to=})",
+    "description": "Django model ``ManyToManyField``"
+  },
+  "Models OneToOneField":{
+    "prefix": "o2o",
+    "body": "${1:FIELDNAME} = models.OneToOneField(${2:OtherModel}, related_name=\"${4:RelatedName}\"${0:, to_field=''})",
+    "description": "Django model ``OneToOneField``"
+  }
+}
+

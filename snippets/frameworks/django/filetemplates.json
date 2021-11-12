@@ -1,0 +1,35 @@
+{
+  "Django URLFile Template":{
+    "prefix": "fturl",
+    "body": [
+      "from django.urls import path",
+      "from . import views as v",
+      "\n\napp_name = ${1:AppName}",
+      "urlpatterns = [",
+      "\t# TODO: Define $1 URLs here",
+      "\t${0}",
+      "]"
+    ],
+    "description": "Django File-Template Sinppet For ``URL`` File"
+  },
+  "Django FormFile Template":{
+    "prefix": "ftform",
+    "body": [
+      "from django import forms",
+      "from ${1:.models} import ${2}",
+      "\n\n# TODO: Create your forms here",
+      "${0}"
+    ],
+    "description": "Django File-Template Sinppet For ``Form`` File"
+  },
+  "Django CustomTagsFile Template":{
+    "prefix": "ftcutomtags",
+    "body": [
+      "from django import template",
+      "\nregister = template.Library()",
+      "\n# TODO: Create your custom tags here",
+      "${0}"
+    ],
+    "description": "Django File-Template Sinppet For ``CustomTags`` File"
+  }
+}

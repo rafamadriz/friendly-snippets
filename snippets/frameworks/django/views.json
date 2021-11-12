@@ -1,0 +1,243 @@
+{
+  "Django CreateView":{
+    "prefix": "createview",
+    "body": [
+      "class ${1:ModelName}CreateView(generic.CreateView):",
+      "\tmodel = ${2:$1}",
+      "\ttemplate_name = \"${3:$1/$1_form.html}\"",
+      "\tform_class = ${4:forms.$1Form}",
+      "\tsuccess_url = \"${5:.}\""
+    ],
+    "description": "Django CBV ``CreateView``"
+  },
+  "Django UpdateView":{
+    "prefix": "updateview",
+    "body": [
+      "class ${1:ModelName}UpdateView(generic.UpdateView):",
+      "\tmodel = ${2:$1}",
+      "\ttemplate_name = \"${3:$1/$1_form.html}\"",
+      "\tform_class = ${4:forms.$1Form}",
+      "\tsuccess_url = \"${5:.}\"",
+      "\n\tdef get_object(self):",
+      "\t\treturn $1.objects.get(pk=${6:self.kwargs.get(\"pk\")})"
+    ],
+    "description": "Django CBV ``UpdateView``"
+  },
+  "Django DeleteView":{
+    "prefix": "deleteview",
+    "body": [
+      "class ${1:ModelName}DeleteView(generic.DeleteView):",
+      "\tmodel = ${2:$1}",
+      "\n\tdef get_success_url(self):",
+      "\t\treturn reverse(\"${3:$1:list}\")",
+      "\n\tdef get(self, request, *args, **kwargs):",
+      "\t\treturn post(request, *args, **kwargs)"
+    ],
+    "description": "Django CBV ``DeleteView``"
+  },
+  "Django DetailView":{
+    "prefix": "detailview",
+    "body": [
+      "class ${1:ModelName}DetailView(generic.DetailView):",
+      "\tmodel = ${2:$1}",
+      "\ttemplate_name = \"${3:$1/$1_detail.html}\"",
+      "\n\tdef get_object(self):",
+      "\t\treturn $1.objects.get(pk=${4:self.kwargs.get(\"pk\")})",
+      "\n\tdef get_queryset(self):",
+      "\t\treturn $1.objects.filter(${5})"
+    ],
+    "description": "Django CBV ``DetailView``"
+  },
+  "Django ListView":{
+    "prefix": "listview",
+    "body": [
+      "class ${1:ModelName}ListView(generic.ListView):",
+      "\tmodel = ${2:$1}",
+      "\ttemplate_name = \"${3:$1/$1_list.html}\"",
+      "\n\tdef get_queryset(self):",
+      "\t\treturn $1.objects.filter(${4})"
+    ],
+    "description": "Django CBV ``ListView``"
+  },
+  "Django TemplateView":{
+    "prefix": "templateview",
+    "body": [
+      "class ${1:ModelName}TemplateView(generic.TemplateView):",
+      "\ttemplate_name = \"${2:$1/$1_list.html}\"",
+      "\n${3}"
+    ],
+    "description": "Django CBV ``TemplateView``"
+  },
+  "Django FormView":{
+    "prefix": "formview",
+    "body": [
+      "class ${1:ModelName}FormView(generic.FormView):",
+      "\tform_class = ${2:forms.$1Form}",
+      "\ttemplate_name = \"${3}\""
+    ],
+    "description": "Django CBV ``FormView``"
+  },
+  "Django AdminView":{
+    "prefix": "adminview",
+    "body": [
+      "@admin.register($1)",
+      "class ${1:ModelName}Admin(admin.ModelAdmin):",
+      "\tlist_display = ${2:\"pk\",}",
+      "\tsearch_fields = ${3:\"pk\",}",
+      "\tlist_filter = ${4:\"FilterFields\",}"
+    ],
+    "description": "Django AdminView for ``admin.py``"
+  },
+  "Django AdminTabularInline":{
+    "prefix": "tabularinline",
+    "body": [
+      "class ${1:ModelName}Inline(admin.TabularInline):",
+      "\tmodel = ${2:$1}",
+      "\tmin_num = ${4:0}",
+      "\tmax_num = ${4:8}",
+      "\textra = ${5:1}"
+    ],
+    "description": "Django TabularInline for ``admin.py``"
+  },
+  "Django AdminStackedInline":{
+    "prefix": "stackedinline",
+    "body": [
+      "class ${1:ModelName}Inline(admin.StackedInline):",
+      "\tmodel = ${2:$1}",
+      "\tmin_num = ${4:0}",
+      "\tmax_num = ${4:8}",
+      "\textra = ${5:1}"
+    ],
+    "description": "Django StackedInline for ``admin.py``"
+  },
+  
+  "Django Views get_context_data":{
+    "prefix": "getcontextdata",
+    "body": [
+      "def get_context_data(self, *args, **kwargs):",
+      "\tcontext = super().get_context_data(*args, **kwargs)",
+      "\treturn context"
+    ],
+    "description": "Django Views ``get_context_data`` method"
+  },
+  "Django Views get_success_url":{
+    "prefix": "getsuccessurl",
+    "body": [
+      "def get_success_url(self):",
+      "\treturn reverse(\"${1:ViewName}\", kwargs={${2:\"pk\": self.get_object().pk}})"
+    ],
+    "description": "Django Views ``get_success_url`` method"
+  },
+  "Django Views get_queryset":{
+    "prefix": "getqueryset",
+    "body": [
+      "def get_queryset(self):",
+      "\treturn ${1:ModelName}.objects.filter(${2})"
+    ],
+    "description": "Django Views ``get_queryset`` method"
+  },
+  "Django Views get_object":{
+    "prefix": "getobject",
+    "body": [
+      "def get_object(self):",
+      "\treturn ${1:ModelName}.objects.get(${2})"
+    ],
+    "description": "Django Views ``get_object`` method"
+  },
+  "Django Views form_valid":{
+    "prefix": "formvalid",
+    "body": [
+      "def form_valid(self, form):",
+      "\treturn super().form_valid(form)"
+    ],
+    "description": "Django Views ``form_valid`` method"
+  },
+  "Django Views form_invalid":{
+    "prefix": "forminvalid",
+    "body": [
+      "def form_invalid(self, form):",
+      "\treturn super().form_invalid(form)"
+    ],
+    "description": "Django Views ``form_invalid`` method"
+  },
+  "Django Views get_form_kwargs":{
+    "prefix": "getformkwargs",
+    "body": [
+      "def get_form_kwargs(self, form):",
+      "\tkwargs = super().get_form_kwargs()",
+      "\treturn kwargs"
+    ],
+    "description": "Django Views ``get_form_kwargs`` method"
+  },
+  "Django Views dispatch":{
+    "prefix": "dispatch",
+    "body": [
+      "def dispatch(self, request, *args, **kwargs):",
+      "\treturn super().dispatch(request, *args, **kwargs)"
+    ],
+    "description": "Django Views ``dispatch`` method"
+  },
+  "Django Views get_initial":{
+    "prefix": "getinitial",
+    "body": [
+      "def get_initial(self):",
+      "\tinit = super().get_initial()",
+      "\treturn init"
+    ],
+    "description": "Django Views ``get_initial`` method"
+  },
+  "Django Views post":{
+    "prefix": "post",
+    "body": [
+      "def post(self, request, *args, **kwargs):",
+      "\treturn super().post(request, *args, **kwargs)"
+    ],
+    "description": "Django Views ``post`` method"
+  },
+  "Django Views get":{
+    "prefix": "get",
+    "body": [
+      "def get(self, request, *args, **kwargs):",
+      "\treturn super().get(request, *args, **kwargs)"
+    ],
+    "description": "Django Views ``post`` method"
+  },
+  
+  
+  "Django Forms field_clean":{
+    "prefix": "cleanf",
+    "body": [
+      "def clean_${1:FieldName}(self):",
+      "\t$1 = self.cleaned_data[\"$1\"]",
+      "\t${0}",
+      "\treturn $1"
+    ],
+    "description": "Django Views ``field_clean`` method"
+  },
+  "Django Forms clean":{
+    "prefix": "cleanff",
+    "body": [
+      "def clean(self):",
+      "\tcleaned_data = super().clean()",
+      "\t${0}"
+    ],
+    "description": "Django Views ``clean`` method"
+  },
+  
+  
+  "Django FBV Path":{
+    "prefix": "fpath",
+    "body": "path(\"${1:Path}\", v.${2:View}, name=${0:PathName})",
+    "description": "Django Path For ``Function Based Views``"
+  },
+  "Django CBV Path":{
+    "prefix": "cpath",
+    "body": "path(\"${1:Path}\", v.${2:View}.as_viewJ(), name=${0:PathName})",
+    "description": "Django Path For ``Class Based Views``"
+  },
+  "Django Path as Include":{
+    "prefix": "ipath",
+    "body": "path(\"${1:Path}\", include(\"${2}.urls\", namespace=${0:Name})",
+    "description": "Django Path as ``Include``"
+  }
+}

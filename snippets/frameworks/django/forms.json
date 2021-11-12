@@ -1,0 +1,168 @@
+{
+  "Django Simple Form ":{
+    "prefix": "sform",
+    "body": [
+      "class ${1:Name}Form(forms.Form):",
+      "\t# Define $1Form fields here",
+      "\t${0}"
+    ],
+    "description": "Django Simple Form"
+  },
+  "Django Model Form ":{
+    "prefix": "modelform",
+    "body": [
+      "class ${1:ModelName}Form(forms.ModelForm):",
+      "\tclass Meta:",
+      "\t\tmodel = ${2:$1}",
+      "\t\tfields = (${3:\"__all__\"})",
+      "\t\t${0}"
+    ],
+    "description": "Django Model Form"
+  },
+  "Forms BooleanField":{
+    "prefix": "fbool",
+    "body": "${1:FIELDNAME} = forms.BooleanField(${2})",
+    "description": "Django forms ``BooleanField``"
+  },
+  "Forms CharField":{
+    "prefix": "fchar",
+    "body": "${1:FIELDNAME} = forms.CharField(${2})",
+    "description": "Django forms ``CharField``"
+  },
+  "Forms ComboField":{
+    "prefix": "fcombo",
+    "body": "${1:FIELDNAME} = forms.ComboField(${2})",
+    "description": "Django forms ``ComboField``"
+  },
+  "Forms DateField":{
+    "prefix": "fdate",
+    "body": "${1:FIELDNAME} = forms.DateField(${2})",
+    "description": "Django forms ``DateField``"
+  },
+  "Forms DateTime":{
+    "prefix": "fdatetime",
+    "body": "${1:FIELDNAME} = forms.DateTime(${2})",
+    "description": "Django forms ``DateTime``"
+  },
+  "Forms DecimalField":{
+    "prefix": "fdecimal",
+    "body": "${1:FIELDNAME} = forms.DecimalField(${2})",
+    "description": "Django forms ``DecimalField``"
+  },
+  "Forms DurationField":{
+    "prefix": "fduration",
+    "body": "${1:FIELDNAME} = forms.DurationField(${2})",
+    "description": "Django forms ``DurationField``"
+  },
+  "Forms EmailField":{
+    "prefix": "femail",
+    "body": "${1:FIELDNAME} = forms.EmailField(${2})",
+    "description": "Django forms ``EmailField``"
+  },
+  "Forms FileField":{
+    "prefix": "ffile",
+    "body": "${1:FIELDNAME} = forms.FileField(${2})",
+    "description": "Django forms ``FileField``"
+  },
+  "Forms FilePathField":{
+    "prefix": "ffilepath",
+    "body": "${1:FIELDNAME} = forms.FilePathField(${2})",
+    "description": "Django forms ``FilePathField``"
+  },
+  "Forms FloatField":{
+    "prefix": "ffloat",
+    "body": "${1:FIELDNAME} = forms.FloatField(${2})",
+    "description": "Django forms ``FloatField``"
+  },
+  "Forms GenericIPAddressField":{
+    "prefix": "fgip",
+    "body": "${1:FIELDNAME} = forms.GenericIPAddressField(${2})",
+    "description": "Django forms ``GenericIPAddressField``"
+  },
+  "Forms GenericIPAddressField":{
+    "prefix": "fgip",
+    "body": "${1:FIELDNAME} = forms.GenericIPAddressField(${2})",
+    "description": "Django forms ``GenericIPAddressField``"
+  },
+  "Forms ImageField":{
+    "prefix": "fimg",
+    "body": "${1:FIELDNAME} = forms.ImageField(${2})",
+    "description": "Django forms ``ImageField``"
+  },
+  "Forms IntegerField":{
+    "prefix": "fint",
+    "body": "${1:FIELDNAME} = forms.IntegerField(${2})",
+    "description": "Django forms ``IntegerField``"
+  },
+  "Forms IPAddressField":{
+    "prefix": "fip",
+    "body": "${1:FIELDNAME} = forms.IPAddressField(${2})",
+    "description": "Django forms ``IPAddressField``"
+  },
+  "Forms ModelChoiceField":{
+    "prefix": "fmochoice",
+    "body": "${1:FIELDNAME} = forms.ModelChoiceField(${2})",
+    "description": "Django forms ``ModelChoiceField``"
+  },
+  "Forms ModelMultipleChoiceField":{
+    "prefix": "fmomuchoice",
+    "body": "${1:FIELDNAME} = forms.ModelMultipleChoiceField(${2})",
+    "description": "Django forms ``ModelMultipleChoiceField``"
+  },
+  "Forms MultipleChoiceField":{
+    "prefix": "fmuchoice",
+    "body": "${1:FIELDNAME} = forms.MultipleChoiceField(${2})",
+    "description": "Django forms ``MultipleChoiceField``"
+  },
+  "Forms MultipleValueField":{
+    "prefix": "fmuvalue",
+    "body": "${1:FIELDNAME} = forms.MultipleValueField(${2})",
+    "description": "Django forms ``MultipleValueField``"
+  },
+  "Forms NullBooleanField":{
+    "prefix": "fnullbool",
+    "body": "${1:FIELDNAME} = forms.NullBooleanField(${2})",
+    "description": "Django forms ``NullBooleanField``"
+  },
+  "Forms RegexField":{
+    "prefix": "fregex",
+    "body": "${1:FIELDNAME} = forms.RegexField(${2})",
+    "description": "Django forms ``RegexField``"
+  },
+  "Forms SlugField":{
+    "prefix": "fslug",
+    "body": "${1:FIELDNAME} = forms.SlugField(${2})",
+    "description": "Django forms ``SlugField``"
+  },
+  "Forms SplitDateTime":{
+    "prefix": "fsdatetime",
+    "body": "${1:FIELDNAME} = forms.SplitDateTime(${2})",
+    "description": "Django forms ``SplitDateTime`` Field"
+  },
+  "Forms TimeField":{
+    "prefix": "ftime",
+    "body": "${1:FIELDNAME} = forms.TimeField(${2})",
+    "description": "Django forms ``TimeField``"
+  },
+  "Forms TypedChoiceField":{
+    "prefix": "ftchoice",
+    "body": "${1:FIELDNAME} = forms.TypedChoiceField(${2})",
+    "description": "Django forms ``TypedChoiceField``"
+  },
+  "Forms TypedMultipleChoiceField":{
+    "prefix": "ftmuchoice",
+    "body": "${1:FIELDNAME} = forms.TypedMultipleChoiceField(${2})",
+    "description": "Django forms ``TypedMultipleChoiceField``"
+  },
+  "Forms URLField":{
+    "prefix": "fulr",
+    "body": "${1:FIELDNAME} = forms.URLField(${2})",
+    "description": "Django forms ``URLField``"
+  },
+  "Forms UUIDField":{
+    "prefix": "fuuid",
+    "body": "${1:FIELDNAME} = forms.UUIDField(${2})",
+    "description": "Django forms ``UUIDField``"
+  }
+  
+}
