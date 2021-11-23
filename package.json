@@ -301,6 +301,10 @@
         "path": "./snippets/org.json"
       },
       {
+        "language": "norg",
+        "path": "./snippets/norg.json"
+      },
+      {
         "language": "gdscript",
         "path": "./snippets/gdscript.json"
       }
