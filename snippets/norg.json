@@ -1,0 +1,73 @@
+{
+  "code": {
+    "description": "code_block",
+    "prefix": "code",
+    "body": ["@code ${1:lang}", "$0", "@end"]
+  },
+
+  "math": {
+    "description": "math block",
+    "prefix": "math",
+    "body": ["@math", "$0", "@end"]
+  },
+
+  "table": {
+    "description": "table",
+    "prefix": "table",
+    "body": ["@table", "$0", "@end"]
+  },
+
+  "task": {
+    "description": "task",
+    "prefix": "task",
+    "body": ["- [ ] ${1:task}"]
+  },
+
+  "link": {
+    "description": "links",
+    "prefix": "link",
+    "body": ["[${1:description}](${2:object})"]
+  },
+
+  "data": {
+    "description": "data tags",
+    "prefix": "data",
+    "body": ["@data", "$0", "@end"]
+  },
+
+  "bold": {
+    "description": "bold words",
+    "prefix": "bold",
+    "body": ["*$0*"]
+  },
+
+  "italic": {
+    "description": "italic words",
+    "prefix": "italic",
+    "body": ["/$0/"]
+  },
+
+  "underline": {
+    "description": "underline words",
+    "prefix": "underline",
+    "body": ["_$0_"]
+  },
+
+  "subscript": {
+    "description": "subscript",
+    "prefix": "subscript",
+    "body": [",$0,"]
+  },
+
+  "superscript": {
+    "description": "superscript",
+    "prefix": "superscript",
+    "body": ["^$0^"]
+  },
+
+  "var": {
+    "description": "variable",
+    "prefix": "var",
+    "body": ["=${1:variable}="]
+  }
+}
