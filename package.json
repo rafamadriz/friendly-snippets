@@ -303,6 +303,10 @@
         "path": "./snippets/norg.json"
       },
       {
+        "language": "mint",
+        "path": "./snippets/mint.json"
+      },
+      {
         "language": "gdscript",
         "path": "./snippets/gdscript.json"
       }

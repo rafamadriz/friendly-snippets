@@ -1,0 +1,241 @@
+{
+  "Main component": {
+    "prefix": "main",
+    "body": [
+      "component Main {",
+      "\tfun render : Html {",
+      "\t\t<$0/>",
+      "\t}",
+      "}"
+    ],
+    "description": "The component named Main is the one that get's rendered on the screen."
+  },
+  "Store": {
+    "prefix": "store",
+    "body": [
+      "store ${1:StoreName}.Store {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Stores are global containers of application specific data."
+  },
+  "Store property": {
+    "prefix": "prop",
+    "body": [
+      "property ${1:name} : ${2:Number} = ${0:0}"
+    ],
+    "description": "The property keyword when used in a store defines part of the data that the store contains."
+  },
+  "Functions": {
+    "prefix": "fun",
+    "body": [
+      "fun ${1:name}(${2:object} : ${3:String}) : ${4:Void} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Functions can be defined on modules, components, stores and providers."
+  },
+  "Next Call": {
+    "prefix": "next",
+    "body": [
+      "next { state | ${1:name} = ${1:name} + 1 }"
+    ],
+    "description": "Functions can be defined on modules, components, stores and providers."
+  },
+  "Render": {
+    "prefix": "render",
+    "body": [
+      "fun render : Html {",
+      "\t$0",
+      "}"
+    ],
+    "description": "The render function renders the component into an HTML tree."
+  },
+  "HTML Elements": {
+    "prefix": "div",
+    "body": [
+      "<${1:div}::${2:stylename}>",
+      "\t$0",
+      "</${1:div}>"
+    ],
+    "description": "HTML elements can be written as in standard HTML."
+  },
+  "Span Element": {
+    "prefix": "span",
+    "body": [
+      "<${1:span}::${2:stylename}>",
+      "\t$0",
+      "</${1:span}>"
+    ],
+    "description": "HTML elements can be written as in standard HTML."
+  },
+  "Paragraph Element": {
+    "prefix": "p",
+    "body": [
+      "<${1:p}::${2:stylename}>",
+      "\t$0",
+      "</${1:p}>"
+    ],
+    "description": "HTML elements can be written as in standard HTML."
+  },
+  "Title Element": {
+    "prefix": "h",
+    "body": [
+      "<${1:h1}::${2:stylename}>",
+      "\t$0",
+      "</${1:h1}>"
+    ],
+    "description": "HTML elements can be written as in standard HTML."
+  },
+  "Button Element": {
+    "prefix": "button",
+    "body": [
+      "<${1:button}::${2:stylename} ${3:disabled}={${4:disabled}}>",
+      "\t<{ \"${5:Text}\" }>",
+      "</${1:button}>"
+    ],
+    "description": "HTML elements can be written as in standard HTML."
+  },
+  "HTML Expressions": {
+    "prefix": "exp",
+    "body": [
+      "<{ \"${Message}\" }>"
+    ],
+    "description": "HTML Expressions allows inserting data into HTML elements or components."
+  },
+  "Attributes": {
+    "prefix": "att",
+    "body": [
+      "{${disabled}}"
+    ],
+    "description": "Attributes are either strings or expressions."
+  },
+  "Modules": {
+    "prefix": "mod",
+    "body": [
+      "module ${1:ModuleName} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Modules are kind of containers for a set of relatable functions, usually used to gather functions that relate to a specific type."
+  },
+  "Components": {
+    "prefix": "com",
+    "body": [
+      "component ${1:ComponentName} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Components are reusable pieces of code that have specific behavior, styles and content."
+  },
+  "Components Tags": {
+    "prefix": "tag",
+    "body": [
+      "<${1:Component} ${2:attribute}={${3:value}}/>"
+    ],
+    "description": "Tags that have the name of a component will render that component at the point where the tag is defined."
+  },
+  "Events": {
+    "prefix": "event",
+    "body": [
+      "${onEvent}={\\event : Html.Event => ${handler}()}"
+    ],
+    "description": "All event handlers are functions, they take an event record and return Void."
+  },
+  "Connect": {
+    "prefix": "con",
+    "body": [
+      "connect ${1:StoreName}.Store exposing { $0 }"
+    ],
+    "description": "The connect directive lets you connect a component to a store which allows you to call the stores functions and properties without using the stores name."
+  },
+  "Style": {
+    "prefix": "sty",
+    "body": [
+      "style ${1:base} {",
+      "\t${2:attribute}: ${3:value};",
+      "}"
+    ],
+    "description": "Styles define with CSS how an HTML element looks."
+  },
+  "Computed Properties": {
+    "prefix": "get",
+    "body": [
+      "get ${1:computedProperty} : ${2:String} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Computed properties works like regular properties but instead of returning a constant value it can return different values base on the state and the properties."
+  },
+  "If": {
+    "prefix": "if",
+    "body": [
+      "if (${1:condition}) {",
+      "\t${2:value}",
+      "} else {",
+      "\t${3:otherValue}",
+      "}"
+    ],
+    "description": "The if...else conditional expression can return two different values based on a condition."
+  },
+  "Case": {
+    "prefix": "case",
+    "body": [
+      "case (${1:condition}) {",
+      "\t${2:match1} => ${3:value1}",
+      "\t${4:match3} => ${5:value3}",
+      "\t=> ${6:defaultValue}",
+      "}"
+    ],
+    "description": "A case expression is useful for matching enums or exact values, while also supporting a default value."
+  },
+  "Record": {
+    "prefix": "record",
+    "body": [
+      "record ${1:User} {",
+      "\t${2:name} : ${3:String},",
+      "\t${4:email} : ${5:String}",
+      "}"
+    ],
+    "description": "Records are object like data structures, that have a fix set of keys and values."
+  },
+  "Try": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "\t$1",
+      "} catch ${2:Json}.Error => error {",
+      "\t$3",
+      "}"
+    ],
+    "description": "try is a control expression for handling synchronous computations that might fail, for example when you are trying to convert an untyped JavaScript object into a typed Record."
+  },
+  "Do": {
+    "prefix": "do",
+    "body": [
+      "do {",
+      "\t$1",
+      "} catch ${2:Http}.Error => error {",
+      "\t$3",
+      "}"
+    ],
+    "description": "do expressions are for two things: handling asynchronous computations that might fail, for example when loading something with a request, or executing asynchronous expressions sequentially."
+  },
+  "Routes": {
+    "prefix": "routes",
+    "body": [
+      "routes {",
+      "\t/ {",
+      "\t\t${1:Application.setPage(\"index\")}",
+      "\t}",
+      "\t/${2:user}/:${3:id} {",
+      "\t\t do {",
+      "\t\t\t${4:Application.setPage(\"show\")}",
+      "\t\t\t${5:Application.loadUser(id)}",
+      "\t\t}",
+      "\t}",
+      "}"
+    ],
+    "description": "In Mint routes of an application are defined at the top level with the routes block."
+  }
+}
