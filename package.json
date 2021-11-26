@@ -161,9 +161,7 @@
       {
         "language": [
           "javascript",
-          "typescript",
           "javascriptreact",
-          "typescriptreact",
           "vue"
         ],
         "path": "./snippets/javascript/javascript.json"
