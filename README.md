@@ -71,41 +71,6 @@ CocInstall https://github.com/rafamadriz/friendly-snippets@main
 
 ##### NOTE: Using [nvim-compe](https://github.com/hrsh7th/nvim-compe) with [vim-vsnip](https://github.com/hrsh7th/vim-vsnip) on the videos.
 
-### Snippets for:
-
-- HTML, Pug, Jade
-- CSS, Sass, Less, Stylus
-- JavaScript, Typescript, Javascriptreact, Typescriptreact
-- Vue
-- PHP
-- Python
-- C
-- C++
-- C#
-- ReScript
-- Rust
-- Go
-- GDScript (Godot)
-- Haskell
-- Elixir
-- Eruby
-- Ruby
-- Swift
-- Java
-- Fortran
-- Lua
-- LaTex
-- Shell
-- Markdown
-- Sql
-- Rails
-- Elixir
-- Fennel
-- Cobol
-- Jekyll(Markdown)
-- Kotlin
-- R(Markdown)
-
 ## TODO
 
 - Add all included snippets to the
