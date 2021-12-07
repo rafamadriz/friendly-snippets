@@ -102,6 +102,10 @@
         "path": "./snippets/haskell.json"
       },
       {
+        "language": "scala",
+        "path": "./snippets/scala.json"
+      },
+      {
         "language": "solidity",
         "path": "./snippets/solidity.json"
       },
