@@ -284,7 +284,7 @@
   },
   "useState": {
     "prefix": "us",
-    "body": "const [${0:val}, set${1:setterName}] = useState(${2:defVal})",
+    "body": "const [${1:val}, set${2:setterName}] = useState(${3:defVal})",
     "description": "use state hook"
   },
   "useEffect": {
