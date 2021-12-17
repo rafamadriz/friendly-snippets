@@ -1,49 +1,4 @@
 {
-  "if": {
-    "prefix": "if",
-    "body": ["if ${1:expression}:", "\t${2:pass}"],
-    "description": "Code snippet for an if statement"
-  },
-  "if/else": {
-    "prefix": "if/else",
-    "body": ["if ${1:condition}:", "\t${2:pass}", "else:", "\t${3:pass}"],
-    "description": "Code snippet for an if statement with else"
-  },
-  "elif": {
-    "prefix": "elif",
-    "body": ["elif ${1:expression}:", "\t${2:pass}"],
-    "description": "Code snippet for an elif"
-  },
-  "else": {
-    "prefix": "else",
-    "body": ["else:", "\t${1:pass}"],
-    "description": "Code snippet for an else"
-  },
-  "while": {
-    "prefix": "while",
-    "body": ["while ${1:expression}:", "\t${2:pass}"],
-    "description": "Code snippet for a while loop"
-  },
-  "while/else": {
-    "prefix": "while/else",
-    "body": ["while ${1:expression}:", "\t${2:pass}", "else:", "\t${3:pass}"],
-    "description": "Code snippet for a while loop with else"
-  },
-  "for": {
-    "prefix": "for",
-    "body": ["for ${1:target_list} in ${2:expression_list}:", "\t${3:pass}"],
-    "description": "Code snippet for a for loop"
-  },
-  "for/else": {
-    "prefix": "for/else",
-    "body": [
-      "for ${1:target_list} in ${2:expression_list}:",
-      "\t${3:pass}",
-      "else:",
-      "\t${4:pass}"
-    ],
-    "description": "Code snippet for a for loop with else"
-  },
   "try/except": {
     "prefix": "try/except",
     "body": [
@@ -97,16 +52,6 @@
     ],
     "description": "Code snippet for a try/except/else/finally statement"
   },
-  "with": {
-    "prefix": "with",
-    "body": ["with ${1:expression} as ${2:target}:", "\t${3:pass}"],
-    "description": "Code snippet for a with statement"
-  },
-  "def": {
-    "prefix": "def",
-    "body": ["def ${1:funcname}(${2:parameter_list}):", "\t${3:pass}"],
-    "description": "Code snippet for a function definition"
-  },
   "def(class method)": {
     "prefix": "def class method",
     "body": ["def ${1:funcname}(self, ${2:parameter_list}):", "\t${3:pass}"],
@@ -128,11 +73,6 @@
       "\traise NotImplementedError"
     ],
     "description": "Code snippet for an abstract class method"
-  },
-  "class": {
-    "prefix": "class",
-    "body": ["class ${1:classname}(${2:object}):", "\t${3:pass}"],
-    "description": "Code snippet for a class definition"
   },
   "lambda": {
     "prefix": "lambda",

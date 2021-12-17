@@ -45,8 +45,13 @@
         "body": "from ${1:package/module} import ${2:names}$0",
         "description" : "Import statement that allows individual objects from the module to be imported directly into the caller’s symbol table."
     },
-    "New class": {
+    "class": {
         "prefix": "class",
+        "body": ["class ${1:classname}(${2:object}):", "\t${3:pass}"],
+        "description": "Code snippet for a class definition"
+    },
+    "New class": {
+        "prefix": "classi",
         "body": "class ${1:ClassName}(${2:object}):\n\t\"\"\"${3:docstring for $1.}\"\"\"\n\tdef __init__(self, ${4:arg}):\n\t\t${5:super($1, self).__init__()}\n\t\tself.arg = arg\n\t\t$0",
         "description" : "Code snippet for a class definition."
     },
@@ -80,15 +85,45 @@
         "body": "if ${1:condition}:\n\t${2:pass}$0",
         "description" : "Code snippet for the if statement."
     },
+    "if/else": {
+        "prefix": "if/else",
+        "body": ["if ${1:condition}:", "\t${2:pass}", "else:", "\t${3:pass}"],
+        "description": "Code snippet for an if statement with else"
+    },
+    "elif": {
+        "prefix": "elif",
+        "body": ["elif ${1:expression}:", "\t${2:pass}"],
+        "description": "Code snippet for an elif"
+    },
+    "else": {
+        "prefix": "else",
+        "body": ["else:", "\t${1:pass}"],
+        "description": "Code snippet for an else"
+    },
     "for": {
         "prefix": "for",
         "body": "for ${1:value} in ${2:iterable}:\n\t${3:pass}$0",
         "description" : "Code snippet to create a for loop structure."
     },
+    "for/else": {
+        "prefix": "for/else",
+        "body": [
+            "for ${1:target_list} in ${2:expression_list}:",
+            "\t${3:pass}",
+            "else:",
+            "\t${4:pass}"
+        ],
+        "description": "Code snippet for a for loop with else"
+    },
     "while": {
         "prefix": "while",
         "body": "while ${1:condition}:\n\t${2:pass}$0",
         "description" : "Code snippet to create a while loop structure."
+    },
+    "while/else": {
+        "prefix": "while/else",
+        "body": ["while ${1:expression}:", "\t${2:pass}", "else:", "\t${3:pass}"],
+        "description": "Code snippet for a while loop with else"
     },
     "try:except:": {
         "prefix": "try",
@@ -109,6 +144,11 @@
         "prefix": "tryf",
         "body": "try:\n\t${1:pass}\nexcept ${2:Exception} as ${3:e}:\n\t${4:raise $3}\nfinally:\n\t${5:pass}$0",
         "description" : "Code Snippet for a try/except/finally."
+    },
+    "with": {
+        "prefix": "with",
+        "body": ["with ${1:expression} as ${2:target}:", "\t${3:pass}"],
+        "description": "Code snippet for a with statement"
     },
     "self": {
         "prefix": ".",
