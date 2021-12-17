@@ -109,21 +109,6 @@
     "body": ["async with ${1:expr} as ${2:var}:", "\t${3:block}"],
     "description": "Code snippet for an async with statement"
   },
-  "ipdb": {
-    "prefix": "ipdb",
-    "body": "import ipdb; ipdb.set_trace()",
-    "description": "Code snippet for ipdb debug"
-  },
-  "pdb": {
-    "prefix": "pdb",
-    "body": "import pdb; pdb.set_trace()",
-    "description": "Code snippet for pdb debug"
-  },
-  "pudb": {
-    "prefix": "pudb",
-    "body": "import pudb; pudb.set_trace()",
-    "description": "Code snippet for pudb debug"
-  },
   "add/new/cell": {
     "prefix": "add/new/cell",
     "body": "# %%",
