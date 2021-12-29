@@ -121,7 +121,8 @@
         "language": [
           "shellscript",
           "shell",
-          "sh"
+          "sh",
+          "zsh"
         ],
         "path": "./snippets/shell.json"
       },
