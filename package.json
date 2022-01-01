@@ -167,7 +167,8 @@
         "language": [
           "javascript",
           "javascriptreact",
-          "vue"
+          "vue",
+          "svelte"
         ],
         "path": "./snippets/javascript/javascript.json"
       },
@@ -185,6 +186,10 @@
       {
         "language": "typescriptreact",
         "path": "./snippets/javascript/react-ts.json"
+      },
+      {
+        "language":"svelte",
+        "path":"./snippets/svelte.json"
       },
       {
         "language": "vue",
