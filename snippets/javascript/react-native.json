@@ -1,0 +1,156 @@
+{
+    "statefulComponent": {
+        "prefix": "rnc",
+        "body": [
+            "import React, { Component } from 'react';",
+            "",
+            "import { View } from 'react-native';",
+            "",
+            "// import { Container } from './styles';",
+            "",
+            "export default class ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}} extends Component {",
+            "  render() {",
+            "    return <View />;",
+            "  }",
+            "}",
+            ""
+        ],
+        "description": "Create React Native Stateful Component"
+    },
+    "statefulReduxComponent": {
+        "prefix": "rnrc",
+        "body": [
+            "import React, { Component } from 'react';",
+            "",
+            "import { View } from 'react-native';",
+            "",
+            "import { bindActionCreators } from 'redux';",
+            "import { connect } from 'react-redux';",
+            "",
+            "// import { Container } from './styles';",
+            "",
+            "class ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}} extends Component {",
+            "  render() {",
+            "    return <View />;",
+            "  }",
+            "}",
+            "",
+            "const mapStateToProps = state => ({});",
+            "",
+            "// const mapDispatchToProps = dispatch =>",
+            "//   bindActionCreators(Actions, dispatch);",
+            "",
+            "export default connect(",
+            "  mapStateToProps,",
+            "  // mapDispatchToProps",
+            ")(${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}});",
+            ""
+        ],
+        "description": "Create React Native Stateful Redux Component"
+    },
+    "statelessComponent": {
+        "prefix": "rnsc",
+        "body": [
+            "import React from 'react';",
+            "",
+            "import { View } from 'react-native';",
+            "",
+            "// import { Container } from './styles';",
+            "",
+            "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}} = () => <View />;",
+            "",
+            "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};",
+            ""
+        ],
+        "description": "Create React Native Stateless Component"
+    },
+    "componentFunctional": {
+        "prefix": "rnfc",
+        "body": [
+            "import React from 'react';",
+            "import { View } from 'react-native';",
+            "",
+            "// import { Container } from './styles';",
+            "",
+            "export default function ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}}() {",
+            "  return (",
+            "    <View />",
+            "  );",
+            "}",
+            ""
+        ],
+        "description": "Create React Native Functional Component"
+    },
+    "componentFunctionalTypescript": {
+        "prefix": "rnfcc",
+        "body": [
+            "import React from 'react';",
+            "import { View } from 'react-native';",
+            "",
+            "// import { Container } from './styles';",
+            "",
+            "const ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}} = () => {",
+            "  return <View />;",
+            "}",
+            "",
+            "export default ${1:${TM_DIRECTORY/^.*(\\/|\\\\)([^(\\/|\\\\)]+)$/$2/}};"
+        ],
+        "description": "Create React Native Functional Component"
+    },
+    "styles": {
+        "prefix": "styled-rn",
+        "body": [
+            "import styled from 'styled-components/native';",
+            "",
+            "export const ${1:Container} = styled.${2:View}`",
+            "  ${3}",
+            "`;",
+            ""
+        ],
+        "description": "Create React Native Styled Components file"
+    },
+    "StyleSheet": {
+        "prefix": "rn-stylesheet",
+        "body": [
+            "const ${1:styles} = StyleSheet.create({",
+            "    ${2:container}: {",
+            "        ${3}",
+            "    },",
+            "});",
+            ""
+        ],
+        "description": "Create React Native Styled Components StyleSheet"
+    },
+    "api": {
+        "prefix": "api",
+        "body": [
+            "import axios from 'axios';",
+            "",
+            "const api = axios.create({",
+            "  baseURL: ${1},",
+            "});",
+            "",
+            "export default api;",
+            ""
+        ],
+        "description": "Create Axios Configuration file"
+    },
+    "region": {
+        "prefix": "region",
+        "body": [
+            "//#region ${1}",
+            "${2}",
+            "//#endregion"
+        ],
+        "description": "Create region"
+    },
+    "regionStartEnd": {
+        "prefix": "#regionStartEnd",
+        "body": [
+            "//#region ${1}",
+            "${2}",
+            "//#endregion"
+        ],
+        "description": "Create region"
+    }
+}
