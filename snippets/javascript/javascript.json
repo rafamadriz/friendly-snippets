@@ -343,10 +343,6 @@
     "prefix": "iof",
     "body": "${1:source} instanceof ${2:Object}"
   },
-  "Array.isArray()": {
-    "prefix": "ia",
-    "body": "Array.isArray(${1:source})"
-  },
   "let and if statement": {
     "prefix": "lif",
     "body": "let ${0} \n if (${2:condition}) {\n\t${1}\n}"
