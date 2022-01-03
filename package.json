@@ -319,6 +319,10 @@
       {
         "language": "gdscript",
         "path": "./snippets/gdscript.json"
+      },
+      {
+        "language": "yaml",
+        "path": "./snippets/kubernetes.json"
       }
     ]
   }
