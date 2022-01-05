@@ -22,7 +22,7 @@ vscode snippets. Like for example:
 
 ### Add snippets from a framework to a filetype.
 
-There's extra snippets included in this repo but they are not added default,
+There's extra snippets included in this repo but they are not added by default,
 since it would be irrelevant for people not using those frameworks. See
 [`snippets/frameworks`](https://github.com/rafamadriz/friendly-snippets/tree/main/snippets/frameworks)
 
@@ -75,6 +75,12 @@ CocInstall https://github.com/rafamadriz/friendly-snippets@main
 
 - Add all included snippets to the
   [Wiki](https://github.com/rafamadriz/friendly-snippets/wiki).
+
+## Thanks to all contributors
+
+<a href="https://github.com/rafamadriz/friendly-snippets/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=rafamadriz/friendly-snippets" />
+</a>
 
 ## Credits
 
