@@ -70,12 +70,12 @@
   },
   "Models DateField":{
     "prefix": "mdate",
-    "body": "${1:FIELDNAME} = models.DateField(auto_now_add=${2:True}, auto_now=${3:False}})",
+    "body": "${1:FIELDNAME} = models.DateField(auto_now=${0:False}})",
     "description": "Django model ``DateField``"
   },
   "Models DateTimeField":{
     "prefix": "mdatetime",
-    "body": "${1:FIELDNAME} = models.DateTimeField(auto_now_add=${2:True}, auto_now=${3:False})",
+    "body": "${1:FIELDNAME} = models.DateTimeField(auto_now=${0:False})",
     "description": "Django model ``DateTimeField``"
   },
   "Models DecimalField":{
@@ -155,7 +155,7 @@
   },
   "Models URLField":{
     "prefix": "murl",
-    "body": "${1:FIELDNAME} = models.URLField(verify_exists=${2:False})",
+    "body": "${1:FIELDNAME} = models.URLField()",
     "description": "Django model ``URLField``"
   },
   "Models XMLField":{
@@ -176,8 +176,7 @@
   },
   "Models OneToOneField":{
     "prefix": "o2o",
-    "body": "${1:FIELDNAME} = models.OneToOneField(${2:OtherModel}, related_name=\"${4:RelatedName}\"${0:, to_field=''})",
+    "body": "${1:FIELDNAME} = models.OneToOneField(${2:OtherModel}, on_delete=models.${3:CASCADE}, related_name=\"${4:RelatedName}\"",
     "description": "Django model ``OneToOneField``"
   }
 }
-
