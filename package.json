@@ -121,8 +121,7 @@
         "language": [
           "shellscript",
           "shell",
-          "sh",
-          "zsh"
+          "sh"
         ],
         "path": "./snippets/shell.json"
       },
@@ -167,8 +166,7 @@
         "language": [
           "javascript",
           "javascriptreact",
-          "vue",
-          "svelte"
+          "vue"
         ],
         "path": "./snippets/javascript/javascript.json"
       },
@@ -184,20 +182,8 @@
         "path": "./snippets/javascript/react.json"
       },
       {
-        "language": "javascriptreact",
-        "path": "./snippets/javascript/react-native.json"
-      },
-      {
         "language": "typescriptreact",
         "path": "./snippets/javascript/react-ts.json"
-      },
-      {
-        "language": "typescriptreact",
-        "path": "./snippets/javascript/react-native-ts.json"
-      },
-      {
-        "language":"svelte",
-        "path":"./snippets/svelte.json"
       },
       {
         "language": "vue",
@@ -254,6 +240,14 @@
       {
         "language": "django",
         "path": "./snippets/frameworks/django/filetemplates.json"
+      },
+      {
+        "language": "django-rest",
+        "path": "./snippets/frameworks/django/django_rest/serializers.json"
+      },
+      {
+        "language": "django-rest",
+        "path": "./snippets/frameworks/django/django_rest/views.json"
       },
       {
         "language": "flutter",
@@ -327,10 +321,6 @@
       {
         "language": "gdscript",
         "path": "./snippets/gdscript.json"
-      },
-      {
-        "language": "yaml",
-        "path": "./snippets/kubernetes.json"
       }
     ]
   }

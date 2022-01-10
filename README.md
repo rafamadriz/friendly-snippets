@@ -76,12 +76,6 @@ CocInstall https://github.com/rafamadriz/friendly-snippets@main
 - Add all included snippets to the
   [Wiki](https://github.com/rafamadriz/friendly-snippets/wiki).
 
-## Thanks to all contributors
-
-<a href="https://github.com/rafamadriz/friendly-snippets/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=rafamadriz/friendly-snippets" />
-</a>
-
 ## Credits
 
 A good portion of the snippets have been forked from the following repositories:
