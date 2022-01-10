@@ -3,7 +3,6 @@
     "prefix": "serializer",
     "body": [
     	"class ${1:Name}Serializer(serializers.Serializer):",
-    	"\t# TODO: Define your serializer here.",
     	"\t${2}"
     ],
     "description": "Django-rest Serializers ``Serializer`` Class"
@@ -12,7 +11,6 @@
     "prefix": "modelserializer",
     "body": [
     	"class ${1:Name}ModelSerializer(serializers.ModelSerializer):",
-    	"\t# TODO: Define your custom fileds here.",
     	"\t${2}",
     	"\tclass Meta:",
     	"\t\tmodel = ${3:$1}",
