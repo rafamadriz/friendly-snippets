@@ -3,7 +3,6 @@
     "prefix": "apiview",
     "body": [
         "class ${1:Name}APIView(APIView):",
-        "\t# TODO: Define your view here.",
         "\t${2}"
     ],
     "description": "Django-rest Views ``ApiView`` Class"
@@ -12,7 +11,6 @@
     "prefix": "createapiview",
     "body": [
         "class ${1:Name}CreateApiView(generics.CreateApiView):",
-        "\t# TODO: Define your view here.",
         "\tserializer_class = ${2:$1Serializer}"
     ],
     "description": "Django-rest Views ``CreateApi`` Class"
@@ -21,7 +19,6 @@
     "prefix": "destoryapiview",
     "body": [
         "class ${1:Name}DestoryApiView(generics.DestoryApiView):",
-        "\t# TODO: Define your view here.",
         "\tserializer_class = ${2:$1Serializer}",
         "\tqueryset = $1.objects.filter(${3})"
     ],
@@ -31,7 +28,6 @@
     "prefix": "listapiview",
     "body": [
         "class ${1:Name}ListApiView(generics.ListApiView):",
-        "\t# TODO: Define your view here.",
         "\tserializer_class = ${2:$1Serializer}",
         "\tqueryset = $1.objects.filter(${3})"
     ],
@@ -41,7 +37,6 @@
     "prefix": "listcreateapiview",
     "body": [
         "class ${1:Name}ListCreateApiView(generics.ListCreateApiView):",
-        "\t# TODO: Define your view here.",
         "\tserializer_class = ${2:$1Serializer}",
         "\tqueryset = $1.objects.filter(${3})"
     ],
@@ -51,7 +46,6 @@
     "prefix": "retrieveapiview",
     "body": [
         "class ${1:Name}RetrieveAPIView(generics.RetrieveAPIView):",
-        "\t# TODO: Define your view here.",
         "\tserializer_class = ${2:$1Serializer}",
         "\tqueryset = $1.objects.filter(${3})"
     ],
@@ -61,7 +55,6 @@
     "prefix": "retrievedestoryapiview",
     "body": [
         "class ${1:Name}RetrieveDestroyAPIView(generics.RetrieveDestroyAPIView):",
-        "\t# TODO: Define your view here.",
         "\tserializer_class = ${2:$1Serializer}",
         "\tqueryset = $1.objects.filter(${3})"
     ],
@@ -71,7 +64,6 @@
     "prefix": "retrieveupdateapiview",
     "body": [
         "class ${1:Name}RetrieveUpdateAPIView(generics.RetrieveUpdateAPIView):",
-        "\t# TODO: Define your view here.",
         "\tserializer_class = ${2:$1Serializer}",
         "\tqueryset = $1.objects.filter(${3})"
     ],
@@ -81,7 +73,6 @@
     "prefix": "retrieveupdatedestoryapiview",
     "body": [
         "class ${1:Name}RetrieveUpdateDestoryAPIView(generics.RetrieveUpdateDestoryAPIView):",
-        "\t# TODO: Define your view here.",
         "\tserializer_class = ${2:$1Serializer}",
         "\tqueryset = $1.objects.filter(${3})"
     ],
@@ -91,7 +82,6 @@
     "prefix": "updateapiview",
     "body": [
         "class ${1:Name}UpdateApiView(generics.UpdateApiView):",
-        "\t# TODO: Define your view here.",
         "\tserializer_class = ${2:$1Serializer}",
         "\tqueryset = $1.objects.filter(${3})"
     ],
@@ -127,7 +117,6 @@
     "prefix": "modelviewset",
     "body": [
         "class ${1:Name}ModelViewSet(viewsets.ModelViewSet):",
-        "\t# TODO: Define your viewset here.",
         "\tserializer_class = ${2:$1Serializer}",
         "\tqueryset = $1.objects.filter(${3})"
     ],
@@ -137,7 +126,6 @@
     "prefix": "readonlymodelviewset",
     "body": [
         "class ${1:Name}ReadOnlyModelViewSet(viewsets.ReadOnlyModelViewSet):",
-        "\t# TODO: Define your viewset here.",
         "\tserializer_class = ${2:$1Serializer}",
         "\tqueryset = $1.objects.filter(${3})"
     ],
@@ -147,7 +135,6 @@
     "prefix": "viewset",
     "body": [
         "class ${1:Name}ViewSet(viewsets.ViewSet):",
-        "\t# TODO: Define your viewset here.",
         "def list(self, request):"
         "\tpass",
         "def create(self, request):"
