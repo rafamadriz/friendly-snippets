@@ -256,6 +256,14 @@
         "path": "./snippets/frameworks/django/filetemplates.json"
       },
       {
+        "language": "django-rest",
+        "path": "./snippets/frameworks/django/django_rest/serializers.json"
+      },
+      {
+        "language": "django-rest",
+        "path": "./snippets/frameworks/django/django_rest/views.json"
+      },
+      {
         "language": "flutter",
         "path": "./snippets/frameworks/flutter.json"
       },
