@@ -227,17 +227,17 @@
   
   "Django FBV Path":{
     "prefix": "fpath",
-    "body": "path(\"${1:Path}\", v.${2:View}, name=${0:PathName})",
+    "body": "path(\"${1:Path}\", v.${2:View}, name=${0:PathName}),",
     "description": "Django Path For ``Function Based Views``"
   },
   "Django CBV Path":{
     "prefix": "cpath",
-    "body": "path(\"${1:Path}\", v.${2:View}.as_viewJ(), name=${0:PathName})",
+    "body": "path(\"${1:Path}\", v.${2:View}.as_view(), name=${0:PathName}),",
     "description": "Django Path For ``Class Based Views``"
   },
   "Django Path as Include":{
     "prefix": "ipath",
-    "body": "path(\"${1:Path}\", include(\"${2}.urls\", namespace=${0:Name})",
+    "body": "path(\"${1:Path}\", include(\"${2}.urls\", namespace=${0:Name})),",
     "description": "Django Path as ``Include``"
   }
 }
