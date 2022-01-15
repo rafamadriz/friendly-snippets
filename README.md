@@ -41,7 +41,7 @@ specific buffer, but this is going to mess up with syntax highlighting.
 With vim-vsnip:
 
 ```viml
-let g:vsnip_filetypes.rails = ['ruby']
+let g:vsnip_filetypes.ruby = ['rails']
 ```
 
 For more info related to this change see [#88](https://github.com/rafamadriz/friendly-snippets/issues/88)
