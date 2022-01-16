@@ -9,9 +9,54 @@
     "body": "class $1 {$2}",
     "description": "Class Object"
   },
-  "Object": {
+  "object": {
     "prefix": "ob",
     "body": "object $1 {$2}",
     "description": "Object"
+  },
+  "Title": {
+    "prefix": "ti",
+    "body": "title $0",
+    "description": "The document title"
+  },
+  "note left": {
+    "prefix": "nlft",
+    "body": "note left : $0",
+    "description": "A note that appears on the left"
+  },
+  "note right": {
+    "prefix": "nrt",
+    "body": "note right : $0",
+    "description": "A note that appears on the right"
+  },
+  "block comment": {
+    "prefix": "block $0",
+    "body": "/'$0'/",
+    "description": "Places a block comment in the document"
+  },
+  "actor": {
+    "prefix": "act",
+    "body": "actor $0",
+    "description": "An actor in the system"
+  },
+  "boundary": {
+    "prefix": "bound",
+    "body": "boundary $0",
+    "description": "Model a boundary of the system"
+  },
+  "control": {
+    "prefix": "ctrl",
+    "body": "control $0",
+    "description": "Models a loop back for control"
+  },
+  "entity": {
+    "prefix": "ent",
+    "body": "entity $0",
+    "description": "Models an entity of the system"
+  },
+  "databse": {
+    "prefix": "db",
+    "body": "databse $0",
+    "description": "Models a Database (depicted as a cylinder)"
   }
 }
