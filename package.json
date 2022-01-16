@@ -145,7 +145,7 @@
           "uml",
           "puml"
         ],
-        "path": "./snippets/plantuml.json"
+        "path": "./snippets/puml.json"
       },
       {
         "language": "java",
