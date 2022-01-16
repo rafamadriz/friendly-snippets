@@ -1,7 +1,17 @@
 {
   "package": {
-    "prefix": "pack",
-    "body": ["package ${0} { }"],
+    "prefix": "pa",
+    "body": ["package ${0} {$1}"],
     "description": "Package UML structure"
+  },
+  "class": {
+    "prefix": "cla",
+    "body": "class $1 {$2}",
+    "description": "Class Object"
+  },
+  "Object": {
+    "prefix": "ob",
+    "body": "object $1 {$2}",
+    "description": "Object"
   }
 }
