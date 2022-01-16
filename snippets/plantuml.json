@@ -1,7 +1,7 @@
 {
   "package": {
     "prefix": "pack",
-    "body": "\npackage ${1:${$2}}",
+    "body": ["package ${0} { }"],
     "description": "Package UML structure"
   }
 }
