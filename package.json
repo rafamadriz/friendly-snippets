@@ -141,11 +141,8 @@
         "path": "./snippets/latex.json"
       },
       {
-        "language": [
-          "uml",
-          "puml"
-        ],
-        "path": "./snippets/puml.json"
+        "language": "plantuml",
+        "path": "./snippets/plantuml.json"
       },
       {
         "language": "java",
