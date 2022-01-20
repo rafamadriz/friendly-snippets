@@ -141,6 +141,10 @@
         "path": "./snippets/latex.json"
       },
       {
+        "language": "plantuml",
+        "path": "./snippets/plantuml.json"
+      },
+      {
         "language": "java",
         "path": "./snippets/java.json"
       },
@@ -196,8 +200,8 @@
         "path": "./snippets/javascript/react-native-ts.json"
       },
       {
-        "language":"svelte",
-        "path":"./snippets/svelte.json"
+        "language": "svelte",
+        "path": "./snippets/svelte.json"
       },
       {
         "language": "vue",
