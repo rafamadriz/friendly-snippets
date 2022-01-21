@@ -22,6 +22,11 @@
     "prefix": "ipydb",
     "body": "from IPython import embed; embed()$0"
   },
+  "Celery set trace": {
+    "prefix": "rdb",
+    "body": "from celery.contrib import rdb; rdb.set_trace()$0",
+    "description": "Code snippet for celery remote debugger breakpoint"
+  },
   "Pretty print": {
     "prefix": "pprint",
     "body": "__import__('pprint').pprint(${1:expression})$0"
