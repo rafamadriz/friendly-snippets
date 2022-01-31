@@ -4,7 +4,7 @@
     "body": [
       "---",
       "title: ${1:title}",
-      "date: ${2:`r Sys.Date()`}",
+      "date: ${2:\"`r Sys.Date()`\"}",
       "output: ${4:pdf_document}",
       "---"
     ]
