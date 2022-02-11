@@ -149,6 +149,10 @@
         "path": "./snippets/java.json"
       },
       {
+        "language": "julia",
+        "path": "./snippets/julia.json"
+      },
+      {
         "language": [
           "html",
           "jade",
