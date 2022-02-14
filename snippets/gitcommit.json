@@ -93,7 +93,7 @@
             "BREAKING CHANGE: $0"
         ]
     },
-        "format with stylua": {
+    "format with stylua": {
         "prefix": "stylua",
         "body": [
             "chore: format with stylua"
