@@ -288,7 +288,7 @@
       "% section $2 (end)"
     ],
     "description": "Section"
-  }, 
+  },
   "Sub Paragraph": {
     "prefix": "subp",
     "body": [
@@ -477,5 +477,60 @@
       "$0"
     ],
     "description": "Add a empty page"
+  },
+  "DeclareAcronym": {
+    "prefix": "deca",
+    "body": [
+      "\\DeclareAcronym{${1:acronym reference}}{",
+      "\tshort = ${2:acronym},",
+      "\tlong = ${0:full name}",
+      "}"
+    ],
+    "description": "Declare acronym"
+  },
+  "Acronym": {
+    "prefix": "ac",
+    "body": "\\ac{$1} $0",
+    "description": "Reference acronym"
+  },
+  "AcronymShort": {
+    "prefix": "acs",
+    "body": "\\acs{$1} $0",
+    "description": "Reference short acronym"
+  },
+  "AcronymLong": {
+    "prefix": "acl",
+    "body": "\\acl{$1} $0",
+    "description": "Reference long acronym"
+  },
+  "AcronymAlternative": {
+    "prefix": "aca",
+    "body": "\\aca{$1} $0",
+    "description": "Reference short acronym alternative"
+  },
+  "AcronymFull": {
+    "prefix": "acf",
+    "body": "\\acf{$1} $0",
+    "description": "Reference full acronym form"
+  },
+  "AcronymPlural": {
+    "prefix": "acp",
+    "body": "\\acp{$1} $0",
+    "description": "Reference acronym plural form"
+  },
+  "AcronymShortPlural": {
+    "prefix": "acsp" ,
+    "body": "\\acsp{$1} $0",
+    "description": "Reference short acronym plural form"
+  },
+  "AcronymLongPlural": {
+    "prefix": "aclp" ,
+    "body": "\\aclp{$1} $0",
+    "description": "Reference long acronym plural form"
+  },
+  "AcronymFullPlural": {
+    "prefix": "acfp",
+    "body": "\\acfp{$1} $0",
+    "description": "Reference full acronym plural form"
   }
 }
