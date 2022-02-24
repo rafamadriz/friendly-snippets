@@ -23,6 +23,15 @@
 		],
 		"description": "Class Definition"
 	},
+	"Interface Definition": {
+		"prefix": "iface",
+		"body": [
+		  "interface ${1:name} {",
+		  "\t$0",
+		  "}"
+		],
+		"description": "Interface Definition"
+	},	
 	"Public Method Definition": {
 		"prefix": "public method",
 		"body": [
