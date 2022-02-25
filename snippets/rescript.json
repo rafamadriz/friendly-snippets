@@ -86,11 +86,17 @@
     "prefix": ["tpv", "typepv"],
     "body": ["type ${1:x} = [ #${2:one} | #${3:two} ]"]
   },
-  "function": {
-    "prefix": ["fn", "func"],
+  "inline functin": {
+    "prefix": ["fn"],
     "body": [
-      "let ${1:doSomeStuff} = (${2:_}) =>",
-      "\t${3:// ...write your code}",
+      "let ${1:name} = (${2}) => ${0}"
+    ]
+  },
+  "function": {
+    "prefix": ["function"],
+    "body": [
+      "let ${1:doSomeStuff} = (${2}) => {",
+      "\t${0}",
       "}"
     ]
   },
@@ -154,7 +160,7 @@
     "body": ["let [${1:a}] = ${2:data}"]
   },
   "Raise exception": {
-    "prefix": ["rs"],
+    "prefix": ["rs", "raise"],
     "body": ["raise(${1:SomeError}(${2:// write your text}))"]
   },
   "@genType": {
@@ -200,7 +206,7 @@
     "body": ["%%debugger"]
   },
   "React Component": {
-    "prefix": "react.component",
+    "prefix": ["react.component", "@react"],
     "body": [
 		"@react.component",
 		"let make = (${1}) => {",
