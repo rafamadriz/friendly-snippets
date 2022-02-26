@@ -1,0 +1,45 @@
+{
+  "help": {
+    "prefix": "help",
+    "body": [
+      "help: ## Prints help for targets with comments",
+      "\t@cat $(MAKEFILE_LIST) | grep -E '^[a-zA-Z_-]+:.*?## .*$$' | awk 'BEGIN {FS = \":.*?## \"}; {printf \"\\033[36m%-30s\\033[0m %s\\n\", $\\$1, $\\$2}'"
+    ],
+    "description": "help target for self-documented Makefile"
+  },
+  "if statement": {
+    "prefix": "if",
+    "body": [
+      "ifeq (${1:cond0}, ${2:cond1})",
+      "\t$0",
+      "endif"
+    ],
+    "description": "if statement"
+  },
+  "print": {
+    "prefix": "print",
+    "body": [
+      "print-%: ; @echo $*=$($*)"
+    ],
+    "description": "print"
+  },
+  "if else statement": {
+    "prefix": "ife",
+    "body": [
+      "ifeq (${1:cond0}, ${2:cond1})",
+      "\t$3",
+      "else",
+      "\t$4",
+      "endif"
+    ],
+    "description": "if else statement"
+  },
+  "else": {
+    "prefix": "el",
+    "body": [
+      "else",
+      "\t$0"
+    ],
+    "description": "else"
+  }
+}

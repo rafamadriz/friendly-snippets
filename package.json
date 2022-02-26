@@ -335,6 +335,10 @@
       {
         "language": "yaml",
         "path": "./snippets/kubernetes.json"
+      },
+      {
+        "language": "make",
+        "path": "./snippets/make.json"
       }
     ]
   }
