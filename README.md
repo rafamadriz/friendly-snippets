@@ -6,11 +6,6 @@ The only goal is to have one community driven repository for all kinds of
 snippets in all programming languages, this way you can have it all in one
 place.
 
-## Contributing
-
-First make sure that the snippets don't already exist, so we don't have
-duplicates.
-
 ### Usage
 
 This collection of snippets should work with any plugin that supports loading
