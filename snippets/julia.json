@@ -1,0 +1,278 @@
+{
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition}",
+      "\t$0",
+      "end"
+    ],
+    "description": "Code snippet for if statement."
+  },
+  "else": {
+    "prefix": "else",
+    "body": [
+      "else",
+      "\t$0",
+      "end"
+    ],
+    "description": "Code snippet for else statement."
+  },
+  "else if": {
+    "prefix": "elseif",
+    "body": [
+      "elseif ${1:condition}",
+      "\t${2:block}",
+      "end"
+    ],
+    "description": "Code snippet for elseif statement."
+  },
+  "if/elseif/else": {
+    "prefix": "ifelseif",
+    "body": [
+      "if ${1:condition}",
+      "\t${2:block}",
+      "elseif ${3:condition}",
+      "\t${4:block}",
+      "else",
+      "\t${5:block}",
+      "end"
+    ],
+    "description": "Code snippet for if-elseif-else statement."
+  },
+  "ternary operator": {
+    "prefix": "?:",
+    "body": "${1:condition} ? ${2:expression} : ${3:expression}",
+    "description": "Code snippet for ternary operator statement."
+  },
+  "and short-circuit evaluation": {
+    "prefix": "&&",
+    "body": "${1:condition} && ${2:expression}",
+    "description": "In the expression a && b, the subexpression b is only evaluated if a evaluates to true."
+  },
+  "or short-circuit evaluation": {
+    "prefix": "||",
+    "body": "${1:condition} || ${2:expression}",
+    "description": "In the expression a || b, the subexpression b is only evaluated if a evaluates to false."
+  },
+  "while": {
+    "prefix": "while",
+    "body": [
+      "while ${1:condition}",
+      "\t$0",
+      "end"
+    ],
+    "description": "Code snippet to create a while loop."
+  },
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for ${1:value}=${2:index}:${3:index}",
+      "\t$0",
+      "end"
+    ],
+    "description": "Code snippet to create a for loop."
+  },
+  "foreach": {
+    "prefix": ["foreach", "forin"],
+    "body": [
+      "for ${1:value} ∈ ${2:iterable}",
+      "\t$0",
+      "end"
+    ],
+    "description": "Code snippet to iterate each element."
+  },
+  "iterate": {
+    "prefix": ["iterate", "iter"],
+    "body": [
+      "next = iterate(${1:iterable})",
+      "while next !== nothing",
+      "\t(item, state) = next",
+      "\t0",
+      "\tnext = iterate(iter, state)",
+      "end"
+    ],
+    "description": "Code snippet to iterate each element."
+  },
+  "function": {
+    "prefix": ["fun", "func", "function"],
+    "body": [
+      "function ${1:name}(${2:arguments})",
+      "\t$0",
+      "end"
+    ],
+    "description": "Code snippet to create a function."
+  },
+  "begin": {
+    "prefix": ["be", "begin"],
+    "body": [
+      "begin",
+      "\t$0",
+      "end"
+    ],
+    "description": "Code snippet to create a begin block."
+  },
+  "main": {
+    "prefix": "main",
+    "body": [
+      "function main()",
+      "\t$0",
+      "end",
+      "\nmain()"
+    ],
+    "description": "Code snippet to create a main block."
+  },
+  "bitwise not": {
+    "prefix": "bnot",
+    "body": "~${1:value}",
+    "description": "Code snippet for bitwise not operator."
+  },
+  "bitwise and": {
+    "prefix": "band",
+    "body": "${1:value} & ${2:value}",
+    "description": "Code snippet for bitwise and operator."
+  },
+  "bitwise or": {
+    "prefix": "bor",
+    "body": "${1:value} | ${2:value}",
+    "description": "Code snippet for bitwise or operator."
+  },
+  "bitwise xor": {
+    "prefix": "xor",
+    "body": "${1:value} ⊻ ${2:value}",
+    "description": "Code snippet for bitwise xor (exclusive or) operator."
+  },
+  "complex number": {
+    "prefix": ["comp", "complex", "im"],
+    "body": "(${1:Int} + ${2:Int}im)",
+    "description": "Code snippet for complex number."
+  },
+  "parse Float": {
+    "prefix": ["parsef", "pfloat"],
+    "body": "parse(Float64, \"${1:value}\")",
+    "description": "Code snippet for parsing a String to Float64."
+  },
+  "parse Int": {
+    "prefix": ["parsei", "pint"],
+    "body": "parse(Int64, \"${1:value}\")",
+    "description": "Code snippet for parsing a String to Int64."
+  },
+  "map": {
+    "prefix": "map",
+    "body": "map(x -> ${1:expr}, ${2:iterable})",
+    "description": "Code snippet for map."
+  },
+  "pipe": {
+    "prefix": ["pipe", "pp"],
+    "body": "${1:value} |> ${2:function}",
+    "description": "Code snippet for pipe expression."
+  },
+  "pointwise pile": {
+    "prefix": ["ppipe", "pipe.", "pp."],
+    "body": "${1:value} .|> ${2:function}",
+    "description": "Code snippet for pointwise pipe expression."
+  },
+  "function composition": {
+    "prefix": ["composition", "fcomp"],
+    "body": "(${1:fonction} ∘ ${2:fonction})(${3:args})",
+    "description": "Code snippet for function composition."
+  },
+  "module": {
+    "prefix": ["module", "mod"],
+    "body": [
+      "module ${1:name}",
+      "export ${2:struct}",
+      "struct ${2:struct} end",
+      "\t$0",
+      "end"
+    ],
+    "description": "Code snippet for module block."
+  },
+  "baremodule": {
+    "prefix": ["baremodule", "bmod", "bare"],
+    "body": [
+      "baremodule ${1:name}",
+      "\t$0",
+      "end"
+    ],
+    "description": "Code snippet for module block."
+  },
+  "struct": {
+    "prefix": "struct",
+    "body": [
+      "struct ${1:struct} <: ${2:type}",
+      "\t$0",
+      "end"
+    ],
+    "description": "Code snippet for struct block."
+  },
+  "mutable struct": {
+    "prefix": ["mutable", "mut", "mstruct"],
+    "body": [
+      "mutable struct ${1:struct} <: ${2:type}",
+      "\t$0",
+      "end"
+    ],
+    "description": "Code snippet for mutable struct block."
+  },
+  "parse expression": {
+    "prefix": ["meta", "parse"],
+    "body": "Meta.parse(\"{$1:expression}\")",
+    "description": "Code snippet for parse an expression."
+  },
+  "using": {
+    "prefix": ["using", "us"],
+    "body": "using $0",
+    "description": "Code snippet for using a package."
+  },
+  "import": {
+    "prefix": ["import", "im"],
+    "body": "import $0",
+    "description": "Code snippet for import a package."
+  },
+  "using from": {
+    "prefix": ["using", "from", "us"],
+    "body": "using ${1:package}: ${2:exports}",
+    "description": "Code snippet for using something from a package."
+  },
+  "import from": {
+    "prefix": ["import", "from", "im"],
+    "body": "import ${1:package}: ${2:exports}",
+    "description": "Code snippet for import something from a package."
+  },
+  "using as": {
+    "prefix": ["using", "as", "us"],
+    "body": "using ${1:package} as ${2:name}",
+    "description": "Code snippet for using a package and rename."
+  },
+  "import as": {
+    "prefix": ["import", "as", "im"],
+    "body": "import ${1:package} as ${2:name}",
+    "description": "Code snippet for import a package and rename."
+  },
+  "using from as": {
+    "prefix": ["using", "from", "as", "us"],
+    "body": "using ${1:package}: ${2:exports} as ${3:name}",
+    "description": "Code snippet for using something from a package and rename."
+  },
+  "import from as": {
+    "prefix": ["import", "from", "as", "im"],
+    "body": "import ${1:package}: ${2:exports} as ${3:name}",
+    "description": "Code snippet for import something from a package and rename."
+  },
+  "ccal/function": {
+    "prefix": ["ccal", "cfun", "cfunction"],
+    "body": [
+      "function ${1:name}(a, b)::Cint",
+      "\treturn a + b",
+      "end",
+      "\n${1:name}_c = @cfunction(${1:name}, Cint, (Cint, Cint))",
+      "ccall(${1:name}_c, Cint, (Cint, Cint), 1, 1)"
+    ],
+    "description": "An example for ccal."
+  },
+  "ccal/clock": {
+    "prefix": ["cclock", "clock"],
+    "body": "ccall(:clock, Int32, ())",
+    "description": "Code snippet for calling the clock function from the standard C library."
+  }
+}
