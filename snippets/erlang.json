@@ -1,0 +1,55 @@
+{
+  "module": {
+    "prefix": "mod",
+    "body": "-module(${1:module}).",
+    "description": "module"
+  },
+  "include": {
+    "prefix": "inc",
+    "body": "-include(\"${1:hrl_name}.hrl\").",
+    "description": "module"
+  },
+  "define": {
+    "prefix": "def",
+    "body": "-define(${1:def_name}, ${2:def_value}).",
+    "description": "define"
+  },
+  "export": {
+    "prefix": "exp",
+    "body": [
+        "-export([",
+        "         ${1}",
+        "        ])."],
+    "description": "export"
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+        "if ${1:Cond} ->",
+        "       ${2:todo};",
+        "   true ->",
+        "       ${3:todo}",
+        "end$4"],
+    "description": "if block"
+  },
+  "case": {
+    "prefix": "case",
+    "body": [
+        "case ${1:Expr} of",
+        "    ${2:Cond} ->",
+        "        ${3:todo};",
+        "    _ ->",
+        "        ${4:todo}",
+        "end$5"],
+    "description": "case block"
+  },
+  "receive": {
+    "prefix": "rec",
+    "body": [
+        "receive",
+        "    ${1:pattern} ->",
+        "        ${2:todo}",
+        "end$3"],
+    "description": "receive block"
+  }
+}

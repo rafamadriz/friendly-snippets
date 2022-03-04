@@ -46,6 +46,10 @@
         "path": "./snippets/erb.json"
       },
       {
+        "language": "erlang",
+        "path": "./snippets/erlang.json"
+      },
+      {
         "language": "elixir",
         "path": "./snippets/elixir.json"
       },
