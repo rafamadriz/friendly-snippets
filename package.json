@@ -343,6 +343,10 @@
       {
         "language": "make",
         "path": "./snippets/make.json"
+      },
+      {
+        "language": "dart",
+        "path": "./snippets/dart.json"
       }
     ]
   }
