@@ -1,5 +1,4 @@
 {
-  ".source.dart": {
     "main": {
       "prefix": "main",
       "description": "Insert a main function, used as an entry point.",
@@ -77,5 +76,4 @@
       "description": "Insert a test group block.",
       "body": ["group('$1', () {", "  $0", "});"]
     }
-  }
 }
