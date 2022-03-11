@@ -1,0 +1,415 @@
+
+{
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for (${1:size_t} ${2:i} = ${3:0}; $2 < ${4:length}; $2++) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Code snippet for 'for' loop"
+  },
+  "forr": {
+    "prefix": "forr",
+    "body": [
+      "for (${1:size_t} ${2:i} = ${3:length} - 1; $2 >= ${4:0}; $2--) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Code snippet for reverse 'for' loop"
+  },
+  "forin": {
+    "prefix": "forin",
+    "body": [
+      "for (${1:type *object} in ${2:collection}) {",
+      "\t${3:statements}",
+      "}"
+    ],
+    "description": "Code snippet for reverse 'forin' loop"
+  },
+  "while": {
+    "prefix": "while",
+    "body": ["while ($1) {", "\t$0", "}"],
+    "description": ""
+  },
+  "if": {
+    "prefix": "if",
+    "body": ["if ($1) {", "\t$0", "}"],
+    "description": "Code snippet for if statement"
+  },
+  "else": {
+    "prefix": "else",
+    "body": ["else {", "\t$0", "}"],
+    "description": "Code snippet for else statement"
+  },
+  "else if": {
+    "prefix": "else if",
+    "body": ["else if ($1) {", "\t$0", "}"],
+    "description": "Code snippet for else-if statement"
+  },
+  "enum": {
+    "prefix": "enum",
+    "body": ["enum ${1:MyEnum} {", "\t$0", "};"],
+    "description": "Code snippet for enum"
+  },
+  "nsoptions": {
+    "prefix": "nsoptions",
+    "body": [
+      "typedef NS_ENUM(NSUInteger, ${1:MyEnum}) {",
+      "\t${2:MyEnumValueA} = 1 << 0,",
+      "\t${3:MyEnumValueB} = 1 << 1,",
+      "\t${4:MyEnumValueC} = 1 << 2,",
+      "};"
+    ],
+    "description": "Code snippet for NS_OPTIONS"
+  },
+  "nsenum": {
+    "prefix": "nsenum",
+    "body": [
+      "typedef NS_ENUM(NSUInteger, ${1:MyEnum}) {",
+      "\t${2:MyEnumValueA},",
+      "\t${3:MyEnumValueB},",
+      "\t${4:MyEnumValueC},",
+      "};"
+    ],
+    "description": "Code snippet for NS_ENUM"
+  },
+  "#ifdef": {
+    "prefix": "#ifdef",
+    "body": ["#ifdef ${1:DEBUG}", "$0", "#endif /* $1 */"],
+    "description": "Code snippet for #ifdef"
+  },
+  "#ifndef": {
+    "prefix": "#ifndef",
+    "body": ["#ifndef ${1:DEBUG}", "$0", "#endif /* !$1 */"],
+    "description": "Code snippet for #ifndef"
+  },
+  "#if": {
+    "prefix": "#if",
+    "body": ["#if ${1:0}", "$0", "#endif /* $1 */"],
+    "description": "Code snippet for #if"
+  },
+  "struct": {
+    "prefix": "struct",
+    "body": ["struct ${1:MyStruct} {", "\t$0", "};"],
+    "description": "Code snippet for struct"
+  },
+  "typedef struct": {
+    "prefix": "structt",
+    "body": ["typedef struct {", "\t$0", "} ${1:MyStruct};"],
+    "description": "Code snippet to define a type with struct"
+  },
+  "switch": {
+    "prefix": "switch",
+    "body": ["switch (${1:switch_on}) {", "\tdefault:", "\t\t$0", "\t\tbreak;", "}"],
+    "description": "Code snippet for switch statement"
+  },
+  "case": {
+    "prefix": "case",
+    "body": ["case $1:", "\t$0", "\tbreak;"],
+    "description": "Code snippet for case branch"
+  },
+  "union": {
+    "prefix": "union",
+    "body": ["union ${1:MyUnion} {", "\t$0", "};"],
+    "description": "Code snippet for union"
+  },
+  "#imp": {
+    "prefix": "#imp",
+    "body": ["#import \"$0\""],
+    "description": "Code snippet for #import \" \""
+  },
+  "#imp<": {
+    "prefix": "#imp<",
+    "body": ["#import <$0>"],
+    "description": "Code snippet for #import < >"
+  },
+  "#inc": {
+    "prefix": "#inc",
+    "body": ["#include \"$0\""],
+    "description": "Code snippet for #include \" \""
+  },
+  "#inc<": {
+    "prefix": "#inc<",
+    "body": ["#include <$0>"],
+    "description": "Code snippet for #include < >"
+  },
+  "#def": {
+    "prefix": "def",
+    "body": ["#define $0"],
+    "description": "Code snippet for #define \" \""
+  },
+  "Main function template": {
+    "prefix": "main",
+    "body": [
+      "int main (int argc, char *argv[])",
+      "{",
+      "\t$0",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "A standard main function for a C program"
+  },
+  "Standard Starter Template": {
+    "prefix": "sst",
+    "body": [
+      "#include <stdio.h>",
+      "",
+      "int main (int argc, char *argv[])",
+      "{",
+      "\t$0",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "A standard starter template for a C program"
+  },
+  "Stdlib Variant Starter Template": {
+    "prefix": "libsst",
+    "body": [
+      "#include <stdio.h>",
+      "#include <stdlib.h>",
+      "",
+      "int main (int argc, char *argv[])",
+      "{",
+      "\t$0",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "A standard starter template for a C program with stdlib included"
+  },
+  "Do...while loop": {
+    "prefix": "do",
+    "body": ["do {", "\t$1", "} while($2);"],
+    "description": "Creates a do...while loop"
+  },
+  "Create linked list": {
+    "prefix": "clist",
+    "body": [
+      "typedef struct _node * Link;",
+      "typedef struct _node node;",
+      "struct _node {",
+      "\tint value;",
+      "\tLink next;",
+      "};"
+    ],
+    "description": "Creates a linked list template"
+  },
+  "Create a function": {
+    "prefix": "func",
+    "body": ["${2:void} ${1:func}(${4:void})", "{", "\t$3", "}"],
+    "description": "Creates a function"
+  },
+  "Create int function": {
+    "prefix": "intfunc",
+    "body": ["int $1 ()", "{", "\tint $2 = $3;$4", "\treturn $2;", "}"],
+    "description": "Creates a function that returns the int type"
+  },
+  "Create float function": {
+    "prefix": "flfunc",
+    "body": ["float $1 ()", "{", "\tfloat $2 = $3;$4", "\treturn $2;", "}"],
+    "description": "Creates a function that returns the float type"
+  },
+  "Create double function": {
+    "prefix": "doubfunc",
+    "body": ["double $1 ()", "{", "\tdouble $2 = $3;$4", "\treturn $2;", "}"],
+    "description": "Creates a function that returns the double type"
+  },
+  "Create string function": {
+    "prefix": "strfunc",
+    "body": ["char[] $1 ()", "{", "\tchar[] $2 = {$3};$4", "\treturn $2;", "}"],
+    "description": "Creates a function that returns the char array type"
+  },
+  "Create long function": {
+    "prefix": "longfunc",
+    "body": ["long $1 ()", "{", "\tlong $2 = $3;$4", "\treturn $3;", "}"],
+    "description": "Creates a function that returns the long type"
+  },
+  "Print variable of type float (2 decimal places)": {
+    "prefix": "pflo",
+    "body": ["printf(\"$0 :>> %.2f\\n\", $0);"],
+    "description": "Calls printf() to log value of variable of type float rounded to 2 decimal places"
+  },
+  "Print variable of type integer": {
+    "prefix": "pint",
+    "body": ["printf(\"$0 :>> %d\\n\", $0);"],
+    "description": "Calls printf() to log value of variable of type signed integer"
+  },
+  "Print variable of type char": {
+    "prefix": "pcha",
+    "body": ["printf(\"$0 :>> %c\\n\", $0);"],
+    "description": "Calls printf() to log value of variable of type char"
+  },
+  "Print variable of type pointer": {
+    "prefix": "ppoint",
+    "body": ["printf(\"$0 :>> %p\\n\", (void *) $0);"],
+    "description": "Calls printf() to log value of variable of type pointer"
+  },
+  "Print variable of type size_t": {
+    "prefix": "psiz",
+    "body": ["printf(\"$0 :>> %zu\\n\", $0);"],
+    "description": "Calls printf() to log value of variable of type size_t"
+  },
+  "printf": {
+    "prefix": "printf",
+    "body": ["printf(\"$1\\n\"$0);"],
+    "description": "Generic printf() snippet"
+  },
+  "sprintf": {
+    "prefix": "sprintf",
+    "body": ["sprintf($1, \"$2\\n\"$0);"],
+    "description": "Generic sprintf() snippet"
+  },
+  "fprintf": {
+    "prefix": "fprintf",
+    "body": ["fprintf(${1:stderr}, \"$2\\n\"$0);"],
+    "description": "Generic fprintf() snippet"
+  },
+  "scanf": {
+    "prefix": "scanf",
+    "body": ["scanf(\"$1\"$0);"],
+    "description": "Generic scanf() snippet"
+  },
+  "sscanf": {
+    "prefix": "sscanf",
+    "body": ["sscanf($1, \"$2\"$0);"],
+    "description": "Generic sscanf() snippet"
+  },
+  "fscanf": {
+    "prefix": "fscanf",
+    "body": ["fscanf($1, \"$2\"$0);"],
+    "description": "Generic fscanf() snippet"
+  },
+  "Allocate memory using malloc": {
+    "prefix": "mal",
+    "body": [
+      "${1:int} *${2:v} = malloc(${3:1} * sizeof($1));",
+      "",
+      "if (!$2) {",
+      "\tfprintf(stderr, \"Memory allocation failed!\\n\");",
+      "\t$4;",
+      "}",
+      "$0",
+      "free($2);"
+    ],
+    "description": "Allocates memory to a pointer variable using malloc(), then deallocates using free()."
+  },
+  "Allocate memory using calloc": {
+    "prefix": "cal",
+    "body": [
+      "${1:int} *${2:v} = calloc(${3:1}, sizeof($1));",
+      "",
+      "if (!$2) {",
+      "\tfprintf(stderr, \"Memory allocation failed!\\n\");",
+      "\t$4;",
+      "}",
+      "$0",
+      "free($2);"
+    ],
+    "description": "Allocates memory to a pointer variable using calloc(), then deallocates using free()."
+  },
+  "Create Class interface": {
+    "prefix": "@interface",
+    "body": [
+      "NS_ASSUME_NONNULL_BEGIN\n",
+      "@interface ${1:class name} : ${2:superclass}\n",
+      "$3",
+      "\n@end\n",
+      "NS_ASSUME_NONNULL_END"
+    ],
+    "description": "Create an Objc Class interface"
+  },
+  "Create Class implementation": {
+    "prefix": "@implementation",
+    "body": [
+      "@implementation ${1:class}\n",
+      "${2:methods}\n",
+      "@end"
+    ],
+    "description": "Create an Objc Class implementation"
+  },
+  "Create property": {
+    "prefix": "@property",
+    "body": [ "@property (nonatomic, ${1:memory control}) ${2:property};\n" ],
+    "description": "Create an Objc property"
+  },
+  "Create class method interface": {
+    "prefix": "+interface",
+    "body": [ "+ (${1:return}) ${2:func_name};\n" ],
+    "description": "Create an Objc class method interface"
+  },
+  "Create class method implementation": {
+    "prefix": "+impl",
+    "body": [ "+ (${1:return}) ${2:func_name} {\n", "}" ],
+    "description": "Create an Objc class method implementation"
+  },
+  "Create instance method interface": {
+    "prefix": "-interface",
+    "body": [ "- (${1:return}) ${2:func_name};\n" ],
+    "description": "Create an Objc instance method interface"
+  },
+  "Create instance method implementation": {
+    "prefix": "-impl",
+    "body": [ "- (${1:return}) ${2:func_name} {\n", "}" ],
+    "description": "Create an Objc instance method implementation"
+  },
+  "Function field": {
+    "prefix": "field",
+    "body": [ ":(${1:type}) ${2:field}" ],
+    "description": "Create an Objc instance method implementation"
+  },
+  "Block type var": {
+    "prefix": "blockvar",
+    "body": [ "${1:return} (^${2:name}) (${3:parameters}) = ^${1:return}(${3:parameters}) {\n", "};\n" ],
+    "description": "Create a block local variable"
+  },
+  "Block property": {
+    "prefix": "@propertyblock",
+    "body": [ "@property (nonatomic, copy, ${1:nullability}) ${2:return} (^${3:name})(${4:parameters});\n" ],
+    "description": "Create a block property"
+  },
+  "Block field": {
+    "prefix": "fieldblock",
+    "body": [ ":(${1:return} (^${2:nullability}) (${3:parameters}))${4:name)" ],
+    "description": "Create a block field"
+  },
+  "Block typedef": {
+    "prefix": "typedefblock",
+    "body": [ "typedef ${1:return} (^${2:type_name}) (${3:parameters})" ],
+    "description": "Create a block field"
+  },
+  "Dispatch once snip": {
+    "prefix": "dispatchoncesnip",
+    "body": [
+      "static dispatch_once_t onceToken;",
+      "dispatch_once(&onceToken, ^{",
+      "\t${1:code to be executed once}",
+      "});"
+    ],
+    "description": "Create a dispatch_once"
+  },
+  "Dispatch sync": {
+    "prefix": "dispatchsync",
+    "body": [ "dispatch_sync(${1:dispatch_queue_t  _Nonnull queue}, ${2:^(void)block})" ],
+    "description": "Create a dispatch_sync"
+  },
+  "Dispatch async": {
+    "prefix": "dispatchasync",
+    "body": [ "dispatch_async(${1:dispatch_queue_t  _Nonnull queue}, ${2:^(void)block})" ],
+    "description": "Create a dispatch_async"
+  },
+  "Dispatch get main queue": {
+    "prefix": "dispatchgetmainqueue",
+    "body": [ "dispatch_get_main_queue()" ],
+    "description": "Create a dispatch_get_main_queue"
+  },
+  "Dispatch get global queue": {
+    "prefix": "dispatchgetglobalqueue",
+    "body": [ "dispatch_get_global_queue(${1:intptr_t identifier}, ${2:uintptr_t flags})" ],
+    "description": "Create a dispatch_get_global_queue"
+  },
+  "Dispatch semaphore create": {
+    "prefix": "dispatchsemaphorecreate",
+    "body": [ "dispatch_semaphore_create(${1:intptr_t value})" ],
+    "description": "Create a dispatch_semaphore_create"
+  }
+}
