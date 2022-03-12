@@ -307,11 +307,22 @@
     ],
     "description": "Allocates memory to a pointer variable using calloc(), then deallocates using free()."
   },
+  "Create protocol declaration": {
+    "prefix": "@protocol",
+    "body": [
+      "NS_ASSUME_NONNULL_BEGIN\n",
+      "@protocol ${1:protocol name} : ${2:NSObject}\n",
+      "$3",
+      "\n@end\n",
+      "NS_ASSUME_NONNULL_END"
+    ],
+    "description": "Create an Objc protocol declaration"
+  },
   "Create Class interface": {
     "prefix": "@interface",
     "body": [
       "NS_ASSUME_NONNULL_BEGIN\n",
-      "@interface ${1:class name} : ${2:superclass}\n",
+      "@interface ${1:class name} : ${2:NSObject}\n",
       "$3",
       "\n@end\n",
       "NS_ASSUME_NONNULL_END"
@@ -321,7 +332,7 @@
   "Create Class implementation": {
     "prefix": "@implementation",
     "body": [
-      "@implementation ${1:class}\n",
+      "@implementation ${1:class name}\n",
       "${2:methods}\n",
       "@end"
     ],
@@ -334,22 +345,22 @@
   },
   "Create class method interface": {
     "prefix": "+interface",
-    "body": [ "+ (${1:return}) ${2:func_name};\n" ],
+    "body": [ "+ (${1:void}) ${2:func name};\n" ],
     "description": "Create an Objc class method interface"
   },
   "Create class method implementation": {
     "prefix": "+impl",
-    "body": [ "+ (${1:return}) ${2:func_name} {\n", "}" ],
+    "body": [ "+ (${1:void}) ${2:func name} {", "$4", "}" ],
     "description": "Create an Objc class method implementation"
   },
   "Create instance method interface": {
     "prefix": "-interface",
-    "body": [ "- (${1:return}) ${2:func_name};\n" ],
+    "body": [ "- (${1:void}) ${2:func name};\n" ],
     "description": "Create an Objc instance method interface"
   },
   "Create instance method implementation": {
     "prefix": "-impl",
-    "body": [ "- (${1:return}) ${2:func_name} {\n", "}" ],
+    "body": [ "- (${1:void}) ${2:func name} {", "$4", "}" ],
     "description": "Create an Objc instance method implementation"
   },
   "Function field": {
@@ -359,22 +370,32 @@
   },
   "Block type var": {
     "prefix": "blockvar",
-    "body": [ "${1:return} (^${2:name}) (${3:parameters}) = ^${1:return}(${3:parameters}) {\n", "};\n" ],
+    "body": [ "${1:void} (^${2:name}) (${3:parameters}) = ^${1:void}(${3:parameters}) {\n", "};\n" ],
     "description": "Create a block local variable"
   },
   "Block property": {
     "prefix": "@propertyblock",
-    "body": [ "@property (nonatomic, copy, ${1:nullability}) ${2:return} (^${3:name})(${4:parameters});\n" ],
+    "body": [ "@property (nonatomic, copy, ${1:nullability}) ${2:void} (^${3:name})(${4:parameters});\n" ],
     "description": "Create a block property"
+  },
+  "@selector": {
+    "prefix": "@selector",
+    "body": [ "@selector(${1:method}}" ],
+    "description": "Create a @selector"
+  },
+  "@protocol": {
+    "prefix": "@proto",
+    "body": [ "@protocol(${1:protocol name}}" ],
+    "description": "Create a @protocol"
   },
   "Block field": {
     "prefix": "fieldblock",
-    "body": [ ":(${1:return} (^${2:nullability}) (${3:parameters}))${4:name)" ],
+    "body": [ ":(${1:void} (^${2:nullability}) (${3:parameters}))${4:name)" ],
     "description": "Create a block field"
   },
   "Block typedef": {
     "prefix": "typedefblock",
-    "body": [ "typedef ${1:return} (^${2:type_name}) (${3:parameters})" ],
+    "body": [ "typedef ${1:void} (^${2:type_name}) (${3:parameters})" ],
     "description": "Create a block field"
   },
   "Dispatch once snip": {
@@ -411,5 +432,82 @@
     "prefix": "dispatchsemaphorecreate",
     "body": [ "dispatch_semaphore_create(${1:intptr_t value})" ],
     "description": "Create a dispatch_semaphore_create"
-  }
+  },
+  "NSLog": {
+    "prefix": "NSLog",
+    "body": [ "NSLog(@\"${1:%@}\"), $2" ],
+    "description": "Create a NSLog"
+  },
+  "try-catch-finally": {
+    "prefix": "@try",
+    "body": [
+      "@try {",
+      "\t${1:statements}",
+      "}",
+      "@catch (NSException * e) {",
+      "\t${2:handler}",
+      "}",
+      "@finally {",
+      "\t${0:statements}",
+      "}"
+    ],
+    "description": "Create a try-catch-finally block"
+  },
+  "catch": {
+    "prefix": "@catch",
+    "body": [
+      "@catch (NSException * e) {",
+      "\t${2:handler}",
+      "}"
+    ],
+    "description": "Create a catch block"
+  },
+  "finally": {
+    "prefix": "@finally",
+    "body": [
+      "@finally {",
+      "\t${0:statements}",
+      "}"
+    ],
+    "description": "Create a finally block"
+  },
+  "@synchronized": {
+    "prefix": "@synchronized",
+    "body": [
+      "@synchronized (${1:token}) {",
+      "\t${2:statements}",
+      "}"
+    ],
+    "description": "Create a finally block"
+  },
+  "MARK: -": {
+    "prefix": "mark",
+    "body": [ "// MARK: - ${1:lable}" ],
+    "description": "Create a MARK"
+  },
+  "MARK: - Private": {
+    "prefix": "markprivate",
+    "body": [ "// MARK: - Private" ],
+    "description": "Create a MARK: - Private"
+  },
+  "MARK: - Public": {
+    "prefix": "markpublic",
+    "body": [ "// MARK: - Public" ],
+    "description": "Create a MARK: - Public"
+  },
+  "MARK: - UI": {
+    "prefix": "markui",
+    "body": [ "// MARK: - UI" ],
+    "description": "Create a MARK: - UI"
+  },
+  "MARK: - Data": {
+    "prefix": "markdata",
+    "body": [ "// MARK: - Public" ],
+    "description": "Create a MARK: - Data"
+  },
+  "MARK: - Override": {
+    "prefix": "markoverride",
+    "body": [ "// MARK: - Override" ],
+    "description": "Create a MARK: - Override"
+  },
 }
