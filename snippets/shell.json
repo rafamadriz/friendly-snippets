@@ -71,7 +71,7 @@
   },
   "case": {
     "prefix": "case",
-    "body": "case \"$${0:VAR}\" in\n\t${1:1}) echo 1\n\t;;\n\t${2:2|3}) echo 2 or 3\n\t;;\n\t*) echo default\n\t;;\nesac\n",
+    "body": "case \"$${1:VAR}\" in\n\t${2:1}) echo 1\n\t;;\n\t${3:2|3}) echo 2 or 3\n\t;;\n\t*) echo default\n\t;;\nesac\n",
     "description": [
       "case word in [ [(] pattern [ | pattern ] ... ) list ;; ] ... esac\n",
       "A case command first expands word, and tries to match it against each pattern in turn."
