@@ -105,7 +105,7 @@
   "Example": {
     "prefix": "example",
     "body": "@startuml\nAlice -> Bob\nBob -> Alice\n@enduml",
-    "description": "Simple Example to get started with PlantUML"
+    "description": "Simple example to get started with PlantUML"
   },
   "Extend Arrow (left)": {
     "prefix": "extend",
@@ -144,7 +144,7 @@
   "Node": {
     "prefix": "no",
     "body": "node $1",
-    "description": "A cube modeling a node in the system"
+    "description": "A cube modelling a node in the system"
   },
   "Note left": {
     "prefix": "note-lf",
