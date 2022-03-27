@@ -193,7 +193,7 @@
   },
   "Uml": {
     "prefix": "startuml",
-    "body": "@startuml\n $1\n @enduml",
+    "body": "@startuml\n $1\n@enduml",
     "description": "Inside $1 begin defining your model"
   },
   "Use Arrow (left)": {
