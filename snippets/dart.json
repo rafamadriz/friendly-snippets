@@ -75,5 +75,10 @@
       "prefix": "group",
       "description": "Insert a test group block.",
       "body": ["group('$1', () {", "  $0", "});"]
+    },
+    "enum": {
+      "prefix": "enum",
+      "description": "Insert a enum.",
+      "body": ["enum ${1:Name} {", "  $0", "}"]
     }
 }
