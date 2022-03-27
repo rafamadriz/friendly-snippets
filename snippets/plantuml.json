@@ -104,7 +104,7 @@
   },
   "Example": {
     "prefix": "example",
-    "body": "@startuml\nAlice -> Bob\nBob -> Alice\n@enduml",
+    "body": ["@startuml\nAlice -> Bob\nBob -> Alice\n@enduml"],
     "description": "Simple example to get started with PlantUML"
   },
   "Extend Arrow (left)": {
