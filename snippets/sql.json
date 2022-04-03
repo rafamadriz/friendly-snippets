@@ -198,7 +198,7 @@
   },
   "foreingkc": {
     "prefix": "foreingkc",
-    "body": ["CONSTRAINT ${1:attribute} FOREING KEY (${2:attribute(s)})",
+    "body": ["CONSTRAINT ${1:attribute} FOREIGN KEY (${2:attribute(s)})",
       "\tREFERENCES ${3:tableName}(${4:attribute})"
     ],
     "description": "Constraint foreing Key"
