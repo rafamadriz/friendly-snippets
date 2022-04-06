@@ -65,6 +65,11 @@
     "body": "def ${1:fname}(${2:arg}):\n\t${3:pass}$0",
     "description": "Code snippet for function definition."
   },
+  "New function w/ Return": {
+    "prefix": "def",
+    "body": "def ${1:fname}(${2:arg}) -> ${3:return_type}:\n\t${4:pass}$0",
+    "description": "Code snippet for function definition."
+  },
   "New async function": {
     "prefix": "adef",
     "body": "async def ${1:fname}(${2:arg}):\n\t${3:pass}$0",
