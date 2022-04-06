@@ -1,0 +1,411 @@
+
+{
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for (${1:size_t} ${2:i} = ${3:0}; $2 < ${4:length}; $2++) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Code snippet for 'for' loop"
+  },
+  "forr": {
+    "prefix": "forr",
+    "body": [
+      "for (${1:size_t} ${2:i} = ${3:length} - 1; $2 >= ${4:0}; $2--) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Code snippet for reverse 'for' loop"
+  },
+  "forin": {
+    "prefix": "forin",
+    "body": [
+      "for (${1:type *object} in ${2:collection}) {",
+      "\t${3:statements}",
+      "}"
+    ],
+    "description": "Code snippet for reverse 'forin' loop"
+  },
+  "while": {
+    "prefix": "while",
+    "body": ["while ($1) {", "\t$0", "}"],
+    "description": ""
+  },
+  "if": {
+    "prefix": "if",
+    "body": ["if ($1) {", "\t$0", "}"],
+    "description": "Code snippet for if statement"
+  },
+  "else": {
+    "prefix": "else",
+    "body": ["else {", "\t$0", "}"],
+    "description": "Code snippet for else statement"
+  },
+  "else if": {
+    "prefix": "else if",
+    "body": ["else if ($1) {", "\t$0", "}"],
+    "description": "Code snippet for else-if statement"
+  },
+  "enum": {
+    "prefix": "enum",
+    "body": ["enum ${1:MyEnum} {", "\t$0", "};"],
+    "description": "Code snippet for enum"
+  },
+  "nsoptions": {
+    "prefix": "nsoptions",
+    "body": [
+      "typedef NS_ENUM(NSUInteger, ${1:MyEnum}) {",
+      "\t${2:MyEnumValueA} = 1 << 0,",
+      "\t${3:MyEnumValueB} = 1 << 1,",
+      "\t${4:MyEnumValueC} = 1 << 2,",
+      "};"
+    ],
+    "description": "Code snippet for NS_OPTIONS"
+  },
+  "nsenum": {
+    "prefix": "nsenum",
+    "body": [
+      "typedef NS_ENUM(NSUInteger, ${1:MyEnum}) {",
+      "\t${2:MyEnumValueA},",
+      "\t${3:MyEnumValueB},",
+      "\t${4:MyEnumValueC},",
+      "};"
+    ],
+    "description": "Code snippet for NS_ENUM"
+  },
+  "#ifdef": {
+    "prefix": "#ifdef",
+    "body": ["#ifdef ${1:DEBUG}", "$0", "#endif /* $1 */"],
+    "description": "Code snippet for #ifdef"
+  },
+  "#ifndef": {
+    "prefix": "#ifndef",
+    "body": ["#ifndef ${1:DEBUG}", "$0", "#endif /* !$1 */"],
+    "description": "Code snippet for #ifndef"
+  },
+  "#if": {
+    "prefix": "#if",
+    "body": ["#if ${1:0}", "$0", "#endif /* $1 */"],
+    "description": "Code snippet for #if"
+  },
+  "struct": {
+    "prefix": "struct",
+    "body": ["struct ${1:MyStruct} {", "\t$0", "};"],
+    "description": "Code snippet for struct"
+  },
+  "typedef struct": {
+    "prefix": "structt",
+    "body": ["typedef struct {", "\t$0", "} ${1:MyStruct};"],
+    "description": "Code snippet to define a type with struct"
+  },
+  "switch": {
+    "prefix": "switch",
+    "body": ["switch (${1:switch_on}) {", "\tdefault:", "\t\t$0", "\t\tbreak;", "}"],
+    "description": "Code snippet for switch statement"
+  },
+  "case": {
+    "prefix": "case",
+    "body": ["case $1:", "\t$0", "\tbreak;"],
+    "description": "Code snippet for case branch"
+  },
+  "union": {
+    "prefix": "union",
+    "body": ["union ${1:MyUnion} {", "\t$0", "};"],
+    "description": "Code snippet for union"
+  },
+  "#imp": {
+    "prefix": "#imp",
+    "body": ["#import \"$0\""],
+    "description": "Code snippet for #import \" \""
+  },
+  "#imp<": {
+    "prefix": "#imp<",
+    "body": ["#import <$0>"],
+    "description": "Code snippet for #import < >"
+  },
+  "#inc": {
+    "prefix": "#inc",
+    "body": ["#include \"$0\""],
+    "description": "Code snippet for #include \" \""
+  },
+  "#inc<": {
+    "prefix": "#inc<",
+    "body": ["#include <$0>"],
+    "description": "Code snippet for #include < >"
+  },
+  "#def": {
+    "prefix": "def",
+    "body": ["#define $0"],
+    "description": "Code snippet for #define \" \""
+  },
+  "Main function template": {
+    "prefix": "main",
+    "body": [
+      "int main (int argc, char *argv[])",
+      "{",
+      "\t$0",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "A standard main function for a C program"
+  },
+  "Standard Starter Template": {
+    "prefix": "sst",
+    "body": [
+      "#include <stdio.h>",
+      "",
+      "int main (int argc, char *argv[])",
+      "{",
+      "\t$0",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "A standard starter template for a C program"
+  },
+  "Stdlib Variant Starter Template": {
+    "prefix": "libsst",
+    "body": [
+      "#include <stdio.h>",
+      "#include <stdlib.h>",
+      "",
+      "int main (int argc, char *argv[])",
+      "{",
+      "\t$0",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "A standard starter template for a C program with stdlib included"
+  },
+  "Do...while loop": {
+    "prefix": "do",
+    "body": ["do {", "\t$1", "} while($2);"],
+    "description": "Creates a do...while loop"
+  },
+  "Create protocol declaration": {
+    "prefix": ["proto", "@protocol"],
+    "body": [
+      "NS_ASSUME_NONNULL_BEGIN\n",
+      "@protocol ${1:protocol name} : ${2:NSObject}\n",
+      "$3",
+      "\n@end\n",
+      "NS_ASSUME_NONNULL_END"
+    ],
+    "description": "Create an Objc protocol declaration"
+  },
+  "Create Class interface": {
+    "prefix": ["class", "@interface"],
+    "body": [
+      "NS_ASSUME_NONNULL_BEGIN\n",
+      "@interface ${1:$TM_FILENAME_BASE} : ${2:NSObject}\n",
+      "$3",
+      "\n@end\n",
+      "NS_ASSUME_NONNULL_END"
+    ],
+    "description": "Create an Objc Class interface"
+  },
+  "Create Class implementation": {
+    "prefix": "@implementation",
+    "body": [
+      "@implementation ${1:$TM_FILENAME_BASE}\n",
+      "${2:methods}\n",
+      "@end"
+    ],
+    "description": "Create an Objc Class implementation"
+  },
+  "Create property": {
+    "prefix": [ "@property", "prop" ],
+    "body": [ "@property (nonatomic, ${1:memory control}) ${2:property};\n" ],
+    "description": "Create an Objc property"
+  },
+  "Create property for copied text": {
+    "prefix": [ "makeproperty", "mp" ],
+    "body": [ "@property (nonatomic, ${1:memory control}) ${2:type} ${3:$CLIPBOARD};\n" ],
+    "description": "Create an Objc property with copied text"
+  },
+  "Create class method interface": {
+    "prefix": ["funccd", "+interface"],
+    "body": [ "+ (${1:void}) ${2:func name};\n" ],
+    "description": "Create an Objc class method interface"
+  },
+  "Create class method implementation": {
+    "prefix": ["funcci", "+impl"],
+    "body": [ "+ (${1:void}) ${2:func name} {", "$4", "}" ],
+    "description": "Create an Objc class method implementation"
+  },
+  "Create instance method interface": {
+    "prefix": ["funcid", "-interface"],
+    "body": [ "- (${1:void}) ${2:func name};\n" ],
+    "description": "Create an Objc instance method interface"
+  },
+  "Create instance method implementation": {
+    "prefix": ["funcii", "-impl"],
+    "body": [ "- (${1:void}) ${2:func name} {", "$4", "}" ],
+    "description": "Create an Objc instance method implementation"
+  },
+  "Function field": {
+    "prefix": "field",
+    "body": [ ":(${1:type}) ${2:field}" ],
+    "description": "Create an Objc instance method implementation"
+  },
+  "Block type var": {
+    "prefix": "blockvar",
+    "body": [ "${1:void} (^${2:name}) (${3:parameters}) = ^${1:void}(${3:parameters}) {\n", "};\n" ],
+    "description": "Create a block local variable"
+  },
+  "Block property": {
+    "prefix": "@propertyblock",
+    "body": [ "@property (nonatomic, copy, ${1:nullability}) ${2:void} (^${3:name})(${4:parameters});\n" ],
+    "description": "Create a block property"
+  },
+  "@selector": {
+    "prefix": "@selector",
+    "body": [ "@selector(${1:method}}" ],
+    "description": "Create a @selector"
+  },
+  "@protocol": {
+    "prefix": "@proto",
+    "body": [ "@protocol(${1:protocol name}}" ],
+    "description": "Create a @protocol"
+  },
+  "Block field": {
+    "prefix": "fieldblock",
+    "body": [ ":(${1:void} (^${2:nullability}) (${3:parameters}))${4:name)" ],
+    "description": "Create a block field"
+  },
+  "Block typedef": {
+    "prefix": "typedefblock",
+    "body": [ "typedef ${1:void} (^${2:type_name}) (${3:parameters})" ],
+    "description": "Create a block field"
+  },
+  "Dispatch once snip": {
+    "prefix": "dispatchoncesnip",
+    "body": [
+      "static dispatch_once_t onceToken;",
+      "dispatch_once(&onceToken, ^{",
+      "\t${1:code to be executed once}",
+      "});"
+    ],
+    "description": "Create a dispatch_once"
+  },
+  "Dispatch sync": {
+    "prefix": "dispatchsync",
+    "body": [ "dispatch_sync(${1:dispatch_queue_t  _Nonnull queue}, ${2:^(void)block})" ],
+    "description": "Create a dispatch_sync"
+  },
+  "Dispatch async": {
+    "prefix": "dispatchasync",
+    "body": [ "dispatch_async(${1:dispatch_queue_t  _Nonnull queue}, ${2:^(void)block})" ],
+    "description": "Create a dispatch_async"
+  },
+  "Dispatch get main queue": {
+    "prefix": "dispatchgetmainqueue",
+    "body": [ "dispatch_get_main_queue()" ],
+    "description": "Create a dispatch_get_main_queue"
+  },
+  "Dispatch get global queue": {
+    "prefix": "dispatchgetglobalqueue",
+    "body": [ "dispatch_get_global_queue(${1:intptr_t identifier}, ${2:uintptr_t flags})" ],
+    "description": "Create a dispatch_get_global_queue"
+  },
+  "Dispatch semaphore create": {
+    "prefix": "dispatchsemaphorecreate",
+    "body": [ "dispatch_semaphore_create(${1:intptr_t value})" ],
+    "description": "Create a dispatch_semaphore_create"
+  },
+  "NSLog": {
+    "prefix": "NSLog",
+    "body": [ "NSLog(@\"${1:%@}\"$2);" ],
+    "description": "Create a NSLog"
+  },
+  "try-catch-finally": {
+    "prefix": "@try",
+    "body": [
+      "@try {",
+      "\t${1:statements}",
+      "}",
+      "@catch (NSException * e) {",
+      "\t${2:handler}",
+      "}",
+      "@finally {",
+      "\t${0:statements}",
+      "}"
+    ],
+    "description": "Create a try-catch-finally block"
+  },
+  "catch": {
+    "prefix": "@catch",
+    "body": [
+      "@catch (NSException * e) {",
+      "\t${2:handler}",
+      "}"
+    ],
+    "description": "Create a catch block"
+  },
+  "finally": {
+    "prefix": "@finally",
+    "body": [
+      "@finally {",
+      "\t${0:statements}",
+      "}"
+    ],
+    "description": "Create a finally block"
+  },
+  "@synchronized": {
+    "prefix": "@synchronized",
+    "body": [
+      "@synchronized (${1:token}) {",
+      "\t${2:statements}",
+      "}"
+    ],
+    "description": "Create a finally block"
+  },
+  "MARK: -": {
+    "prefix": "mark",
+    "body": [ "// MARK: - ${1:lable}" ],
+    "description": "Create a MARK"
+  },
+  "MARK: - Private": {
+    "prefix": "markprivate",
+    "body": [ "// MARK: - Private" ],
+    "description": "Create a MARK: - Private"
+  },
+  "MARK: - Public": {
+    "prefix": "markpublic",
+    "body": [ "// MARK: - Public" ],
+    "description": "Create a MARK: - Public"
+  },
+  "MARK: - UI": {
+    "prefix": "markui",
+    "body": [ "// MARK: - UI" ],
+    "description": "Create a MARK: - UI"
+  },
+  "MARK: - Data": {
+    "prefix": "markdata",
+    "body": [ "// MARK: - Public" ],
+    "description": "Create a MARK: - Data"
+  },
+  "MARK: - Override": {
+    "prefix": "markoverride",
+    "body": [ "// MARK: - Override" ],
+    "description": "Create a MARK: - Override"
+  },
+  "MARK: - copied text": {
+    "prefix": "markselected",
+    "body": [ "// MARK: - $CLIPBOARD" ],
+    "description": "Create a MARK for copied text"
+  },
+  "Create file documents": {
+    "prefix": "filedoc",
+    "body": [
+      "//",
+      "//  $TM_FILENAME",
+      "//  $WORKSPACE_NAME",
+      "//",
+      "//  Created by ${VIM:\\$USER} on $CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE.",
+      "//  Copyright © $CURRENT_YEAR ${VIM:\\$USER}. All rights reserved.",
+      "//"
+    ],
+    "description": "Create a file documents header"
+  }
+}
