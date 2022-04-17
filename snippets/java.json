@@ -130,7 +130,7 @@
   },
   "newObject": {
     "prefix": "new",
-    "body": ["${0:Object} ${1:foo} = new ${0:Object}();"],
+    "body": ["${1:Object} ${2:foo} = new ${1:Object}();"],
     "description": "Create new Object"
   },
   "Public field": {
