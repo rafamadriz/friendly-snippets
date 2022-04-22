@@ -79,11 +79,6 @@
     "body": "${1:FIELDNAME} = forms.GenericIPAddressField(${2})",
     "description": "Django forms ``GenericIPAddressField``"
   },
-  "Forms GenericIPAddressField":{
-    "prefix": "fgip",
-    "body": "${1:FIELDNAME} = forms.GenericIPAddressField(${2})",
-    "description": "Django forms ``GenericIPAddressField``"
-  },
   "Forms ImageField":{
     "prefix": "fimg",
     "body": "${1:FIELDNAME} = forms.ImageField(${2})",
