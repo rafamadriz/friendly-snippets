@@ -265,7 +265,23 @@
       },
       {
         "language": "django",
+        "path": "./snippets/frameworks/django/admin.json"
+      },
+      {
+        "language": "django",
+        "path": "./snippets/frameworks/django/tags.json"
+      },
+      {
+        "language": "django",
+        "path": "./snippets/frameworks/django/urls.json"
+      },
+      {
+        "language": "django",
         "path": "./snippets/frameworks/django/filetemplates.json"
+      },
+      {
+        "language": "djangohtml",
+        "path": "./snippets/frameworks/djangohtml.json"
       },
       {
         "language": "django-rest",

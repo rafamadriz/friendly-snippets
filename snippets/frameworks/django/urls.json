@@ -1,0 +1,94 @@
+{
+  "urlresolvers": {
+    "prefix": "iurlresolvers",
+    "body": "from django.core.urlresolvers import ${1|reverse,reverse_lazy,resolve,get_script_prefix|}",
+    "description": "*Deprecated since version 1.10*\n\nUtility functions.\n\n",
+    "scope": "source.python"
+  },
+  "urls (≥1.10 & ≤1.11)": {
+    "prefix": "iurls",
+    "body": "from django.urls import ${1|reverse,reverse_lazy,resolve,get_script_prefix|}",
+    "description": "Utility functions for use in URLconfs.",
+    "scope": "source.python"
+  },
+  "conf.urls (≤1.11)": {
+    "prefix": "iconf_urls",
+    "body": "from django.conf.urls import ${1|static,url,include,handler400,handler403,handler404,handler500|}",
+    "description": "Utility functions for use in URLconfs.",
+    "scope": "source.python"
+  },
+  "urls (≥2.0)": {
+    "prefix": "iurls",
+    "body": "from django.urls import ${1|path,re_path,include,reverse,reverse_lazy,register_converter|}",
+    "description": "Utility functions for use in URLconfs.",
+    "scope": "source.python"
+  },
+  "conf.urls (≥2.0)": {
+    "prefix": "iconf_urls",
+    "body": "from django.conf.urls import ${1|static,url,handler400,handler403,handler404,handler500|}",
+    "description": "Utilityfunctions for use in URLconfs.",
+    "scope": "source.python"
+  },
+  "url_stack": {
+    "prefix": "url_stack",
+    "body": [
+      "${1|url,re_path|}(",
+      "\tr'^${2:REGEX}/$',",
+      "\t${3:VIEW}${4:.as_view()},",
+      "\tname='$5'",
+      "),"
+    ],
+    "description": "url(regex, view, kwargs=None, name=None)\n\n*url is an alias to re_path*\n\n",
+    "scope": "source.python"
+  },
+  "url_inline": {
+    "prefix": "url_inline",
+    "body": [
+      "${1|url,re_path|}(r'^${2:REGEX}/$', ${3:VIEW}${4:.as_view()}, name='$5'),"
+    ],
+    "description": "url(regex, view, kwargs=None, name=None)\n\n*url is an alias to re_path*\n\n",
+    "scope": "source.python"
+  },
+  "path_stack": {
+    "prefix": "path_stack",
+    "body": [
+      "path(",
+      "\t'${1:ROUTE}/',",
+      "\t${2:VIEW}${3:.as_view()},",
+      "\tname='$4'",
+      "),"
+    ],
+    "description": "path(route, view, kwargs=None, name=None)",
+    "scope": "source.python"
+  },
+  "path_inline": {
+    "prefix": "path_inline",
+    "body": ["path('${1:ROUTE}/', ${2:VIEW}${3:.as_view()}, name='$4'),"],
+    "description": "path(route, view, kwargs=None, name=None)",
+    "scope": "source.python"
+  },
+  "urlpatterns": {
+    "prefix": "urlpatterns",
+    "body": ["urlpatterns = [", "\t$0", "]"],
+    "description": "",
+    "scope": "source.python"
+  },
+  "repk": {
+    "prefix": "repk",
+    "body": "r'^(?P<${1:pk}>d+)/$'",
+    "description": "PK URL regex",
+    "scope": "source.python"
+  },
+  "reslug": {
+    "prefix": "reslug",
+    "body": "r'^(?P<${1:slug}>[-w]+)/$'",
+    "description": "Slug URL regex",
+    "scope": "source.python"
+  },
+  "reusername": {
+    "prefix": "reusername",
+    "body": "r'^(?P<username>[w.@+-]+)/$'",
+    "description": "Username regex",
+    "scope": "source.python"
+  }
+}
