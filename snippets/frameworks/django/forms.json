@@ -1,168 +1,287 @@
 {
-  "Django Simple Form ":{
-    "prefix": "sform",
+  "Form": {
+    "prefix": "Form",
     "body": [
-      "class ${1:Name}Form(forms.Form):",
-      "\t# Define $1Form fields here",
-      "\t${0}"
+      "class ${1:FORMNAME}(forms.Form):",
+      "\t\"\"\"${2:$1 definition}.\"\"\"",
+      "",
+      "\t${3:# TODO: Define form fields here}",
+      ""
     ],
-    "description": "Django Simple Form"
+    "description": "Form",
+    "scope": "source.python"
   },
-  "Django Model Form ":{
-    "prefix": "modelform",
+  "ModelForm": {
+    "prefix": "ModelForm",
     "body": [
-      "class ${1:ModelName}Form(forms.ModelForm):",
+      "class ${1:MODELNAME}Form(forms.ModelForm):",
+      "\t\"\"\"${2:Form definition for $1}.\"\"\"",
+      "",
       "\tclass Meta:",
-      "\t\tmodel = ${2:$1}",
-      "\t\tfields = (${3:\"__all__\"})",
-      "\t\t${0}"
+      "\t\t\"\"\"Meta definition for ${1}form.\"\"\"",
+      "",
+      "\t\tmodel = $1",
+      "\t\tfields = ('$3',)",
+      ""
     ],
-    "description": "Django Model Form"
+    "description": "ModelForm",
+    "scope": "source.python"
   },
-  "Forms BooleanField":{
+  "fbool": {
     "prefix": "fbool",
-    "body": "${1:FIELDNAME} = forms.BooleanField(${2})",
-    "description": "Django forms ``BooleanField``"
+    "body": "${1:FIELDNAME} = forms.BooleanField($2, required=${3:False})",
+    "description": "BooleanField (fbool)",
+    "scope": "source.python"
   },
-  "Forms CharField":{
+  "fchar": {
     "prefix": "fchar",
-    "body": "${1:FIELDNAME} = forms.CharField(${2})",
-    "description": "Django forms ``CharField``"
+    "body": "${1:FIELDNAME} = forms.CharField($2,${3: max_length=$4,} required=${5:False})",
+    "description": "CharField (fchar)",
+    "scope": "source.python"
   },
-  "Forms ComboField":{
+  "fchoice": {
+    "prefix": "fchoice",
+    "body": "${1:FIELDNAME} = forms.ChoiceField($2, choices=[${3:CHOICES}], required=${4:False})",
+    "description": "ChoiceField (fchoice)",
+    "scope": "source.python"
+  },
+  "fcombo": {
     "prefix": "fcombo",
-    "body": "${1:FIELDNAME} = forms.ComboField(${2})",
-    "description": "Django forms ``ComboField``"
+    "body": "${1:FIELDNAME} = forms.ComboField($2)",
+    "description": "ComboField (fcombo)",
+    "scope": "source.python"
   },
-  "Forms DateField":{
+  "fdate": {
     "prefix": "fdate",
-    "body": "${1:FIELDNAME} = forms.DateField(${2})",
-    "description": "Django forms ``DateField``"
+    "body": "${1:FIELDNAME} = forms.DateField($2, required=${3:False})",
+    "description": "DateField (fdate)",
+    "scope": "source.python"
   },
-  "Forms DateTime":{
+  "fdatetime": {
     "prefix": "fdatetime",
-    "body": "${1:FIELDNAME} = forms.DateTime(${2})",
-    "description": "Django forms ``DateTime``"
+    "body": "${1:FIELDNAME} = forms.DateTimeField($2, required=${3:False})",
+    "description": "DateTimeField (fdatetime)",
+    "scope": "source.python"
   },
-  "Forms DecimalField":{
+  "fdecimal": {
     "prefix": "fdecimal",
-    "body": "${1:FIELDNAME} = forms.DecimalField(${2})",
-    "description": "Django forms ``DecimalField``"
+    "body": "${1:FIELDNAME} = forms.DecimalField($2, required=${3:False})",
+    "description": "DecimalField (fdecimal)",
+    "scope": "source.python"
   },
-  "Forms DurationField":{
+  "fduration": {
     "prefix": "fduration",
-    "body": "${1:FIELDNAME} = forms.DurationField(${2})",
-    "description": "Django forms ``DurationField``"
+    "body": "${1:FIELDNAME} = forms.DurationField($2, required=${3:False})",
+    "description": "DurationField (fduration)",
+    "scope": "source.python"
   },
-  "Forms EmailField":{
+  "femail": {
     "prefix": "femail",
-    "body": "${1:FIELDNAME} = forms.EmailField(${2})",
-    "description": "Django forms ``EmailField``"
+    "body": "${1:FIELDNAME} = forms.EmailField($2, required=${3:False})",
+    "description": "EmailField (femail)",
+    "scope": "source.python"
   },
-  "Forms FileField":{
+  "ffile": {
     "prefix": "ffile",
-    "body": "${1:FIELDNAME} = forms.FileField(${2})",
-    "description": "Django forms ``FileField``"
+    "body": "${1:FIELDNAME} = forms.FileField($2,${3: max_length=$4,} required=${5:False})",
+    "description": "FileField (ffile)",
+    "scope": "source.python"
   },
-  "Forms FilePathField":{
+  "ffilepath": {
     "prefix": "ffilepath",
-    "body": "${1:FIELDNAME} = forms.FilePathField(${2})",
-    "description": "Django forms ``FilePathField``"
+    "body": "${1:FIELDNAME} = forms.FilePathField($2, path=${3:/absolute_path/}, required=${4:False})",
+    "description": "FilePathField (ffilepath)",
+    "scope": "source.python"
   },
-  "Forms FloatField":{
+  "ffloat": {
     "prefix": "ffloat",
-    "body": "${1:FIELDNAME} = forms.FloatField(${2})",
-    "description": "Django forms ``FloatField``"
+    "body": "${1:FIELDNAME} = forms.FloatField($2, required=${3:False})",
+    "description": "FloatField (ffloat)",
+    "scope": "source.python"
   },
-  "Forms GenericIPAddressField":{
-    "prefix": "fgip",
-    "body": "${1:FIELDNAME} = forms.GenericIPAddressField(${2})",
-    "description": "Django forms ``GenericIPAddressField``"
-  },
-  "Forms GenericIPAddressField":{
-    "prefix": "fgip",
-    "body": "${1:FIELDNAME} = forms.GenericIPAddressField(${2})",
-    "description": "Django forms ``GenericIPAddressField``"
-  },
-  "Forms ImageField":{
-    "prefix": "fimg",
-    "body": "${1:FIELDNAME} = forms.ImageField(${2})",
-    "description": "Django forms ``ImageField``"
-  },
-  "Forms IntegerField":{
-    "prefix": "fint",
-    "body": "${1:FIELDNAME} = forms.IntegerField(${2})",
-    "description": "Django forms ``IntegerField``"
-  },
-  "Forms IPAddressField":{
+  "fip": {
     "prefix": "fip",
-    "body": "${1:FIELDNAME} = forms.IPAddressField(${2})",
-    "description": "Django forms ``IPAddressField``"
+    "body": "${1:FIELDNAME} = forms.IPAddressField($2)",
+    "description": "IPAddressField (fip).\n\nThis field has been deprecated since version 1.7 in favor of GenericIPAddressField.\n\n",
+    "scope": "source.python"
   },
-  "Forms ModelChoiceField":{
+  "fgenericip": {
+    "prefix": "fip",
+    "body": "${1:FIELDNAME} = forms.GenericIPAddressField($2)",
+    "description": "IPAddressField (fgenericip)",
+    "scope": "source.python"
+  },
+  "fimg": {
+    "prefix": "fimg",
+    "body": "${1:FIELDNAME} = forms.ImageField($2, required=${3:False})",
+    "description": "ImageField (fimg)",
+    "scope": "source.python"
+  },
+  "fint": {
+    "prefix": "fint",
+    "body": "${1:FIELDNAME} = forms.IntegerField($2, required=${3:False})",
+    "description": "IntegerField (fint)",
+    "scope": "source.python"
+  },
+  "fmochoice": {
     "prefix": "fmochoice",
-    "body": "${1:FIELDNAME} = forms.ModelChoiceField(${2})",
-    "description": "Django forms ``ModelChoiceField``"
+    "body": "${1:FIELDNAME} = forms.ModelChoiceField($2)",
+    "description": "ModelChoiceField (fmochoice)",
+    "scope": "source.python"
   },
-  "Forms ModelMultipleChoiceField":{
+  "fmomuchoice": {
     "prefix": "fmomuchoice",
-    "body": "${1:FIELDNAME} = forms.ModelMultipleChoiceField(${2})",
-    "description": "Django forms ``ModelMultipleChoiceField``"
+    "body": "${1:FIELDNAME} = forms.ModelMultipleChoiceField($2)",
+    "description": "ModelMultipleChoiceField (fmomuchoice)",
+    "scope": "source.python"
   },
-  "Forms MultipleChoiceField":{
+  "fmuval": {
+    "prefix": "fmuval",
+    "body": "${1:FIELDNAME} = forms.MultiValueField($2)",
+    "description": "MultiValueField (fmuval)",
+    "scope": "source.python"
+  },
+  "fmuchoice": {
     "prefix": "fmuchoice",
-    "body": "${1:FIELDNAME} = forms.MultipleChoiceField(${2})",
-    "description": "Django forms ``MultipleChoiceField``"
+    "body": "${1:FIELDNAME} = forms.MultipleChoiceField($2, choices=[${3:CHOICES}], required=${4:False})",
+    "description": "MultipleChoiceField (fmuchoice)",
+    "scope": "source.python"
   },
-  "Forms MultipleValueField":{
-    "prefix": "fmuvalue",
-    "body": "${1:FIELDNAME} = forms.MultipleValueField(${2})",
-    "description": "Django forms ``MultipleValueField``"
+  "ftypedmuchoice": {
+    "prefix": "ftypedmuchoice",
+    "body": "${1:FIELDNAME} = forms.TypedMultipleChoiceField($2, choices=[${3:CHOICES}], coerce=${4:TYPE}, required=${5:False})",
+    "description": "TypedMultipleChoiceField (ftypedmuchoice)",
+    "scope": "source.python"
   },
-  "Forms NullBooleanField":{
+  "fnullbool": {
     "prefix": "fnullbool",
-    "body": "${1:FIELDNAME} = forms.NullBooleanField(${2})",
-    "description": "Django forms ``NullBooleanField``"
+    "body": "${1:FIELDNAME} = forms.NullBooleanField($2, required=${3:False})",
+    "description": "NullBooleanField (fnullbool)",
+    "scope": "source.python"
   },
-  "Forms RegexField":{
+  "fregex": {
     "prefix": "fregex",
-    "body": "${1:FIELDNAME} = forms.RegexField(${2})",
-    "description": "Django forms ``RegexField``"
+    "body": "${1:FIELDNAME} = forms.RegexField($2, regex=${3:REGEX}, required=${4:False})",
+    "description": "RegexField (fregex)",
+    "scope": "source.python"
   },
-  "Forms SlugField":{
+  "fslug": {
     "prefix": "fslug",
-    "body": "${1:FIELDNAME} = forms.SlugField(${2})",
-    "description": "Django forms ``SlugField``"
+    "body": "${1:FIELDNAME} = forms.SlugField($2, allow_unicode=${3:False}, required=${4:False})",
+    "description": "SlugField (fslug)",
+    "scope": "source.python"
   },
-  "Forms SplitDateTime":{
+  "fsdatetime": {
     "prefix": "fsdatetime",
-    "body": "${1:FIELDNAME} = forms.SplitDateTime(${2})",
-    "description": "Django forms ``SplitDateTime`` Field"
+    "body": "${1:FIELDNAME} = forms.SplitDateTimeField($2)",
+    "description": "SplitDateTimeField (fsdatetime)",
+    "scope": "source.python"
   },
-  "Forms TimeField":{
+  "ftime": {
     "prefix": "ftime",
-    "body": "${1:FIELDNAME} = forms.TimeField(${2})",
-    "description": "Django forms ``TimeField``"
+    "body": "${1:FIELDNAME} = forms.TimeField($2, required=${3:False})",
+    "description": "TimeField (ftime)",
+    "scope": "source.python"
   },
-  "Forms TypedChoiceField":{
+  "ftchoice": {
     "prefix": "ftchoice",
-    "body": "${1:FIELDNAME} = forms.TypedChoiceField(${2})",
-    "description": "Django forms ``TypedChoiceField``"
+    "body": "${1:FIELDNAME} = forms.TypedChoiceField($2, required=${3:False})",
+    "description": "TypedChoiceField (ftchoice)",
+    "scope": "source.python"
   },
-  "Forms TypedMultipleChoiceField":{
+  "ftmuchoice": {
     "prefix": "ftmuchoice",
-    "body": "${1:FIELDNAME} = forms.TypedMultipleChoiceField(${2})",
-    "description": "Django forms ``TypedMultipleChoiceField``"
+    "body": "${1:FIELDNAME} = forms.TypedMultipleChoiceField($2)",
+    "description": "TypedMultipleChoiceField (ftmuchoice)",
+    "scope": "source.python"
   },
-  "Forms URLField":{
-    "prefix": "fulr",
-    "body": "${1:FIELDNAME} = forms.URLField(${2})",
-    "description": "Django forms ``URLField``"
+  "furl": {
+    "prefix": "furl",
+    "body": "${1:FIELDNAME} = forms.URLField($2, required=${3:False})",
+    "description": "URLField (furl)",
+    "scope": "source.python"
   },
-  "Forms UUIDField":{
+  "fuuid": {
     "prefix": "fuuid",
-    "body": "${1:FIELDNAME} = forms.UUIDField(${2})",
-    "description": "Django forms ``UUIDField``"
+    "body": "${1:FIELDNAME} = forms.UUIDField($2, required=${3:False})",
+    "description": "UUIDField (fuuid)",
+    "scope": "source.python"
+  },
+  "fsimplearray": {
+    "prefix": "fsimplearray",
+    "body": "${1:FIELDNAME} = SimpleArrayField()",
+    "description": "SimpleArrayField (fsimplearray).\n\n*PostgreSQL specific form fields*.",
+    "scope": "source.python"
+  },
+  "fsplitarray": {
+    "prefix": "fsplitarray",
+    "body": "${1:FIELDNAME} = SplitArrayField()",
+    "description": "SplitArrayField (fsplitarray).\n\n*PostgreSQL specific form fields*.",
+    "scope": "source.python"
+  },
+  "fhstore": {
+    "prefix": "fhstore",
+    "body": "${1:FIELDNAME} = HStoreField()",
+    "description": "HStoreField (fhstore).\n\n*PostgreSQL specific form fields*.",
+    "scope": "source.python"
+  },
+  "fjson": {
+    "prefix": "fjson",
+    "body": "${1:FIELDNAME} = JSONField()",
+    "description": "JSONField (fjson).\n\n*PostgreSQL specific form fields*.",
+    "scope": "source.python"
+  },
+  "fintrange": {
+    "prefix": "fintrange",
+    "body": "${1:FIELDNAME} = IntegerRangeField()",
+    "description": "IntegerRangeField (fintrange).\n\n*PostgreSQL specific form fields*.",
+    "scope": "source.python"
+  },
+  "ffloatrange": {
+    "prefix": "ffloatrange",
+    "body": "${1:FIELDNAME} = FloatRangeField()",
+    "description": "FloatRangeField (ffloatrange).\n\n*PostgreSQL specific form fields*.",
+    "scope": "source.python"
+  },
+  "fdatetimerange": {
+    "prefix": "fdatetimerange",
+    "body": "${1:FIELDNAME} = DateTimeRangeField()",
+    "description": "DateTimeRangeField (fdatetimerange).\n\n*PostgreSQL specific form fields*.",
+    "scope": "source.python"
+  },
+  "fdaterange": {
+    "prefix": "fdaterange",
+    "body": "${1:FIELDNAME} = DateRangeField()",
+    "description": "DateRangeField (fdaterange).\n\n*PostgreSQL specific form fields*.",
+    "scope": "source.python"
+  },
+  "ffi": {
+    "prefix": "ffi",
+    "body": "from .forms import $1",
+    "description": "",
+    "scope": "source.python"
+  },
+  "iforms": {
+    "prefix": "iforms",
+    "body": "from django import forms",
+    "description": "from ... import forms",
+    "scope": "source.python"
+  },
+  "ipostgresff": {
+    "prefix": "ipostgresff",
+    "body": "from django.contrib.postgres.forms import ${1|SimpleArrayField,SplitArrayField,HStoreField,JSONField,IntegerRangeField,FloatRangeField,DateTimeRangeField,DateRangeField|}",
+    "description": "PostgreSQL specific forms fields",
+    "scope": "source.python"
+  },
+  "clean_data": {
+    "prefix": "clean_data",
+    "body": [
+      "def clean_${1:FIELD}(self):",
+      "\t${1:FIELD} = self.cleaned_data.get('${1:FIELD}')",
+      "\n\n\t # TODO Validation\n",
+      "\treturn ${1:FIELD}"
+    ],
+    "description": "",
+    "scope": "source.python"
   }
-  
 }

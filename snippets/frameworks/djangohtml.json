@@ -1,0 +1,335 @@
+{
+	"autoescape": {
+		"prefix": "autoescape",
+		"description": "autoescape tag django template",
+		"body": [
+			"{% autoescape ${off} %}",
+			"  ",
+			"{% autoescape %}"
+		]
+	},
+	"block": {
+		"prefix": "block",
+		"description": "block tag django template",
+		"body": [
+			"{% block ${blockname} %}",
+			"  ",
+			"{% endblock ${blockname} %}"
+		]
+	},
+	"comment": {
+		"prefix": "comment",
+		"description": "Comment tag django template",
+		"body": [
+			"{% comment %}",
+			"  $1",
+			"{% endcomment %}"
+		]
+	},
+	"csrf": {
+		"prefix": "csrf",
+		"description": "csrf token django template",
+		"body": [
+			"{% csrf_token %}"
+		]
+	},
+	"cycle": {
+		"prefix": "cycle",
+		"description": "cycle tag django template",
+		"body": [
+			"{% cycle %}"
+		]
+	},
+	"debug": {
+		"prefix": "debug",
+		"description": "debug tag django template",
+		"body": [
+			"{% debug %}"
+		]
+	},
+	"ext": {
+		"prefix": "ext",
+		"description": "extends tag django template",
+		"body": [
+			"{% extends \"$1\" %}"
+		]
+	},
+	"extends": {
+		"prefix": "extends",
+		"description": "extends tag django template",
+		"body": [
+			"{% extends \"$1\" %}"
+		]
+	},
+	"filter": {
+		"prefix": "filter",
+		"description": "filter tag django template",
+		"body": [
+			"{% filter $1 %}",
+			"  ",
+			"{% endfilter %}"
+		]
+	},
+	"firstof": {
+		"prefix": "firstof",
+		"description": "firstof tag django template",
+		"body": [
+			"{% firstof %}"
+		]
+	},
+	"for": {
+		"prefix": "for",
+		"description": "for tag django template",
+		"body": [
+			"{% for $1 in  %}",
+			"  ",
+			"{% endfor %}"
+		]
+	},
+	"fore": {
+		"prefix": "fore",
+		"description": "foreach with empty tag django template",
+		"body": [
+			"{% for $1 in  %}",
+			"  ",
+			"{% empty %}",
+			"  ",
+			"{% endfor %}"
+		]
+	},
+	"if": {
+		"prefix": "if",
+		"description": "if tag django template",
+		"body": [
+			"{% if $1 %}",
+			"  ",
+			"{% endif %}"
+		]
+	},
+	"ifchanged": {
+		"prefix": "ifchanged",
+		"description": "ifchanged tag django template",
+		"body": [
+			"{% ifchanged $1 %}",
+			"  ",
+			"{% endifchanged %}"
+		]
+	},
+	"ife": {
+		"prefix": "ife",
+		"description": "if else tag django template",
+		"body": [
+			"{% if $1 %}",
+			"  ",
+			"{% else %}",
+			"  ",
+			"{% endif %}",
+			""
+		]
+	},
+	"ifelse": {
+		"prefix": "ifelse",
+		"description": "if else tag django template",
+		"body": [
+			"{% if $1 %}",
+			"  ",
+			"{% else %}",
+			"  ",
+			"{% endif %}",
+			""
+		]
+	},
+	"ifeq": {
+		"prefix": "ifeq",
+		"description": "ifequal tag django template",
+		"body": [
+			"{% ifequal $1 %}",
+			"  ",
+			"{% endifequal %}"
+		]
+	},
+	"ifequal": {
+		"prefix": "ifeq",
+		"description": "ifequal tag django template",
+		"body": [
+			"{% ifequal $1 %}",
+			"  ",
+			"{% endifequal %}"
+		]
+	},
+	"ifnotequal": {
+		"prefix": "ifnotequal",
+		"description": "ifnotequal tag django template",
+		"body": [
+			"{% ifnotequal $1 %}",
+			"  ",
+			"{% ifnotequal %}"
+		]
+	},
+	"inc": {
+		"prefix": "inc",
+		"description": "include tag django template",
+		"body": [
+			"{% include \"$1\" %}"
+		]
+	},
+	"include": {
+		"prefix": "include",
+		"description": "include tag django template",
+		"body": [
+			"{% include \"$1\" %}"
+		]
+	},
+	"load": {
+		"prefix": "load",
+		"description": "load tag django template",
+		"body": [
+			"{% load $1 %}"
+		]
+	},
+	"now": {
+		"prefix": "now",
+		"description": "now tag django template",
+		"body": [
+			"{% now \"$1\" %}"
+		]
+	},
+	"regroup": {
+		"prefix": "regroup",
+		"description": "regroup tag django template",
+		"body": [
+			"{% regroup $1 by  as  %}"
+		]
+	},
+	"spaceless": {
+		"prefix": "spaceless",
+		"description": "spaceless tag django template",
+		"body": [
+			"{% spaceless %}",
+			"  $1",
+			"{% endspaceless %}"
+		]
+	},
+	"ssi": {
+		"prefix": "ssi",
+		"description": "ssi tag django template",
+		"body": [
+			"{% ssi $1 parsed %}"
+		]
+	},
+	"static": {
+		"prefix": "static",
+		"description": "static tag django template",
+		"body": [
+			"{% static \"$1\" %}"
+		]
+	},
+	"templatetag": {
+		"prefix": "templatetag",
+		"description": "templatetag tag django template",
+		"body": [
+			"{% templatetag $1 %}"
+		]
+	},
+	"url": {
+		"prefix": "url",
+		"description": "url tag django template",
+		"body": [
+			"{% url $1 %}"
+		]
+	},
+	"verbatim": {
+		"prefix": "verbatim",
+		"description": "verbatim tag django template",
+		"body": [
+			"{% verbatim %}",
+			"  $1",
+			"{% endverbatim %}"
+		]
+	},
+	"widthratio": {
+		"prefix": "widthratio",
+		"description": "widthratio tag django template",
+		"body": [
+			"{% widthratio ${this_value} max_value 100 %}"
+		]
+	},
+	"with": {
+		"prefix": "with",
+		"description": "with tag django template",
+		"body": [
+			"{% with $1 as  %}",
+			"  ",
+			"{% endwith %}"
+		]
+	},
+	"trans": {
+		"prefix": "trans",
+		"description": "trans tag django template",
+		"body": [
+			"{% trans \"$1\" %}"
+		]
+	},
+	"blocktrans": {
+		"prefix": "blocktrans",
+		"description": "blocktrans tag django template",
+		"body": [
+			"{% blocktrans %}",
+			"  $1",
+			"{% endblocktrans %}"
+		]
+	},
+	"super": {
+		"prefix": "super",
+		"description": "Block super",
+		"body": [
+			"{{ block.super }}"
+		]
+	},
+	"extrahead": {
+		"prefix": "extrahead",
+		"description": "Extrahead no oficial tag",
+		"body": [
+			"{% block extrahead %}",
+			"    $1",
+			"{% endblock extrahead %}"
+		]
+	},
+	"extrastyle": {
+		"prefix": "extrastyle",
+		"description": "Extrastyle no oficial Tag",
+		"body": [
+			"{% block extrahead %}",
+			"    $1",
+			"{% endblock extrahead %}"
+		]
+	},
+	"var": {
+		"prefix": "var",
+		"description": "Variable autocomplete",
+		"body": [
+			"{{ $1 }}"
+		]
+	},
+	"tag": {
+		"prefix": "tag",
+		"description": "tag autocomplete no oficial",
+		"body": [
+			"{% $1 %}"
+		]
+	},
+	"staticurl": {
+		"prefix": "staticurl",
+		"description": "STATIC_URL no oficial var",
+		"body": [
+			"{{ STATIC_URL }}"
+		]
+	},
+	"mediaurl": {
+		"prefix": "mediaurl",
+		"description": "",
+		"body": [
+			"{{ MEDIA_URL }}"
+		]
+	}
+}

@@ -249,7 +249,7 @@
       },
       {
         "language": "django",
-        "path": "./snippets/frameworks/django/imports.json"
+        "path": "./snippets/frameworks/django/admin.json"
       },
       {
         "language": "django",
@@ -261,11 +261,19 @@
       },
       {
         "language": "django",
-        "path": "./snippets/frameworks/django/views.json"
+        "path": "./snippets/frameworks/django/tags.json"
       },
       {
         "language": "django",
-        "path": "./snippets/frameworks/django/filetemplates.json"
+        "path": "./snippets/frameworks/django/urls.json"
+      },
+      {
+        "language": "django",
+        "path": "./snippets/frameworks/django/views.json"
+      },
+      {
+        "language": "djangohtml",
+        "path": "./snippets/frameworks/djangohtml.json"
       },
       {
         "language": "django-rest",

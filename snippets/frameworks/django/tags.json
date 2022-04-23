@@ -1,0 +1,69 @@
+{
+  "ilib": {
+    "prefix": "ilib",
+    "body": ["from django import template", "register = template.Library()"],
+    "description": "",
+    "scope": "source.python"
+  },
+  "li18n": {
+    "prefix": "li18n",
+    "body": "{% load i18n %}",
+    "description": "",
+    "scope": "text.html.django"
+  },
+  "lstatic": {
+    "prefix": "lstatic",
+    "body": "{% load staticfiles %}",
+    "description": "",
+    "scope": "text.html.django"
+  },
+  "ltags": {
+    "prefix": "ltags",
+    "body": "{% load $SELECTION$1_tags %}",
+    "description": "",
+    "scope": "text.html.django"
+  },
+  "register_assignment_tag": {
+    "prefix": "register_assignment_tag",
+    "body": [
+      "def get_$1(context):",
+      "\trequest = context.get('request')",
+      "\t$1 = ${2:[]}",
+      "\treturn ${3:$1}"
+    ],
+    "description": "",
+    "scope": "source.python"
+  },
+  "register_filter": {
+    "prefix": "register_filter",
+    "body": ["@register.filter", "def $1(value):", "\treturn value$2"],
+    "description": "",
+    "scope": "source.python"
+  },
+  "register_inclusion_tag": {
+    "prefix": "register_inclusion_tag",
+    "body": [
+      "@register.inclusion_tag(${2:'$1.html'}, takes_context=True)",
+      "def $1(context):",
+      "\trequest = context.get('request')",
+      "\t$3",
+      "\treturn {",
+      "\t\t'request': request,",
+      "\t\t$4",
+      "\t}"
+    ],
+    "description": "",
+    "scope": "source.python"
+  },
+  "register_simple_tag": {
+    "prefix": "register_simple_tag",
+    "body": [
+      "@register.simple_tag(takes_context=True)",
+      "def $1(context):",
+      "\trequest = context.get('request')",
+      "\treturn ${2:'It Works!'}"
+    ],
+    "description": "",
+    "scope": "source.python"
+  }
+}
