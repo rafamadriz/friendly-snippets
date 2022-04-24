@@ -61,7 +61,7 @@
     "description": "Code snippet for a class method definition."
   },
   "New method w/ return": {
-    "prefix": "deft",
+    "prefix": "defst",
     "body": "def ${1:mname}(self, ${2:arg}) -> ${3:return_type}:\n\t${4:pass}$0",
     "description": "Code snippet for a class method definition."
   },
