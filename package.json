@@ -371,6 +371,10 @@
       {
         "language": "objc",
         "path": "./snippets/objc.json"
+      },
+      {
+        "language": "unreal",
+        "path": "./snippets/frameworks/unreal.json"
       }
     ]
   }
