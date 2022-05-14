@@ -1,0 +1,434 @@
+{
+	"Unreal Print String": {
+		"prefix": "uprintstring",
+		"body": "GEngine->AddOnScreenDebugMessage(0, ${1:0.f}, FColor::${2|Red,Green,Blue,Cyan,Magenta,Yellow,Purple,Orange|}, FString::Printf(TEXT(\"${3:TEXT}\")));",
+		"description": "Print a string to screen ingame (duration, color, text)"
+	},
+	"Write to Log": {
+		"prefix": "ulog",
+		"body": "UE_LOG(LogTemp, ${1|Display,Warning,Error,Fatal|}, TEXT(\"${2:Your message}\"));",
+		"description": "Write a message to the log"
+	},
+	"Write to Log (with fn helper)": {
+		"prefix": "ulogfn",
+		"body": "UE_LOG(LogTemp, ${1|Display,Warning,Error,Fatal|}, TEXT(\"$2%s\"), ANSI_TO_TCHAR(__FUNCTION__));",
+		"description": "Write a message to the log"
+	},
+	"Unreal Enum": {
+		"prefix": "uenum",
+		"body": [
+			"UENUM(BlueprintType)",
+			"enum class ${1:EName} : ${2:uint8}",
+			"{",
+			"\t${3:N_Name1} UMETA(DisplayName=\"${4:DisplayName}\")",
+			"};"
+		],
+		"description": "Generate an Enum ready for Unreal Engine"
+	},
+	"Unreal Struct": {
+		"prefix": "ustruct",
+		"body": [
+			"USTRUCT(BlueprintType)",
+			"struct ${1:FMyStruct}",
+			"{",
+			"\tGENERATED_USTRUCT_BODY()\n",
+			"\tUPROPERTY(EditAnywhere, BlueprintReadWrite, Category=${2:MyCategory})",
+			"\t${3:float test};",
+			"};"
+		],
+		"description": "Generate a Struct ready for Unreal Engine"
+	},
+	"Unreal Struct with header": {
+		"prefix": "uhstruct",
+		"body": [
+			"#pragma once",
+			"",
+			"#include \"CoreMinimal.h\"",
+			"",
+			"#include \"$2${TM_FILENAME_BASE:StructName}.generated.h\"",
+
+			"USTRUCT(BlueprintType)",
+			"struct F$1${TM_FILENAME_BASE:StructName}",
+			"{",
+			"\tGENERATED_BODY()\n",
+			"public:",
+			"\tUPROPERTY(EditAnywhere, BlueprintReadWrite, Category=\"${3:MyCategory}\")",
+			"\t${4:float test};",
+			"};"
+		],
+		"description": "Generate a Struct ready for Unreal Engine"
+	},
+	"Unreal DataTable Struct": {
+		"prefix": "ustruct_datatable",
+		"body": [
+			"USTRUCT(BlueprintType)",
+			"struct ${1:FMyStruct} : public FTableRowBase",
+			"{",
+			"\tGENERATED_USTRUCT_BODY()\n",
+			"\tUPROPERTY(EditAnywhere, BlueprintReadWrite, Category=${2:MyCategory})",
+			"\t${3:float test};",
+			"};"
+		],
+		"description": "Generate a Struct ready for Unreal Engine DataTables"
+	},
+	"Unreal Class": {
+		"prefix": "uclass",
+		"body": [
+			"UCLASS()",
+			"class ${1:PROJECTNAME}_API ${2:ClassName} : public ${3:ParentClass}",
+			"{",
+			"\tGENERATED_BODY()",
+			"public:",
+			"\t${2:ClassName}();",
+			"protected:",
+			"private:",
+			"};"
+		],
+		"description": "Generate a Class ready for Unreal Engine"
+	},
+	"Unreal Class with header": {
+		"prefix": "uhclass",
+		"body": [
+			"#pragma once",
+			"",
+			"#include \"CoreMinimal.h\"",
+			"#include \"$4${3:ParentClass}.h\"",
+			"",
+			"#include \"${TM_FILENAME_BASE:ClassName}.generated.h\"",
+			"",
+			"UCLASS()",
+			"class ${1:PROJECTNAME}_API $2${TM_FILENAME_BASE:ClassName} : public ${3:ParentClass}",
+			"{",
+			"\tGENERATED_BODY()",
+			"public:",
+			"\t$2${TM_FILENAME_BASE:ClassName}();",
+			"$5",
+			"protected:",
+			"private:",
+			"};"
+		],
+		"description": "Generate a Class ready for Unreal Engine  (include headers details)"
+	},
+	"Unreal Interface": {
+		"prefix": "uinterface",
+		"body": [
+			"UINTERFACE()",
+			"class ${1:PROJECTNAME}_API U${2:ClassName} : public UInterface",
+			"{",
+			"\tGENERATED_BODY()",
+			"};",
+			"",
+			"class ${1:PROJECTNAME}_API I${2:ClassName}",
+			"{",
+			"\tGENERATED_BODY()",
+			"public:",
+			"$3",
+			"};"
+		],
+		"description": "Generate an Interface ready for Unreal Engine"
+	},
+	"Unreal Interface with header": {
+		"prefix": "uhinterface",
+		"body": [
+			"#pragma once",
+			"",
+			"#include \"CoreMinimal.h\"",
+			"",
+			"#include \"${TM_FILENAME_BASE:ClassName}.generated.h\"",
+			"",
+			"UINTERFACE()",
+			"class ${1:PROJECTNAME}_API U$2${TM_FILENAME_BASE:ClassName} : public UInterface",
+			"{",
+			"\tGENERATED_BODY()",
+			"};",
+			"",
+			"class ${1:PROJECTNAME}_API I$2${TM_FILENAME_BASE:ClassName}",
+			"{",
+			"\tGENERATED_BODY()",
+			"public:",
+			"$3",
+			"};"
+		],
+		"description": "Generate an Interface ready for Unreal Engine (include headers details)"
+	},
+	"Unreal GetLifeTimeReplicates": {
+		"prefix": ["ugetlifetimereplicatedprops", "usetupreplicatedproperties"],
+		"body": [
+			"void ${1:ClassName}::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const",
+			"{",
+			"\tSuper::GetLifetimeReplicatedProps(OutLifetimeProps);",
+			"\t//DON'T FORGET TO #include \"Net/UnrealNetwork.h\"",
+			"\tDOREPLIFETIME(${1:ClassName}, ${2:ClassProperty});",
+			"}"
+		],
+		"description": "Creates the Function in which you setup replicated properties"
+	},
+	"Unreal Cast": {
+		"prefix": "ucast",
+		"body": "${1:AMyClass}* ${2:MyCastActor} = Cast<${1:AMyClass}>(${3:MyActor});",
+		"description": "Cast from-to any UObject"
+	},
+	"Unreal Property": {
+		"prefix": "uproperty",
+		"body": "UPROPERTY(${1|AdvancedDisplay,AssetRegistrySearchable,BlueprintAssignable,BlueprintAuthorityOnly,BlueprintCallable,BlueprintGetter=GetterFunctionName,BlueprintReadOnly,BlueprintReadWrite,BlueprintSetter=SetterFunctionName,Category=\"MyCategory\",Config,DuplicateTransient,EditAnywhere,EditDefaultsOnly,EditFixedSize,EditInline,EditInstanceOnly,Export,GlobalConfig,Instanced,Interp,Localized,Native,NoClear,NoExport,NonPIEDuplicateTransient,NonTransactional,NotReplicated,Replicated,ReplicatedUsing=FunctionName,RepRetry,SaveGame,SerializeText,SkipSerialization,SimpleDisplay,TextExportTransient,Transient,VisibleAnywhere,VisibleDefaultsOnly,VisibleInstanceOnly|})",
+		"description": "UPROPERTY macro for Unreal Engine"
+	},
+	"Unreal Function": {
+		"prefix": "ufunction",
+		"body": "UFUNCTION($1)",
+		"description": "UFUNCTION macro for Unreal Engine"
+	},
+	"Unreal Server Function": {
+		"prefix": "ufunction_server",
+		"body": [
+			"UFUNCTION(Server, Reliable, WithValidation)",
+			"void ${1:FunctionName}(${2:FunctionParameters});"
+		],
+		"description": "Setup Function run only on Server"
+	},
+	"Unreal Multicast Function": {
+		"prefix": "ufunction_multicast",
+		"body": [
+			"UFUNCTION(NetMulticast, Reliable, WithValidation)",
+			"void ${1:FunctionName}(${2:FunctionParameters});"
+		],
+		"description": "Setup Function called on all Clients"
+	},
+	"Unreal Client Function": {
+		"prefix": "ufunction_client",
+		"body": [
+			"UFUNCTION(Client, Unreliable)",
+			"void ${1:FunctionName}(${2:FunctionParameters});"
+		],
+		"description": "Setup Function run only on owning Client"
+	},
+	"Unreal Subclass": {
+		"prefix": "usubclassof",
+		"body": "TSubclassOf<class ${1:ClassName}> ${2:VarName};",
+		"description": "Reference to Class (assign using \"AMyClass::StaticClass()\")"
+	},
+	"Unreal DefaultSubobject": {
+		"prefix": "ucreatedefaultsubobject",
+		"body": "${1:ObjectName} = CreateDefaultSubobject<${2:ObjectClass}>(TEXT(\"${1:ObjectName}\"));",
+		"description": "Creates Subobject (component)"
+	},
+	"Unreal GetWorldSafe": {
+		"prefix": "ugetworldsafe",
+		"body": ["UWorld* World = GetWorld();", "if(World)", "{", "\t$1", "}"],
+		"description": "Get World (safe with if check)"
+	},
+	"Unreal GetGamemode": {
+		"prefix": "ugetgamemode",
+		"body": "${1:GameModeClass}* ${2:gm} = GetWorld()->GetAuthGameMode<${1:GameModeClass}>();",
+		"description": "Get Game Mode (only on server!)"
+	},
+	"Unreal Linetrace Single Channel": {
+		"prefix": "ulinetrace_single_channel",
+		"body": "GetWorld()->LineTraceSingleByChannel(${1:Hit}, ${2:Start}, ${3:End}, ${4|ECC_Visibility,ECC_Camera,ECC_GameTraceChannel1|}, ${5:TraceParams});",
+		"description": "Single Line Trace by Channel"
+	},
+	"Unreal Linetrace Single Object": {
+		"prefix": "ulinetrace_single_object",
+		"body": "GetWorld()->LineTraceSingleByObjectType(${1:Hit}, ${2:Start}, ${3:End}, ${4:ObjectQueryParams}, ${5:TraceParams});",
+		"description": "Single Line Trace by Object Type"
+	},
+	"Unreal Linetrace Single Profile": {
+		"prefix": "ulinetrace_single_profile",
+		"body": "GetWorld()->LineTraceSingleByProfile(${1:Hit}, ${2:Start}, ${3:End}, \"${4:ProfileName}\", ${5:TraceParams});",
+		"description": "Single Line Trace by Profile"
+	},
+	"Unreal Linetrace Multi Channel": {
+		"prefix": "ulinetrace_multi_channel",
+		"body": "GetWorld()->LineTraceMultiByChannel(${1:HitsArray}, ${2:Start}, ${3:End}, ${4|ECC_Visibility,ECC_Camera,ECC_GameTraceChannel1|}, ${5:TraceParams});",
+		"description": "Multi Line Trace by Channel"
+	},
+	"Unreal Linetrace Multi Object": {
+		"prefix": "ulinetrace_multi_object",
+		"body": "GetWorld()->LineTraceMultiByObjectType(${1:HitsArray}, ${2:Start}, ${3:End}, ${4:ObjectQueryParams}, ${5:TraceParams});",
+		"description": "Single Line Trace by Object Type"
+	},
+	"Unreal Linetrace Multi Profile": {
+		"prefix": "ulinetrace_multi_profile",
+		"body": "GetWorld()->LineTraceMultiByProfile(${1:HitsArray}, ${2:Start}, ${3:End}, \"${4:ProfileName}\", ${5:TraceParams});",
+		"description": "Single Line Trace by Profile"
+	},
+	"Unreal Sweep Single Channel": {
+		"prefix": "usweep_single_channel",
+		"body": "GetWorld()->SweepSingleByChannel(${1:Hit}, ${2:Start}, ${3:End}, ${4:FQuat::Identity}, ${5|ECC_Visibility,ECC_Camera,ECC_GameTraceChannel1|}, FCollisionShape::${6:MakeSphere(Radius)}, ${7:TraceParams});",
+		"description": "Trace a Shape against the world and return first blocking hit using Collision Channel."
+	},
+	"Unreal Sweep Single Object": {
+		"prefix": "usweep_single_object",
+		"body": "GetWorld()->SweepSingleByObjectType(${1:Hit}, ${2:Start}, ${3:End}, ${4:FQuat::Identity}, ${5:ObjectQueryParams}, FCollisionShape::${6:MakeSphere(Radius)}, ${7:TraceParams});",
+		"description": "Trace a Shape against the world and return first blocking hit using Object Type."
+	},
+	"Unreal Sweep Single Profile": {
+		"prefix": "usweep_single_profile",
+		"body": "GetWorld()->SweepSingleByProfile(${1:Hit}, ${2:Start}, ${3:End}, ${4:FQuat::Identity}, \"${5:ProfileName}\", FCollisionShape::${6:MakeSphere(Radius)}, ${7:TraceParams});",
+		"description": "Trace a Shape against the world and return first blocking hit using Collision Profile."
+	},
+	"Unreal Sweep Multi Channel": {
+		"prefix": "usweep_multi_channel",
+		"body": "GetWorld()->SweepMultiByChannel(${1:HitsArray}, ${2:Start}, ${3:End}, ${4:FQuat::Identity}, ${5|ECC_Visibility,ECC_Camera,ECC_GameTraceChannel1|}, FCollisionShape::${6:MakeSphere(Radius)}, ${7:TraceParams});",
+		"description": "Trace a Shape against the world and return all blocking hits using Collision Channel."
+	},
+	"Unreal Sweep Multi Object": {
+		"prefix": "usweep_multi_object",
+		"body": "GetWorld()->SweepMultiByObjectType(${1:HitsArray}, ${2:Start}, ${3:End}, ${4:FQuat::Identity}, ${5:ObjectQueryParams}, FCollisionShape::${6:MakeSphere(Radius)}, ${7:TraceParams});",
+		"description": "Trace a Shape against the world and return all blocking hits using Object Type."
+	},
+	"Unreal Sweep Multi Profile": {
+		"prefix": "usweep_multi_profile",
+		"body": "GetWorld()->SweepMultiByProfile(${1:HitsArray}, ${2:Start}, ${3:End}, ${4:FQuat::Identity}, \"${5:ProfileName}\", FCollisionShape::${6:MakeSphere(Radius)}, ${7:TraceParams});",
+		"description": "Trace a Shape against the world and return all blocking hits using Collision Profile."
+	},
+	"Unreal Overlap Multi Channel": {
+		"prefix": "uoverlap_multi_channel",
+		"body": "GetWorld()->OverlapMultiByChannel(${1:OverlapsArray}, ${2:Location}, ${3:FQuat::Identity}, ${4|ECC_Visibility,ECC_Camera,ECC_GameTraceChannel1|}, FCollisionShape::${5:MakeSphere(Radius)}, ${6:TraceParams});",
+		"description": "Trace shape against world and return all overlapping actors using Collision Channel"
+	},
+	"Unreal Overlap Multi Object": {
+		"prefix": "uoverlap_multi_object",
+		"body": "GetWorld()->OverlapMultiByObjectType(${1:OverlapsArray}, ${2:Location}, ${3:FQuat::Identity}, ${4:ObjectQueryParams}, FCollisionShape::${5:MakeSphere(Radius)}, ${6:TraceParams});",
+		"description": "Trace shape against world and return all overlapping actors using Collision Channel"
+	},
+	"Unreal Overlap Multi Profile": {
+		"prefix": "uoverlap_multi_profile",
+		"body": "GetWorld()->OverlapMultiByProfile(${1:OverlapsArray}, ${2:Location}, ${3:FQuat::Identity}, \"${4:ProfileName}\", FCollisionShape::${5:MakeSphere(Radius)}, ${6:TraceParams});",
+		"description": "Trace shape against world and return all overlapping actors using Collision Channel"
+	},
+	"Unreal SpawnActor": {
+		"prefix": "uspawn_actor",
+		"body": "${1:AClass}* ${2:ActorName} = GetWorld()->SpawnActor<${1:AClass}>(${3:UClass}, ${4:Location}, ${5:Rotation});",
+		"description": "Spawn Actor"
+	},
+	"Unreal SpawnActorDeferred": {
+		"prefix": "uspawn_actor_deferred",
+		"body": [
+			"${1:AClass}* ${2:ActorName} = GetWorld()->SpawnActorDeferred<${1:AClass}>(${3:UClass}, ${4:ActorTransform}, ${5:Owner}, ${6:Instigator}, ESpawnActorCollisionHandlingMethod::${7|AlwaysSpawn,AdjustIfPossibleButAlwaysSpawn,AdjustIfPossibleButDontSpawnIfColliding,DontSpawnIfColliding|});",
+			"${8:/* INITIALIZATION */}",
+			"UGameplayStatics::FinishSpawningActor(${2:ActorName}, ${4:ActorTransform});"
+		],
+		"description": "Spawn Actor Deferred"
+	},
+	"Unreal SetTimer": {
+		"prefix": "utimer_set",
+		"body": "GetWorld()->GetTimerManager().SetTimer(${1:TimerHandle}, this, &${2:Class::Function}, ${3:DelayTime}, ${4:bLoop});",
+		"description": "Set a Timer/Delay"
+	},
+	"Unreal InvalidateTimer": {
+		"prefix": "utimer_invalidate",
+		"body": "${1:TimerHandle}.Invalidate();",
+		"description": "Invalidate a Timer Handle"
+	},
+	"Unreal ClearTimer": {
+		"prefix": "utimer_clear",
+		"body": "GetWorld()->GetTimerManager().ClearTimer(${1:TimerHandle});",
+		"description": "Clear a TimerHandle"
+	},
+	"Unreal InputAxis": {
+		"prefix": "ubindaxis",
+		"body": "InputComponent->BindAxis(\"${1:InputAxis}\", this, &${2:Class::Function});",
+		"description": "Bind an InputAxis"
+	},
+	"Unreal InputAction": {
+		"prefix": "ubindaction",
+		"body": "InputComponent->BindAction(\"${1:Button}\", IE_${2|Pressed,Released,Repeat,DoubleClick,Axis|}, this, &${3:Class::Function});",
+		"description": "Bind an InputAction"
+	},
+	"Unreal SpawnDecalLocation": {
+		"prefix": "uspawn_decal_location",
+		"body": "UDecalComponent* ${1:MyDecal} = UGameplayStatics::SpawnDecalAtLocation(GetWorld(), ${2:DecalMaterialInterface}, ${3:Size}, ${4:Location}, ${5:Rotation}, ${6:lifeSpan});",
+		"description": "Spawn Decal at Location"
+	},
+	"Unreal SpawnDecalAttached": {
+		"prefix": "uspawn_decal_attached",
+		"body": "UDecalComponent* ${1:MyDecal} = UGameplayStatics::SpawnDecalAttached(GetWorld(), ${2:DecalMaterialInterface}, ${3:Size}, ${4:AttachToComponent}, ${5:AttachPointName}, ${6:Location}, ${7:Rotation}, EAttachLocation::${8|KeepRelativeOffset,KeepWorldPosition,SnapToTarget,SnapToTargetIncludingScale|}, ${9:lifeSpan});",
+		"description": "Spawn Decal at Location"
+	},
+	"Unreal SpawnEmitterLocation": {
+		"prefix": ["uspawn_emitter_location", "uspawn_particles_location"],
+		"body": "UParticleSystemComponent* ${1:MyParticles} = UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ${2:ParticleSystem}, ${3:Location}, ${4:Rotation}, ${5:Scale}, ${6:bAutoDestroy});",
+		"description": "Spawn Particle System at Location"
+	},
+	"Unreal SpawnEmitterAttached": {
+		"prefix": ["uspawn_emitter_attached", "uspawn_particles_attached"],
+		"body": "UParticleSystemComponent* ${1:MyParticles} = UGameplayStatics::SpawnEmitterAttached(${2:ParticleSystem}, ${3:AttachToComponent}, ${4:AttachPointName}, ${5:Location}, ${6:Rotation}, ${7:Scale}, EAttachLocation::${8|KeepRelativeOffset,KeepWorldPosition,SnapToTarget,SnapToTargetIncludingScale|}, ${9:bAutoDestroy});",
+		"description": "Spawn Emitter Attached"
+	},
+	"Unreal SpawnDialog2D": {
+		"prefix": ["uspawn_dialog_2d", "uspawn_dialogue_2d"],
+		"body": "UAudioComponent* ${1:MyDialog} = UGameplayStatics::SpawnDialogue2D(GetWorld(), ${2:DialogWave}, ${3:DialogContext}, ${4:VolumeMultiplier}, ${5:PitchMultiplier}, ${6:StartTime}, ${7:bAutoDestroy});",
+		"description": "Spawn Dialog 2D"
+	},
+	"Unreal SpawnDialogLocation": {
+		"prefix": ["uspawn_dialog_location", "uspawn_dialogue_location"],
+		"body": "UAudioComponent* ${1:MyDialog} = UGameplayStatics::SpawnDialogueAtLocation(GetWorld(), ${2:DialogWave}, ${3:DialogContext}, ${4:Location}, ${5:Rotation}, ${6:VolumeMultiplier}, ${7:PitchMultiplier}, ${8:StartTime}, ${9:Attenuation}, ${10:bAutoDestroy});",
+		"description": "Spawn Dialog At Location"
+	},
+	"Unreal SpawnDialogAttached": {
+		"prefix": ["uspawn_dialog_attached", "uspawn_dialogue_attached"],
+		"body": "UAudioComponent* ${1:MyDialog} = UGameplayStatics::SpawnDialogueAttached(GetWorld(), ${2:DialogWave}, ${3:DialogContext}, ${4:AttachToComponent}, ${5:AttachPointName}, ${6:Location}, ${7:Rotation}, EAttachLocation::${8|KeepRelativeOffset,KeepWorldPosition,SnapToTarget,SnapToTargetIncludingScale|}, ${9:bStopWhenAttachedToDestroyed}, ${10:VolumeMultiplier}, ${11:PitchMultiplier}, ${12:StartTime}, ${13:Attenuation}, ${14:bAutoDestroy});",
+		"description": "Spawn Dialog Attached"
+	},
+	"Unreal SpawnSound2D": {
+		"prefix": "uspawn_sound_2d",
+		"body": "UAudioComponent* ${1:MySound} = UGameplayStatics::SpawnSound2D(GetWorld(), ${2:SoundBase}, ${3:VolumeMultiplier}, ${4:PitchMultiplier}, ${5:StartTime}, ${6:Concurrency}, ${7:bPersistentAcrossLevelTransition}, ${8:bAutoDestroy});",
+		"description": "Spawn Sound 2D"
+	},
+	"Unreal SpawnSoundLocation": {
+		"prefix": "uspawn_sound_location",
+		"body": "UAudioComponent* ${1:MySound} = UGameplayStatics::SpawnSoundAtLocation(GetWorld(), ${2:SoundBase}, ${3:Location}, ${4:Rotation}, ${5:VolumeMultiplier}, ${6:PitchMultiplier}, ${7:StartTime}, ${8:Attenuation}, ${9:Concurrency}, ${10:bAutoDestroy});",
+		"description": "Spawn Sound At Location"
+	},
+	"Unreal SpawnSoundAttached": {
+		"prefix": "uspawn_sound_attached",
+		"body": "UAudioComponent* ${1:MySound} = UGameplayStatics::SpawnSoundAttached(${2:SoundBase}, ${3:AttachToComponent}, ${4:AttachPointName}, ${5:Location}, ${6:Rotation}, EAttachLocation::${7|KeepRelativeOffset,KeepWorldPosition,SnapToTarget,SnapToTargetIncludingScale|}, ${8:bStopWhenAttachedToDestroyed}, ${9:VolumeMultipler}, ${10:PitchMultiplier}, ${11:StartTime}, ${12:Attenuation}, ${13:Concurrency}, ${14:bAutoDestroy});",
+		"description": "Spawn Sound Attached"
+	},
+	"Unreal PlayDialog2D": {
+		"prefix": ["uplay_dialog_2d", "uplay_dialogue_2d"],
+		"body": "UGameplayStatics::PlayDialogue2D(GetWorld(), ${1:DialogWave}, ${2:DialogContext}, ${3:VolumeMultiplier}, ${4:PitchMultiplier}, ${5:StartTime});",
+		"description": "Play Dialog 2D"
+	},
+	"Unreal PlayDialogLocation": {
+		"prefix": ["uplay_dialog_location", "uplay_dialogue_location"],
+		"body": "UGameplayStatics::PlayDialogueAtLocation(GetWorld(), ${1:DialogWave}, ${2:DialogContext}, ${3:Location}, ${4:Rotation}, ${5:VolumeMultiplier}, ${6:PitchMultiplier}, ${7:StartTime}, ${8:Attenuation});",
+		"description": "Play Dialog at Location"
+	},
+	"Unreal PlaySound2D": {
+		"prefix": "uplay_sound_2d",
+		"body": "UGameplayStatics::PlaySound2D(GetWorld(), ${1:SoundBase}, ${2:VolumeMultiplier}, ${3:PitchMultiplier}, ${4:StartTime}, ${5:Concurrency}, ${6:Owner});",
+		"description": "Play Sound 2D"
+	},
+	"Unreal PlaySoundLocation": {
+		"prefix": "uplay_sound_location",
+		"body": "UGameplayStatics::PlaySoundAtLocation(GetWorld(), ${1:SoundBase}, ${2:Location}, ${3:Rotation}, ${4:VolumeMultiplier}, ${5:PitchMultiplier}, ${6:StartTime}, ${7:Attenuation}, ${8:Concurrency}, ${9:Owner});",
+		"description": "Play Sound at Location"
+	},
+	"Unreal GetAllActorsOfClass": {
+		"prefix": "ugetallactorsofclass",
+		"body": "UGameplayStatics::GetAllActorsOfClass(GetWorld(), ${1:AClass}::StaticClass(), ${2:ActorArray});",
+		"description": "Get all Actors of one class from the level"
+	},
+	"Unreal FindRow": {
+		"prefix": "utable_findrow",
+		"body": "${1:FStruct}* ${2:MyStruct} = ${3:DataTable}->FindRow<${1:FStruct}>(\"${4:RowName}\", \"${5:ContextString}\", ${6:bWarnIfMissing});",
+		"description": "Get a row from a datatable, must use same struct as Table itself."
+	},
+	"Unreal Create SaveGame": {
+		"prefix": "usavegame_create",
+		"body": "${1:UMySaveGame}* ${2:Instance} = Cast<${1:UMySaveGame}>(UGameplayStatics::CreateSaveGameObject(${1:UMySaveGame}::StaticClass()));",
+		"description": "Create Instance of a SaveGame Class to save to or load from."
+	},
+	"Unreal Save SaveGame": {
+		"prefix": "usavegame_save",
+		"body": "UGameplayStatics::SaveGameToSlot(${1:Instance}, ${2:SaveSlotName}, ${3:UserIndex});",
+		"description": "Save a SaveGame Instance to disk."
+	},
+	"Unreal Load SaveGame": {
+		"prefix": "usavegame_load",
+		"body": "${1:UMySaveGame}* ${2:Instance} = Cast<${1:UMySaveGame}>(UGameplayStatics::LoadGameFromSlot(${3:SaveSlotName}, ${4:UserIndex}));",
+		"description": "Load a SaveGame from disk."
+	}
+}
