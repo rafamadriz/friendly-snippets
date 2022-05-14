@@ -84,5 +84,15 @@
   "while": {
     "prefix": "while",
     "body": ["while ${1:true} do", "\t$0", "end"]
+  },
+  "pcall": {
+    "prefix": "pca",
+    "body": ["pcall(${1:function})"],
+    "description": "Protect call a function"
+  },
+  "locpcall": {
+    "prefix": "lpca",
+    "body": ["local ${1:status}, ${2:err_or_value} = pcall(${3:function})"],
+    "description": "Protect call a function as a variable"
   }
 }
