@@ -94,5 +94,20 @@
     "prefix": "lpca",
     "body": ["local ${1:status}, ${2:err_or_value} = pcall(${3:function})"],
     "description": "Protect call a function as a variable"
+  },
+  "Lua Table": {
+    "prefix": "table",
+    "body": [
+      "local ${1:name} = {\n${2:table_content}$0}"
+    ],
+    "description": "Lua local table"
+  },
+  "Local Require": {
+    "prefix": "local",
+    "body": [
+      "local ${1:name} = require(\"${2:module_name}\")\n",
+      "$0"
+    ],
+    "description": "Lua local import"
   }
 }

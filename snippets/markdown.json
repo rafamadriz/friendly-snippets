@@ -71,13 +71,13 @@
   },
   "Insert code": {
     "prefix": "code",
-    "body": "`${1}`$0",
+    "body": "`${1}` $0",
     "description": "Insert code"
   },
   "Insert code block": {
     "prefix": "codeblock",
-    "body": ["```${1:language}", "$0", "```"],
-    "description": "Insert fenced code block"
+    "body": ["```${1:language in lowercase}", "  $0", "```"],
+    "description": "Insert fenced code block into markdown"
   },
   "Insert unordered list": {
     "prefix": "uls",
@@ -284,5 +284,61 @@
       "${0}"
     ],
     "description": "Insert table with 5 rows and 3 columns. First row is heading."
+  },
+  	"Markdown Head": {
+    "prefix": "head",
+    "body": [
+			"# ${TM_FILENAME}\n",
+			"---\n",
+			"$0"
+    ],
+    "description": "Markdown files head (info)"
+  },
+  "Right Arrow": {
+    "prefix": ["rarr", "->"],
+    "body": [ "&rarr;" ],
+		"description": "Insert Right Arrow"
+  },
+	"Left Arrow": {
+    "prefix": "larr",
+    "body": [ "&larr;", "<-" ],
+		"description": "Insert Left Arrow"
+  },
+	"Up Arrow": {
+    "prefix": "uarr",
+    "body": [ "&uarr;" ],
+		"description": "Insert Up Arrow"
+  },
+	"Down Arrow": {
+    "prefix": "darr",
+    "body": [ "&darr;" ],
+		"description": "Insert Down Arrow"
+  },
+	"Double Arrow": {
+		"prefix": "rlarr",
+		"body": [ "&larr;&rarr;" ],
+		"descritption": "Insert Left and Right Arrow"
+	},
+	"Separator": {
+		"prefix": "sep",
+		"body": [ 
+			"---\n",
+			"$0"
+		],
+		"descritption": "Insert Markdown separator"
+	},
+  "Math Block": {
+    "prefix": "mathblock",
+    "body": [
+      "\\$$\n$0\n\\$$"
+    ],
+    "description": "Insert Math block"
+  },
+  "Math Inline": {
+    "prefix": "mathline",
+    "body": [
+      "\\$$ $0 \\$$"
+    ],
+    "description": "Insert Math inline block"
   }
 }
