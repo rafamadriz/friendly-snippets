@@ -16,8 +16,8 @@
   },
   "time": {
     "prefix": "time",
-    "body": ["${CURRENT_HOUR}-${CURRENT_MINUTE}"],
-    "description": "I give you back the time (H-M)"
+    "body": ["${CURRENT_HOUR}:${CURRENT_MINUTE}"],
+    "description": "I give you back the time (H:M)"
   },
   "datatime": {
     "prefix": "datatime",
