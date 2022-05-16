@@ -30,48 +30,48 @@
     "description": "Add header level 6"
   },
   "Links": {
-    "prefix": ["l", "link"],
-    "body": ["[${1}](${2}) ${0}"],
+    "prefix": ["l"],
+    "body": ["[${1}](${2})${0}"],
     "description": "Add links"
   },
   "URLS": {
-    "prefix": ["u", "url"],
-    "body": ["<${1}> ${0}"],
+    "prefix": ["u"],
+    "body": ["<${1}>${0}"],
     "description": "Add urls"
   },
   "Images": {
     "prefix": "img",
-    "body": ["![${1}](${2}) ${0}"],
+    "body": ["![${1}](${2})${0}"],
     "description": "Add images"
   },
   "Insert strikethrough": {
-    "prefix": "strikethrough",
-    "body": "~~${1}~~ ${0}",
+    "prefix": "strkt",
+    "body": "~~${1}~~${0}",
     "description": "Insert strikethrough"
   },
   "Insert bold text": {
-    "prefix": ["bold", "b"],
-    "body": "**${1}** $0",
+    "prefix": ["b"],
+    "body": "**${1}**$0",
     "description": "Insert bold text"
   },
   "Insert italic text": {
-    "prefix": ["i", "italic"],
-    "body": "*${1}* $0",
+    "prefix": ["i"],
+    "body": "*${1}*$0",
     "description": "Insert italic text"
   },
   "Insert bold and italic text": {
-    "prefix": ["bold and italic", "bi"],
-    "body": "***${1}*** $0",
+    "prefix": ["bi"],
+    "body": "***${1}***$0",
     "description": "Insert bold and italic text"
   },
   "Insert quoted text": {
-    "prefix": "quote",
+    "prefix": "qt",
     "body": "> ${1}",
     "description": "Insert quoted text"
   },
   "Insert code": {
     "prefix": "code",
-    "body": "`${1}` $0",
+    "body": "`${1}`$0",
     "description": "Insert code"
   },
   "Insert code block": {
@@ -80,17 +80,17 @@
     "description": "Insert fenced code block"
   },
   "Insert unordered list": {
-    "prefix": "unordered list",
-    "body": ["- ${1:first}", "- ${2:second}", "- ${3:third}", "$0"],
+    "prefix": "uls",
+    "body": ["+ ${1:first}", "+ ${2:second}", "+ ${3:third}", "$0"],
     "description": "Insert unordered list"
   },
   "Insert ordered list": {
-    "prefix": "ordered list",
+    "prefix": "ols",
     "body": ["1. ${1:first}", "2. ${2:second}", "3. ${3:third}", "$0"],
     "description": "Insert ordered list"
   },
   "Insert horizontal rule": {
-    "prefix": "horizontal rule",
+    "prefix": "hrule",
     "body": "----------\n",
     "description": "Insert horizontal rule"
   },
@@ -138,7 +138,7 @@
     "description": "Insert task list with 5 tasks"
   },
   "Insert table": {
-    "prefix": "table",
+    "prefix": "tbl",
     "body": [
       "| ${1:Column1}  | ${2:Column2}   | ${3:Column3}   |",
       "|-------------- | -------------- | -------------- |",
@@ -148,7 +148,7 @@
     "description": "Insert table with 2 rows and 3 columns. First row is heading."
   },
   "Insert 2x1 table": {
-    "prefix": "2x1table",
+    "prefix": "2x1tbl",
     "body": [
       "| ${1:Column1}  |",
       "|-------------- |",
@@ -158,7 +158,7 @@
     "description": "Insert table with 2 rows and 1 column. First row is heading."
   },
   "Insert 3x1 table": {
-    "prefix": "3x1table",
+    "prefix": "3x1tbl",
     "body": [
       "| ${1:Column1}  |",
       "|-------------- |",
@@ -169,7 +169,7 @@
     "description": "Insert table with 3 rows and 1 column. First row is heading."
   },
   "Insert 4x1 table": {
-    "prefix": "4x1table",
+    "prefix": "4x1tbl",
     "body": [
       "| ${1:Column1}  |",
       "|-------------- |",
@@ -181,7 +181,7 @@
     "description": "Insert table with 4 rows and 1 column. First row is heading."
   },
   "Insert 5x1 table": {
-    "prefix": "5x1table",
+    "prefix": "5x1tbl",
     "body": [
       "| ${1:Column1}  |",
       "|-------------- |",
@@ -194,7 +194,7 @@
     "description": "Insert table with 5 rows and 1 column. First row is heading."
   },
   "Insert 2x2 table": {
-    "prefix": "2x2table",
+    "prefix": "2x2tbl",
     "body": [
       "| ${1:Column1}   | ${2:Column2}    |",
       "|--------------- | --------------- |",
@@ -204,7 +204,7 @@
     "description": "Insert table with 2 rows and 2 columns. First row is heading."
   },
   "Insert 3x2 table": {
-    "prefix": "3x2table",
+    "prefix": "3x2tbl",
     "body": [
       "| ${1:Column1}   | ${2:Column2}    |",
       "|--------------- | --------------- |",
@@ -215,7 +215,7 @@
     "description": "Insert table with 3 rows and 2 columns. First row is heading."
   },
   "Insert 4x2 table": {
-    "prefix": "4x2table",
+    "prefix": "4x2tbl",
     "body": [
       "| ${1:Column1}   | ${2:Column2}    |",
       "|--------------- | --------------- |",
@@ -227,7 +227,7 @@
     "description": "Insert table with 4 rows and 2 columns. First row is heading."
   },
   "Insert 5x2 table": {
-    "prefix": "5x2table",
+    "prefix": "5x2tbl",
     "body": [
       "| ${1:Column1}   | ${2:Column2}    |",
       "|--------------- | --------------- |",
@@ -240,7 +240,7 @@
     "description": "Insert table with 5 rows and 2 columns. First row is heading."
   },
   "Insert 2x3 table": {
-    "prefix": "2x3table",
+    "prefix": "2x3tbl",
     "body": [
       "| ${1:Column1}    | ${2:Column2}    | ${3:Column3}    |",
       "|---------------- | --------------- | --------------- |",
@@ -250,7 +250,7 @@
     "description": "Insert table with 2 rows and 3 columns. First row is heading."
   },
   "Insert 3x3 table": {
-    "prefix": "3x3table",
+    "prefix": "3x3tbl",
     "body": [
       "| ${1:Column1}    | ${2:Column2}    | ${3:Column3}    |",
       "|---------------- | --------------- | --------------- |",
@@ -261,7 +261,7 @@
     "description": "Insert table with 3 rows and 3 columns. First row is heading."
   },
   "Insert 4x3 table": {
-    "prefix": "4x3table",
+    "prefix": "4x3tbl",
     "body": [
       "| ${1:Column1}    | ${2:Column2}    | ${3:Column3}    |",
       "|---------------- | --------------- | --------------- |",
@@ -273,7 +273,7 @@
     "description": "Insert table with 4 rows and 3 columns. First row is heading."
   },
   "Insert 5x3 table": {
-    "prefix": "5x3table",
+    "prefix": "5x3tbl",
     "body": [
       "| ${1:Column1}    | ${2:Column2}    | ${3:Column3}    |",
       "|---------------- | --------------- | --------------- |",

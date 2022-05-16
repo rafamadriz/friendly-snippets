@@ -1,0 +1,9 @@
+{
+  "Date & Time": {
+    "prefix": "dt",
+    "body": [
+      "date: ${2:`r Sys.Date()`}"
+    ],
+    "description": "Print Date & Time"
+  }
+}

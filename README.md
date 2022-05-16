@@ -1,4 +1,4 @@
-# Friendly Snippets
+# My Snippets
 
 Snippets collection for a set of different programming languages for faster development.
 
@@ -47,13 +47,10 @@ Use your plugin manager of choice, e.g.
 
 ```lua
 -- Packer
-use "rafamadriz/friendly-snippets"
+use "kevinm6/my_snippets"
 
 -- Plug
-Plug 'rafamadriz/friendly-snippets'
-
--- If you're using coc.nvim, you can use:
-CocInstall https://github.com/rafamadriz/friendly-snippets@main
+Plug 'kevinm6/my_snippets'
 ```
 
 #### HTML
@@ -81,6 +78,7 @@ CocInstall https://github.com/rafamadriz/friendly-snippets@main
 
 A good portion of the snippets have been forked from the following repositories:
 
+- [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
 - [vscode-standardjs-snippets](https://github.com/capaj/vscode-standardjs-snippets)
 - [python-snippets](https://github.com/cstrap/python-snippets)
 - [vs-snippets](https://github.com/kitagry/vs-snippets)
