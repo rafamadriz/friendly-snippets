@@ -39,12 +39,12 @@
   },
   "for_in": {
     "prefix": "for_in",
-    "body": "for ${1:VAR} in $${0:LIST}\ndo\n\techo \"$${1:VAR}\"\ndone\n",
+    "body": "for ${1:VAR} in ${0:LIST}\ndo\n\techo \"\\$${1:VAR}\"\ndone\n",
     "description": "for loop in list"
   },
   "for_i": {
     "prefix": "for_i",
-    "body": "for ((${1:i} = 0; ${1:i} < ${0:10}; ${1:i}++)); do\n\techo \"$${1:i}\"\ndone\n",
+    "body": "for ((${1:i} = 0; ${1:i} < ${0:10}; ${1:i}++)); do\n\techo \"\\$${1:i}\"\ndone\n",
     "description": "An index-based iteration for loop."
   },
   "while": {
@@ -71,7 +71,7 @@
   },
   "case": {
     "prefix": "case",
-    "body": "case \"$${1:VAR}\" in\n\t${2:1}) echo 1\n\t;;\n\t${3:2|3}) echo 2 or 3\n\t;;\n\t*) echo default\n\t;;\nesac\n",
+    "body": "case \"\\$${1:VAR}\" in\n\t${2:1}) echo 1\n\t;;\n\t${3:2|3}) echo 2 or 3\n\t;;\n\t*) echo default\n\t;;\nesac\n",
     "description": [
       "case word in [ [(] pattern [ | pattern ] ... ) list ;; ] ... esac\n",
       "A case command first expands word, and tries to match it against each pattern in turn."
