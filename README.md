@@ -1,4 +1,4 @@
-# My Snippets
+# The Snippets
 
 Snippets collection for a set of different programming languages for faster development.
 
@@ -47,10 +47,10 @@ Use your plugin manager of choice, e.g.
 
 ```lua
 -- Packer
-use "kevinm6/my_snippets"
+use "kevinm6/the_snippets"
 
 -- Plug
-Plug 'kevinm6/my_snippets'
+Plug 'kevinm6/the_snippets'
 ```
 
 #### HTML
