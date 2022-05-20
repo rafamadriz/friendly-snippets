@@ -361,6 +361,10 @@
     "prefix": "pry",
     "body": "require 'pry'; binding.pry"
   },
+  "Insert irb call": {
+    "prefix": "irb",
+    "body": "binding.irb"
+  },
   "Insert RSpec.describe class": {
     "prefix": "rdesc",
     "body": [
