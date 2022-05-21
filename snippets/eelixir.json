@@ -14,7 +14,7 @@
   "for": {
     "prefix": "for",
     "body": [
-      "<%= for %{1:item} <- ${2:items} do %>",
+      "<%= for ${1:item} <- ${2:items} do %>",
       "  $0",
       "<% end %>"
     ]
