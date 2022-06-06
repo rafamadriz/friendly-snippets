@@ -6,7 +6,7 @@
   },
   "let": {
     "prefix": "let",
-    "body": "let [${1:name ${2:value}}])",
+    "body": "let [${1:name} ${2:value}])",
     "description": "Create a variable"
   },
   "while": {
