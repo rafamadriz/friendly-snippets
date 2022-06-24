@@ -433,7 +433,7 @@
   },
   "console.log a variable": {
     "prefix": "cv",
-    "body": "console.log('${0}:', ${0})"
+    "body": "console.log('${1}:', ${1})"
   },
   "console.error": {
     "prefix": "ce",
@@ -445,7 +445,7 @@
   },
   "console.dir": {
     "prefix": "cod",
-    "body": "console.dir('${0}:', ${0})"
+    "body": "console.dir('${1}:', ${1})"
   },
   "constructor": {
     "prefix": "cn",
