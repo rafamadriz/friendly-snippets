@@ -22,14 +22,14 @@
     ]
   },
   "Arrow-left": {
-    "prefix": "left",
+    "prefix": "la",
     "body": " -left-> ",
     "description": [
       "left arrow, format: box -left-> box 2 (it will point left towards the box 2"
     ]
   },
   "Arrow-right": {
-    "prefix": "right",
+    "prefix": "ra",
     "body": " -right-> ",
     "description": [
       "Right arrow, format: box -right-> box 2 (it will point right towards the box 2"
