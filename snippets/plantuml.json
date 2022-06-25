@@ -44,7 +44,7 @@
   },
   "Block comment": {
     "prefix": "block",
-    "body": "/'$1\n'/",
+    "body": "/'\n' $1\n'/",
     "description": "Places a block comment in the document"
   },
   "Boundary": {
@@ -108,12 +108,12 @@
     "description": "Simple example to get started with PlantUML"
   },
   "Extend Arrow (left)": {
-    "prefix": "extend",
+    "prefix": "lext",
     "body": " ..> $1",
     "description": "Extend, Include"
   },
   "Extend Arrow (Right)": {
-    "prefix": "extend",
+    "prefix": "rext",
     "body": " <.. $1",
     "description": "Extend, Include"
   },
@@ -194,7 +194,7 @@
   "Uml": {
     "prefix": "startuml",
     "body": "@startuml\n $1\n@enduml",
-    "description": "Inside $1 begin defining your model"
+    "description": "Inside $1 begin defining your diagram"
   },
   "Use Arrow (left)": {
     "prefix": ">",
@@ -205,10 +205,5 @@
     "prefix": "<",
     "body": " <-- $1",
     "description": "Object A uses -> () <That is our use case notation to the left>"
-  },
-  "Use case": {
-    "prefix": "(",
-    "body": "($0)",
-    "description": ["Use case bubble"]
   }
 }
