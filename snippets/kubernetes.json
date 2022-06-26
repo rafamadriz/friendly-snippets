@@ -460,5 +460,834 @@
             "---",
             "$0"
         ]
+    },
+    "Prometheus annotations": {
+        "body": [
+            "annotations:",
+            "  prometheus.io/scrape: \"true\"",
+            "  prometheus.io/endpoint: \"${1:/metrics}\"",
+            "  prometheus.io/port: \"${2:8080}\""
+        ],
+        "prefix": "prom"
+    },
+    "PersistentVolume": {
+        "body": [
+            "apiVersion: v1",
+            "kind: PersistentVolume",
+            "metadata:",
+            "  name: ${1:name}",
+            "  labels:",
+            "    app: ${2:app}",
+            "    tier: ${3:tier}",
+            "spec:",
+            "  capacity:",
+            "    storage: ${4:20Gi}",
+            "  accessModes:",
+            "    - ${5:ReadWriteMany}",
+            "  nfs:",
+            "    server: ${6:NameOrIP}",
+            "    path: ${7:\"/share/path/on/server\"}"
+        ],
+        "prefix": "pv"
+    },
+    "PersistentVolumeClaim": {
+        "body": [
+            "apiVersion: v1",
+            "kind: PersistentVolumeClaim",
+            "metadata:",
+            "  name: ${1:name}",
+            "  labels:",
+            "    # insert any desired labels to identify your claim",
+            "    app: ${2:app}",
+            "    tier: ${3:tier}",
+            "spec:",
+            "  ${4:storageClassName: ${5:standard}}",
+            "  accessModes:",
+            "    - ${6:ReadWriteOnce}",
+            "  resources:",
+            "    requests:",
+            "      # The amount of the volume's storage to request",
+            "      storage: ${9:20Gi}"
+        ],
+        "prefix": "pvc"
+    },
+    "Kubernetes Job": {
+        "body": [
+            "apiVersion: batch/v1",
+            "kind: Job",
+            "metadata:",
+            "  name: ${1:jobname}",
+            "  labels:",
+            "    ${2:sometag: somevalue}",
+            "spec:",
+            "  template:",
+            "    metadata:",
+            "      name: $1",
+            "    spec:",
+            "      containers:",
+            "      - name: ${3:containerName}",
+            "        image: ${4: image}",
+            "        command: ",
+            "        - ${5:\"override\"",
+            "        - \"--the\"",
+            "        - \"entrypoint\"}",
+            "      restartPolicy: OnFailure"
+        ],
+        "prefix": "job"
+    },
+    "Deployment, service, and ingress": {
+        "body": [
+            "apiVersion: apps/v1",
+            "kind: Deployment",
+            "metadata:",
+            "  name: ${1:some-controller}",
+            "  namespace: ${2:default}",
+            "spec:",
+            "  replicas: 1",
+            "  selector:",
+            "    matchLabels:",
+            "      $3",
+            "  template:",
+            "    metadata:",
+            "      labels:",
+            "        ${3:app: $1}",
+            "    spec:",
+            "      containers:",
+            "      - name: ${4:name}",
+            "        image: ${5:nginx}",
+            "        resources:",
+            "          requests:",
+            "            cpu: 100m",
+            "            memory: 200Mi",
+            "        ports:",
+            "        - containerPort: ${6:8080}",
+            "---",
+            "apiVersion: v1",
+            "kind: Service",
+            "metadata:",
+            "  name: $1",
+            "  namespace: $2",
+            "spec:",
+            "  ports:",
+            "  - port: ${7:80}",
+            "    targetPort: $6",
+            "  selector:",
+            "    $3",
+            "---",
+            "apiVersion: networking.k8s.io/v1",
+            "kind: Ingress",
+            "metadata:",
+            "  annotations:",
+            "    nginx.ingress.kubernetes.io/rewrite-target: /",
+            "    kubernetes.io/ingress.class: nginx",
+            "    cert-manager.io/cluster-issuer: \"letsencrypt-prod\"",
+            "  name: $1",
+            "  namespace: $2",
+            "spec:",
+            "  ${10:tls:",
+            "  - secretName: ${9:$8.tls}",
+            "    hosts:",
+            "    - $8",
+            "  }rules:",
+            "  - host: ${8:host}",
+            "    http:",
+            "      paths:",
+            "      - path: ${11:/}",
+            "        pathType: Prefix",
+            "        backend:",
+            "          service:",
+            "            name: $1",
+            "            port:",
+            "              number: $7"
+        ],
+        "prefix": "depsvcing"
+    },
+    "SecretKeyRef": {
+        "body": [
+            "valueFrom:",
+            "  secretKeyRef:",
+            "    name: ${1:secret}",
+            "    key: ${2:key}"
+        ],
+        "prefix": "skr"
+    },
+    "ServiceAccount": {
+        "body": [
+            "apiVersion: v1",
+            "kind: ServiceAccount",
+            "metadata:",
+            "  name: ${1:name}"
+        ],
+        "prefix": "sa"
+    },
+    "DaemonSet": {
+        "body": [
+            "apiVersion: apps/v1",
+            "kind: DaemonSet",
+            "metadata:",
+            "\tname: ${1:name}",
+            "\tnamespace: ${2:default}",
+            "\tlabels:",
+            "\t\tapp: $1",
+            "spec:",
+            "\tselector:",
+            "\t\tmatchLabels:",
+            "\t\t\tapp: $1",
+            "\ttemplate:",
+            "\t\tmetadata:",
+            "\t\t\tlabels:",
+            "\t\t\t\tapp: $1",
+            "\t\tspec:",
+            "\t\t\tcontainers:",
+            "\t\t\t- name: $1",
+            "\t\t\t\timage: ${3:image/name}",
+            "\t\t\t\timagePullPolicy: IfNotPresent",
+            "\t\t\t\tresources:",
+            "\t\t\t\t\tlimits:",
+            "\t\t\t\t\t\tcpu: 100m",
+            "\t\t\t\t\t\tmemory: 100Mi",
+            "$0"
+        ],
+        "prefix": "ds"
+    },
+    "Ingress TLS section": {
+        "body": [
+            "tls:",
+            "- secretName: ${2:$1.tls}",
+            "  hosts:",
+            "  - ${1:host}"
+        ],
+        "prefix": "ingtls"
+    },
+    "cert-manager certificate": {
+        "body": [
+            "apiVersion: certmanager.k8s.io/v1alpha1",
+            "kind: Certificate",
+            "metadata:",
+            "  name: ${1:name}",
+            "  namespace: ${2:namespace}",
+            "spec:",
+            "  secretName: ${4:$3.tls}",
+            "  dnsNames:",
+            "  - ${3:some.domain.com}",
+            "  acme:",
+            "    config:",
+            "    - dns01:",
+            "        provider: ${4:prod}",
+            "      domains: [ $3 ]",
+            "  issuerRef:",
+            "    name: ${5:letsencrypt}",
+            "    kind: ClusterIssuer"
+        ],
+        "prefix": "cert"
+    },
+    "Ingress": {
+        "body": [
+            "apiVersion: networking.k8s.io/v1",
+            "kind: Ingress",
+            "metadata:",
+            "  annotations:",
+            "    nginx.ingress.kubernetes.io/rewrite-target: /",
+            "    kubernetes.io/ingress.class: nginx",
+            "    cert-manager.io/cluster-issuer: \"letsencrypt-prod\"",
+            "  name: ${1:name}",
+            "  namespace: ${2:default}",
+            "spec:",
+            "  ${5:tls:",
+            "  - secretName: ${4:$3.tls}",
+            "    hosts:",
+            "    - $3",
+            "  }rules:",
+            "  - host: ${3:host.tld}",
+            "    http:",
+            "      paths:",
+            "      - path: ${7:/}",
+            "        pathType: Prefix",
+            "        backend:",
+            "          service:",
+            "            name: ${8:service}",
+            "            port:",
+            "              number: ${9:portNumberOrName}"
+        ],
+        "prefix": "ing"
+    },
+    "Resources": {
+        "body": [
+            "resources:",
+            "  requests:",
+            "    cpu: ${1:100m}",
+            "    memory: ${2:200Mi}",
+            "  ${5:limits:",
+            "    cpu: ${3:$1}",
+            "    memory: ${4:$2}}$0"
+        ],
+        "prefix": "res"
+    },
+    "Namespace": {
+        "body": [
+            "apiVersion: v1",
+            "kind: Namespace",
+            "metadata:",
+            "  name: ${1:name}"
+        ],
+        "prefix": "ns"
+    },
+    "Deployment Strategy": {
+        "body": [
+            "strategy:",
+            "  type: ${1:RollingUpdate|Recreate}",
+            "  rollingUpdate:",
+            "    maxSurge: ${2:1}",
+            "    maxUnavailable: ${3:1}$0"
+        ],
+        "prefix": "strat"
+    },
+    "external dns": {
+        "body": [
+            "annotations:",
+            "  external-dns.alpha.kubernetes.io/hostname: ${1:myname.mydomain.com}"
+        ],
+        "prefix": "edns"
+    },
+    "Kubernetes Cronjob": {
+        "body": [
+            "apiVersion: batch/v1beta1",
+            "kind: CronJob",
+            "metadata:",
+            "  name: ${1:name}",
+            "spec:",
+            "  schedule: \"${2:*/1} * * * *\"",
+            "  jobTemplate:",
+            "    spec:",
+            "      template:",
+            "        spec:",
+            "          containers:",
+            "          - name: $1",
+            "            image: ${3: image}",
+            "            args: ${4:",
+            "            - /bin/sh",
+            "            - -c",
+            "            - date; echo Hello from the Kubernetes cluster}",
+            "          restartPolicy: OnFailure"
+        ],
+        "prefix": "cron"
+    },
+    "env SecretRef": {
+        "body": [
+            "valueFrom:",
+            "  secretKeyRef:",
+            "    name: ${1:secret-name}",
+            "    key: ${2:key-name}"
+        ],
+        "prefix": "secref"
+    },
+    "storage class": {
+        "body": [
+            "apiVersion: storage.k8s.io/v1",
+            "kind: StorageClass",
+            "metadata:",
+            "  name: ${1:standard}",
+            "provisioner: ${2:kubernetes.io/aws-ebs}",
+            "${3:parameters:",
+            "  type: gp2}",
+            "reclaimPolicy: ${4:Delete}",
+            "${5:allowVolumeExpansion: true}",
+            "volumeBindingMode: WaitForFirstConsumer"
+        ],
+        "prefix": "sc"
+    },
+    "EndPoint": {
+        "body": [
+            "kind: Service",
+            "apiVersion: v1",
+            "metadata:",
+            "  name: ${1:my-external-app}",
+            "  namespace: ${2:namespace}",
+            "  labels:",
+            "    app: ${1:my-external-app}",
+            "spec:",
+            "  type: ClusterIP",
+            "  ports:",
+            "  - port: ${3:8080}",
+            "    targetPort: ${3:8080}",
+            "    name: ${5:metrics}",
+            "---",
+            "kind: Endpoints",
+            "apiVersion: v1",
+            "metadata:",
+            "  name: ${1:my-external-app}",
+            "  namespace: ${2:namespace}",
+            "  labels:",
+            "    app: ${1:my-external-app}",
+            "subsets:",
+            "- addresses:",
+            "  - ip: ${4:10.10.10.10}",
+            "  ports:",
+            "  - name: ${5}",
+            "    port: ${3:8080}"
+        ],
+        "prefix": "ep"
+    },
+    "Secret": {
+        "body": [
+            "apiVersion: v1",
+            "kind: Secret",
+            "metadata:",
+            "  name: ${1:secret-name}",
+            "type: ${2:Opaque}",
+            "data:",
+            "  ${3:key}: ${4:value}"
+        ],
+        "prefix": "sec"
+    },
+    "HorizontalPodAutoscaler": {
+        "body": [
+            "apiVersion: autoscaling/v1",
+            "kind: HorizontalPodAutoscaler",
+            "metadata:",
+            "  name: ${5:$1}",
+            "spec:",
+            "  scaleTargetRef:",
+            "    apiVersion: apps/v1",
+            "    kind: Deployment",
+            "    name: ${1:mydeployment}",
+            "  minReplicas: ${2:1}",
+            "  maxReplicas: ${3:5}",
+            "  targetCPUUtilizationPercentage: ${4:70}"
+        ],
+        "prefix": "hpa"
+    },
+    "Environment template": {
+        "body": [
+            "- name: ${1:VAR_NAME}",
+            "  value: ${2:value}"
+        ],
+        "prefix": "env"
+    },
+    "Deployment and service": {
+        "body": [
+            "apiVersion: apps/v1",
+            "kind: Deployment",
+            "metadata:",
+            "  name: ${1:some-controller}",
+            "  namespace: ${2:default}",
+            "spec:",
+            "  replicas: 1",
+            "  selector:",
+            "    matchLabels:",
+            "      $3",
+            "  template:",
+            "    metadata:",
+            "      labels:",
+            "        ${3:app: $1}",
+            "    spec:",
+            "      containers:",
+            "      - name: ${4:name}",
+            "        image: ${5:nginx}",
+            "        resources:",
+            "          requests:",
+            "            cpu: 100m",
+            "            memory: 200Mi",
+            "        ports:",
+            "        - containerPort: ${6:8080}",
+            "---",
+            "apiVersion: v1",
+            "kind: Service",
+            "metadata:",
+            "  name: $1",
+            "  namespace: $2",
+            "spec:",
+            "  ports:",
+            "  - port: ${7:80}",
+            "    targetPort: $6",
+            "  selector:",
+            "    $3"
+        ],
+        "prefix": "depsvc"
+    },
+    "Pod Volume Object": {
+        "body": [
+            "- name: ${1:name}",
+            "  ${2:source}:",
+            "    name:"
+        ],
+        "prefix": "pvol"
+    },
+    "Horizontal Pod Autoscaler": {
+        "body": [
+            "apiVersion: autoscaling/v2beta1",
+            "kind: HorizontalPodAutoscaler",
+            "metadata:",
+            "  name: ${1:hpa-name}",
+            "  namespace: ${2:default}",
+            "spec:",
+            "  scaleTargetRef:",
+            "    apiVersion: apps/v1",
+            "    kind: Deployment",
+            "    name: ${3:deployment-name}",
+            "  minReplicas: 1",
+            "  maxReplicas: 10",
+            "  metrics:",
+            "  - type: Resource",
+            "    resource:",
+            "      name: cpu",
+            "      targetAverageUtilization: 10",
+            "  - type: Resource",
+            "    resource:",
+            "    name: memory",
+            "      targetAverageValue: 1000Mi"
+        ],
+        "prefix": "hpa"
+    },
+    "Affinitiy/Anti-Affinity": {
+        "body": [
+            "pod${1:Anti}Affinity:",
+            "  ${2:preferred|required}DuringSchedulingIgnoredDuringExecution:",
+            "  - weight: 100",
+            "    podAffinityTerm:",
+            "      labelSelector:",
+            "        matchExpressions:",
+            "        - key: ${3:app}",
+            "          operator: In",
+            "          values:",
+            "          - ${4:appname}",
+            "      topologyKey: ${5:kubernetes.io/hostname}"
+        ],
+        "prefix": "aff"
+    },
+    "ConfigMap": {
+        "body": [
+            "apiVersion: v1",
+            "kind: ConfigMap",
+            "metadata:",
+            "  name: ${1:name}",
+            "data:",
+            "  ${2:key}: ${3:value}"
+        ],
+        "prefix": "cfg"
+    },
+    "NetworkPolicy": {
+        "body": [
+            "kind: NetworkPolicy",
+            "apiVersion: networking.k8s.io/v1",
+            "metadata:",
+            "  namespace: ${1:ns}",
+            "  name: ${2:mypolicy}",
+            "spec:",
+            "  podSelector:",
+            "    matchLabels:",
+            "      ${3:app}: ${4:loki}",
+            "  ingress:",
+            "    - namespaceSelector:",
+            "        matchLabels:",
+            "          ${5:$4}: ${6:\"true\"}"
+        ],
+        "prefix": "netp"
+    },
+    "serviceMonitor": {
+        "body": [
+            "apiVersion: monitoring.coreos.com/v1",
+            "kind: ServiceMonitor",
+            "metadata:",
+            "  name: ${1:name}",
+            "  namespace: ${2:namespace}",
+            "  labels:",
+            "  \trelease: prometheus",
+            "\t${3:labels}",
+            "spec:",
+            "  endpoints:",
+            "  - honorLabels: true",
+            "    interval: 15s",
+            "    path: /metrics",
+            "    port: http",
+            "    scheme: http",
+            "    scrapeTimeout: 10s",
+            "  jobLabel: ${4:jobName}",
+            "  namespaceSelector:",
+            "    matchNames:",
+            "    - ${2:namespace}",
+            "  selector:",
+            "    matchLabels:",
+            "      ${3:labels}"
+        ],
+        "prefix": "sm"
+    },
+    "Liveness/Readiness Probes": {
+        "body": [
+            "livenessProbe: &probe",
+            "  initialDelaySeconds: ${1:10}",
+            "  httpGet:",
+            "    port: ${2:8080}",
+            "    path: ${3:/}",
+            "readinessProbe: *probe $0"
+        ],
+        "prefix": "probe"
+    },
+    "Role": {
+        "body": [
+            "kind: ${1:Cluster}Role",
+            "apiVersion: rbac.authorization.k8s.io/v1",
+            "metadata:",
+            "  ${2:namespace: ${3:default}",
+            "  }name: ${4:configmap-updater}",
+            "rules:",
+            "- apiGroups: [\"${5:}\"]",
+            "  resources: [\"${6:configmaps}\"]",
+            "  resourceNames: [\"${7:my-configmap}\"]",
+            "  verbs: [${8:\"update\", \"get\"}]"
+        ],
+        "prefix": "role"
+    },
+    "RoleBinding": {
+        "body": [
+            "# This role binding allows \"jane\" to read pods in the \"default\" namespace.",
+            "kind: ${1:Cluster}RoleBinding",
+            "apiVersion: rbac.authorization.k8s.io/v1",
+            "metadata:",
+            "  name: ${2:read-pods}",
+            "  ${3:namespace: ${4:pods}",
+            "}subjects:",
+            "- kind: ${5:User|ServiceAccount|Group}",
+            "  name: ${6:jane} # Name is case sensitive",
+            "  apiGroup: rbac.authorization.k8s.io",
+            "roleRef:",
+            "  kind: ${7:Cluster}Role #this must be Role or ClusterRole",
+            "  name: ${8:pod-reader} # this must match the name of the Role or ClusterRole you wish to bind to",
+            "  apiGroup: rbac.authorization.k8s.io"
+        ],
+        "prefix": "rb"
+    },
+    "Volume Mount and spec": {
+        "body": [
+            "  volumeMounts:",
+            "  - name: ${1:volume}",
+            "    mountPath: ${2:/etc/mount/path}",
+            "    ${3:subPath: ${4: key}}",
+            "volumes:",
+            "- name: $1",
+            "  ${5:configMap}:",
+            "    ${6:name}: ${7:someName}",
+            "- name: $1",
+            "  ${8:persistentVolumeClaim}:",
+            "    ${9:claimName}: ${10:someName}"
+        ],
+        "prefix": "pvolm"
+    },
+    "Service": {
+        "body": [
+            "apiVersion: v1",
+            "kind: Service",
+            "metadata:",
+            "  name: ${1:frontend}",
+            "  namespace: ${2:default}",
+            "  labels:",
+            "    app: ${3:someApp}",
+            "    tier: ${4:frontend}",
+            "spec:",
+            "  ports:",
+            "  - port: ${5:80}",
+            "  selector:",
+            "    app: $3",
+            "    tier: $4"
+        ],
+        "prefix": "svc"
+    },
+    "serviceMonitor Blackbox": {
+        "body": [
+            "---",
+            "apiVersion: monitoring.coreos.com/v1",
+            "kind: ServiceMonitor",
+            "metadata:",
+            "  name: ${1:sample}",
+            "  namespace: ${2:default}",
+            "  labels:",
+            "    release: prometheus",
+            "    ${3:app: headerecho}",
+            "spec:",
+            "  endpoints:",
+            "  - ",
+            "    interval: 15s",
+            "    path: \"/probe\"",
+            "    port: ${4:metrics}",
+            "    scheme: http",
+            "    scrapeTimeout: 10s",
+            "    relabelings:",
+            "      - sourceLabels: [__address__]",
+            "        targetLabel: __param_target",
+            "      - sourceLabels: [__param_target]",
+            "        targetLabel: instance",
+            "      - targetLabel: __address__",
+            "        replacement: ${5:blackbox-prometheus-blackbox-exporter.monitoring.svc.cluster.local:9115}",
+            "    params:",
+            "      module:",
+            "        - ${6:tcp_connect}",
+            "  namespaceSelector:",
+            "    matchNames:",
+            "    - ${2:default}",
+            "  selector:",
+            "    matchLabels:",
+            "      ${3:app: headerecho}"
+        ],
+        "prefix": "smb"
+    },
+    "cert-manager tls annotations": {
+        "body": [
+            "${2:annotations:",
+            "  }certmanager.k8s.io/cluster-issuer: ${1:lets-encrypt}"
+        ],
+        "prefix": "cmtls"
+    },
+    "tls-vault annotations": {
+        "body": [
+            "annotations:",
+            "  kubernetes.io/tls-vault: \"true\""
+        ],
+        "prefix": "vtls"
+    },
+    "Deployment": {
+        "body": [
+            "apiVersion: apps/v1",
+            "kind: Deployment",
+            "metadata:",
+            "  name: ${1:some-controller}",
+            "  namespace: ${2:default}",
+            "spec:",
+            "  replicas: 1",
+            "  selector:",
+            "    matchLabels:",
+            "      $3",
+            "  template:",
+            "    metadata:",
+            "      labels:",
+            "        ${3:app: $1}",
+            "    spec:",
+            "      containers:",
+            "      - name: ${4:name}",
+            "        image: ${5:nginx}",
+            "        resources:",
+            "          requests:",
+            "            cpu: 100m",
+            "            memory: 200Mi",
+            "        ports:",
+            "        - containerPort: 8080"
+        ],
+        "prefix": "dep"
+    },
+    "Init Container": {
+        "body": [
+            "initContainers:",
+            "- name: ${1:myinit}",
+            "  image: ${2:busybox}",
+            "  command: [${3:rm, -rf,  $5/lost+found}]",
+            "  ${6:volumeMounts:",
+            "  - name: ${4:data}",
+            "    mountPath: ${5:/data}}$0"
+        ],
+        "prefix": "init"
+    },
+    "tls-acme annotations": {
+        "body": [
+            "annotations:",
+            "  kubernetes.io/tls-acme: \"true\""
+        ],
+        "prefix": "atls"
+    },
+    "Selector MatchLabels": {
+        "body": [
+            "selector:",
+            "\tmatchLabels:",
+            "\t\t$0"
+        ],
+        "prefix": "selm"
+    },
+    "Role and Binding": {
+        "body": [
+            "kind: ${1:Cluster}Role",
+            "apiVersion: rbac.authorization.k8s.io/v1",
+            "metadata:",
+            "  ${2:namespace: ${3:default}",
+            "  }name: ${4:configmap-updater}",
+            "rules:",
+            "- apiGroups: [\"${5:}\"]",
+            "  resources: [\"${6:configmaps}\"]",
+            "  resourceNames: [\"${7:my-configmap}\"]",
+            "  verbs: [${8:\"update\", \"get\"}]",
+            "---",
+            "# This role binding allows \"jane\" to read pods in the \"default\" namespace.",
+            "kind: ${1:Cluster}RoleBinding",
+            "apiVersion: rbac.authorization.k8s.io/v1",
+            "metadata:",
+            "  name: $4",
+            "  $2",
+            "subjects:",
+            "- kind: ${9:User|ServiceAccount|Group}",
+            "  name: ${10:jane} # Name is case sensitive",
+            "  ${2:namespace: ${3:default}",
+            "}roleRef:",
+            "  kind: $1Role #this must be Role or ClusterRole",
+            "  name: $4 # this must match the name of the Role or ClusterRole you wish to bind to",
+            "  apiGroup: rbac.authorization.k8s.io"
+        ],
+        "prefix": "rbac"
+    },
+    "StatefulSet": {
+        "body": [
+            "apiVersion: v1",
+            "kind: Service",
+            "metadata:",
+            "  name: ${1:myservice}",
+            "spec:",
+            "  ports:",
+            "  - port: $5",
+            "    name: $6",
+            "  clusterIP: None",
+            "  selector:",
+            "    $2",
+            "---",
+            "apiVersion: apps/v1",
+            "kind: StatefulSet",
+            "metadata:",
+            "  name: ${1:mystatefulset}",
+            "spec:",
+            "  selector:",
+            "    matchLabels:",
+            "      $2",
+            "  serviceName: \"nginx\"",
+            "  replicas: 3 # by default is 1",
+            "  template:",
+            "    metadata:",
+            "      labels:",
+            "        ${2:app: $1}",
+            "    spec:",
+            "      # terminationGracePeriodSeconds: 10",
+            "      containers:",
+            "      - name: ${3:$1}",
+            "        image: ${4:$1}",
+            "        ports:",
+            "        - containerPort: ${5:80}",
+            "          name: ${6:web}",
+            "        volumeMounts:",
+            "        - name: ${7:volume}",
+            "          mountPath: ${8:/var/lib/mydata}",
+            "  volumeClaimTemplates:",
+            "  - metadata:",
+            "      name: $7",
+            "    spec:",
+            "      accessModes: [ \"ReadWriteOnce\" ]",
+            "      storageClassName: \"${9:standard}\"",
+            "      resources:",
+            "        requests:",
+            "          storage: ${10:1G}"
+        ],
+        "prefix": "ss"
+    },
+    "Volume Mount": {
+        "body": [
+            "- name: ${1:volume}",
+            "  mountPath: ${2:/etc/mount/path}",
+            "  ${3:subPath: ${4: key}}",
+            "$0"
+        ],
+        "prefix": "volm"
     }
 }
