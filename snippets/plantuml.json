@@ -55,7 +55,7 @@
   "Class": {
     "prefix": "cla",
     "body": "class $1 {\n$2\n}\n",
-    "description": "Class Object where fields are defined: \npublic (+)\nprivate (-)\nprotected (#) \npackage (~).\nFunctions can also be named here ex: +funcName()"
+    "description": "Class Object where fields are defined: \n  public (+)\n  private (-)\n  protected (#) \n  package (~).\n\nFunctions can also be named here ex:\n  +funcName()"
   },
   "Cloud": {
     "prefix": "cl",
