@@ -177,12 +177,12 @@
     "description": "An arrow for the message return on a Sequence diagram"
   },
   "State Final": {
-    "prefix": "final",
+    "prefix": "sfinal",
     "body": " --> [*]",
     "description": "Describe the final state of objects"
   },
   "State Initial": {
-    "prefix": "init",
+    "prefix": "sinit",
     "body": "[*] --> ",
     "description": "Describe the initial state of objects"
   },
@@ -191,7 +191,7 @@
     "body": "title $0",
     "description": "The document title"
   },
-  "Uml": {
+  "Start Uml Template": {
     "prefix": "startuml",
     "body": "@startuml\n $1\n@enduml",
     "description": "Inside $1 begin defining your diagram"
