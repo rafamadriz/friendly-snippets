@@ -376,6 +376,10 @@
       {
         "language": "unreal",
         "path": "./snippets/frameworks/unreal.json"
+      },
+      {
+        "language": "verilog",
+        "path": "./snippets/verilog.json"
       }
     ]
   }
