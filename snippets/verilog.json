@@ -1,0 +1,114 @@
+{
+  "if": {
+    "prefix": "if",
+    "body": ["if (${1}) begin", "\n${0}", "\nend"],
+    "description": "If statement"
+  },
+  "if-else": {
+    "prefix": "ife",
+    "body": [
+      "if (${1}) begin",
+      "\n\t${2}",
+      "\nend",
+      "\nelse begin",
+      "\n\t${3}",
+      "\nend"
+    ],
+    "description": "If-else statement"
+  },
+  "else-if": {
+    "prefix": "eif",
+    "body": ["else if (${1}) begin", "\n${0}", "\nend"],
+    "description": "else-if statement"
+  },
+  "else": {
+    "prefix": "el",
+    "body": ["else begin", "\n${0}", "\nend"],
+    "description": "else-if statement"
+  },
+  "while": {
+    "prefix": "wh",
+    "body": ["whlie (${1}) begin\n\t${0}\nend"],
+    "description": "While loop"
+  },
+  "repeat loop": {
+    "prefix": "repeat (${1}) begin",
+    "body": ["repeat (${1}) begin\n\t${0}\nend"],
+    "description": "Repeat loop"
+  },
+  "case statement": {
+    "prefix": "case",
+    "body": [
+      "case (${1:variable})\n\t${2: value}: begin\n\t\t${3}\n\tend\ndefault: begin\n\t${4}\n",
+      "end",
+      "endcase"
+    ],
+    "description": "Case Statement"
+  },
+  "casez statement": {
+    "prefix": "casez",
+    "body": [
+      "casez (${1:variable})\n\t${2: value}: begin\n\t\t${3}\n\tend\ndefault: begin\n\t${4}\n",
+      "end",
+      "endcase"
+    ],
+    "description": "Casez Statement"
+  },
+  "always block": {
+    "prefix": "al",
+    "body": ["always @(${1:Sensitive list}) begin\n", "\t${0}", "\nend"],
+    "description": "Always block"
+  },
+  "module block": {
+    "prefix": "mod",
+    "body": ["module ${1:FILENAME} (${2})", "\n\t${0}", "\nendmoudle"],
+    "description": "Module Block"
+  },
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) begin",
+      "\n\t${4}",
+      "\nend"
+    ],
+    "description": "For loop"
+  },
+  "forever": {
+    "prefix": "forev",
+    "body": ["forever begin\n\t${0}\nend"],
+    "description": "Forever loop"
+  },
+  "function": {
+    "prefix": "fun",
+    "body": [
+      "function ${1:void} ${2:name}(${3});",
+      "\n\t${0}",
+      "endfunction: $2"
+    ],
+    "description": "Function snippet"
+  },
+  "task": {
+    "prefix": "task",
+    "body": ["task ${1:name}(${2});", "\n\t${0}", "\nendtask: $1"],
+    "description": "Task snippet"
+  },
+  "Initial Begin": {
+    "prefix": "ini",
+    "body": ["initial begin\n\t${0}\nend"],
+    "description": "Initial Begin"
+  },
+  "typedef struct packed": {
+    "prefix": "tdsp",
+    "body": ["typedef struct packed {", "\n\tint ${2:data};", "\n${1:name}"],
+    "description": "Typedef struct packed"
+  },
+  "typedef enum": {
+    "prefix": "tde",
+    "body": [
+      "typedef enum ${2:logic[15:0]} \n{",
+      "\n${3:REG = 16'h0000}",
+      "\n} ${1:my_dest_t};"
+    ],
+    "description": "Typedef enum"
+  }
+}
