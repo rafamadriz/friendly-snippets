@@ -141,14 +141,5 @@
             "local ${1:status}, ${2:err_or_value} = pcall(${3:function})"
         ],
         "description": "Protect call a function as a variable"
-    },
-    "format with stylua": {
-        "prefix": [
-            "stylua",
-            "format"
-        ],
-        "body": [
-            "chore: format with stylua"
-        ]
     }
 }
