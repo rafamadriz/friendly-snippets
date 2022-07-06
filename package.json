@@ -209,6 +209,13 @@
         "path": "./snippets/javascript/react-native-ts.json"
       },
       {
+        "language": [
+          "javascriptreact",
+          "typescriptreact"
+        ],
+        "path": "./snippets/javascript/vscode-react.json"
+      },
+      {
         "language": "svelte",
         "path": "./snippets/svelte.json"
       },
