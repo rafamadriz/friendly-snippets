@@ -149,6 +149,15 @@
             "Vue.component(${1:id}${2:, [definition]})$0"
         ],
         "description": "Vue.component( id, [definition] )"
+    }, 
+    "async-component": {
+        "prefix": "acomp",
+        "body": [
+            "const $1 = defineAsyncComponent(() =>",
+            "import('$0')",
+            ");"
+        ],
+        "description": "create a async vue component"
     },
     "use": {
         "prefix": "VueUse",
@@ -203,6 +212,22 @@
         ],
         "description": "A list/hash of attributes that are exposed to accept data from the parent component. "
     },
+    "props-composition": {
+        "prefix": "dprop",
+        "body": [
+            "const props = defineProps({",
+           "$0",
+            "});"
+        ],
+        "description": "A list/hash of attributes that are exposed to accept data from the parent component. "
+    },    
+    "emits-composition": {
+        "prefix": "demit",
+        "body": [
+            "const emits = defineEmits([ $0 ]);"
+        ],
+        "description": "A list of events that componetnt can emits to the parent component. "
+    },
     "propsData": {
         "prefix": "propsData",
         "body": [
@@ -226,6 +251,48 @@
         ],
         "description": "Computed properties to be mixed into the Vue instance. "
     },
+    "computed-composition": {
+        "prefix": "comp",
+        "body": [
+            "const $1 = computed(() => $0);"
+        ],
+        "description": "Computed properties to be mixed into the Vue instance. "
+    }, 
+    "reactive-composition": {
+        "prefix": "react",
+        "body": [
+            "const $1 = reactive($0)"
+        ],
+        "description": "Reative properties to be mixed into the Vue instance. "
+    },
+    "shallow-reactive-composition": {
+        "prefix": "sreact",
+        "body": [
+            "const $1 = shallowReactive({$0})"
+        ],
+        "description": "Shallow reative properties to be mixed into the Vue instance. "
+    },
+    "ref-composition": {
+        "prefix": "rf",
+        "body": [
+            "const $1 = ref($0)"
+        ],
+        "description": "Ref properties to be mixed into the Vue instance. "
+    },
+    "template-ref-ts-composition": {
+        "prefix": "trf",
+        "body": [
+            "const $0 = ref<HTMLInputElement | null>(null)"
+        ],
+        "description": "Template ref to be mixed into the Vue instance. "
+    },
+    "component-ref-ts-composition": {
+        "prefix": "crf",
+        "body": [
+            "const $1 = ref<InstanceType<typeof $0> | null>(null)"
+        ],
+        "description": "Template ref to be mixed into the Vue instance. "
+    },
     "methods": {
         "prefix": "methods",
         "body": [
@@ -243,6 +310,15 @@
             "},$0"
         ],
         "description": "An object where keys are expressions to watch and values are the corresponding callbacks. The value can also be a string of a method name, or an Object that contains additional options. Note that you should not use an arrow function to define a watcher."
+    }, 
+    "watch-composition": {
+        "prefix": "cwatch",
+        "body": [
+            "watch($1, ($2, $3) => {",
+            "$0",
+            "});"
+        ],
+        "description": "Watch over a reactive source and call a function in reaction to state changes "
     },
     "watchWithOptions": {
         "prefix": "watchWithOptions",
@@ -325,6 +401,16 @@
         ],
         "description": "Type: Function."
     },
+    "onMounted-composition": {
+        "prefix": "onmounted",
+        "body": ["onMounted(() => {$0})"],
+        "description": "Vue mounted lifecycle hook"
+    },
+    "onUnmounted-composition": {
+        "prefix": "onunmounted",
+        "body": ["onUnmounted(() => {$0})"],
+        "description": "Vue unMounted lifecycle hook"
+    },
     "beforeUpdate": {
         "prefix": "beforeUpdate",
         "body": [
@@ -342,6 +428,11 @@
             "},"
         ],
         "description": "Type: Function."
+    }, 
+    "onUpdated-composition": {
+        "prefix": "onupdated",
+        "body": ["onUpdated(() => {$0})"],
+        "description": "Vue updated lifecycle hook"
     },
     "activated": {
         "prefix": "activated",
