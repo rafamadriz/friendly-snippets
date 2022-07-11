@@ -213,7 +213,7 @@
           "javascriptreact",
           "typescriptreact"
         ],
-        "path": "./snippets/javascript/vscode-react.json"
+        "path": "./snippets/javascript/react-es7.json"
       },
       {
         "language": "svelte",
