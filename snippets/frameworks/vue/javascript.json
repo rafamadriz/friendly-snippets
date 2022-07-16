@@ -254,7 +254,9 @@
     "computed-composition": {
         "prefix": "comp",
         "body": [
-            "const $1 = computed(() => $0);"
+            "const $1 = computed(() => {",
+            "$0",
+            "});"
         ],
         "description": "Computed properties to be mixed into the Vue instance. "
     }, 
@@ -302,6 +304,15 @@
         ],
         "description": "Methods to be mixed into the Vue instance."
     },
+    "method-composition": {
+        "prefix": "functionVue3",
+        "body": [
+            "const $1 = ($2) => {",
+            "$0",
+            "});"
+        ],
+        "description": "Method composition properties to be mixed into the Vue instance. "
+    },
     "watch": {
         "prefix": "watch",
         "body": [
@@ -332,6 +343,15 @@
             "},$0"
         ],
         "description": "Vue Watcher with options."
+    },
+    "watchEffect-composition": {
+        "prefix": "watchEffect",
+        "body": [
+            "watchEffect($1, ($2, $3) => {",
+            "$0",
+            "});"
+        ],
+        "description": "watchEffect from vue composition "
     },
     "el": {
         "prefix": "el",
@@ -401,10 +421,20 @@
         ],
         "description": "Type: Function."
     },
+    "onBeforeMount-composition": {
+        "prefix": "onBeforeMount",
+        "body": ["onBeforeMount(() => {$0})"],
+        "description": "Vue before mount composition lifecycle hook"
+    },
     "onMounted-composition": {
         "prefix": "onmounted",
         "body": ["onMounted(() => {$0})"],
         "description": "Vue mounted lifecycle hook"
+    },
+    "onBeforeUnmount-composition": {
+        "prefix": "onBeforeUnmount",
+        "body": ["onBeforeUnmount(() => {$0})"],
+        "description": "Vue before unmount composition lifecycle hook"
     },
     "onUnmounted-composition": {
         "prefix": "onunmounted",
@@ -428,6 +458,11 @@
             "},"
         ],
         "description": "Type: Function."
+    },
+    "onBeforeUpdate-composition": {
+        "prefix": "onBeforeUpdate",
+        "body": ["onBeforeUpdate(() => {$0})"],
+        "description": "Vue before update composition lifecycle hook"
     }, 
     "onUpdated-composition": {
         "prefix": "onupdated",
@@ -451,6 +486,16 @@
             "},"
         ],
         "description": "Type: Function."
+    },
+    "onActivated-composition": {
+        "prefix": "onActivated",
+        "body": ["onActivated(() => {$0})"],
+        "description": "Vue activated composition lifecycle hook"
+    },
+    "onDeactivated-composition": {
+        "prefix": "onDeactivated",
+        "body": ["onDeactivated(() => {$0})"],
+        "description": "Vue deactivated composition lifecycle hook"
     },
     "beforeDestroy": {
         "prefix": "beforeDestroy",
@@ -842,6 +887,13 @@
         ],
         "description": "import VueRouter from 'vue-router'"
     },
+    "importuseRouter-composition": {
+        "prefix": "importuseRouter",
+        "body": [
+            "import useRouter from 'vue-router'"
+        ],
+        "description": "import useRouter from 'vue-router'"
+    },
     "newVueRouter": {
         "prefix": "newVueRouter",
         "body": [
@@ -850,6 +902,20 @@
             "})$0"
         ],
         "description": "const router = newVueRouter({ })"
+    },
+    "useRouter-composition": {
+        "prefix": "useRouter",
+        "body": [
+            "const ${1:router} = useRouter()"
+        ],
+        "description": "const router = useRouter()"
+    },
+    "useRoute-composition": {
+        "prefix": "useRoute",
+        "body": [
+            "const ${1:route} = useRoute()"
+        ],
+        "description": "const route = useRoute()"
     },
     "routerBeforeEach": {
         "prefix": "routerBeforeEach",
