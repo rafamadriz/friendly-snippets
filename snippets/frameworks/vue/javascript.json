@@ -1337,7 +1337,7 @@
     "importPinia": {
         "prefix": "importPinia",
         "body": [
-            "<import $1 from 'pinia'>",
+            "import $1 from 'pinia'",
             "$0"
         ],
         "description": "import store from 'pinia'"
