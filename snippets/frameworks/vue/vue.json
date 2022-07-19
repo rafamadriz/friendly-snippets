@@ -21,6 +21,24 @@
         ],
         "description": "script element"
     },
+     "script-composition": {
+        "prefix": "scriptSetup",
+        "body": [
+            "<script setup>",
+            "\t$0",
+            "</script>"
+        ],
+        "description": "script setup vue composition api element"
+    },
+    "script-ts-composition": {
+        "prefix": "scriptTsSetup",
+        "body": [
+            "<script setup lang=\"ts\">",
+            "\t$0",
+            "</script>"
+        ],
+        "description": "script setup vue with lang ts composition api element"
+    },
     "styleLang": {
         "prefix": "styleLang",
         "body": [
@@ -29,5 +47,14 @@
             "</style>"
         ],
         "description": "style element with lang attribute"
+    },
+    "styleScoped": {
+        "prefix": "styleScoped",
+        "body": [
+            "<style scoped>",
+            "\t$0",
+            "</style>"
+        ],
+        "description": "style scoped vue attribute"
     }
 }
