@@ -162,14 +162,18 @@
     "defineComponent": {
         "prefix": "defineComponent",
         "body": [
-            "const $1 = defineComponent($0)"
+            "const $1 = defineComponent({",
+            "$0",
+            "})"
         ],
         "description": "create a component vue component"
     },
     "defineCustomElement": {
         "prefix": "defineCustomElement",
         "body": [
-            "const $1 = defineCustomElement($0)"
+            "const $1 = defineCustomElement({",
+            "$0",
+            "})"
         ],
         "description": "create a custom element vue"
     },
