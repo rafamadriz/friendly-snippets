@@ -213,7 +213,7 @@
         "description": "A list/hash of attributes that are exposed to accept data from the parent component. "
     },
     "props-composition": {
-        "prefix": "dprop",
+        "prefix": "dpropVue",
         "body": [
             "const props = defineProps({",
            "$0",
@@ -222,7 +222,7 @@
         "description": "A list/hash of attributes that are exposed to accept data from the parent component. "
     },    
     "emits-composition": {
-        "prefix": "demit",
+        "prefix": "emitsVue",
         "body": [
             "const emits = defineEmits([ $0 ]);"
         ],
@@ -252,7 +252,7 @@
         "description": "Computed properties to be mixed into the Vue instance. "
     },
     "computed-composition": {
-        "prefix": "comp",
+        "prefix": "computedVue",
         "body": [
             "const $1 = computed(() => {",
             "$0",
@@ -261,35 +261,35 @@
         "description": "Computed properties to be mixed into the Vue instance. "
     }, 
     "reactive-composition": {
-        "prefix": "react",
+        "prefix": "reactVue",
         "body": [
             "const $1 = reactive($0)"
         ],
         "description": "Reative properties to be mixed into the Vue instance. "
     },
     "shallow-reactive-composition": {
-        "prefix": "sreact",
+        "prefix": "sreactVue",
         "body": [
             "const $1 = shallowReactive({$0})"
         ],
         "description": "Shallow reative properties to be mixed into the Vue instance. "
     },
     "ref-composition": {
-        "prefix": "rf",
+        "prefix": "rfVue",
         "body": [
             "const $1 = ref($0)"
         ],
         "description": "Ref properties to be mixed into the Vue instance. "
     },
     "template-ref-ts-composition": {
-        "prefix": "trf",
+        "prefix": "trfVue",
         "body": [
             "const $0 = ref<HTMLInputElement | null>(null)"
         ],
         "description": "Template ref to be mixed into the Vue instance. "
     },
     "component-ref-ts-composition": {
-        "prefix": "crf",
+        "prefix": "crfVue",
         "body": [
             "const $1 = ref<InstanceType<typeof $0> | null>(null)"
         ],
