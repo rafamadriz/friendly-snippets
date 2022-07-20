@@ -150,8 +150,8 @@
         ],
         "description": "Vue.component( id, [definition] )"
     }, 
-    "async-component": {
-        "prefix": "acomp",
+    "defineAsyncComponent": {
+        "prefix": "defineAsyncComponent",
         "body": [
             "const $1 = defineAsyncComponent(() =>",
             "import('$0')",
@@ -159,7 +159,25 @@
         ],
         "description": "create a async vue component"
     },
-    "use": {
+    "defineComponent": {
+        "prefix": "defineComponent",
+        "body": [
+            "const $1 = defineComponent({",
+            "$0",
+            "})"
+        ],
+        "description": "create a component vue component"
+    },
+    "defineCustomElement": {
+        "prefix": "defineCustomElement",
+        "body": [
+            "const $1 = defineCustomElement({",
+            "$0",
+            "})"
+        ],
+        "description": "create a custom element vue"
+    },
+    "Vueuse": {
         "prefix": "VueUse",
         "body": [
             "Vue.use(${1:plugin})$0"
@@ -1228,5 +1246,218 @@
             "},"
         ],
         "description": "Type: Function."
+    },
+    "click": {
+        "prefix": "click",
+        "body": [
+            "click"
+        ],
+        "description": "just a word"
+    },
+    "submit": {
+        "prefix": "submit",
+        "body": [
+            "submit"
+        ],
+        "description": "just a word"
+    },
+    "mouse": {
+        "prefix": "mouse",
+        "body": [
+            "mouse"
+        ],
+        "description": "just a word"
+    },
+    "scroll": {
+        "prefix": "scroll",
+        "body": [
+            "scroll"
+        ],
+        "description": "just a word"
+    },
+    "keyup": {
+        "prefix": "keyup",
+        "body": [
+            "keyup"
+        ],
+        "description": "just a word"
+    },
+    "enter": {
+        "prefix": "enter",
+        "body": [
+            "enter"
+        ],
+        "description": "just a word"
+    },
+    "page-down": {
+        "prefix": "page-down",
+        "body": [
+            "page-down"
+        ],
+        "description": "just a word"
+    },
+    "stop": {
+        "prefix": "stop",
+        "body": [
+            "stop"
+        ],
+        "description": "just a word"
+    },
+    "prevent": {
+        "prefix": "prevent",
+        "body": [
+            "prevent"
+        ],
+        "description": "just a word"
+    },
+    "self": {
+        "prefix": "self",
+        "body": [
+            "self"
+        ],
+        "description": "just a word"
+    },
+    "capture": {
+        "prefix": "capture",
+        "body": [
+            "capture"
+        ],
+        "description": "just a word"
+    },
+    "once": {
+        "prefix": "once",
+        "body": [
+            "once"
+        ],
+        "description": "just a word"
+    },
+    "passive": {
+        "prefix": "passive",
+        "body": [
+            "passive"
+        ],
+        "description": "just a word"
+    },
+    "importPinia": {
+        "prefix": "importPinia",
+        "body": [
+            "<import $1 from 'pinia'>",
+            "$0"
+        ],
+        "description": "import store from 'pinia'"
+    },
+    "exportConst": {
+        "prefix": "exportConst",
+        "body": [
+            "export const $1 = $0"
+        ],
+        "description": "export variable const"
+    },
+    "defineStorePinia": {
+        "prefix": "defineStorePinia",
+        "body": [
+            "defineStore('$1',{",
+            "\t$0",
+            "})"
+        ],
+        "description": "defineStore from pinia"
+    },
+    "statePinia": {
+        "prefix": "statePinia",
+        "body": [
+            "state: () => ({",
+            "\t$0",
+            "}),"
+        ],
+        "description": "state from pinia"
+    },
+    "gettersPinia": {
+        "prefix": "gettersPinia",
+        "body": [
+            "getters: {",
+            "\t$0",
+            "},"
+        ],
+        "description": "getters from pinia"
+    },
+    "actionsPinia": {
+        "prefix": "actionsPinia",
+        "body": [
+            "actions: {",
+            "\t$0",
+            "},"
+        ],
+        "description": "actions from pinia"
+    },
+    "$patchPinia1": {
+        "prefix": "$patchPinia1",
+        "body": [
+            "$patch({",
+            "\t$0",
+            "})"
+        ],
+        "description": "the $patch method. It allows you to apply multiple changes at the same time with a partial state object"
+    },
+    "$patchPinia2": {
+        "prefix": "$patchPinia2",
+        "body": [
+            "$patch(($1) => {",
+            "\t$0",
+            "})"
+        ],
+        "description": "the $patch method also accepts a function to group this kind of mutations that are difficult to apply with a patch object"
+    },
+    "$subscribePinia": {
+        "prefix": "$subscribePinia",
+        "body": [
+            "$subscribe(($1, $2) => {",
+            "\t$0",
+            "}),"
+        ],
+        "description": "$subscribing from pinia"
+    },
+    "pinia.use": {
+        "prefix": "pinia.use",
+        "body": [
+            "pinia.use($1)",
+            "$0"
+        ],
+        "description": "Adds a store plugin to extend every store"
+    },
+    "pinia.install": {
+        "prefix": "pinia.install",
+        "body": [
+            "pinia.install($1)",
+            "$0"
+        ],
+        "description": "pinia.install"
+    },
+    "pinia.state": {
+        "prefix": "pinia.state",
+        "body": [
+            "pinia.state($1)",
+            "$0" 
+        ],
+        "description": "pinia.state"
+    },
+    "onRenderTriggered-composition": {
+        "prefix": "onRenderTriggered",
+        "body": ["onRenderTriggered(() => {$0})"],
+        "description": "Vue onRenderTriggered lifecycle hook"
+    },
+    "onErrorCaptured-composition": {
+        "prefix": "onErrorCaptured",
+        "body": ["onErrorCaptured(() => {$0})"],
+        "description": "Vue oneErrorCaptured lifecycle hook"
+    },
+    "onRenderTracked-composition": {
+        "prefix": "onRenderTracked",
+        "body": ["onRenderTracked(() => {$0})"],
+        "description": "Vue onRenderTracked lifecycle hook"
+    },
+    "onServerPrefetch-compositionSSR": {
+        "prefix": "onServerPrefetch",
+        "body": ["onServerPrefetch(() => {$0})"],
+        "description": "Vue onServerPrefetch lifecycle hook SSR Only"
     }
 }
