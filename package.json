@@ -201,8 +201,16 @@
         "path": "./snippets/javascript/react-native.json"
       },
       {
+        "language": "javascriptreact",
+        "path": "./snippets/javascript/next.json"
+      },
+      {
         "language": "typescriptreact",
         "path": "./snippets/javascript/react-ts.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/javascript/next-ts.json"
       },
       {
         "language": "typescriptreact",
