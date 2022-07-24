@@ -104,6 +104,22 @@
         ],
         "description": "Vue.nextTick( callback, [context] )"
     },
+    "nextTick-composition": {
+        "prefix": "nextTickVue3",
+        "body": [
+            "nextTick({",
+            "\t$1",
+            "})"
+        ],
+        "description": "A utility for waiting for the next DOM update flush."
+    },
+    "nextTick-word": {
+        "prefix": "nextTick",
+        "body": [
+            "nextTick()"
+        ],
+        "description": "just a word"
+    },
     "nextTickThen": {
         "prefix": "VueNextTickThen",
         "body": [
