@@ -73,13 +73,6 @@
         ],
         "description": "Expects: Function | Inline Statement"
     },
-    "v-on-shortcut": {
-        "prefix": "@",
-        "body": [
-            "@${1:event}=\"${2:handle}\""
-        ],
-        "description": "v-on shortcut from vue 3"
-    },
     "v-bind": {
         "prefix": "vBind",
         "body": [
