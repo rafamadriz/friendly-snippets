@@ -87,6 +87,10 @@
         "path": "./snippets/php.json"
       },
       {
+        "language": "quarto",
+        "path": "./snippets/quarto.json"
+      },
+      {
         "language": "rescript",
         "path": "./snippets/rescript.json"
       },
