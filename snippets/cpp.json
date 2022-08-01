@@ -19,7 +19,7 @@
   },
   "do": {
     "prefix": "do",
-    "body": ["do", "{", "\t$1", "} while($2);"],
+    "body": ["do", "{", "\t$0", "} while($1);"],
     "description": "Code snippet for do...while loop"
   },
   "while": {
