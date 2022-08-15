@@ -34,17 +34,17 @@
   },
   "if": {
     "prefix": "if",
-    "body": ["if ($1)", "{", "\t$0", "}"],
+    "body": ["if ($1) {", "\t$0", "}"],
     "description": "Code snippet for if statement"
   },
   "else": {
     "prefix": "else",
-    "body": ["else", "{", "\t$0", "}"],
+    "body": ["else {", "\t$0", "}"],
     "description": "Code snippet for else statement"
   },
   "else if": {
     "prefix": "else if",
-    "body": ["else if ($1)", "{", "\t$0", "}"],
+    "body": ["else if ($1) {", "\t$0", "}"],
     "description": "Code snippet for else-if statement"
   },
   "enum": {
@@ -83,6 +83,37 @@
       "}"
     ],
     "description": "Code snippet for class"
+  },
+  "eclass": {
+    "prefix": "eclass",
+    "body": [
+      "class ${1:MyClass}",
+      "{",
+      "public:",
+      "\t$2",
+      "private:",
+      "\t$3",
+      "};",
+      "",
+    ],
+    "description": "Code snippet for empty class"
+  },
+  "qclass": {
+    "prefix": "qclass",
+    "body": [
+      "class ${1:MyClass} : public QObject",
+      "{",
+      "\tQ_OBJECT;",
+      "public:",
+      "\nexplicit $1(QObject *parent = nullptr);",
+      "\t$2",
+      "signals:",
+      "",
+      "public slots:"
+      "};",
+      "",
+    ],
+    "description": "Code snippet for empty Qt class"
   },
   "classi": {
     "prefix": "classi",
@@ -140,12 +171,10 @@
   "try": {
     "prefix": "try",
     "body": [
-      "try",
-      "{",
+      "try {",
       "\t",
       "}",
-      "catch (const std::exception&)",
-      "{",
+      "catch (const std::exception&) {",
       "\t$1",
       "}"
     ],
