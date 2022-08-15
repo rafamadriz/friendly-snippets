@@ -1,60 +1,312 @@
 {
-    "templateLang": {
-        "prefix": "templateLang",
-        "body": [
-            "<template lang=\"$1\">",
-            "\t<div$2>",
-            "\t\t$0",
-            "\t</div>",
-            "</template>"
-        ],
-        "description": "template element"
-    },
-    "script": {
-        "prefix": "script",
-        "body": [
-            "<script>",
-            "export default {",
-            "\t$0",
-            "}",
-            "</script>"
-        ],
-        "description": "script element"
-    },
-     "script-composition": {
-        "prefix": "scriptSetup",
-        "body": [
-            "<script setup>",
-            "\t$0",
-            "</script>"
-        ],
-        "description": "script setup vue composition api element"
-    },
-    "script-ts-composition": {
-        "prefix": "scriptTsSetup",
-        "body": [
-            "<script setup lang=\"ts\">",
-            "\t$0",
-            "</script>"
-        ],
-        "description": "script setup vue with lang ts composition api element"
-    },
-    "styleLang": {
-        "prefix": "styleLang",
-        "body": [
-            "<style lang=\"$1\">",
-            "\t$0",
-            "</style>"
-        ],
-        "description": "style element with lang attribute"
-    },
-    "styleScoped": {
-        "prefix": "styleScoped",
-        "body": [
-            "<style scoped>",
-            "\t$0",
-            "</style>"
-        ],
-        "description": "style scoped vue attribute"
-    }
+  "templateLang": {
+    "prefix": "templateLang",
+    "body": [
+      "<template lang=\"$1\">",
+      "\t<div$2>",
+      "\t\t$0",
+      "\t</div>",
+      "</template>"
+    ],
+    "description": "template element"
+  },
+  "script": {
+    "prefix": "script",
+    "body": ["<script>", "export default {", "\t$0", "}", "</script>"],
+    "description": "script element"
+  },
+  "script-composition": {
+    "prefix": "scriptSetup",
+    "body": ["<script setup>", "\t$0", "</script>"],
+    "description": "script setup vue composition api element"
+  },
+  "script-ts-composition": {
+    "prefix": "scriptTsSetup",
+    "body": ["<script setup lang=\"ts\">", "\t$0", "</script>"],
+    "description": "script setup vue with lang ts composition api element"
+  },
+  "styleLang": {
+    "prefix": "styleLang",
+    "body": ["<style lang=\"$1\">", "\t$0", "</style>"],
+    "description": "style element with lang attribute"
+  },
+  "styleScoped": {
+    "prefix": "styleScoped",
+    "body": ["<style scoped>", "\t$0", "</style>"],
+    "description": "style scoped vue attribute"
+  },
+
+  "Vue Single File Component": {
+    "prefix": "vbase",
+    "body": [
+      "<template>",
+      "\t<div>",
+      "",
+      "\t</div>",
+      "</template>",
+      "",
+      "<script>",
+      "\texport default {",
+      "\t\tname:\"$TM_FILENAME_BASE\",",
+      "\t\t${0}",
+      "\t}",
+      "</script>",
+      "",
+      "<style lang=\"scss\" scoped>",
+      "",
+      "</style>"
+    ],
+    "description": "Base for Vue File with SCSS"
+  },
+  "Vue Single File Component with SASS": {
+    "prefix": "vbase-sass",
+    "body": [
+      "<template>",
+      "\t<div>",
+      "",
+      "\t</div>",
+      "</template>",
+      "",
+      "<script>",
+      "\texport default {",
+      "\t\tname:\"$TM_FILENAME_BASE\",",
+      "\t\t${0}",
+      "\t}",
+      "</script>",
+      "",
+      "<style lang=\"sass\" scoped>",
+      "",
+      "</style>"
+    ],
+    "description": "Base for Vue File with PostCSS"
+  },
+  "Vue Single File Component with LESS": {
+    "prefix": "vbase-less",
+    "body": [
+      "<template>",
+      "\t<div>",
+      "",
+      "\t</div>",
+      "</template>",
+      "",
+      "<script>",
+      "\texport default {",
+      "\t\tname:\"$TM_FILENAME_BASE\",",
+      "\t\t${0}",
+      "\t}",
+      "</script>",
+      "",
+      "<style lang=\"less\" scoped>",
+      "",
+      "</style>"
+    ],
+    "description": "Base for Vue File with PostCSS"
+  },
+  "Vue Single File Component with Css": {
+    "prefix": "vbase-css",
+    "body": [
+      "<template>",
+      "\t<div>",
+      "",
+      "\t</div>",
+      "</template>",
+      "",
+      "<script>",
+      "\texport default {",
+      "\t\t${0}",
+      "\t}",
+      "</script>",
+      "",
+      "<style scoped>",
+      "",
+      "</style>"
+    ],
+    "description": "Base for Vue File with CSS"
+  },
+  "Vue Single File Component with Typescript": {
+    "prefix": "vbase-ts",
+    "body": [
+      "<template>",
+      "\t<div>",
+      "",
+      "\t</div>",
+      "</template>",
+      "",
+      "<script lang=\"ts\">",
+      "\timport Vue from 'vue'",
+      "",
+      "\texport default Vue.extend({",
+      "\t\tname:\"$TM_FILENAME_BASE\",",
+      "\t\t${0}",
+      "\t})",
+      "</script>",
+      "",
+      "<style scoped>",
+      "",
+      "</style>"
+    ],
+    "description": "Base for Vue File with Typescript"
+  },
+  "Vue Single File Component with No Style": {
+    "prefix": "vbase-ns",
+    "body": [
+      "<template>",
+      "\t<div>",
+      "",
+      "\t</div>",
+      "</template>",
+      "",
+      "<script>",
+      "\texport default {",
+      "\t\tname:\"$TM_FILENAME_BASE\",",
+      "\t\t${0}",
+      "\t}",
+      "</script>"
+    ],
+    "description": "Base for Vue File with no styles"
+  },
+  "Vue Single File Component Composition API": {
+    "prefix": "vbase-3",
+    "body": [
+      "<template>",
+      "\t<div>",
+      "",
+      "\t</div>",
+      "</template>",
+      "",
+      "<script>",
+      "export default {",
+      "\tsetup () {",
+      "\t\t${0}",
+      "",
+      "\t\treturn {}",
+      "\t}",
+      "}",
+      "</script>",
+      "",
+      "<style lang=\"scss\" scoped>",
+      "",
+      "</style>"
+    ],
+    "description": "Base for Vue File Composition API with SCSS"
+  },
+  "Vue Single File Component Setup Composition API": {
+    "prefix": "vbase-3-setup",
+    "body": [
+      "<template>",
+      "\t<div>",
+      "",
+      "\t</div>",
+      "</template>",
+      "",
+      "<script setup>",
+      "",
+      "</script>",
+      "",
+      "<style lang=\"scss\" scoped>",
+      "",
+      "</style>"
+    ],
+    "description": "Base for Vue File Setup Composition API with SCSS"
+  },
+  "Vue Single File Component Composition API Reactive": {
+    "prefix": "vbase-3-reactive",
+    "body": [
+      "<template>",
+      "\t<div>",
+      "",
+      "\t</div>",
+      "</template>",
+      "",
+      "<script>",
+      "import { reactive, toRefs } from 'vue'",
+      "",
+      "export default {",
+      "\tsetup () {",
+      "\t\tconst state = reactive({",
+      "\t\t\t${0:count}: ${1:0},",
+      "\t\t})",
+      "\t",
+      "\t\treturn {",
+      "\t\t\t...toRefs(state),",
+      "\t\t}",
+      "\t}",
+      "}",
+      "</script>",
+      "",
+      "<style lang=\"scss\" scoped>",
+      "",
+      "</style>"
+    ],
+    "description": "Base for Vue File Composition API with SCSS"
+  },
+  "Vue Single File Component Composition API with Typescript": {
+    "prefix": "vbase-3-ts",
+    "body": [
+      "<template>",
+      "\t<div>",
+      "",
+      "\t</div>",
+      "</template>",
+      "",
+      "<script lang=\"ts\">",
+      "import { defineComponent } from 'vue'",
+      "",
+      "export default defineComponent({",
+      "\tsetup () {",
+      "\t\t${0}\n",
+      "\t\treturn {}",
+      "\t}",
+      "})",
+      "</script>",
+      "",
+      "<style scoped>",
+      "",
+      "</style>"
+    ],
+    "description": "Base for Vue File Composition API - Typescript"
+  },
+  "Vue Single File Component Setup Composition API with Typescript": {
+    "prefix": "vbase-3-ts-setup",
+    "body": [
+      "<template>",
+      "\t<div>",
+      "",
+      "\t</div>",
+      "</template>",
+      "",
+      "<script setup lang=\"ts\">",
+      "",
+      "</script>",
+      "",
+      "<style scoped>",
+      "",
+      "</style>"
+    ],
+    "description": "Base for Vue File Setup Composition API - Typescript"
+  },
+  "Vue Single File Component with Class based Typescript format": {
+    "prefix": "vbase-ts-class",
+    "body": [
+      "<template>",
+      "\t<div>",
+      "",
+      "\t</div>",
+      "</template>",
+      "",
+      "<script lang=\"ts\">",
+      "\timport { Component, Vue } from 'vue-property-decorator';",
+      "",
+      "\t@Component",
+      "\texport default class $TM_FILENAME_BASE extends Vue {",
+      "\t\t",
+      "\t}",
+      "</script>",
+      "",
+      "<style scoped>",
+      "",
+      "</style>"
+    ],
+    "description": "Base for Vue File with Class based Typescript format"
+  }
 }
