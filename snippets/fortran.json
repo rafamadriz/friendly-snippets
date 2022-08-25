@@ -213,7 +213,7 @@
 	},
 	"interf": {
 		"prefix": "interf",
-		"body": "interface ${1:name}\n\t$0\nend interface ! $1",
+		"body": "interface ${1:name}\n\t$0\nend interface $1",
 		"description": "interface",
 		"scope": "source.fortran"
 	},
