@@ -459,7 +459,7 @@
 	},
 	"sub": {
 		"prefix": "sub",
-		"body": "subroutine ${1:name}\n\t${2:argument type}, intent(${3:inout}) :: ${1/\\w+\\((.*)\\)|.*/$1/}\n\t$0\nend subroutine ${1/(\\w+).*/$1/}",
+		"body": "subroutine ${1:name}(${2:input})\n\t${3:argument type}, intent(${4:inout}) :: ${2/\\w+\\((.*)\\)|.*/$2/}\n\t$0\nend subroutine ${1/(\\w+).*/$1/}",
 		"description": "subroutine",
 		"scope": "source.fortran"
 	},
