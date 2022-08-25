@@ -505,16 +505,16 @@
 		"description": "Write",
 		"scope": "source.fortran"
 	},
-	"F": {
-		"prefix": "F",
-		"body": ".FALSE.",
-		"description": ".FALSE.",
+	"fal": {
+		"prefix": "fal",
+		"body": ".false.",
+		"description": ".false.",
 		"scope": "source.fortran"
 	},
-	"T": {
-		"prefix": "T",
-		"body": ".TRUE.",
-		"description": ".TRUE.",
+	"tr": {
+		"prefix": "tr",
+		"body": ".true.",
+		"description": ".true.",
 		"scope": "source.fortran"
 	}
 }
