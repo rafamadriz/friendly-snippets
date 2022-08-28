@@ -401,6 +401,10 @@
       {
         "language": "verilog",
         "path": "./snippets/verilog.json"
+      },
+      {
+        "language": "dockerfile",
+        "path": "./snippets/docker/dockerfile.json"
       }
     ]
   }
