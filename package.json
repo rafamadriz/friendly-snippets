@@ -383,6 +383,10 @@
         "path": "./snippets/kubernetes.json"
       },
       {
+        "language": "yaml",
+        "path": "./snippets/docker/docker-compose.json"
+      },
+      {
         "language": "make",
         "path": "./snippets/make.json"
       },
