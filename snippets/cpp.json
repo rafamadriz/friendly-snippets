@@ -94,7 +94,7 @@
       "private:",
       "\t$3",
       "};",
-      "",
+      ""
     ],
     "description": "Code snippet for empty class"
   },
@@ -109,9 +109,9 @@
       "\t$2",
       "signals:",
       "",
-      "public slots:"
+      "public slots:",
       "};",
-      "",
+      ""
     ],
     "description": "Code snippet for empty Qt class"
   },
