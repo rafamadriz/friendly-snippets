@@ -94,7 +94,7 @@
         "prefix": "fu",
         "body": [
             "function ${1:name}($2)",
-            "\t${3:-- code}",
+            "\t${0:-- code}",
             "end"
         ]
     },
