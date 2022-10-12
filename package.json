@@ -408,7 +408,7 @@
       },
       {
         "language": "dockerfile",
-        "path": "./snippets/docker/dockerfile.json"
+        "path": "./snippets/docker/docker_file.json"
       }
     ]
   }
