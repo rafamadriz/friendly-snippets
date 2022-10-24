@@ -294,7 +294,10 @@
         "path": "./snippets/frameworks/django/views.json"
       },
       {
-        "language": "djangohtml",
+        "language": [
+          "djangohtml", 
+          "htmldjango"
+        ],
         "path": "./snippets/frameworks/djangohtml.json"
       },
       {
