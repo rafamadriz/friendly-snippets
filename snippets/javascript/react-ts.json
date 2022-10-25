@@ -321,7 +321,7 @@
   "useRef": {
     "prefix": "ur",
     "body": ["const ${1:elName}El = useRef(null)$0"],
-    "description": "React useContext() hook"
+    "description": "React useRef() hook"
   },
   "useCallback": {
     "prefix": "ucb",
