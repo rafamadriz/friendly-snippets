@@ -294,7 +294,10 @@
         "path": "./snippets/frameworks/django/views.json"
       },
       {
-        "language": "djangohtml",
+        "language": [
+          "djangohtml", 
+          "htmldjango"
+        ],
         "path": "./snippets/frameworks/djangohtml.json"
       },
       {
@@ -383,6 +386,10 @@
         "path": "./snippets/kubernetes.json"
       },
       {
+        "language": "yaml",
+        "path": "./snippets/docker/docker-compose.json"
+      },
+      {
         "language": "make",
         "path": "./snippets/make.json"
       },
@@ -401,6 +408,10 @@
       {
         "language": "verilog",
         "path": "./snippets/verilog.json"
+      },
+      {
+        "language": "dockerfile",
+        "path": "./snippets/docker/docker_file.json"
       }
     ]
   }

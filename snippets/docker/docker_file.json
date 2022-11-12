@@ -1,0 +1,74 @@
+{
+  "FROM": {
+    "prefix": "F",
+    "body": "FROM ${1:ubuntu}"
+  },
+  "Label maintainer": {
+    "prefix": "m",
+    "body": "LABEL maintainer=\"${1:name}\""
+  },
+  "RUN": {
+    "prefix": "R",
+    "body": ["RUN ${1:command}"]
+  },
+
+  "CMD": {
+    "prefix": "C",
+    "body": ["CMD ${1:command}"]
+  },
+
+  "COPY": {
+    "prefix": "cp",
+    "body": ["COPY ${1:src} ${2:dest}"]
+  },
+
+  "EXPOSE": {
+    "prefix": "exp",
+    "body": ["EXPOSE ${1:port}"]
+  },
+  "ENV": {
+    "prefix": "env",
+    "body": ["ENV ${1:key} ${2: value}"]
+  },
+  "ADD": {
+    "prefix": "a",
+    "body": ["ADD ${1:src} ${2:dst}"]
+  },
+  "ENTRYPOINT": {
+    "prefix": "ent",
+    "body": "ENTRYPOINT ${1:command}"
+  },
+  "VOLUME": {
+    "prefix": "v",
+    "body": "VOLUME [\"${1:path}\"]"
+  },
+  "USER": {
+    "prefix": "u",
+    "body": "USER ${1:name}"
+  },
+  "WORKDIR": {
+    "prefix": "w",
+    "body": "WORKDIR ${1:name}"
+  },
+  "Update Packages": {
+    "prefix": "upd",
+    "body": [
+      "RUN echo \"deb http://archive.ubuntu.com/ubuntu ${1:precise} main universe\" > /etc/apt/sources.list; \\",
+      "apt-get update && apt-get -y upgrade; \\ ",
+      "${2}; \\",
+      "rm -rf /var/lib/apt/lists/*"
+    ]
+  },
+  "HEAD": {
+    "prefix": "head",
+    "body": ["# ${1:description}", "#  ", "# VERSION ${2:0.1.0}", "${3}"]
+  },
+  "ONBUILD": {
+    "prefix": "o",
+    "body": "ONBUILD ${1}"
+  },
+  "LABEL": {
+    "prefix": "L",
+    "body": "LABEL ${1:label}=\"${2:value}\""
+  }
+}
