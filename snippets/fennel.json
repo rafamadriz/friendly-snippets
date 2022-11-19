@@ -1,42 +1,42 @@
 {
   "fn": {
     "prefix": "fn",
-    "body": "fn ${1:name} [${2:params}]\n   )",
+    "body": "(fn ${1:name} [${2:params}]\n   )",
     "description": "Create a function"
   },
   "let": {
     "prefix": "let",
-    "body": "let [${1:name} ${2:value}])",
+    "body": "(let [${1:name} ${2:value}])",
     "description": "Create a variable"
   },
   "while": {
     "prefix": "while",
-    "body": "while (${1:condition})\n($0))",
+    "body": "(while (${1:condition})\n($0))",
     "description": "Create a while loop"
   },
   "var": {
     "prefix": "var",
-    "body": "var ${1:name} ${2:value})",
+    "body": "(var ${1:name} ${2:value})",
     "description": "Create a variable with var"
   },
   "local": {
     "prefix": "local",
-    "body": "local ${1:name} ${2:value})",
+    "body": "(local ${1:name} ${2:value})",
     "description": "Create a variable with local"
   },
   "for": {
     "prefix": "for",
-    "body": "for [i 1 10]\n($0))",
+    "body": "(for [i 1 10]\n($0))",
     "description": "Create a for loop"
   },
   "global": {
     "prefix": "global",
-    "body": "global $0)",
+    "body": "(global $0)",
     "description": "Create a global"
   },
   "require": {
     "prefix": "require",
-    "body": "require :${1:module})",
+    "body": "(require :${1:module})",
     "description": "Require a module"
   },
   "create a table": {
