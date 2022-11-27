@@ -39,7 +39,7 @@
         "body": [
             "${1:className} = {}\n",
             "$1.${2:new} = function($3)",
-            "\tlocal ${4:varName} = ${5:{}}\n",
+            "\tlocal ${4:varName} = ${5:value}\n",
             "\t${6: --code}\n",
             "\treturn $4",
             "end"
