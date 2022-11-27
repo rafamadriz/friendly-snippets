@@ -311,7 +311,7 @@
     "ref-composition": {
         "prefix": "rfVue",
         "body": [
-            "const $1 = ref($0)"
+            "const $1 = ref($2)", "$0"
         ],
         "description": "Ref properties to be mixed into the Vue instance. "
     },
@@ -648,6 +648,13 @@
             "model"
         ],
         "description": "just a word"
+    },
+    "value": {
+        "prefix": "value",
+        "body": [
+            "value"
+        ],
+        "description": "'this' change to 'value' using ref vuejs"
     },
     "inheritAttrs": {
         "prefix": "inheritAttrs",
