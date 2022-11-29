@@ -4,7 +4,7 @@
 		"description": "autoescape tag django template",
 		"body": [
 			"{% autoescape ${off} %}",
-			"  ",
+			"$2",
 			"{% autoescape %}"
 		]
 	},
@@ -13,7 +13,7 @@
 		"description": "block tag django template",
 		"body": [
 			"{% block ${blockname} %}",
-			"  ",
+			"$2",
 			"{% endblock ${blockname} %}"
 		]
 	},
@@ -66,7 +66,7 @@
 		"description": "filter tag django template",
 		"body": [
 			"{% filter $1 %}",
-			"  ",
+			"$2",
 			"{% endfilter %}"
 		]
 	},
@@ -81,8 +81,8 @@
 		"prefix": "for",
 		"description": "for tag django template",
 		"body": [
-			"{% for $1 in  %}",
-			"  ",
+			"{% for $1 in $2 %}",
+			"$3",
 			"{% endfor %}"
 		]
 	},
@@ -90,10 +90,10 @@
 		"prefix": "fore",
 		"description": "foreach with empty tag django template",
 		"body": [
-			"{% for $1 in  %}",
-			"  ",
+			"{% for $1 in $2 %}",
+			"$3",
 			"{% empty %}",
-			"  ",
+			"$4",
 			"{% endfor %}"
 		]
 	},
@@ -102,7 +102,7 @@
 		"description": "if tag django template",
 		"body": [
 			"{% if $1 %}",
-			"  ",
+			"$2",
 			"{% endif %}"
 		]
 	},
@@ -111,7 +111,7 @@
 		"description": "ifchanged tag django template",
 		"body": [
 			"{% ifchanged $1 %}",
-			"  ",
+			"$2",
 			"{% endifchanged %}"
 		]
 	},
@@ -120,9 +120,9 @@
 		"description": "if else tag django template",
 		"body": [
 			"{% if $1 %}",
-			"  ",
+			"$2",
 			"{% else %}",
-			"  ",
+			"$3",
 			"{% endif %}",
 			""
 		]
@@ -132,9 +132,9 @@
 		"description": "if else tag django template",
 		"body": [
 			"{% if $1 %}",
-			"  ",
+			"$2",
 			"{% else %}",
-			"  ",
+			"$3",
 			"{% endif %}",
 			""
 		]
@@ -144,7 +144,7 @@
 		"description": "ifequal tag django template",
 		"body": [
 			"{% ifequal $1 %}",
-			"  ",
+			"$2",
 			"{% endifequal %}"
 		]
 	},
@@ -153,7 +153,7 @@
 		"description": "ifequal tag django template",
 		"body": [
 			"{% ifequal $1 %}",
-			"  ",
+			"$2",
 			"{% endifequal %}"
 		]
 	},
@@ -162,7 +162,7 @@
 		"description": "ifnotequal tag django template",
 		"body": [
 			"{% ifnotequal $1 %}",
-			"  ",
+			"$2",
 			"{% ifnotequal %}"
 		]
 	},
@@ -198,7 +198,7 @@
 		"prefix": "regroup",
 		"description": "regroup tag django template",
 		"body": [
-			"{% regroup $1 by  as  %}"
+			"{% regroup $1 by $2 as $3 %}"
 		]
 	},
 	"spaceless": {
@@ -258,8 +258,8 @@
 		"prefix": "with",
 		"description": "with tag django template",
 		"body": [
-			"{% with $1 as  %}",
-			"  ",
+			"{% with $1 as $2 %}",
+			"$3",
 			"{% endwith %}"
 		]
 	},
