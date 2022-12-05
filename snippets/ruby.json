@@ -92,7 +92,7 @@
 		]
 	},
 	"if elsif": {
-		"prefix": "if elsif",
+		"prefix": "ifei",
 		"body": [
 			"if ${1:test}",
 			"\t$0",
@@ -102,7 +102,7 @@
 		]
 	},
 	"if elsif else": {
-		"prefix": "if elsif else",
+		"prefix": "ifee",
 		"body": [
 			"if ${1:test}",
 			"\t$0",
