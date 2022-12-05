@@ -82,7 +82,7 @@
 		]
 	},
 	"if else": {
-		"prefix": "if else",
+		"prefix": "ife",
 		"body": [
 			"if ${1:test}",
 			"\t$0",
