@@ -21,20 +21,8 @@
 			"end"
 		]
 	},
-	"Exception block with else": {
-		"prefix": "begin else",
-		"body": [
-			"begin",
-			"\t$1",
-			"rescue => exception",
-			"\t",
-			"else",
-			"\t",
-			"end"
-		]
-	},
 	"Exception block with else and ensure": {
-		"prefix": "begin else ensure",
+		"prefix": "begin",
 		"body": [
 			"begin",
 			"\t$1",
