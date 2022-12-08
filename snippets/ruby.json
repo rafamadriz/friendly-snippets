@@ -21,20 +21,8 @@
 			"end"
 		]
 	},
-	"Exception block with else": {
-		"prefix": "begin else",
-		"body": [
-			"begin",
-			"\t$1",
-			"rescue => exception",
-			"\t",
-			"else",
-			"\t",
-			"end"
-		]
-	},
 	"Exception block with else and ensure": {
-		"prefix": "begin else ensure",
+		"prefix": "begin",
 		"body": [
 			"begin",
 			"\t$1",
@@ -82,7 +70,7 @@
 		]
 	},
 	"if else": {
-		"prefix": "if else",
+		"prefix": "ife",
 		"body": [
 			"if ${1:test}",
 			"\t$0",
@@ -92,7 +80,7 @@
 		]
 	},
 	"if elsif": {
-		"prefix": "if elsif",
+		"prefix": "ifei",
 		"body": [
 			"if ${1:test}",
 			"\t$0",
@@ -102,7 +90,7 @@
 		]
 	},
 	"if elsif else": {
-		"prefix": "if elsif else",
+		"prefix": "ifee",
 		"body": [
 			"if ${1:test}",
 			"\t$0",
