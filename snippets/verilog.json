@@ -60,8 +60,8 @@
     "description": "Always block"
   },
   "module block": {
-    "prefix": "mod",
-    "body": ["module ${1:FILENAME} (${2})", "\n\t${0}", "\nendmoudle"],
+    "prefix": "modu",
+    "body": ["module ${1:FILENAME} (\n\t${2}\n);", "\t${0}", "\nendmodule"],
     "description": "Module Block"
   },
   "for": {
