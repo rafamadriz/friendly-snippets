@@ -392,5 +392,13 @@
       "WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.",
       "See the Licence for the specific language governing permissions and limitations under the Licence."
     ]
+  },
+  "SPDX": {
+    "prefix": "spdx",
+    "description": "SPDX-style license header",
+    "body": [
+      "SPDX-License-Identifier: ${1:Id}",
+      "SPDX-FileCopyrightText: ${CURRENT_YEAR} ${2:Author}"
+    ]
   }
 }
