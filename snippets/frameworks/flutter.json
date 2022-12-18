@@ -3,7 +3,7 @@
         "prefix": "statelessW",
         "body": [
             "class ${1:name} extends StatelessWidget {",
-            "  const ${1:name}({Key? key}) : super(key: key);\n",
+            "  const ${1:name}({super.key});\n",
             "  @override",
             "  Widget build(BuildContext context) {",
             "    return Container(",
@@ -18,9 +18,9 @@
         "prefix": "statefulW",
         "body": [
             "class ${1:name} extends StatefulWidget {",
-            "  ${1:name}({Key? key}) : super(key: key);\n",
+            "  ${1:name}({super.key});\n",
             "  @override",
-            "  _${1:WidgetName}State createState() => _${1:WidgetName}State();",
+            "  State<${1:WidgetName}> createState() => _${1:WidgetName}State();",
             "}\n",
             "class _${1:index}State extends State<${1:index}> {",
             "  @override",
