@@ -295,7 +295,7 @@
       },
       {
         "language": [
-          "djangohtml", 
+          "djangohtml",
           "htmldjango"
         ],
         "path": "./snippets/frameworks/djangohtml.json"
@@ -412,6 +412,10 @@
       {
         "language": "dockerfile",
         "path": "./snippets/docker/docker_file.json"
+      },
+      {
+        "language": "edge",
+        "path": "./snippets/frameworks/edge.json"
       }
     ]
   }
