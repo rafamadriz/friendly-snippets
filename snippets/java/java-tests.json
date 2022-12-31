@@ -1,5 +1,5 @@
 {
-	"Imports for Tests with JUnit 4": {
+	"JUnit 4 - Imports for Tests": {
 		"prefix": "imports_junit4",
 		"body": [
 			"import static org.hamcrest.Matchers.*;",
@@ -15,7 +15,7 @@
 		],
 		"description": "Imports to write tests with JUnit 4, Mockito and Hamcrest"
 	},
-	"Imports for Tests with JUnit 5": {
+	"JUnit 5 - Imports for Tests": {
 		"prefix": "imports_junit5",
 		"body": [
 			"import static org.hamcrest.Matchers.*;",
@@ -172,12 +172,12 @@
 		"description": "Capture an argument given to a mocked method"
 	},
 	"JUnit 4 - Before each": {
-		"prefix": "test_before",
+		"prefix": "test_before_junit4",
 		"body": "@Before\npublic void setup() {\n\t${1}\n}",
 		"description": "Create setup method with `@Before`"
 	},
 	"JUnit 4 - After each": {
-		"prefix": "test_after",
+		"prefix": "test_after_junit4",
 		"body": "@After\npublic void tearDown() {\n\t${1}\n}",
 		"description": "Create tear down method with `@After`"
 	},
