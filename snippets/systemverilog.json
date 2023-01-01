@@ -1,0 +1,7 @@
+{
+  "uvm_macro_info":{
+    "prefix": "uvm_info",
+    "body": "`uvm_info(\"${1:$TM_FILENAME_BASE}\", \"${2:message}\", ${3|UVM_NONE,UVM_LOW,UVM_MEDIUM,UVM_HIGH,UVM_FULL,UVM_DEBUG|})\n$0",
+    "discription": "uvm_info macro",
+  }, 
+}
