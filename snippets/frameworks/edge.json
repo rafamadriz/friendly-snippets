@@ -1,99 +1,123 @@
 {
   "edge: Block": {
     "prefix": "block",
-    "body": ["{{ $1 }}"]
+    "body": ["{{ $1 }}"],
+    "description": "Edge: block tag"
   },
   "edge: Comment": {
     "prefix": "comment",
-    "body": ["{{-- $1 --}}"]
+    "body": ["{{-- $1 --}}"],
+    "description": "Edge: comment tag"
   },
   "edge: Conditional": {
     "prefix": "@if",
-    "body": ["@if($1)", "  $2", "@end"]
+    "body": ["@if($1)", "  $2", "@end"],
+    "description": "Edge: if tag accepts the expression to evaluate as the only argument."
   },
   "edge: Conditional with an else statement": {
     "prefix": "@ifelse",
-    "body": ["@if($1)", "  $2", "@else", "  $3", "@end"]
+    "body": ["@if($1)", "  $2", "@else", "  $3", "@end"],
+    "description": "Edge: if else tag accepts the expression to evaluate as the only argument."
   },
   "edge: Conditional with else and elseif statement": {
     "prefix": "@ifelseif",
-    "body": ["@if($1)", "  $2", "@elseif($3)", "  $4", "@else", "  $5", "@end"]
+    "body": ["@if($1)", "  $2", "@elseif($3)", "  $4", "@else", "  $5", "@end"],
+    "description": "Edge: if else tag"
   },
   "edge: Inverse conditional": {
     "prefix": "@unless",
-    "body": ["@unless($1)", "  $2", "@else", "  $3", "@end"]
+    "body": ["@unless($1)", "  $2", "@else", "  $3", "@end"],
+    "description": "Edge: unless tag inverse if statement."
   },
   "edge: for each loop with index": {
     "prefix": "@each-index",
-    "body": ["@each(${1:key}, ${2:value} in ${3:object})", "  $3", "@end"]
+    "body": ["@each(${1:key}, ${2:value} in ${3:object})", "  $3", "@end"],
+    "description": "Edge: each index tag with key value"
   },
   "edge: For Each Loop": {
     "prefix": "@each-in",
-    "body": ["@each(${1:item} in ${2:array})", "  $3", "@end"]
+    "body": ["@each(${1:item} in ${2:array})", "  $3", "@end"],
+    "description": "Edge: each in tag let you loop over an array or an object of values."
   },
   "edge: Component with body": {
     "prefix": "@component",
-    "body": ["@component('${1:name}')", "  $2", "@end"]
+    "body": ["@component('${1:name}')", "  $2", "@end"],
+    "description": "Edge: component tag allows you to use an Edge template as a component."
   },
   "edge: Inline component": {
     "prefix": "@!component",
-    "body": ["@!component('${1:name}')"]
+    "body": ["@!component('${1:name}')"],
+    "description": "Edge: inline component tag allows you to use an Edge template as a component."
   },
   "edge: Component slot": {
     "prefix": "@slot",
-    "body": ["@slot('${1:name}')", "  $2", "@end"]
+    "body": ["@slot('${1:name}')", "  $2", "@end"],
+    "description": "Edge: slot tag allows you define the markup for the named slots. It accepts the slot name as the first argument and can also receive additional arguments from the component template."
   },
   "edge: Inject": {
     "prefix": "@inject",
-    "body": ["@inject('${1:values}')"]
+    "body": ["@inject('${1:values}')"],
+    "description": "Edge: inject tag allows the component template to inject data into the component tree. The tag accepts an object as the only argument."
   },
   "edge: Include partial": {
     "prefix": "@include",
-    "body": ["@include('${1:name}')"]
+    "body": ["@include('${1:name}')"],
+    "description": "Edge: include tag allows you include a partial to a given template"
   },
   "edge: Include conditional partial": {
     "prefix": "@includeIf",
-    "body": ["@includeIf(${1:condition}, '${2:name}')"]
+    "body": ["@includeIf(${1:condition}, '${2:name}')"],
+    "description": "Edge: includeif tag to include a partial conditionally. The first argument is the condition to evaluate before including the partial."
   },
   "edge: Layout": {
     "prefix": "@layout",
-    "body": ["@layout('${1:name}')"]
+    "body": ["@layout('${1:name}')"],
+    "description": "Edge: layout tag allows you define the layout template for the current template."
   },
   "edge: Section block": {
     "prefix": "@section",
-    "body": ["@section('${1:name}')", "  $2", "@end"]
+    "body": ["@section('${1:name}')", "  $2", "@end"],
+    "description": "Edge: section tag use the layout must define all the markup inside the sections exported by the layout"
   },
   "edge: Inline section": {
     "prefix": "@!section",
-    "body": ["@!section('${1:name}')"]
+    "body": ["@!section('${1:name}')"],
+    "description": "Edge: section inline tag use the layout must define all the markup inside the sections exported by the layout"
   },
   "edge: Super": {
     "prefix": "@super",
-    "body": ["@super"]
+    "body": ["@super"],
+    "description": "Edge: super tag allows you to inherit the existing content of the section. It is an inline tag and does not accept any arguments."
   },
   "edge: Bouncer can guard": {
     "prefix": "@can",
-    "body": ["@can('${1:ability}', ${2:args})", "  $3", "@end"]
+    "body": ["@can('${1:ability}', ${2:args})", "  $3", "@end"],
+    "description": "Edge: can tag from @adonisjs/bouncer allows you write conditionals around the bouncer permissions."
   },
   "edge: Bouncer cannot guard": {
     "prefix": "@cannot",
-    "body": ["@cannot('${1:ability}', ${2:args})", "  $3", "@end"]
+    "body": ["@cannot('${1:ability}', ${2:args})", "  $3", "@end"],
+    "description": "Edge: cannot tag from @adonisjs/bouncer allows you write conditionals around the bouncer permissions."
   },
   "edge: Debugger": {
     "prefix": "@debugger",
-    "body": ["@debugger"]
+    "body": ["@debugger"],
+    "description": "Edge: debugger tag is an inline tag. It drops the debugger keyword to the template output. You can use the chrome devtools to debug the compiled templates."
   },
   "edge: Define local variable": {
     "prefix": "@set",
-    "body": ["@set('$1', $2)"]
+    "body": ["@set('$1', $2)"],
+    "description": "Edge: set tag is an inline tag. That allows you to define local variables within the template scope or mutate the value of an existing variable."
   },
   "edge: Entry point scripts": {
     "prefix": "@entryPointScripts",
-    "body": ["@entryPointScripts('$1')"]
+    "body": ["@entryPointScripts('$1')"],
+    "description": "Edge: entryPointScripts tag is an inline tag. Renders the required script for a given entrypoint."
   },
   "edge: Entry point styles": {
     "prefix": "@entryPointStyles",
-    "body": ["@entryPointStyles('$1')"]
+    "body": ["@entryPointStyles('$1')"],
+    "description": "Edge: entryPointStyles tag is an inline tag. Renders the required link for a given entrypoint."
   },
   "edge: app": {
     "prefix": "app",
@@ -192,8 +216,8 @@
   },
   "edge: inspect": {
     "body": "inspect($1)",
-    "description": "",
-    "prefix": "inspect"
+    "prefix": "inspect",
+    "description": "inspect global helper to inspect a value or the entire state of the template. The helper method can pretty print the following JavaScript primitives.",
   },
   "edge: nl2br": {
     "prefix": "nl2br",
