@@ -129,7 +129,7 @@
       {
         "language": "systemverilog",
         "path": "./snippets/systemverilog.json"
-      }
+      },
       {
         "language": [
           "shellscript",
