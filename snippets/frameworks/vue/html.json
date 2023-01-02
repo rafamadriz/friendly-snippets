@@ -73,6 +73,13 @@
         ],
         "description": "Expects: Function | Inline Statement"
     },
+    "v-on-shortcut": {
+        "prefix": "@",
+        "body": [
+            "@${1:event}=\"${2:handle}\""
+        ],
+        "description": "v-on shortcut from vue 3"
+    },
     "v-bind": {
         "prefix": "vBind",
         "body": [
@@ -393,5 +400,23 @@
             "<nuxt-link ${1|to,:to|}=\"$2\">$0</nuxt-link>"
         ],
         "description": "This component is used to provide navigations between page components."
+    },
+    "teleport": {
+        "prefix": "teleport",
+        "body": [
+            "<Teleport to=\"$1\">",
+            "$0",
+            "</Teleport>"
+        ],
+        "description": "<Teleport> is a built-in component that allows us to 'teleport' a part of a component's template into a DOM node that exists outside the DOM hierarchy of that component."
+    },
+    "suspense": {
+        "prefix": "suspense",
+        "body": [
+            "<Suspense>",
+            "$0",
+            "</Suspense>"
+        ],
+        "description": "<Suspense> will render its default slot content in memory. If any async dependencies are encountered during the process, it will enter a pending state."
     }
 }

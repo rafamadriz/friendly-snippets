@@ -134,19 +134,19 @@
   "DRF ViewSet": {
     "prefix": "viewset",
     "body": [
-        "class ${1:Name}ViewSet(viewsets.ViewSet):",
-        "def list(self, request):"
-        "\tpass",
-        "def create(self, request):"
-        "\tpass",
-        "def retrieve(self, request, pk=None):"
-        "\tpass",
-        "def update(self, request, pk=None):"
-        "\tpass",
-        "def partial_update(self, request, pk=None):"
-        "\tpass",
-        "def destroy(self, request, pk=None):"
-        "\tpass",
+      "class ${1:Name}ViewSet(viewsets.ViewSet):",
+      "\tdef list(self, request):",
+      "\t\tpass",
+      "\tdef create(self, request):",
+      "\t\tpass",
+      "\tdef retrieve(self, request, pk=None):",
+      "\t\tpass",
+      "\tdef update(self, request, pk=None):",
+      "\t\tpass",
+      "\tdef partial_update(self, request, pk=None):",
+      "\t\tpass",
+      "\tdef destroy(self, request, pk=None):",
+      "\t\tpass"
     ],
     "description": "Django-rest Views ``ViewSet`` Class"
   }

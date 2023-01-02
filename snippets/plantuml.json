@@ -22,14 +22,14 @@
     ]
   },
   "Arrow-left": {
-    "prefix": "left",
+    "prefix": "la",
     "body": " -left-> ",
     "description": [
       "left arrow, format: box -left-> box 2 (it will point left towards the box 2"
     ]
   },
   "Arrow-right": {
-    "prefix": "right",
+    "prefix": "ra",
     "body": " -right-> ",
     "description": [
       "Right arrow, format: box -right-> box 2 (it will point right towards the box 2"
@@ -44,7 +44,7 @@
   },
   "Block comment": {
     "prefix": "block",
-    "body": "/'$1\n'/",
+    "body": "/'\n' $1\n'/",
     "description": "Places a block comment in the document"
   },
   "Boundary": {
@@ -55,7 +55,7 @@
   "Class": {
     "prefix": "cla",
     "body": "class $1 {\n$2\n}\n",
-    "description": "Class Object where fields are defined: \npublic (+)\nprivate (-)\nprotected (#) \npackage (~).\nFunctions can also be named here ex: +funcName()"
+    "description": "Class Object where fields are defined: \n  public (+)\n  private (-)\n  protected (#) \n  package (~).\n\nFunctions can also be named here ex:\n  +funcName()"
   },
   "Cloud": {
     "prefix": "cl",
@@ -108,12 +108,12 @@
     "description": "Simple example to get started with PlantUML"
   },
   "Extend Arrow (left)": {
-    "prefix": "extend",
+    "prefix": "lext",
     "body": " ..> $1",
     "description": "Extend, Include"
   },
   "Extend Arrow (Right)": {
-    "prefix": "extend",
+    "prefix": "rext",
     "body": " <.. $1",
     "description": "Extend, Include"
   },
@@ -177,12 +177,12 @@
     "description": "An arrow for the message return on a Sequence diagram"
   },
   "State Final": {
-    "prefix": "final",
+    "prefix": "sfinal",
     "body": " --> [*]",
     "description": "Describe the final state of objects"
   },
   "State Initial": {
-    "prefix": "init",
+    "prefix": "sinit",
     "body": "[*] --> ",
     "description": "Describe the initial state of objects"
   },
@@ -191,10 +191,10 @@
     "body": "title $0",
     "description": "The document title"
   },
-  "Uml": {
+  "Start Uml Template": {
     "prefix": "startuml",
     "body": "@startuml\n $1\n@enduml",
-    "description": "Inside $1 begin defining your model"
+    "description": "Inside $1 begin defining your diagram"
   },
   "Use Arrow (left)": {
     "prefix": ">",
@@ -205,10 +205,5 @@
     "prefix": "<",
     "body": " <-- $1",
     "description": "Object A uses -> () <That is our use case notation to the left>"
-  },
-  "Use case": {
-    "prefix": "(",
-    "body": "($0)",
-    "description": ["Use case bubble"]
   }
 }

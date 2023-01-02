@@ -88,3 +88,5 @@ A good portion of the snippets have been forked from the following repositories:
 - [vscode-fortran-support](https://github.com/krvajal/vscode-fortran-support)
 - [vscode_cobol](https://github.com/spgennard/vscode_cobol)
 - [VSCode-LaTeX-Snippets](https://github.com/JeffersonQin/VSCode-LaTeX-Snippets)
+- [vscode-react-javascript-snippets](https://github.com/dsznajder/vscode-react-javascript-snippets)
+- [honza/vim-snippets - Verilog](https://github.com/honza/vim-snippets/blob/master/snippets/verilog.snippets)

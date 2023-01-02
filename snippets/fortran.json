@@ -39,7 +39,7 @@
   },
   "case": {
     "prefix": "case",
-    "body": "case ${1:default}\r\n\t$0",
+    "body": "case ${1:default}\n\t$0",
     "description": "case",
     "scope": "source.fortran"
   },
@@ -51,7 +51,7 @@
   },
   "close": {
     "prefix": "close",
-    "body": "close(unit=${1:iounit}, iostat=${2:ios}${3:, status=\"delete\"})\r\nif ( $2 /= 0 ) stop \"Error closing file unit $1\"\r\n",
+    "body": "close(unit=${1:iounit}, iostat=${2:ios}${3:, status=\"delete\"})\nif ($2 /= 0) stop \"Error closing file unit $1\"\n",
     "description": "Close File",
     "scope": "source.fortran"
   },
@@ -81,19 +81,19 @@
   },
   "deal": {
     "prefix": "deal",
-    "body": "if (allocated($1)) deallocate(${1:array}, stat=${2:err})\r\nif ($2 /= 0) print *, \"$1: Deallocation request denied$0\"",
+    "body": "if (allocated($1)) deallocate(${1:array}, stat=${2:err})\nif ($2 /= 0) print *, \"$1: Deallocation request denied$0\"",
     "description": "Deallocate Array",
     "scope": "source.fortran"
   },
   "dow": {
     "prefix": "dow",
-    "body": "do while ( ${1:condition} )\r\n\t$0\r\nend do",
+    "body": "do while (${1:condition})\n\t$0\nend do",
     "description": "do while",
     "scope": "source.fortran"
   },
   "do": {
     "prefix": "do",
-    "body": "do${1: ${2:i} = ${3:1}, ${4:100}, ${5:1}}\r\n\t$0\r\nend do",
+    "body": "do${1: ${2:i} = ${3:1}, ${4:100}, ${5:1}}\n\t$0\nend do",
     "description": "do",
     "scope": "source.fortran"
   },
@@ -105,8 +105,8 @@
   },
   "elif": {
     "prefix": "elif",
-    "body": "elseif ( ${1:condition} ) then\r\n\t",
-    "description": "elseif",
+    "body": "else if (${1:condition}) then\n\t",
+    "description": "else if",
     "scope": "source.fortran"
   },
   "eq": {
@@ -123,7 +123,7 @@
   },
   "for": {
     "prefix": "for",
-    "body": "forall (${1:i=1:100}${2:, mask})\r\n\t$0\r\nend forall",
+    "body": "forall (${1:i=1:100}${2:, mask})\n\t$0\nend forall",
     "description": "forall",
     "scope": "source.fortran.modern"
   },
@@ -153,19 +153,19 @@
   },
   "if": {
     "prefix": "if",
-    "body": "if ( ${1:condition} ) ",
+    "body": "if (${1:condition}) ",
     "description": "if (single line)",
     "scope": "source.fortran"
   },
   "if1": {
     "prefix": "if",
-    "body": "if ( ${1:condition} ) then\r\n\t$0\r\nend if",
+    "body": "if (${1:condition}) then\n\t$0\nend if",
     "description": "if",
     "scope": "source.fortran"
   },
   "imp": {
     "prefix": "imp",
-    "body": "implicit none\r\n",
+    "body": "implicit none\n",
     "description": "implicit none",
     "scope": "source.fortran"
   },
@@ -189,7 +189,7 @@
   },
   "open": {
     "prefix": "open",
-    "body": "open(unit=${1:iounit}, file=${2:name}, iostat=${3:ios}, status=\"${4:old}\", action=\"${5:read}\")\r\nif ( $3 /= 0 ) stop \"Error opening file ${2/[\\\"\\'](.*)[\\\"\\']/$1/}\"\r\n",
+    "body": "open(unit=${1:iounit}, file=${2:name}, iostat=${3:ios}, status=\"${4:old}\", action=\"${5:read}\")\nif ($3 /= 0) stop \"Error opening file ${2/[\\\"\\'](.*)[\\\"\\']/$1/}\"\n",
     "description": "Input File",
     "scope": "source.fortran"
   },
@@ -213,7 +213,7 @@
   },
   "interf": {
     "prefix": "interf",
-    "body": "interface ${1:name}\r\n\t$0\r\nend interface ! $1",
+    "body": "interface ${1:name}\n\t$0\nend interface $1",
     "description": "interface",
     "scope": "source.fortran"
   },
@@ -285,7 +285,7 @@
   },
   "mod": {
     "prefix": "mod",
-    "body": "module ${1:name}\r\n\r\n\timplicit none\r\n\t$0\r\n\r\nend module $1\r\n",
+    "body": "module ${1:name}\n\n\timplicit none\n\t$0\n\nend module $1\n",
     "description": "module",
     "scope": "source.fortran"
   },
@@ -303,7 +303,7 @@
   },
   "open1": {
     "prefix": "open",
-    "body": "open(unit=${1:iounit}, file=${2:name}, iostat=${3:ios}, &\r\n     status=\"${4:old/new/replace/scratch/unknown}\", action=\"${5:read/write/readwrite}\", access=\"${7:sequential/direct}\"${7/(direct)$|.*/(?1:, recl=)/}$0)\r\nif ( $3 /= 0 ) stop \"Error opening file ${2/[\\\"\\'](.*)[\\\"\\']/$1/}\"",
+    "body": "open(unit=${1:iounit}, file=${2:name}, iostat=${3:ios}, &\n     status=\"${4:old/new/replace/scratch/unknown}\", action=\"${5:read/write/readwrite}\", access=\"${7:sequential/direct}\"${7/(direct)$|.*/(?1:, recl=)/}$0)\nif ($3 /= 0) stop \"Error opening file ${2/[\\\"\\'](.*)[\\\"\\']/$1/}\"",
     "description": "Open File",
     "scope": "source.fortran"
   },
@@ -315,7 +315,7 @@
   },
   "open2": {
     "prefix": "open",
-    "body": "open(unit=${1:iounit}, file=${2:name}, iostat=${3:ios}, status=\"${4:new}\", action=\"${5:write}\")\r\nif ( $3 /= 0 ) stop \"Error opening file ${2/[\\\"\\'](.*)[\\\"\\']/$1/}\"\r\n",
+    "body": "open(unit=${1:iounit}, file=${2:name}, iostat=${3:ios}, status=\"${4:new}\", action=\"${5:write}\")\nif ($3 /= 0) stop \"Error opening file ${2/[\\\"\\'](.*)[\\\"\\']/$1/}\"\n",
     "description": "Output File",
     "scope": "source.fortran"
   },
@@ -339,7 +339,7 @@
   },
   "prog": {
     "prefix": "prog",
-    "body": "program ${1:name}\r\n\r\n\timplicit none\r\n\t$0\r\n\r\nend program $1\r\n",
+    "body": "program ${1:name}\n\n\timplicit none\n\t$0\n\nend program $1\n",
     "description": "program",
     "scope": "source.fortran"
   },
@@ -369,7 +369,7 @@
   },
   "op": {
     "prefix": "op",
-    "body": "open(unit=${1:iounit}, file=${2:name}, iostat=${3:ios})\r\nif ( $3 /= 0 ) stop \"Error opening file ${2/[\\\"\\'](.*)[\\\"\\']/$1/}\"",
+    "body": "open(unit=${1:iounit}, file=${2:name}, iostat=${3:ios})\nif ($3 /= 0) stop \"Error opening file ${2/[\\\"\\'](.*)[\\\"\\']/$1/}\"",
     "description": "Quick Open",
     "scope": "source.fortran"
   },
@@ -387,7 +387,7 @@
   },
   "wr": {
     "prefix": "wr",
-    "body": "write(unit=${1:iounit}, fmt=*) ${0:variables}\r\n",
+    "body": "write(unit=${1:iounit}, fmt=*) ${0:variables}\n",
     "description": "Quick Write",
     "scope": "source.fortran"
   },
@@ -405,13 +405,13 @@
   },
   "read": {
     "prefix": "read",
-    "body": "read(unit=${1:iounit}, fmt=\"(${2:format string})\", iostat=${3:istat}, advance='NO', size=${4:number of characters}) ${5:variables}\r\nif ( $3 /= 0 ) stop \"Read error in file unit $1\"\r\n",
+    "body": "read(unit=${1:iounit}, fmt=\"(${2:format string})\", iostat=${3:istat}, advance='NO', size=${4:number of characters}) ${5:variables}\nif ($3 /= 0) stop \"Read error in file unit $1\"\n",
     "description": "Read (Non Advancing Mode)",
     "scope": "source.fortran"
   },
   "read1": {
     "prefix": "read",
-    "body": "read(unit=${1:iounit}, fmt=\"(${2:format string})\", iostat=${3:istat}) ${4:variables}\r\nif ( $3 /= 0 ) stop \"Read error in file unit $1\"\r\n",
+    "body": "read(unit=${1:iounit}, fmt=\"(${2:format string})\", iostat=${3:istat}) ${4:variables}\nif ($3 /= 0) stop \"Read error in file unit $1\"\n",
     "description": "Read",
     "scope": "source.fortran"
   },
@@ -429,13 +429,13 @@
   },
   "open3": {
     "prefix": "open",
-    "body": "open(unit=${1:iounit}, iostat=${3:ios}, status=\"${4:scratch}\", action=\"${5:readwrite}\")\r\nif ( $3 /= 0 ) stop \"Error opening scratch file on unit $1\"\r\n",
+    "body": "open(unit=${1:iounit}, iostat=${3:ios}, status=\"${4:scratch}\", action=\"${5:readwrite}\")\nif ($3 /= 0) stop \"Error opening scratch file on unit $1\"\n",
     "description": "Scratch File",
     "scope": "source.fortran"
   },
   "sel": {
     "prefix": "sel",
-    "body": "select case ($1:variable)\r\n\tcase ($2:values)\r\n\t\t$0\r\nend select",
+    "body": "select case ($1:variable)\n\tcase ($2:values)\n\t\t$0\nend select",
     "description": "select case",
     "scope": "source.fortran"
   },
@@ -459,7 +459,7 @@
   },
   "sub": {
     "prefix": "sub",
-    "body": "subroutine ${1:name}\r\n\t${2:argument type}, intent(${3:inout}) :: ${1/\\w+\\((.*)\\)|.*/$1/}\r\n\t$0\r\nend subroutine ${1/(\\w+).*/$1/}",
+    "body": "subroutine ${1:name}(${2:input})\n\t${3:argument type}, intent(${4:inout}) :: ${2/\\w+\\((.*)\\)|.*/$2/}\n\t$0\nend subroutine ${1/(\\w+).*/$1/}",
     "description": "subroutine",
     "scope": "source.fortran"
   },
@@ -471,7 +471,7 @@
   },
   "type": {
     "prefix": "type",
-    "body": "type ${1:type name}\r\n\t$0\r\nend type $1",
+    "body": "type ${1:type name}\n\t$0\nend type $1",
     "description": "Type Definition",
     "scope": "source.fortran"
   },
@@ -489,32 +489,32 @@
   },
   "wh": {
     "prefix": "wh",
-    "body": "where ( $1 ${2:==} $3 ) ",
+    "body": "where ($1 ${2:==} $3) ",
     "description": "where (single line)",
     "scope": "source.fortran"
   },
   "whe": {
     "prefix": "whe",
-    "body": "where ( $1 ${2:==} $3 )\r\n\t$0\r\nend where",
+    "body": "where ($1 ${2:==} $3)\n\t$0\nend where",
     "description": "where",
     "scope": "source.fortran"
   },
   "write": {
     "prefix": "write",
-    "body": "write(unit=${1:iounit}, fmt=\"(${2:format string})\", iostat=${3:ios}${4:, advance='NO'}) ${5:variables}\r\nif ( $3 /= 0 ) stop \"Write error in file unit $1\"\r\n",
+    "body": "write(unit=${1:iounit}, fmt=\"(${2:format string})\", iostat=${3:ios}${4:, advance='NO'}) ${5:variables}\nif ($3 /= 0) stop \"Write error in file unit $1\"\n",
     "description": "Write",
     "scope": "source.fortran"
   },
-  "F": {
-    "prefix": "F",
-    "body": ".FALSE.",
-    "description": ".FALSE.",
+  "fa": {
+    "prefix": "fa",
+    "body": ".false.",
+    "description": ".false.",
     "scope": "source.fortran"
   },
-  "T": {
-    "prefix": "T",
-    "body": ".TRUE.",
-    "description": ".TRUE.",
+  "tr": {
+    "prefix": "tr",
+    "body": ".true.",
+    "description": ".true.",
     "scope": "source.fortran"
   }
 }

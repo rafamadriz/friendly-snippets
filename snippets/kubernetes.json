@@ -97,7 +97,7 @@
         ]
     },
     "k8s Deployment": {
-        "prefix": "k-deploymment",
+        "prefix": "k-deployment",
         "description": "k8s Deployment",
         "body": [
             "# https://kubernetes.io/docs/concepts/workloads/controllers/deployment/",
