@@ -46,11 +46,24 @@ For more info related to this change see [#88](https://github.com/rafamadriz/fri
 Use your plugin manager of choice, e.g.
 
 ```lua
+-- Lazy
+-- https://github.com/folke/lazy.nvim
+{
+  "hrsh7th/nvim-cmp",
+  event = "InsertEnter",
+  dependencies = {
+    -- set as dependencies to be loaded when nvim-cmp is loaded
+    "kevinm6/the_snippets"
+    -- "hrsh7th/cmp-nvim-lsp",
+    -- "hrsh7th/cmp-buffer",
+  },
+}
+
 -- Packer
 use "kevinm6/the_snippets"
 
 -- Plug
-Plug 'kevinm6/the_snippets'
+Plug "kevinm6/the_snippets"
 ```
 
 #### HTML
