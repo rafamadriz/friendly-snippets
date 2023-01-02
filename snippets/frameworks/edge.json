@@ -217,7 +217,7 @@
   "edge: inspect": {
     "body": "inspect($1)",
     "prefix": "inspect",
-    "description": "inspect global helper to inspect a value or the entire state of the template. The helper method can pretty print the following JavaScript primitives.",
+    "description": "inspect global helper to inspect a value or the entire state of the template. The helper method can pretty print the following JavaScript primitives."
   },
   "edge: nl2br": {
     "prefix": "nl2br",
