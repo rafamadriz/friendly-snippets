@@ -1,4 +1,165 @@
 {
+  "timescale": {
+		"prefix": ["ts", "timescale", "`timescale"],
+		"body": [
+			"`timescale ${1:1ps}/${2:100ns}$0"
+		],
+    "description": "add timescale for verification"
+	},
+
+  "module": {
+		"prefix": "module",
+		"body": [
+			"module ${1:moduleName} (",
+			"\t${2:ports}",
+			");",
+			"\t$0",
+			"endmodule"
+		],
+		"description": "Insert a module without parameter"
+	},
+
+  "if": {
+		"prefix": "if",
+		"body": [
+			"if (${1:conditions}) begin",
+			"\t$0",
+			"end"
+		],
+		"description": "if (...) begin ... end"
+	},
+
+	"ifelse": {
+		"prefix": "ifelse",
+		"body": [
+			"if (${1:conditions}) begin",
+			"\t$2",
+			"end",
+      "else begin",
+			"\t$3",
+			"end"
+		],
+		"description": "if (...) begin ... end else begin ... end"
+	},
+
+  "else": {
+    "prefix": "else",
+    "body": [
+      "else begin",
+      "\t$0",
+      "end"
+    ],
+    "description": "else begin ... end"
+  },
+  
+  "begin/end": {
+		"prefix": "begin",
+		"body": [
+			"begin",
+			"\t$1",
+			"end"
+		],
+		"description": "Insert a begin ... end block"
+	},
+
+  "initial": {
+		"prefix": "initial",
+		"body": [
+			"initial begin",
+			"\t$0",
+			"end"
+		],
+		"description": "initial begin ... end"
+	},
+
+  "case": {
+		"prefix": "case",
+		"body": [
+			"case (${1:param})",
+			"\t$2",
+			"\tdefault: $0",
+			"endcase"
+		],
+		"description": "case () ... endcase"
+	},
+
+	"casex": {
+		"prefix": "casex",
+		"body": [
+			"casex (${1:param})",
+			"\t$2",
+			"\tdefault: $0",
+			"endcase"
+		],
+		"description": "casex () ... endcase"
+	},
+
+	"casez": {
+		"prefix": "casez",
+		"body": [
+			"casez (${1:param})",
+			"\t$2",
+			"\tdefault: $0",
+			"endcase"
+		],
+		"description": "casez () ... endcase"
+	},
+
+  "parameter": {
+		"prefix": "parameter",
+		"body": [
+			"parameter $1 = $2;"
+		],
+		"description": "paramter var = val;"
+	},
+
+  "localparam": {
+		"prefix": "localparam",
+		"body": "localparam $1 = $2;",
+		"description": "localparam var = val"
+	},
+
+  "function": {
+		"prefix": "function",
+		"body": [
+			"function $1;",
+			"\t$2;",
+			"\t$3",
+			"endfunction"
+		],
+		"description": "function (...) ... endfunction"
+	},
+
+  "always_ff block": {
+		"prefix": "always_ff",
+		"body": [
+			"always_ff @( ${1:clock} ) begin : ${2:blockName}",
+			"\t$0",
+			"end"
+		],
+		"description": "Insert an always_ff block"
+	},
+
+	"always_comb block": {
+		"prefix": "always_comb",
+		"body": [
+			"always_comb begin : ${1:blockName}",
+			"\t$0",
+			"end"
+		],
+		"description": "Insert an always_comb block"
+	},
+
+	"always_latch block": {
+		"prefix": "always_latch",
+		"body": [
+			"always_latch begin : ${1:blockName}",
+			"\t$0",
+			"end"
+		],
+		"description": "Insert an always_latch block"
+	},
+
   "typedef enum": {
 		"prefix": "typedef enum",
 		"body": [
@@ -54,6 +215,36 @@
 		"description": "fork ... join_none"
 	},
 
+  "for loop": {
+		"prefix": "for",
+		"body": [
+			"for ($1=$2; $3; $4) begin",
+			"\t$0",
+			"end"
+		],
+		"description": "for (...) begin ... end"
+	},
+
+	"while loop": {
+		"prefix": "while",
+		"body": [
+			"while ($1) begin",
+			"\t$2",
+			"end"
+		],
+		"description": "while (...) begin ... end"
+	},
+
+	"forever": {
+		"prefix": "forever",
+		"body": [
+			"forever begin",
+			"\t$0",
+			"end"
+		],
+		"description": "forever begin ... end"
+	},
+
   "repeat": {
 		"prefix": "repeat",
 		"body": [
@@ -83,6 +274,26 @@
 		],
 		"description": "constraint"
 	},
+
+  "sv_covergroup": {
+      "prefix": "sv_covergroup",
+      "body": [
+          "covergroup cg_${1:identifier} (${2:port_list}) ${3:@(coverage_event)};",
+          "\t$0",
+          "endgroup: cg_$1"
+      ],
+      "description": "Basic SystemVerilog covergroup template."
+  },
+
+  "sv_coverpoint": {
+      "prefix": "sv_coverpoint",
+      "body": [
+          "cp_${1:cover_point_identifier}: coverpoint ${2:covered_expression} iff (${3:1}) {",
+          "\t$0",
+          "}\n"
+      ],
+      "description": "Coverage point template."
+  },
 
   "package": {
 		"prefix": "package",
@@ -143,6 +354,25 @@
 		"description": "class function new()"
 	},
 
+  "task": {
+		"prefix": "task",
+		"body": [
+			"task ${1:automatic} ${2:taskName}(${3:arguments});",
+			"\t$0",
+			"endtask //$2"
+		],
+		"description": "task name; ... endtask"
+	},
+
+	"modport": {
+		"prefix": "modport",
+		"body": [
+			"modport ${1:identifier} (",
+	    "\t$0",
+      ");"
+		],
+		"description": "modport"
+	},
 
   "uvm_macro_info": {
 	  "prefix": "`uvm_info",
@@ -285,7 +515,7 @@
 	},
 
   "uvm_build_phase": {
-		"prefix": "uvm_phase_build", "uvm_build_phase",
+		"prefix": ["uvm_phase_build", "uvm_build_phase"],
 		"body": [
 			"function void build_phase(uvm_phase phase);",
 			"\tsuper.build_phase(phase);",
@@ -296,7 +526,7 @@
 	},
 
 	"uvm_connect_phase": {
-		"prefix": "uvm_phase_connect", "uvm_connect_phase",
+		"prefix": ["uvm_phase_connect", "uvm_connect_phase"],
 		"body": [
 			"function void connect_phase(uvm_phase phase);",
 			"\tsuper.connect_phase(phase);",
@@ -307,7 +537,7 @@
 	},
 
 	"uvm_end_of_elaboration_phase": {
-		"prefix": "uvm_phase_end_of_elaboration", "uvm_end_of_elaboration_phase",
+		"prefix": ["uvm_phase_end_of_elaboration", "uvm_end_of_elaboration_phase"],
 		"body": [
 			"function void end_of_elaboration_phase(uvm_phase phase);",
 			"\tsuper.end_of_elaboration_phase(phase);",
@@ -318,7 +548,7 @@
 	},
 
 	"uvm_start_of_simulation_phase": {
-		"prefix": "uvm_phase_start_of_simulation", "uvm_start_of_simulation_phase",
+		"prefix": ["uvm_phase_start_of_simulation", "uvm_start_of_simulation_phase"],
 		"body": [
 			"function void start_of_simulation_phase(uvm_phase phase);",
 			"\tsuper.start_of_simulation_phase(phase);",
@@ -329,17 +559,17 @@
 	},
 
 	"uvm_run_phase": {
-		"prefix": "uvm_phase_run", "uvm_run_phase",
+		"prefix": ["uvm_phase_run", "uvm_run_phase"],
 		"body": [
 			"task run_phase(uvm_phase phase);",
-			""\t$1",
+			"\t$1",
 			"endtask : run_phase\n"
 		],
 		"description": "UVM run_phase template"
 	},
 
 	"uvm_pre_reset_phase": {
-		"prefix": "uvm_phase_pre_reset", "uvm_pre_reset_phase",
+		"prefix": ["uvm_phase_pre_reset", "uvm_pre_reset_phase"],
 		"body": [
 			"task pre_reset_phase(uvm_phase phase);",
 			"\t$1",
@@ -349,7 +579,7 @@
 	},
 
 	"uvm_reset_phase": {
-		"prefix": "uvm_phase_reset", "uvm_reset_phase",
+		"prefix": ["uvm_phase_reset", "uvm_reset_phase"],
 		"body": [
 			"task reset_phase(uvm_phase phase);",
 			"\t$1",
@@ -359,7 +589,7 @@
 	},
 
 	"uvm_post_reset_phase": {
-		"prefix": "uvm_phase_post_reset", "uvm_post_reset_phase", 
+		"prefix": ["uvm_phase_post_reset", "uvm_post_reset_phase"], 
 		"body": [
 			"task post_reset_phase(uvm_phase phase);",
 			"\t$1",
@@ -369,7 +599,7 @@
 	},
 
 	"uvm_pre_configure_phase": {
-		"prefix": "uvm_phase_pre_configure", "uvm_pre_configure_phase",
+		"prefix": ["uvm_phase_pre_configure", "uvm_pre_configure_phase"],
 		"body": [
 			"task pre_configure_phase(uvm_phase phase);",
 			"\t$1",
@@ -379,7 +609,7 @@
 	},
 
 	"uvm_configure_phase": {
-		"prefix": "uvm_phase_configure", "uvm_configure_phase",
+		"prefix": ["uvm_phase_configure", "uvm_configure_phase"],
 		"body": [
 			"task configure_phase(uvm_phase phase);",
 			"\t$1",
@@ -389,7 +619,7 @@
 	},
 
 	"uvm_post_configure_phase": {
-		"prefix": "uvm_phase_post_configure", "uvm_post_configure_phase",
+		"prefix": ["uvm_phase_post_configure", "uvm_post_configure_phase"],
 		"body": [
 			"task post_configure_phase(uvm_phase phase);",
 			"\t$1",
@@ -399,7 +629,7 @@
 	},
 
 	"uvm_pre_main_phase": {
-		"prefix": "uvm_phase_pre_main", "uvm_pre_main_phase",
+		"prefix": ["uvm_phase_pre_main", "uvm_pre_main_phase"],
 		"body": [
 			"task pre_main_phase(uvm_phase phase);",
 			"\t$1",
@@ -409,7 +639,7 @@
 	},
 
 	"uvm_main_phase": {
-		"prefix": "uvm_phase_main", "uvm_main_phase",
+		"prefix": ["uvm_phase_main", "uvm_main_phase"],
 		"body": [
 			"task main_phase(uvm_phase phase);",
 			"\t$1",
@@ -419,7 +649,7 @@
 	},
 
 	"uvm_post_main_phase": {
-		"prefix": "uvm_phase_post_main", "uvm_post_main_phase",
+		"prefix": ["uvm_phase_post_main", "uvm_post_main_phase"],
 		"body": [
 			"task post_main_phase(uvm_phase phase);",
 			"\t$1",
@@ -429,7 +659,7 @@
 	},
 
 	"uvm_pre_shutdown_phase": {
-		"prefix": "uvm_phase_pre_shutdown", "uvm_pre_shutdown_phase",
+		"prefix": ["uvm_phase_pre_shutdown", "uvm_pre_shutdown_phase"],
 		"body": [
 			"task pre_shutdown_phase(uvm_phase phase);",
 			"\t$0",
@@ -439,7 +669,7 @@
 	},
 
 	"uvm_shutdown_phase": {
-		"prefix": "uvm_phase_shutdown", "uvm_shutdown_phase",
+		"prefix": ["uvm_phase_shutdown", "uvm_shutdown_phase"],
 		"body": [
 			"task shutdown_phase(uvm_pase phase);",
 			"\t$0",
@@ -449,7 +679,7 @@
 	},
 
 	"uvm_post_shutdown_phase": {
-		"prefix": "uvm_phase_post_shutdown", "uvm_post_shutdown_phase",
+		"prefix": ["uvm_phase_post_shutdown", "uvm_post_shutdown_phase"],
 		"body": [
 			"task post_shutdown_phase(uvm_phase phase);",
 			"\t$1",
@@ -459,7 +689,7 @@
 	},
 
 	"uvm_extract_phase": {
-		"prefix": "uvm_phase_extract", "uvm_extract_phase",
+		"prefix": ["uvm_phase_extract", "uvm_extract_phase"],
 		"body": [
 			"function void extract_phase(uvm_phase phase);",
 			"\tsuper.extract_phase(phase);",
@@ -470,7 +700,7 @@
 	},
 
 	"uvm_check_phase": {
-		"prefix": "uvm_phase_check", "uvm_check_phase", 
+		"prefix": ["uvm_phase_check", "uvm_check_phase"], 
 		"body": [
 			"function void check_phase(uvm_phase phase);",
 			"\tsuper.check_phase(phase);",
@@ -481,7 +711,7 @@
 	},
 
 	"uvm_report_phase": {
-		"prefix": "uvm_phase_report", "uvm_report_phase",
+		"prefix": ["uvm_phase_report", "uvm_report_phase"],
 		"body": [
 			"function void report_phase(uvm_phase phase);",
 			"\tsuper.report_phase(phase);",
@@ -725,5 +955,5 @@
 			"endclass: $1\n"
 		],
 		"description": "UVM parametrized component class template"
-	},
+	}
 }
