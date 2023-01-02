@@ -36,7 +36,7 @@
 			"\t$2",
 			"end",
       "else begin",
-			"\t$3",
+			"\t$0",
 			"end"
 		],
 		"description": "if (...) begin ... end else begin ... end"
@@ -56,7 +56,7 @@
 		"prefix": "begin",
 		"body": [
 			"begin",
-			"\t$1",
+			"\t$0",
 			"end"
 		],
 		"description": "Insert a begin ... end block"
@@ -77,7 +77,7 @@
 		"body": [
 			"case (${1:param})",
 			"\t$2",
-			"\tdefault: $0",
+			"\tdefault : $0",
 			"endcase"
 		],
 		"description": "case () ... endcase"
@@ -88,7 +88,7 @@
 		"body": [
 			"casex (${1:param})",
 			"\t$2",
-			"\tdefault: $0",
+			"\tdefault : $0",
 			"endcase"
 		],
 		"description": "casex () ... endcase"
@@ -99,7 +99,7 @@
 		"body": [
 			"casez (${1:param})",
 			"\t$2",
-			"\tdefault: $0",
+			"\tdefault : $0",
 			"endcase"
 		],
 		"description": "casez () ... endcase"
@@ -116,15 +116,14 @@
   "localparam": {
 		"prefix": "localparam",
 		"body": "localparam $1 = $2;",
-		"description": "localparam var = val"
+		"description": "localparam var = val;"
 	},
 
   "function": {
 		"prefix": "function",
 		"body": [
-			"function $1;",
-			"\t$2;",
-			"\t$3",
+			"function ${1:functionName} (${2:param});",
+			"\t$0",
 			"endfunction"
 		],
 		"description": "function (...) ... endfunction"
@@ -133,7 +132,7 @@
   "always_ff block": {
 		"prefix": "always_ff",
 		"body": [
-			"always_ff @( ${1:clock} ) begin : ${2:blockName}",
+			"always_ff @(${1:clock}) begin : ${2:blockName}",
 			"\t$0",
 			"end"
 		],
@@ -174,14 +173,14 @@
 			"enum"
 		],
 		"body": [
-			"enum ${1:data_type} { $0 } ${2:name}"
+			"enum {$1} ${2};"
 		],
 		"description": "enum (data_type) { ... } name"
 	},
 
   "import": {
 		"prefix": "import",
-		"body": "import ${1:name}::${2:scope};",
+		"body": "import ${1:packageName}::${2:scope};",
 		"description": "import name::scope"
 	},
 
@@ -218,7 +217,7 @@
   "for loop": {
 		"prefix": "for",
 		"body": [
-			"for ($1=$2; $3; $4) begin",
+			"for ($1 = $2; $3; $4) begin",
 			"\t$0",
 			"end"
 		],
@@ -229,7 +228,7 @@
 		"prefix": "while",
 		"body": [
 			"while ($1) begin",
-			"\t$2",
+			"\t$0",
 			"end"
 		],
 		"description": "while (...) begin ... end"
@@ -272,34 +271,44 @@
 			"\t$0",
 			"}"
 		],
-		"description": "constraint"
+		"description": "systemverilog constraint"
 	},
 
-  "sv_covergroup": {
-      "prefix": "sv_covergroup",
+  "covergroup": {
+    "prefix": "covergroup",
+    "body": [
+      "covergroup ${1:covergroupName};",
+      "\t$0",
+      "endgroup"
+    ],
+    "description": "SystemVerilog basic covergroup"
+  },
+
+  "covergroup with an event trigger": {
+      "prefix": "covergroup trigger",
       "body": [
-          "covergroup cg_${1:identifier} (${2:port_list}) ${3:@(coverage_event)};",
+          "covergroup ${1:covergroupName} @(${2:coverageEvent});",
           "\t$0",
-          "endgroup: cg_$1"
+          "endgroup"
       ],
-      "description": "Basic SystemVerilog covergroup template."
+      "description": "Covergroup with event trigger"
   },
 
   "sv_coverpoint": {
-      "prefix": "sv_coverpoint",
+      "prefix": ["sv_coverpoint", "coverpoint"],
       "body": [
-          "cp_${1:cover_point_identifier}: coverpoint ${2:covered_expression} iff (${3:1}) {",
+          "coverpoint ${1:coverpointName} {",
           "\t$0",
-          "}\n"
+          "}"
       ],
-      "description": "Coverage point template."
+      "description": "SystemVerilog coverage point template."
   },
 
   "package": {
 		"prefix": "package",
 		"body": [
-			"package ${1:package_name}",
-			"\t$2",
+			"package ${1:packageName};",
+			"\t$0",
 			"endpackage"
 		],
 		"description": "package name; ... endpackage"
@@ -308,9 +317,9 @@
   "interface": {
 		"prefix": "interface",
 		"body": [
-			"interface ${1:interfacename};",
+			"interface ${1:interfaceName};",
 			"\t$0",
-			"endinterface //$1"
+			"endinterface"
 		],
 		"description": "interface name; ... endinterface"
 	},
@@ -318,7 +327,7 @@
   "program": {
 		"prefix": "program",
 		"body": [
-			"program ${1}",
+			"program ${1:programName};",
 			"\t$0",
 			"endprogram"
 		],
@@ -339,27 +348,18 @@
 		"prefix": "class extends",
 		"body": [
 			"class ${1:className} extends ${2:superClass};",
+      "\t$0",
 			"endclass"
 		],
 		"description": "class name extends super; ... endclass"
 	},
 
-  "function new()": {
-		"prefix": "function new()",
-		"body": [
-			"function new($2);",
-			"\t$1",
-			"endfunction $3"
-		],
-		"description": "class function new()"
-	},
-
   "task": {
 		"prefix": "task",
 		"body": [
-			"task ${1:automatic} ${2:taskName}(${3:arguments});",
+			"task ${1:automatic} ${2:taskName} (${3:arguments});",
 			"\t$0",
-			"endtask //$2"
+			"endtask"
 		],
 		"description": "task name; ... endtask"
 	},
@@ -371,7 +371,7 @@
 	    "\t$0",
       ");"
 		],
-		"description": "modport"
+		"description": "SystemVerilog modport"
 	},
 
   "uvm_macro_info": {
