@@ -127,6 +127,10 @@
         "path": "./snippets/sql.json"
       },
       {
+        "language": "systemverilog",
+        "path": "./snippets/systemverilog.json"
+      },
+      {
         "language": [
           "shellscript",
           "shell",
