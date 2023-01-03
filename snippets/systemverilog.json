@@ -411,7 +411,7 @@
 		"body": [
 			"`uvm_object_utils(${1:type})"
 		],
-		"description": ""
+		"description": "register the object class to factory"
 	},
 
 	"uvm_macro_object_utils_block": {
@@ -424,7 +424,7 @@
 			"\t$2",
 			"`uvm_object_utils_end"
 		],
-		"description": ""
+		"description": "register the object class to factory, with field automation"
 	},
 
 	"uvm_macro_field": {
@@ -438,7 +438,7 @@
 		"body": [
 			"`uvm_object_param_utils(${1:type})"
 		],
-		"description": ""
+		"description": "register the object class(with parameter) to factory"
 	},
 
   "uvm_macro_object_param_utils_block": {
@@ -451,7 +451,7 @@
 			"\t$2",
 			"`uvm_object_param_utils_end"
 		],
-		"description": ""
+		"description": "register the object class(with parameter) to factory, with field automation"
 	},
 
   "uvm_macro_component_utils": {
@@ -459,7 +459,7 @@
 		"body": [
 			"`uvm_component_utils(${1:type})"
 		],
-		"description": ""
+		"description": "register the component class to factory"
 	},
 
 	"uvm_macro_component_param_utils": {
@@ -467,7 +467,7 @@
 		"body": [
 			"`uvm_component_param_utils(${1:type})"
 		],
-		"description": ""
+		"description": "register the component class(with parameter) to factory"
 	},
 
   "uvm_analysis_imp_decl": {
@@ -558,33 +558,38 @@
 		"prefix": ["uvm_factory_instantiation_object","create_object"],
 		"body": [
 			"${1:instance_name} = ${2:<object_type>}::type_id::create(.name(\"$1\"), .contxt(get_full_name()));\n"
-		]
+		],
+    "description": "use factory to create an instance of an object"
 	},
 
 	"uvm_component_factory_instantiation": {
 		"prefix": ["uvm_factory_instantation_component","create_component"],
 		"body": [
 			"${1:instance_name} = ${2:component_type}::type_id::create(\"$1\", this);\n"
-		]
+		],
+    "description": "use factory to create an instance of a component"
 	},
  
   "uvm_factory_set_type_override_by_type": {
     "prefix": "set_type_override_by_type",
-    "body": "set_type_override_by_type(${1:base_type}, ${2:new_type});"
+    "body": "set_type_override_by_type(${1:base_type}, ${2:new_type});",
+    "description": "factory type override"
   },
 
   "uvm_factory_inst_override": {
 		"prefix": "uvm_factory_inst_override",
 		"body": [
 			"${1:<base_type>}::type_id::set_inst_override(${2:<new_type>}::get_type(), {get_full_name(), \"${3:*}\"});\n"
-		]
+		],
+    "description": "factory instance override"
 	},
 
 	"uvm_factory_type_override": {
 		"prefix": "uvm_factory_type_override",
 		"body": [
 			"${1:<base_type>}::type_id::set_type_override(${2:<new_type>}::get_type());"
-		]
+		],
+    "description": "factory type override"
 	},
 
   "uvm_build_phase": {
@@ -1266,7 +1271,7 @@
 			"\t$0",
 			"endclass"
 		],
-		"description": "UVM uvm_scoreboard class template"
+		"description": "UVM scoreboard class template"
 	},
 
   "uvm_env": {
@@ -1282,7 +1287,7 @@
 			"\t$0",
 			"endclass"
 		],
-		"description": "UVM uvm_env class template"
+		"description": "UVM env class template"
 	},
 
   "uvm_test": {
@@ -1298,7 +1303,7 @@
 			"\t$0",
 			"endclass"
 		],
-		"description": "UVM uvm_test class template"
+		"description": "UVM test class template"
 	},
 
   "uvm_sequence": {
