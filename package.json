@@ -168,7 +168,8 @@
           "pug",
           "eruby",
           "javascriptreact",
-          "htmldjango"
+          "htmldjango",
+          "astro"
         ],
         "path": "./snippets/html.json"
       },
