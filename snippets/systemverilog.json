@@ -514,7 +514,7 @@
 
   "uvm_macro_do_on_pri": {
     "prefix": "`uvm_do_on_pri",
-    "body": "`uvm_do_pri(${1:SEQ_OR_ITEM}, ${2:SEQR}, ${3:PRIORITY})",
+    "body": "`uvm_do_on_pri(${1:SEQ_OR_ITEM}, ${2:SEQR}, ${3:PRIORITY})",
     "description": "uvm_do_on_pri macro"
   },
 
@@ -557,7 +557,7 @@
   "uvm_object_factory_instantiation": {
 		"prefix": ["uvm_factory_instantiation_object","create_object"],
 		"body": [
-			"${1:<instance_name>} = ${2:<object_type>}::type_id::create(.name(\"$1\"), .contxt(get_full_name()));\n"
+			"${1:instance_name} = ${2:<object_type>}::type_id::create(.name(\"$1\"), .contxt(get_full_name()));\n"
 		]
 	},
 
@@ -636,7 +636,7 @@
 		"body": [
 			"virtual task run_phase(uvm_phase phase);",
 			"\t$1",
-			"endtask : run_phase\n"
+			"endtask : run_phase"
 		],
 		"description": "UVM run_phase template"
 	},
@@ -646,7 +646,7 @@
 		"body": [
 			"virtual task pre_reset_phase(uvm_phase phase);",
 			"\t$1",
-			"endtask: pre_reset_phase\n"
+			"endtask: pre_reset_phase"
 		],
 		"description": "UVM pre_reset_phase template"
 	},
@@ -656,7 +656,7 @@
 		"body": [
 			"virtual task reset_phase(uvm_phase phase);",
 			"\t$1",
-			"endtask: reset_phase\n"
+			"endtask: reset_phase"
 		],
 		"description": "UVM reset_phase template"
 	},
@@ -666,7 +666,7 @@
 		"body": [
 			"virtual task post_reset_phase(uvm_phase phase);",
 			"\t$1",
-			"endtask: post_reset_phase\n"
+			"endtask: post_reset_phase"
 		],
 		"description": "UVM post_reset_phase template"
 	},
@@ -676,7 +676,7 @@
 		"body": [
 			"virtual task pre_configure_phase(uvm_phase phase);",
 			"\t$1",
-			"endtask: pre_configure_phase\n"
+			"endtask: pre_configure_phase"
 		],
 		"description": "UVM pre_configure_phase template"
 	},
@@ -686,7 +686,7 @@
 		"body": [
 			"virtual task configure_phase(uvm_phase phase);",
 			"\t$1",
-			"endtask: configure_phase\n"
+			"endtask: configure_phase"
 		],
 		"description": "UVM post_configure_phase template"
 	},
@@ -696,7 +696,7 @@
 		"body": [
 			"virtual task post_configure_phase(uvm_phase phase);",
 			"\t$1",
-			"endtask: post_configure_phase\n"
+			"endtask: post_configure_phase"
 		],
 		"description": "UVM post_configure_phase template"
 	},
@@ -706,7 +706,7 @@
 		"body": [
 			"virtual task pre_main_phase(uvm_phase phase);",
 			"\t$1",
-			"endtask: pre_main_phase\n"
+			"endtask: pre_main_phase"
 		],
 		"description": "UVM pre_main_phase template"
 	},
@@ -726,7 +726,7 @@
 		"body": [
 			"virtual task post_main_phase(uvm_phase phase);",
 			"\t$1",
-			"endtask: post_main_phase\n"
+			"endtask: post_main_phase"
 		],
 		"description": "UVM post_main_phase template"
 	},
@@ -735,8 +735,8 @@
 		"prefix": ["uvm_phase_pre_shutdown", "uvm_pre_shutdown_phase"],
 		"body": [
 			"virtual task pre_shutdown_phase(uvm_phase phase);",
-			"\t$0",
-			"endtask: pre_shutdown_phase\n"
+			"\t$1",
+			"endtask: pre_shutdown_phase"
 		],
 		"description": "UVM pre_shutdown_phase template"
 	},
@@ -745,8 +745,8 @@
 		"prefix": ["uvm_phase_shutdown", "uvm_shutdown_phase"],
 		"body": [
 			"virtual task shutdown_phase(uvm_pase phase);",
-			"\t$0",
-			"endtask: shutdown_phase\n"
+			"\t$1",
+			"endtask: shutdown_phase"
 		],
 		"description": "UVM shutdown_phase template"
 	},
@@ -756,7 +756,7 @@
 		"body": [
 			"virtual task post_shutdown_phase(uvm_phase phase);",
 			"\t$1",
-			"endtask: post_shutdown_phase\n"
+			"endtask: post_shutdown_phase"
 		],
 		"description": "UVM post_shutdown_phase template"
 	},
@@ -767,7 +767,7 @@
 			"virtual function void extract_phase(uvm_phase phase);",
 			"\tsuper.extract_phase(phase);",
 			"\t$1",
-			"endfunction: extract_phase\n"
+			"endfunction: extract_phase"
 		],
 		"description": "UVM extract_phase template"
 	},
@@ -778,7 +778,7 @@
 			"virtual function void check_phase(uvm_phase phase);",
 			"\tsuper.check_phase(phase);",
 			"\t$1",
-			"endfunction: check_phase\n"
+			"endfunction: check_phase"
 		],
 		"description": "UVM check_phase template"
 	},
@@ -789,7 +789,7 @@
 			"virtual function void report_phase(uvm_phase phase);",
 			"\tsuper.report_phase(phase);",
 			"\t$1",
-			"endfunction: report_phase\n"
+			"endfunction: report_phase"
 		],
 		"description": "UVM report_phase template"
 	},
@@ -800,14 +800,14 @@
 			"virtual function void final_phase(uvm_phase phase);",
 			"\tsuper.final_phase(phase);",
 			"\t$1",
-			"endfunction: final_phase\n"
+			"endfunction: final_phase"
 		],
 		"description": "UVM final_phase template"
 	},
 
   "set_drain_time":{
     "prefix": "set_drain_time",
-    "body": "phase.phase_done.set_drain_time(this, ${1:time});",
+    "body": "phase.phase_done.set_drain_time(this, ${1:drain_time});",
     "description": "set drain time of a phase"
   },
   
@@ -824,7 +824,7 @@
   "uvm_analysis_port": {
 		"prefix": "uvm_analysis_port",
 		"body": [
-			"uvm_analysis_port #(${1:class}) ${2:name};"
+			"uvm_analysis_port #(${1:className}) ${2:name};"
 		],
 		"description": "UVM analysis_port template"
 	},
@@ -832,7 +832,7 @@
   "uvm_analysis_imp": {
 		"prefix": "uvm_analysis_imp",
 		"body": [
-			"uvm_analysis_imp #(${1:class}, ${2:IMP}) ${3:name};"
+			"uvm_analysis_imp #(${1:className}, ${2:IMP}) ${3:name};"
 		],
 		"description": "UVM analysis_imp template"
 	},
@@ -840,7 +840,7 @@
   "uvm_blocking_put_port": {
 		"prefix": "uvm_blocking_put_port",
 		"body": [
-			"uvm_blocking_put_port #(${1:class}) ${2:name};"
+			"uvm_blocking_put_port #(${1:className}) ${2:name};"
 		],
 		"description": "UVM blocking_put_port template"
 	},
@@ -848,7 +848,7 @@
 	"uvm_nonblocking_put_port": {
 		"prefix": "uvm_nonblocking_put_port",
 		"body": [
-			"uvm_nonblocking_put_port #(${1:class}) ${2:name};"
+			"uvm_nonblocking_put_port #(${1:className}) ${2:name};"
 		],
 		"description": "UVM nonblocking_put_port template"
 	},
@@ -856,7 +856,7 @@
   "uvm_put_port": {
 		"prefix": "uvm_put_port",
 		"body": [
-			"uvm_put_port #(${1:class}) ${2:name};"
+			"uvm_put_port #(${1:className}) ${2:name};"
 		],
 		"description": "UVM put_port template"
 	},
@@ -864,7 +864,7 @@
   "uvm_blocking_get_port": {
 		"prefix": "uvm_blocking_get_port",
 		"body": [
-			"uvm_blocking_get_port #(${1:class}) ${2:name};"
+			"uvm_blocking_get_port #(${1:className}) ${2:name};"
 		],
 		"description": "UVM blocking_get_port template"
 	},
@@ -872,7 +872,7 @@
 	"uvm_nonblocking_get_port": {
 		"prefix": "uvm_nonblocking_get_port",
 		"body": [
-			"uvm_nonblocking_get_port #(${1:class}) ${2:name};"
+			"uvm_nonblocking_get_port #(${1:className}) ${2:name};"
 		],
 		"description": "UVM nonblocking_get_port template"
 	},
@@ -880,7 +880,7 @@
   "uvm_get_port": {
 		"prefix": "uvm_get_port",
 		"body": [
-			"uvm_get_port #(${1:class}) ${2:name};"
+			"uvm_get_port #(${1:className}) ${2:name};"
 		],
 		"description": "UVM get_port template"
 	},
@@ -888,7 +888,7 @@
   "uvm_blocking_peek_port": {
 		"prefix": "uvm_blocking_peek_port",
 		"body": [
-			"uvm_blocking_peek_port #(${1:class}) ${2:name};"
+			"uvm_blocking_peek_port #(${1:className}) ${2:name};"
 		],
 		"description": "UVM blocking_peek_port template"
 	},
@@ -896,7 +896,7 @@
 	"uvm_nonblocking_peek_port": {
 		"prefix": "uvm_nonblocking_peek_port",
 		"body": [
-			"uvm_nonblocking_peek_port #(${1:class}) ${2:name};"
+			"uvm_nonblocking_peek_port #(${1:className}) ${2:name};"
 		],
 		"description": "UVM nonblocking_peek_port template"
 	},
@@ -904,7 +904,7 @@
   "uvm_peek_port": {
 		"prefix": "uvm_peek_port",
 		"body": [
-			"uvm_peek_port #(${1:class}) ${2:name};"
+			"uvm_peek_port #(${1:className}) ${2:name};"
 		],
 		"description": "UVM peek_port template"
 	},
@@ -912,7 +912,7 @@
   "uvm_blocking_get_peek_port": {
 		"prefix": "uvm_blocking_get_peek_port",
 		"body": [
-			"uvm_blocking_get_peek__port #(${1:class}) ${2:name};"
+			"uvm_blocking_get_peek__port #(${1:className}) ${2:name};"
 		],
 		"description": "UVM blocking_get_peek_port template"
 	},
@@ -920,7 +920,7 @@
 	"uvm_nonblocking_get_peek_port": {
 		"prefix": "uvm_nonblocking_get_peek_port",
 		"body": [
-			"uvm_nonblocking_get_peek_port #(${1:class}) ${2:name};"
+			"uvm_nonblocking_get_peek_port #(${1:className}) ${2:name};"
 		],
 		"description": "UVM nonblocking_get_peek_port template"
 	},
@@ -928,7 +928,7 @@
   "uvm_get_peek_port": {
 		"prefix": "uvm_get_peek_port",
 		"body": [
-			"uvm_get_peek_port #(${1:class}) ${2:name};"
+			"uvm_get_peek_port #(${1:className}) ${2:name};"
 		],
 		"description": "UVM get_peek_port template"
 	},
@@ -936,7 +936,7 @@
   "uvm_blocking_transport_port": {
 		"prefix": "uvm_blocking_transport_port",
 		"body": [
-			"uvm_blocking_transport_port #(${1:REQ class}, ${2:RSP class}) ${3:name};"
+			"uvm_blocking_transport_port #(${1:REQ className}, ${2:RSP class}) ${3:name};"
 		],
 		"description": "UVM blocking_transport_port template"
 	},
@@ -944,7 +944,7 @@
   "uvm_nonblocking_transport_port": {
 		"prefix": "uvm_nonblocking_transport_port",
 		"body": [
-			"uvm_nonblocking_transport_port #(${1:REQ class}, ${2:RSP class}) ${3:name};"
+			"uvm_nonblocking_transport_port #(${1:REQ className}, ${2:RSP class}) ${3:name};"
 		],
 		"description": "UVM nonblocking_transport_port template"
 	},
@@ -952,7 +952,7 @@
   "uvm_transport_port": {
 		"prefix": "uvm_transport_port",
 		"body": [
-			"uvm_transport_port #(${1:REQ class}, ${2:RSP class}) ${3:name};"
+			"uvm_transport_port #(${1:REQ className}, ${2:RSP class}) ${3:name};"
 		],
 		"description": "UVM transport_port template"
 	},
@@ -960,7 +960,7 @@
   "uvm_blocking_put_export": {
 		"prefix": "uvm_blocking_put_export",
 		"body": [
-			"uvm_blocking_put_export #(${1:class}) ${2:name};"
+			"uvm_blocking_put_export #(${1:className}) ${2:name};"
 		],
 		"description": "UVM blocking_put_export template"
 	},
@@ -968,7 +968,7 @@
 	"uvm_nonblocking_put_export": {
 		"prefix": "uvm_nonblocking_put_export",
 		"body": [
-			"uvm_nonblocking_put_export #(${1:class}) ${2:name};"
+			"uvm_nonblocking_put_export #(${1:className}) ${2:name};"
 		],
 		"description": "UVM nonblocking_put_export template"
 	},
@@ -976,7 +976,7 @@
   "uvm_put_export": {
 		"prefix": "uvm_put_export",
 		"body": [
-			"uvm_put_export #(${1:class}) ${2:name};"
+			"uvm_put_export #(${1:className}) ${2:name};"
 		],
 		"description": "UVM put_export template"
 	},
@@ -984,7 +984,7 @@
   "uvm_blocking_get_export": {
 		"prefix": "uvm_blocking_get_export",
 		"body": [
-			"uvm_blocking_get_export #(${1:class}) ${2:name};"
+			"uvm_blocking_get_export #(${1:className}) ${2:name};"
 		],
 		"description": "UVM blocking_get_export template"
 	},
@@ -992,7 +992,7 @@
 	"uvm_nonblocking_get_export": {
 		"prefix": "uvm_nonblocking_get_export",
 		"body": [
-			"uvm_nonblocking_get_export #(${1:class}) ${2:name};"
+			"uvm_nonblocking_get_export #(${1:className}) ${2:name};"
 		],
 		"description": "UVM nonblocking_get_export template"
 	},
@@ -1000,7 +1000,7 @@
   "uvm_get_export": {
 		"prefix": "uvm_get_export",
 		"body": [
-			"uvm_get_export #(${1:class}) ${2:name};"
+			"uvm_get_export #(${1:className}) ${2:name};"
 		],
 		"description": "UVM get_export template"
 	},
@@ -1008,7 +1008,7 @@
   "uvm_blocking_peek_export": {
 		"prefix": "uvm_blocking_peek_export",
 		"body": [
-			"uvm_blocking_peek_export #(${1:class}) ${2:name};"
+			"uvm_blocking_peek_export #(${1:className}) ${2:name};"
 		],
 		"description": "UVM blocking_peek_export template"
 	},
@@ -1016,7 +1016,7 @@
 	"uvm_nonblocking_peek_export": {
 		"prefix": "uvm_nonblocking_peek_export",
 		"body": [
-			"uvm_nonblocking_peek_export #(${1:class}) ${2:name};"
+			"uvm_nonblocking_peek_export #(${1:className}) ${2:name};"
 		],
 		"description": "UVM nonblocking_peek_export template"
 	},
@@ -1024,7 +1024,7 @@
   "uvm_peek_export": {
 		"prefix": "uvm_peek_export",
 		"body": [
-			"uvm_peek_export #(${1:class}) ${2:name};"
+			"uvm_peek_export #(${1:className}) ${2:name};"
 		],
 		"description": "UVM peek_export template"
 	},
@@ -1032,7 +1032,7 @@
   "uvm_blocking_get_peek_export": {
 		"prefix": "uvm_blocking_get_peek_export",
 		"body": [
-			"uvm_blocking_get_peek__export #(${1:class}) ${2:name};"
+			"uvm_blocking_get_peek__export #(${1:className}) ${2:name};"
 		],
 		"description": "UVM blocking_get_peek_export template"
 	},
@@ -1040,7 +1040,7 @@
 	"uvm_nonblocking_get_peek_export": {
 		"prefix": "uvm_nonblocking_get_peek_export",
 		"body": [
-			"uvm_nonblocking_get_peek_export #(${1:class}) ${2:name};"
+			"uvm_nonblocking_get_peek_export #(${1:className}) ${2:name};"
 		],
 		"description": "UVM nonblocking_get_peek_export template"
 	},
@@ -1048,7 +1048,7 @@
   "uvm_get_peek_export": {
 		"prefix": "uvm_get_peek_export",
 		"body": [
-			"uvm_get_peek_export #(${1:class}) ${2:name};"
+			"uvm_get_peek_export #(${1:className}) ${2:name};"
 		],
 		"description": "UVM get_peek_export template"
 	},
@@ -1056,7 +1056,7 @@
   "uvm_blocking_transport_export": {
 		"prefix": "uvm_blocking_transport_export",
 		"body": [
-			"uvm_blocking_transport_export #(${1:REQ class}, ${2:RSP class}) ${3:name};"
+			"uvm_blocking_transport_export #(${1:REQ className}, ${2:RSP class}) ${3:name};"
 		],
 		"description": "UVM blocking_transport_export template"
 	},
@@ -1064,7 +1064,7 @@
   "uvm_nonblocking_transport_export": {
 		"prefix": "uvm_nonblocking_transport_export",
 		"body": [
-			"uvm_nonblocking_transport_export #(${1:REQ class}, ${2:RSP class}) ${3:name};"
+			"uvm_nonblocking_transport_export #(${1:REQ className}, ${2:RSP class}) ${3:name};"
 		],
 		"description": "UVM nonblocking_transport_export template"
 	},
@@ -1072,7 +1072,7 @@
   "uvm_transport_export": {
 		"prefix": "uvm_transport_export",
 		"body": [
-			"uvm_transport_export #(${1:REQ class}, ${2:RSP class}) ${3:name};"
+			"uvm_transport_export #(${1:REQ className}, ${2:RSP class}) ${3:name};"
 		],
 		"description": "UVM transport_export template"
 	},
@@ -1080,7 +1080,7 @@
   "uvm_blocking_put_imp": {
 		"prefix": "uvm_blocking_put_imp",
 		"body": [
-			"uvm_blocking_put_imp #(${1:class}, ${2:IMP}) ${3:name};"
+			"uvm_blocking_put_imp #(${1:className}, ${2:IMP}) ${3:name};"
 		],
 		"description": "UVM blocking_put_imp template"
 	},
@@ -1088,7 +1088,7 @@
 	"uvm_nonblocking_put_imp": {
 		"prefix": "uvm_nonblocking_put_imp",
 		"body": [
-			"uvm_nonblocking_put_imp #(${1:class}, ${2:IMP}) ${3:name};"
+			"uvm_nonblocking_put_imp #(${1:className}, ${2:IMP}) ${3:name};"
 		],
 		"description": "UVM nonblocking_put_imp template"
 	},
@@ -1096,7 +1096,7 @@
   "uvm_put_imp": {
 		"prefix": "uvm_put_imp",
 		"body": [
-			"uvm_put_imp #(${1:class}, ${2:IMP}) ${3:name};"
+			"uvm_put_imp #(${1:className}, ${2:IMP}) ${3:name};"
 		],
 		"description": "UVM put_imp template"
 	},
@@ -1104,7 +1104,7 @@
   "uvm_blocking_get_imp": {
 		"prefix": "uvm_blocking_get_imp",
 		"body": [
-			"uvm_blocking_get_imp #(${1:class}, ${2:IMP}) ${3:name};"
+			"uvm_blocking_get_imp #(${1:className}, ${2:IMP}) ${3:name};"
 		],
 		"description": "UVM blocking_get_imp template"
 	},
@@ -1112,7 +1112,7 @@
 	"uvm_nonblocking_get_imp": {
 		"prefix": "uvm_nonblocking_get_imp",
 		"body": [
-			"uvm_nonblocking_get_imp #(${1:class}, ${2:IMP}) ${3:name};"
+			"uvm_nonblocking_get_imp #(${1:className}, ${2:IMP}) ${3:name};"
 		],
 		"description": "UVM nonblocking_get_imp template"
 	},
@@ -1120,7 +1120,7 @@
   "uvm_get_imp": {
 		"prefix": "uvm_get_imp",
 		"body": [
-			"uvm_get_imp #(${1:class}, ${2:IMP}) ${3:name};"
+			"uvm_get_imp #(${1:className}, ${2:IMP}) ${3:name};"
 		],
 		"description": "UVM get_imp template"
 	},
@@ -1128,7 +1128,7 @@
   "uvm_blocking_peek_imp": {
 		"prefix": "uvm_blocking_peek_imp",
 		"body": [
-			"uvm_blocking_peek_imp #(${1:class}, ${2:IMP}) ${3:name};"
+			"uvm_blocking_peek_imp #(${1:className}, ${2:IMP}) ${3:name};"
 		],
 		"description": "UVM blocking_peek_imp template"
 	},
@@ -1136,7 +1136,7 @@
 	"uvm_nonblocking_peek_imp": {
 		"prefix": "uvm_nonblocking_peek_imp",
 		"body": [
-			"uvm_nonblocking_peek_imp #(${1:class}, ${2:IMP}) ${3:name};"
+			"uvm_nonblocking_peek_imp #(${1:className}, ${2:IMP}) ${3:name};"
 		],
 		"description": "UVM nonblocking_peek_imp template"
 	},
@@ -1144,7 +1144,7 @@
   "uvm_peek_imp": {
 		"prefix": "uvm_peek_imp",
 		"body": [
-			"uvm_peek_imp #(${1:class}, ${2:IMP}) ${3:name};"
+			"uvm_peek_imp #(${1:className}, ${2:IMP}) ${3:name};"
 		],
 		"description": "UVM peek_imp template"
 	},
@@ -1152,7 +1152,7 @@
   "uvm_blocking_get_peek_imp": {
 		"prefix": "uvm_blocking_get_peek_imp",
 		"body": [
-			"uvm_blocking_get_peek__imp #(${1:class}, ${2:IMP}) ${3:name};"
+			"uvm_blocking_get_peek__imp #(${1:className}, ${2:IMP}) ${3:name};"
 		],
 		"description": "UVM blocking_get_peek_imp template"
 	},
@@ -1160,7 +1160,7 @@
 	"uvm_nonblocking_get_peek_imp": {
 		"prefix": "uvm_nonblocking_get_peek_imp",
 		"body": [
-			"uvm_nonblocking_get_peek_imp #(${1:class}, ${2:IMP}) ${3:name};"
+			"uvm_nonblocking_get_peek_imp #(${1:className}, ${2:IMP}) ${3:name};"
 		],
 		"description": "UVM nonblocking_get_peek_imp template"
 	},
@@ -1168,7 +1168,7 @@
   "uvm_get_peek_imp": {
 		"prefix": "uvm_get_peek_imp",
 		"body": [
-			"uvm_get_peek_imp #(${1:class}, ${2:IMP}) ${3:name};"
+			"uvm_get_peek_imp #(${1:className}, ${2:IMP}) ${3:name};"
 		],
 		"description": "UVM get_peek_imp template"
 	},
@@ -1176,7 +1176,7 @@
   "uvm_blocking_transport_imp": {
 		"prefix": "uvm_blocking_transport_imp",
 		"body": [
-			"uvm_blocking_transport_imp #(${1:REQ class}, ${2:RSP class}, ${3:IMP}) ${4:name};"
+			"uvm_blocking_transport_imp #(${1:REQ className}, ${2:RSP class}, ${3:IMP}) ${4:name};"
 		],
 		"description": "UVM blocking_transport_imp template"
 	},
@@ -1184,7 +1184,7 @@
   "uvm_nonblocking_transport_imp": {
 		"prefix": "uvm_nonblocking_transport_imp",
 		"body": [
-			"uvm_nonblocking_transport_imp #(${1:REQ class}, ${2:RSP class}, ${3:IMP}) ${4:name};"
+			"uvm_nonblocking_transport_imp #(${1:REQ className}, ${2:RSP class}, ${3:IMP}) ${4:name};"
 		],
 		"description": "UVM nonblocking_transport_imp template"
 	},
@@ -1192,7 +1192,7 @@
   "uvm_transport_imp": {
 		"prefix": "uvm_transport_imp",
 		"body": [
-			"uvm_transport_imp #(${1:REQ class}, ${2:RSP class}, ${3:IMP}) ${4:name};"
+			"uvm_transport_imp #(${1:REQ className}, ${2:RSP class}, ${3:IMP}) ${4:name};"
 		],
 		"description": "UVM transport_imp template"
 	},
@@ -1200,7 +1200,7 @@
 	"uvm_tlm_analysis_fifo": {
 		"prefix": "uvm_tlm_analysis_fifo",
 		"body": [
-			"uvm_tlm_analysis_fifo #(${1:class}) ${2:name};"
+			"uvm_tlm_analysis_fifo #(${1:className}) ${2:name};"
 		],
 		"description": "UVM tlm_analysis_fifo template"
 	},
