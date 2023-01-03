@@ -912,7 +912,7 @@
   "uvm_blocking_get_peek_port": {
 		"prefix": "uvm_blocking_get_peek_port",
 		"body": [
-			"uvm_blocking_get_peek__port #(${1:className}) ${2:name};"
+			"uvm_blocking_get_peek_port #(${1:className}) ${2:name};"
 		],
 		"description": "UVM blocking_get_peek_port template"
 	},
@@ -936,7 +936,7 @@
   "uvm_blocking_transport_port": {
 		"prefix": "uvm_blocking_transport_port",
 		"body": [
-			"uvm_blocking_transport_port #(${1:REQ className}, ${2:RSP class}) ${3:name};"
+			"uvm_blocking_transport_port #(${1:REQ className}, ${2:RSP className}) ${3:name};"
 		],
 		"description": "UVM blocking_transport_port template"
 	},
@@ -944,7 +944,7 @@
   "uvm_nonblocking_transport_port": {
 		"prefix": "uvm_nonblocking_transport_port",
 		"body": [
-			"uvm_nonblocking_transport_port #(${1:REQ className}, ${2:RSP class}) ${3:name};"
+			"uvm_nonblocking_transport_port #(${1:REQ className}, ${2:RSP className}) ${3:name};"
 		],
 		"description": "UVM nonblocking_transport_port template"
 	},
@@ -952,7 +952,7 @@
   "uvm_transport_port": {
 		"prefix": "uvm_transport_port",
 		"body": [
-			"uvm_transport_port #(${1:REQ className}, ${2:RSP class}) ${3:name};"
+			"uvm_transport_port #(${1:REQ className}, ${2:RSP className}) ${3:name};"
 		],
 		"description": "UVM transport_port template"
 	},
@@ -1032,7 +1032,7 @@
   "uvm_blocking_get_peek_export": {
 		"prefix": "uvm_blocking_get_peek_export",
 		"body": [
-			"uvm_blocking_get_peek__export #(${1:className}) ${2:name};"
+			"uvm_blocking_get_peek_export #(${1:className}) ${2:name};"
 		],
 		"description": "UVM blocking_get_peek_export template"
 	},
@@ -1056,7 +1056,7 @@
   "uvm_blocking_transport_export": {
 		"prefix": "uvm_blocking_transport_export",
 		"body": [
-			"uvm_blocking_transport_export #(${1:REQ className}, ${2:RSP class}) ${3:name};"
+			"uvm_blocking_transport_export #(${1:REQ className}, ${2:RSP className}) ${3:name};"
 		],
 		"description": "UVM blocking_transport_export template"
 	},
@@ -1064,7 +1064,7 @@
   "uvm_nonblocking_transport_export": {
 		"prefix": "uvm_nonblocking_transport_export",
 		"body": [
-			"uvm_nonblocking_transport_export #(${1:REQ className}, ${2:RSP class}) ${3:name};"
+			"uvm_nonblocking_transport_export #(${1:REQ className}, ${2:RSP className}) ${3:name};"
 		],
 		"description": "UVM nonblocking_transport_export template"
 	},
@@ -1072,7 +1072,7 @@
   "uvm_transport_export": {
 		"prefix": "uvm_transport_export",
 		"body": [
-			"uvm_transport_export #(${1:REQ className}, ${2:RSP class}) ${3:name};"
+			"uvm_transport_export #(${1:REQ className}, ${2:RSP className}) ${3:name};"
 		],
 		"description": "UVM transport_export template"
 	},
@@ -1152,7 +1152,7 @@
   "uvm_blocking_get_peek_imp": {
 		"prefix": "uvm_blocking_get_peek_imp",
 		"body": [
-			"uvm_blocking_get_peek__imp #(${1:className}, ${2:IMP}) ${3:name};"
+			"uvm_blocking_get_peek_imp #(${1:className}, ${2:IMP}) ${3:name};"
 		],
 		"description": "UVM blocking_get_peek_imp template"
 	},
@@ -1176,7 +1176,7 @@
   "uvm_blocking_transport_imp": {
 		"prefix": "uvm_blocking_transport_imp",
 		"body": [
-			"uvm_blocking_transport_imp #(${1:REQ className}, ${2:RSP class}, ${3:IMP}) ${4:name};"
+			"uvm_blocking_transport_imp #(${1:REQ className}, ${2:RSP className}, ${3:IMP}) ${4:name};"
 		],
 		"description": "UVM blocking_transport_imp template"
 	},
@@ -1184,7 +1184,7 @@
   "uvm_nonblocking_transport_imp": {
 		"prefix": "uvm_nonblocking_transport_imp",
 		"body": [
-			"uvm_nonblocking_transport_imp #(${1:REQ className}, ${2:RSP class}, ${3:IMP}) ${4:name};"
+			"uvm_nonblocking_transport_imp #(${1:REQ className}, ${2:RSP className}, ${3:IMP}) ${4:name};"
 		],
 		"description": "UVM nonblocking_transport_imp template"
 	},
@@ -1192,7 +1192,7 @@
   "uvm_transport_imp": {
 		"prefix": "uvm_transport_imp",
 		"body": [
-			"uvm_transport_imp #(${1:REQ className}, ${2:RSP class}, ${3:IMP}) ${4:name};"
+			"uvm_transport_imp #(${1:REQ className}, ${2:RSP className}, ${3:IMP}) ${4:name};"
 		],
 		"description": "UVM transport_imp template"
 	},
@@ -1320,7 +1320,7 @@
 	"uvm_sequence_with_parameters": {
 		"prefix": "uvm_sequence_with_parameters",
 		"body": [
-			"class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends ${3:uvm_sequence};",
+			"class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends uvm_sequence;",
 			"\ttypedef $1 #(${2/(\\b(parameter|type)\\s+([A-Za-z_][A-Za-z0-9_$]*)(\\s*=\\s*([A-Za-z0-9_$]+))?)*\\b/$3/g}) this_type_t;",
 			"\t`uvm_object_param_utils(this_type_t);\n",
 			"\tfunction new(string name = \"$1\");",
@@ -1352,7 +1352,7 @@
 	"uvm_sequence_item_with_parameters": {
 		"prefix": "uvm_sequence_item_with_parameters",
 		"body": [
-			"class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends ${3:uvm_sequence_item};",
+			"class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends uvm_sequence_item;",
 			"\ttypedef $1 #(${2/(\\b(parameter|type)\\s+([A-Za-z_][A-Za-z0-9_$]*)(\\s*=\\s*([A-Za-z0-9_$]+))?)*\\b/$3/g}) this_type_t;",
 			"\t`uvm_object_param_utils(this_type_t);\n",
 			"\tfunction new(string name = \"$1\");",
@@ -1383,7 +1383,7 @@
 	"uvm_object_with_parameters": {
 		"prefix": "uvm_object_with_parameters",
 		"body": [
-			"class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends ${3:uvm_object};",
+			"class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends uvm_object;",
 			"\ttypedef $1 #(${2/(\\b(parameter|type)\\s+([A-Za-z_][A-Za-z0-9_$]*)(\\s*=\\s*([A-Za-z0-9_$]+))?)*\\b/$3/g}) this_type_t;",
 			"\t`uvm_object_param_utils(this_type_t);\n",
 			"\tfunction new(string name = \"$1\");",
@@ -1414,7 +1414,7 @@
 	"uvm_component_with_parameters": {
 		"prefix": "uvm_component_with_parameters",
 		"body": [
-			"class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends ${3:uvm_component};",
+			"class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends uvm_component;",
 			"\ttypedef $1 #(${2/(\\b(parameter|type)\\s+([A-Za-z_][A-Za-z0-9_$]*)(\\s*=\\s*([A-Za-z0-9_$]+))?)*\\b/$3/g}) this_type_t;",
 			"\t`uvm_component_param_utils(this_type_t);\n",
 			"\t${4:config_obj_t} config_obj;\n\n",
