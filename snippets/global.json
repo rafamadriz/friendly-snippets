@@ -6,7 +6,7 @@
 			"\tFile         : ${TM_FILENAME}",
 			"\tDescription  : ${1:Description}",
 			"\tAuthor       : Kevin",
-			"\tLast Modified: ${CURRENT_DATE}/${CURRENT_MONTH}/${CURRENT_YEAR}, ${CURRENT_HOUR}:${CURRENT_MINUTE}",
+			"\tLast Modified: 09 Jan 2023, 15:29
 			"-----------------------------------\n",
 			"$0"
     ],
@@ -16,14 +16,15 @@
 		"prefix": "infYaml",
 		"body": [
 			"---",
-			"Title         : ${1:TM_FILENAME}",
+			"Title         : ${TM_FILENAME}",
 			"Author        : Kevin",
 			"Date          : ${CURRENT_DATE}/${CURRENT_MONTH}/${CURRENT_YEAR}, ${CURRENT_HOUR}:${CURRENT_MINUTE}",
 			"Abstract      : ${2:types}",
 			"output        : ",
 			"\tpdf_document: default",
 			"\thtml_notebook: default",
-			"---"
+			"---",
+      "$0"
 		],
 		"description": "file info in yaml for rmd files"
 	},
