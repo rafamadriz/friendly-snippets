@@ -288,12 +288,29 @@
   	"Markdown Head": {
     "prefix": "head",
     "body": [
-			"# ${TM_FILENAME}\n",
+			"# ${1:${TM_FILENAME}}\n",
 			"---\n",
 			"$0"
     ],
     "description": "Markdown files head (info)"
   },
+	"file-info_yaml": {
+		"prefix": "infYaml",
+		"body": [
+			"---",
+			"File          : ${TM_FILENAME}",
+			"Author        : Kevin",
+			"Date          : ${CURRENT_DATE}/${CURRENT_MONTH}/${CURRENT_YEAR}, ${CURRENT_HOUR}:${CURRENT_MINUTE}",
+			"output        :",
+			"\tpdf_document: default",
+			"\thtml_notebook: default",
+			"---\n",
+			"# ${1:Title}\n",
+			"---\n",
+			"$0"
+		],
+		"description": "file info in yaml for md files"
+	},
   "Right Arrow": {
     "prefix": ["rarr", "->"],
     "body": [ "&rarr;" ],
@@ -321,7 +338,7 @@
 	},
 	"Separator": {
 		"prefix": "sep",
-		"body": [ 
+		"body": [
 			"---\n",
 			"$0"
 		],
