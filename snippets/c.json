@@ -60,8 +60,22 @@
   },
   "#define macro": {
     "prefix": "#def",
-    "body": ["#define $0"],
-    "description": "Code snippet for #define ..."
+    "body": ["#define ${1:MACRO}"],
+    "description": "Code snippet for a textual macro"
+  },
+  "#define macro()": {
+    "prefix": "#deff",
+    "body": ["#define ${1:MACRO}($2) ($3)"],
+    "description": "Code snippet for a func-like macro"
+  },
+  "#if": {
+    "prefix": "#if",
+    "body": [
+      "#if ${1:0}",
+      "$0",
+      "#endif /* if $1 */"
+    ],
+    "description": "Code snippet for #if"
   },
   "#ifdef": {
     "prefix": "#ifdef",
@@ -81,14 +95,32 @@
     ],
     "description": "Code snippet for #ifndef"
   },
-  "#if": {
-    "prefix": "#if",
+  "include once": {
+    "prefix": "once",
     "body": [
-      "#if ${1:0}",
+      "#ifndef ${1:FILE_H}",
+      "#define $1",
+
       "$0",
-      "#endif /* if $1 */"
+
+      "#endif /* end of include guard: $1 */",
     ],
-    "description": "Code snippet for #if"
+    "description": "Header include guard"
+  },
+  "extern C": {
+    "prefix": "nocpp",
+    "body": [
+      "#ifdef __cplusplus",
+      "extern \"C\" {",
+      "#endif",
+
+      "$0",
+
+      "#ifdef __cplusplus"
+      "} /* extern \"C\" */",
+      "#endif"
+    ],
+    "description": "Disable C++ name mangling in C headers"
   },
   "if": {
     "prefix": "if",
