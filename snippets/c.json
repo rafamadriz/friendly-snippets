@@ -122,6 +122,16 @@
     ],
     "description": "Disable C++ name mangling in C headers"
   },
+  "#error": {
+    "prefix": "#err",
+    "body": ["#error \"$0\""],
+    "description": "Code snippet for #error"
+  },
+  "#warning": {
+    "prefix": "#warn",
+    "body": ["#warning \"$0\""],
+    "description": "Code snippet for #warning"
+  },
   "if": {
     "prefix": "if",
     "body": ["if ($1) {", "\t$0", "}"],
