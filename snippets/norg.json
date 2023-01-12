@@ -1,32 +1,14 @@
 {
+  "bold": {
+    "description": "bold words",
+    "prefix": "bold",
+    "body": ["*$0*"]
+  },
+
   "code": {
     "description": "code_block",
     "prefix": "code",
     "body": ["@code ${1:lang}", "$0", "@end"]
-  },
-
-  "math": {
-    "description": "math block",
-    "prefix": "math",
-    "body": ["@math", "$0", "@end"]
-  },
-
-  "table": {
-    "description": "table",
-    "prefix": "table",
-    "body": ["@table", "$0", "@end"]
-  },
-
-  "task": {
-    "description": "task",
-    "prefix": "task",
-    "body": ["- [ ] ${1:task}"]
-  },
-
-  "link": {
-    "description": "links",
-    "prefix": "link",
-    "body": ["[${1:description}]{${2:object}}"]
   },
 
   "data": {
@@ -35,10 +17,10 @@
     "body": ["@data", "$0", "@end"]
   },
 
-  "bold": {
-    "description": "bold words",
-    "prefix": "bold",
-    "body": ["*$0*"]
+  "inlinecode": {
+    "description": "inlinecode",
+    "prefix": "inlinecode",
+    "body": ["`$0`"]
   },
 
   "italic": {
@@ -47,10 +29,28 @@
     "body": ["/$0/"]
   },
 
-  "underline": {
-    "description": "underline words",
-    "prefix": "underline",
-    "body": ["_$0_"]
+  "link": {
+    "description": "links",
+    "prefix": "link",
+    "body": ["[${1:description}]{${2:object}}"]
+  },
+
+  "math": {
+    "description": "math block",
+    "prefix": "math",
+    "body": ["@math", "$0", "@end"]
+  },
+
+  "spoiler": {
+    "description": "spoiler",
+    "prefix": "spoiler",
+    "body": ["!$0!"]
+  },
+
+  "strikethrough": {
+    "description": "strike through",
+    "prefix": "strikethrough",
+    "body": ["-$0-"]
   },
 
   "subscript": {
@@ -65,9 +65,27 @@
     "body": ["^$0^"]
   },
 
+  "table": {
+    "description": "table",
+    "prefix": "table",
+    "body": ["@table", "$0", "@end"]
+  },
+
+  "task": {
+    "description": "task",
+    "prefix": "task",
+    "body": ["- ( ) ${1:task}"]
+  },
+
+  "underline": {
+    "description": "underline words",
+    "prefix": "underline",
+    "body": ["_$0_"]
+  },
+
   "var": {
     "description": "variable",
     "prefix": "var",
-    "body": ["=${1:variable}="]
+    "body": ["&${1:variable}&"]
   }
 }
