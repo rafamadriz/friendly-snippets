@@ -158,7 +158,7 @@
         "path": "./snippets/java.json"
       },
       {
-        "language": "java",
+        "language": "java-testing",
         "path": "./snippets/java/java-tests.json"
       },
       {
