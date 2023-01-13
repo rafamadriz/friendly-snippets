@@ -2,70 +2,135 @@
   "Standard Starter Template": {
     "prefix": "sst",
     "body": [
-      "#include <stdio.h>",
-      "",
-      "int main (int argc, char *argv[])",
-      "{",
-      "\t$0",
-      "\treturn 0;",
-      "}"
-    ],
-    "description": "A standard starter template for a C program"
-  },
-  "Stdlib Variant Starter Template": {
-    "prefix": "libsst",
-    "body": [
-      "#include <stdio.h>",
       "#include <stdlib.h>",
+      "#include <stdio.h>",
       "",
-      "int main (int argc, char *argv[])",
+      "int main(int argc, char *argv[])",
       "{",
       "\t$0",
-      "\treturn 0;",
+      "\treturn EXIT_SUCCESS;",
       "}"
     ],
-    "description": "A standard starter template for a C program with stdlib included"
+    "description": "Standard starter template for a tiny C program"
   },
-  "Main function template": {
+  "Preprocessor Starter Template": {
+    "prefix": "sstp",
+    "body": [
+      "// #define NDEBUG // disables assert()",
+      "#include <stdlib.h>",
+      "#include <stddef.h>",
+      "#include <stdbool.h>",
+      "#include <assert.h>",
+      "#include <errno.h>",
+      "#include <stdio.h>"
+    ],
+    "description": "Preprocessor starter template for a C project"
+  },
+  "main() template": {
     "prefix": "main",
     "body": [
-      "int main (int argc, char *argv[])",
+      "int main(int argc, char *argv[])",
       "{",
       "\t$0",
-      "\treturn 0;",
+      "\treturn EXIT_SUCCESS;",
       "}"
     ],
-    "description": "A standard main function for a C program"
+    "description": "Standard main function variant"
   },
-  "#inc": {
+  "main(void) template": {
+    "prefix": "mainn",
+    "body": [
+      "int main(void)",
+      "{",
+      "\t$0",
+      "\treturn EXIT_SUCCESS;",
+      "}"
+    ],
+    "description": "Void main function variant"
+  },
+  "#include <...>": {
     "prefix": "#inc",
-    "body": ["#include \"$0\""],
-    "description": "Code snippet for #include \" \""
-  },
-  "#inc<": {
-    "prefix": "#inc<",
     "body": ["#include <$0>"],
-    "description": "Code snippet for #include < >"
+    "description": "Code snippet for #include <...>"
   },
-  "#def": {
-    "prefix": "def",
-    "body": ["#define $0"],
-    "description": "Code snippet for #define \" \""
+  "#include \"...\"": {
+    "prefix": "#Inc",
+    "body": ["#include \"$0\""],
+    "description": "Code snippet for #include \"...\""
+  },
+  "#define macro": {
+    "prefix": "#def",
+    "body": ["#define ${1:MACRO}"],
+    "description": "Code snippet for a textual macro"
+  },
+  "#define macro()": {
+    "prefix": "#deff",
+    "body": ["#define ${1:MACRO}($2) ($3)"],
+    "description": "Code snippet for a func-like macro"
+  },
+  "#if": {
+    "prefix": "#if",
+    "body": [
+      "#if ${1:0}",
+      "$0",
+      "#endif /* if $1 */"
+    ],
+    "description": "Code snippet for #if"
   },
   "#ifdef": {
     "prefix": "#ifdef",
-    "body": ["#ifdef ${1:DEBUG}", "$0", "#endif /* $1 */"],
+    "body": [
+      "#ifdef ${1:DEBUG}",
+      "$0",
+      "#endif /* ifdef $1 */"
+    ],
     "description": "Code snippet for #ifdef"
   },
   "#ifndef": {
     "prefix": "#ifndef",
-    "body": ["#ifndef ${1:DEBUG}", "$0", "#endif /* !$1 */"],
+    "body": [
+      "#ifndef ${1:DEBUG}",
+      "$0",
+      "#endif /* ifndef $1 */"
+    ],
     "description": "Code snippet for #ifndef"
   },
-  "#if": {
-    "prefix": "#if",
-    "body": ["#if ${1:0}", "$0", "#endif /* $1 */"],
-    "description": "Code snippet for #if"
+  "include once": {
+    "prefix": "once",
+    "body": [
+      "#ifndef ${1:FILE_H}",
+      "#define $1",
+
+      "$0",
+
+      "#endif /* end of include guard: $1 */",
+    ],
+    "description": "Header include guard"
+  },
+  "extern C": {
+    "prefix": "nocpp",
+    "body": [
+      "#ifdef __cplusplus",
+      "extern \"C\" {",
+      "#endif",
+
+      "$0",
+
+      "#ifdef __cplusplus"
+      "} /* extern \"C\" */",
+      "#endif"
+    ],
+    "description": "Disable C++ name mangling in C headers"
+  },
+  "#error": {
+    "prefix": "#err",
+    "body": ["#error \"$0\""],
+    "description": "Code snippet for #error"
+  },
+  "#warning": {
+    "prefix": "#warn",
+    "body": ["#warning \"$0\""],
+    "description": "Code snippet for #warning"
   },
   "if": {
     "prefix": "if",
