@@ -1553,5 +1553,19 @@
   "typeofSnippet": {
     "prefix": "tpf",
     "body": ["typeof ${1:first}"]
+  },
+   "divWithClass": {
+    "prefix": "dvc",
+    "description": "Creates a React component class with ES7 module system and TypeScript interfaces",
+    "body": [
+      "<div class=\"${1:first}\">  </div>",
+    ]
+  },
+    "div": {
+    "prefix": "dv",
+    "description": "Creates a React component class with ES7 module system and TypeScript interfaces",
+    "body": [
+      "<div>${1:first}</div>",
+    ]
   }
 }
