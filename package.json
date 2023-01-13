@@ -127,6 +127,10 @@
         "path": "./snippets/sql.json"
       },
       {
+        "language": "systemverilog",
+        "path": "./snippets/systemverilog.json"
+      },
+      {
         "language": [
           "shellscript",
           "shell",
@@ -156,6 +160,10 @@
       {
         "language": "java",
         "path": "./snippets/java.json"
+      },
+      {
+        "language": "java-testing",
+        "path": "./snippets/java/java-tests.json"
       },
       {
         "language": "julia",

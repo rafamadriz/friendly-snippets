@@ -1,44 +1,38 @@
 {
   "bold": {
-    "description": "bold words",
     "prefix": "bold",
-    "body": ["*$0*"]
+    "body": ["*$0*"],
+    "description": "bold words"
   },
-
   "code": {
-    "description": "code_block",
     "prefix": "code",
-    "body": ["@code ${1:lang}", "$0", "@end"]
+    "body": ["@code ${1:lang}", "$0", "@end"],
+    "description": "code_block"
   },
-
   "data": {
-    "description": "data tags",
     "prefix": "data",
-    "body": ["@data", "$0", "@end"]
+    "body": ["@data", "$0", "@end"],
+    "description": "data tags"
   },
-
   "inlinecode": {
     "description": "inlinecode",
     "prefix": "inlinecode",
     "body": ["`$0`"]
   },
-
   "italic": {
-    "description": "italic words",
     "prefix": "italic",
-    "body": ["/$0/"]
+    "body": ["/$0/"],
+    "description": "italic words"
   },
-
   "link": {
-    "description": "links",
     "prefix": "link",
-    "body": ["[${1:description}]{${2:object}}"]
+    "body": ["[${1:description}](${2:object})"],
+    "description": "links"
   },
-
   "math": {
-    "description": "math block",
     "prefix": "math",
-    "body": ["@math", "$0", "@end"]
+    "body": ["@math", "$0", "@end"],
+    "description": "math block"
   },
 
   "spoiler": {
@@ -52,40 +46,34 @@
     "prefix": "strikethrough",
     "body": ["-$0-"]
   },
-
   "subscript": {
-    "description": "subscript",
     "prefix": "subscript",
-    "body": [",$0,"]
+    "body": [",$0,"],
+    "description": "subscript"
   },
-
   "superscript": {
-    "description": "superscript",
     "prefix": "superscript",
-    "body": ["^$0^"]
+    "body": ["^$0^"],
+    "description": "superscript"
   },
-
   "table": {
-    "description": "table",
     "prefix": "table",
-    "body": ["@table", "$0", "@end"]
+    "body": ["@table", "$0", "@end"],
+    "description": "table"
   },
-
   "task": {
-    "description": "task",
     "prefix": "task",
-    "body": ["- ( ) ${1:task}"]
+    "body": ["- ( ) ${1:task}"],
+    "description": "task"
   },
-
   "underline": {
-    "description": "underline words",
     "prefix": "underline",
-    "body": ["_$0_"]
+    "body": ["_$0_"],
+    "description": "underline words"
   },
-
   "var": {
-    "description": "variable",
     "prefix": "var",
-    "body": ["&${1:variable}&"]
+    "body": ["=${1:variable}="],
+    "description": "variable"
   }
 }
