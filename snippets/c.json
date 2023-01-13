@@ -243,23 +243,68 @@
     "description": "Code snippet for return statement"
   },
   "exit()": {
-    "prefix": "ret",
+    "prefix": "ex",
     "body": ["exit($0);"],
     "description": "Code snippet for exit function"
   },
   "for": {
     "prefix": "for",
     "body": [
-      "for (${1:size_t} ${2:i} = ${3:0}; $2 < ${4:length}; $2++) {",
+      "for (size_t ${2:i} = 0; $2 < ${1:count}; ++$2) {",
       "\t$0",
       "}"
     ],
-    "description": "Code snippet for 'for' loop"
+    "description": "Mostly used 'for' loop variant"
   },
-  "forr": {
+  "for custom type": {
+    "prefix": "fort",
+    "body": [
+      "for (${1:int} ${2:i} = 0; $2 < ${4:count}; ++$2) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Mostly used 'for' loop variant with custom type"
+  },
+  "for non-zero start": {
+    "prefix": "for1",
+    "body": [
+      "for (${1:size_t} ${2:i} = ${3:1}; $2 <= ${4:finish}; ++$2) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "'for' loop variant with non-zero start"
+  },
+  "for main() args": {
+    "prefix": "forp",
+    "body": [
+      "for (int ${2:i} = ${1:1}; $2 < argc; ++$2) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "'for' loop variant with non-zero start"
+  },
+  "for reverse": {
     "prefix": "forr",
     "body": [
-      "for (${1:size_t} ${2:i} = ${3:length} - 1; $2 >= ${4:0}; $2--) {",
+      "for (${1:size_t} ${2:i} = ${3:count}; $2 > ${4:0}; --$2) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Mostly used reverse 'for' loop variant"
+  },
+  "for reverse custom": {
+    "prefix": "forr1",
+    "body": [
+      "for (${1:int} ${2:i} = ${3:start}; $2 >= ${4:finish}; --$2) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "More custom reverse 'for' loop variant"
+  },
+  "for custom": {
+    "prefix": "forc",
+    "body": [
+      "for (${1:size_t} ${2:i} = ${3:initval}; ${4:$2}; $2${5:++}) {",
       "\t$0",
       "}"
     ],
