@@ -134,38 +134,118 @@
   },
   "if": {
     "prefix": "if",
-    "body": ["if ($1) {", "\t$0", "}"],
+    "body": [
+      "if (${1:true}) {",
+      "\t$0",
+      "}"
+    ],
     "description": "Code snippet for if statement"
   },
+  "if else": {
+    "prefix": "ife",
+    "body": [
+      "if (${1:true}) {",
+      "\t$2",
+      "} else {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Code snippet for if with else"
+  },
   "else": {
-    "prefix": "else",
-    "body": ["else {", "\t$0", "}"],
+    "prefix": "el",
+    "body": [
+      "else {",
+      "\t$0",
+      "}"
+    ],
     "description": "Code snippet for else statement"
   },
   "else if": {
-    "prefix": "else if",
-    "body": ["else if ($1) {", "\t$0", "}"],
+    "prefix": "elif",
+    "body": [
+      "else if (${1:true}) {",
+      "\t$0",
+      "}"
+    ],
     "description": "Code snippet for else-if statement"
+  },
+  "if 1L": {
+    "prefix": "ifi",
+    "body": ["if (${1:true}) $0;"],
+    "description": "Code snippet for 1-line-if"
+  },
+  "else if 1L": {
+    "prefix": "eli",
+    "body": ["else if (${1:true}) $0;"],
+    "description": "Code snippet for 1-line-if"
+  },
+  "ternary": {
+    "prefix": "t",
+    "body": ["$1 ? $2 : $0"],
+    "description": "Code snippet for ternary operator"
   },
   "switch": {
     "prefix": "switch",
-    "body": ["switch (${1:switch_on}) {", "\tdefault:", "\t\t$0", "\t\tbreak;", "}"],
+    "body": [
+      "switch (${1:switch_on}) {",
+      "$0",
+      "default:",
+      "\t$2",
+      "}"
+    ],
     "description": "Code snippet for switch statement"
+  },
+  "switch no default": {
+    "prefix": "switchndef",
+    "body": [
+      "switch (${1:switch_on}) {",
+      "$0",
+      "}"
+    ],
+    "description": "Code snippet for switch without default"
   },
   "case": {
     "prefix": "case",
-    "body": ["case $1:", "\t$0", "\tbreak;"],
+    "body": [
+      "case ${1:0}:",
+      "\t$2",
+      "\t${3:break;}"
+    ],
     "description": "Code snippet for case branch"
+  },
+  "case 1L": {
+    "prefix": "casei",
+    "body": ["case ${1:0}: $0;"],
+    "description": "Code snippet for single-line case"
   },
   "while": {
     "prefix": "while",
-    "body": ["while ($1) {", "\t$0", "}"],
-    "description": ""
+    "body": [
+      "while (${1:true}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Code snippet for while loop"
   },
-  "Do...while loop": {
+  "do...while loop": {
     "prefix": "do",
-    "body": ["do {", "\t$1", "} while($2);"],
-    "description": "Creates a do...while loop"
+    "body": [
+      "do {",
+      "\t$0",
+      "} while(${1:false});"
+    ],
+    "description": "Code snippet for do...while loop"
+  },
+  "return": {
+    "prefix": "ret",
+    "body": ["return $0;"],
+    "description": "Code snippet for return statement"
+  },
+  "exit()": {
+    "prefix": "ret",
+    "body": ["exit($0);"],
+    "description": "Code snippet for exit function"
   },
   "for": {
     "prefix": "for",
