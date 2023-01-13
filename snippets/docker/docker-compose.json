@@ -1,0 +1,332 @@
+{
+  "Version": {
+    "prefix": "ver",
+    "body": ["version: '${1:3}'"],
+    "description": ""
+  },
+  "Volumes": {
+    "prefix": "volumes",
+    "body": ["volumes:", "\t\t- ${1:value}"],
+    "description": ""
+  },
+  "Volume Driver": {
+    "prefix": "volume_",
+    "body": ["volume_driver: ${1:driver}"],
+    "description": ""
+  },
+  "Volumes From": {
+    "prefix": "volumes_",
+    "body": ["volumes_from:", "\t\t- ${1:name}"],
+    "description": ""
+  },
+  "External": {
+    "prefix": "exter",
+    "body": ["external: ${1:boolean}"],
+    "description": ""
+  },
+  "Services": {
+    "prefix": "ser",
+    "body": ["services:", "\t\t${1:name}"],
+    "description": ""
+  },
+  "Build": {
+    "prefix": "bu",
+    "body": ["build:", "\t\t${1:value}"],
+    "description": ""
+  },
+  "Context": {
+    "prefix": "conte",
+    "body": ["context: ${1:dir}"],
+    "description": ""
+  },
+  "Command": {
+    "prefix": "com",
+    "body": ["command: ${1:command}"],
+    "description": ""
+  },
+  "Depends on": {
+    "prefix": "dep",
+    "body": ["depends_on:", "\t\t${1:value}"],
+    "description": ""
+  },
+  "Environment": {
+    "prefix": "env",
+    "body": ["environment:", "\t\t${1:name}: ${2:value}"],
+    "description": ""
+  },
+  "Dockerfile": {
+    "prefix": "doc",
+    "body": ["dockerfile: ${1:file}"],
+    "description": ""
+  },
+  "Args": {
+    "prefix": "ar",
+    "body": ["args:", "\t\t${1:name}: ${2:value}"],
+    "description": ""
+  },
+  "Cap Add": {
+    "prefix": "cap_a",
+    "body": ["cap_add:", "\t\t- ${1:value}"],
+    "description": ""
+  },
+  "Cap Drop": {
+    "prefix": "cap_d",
+    "body": ["cap_drop:", "\t\t- ${1:value}"],
+    "description": ""
+  },
+  "cgroup_parent": {
+    "prefix": "cgr",
+    "body": ["cgroup_parent: ${1:cgroup}"],
+    "description": ""
+  },
+  "Container Name": {
+    "prefix": "conta",
+    "body": ["container_name: ${1:name}"],
+    "description": ""
+  },
+  "Devices": {
+    "prefix": "dev",
+    "body": ["devices:", "\t\t- ${1:value}"],
+    "description": ""
+  },
+  "DNS": {
+    "prefix": "dn",
+    "body": ["dns:", "\t\t- ${1:ip}"],
+    "description": ""
+  },
+  "DNS Search": {
+    "prefix": "dns_",
+    "body": ["dns_search:", "\t\t- ${1:ip}"],
+    "description": ""
+  },
+  "tmpfs": {
+    "prefix": "tm",
+    "body": ["tmpfs:", "\t\t- ${1:dir}"],
+    "description": ""
+  },
+  "Entrypoint": {
+    "prefix": "ent",
+    "body": ["entrypoint: ${1:command}"],
+    "description": ""
+  },
+  "Env File": {
+    "prefix": "env_",
+    "body": ["env_file:", "\t\t- ${1:file}"],
+    "description": ""
+  },
+  "Expose": {
+    "prefix": "exp",
+    "body": ["expose:", "\t\t- ${1:port}"],
+    "description": ""
+  },
+  "Extends": {
+    "prefix": "exten",
+    "body": ["extends:", "\t\tfile: ${1:file}", "\t\tservice: ${2:name}"],
+    "description": ""
+  },
+  "Extra Hosts": {
+    "prefix": "extr",
+    "body": ["extra_hosts:", "\t\t- ${1:host}:${2:ip}"],
+    "description": ""
+  },
+  "Group Add": {
+    "prefix": "gr",
+    "body": ["group_add:", "\t\t- ${1:name}"],
+    "description": ""
+  },
+  "Image": {
+    "prefix": "im",
+    "body": ["image: ${1:image}"],
+    "description": ""
+  },
+  "Labels": {
+    "prefix": "la",
+    "body": ["labels:", "\t\t${1:dns}: ${2:label}"],
+    "description": ""
+  },
+  "Links": {
+    "prefix": "links",
+    "body": ["links:", "\t\t- ${1:name}"],
+    "description": ""
+  },
+  "Logging": {
+    "prefix": "logg",
+    "body": [
+      "logging:",
+      "\t\tdriver: ${1:driver}",
+      "\t\toptions:",
+      "\t\t\t${2:value}"
+    ],
+    "description": ""
+  },
+  "Log Driver": {
+    "prefix": "log_d",
+    "body": ["log_driver: ${1:driver}"],
+    "description": ""
+  },
+  "Log Options": {
+    "prefix": "log_o",
+    "body": ["log_opt:", "\t\t${1:value}"],
+    "description": ""
+  },
+  "Net": {
+    "prefix": "net",
+    "body": ["net: ${1:value}"],
+    "description": ""
+  },
+  "Network Mode": {
+    "prefix": "network_",
+    "body": ["network_mode: ${1:value}"],
+    "description": ""
+  },
+  "Networks": {
+    "prefix": "networks",
+    "body": ["networks:", "\t\t- ${1:value}"],
+    "description": ""
+  },
+  "Ipv4 Address": {
+    "prefix": "ipv4",
+    "body": ["ipv4_address: ${1:ip}"],
+    "description": ""
+  },
+  "Ipv6 Address": {
+    "prefix": "ipv6",
+    "body": ["ipv6_address: ${1:ip}"],
+    "description": ""
+  },
+  "Link Local IPs": {
+    "prefix": "link_",
+    "body": ["link_local_ips:", "\t\t- ${1:ip}"],
+    "description": ""
+  },
+  "PID": {
+    "prefix": "pi",
+    "body": ["pid: ${1:host}"],
+    "description": ""
+  },
+  "Ports": {
+    "prefix": "po",
+    "body": ["ports:", "\t\t- ${1:value}"],
+    "description": ""
+  },
+  "Security Opt": {
+    "prefix": "sec",
+    "body": ["security_opt:", "\t\t- ${1:value}"],
+    "description": ""
+  },
+  "Stop Signal": {
+    "prefix": "sto",
+    "body": ["stop_signal: ${1:signal}"],
+    "description": ""
+  },
+  "Ulimits": {
+    "prefix": "ul",
+    "body": ["ulimits:", "\t\t${1:value}"],
+    "description": ""
+  },
+  "CPU Shares": {
+    "prefix": "cpu_s",
+    "body": ["cpu_shares: ${1:value}"],
+    "description": ""
+  },
+  "CPU Quota": {
+    "prefix": "cpu_q",
+    "body": ["cpu_quota: ${1:value}"],
+    "description": ""
+  },
+  "CPU Set": {
+    "prefix": "cpus",
+    "body": ["cpuset: ${1:value}"],
+    "description": ""
+  },
+  "Domain Name": {
+    "prefix": "dom",
+    "body": ["domainname: ${1:name}"],
+    "description": ""
+  },
+  "Hostname": {
+    "prefix": "ho",
+    "body": ["hostname: ${1:name}"],
+    "description": ""
+  },
+  "IPC": {
+    "prefix": "ipc",
+    "body": ["ipc: ${1:host}"],
+    "description": ""
+  },
+  "Memory Limit": {
+    "prefix": "mem_",
+    "body": ["mem_limit: ${1:value}"],
+    "description": ""
+  },
+  "Mem swap Limit": {
+    "prefix": "mems",
+    "body": ["memswap_limit: ${1:value}"],
+    "description": ""
+  },
+  "Privileged": {
+    "prefix": "pr",
+    "body": ["privileged: ${1:boolean}"],
+    "description": ""
+  },
+  "OOM Score Adj": {
+    "prefix": "oom",
+    "body": ["oom_score_adj: ${1:value}"],
+    "description": ""
+  },
+  "Restart": {
+    "prefix": "res",
+    "body": ["restart: ${1:value}"],
+    "description": ""
+  },
+  "User": {
+    "prefix": "us",
+    "body": ["user: ${1:value}"],
+    "description": ""
+  },
+  "Working Directory": {
+    "prefix": "wo",
+    "body": ["working_dir: ${1:dir}"],
+    "description": ""
+  },
+  "Read Only": {
+    "prefix": "rea",
+    "body": ["read_only: ${1:boolean}"],
+    "description": ""
+  },
+  "SHM Size": {
+    "prefix": "sh",
+    "body": ["shm_size: ${1:value}"],
+    "description": ""
+  },
+  "Stdin Open": {
+    "prefix": "std",
+    "body": ["stdin_open: ${1:boolean}"],
+    "description": ""
+  },
+  "TTY": {
+    "prefix": "tt",
+    "body": ["tty: ${1:boolean}"],
+    "description": ""
+  },
+  "Driver": {
+    "prefix": "driver",
+    "body": ["driver: ${1:value}"],
+    "description": ""
+  },
+  "Driver Opts": {
+    "prefix": "driver_",
+    "body": ["driver_opts:", "\t\t${1:key}: ${2:value}"],
+    "description": ""
+  },
+  "IPAM": {
+    "prefix": "ipa",
+    "body": ["ipam:", "\t\t${1:value}"],
+    "description": ""
+  },
+  "Health Check": {
+    "prefix": "hc",
+    "body": ["healthcheck:", "\t\ttest: ${1:command}"],
+    "description": ""
+  }
+}

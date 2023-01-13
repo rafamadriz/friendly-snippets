@@ -143,6 +143,11 @@
     "body": ["if (${1:true})", "{", "    $0", "}"],
     "description": "if statement"
   },
+  "else-if statement": {
+    "prefix": "else if",
+    "body": ["else if (${1:true})", "{", "    $0", "}"],
+    "description": "else-if statement"
+  },
   "Indexer": {
     "prefix": "indexer",
     "body": [

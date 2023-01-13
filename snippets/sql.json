@@ -165,7 +165,7 @@
   "groupb": {
     "prefix": "groupb",
     "body": ["SELECT ${1:attribute(s)}", "\tFROM ${2:tableName}",
-      "\tORDER BY ${3:attribute(s)};"
+      "\tGROUP BY ${3:attribute(s)};"
     ],
     "description": "Group by"
   },

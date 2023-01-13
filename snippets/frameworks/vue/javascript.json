@@ -311,7 +311,7 @@
     "ref-composition": {
         "prefix": "rfVue",
         "body": [
-            "const $1 = ref($0)"
+            "const $1 = ref($2)", "$0"
         ],
         "description": "Ref properties to be mixed into the Vue instance. "
     },
@@ -648,6 +648,13 @@
             "model"
         ],
         "description": "just a word"
+    },
+    "value": {
+        "prefix": "value",
+        "body": [
+            "value"
+        ],
+        "description": "'this' change to 'value' using ref vuejs"
     },
     "inheritAttrs": {
         "prefix": "inheritAttrs",
@@ -1353,108 +1360,6 @@
             "passive"
         ],
         "description": "just a word"
-    },
-    "importPinia": {
-        "prefix": "importPinia",
-        "body": [
-            "<import $1 from 'pinia'>",
-            "$0"
-        ],
-        "description": "import store from 'pinia'"
-    },
-    "exportConst": {
-        "prefix": "exportConst",
-        "body": [
-            "export const $1 = $0"
-        ],
-        "description": "export variable const"
-    },
-    "defineStorePinia": {
-        "prefix": "defineStorePinia",
-        "body": [
-            "defineStore('$1',{",
-            "\t$0",
-            "})"
-        ],
-        "description": "defineStore from pinia"
-    },
-    "statePinia": {
-        "prefix": "statePinia",
-        "body": [
-            "state: () => ({",
-            "\t$0",
-            "}),"
-        ],
-        "description": "state from pinia"
-    },
-    "gettersPinia": {
-        "prefix": "gettersPinia",
-        "body": [
-            "getters: {",
-            "\t$0",
-            "},"
-        ],
-        "description": "getters from pinia"
-    },
-    "actionsPinia": {
-        "prefix": "actionsPinia",
-        "body": [
-            "actions: {",
-            "\t$0",
-            "},"
-        ],
-        "description": "actions from pinia"
-    },
-    "$patchPinia1": {
-        "prefix": "$patchPinia1",
-        "body": [
-            "$patch({",
-            "\t$0",
-            "})"
-        ],
-        "description": "the $patch method. It allows you to apply multiple changes at the same time with a partial state object"
-    },
-    "$patchPinia2": {
-        "prefix": "$patchPinia2",
-        "body": [
-            "$patch(($1) => {",
-            "\t$0",
-            "})"
-        ],
-        "description": "the $patch method also accepts a function to group this kind of mutations that are difficult to apply with a patch object"
-    },
-    "$subscribePinia": {
-        "prefix": "$subscribePinia",
-        "body": [
-            "$subscribe(($1, $2) => {",
-            "\t$0",
-            "}),"
-        ],
-        "description": "$subscribing from pinia"
-    },
-    "pinia.use": {
-        "prefix": "pinia.use",
-        "body": [
-            "pinia.use($1)",
-            "$0"
-        ],
-        "description": "Adds a store plugin to extend every store"
-    },
-    "pinia.install": {
-        "prefix": "pinia.install",
-        "body": [
-            "pinia.install($1)",
-            "$0"
-        ],
-        "description": "pinia.install"
-    },
-    "pinia.state": {
-        "prefix": "pinia.state",
-        "body": [
-            "pinia.state($1)",
-            "$0" 
-        ],
-        "description": "pinia.state"
     },
     "onRenderTriggered-composition": {
         "prefix": "onRenderTriggered",
