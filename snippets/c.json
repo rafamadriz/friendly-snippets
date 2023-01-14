@@ -176,7 +176,7 @@
     "description": "Code snippet for 1-line-if"
   },
   "else if 1L": {
-    "prefix": "eli",
+    "prefix": "elifi",
     "body": ["else if (${1:true}) $0;"],
     "description": "Code snippet for 1-line-if"
   },
