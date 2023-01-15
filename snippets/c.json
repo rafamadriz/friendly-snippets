@@ -310,67 +310,149 @@
     ],
     "description": "Code snippet for reverse 'for' loop"
   },
-  "Create a function": {
+  "Function Declaration": {
+    "prefix": "fund",
+    "body": ["${2:void} ${1:fun}(${3:void});"],
+    "description": "Declare a function"
+  },
+  "Define a function": {
+    "prefix": "fun",
+    "body": [
+      "${2:void} ${1:fun}(${3:void})",
+      "{",
+      "\t$4",
+      "}"
+    ],
+    "description": "Code snippet for a function definition"
+  },
+  "Function with return var": {
     "prefix": "func",
-    "body": ["${2:void} ${1:func}(${4:void})", "{", "\t$3", "}"],
-    "description": "Creates a function"
+    "body": [
+      "${2:int} ${1:func}(${3:void})",
+      "{",
+      "\t$2 ${4:retval} = ${5:0};",
+      "\t$6",
+      "\treturn $4;",
+      "}"
+    ],
+    "description": "Define a function that uses a variable for return"
   },
-  "Create int function": {
-    "prefix": "intfunc",
-    "body": ["int $1 ()", "{", "\tint $2 = $3;$4", "\treturn $2;", "}"],
-    "description": "Creates a function that returns the int type"
+  "Function with 1 parameter": {
+    "prefix": "fun1",
+    "body": [
+      "${2:void} ${1:fun}(${3:Type1} ${4:Parm1})",
+      "{",
+      "\t$4",
+      "}"
+    ],
+    "description": "Define a function with 1 parameter"
   },
-  "Create float function": {
-    "prefix": "flfunc",
-    "body": ["float $1 ()", "{", "\tfloat $2 = $3;$4", "\treturn $2;", "}"],
-    "description": "Creates a function that returns the float type"
+  "Function with 2 parameters": {
+    "prefix": "fun2",
+    "body": [
+      "${2:void} ${1:fun}(${3:Type1} ${4:Parm1}, ${3:Type2} ${4:Parm2})",
+      "{",
+      "\t$4",
+      "}"
+    ],
+    "description": "Define a function with 2 parameters"
   },
-  "Create double function": {
-    "prefix": "doubfunc",
-    "body": ["double $1 ()", "{", "\tdouble $2 = $3;$4", "\treturn $2;", "}"],
-    "description": "Creates a function that returns the double type"
+  "Function with 3 parameters": {
+    "prefix": "fun3",
+    "body": [
+      "${2:void} ${1:fun}(${3:Type1} ${4:Parm1}, ${3:Type2} ${4:Parm2}, ${3:Type3} ${4:Parm3})",
+      "{",
+      "\t$4",
+      "}"
+    ],
+    "description": "Define a function with 3 parameters"
   },
-  "Create string function": {
-    "prefix": "strfunc",
-    "body": ["char[] $1 ()", "{", "\tchar[] $2 = {$3};$4", "\treturn $2;", "}"],
-    "description": "Creates a function that returns the char array type"
+  "typedef": {
+    "prefix": "td",
+    "body": ["typedef ${1:void} ${2:Emptiness};"],
+    "description": "Code snippet for typedef"
   },
-  "Create long function": {
-    "prefix": "longfunc",
-    "body": ["long $1 ()", "{", "\tlong $2 = $3;$4", "\treturn $3;", "}"],
-    "description": "Creates a function that returns the long type"
-  },
-  "struct": {
-    "prefix": "struct",
-    "body": ["struct ${1:MyStruct} {", "\t$0", "};"],
-    "description": "Code snippet for struct"
+  "Complicated typedef": {
+    "prefix": "tdd",
+    "body": ["typedef $0;"],
+    "description": "Code snippet to typedef function,array,etc. type"
   },
   "typedef struct": {
-    "prefix": "structt",
-    "body": ["typedef struct {", "\t$0", "} ${1:MyStruct};"],
-    "description": "Code snippet to define a type with struct"
+    "prefix": "tdst",
+    "body": ["typedef struct $1 ${1:Box};"],
+    "description": "Code snippet for implicit struct typedef"
+  },
+  "typedef union": {
+    "prefix": "tduo",
+    "body": ["typedef union $1 ${1:Cell};"],
+    "description": "Code snippet for implicit union typedef"
+  },
+  "typedef enum": {
+    "prefix": "tdenum",
+    "body": ["typedef enum $1 ${1:Numbers};"],
+    "description": "Code snippet for implicit enum typedef"
+  },
+  "struct": {
+    "prefix": "st",
+    "body": [
+      "struct ${1:MyStruct} {",
+      "\t$2",
+      "}$0;"
+    ],
+    "description": "Code snippet for struct"
+  },
+  "struct type": {
+    "prefix": "stt",
+    "body": [
+      "typedef struct $1 ${1:Box};"
+      "struct $1 {",
+      "\t$0",
+      "};"
+    ],
+    "description": "Define a type with struct"
+  },
+  "union": {
+    "prefix": "uo",
+    "body": [
+      "union ${1:MyUnion} {",
+      "\t$0",
+      "};"
+    ],
+    "description": "Code snippet for union"
+  },
+  "union type": {
+    "prefix": "uot",
+    "body": [
+      "typedef union $1 ${1:Cell};"
+      "union $1 {",
+      "\t$0",
+      "};"
+    ],
+    "description": "Define a type with union"
+  },
+  "enum constant": {
+    "prefix": "enumc",
+    "body": ["enum { $0 };"],
+    "description": "Define a constant with enum"
   },
   "enum": {
     "prefix": "enum",
-    "body": ["enum ${1:MyEnum} {", "\t$0", "};"],
-    "description": "Code snippet for enum"
-  },
-  "union": {
-    "prefix": "union",
-    "body": ["union ${1:MyUnion} {", "\t$0", "};"],
-    "description": "Code snippet for union"
-  },
-  "Create linked list": {
-    "prefix": "clist",
     "body": [
-      "typedef struct _node * Link;",
-      "typedef struct _node node;",
-      "struct _node {",
-      "\tint value;",
-      "\tLink next;",
+      "enum ${1:MyEnum} {",
+      "\t$0",
       "};"
     ],
-    "description": "Creates a linked list template"
+    "description": "Code snippet for enum"
+  },
+  "enum type": {
+    "prefix": "enumt",
+    "body": [
+      "typedef enum $1 ${1:Numbers};"
+      "enum $1 {",
+      "\t$0",
+      "};"
+    ],
+    "description": "Define a type with enum"
   },
   "Print variable of type float (2 decimal places)": {
     "prefix": "pflo",
@@ -454,5 +536,16 @@
       "free($2);"
     ],
     "description": "Allocates memory to a pointer variable using calloc(), then deallocates using free()."
+  },
+  "Create linked list": {
+    "prefix": "clist",
+    "body": [
+      "typedef struct $1 ${1:Node};",
+      "struct $1 {",
+      "\t$0",
+      "\tNode *next;",
+      "};"
+    ],
+    "description": "Creates a linked list template"
   }
 }
