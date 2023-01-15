@@ -1,4 +1,172 @@
 {
+  "Standard Starter Template": {
+    "prefix": "sst",
+    "body": [
+      "#include <stdlib.h>",
+      "#include <stdio.h>",
+      "",
+      "int main(int argc, char *argv[])",
+      "{",
+      "\t$0",
+      "\treturn EXIT_SUCCESS;",
+      "}"
+    ],
+    "description": "Standard starter template for a tiny C program"
+  },
+  "Preprocessor Starter Template": {
+    "prefix": "sstp",
+    "body": [
+      "// #define NDEBUG // disables assert()",
+      "#include <stdlib.h>",
+      "#include <stddef.h>",
+      "#include <stdbool.h>",
+      "#include <assert.h>",
+      "#include <errno.h>",
+      "#include <stdio.h>"
+    ],
+    "description": "Preprocessor starter template for a C project"
+  },
+  "main() template": {
+    "prefix": "main",
+    "body": [
+      "int main(int argc, char *argv[])",
+      "{",
+      "\t$0",
+      "\treturn EXIT_SUCCESS;",
+      "}"
+    ],
+    "description": "Standard main function variant"
+  },
+  "main(void) template": {
+    "prefix": "mainn",
+    "body": [
+      "int main(void)",
+      "{",
+      "\t$0",
+      "\treturn EXIT_SUCCESS;",
+      "}"
+    ],
+    "description": "Void main function variant"
+  },
+  "#include <...>": {
+    "prefix": "#inc",
+    "body": ["#include <$0>"],
+    "description": "Code snippet for #include <...>"
+  },
+  "#include \"...\"": {
+    "prefix": "#Inc",
+    "body": ["#include \"$0\""],
+    "description": "Code snippet for #include \"...\""
+  },
+  "#define macro": {
+    "prefix": "#def",
+    "body": ["#define ${1:MACRO}"],
+    "description": "Code snippet for a textual macro"
+  },
+  "#define macro()": {
+    "prefix": "#deff",
+    "body": ["#define ${1:MACRO}($2) ($3)"],
+    "description": "Code snippet for a func-like macro"
+  },
+  "#if": {
+    "prefix": "#if",
+    "body": [
+      "#if ${1:0}",
+      "$0",
+      "#endif /* if $1 */"
+    ],
+    "description": "Code snippet for #if"
+  },
+  "#ifdef": {
+    "prefix": "#ifdef",
+    "body": [
+      "#ifdef ${1:DEBUG}",
+      "$0",
+      "#endif /* ifdef $1 */"
+    ],
+    "description": "Code snippet for #ifdef"
+  },
+  "#ifndef": {
+    "prefix": "#ifndef",
+    "body": [
+      "#ifndef ${1:DEBUG}",
+      "$0",
+      "#endif /* ifndef $1 */"
+    ],
+    "description": "Code snippet for #ifndef"
+  },
+  "include once": {
+    "prefix": "once",
+    "body": [
+      "#ifndef ${1:FILE_H}",
+      "#define $1",
+
+      "$0",
+
+      "#endif /* end of include guard: $1 */",
+    ],
+    "description": "Header include guard"
+  },
+  "extern C": {
+    "prefix": "nocpp",
+    "body": [
+      "#ifdef __cplusplus",
+      "extern \"C\" {",
+      "#endif",
+
+      "$0",
+
+      "#ifdef __cplusplus",
+      "} /* extern \"C\" */",
+      "#endif"
+    ],
+    "description": "Disable C++ name mangling in C headers"
+  },
+  "#error": {
+    "prefix": "#err",
+    "body": ["#error \"$0\""],
+    "description": "Code snippet for #error"
+  },
+  "#warning": {
+    "prefix": "#warn",
+    "body": ["#warning \"$0\""],
+    "description": "Code snippet for #warning"
+  },
+  "if": {
+    "prefix": "if",
+    "body": ["if ($1) {", "\t$0", "}"],
+    "description": "Code snippet for if statement"
+  },
+  "else": {
+    "prefix": "else",
+    "body": ["else {", "\t$0", "}"],
+    "description": "Code snippet for else statement"
+  },
+  "else if": {
+    "prefix": "else if",
+    "body": ["else if ($1) {", "\t$0", "}"],
+    "description": "Code snippet for else-if statement"
+  },
+  "switch": {
+    "prefix": "switch",
+    "body": ["switch (${1:switch_on}) {", "\tdefault:", "\t\t$0", "\t\tbreak;", "}"],
+    "description": "Code snippet for switch statement"
+  },
+  "case": {
+    "prefix": "case",
+    "body": ["case $1:", "\t$0", "\tbreak;"],
+    "description": "Code snippet for case branch"
+  },
+  "while": {
+    "prefix": "while",
+    "body": ["while ($1) {", "\t$0", "}"],
+    "description": ""
+  },
+  "Do...while loop": {
+    "prefix": "do",
+    "body": ["do {", "\t$1", "} while($2);"],
+    "description": "Creates a do...while loop"
+  },
   "for": {
     "prefix": "for",
     "body": [
@@ -16,141 +184,6 @@
       "}"
     ],
     "description": "Code snippet for reverse 'for' loop"
-  },
-  "while": {
-    "prefix": "while",
-    "body": ["while ($1) {", "\t$0", "}"],
-    "description": ""
-  },
-  "if": {
-    "prefix": "if",
-    "body": ["if ($1) {", "\t$0", "}"],
-    "description": "Code snippet for if statement"
-  },
-  "else": {
-    "prefix": "else",
-    "body": ["else {", "\t$0", "}"],
-    "description": "Code snippet for else statement"
-  },
-  "else if": {
-    "prefix": "else if",
-    "body": ["else if ($1) {", "\t$0", "}"],
-    "description": "Code snippet for else-if statement"
-  },
-  "enum": {
-    "prefix": "enum",
-    "body": ["enum ${1:MyEnum} {", "\t$0", "};"],
-    "description": "Code snippet for enum"
-  },
-  "#ifdef": {
-    "prefix": "#ifdef",
-    "body": ["#ifdef ${1:DEBUG}", "$0", "#endif /* $1 */"],
-    "description": "Code snippet for #ifdef"
-  },
-  "#ifndef": {
-    "prefix": "#ifndef",
-    "body": ["#ifndef ${1:DEBUG}", "$0", "#endif /* !$1 */"],
-    "description": "Code snippet for #ifndef"
-  },
-  "#if": {
-    "prefix": "#if",
-    "body": ["#if ${1:0}", "$0", "#endif /* $1 */"],
-    "description": "Code snippet for #if"
-  },
-  "struct": {
-    "prefix": "struct",
-    "body": ["struct ${1:MyStruct} {", "\t$0", "};"],
-    "description": "Code snippet for struct"
-  },
-  "typedef struct": {
-    "prefix": "structt",
-    "body": ["typedef struct {", "\t$0", "} ${1:MyStruct};"],
-    "description": "Code snippet to define a type with struct"
-  },
-  "switch": {
-    "prefix": "switch",
-    "body": ["switch (${1:switch_on}) {", "\tdefault:", "\t\t$0", "\t\tbreak;", "}"],
-    "description": "Code snippet for switch statement"
-  },
-  "case": {
-    "prefix": "case",
-    "body": ["case $1:", "\t$0", "\tbreak;"],
-    "description": "Code snippet for case branch"
-  },
-  "union": {
-    "prefix": "union",
-    "body": ["union ${1:MyUnion} {", "\t$0", "};"],
-    "description": "Code snippet for union"
-  },
-  "#inc": {
-    "prefix": "#inc",
-    "body": ["#include \"$0\""],
-    "description": "Code snippet for #include \" \""
-  },
-  "#inc<": {
-    "prefix": "#inc<",
-    "body": ["#include <$0>"],
-    "description": "Code snippet for #include < >"
-  },
-  "#def": {
-    "prefix": "def",
-    "body": ["#define $0"],
-    "description": "Code snippet for #define \" \""
-  },
-  "Main function template": {
-    "prefix": "main",
-    "body": [
-      "int main (int argc, char *argv[])",
-      "{",
-      "\t$0",
-      "\treturn 0;",
-      "}"
-    ],
-    "description": "A standard main function for a C program"
-  },
-  "Standard Starter Template": {
-    "prefix": "sst",
-    "body": [
-      "#include <stdio.h>",
-      "",
-      "int main (int argc, char *argv[])",
-      "{",
-      "\t$0",
-      "\treturn 0;",
-      "}"
-    ],
-    "description": "A standard starter template for a C program"
-  },
-  "Stdlib Variant Starter Template": {
-    "prefix": "libsst",
-    "body": [
-      "#include <stdio.h>",
-      "#include <stdlib.h>",
-      "",
-      "int main (int argc, char *argv[])",
-      "{",
-      "\t$0",
-      "\treturn 0;",
-      "}"
-    ],
-    "description": "A standard starter template for a C program with stdlib included"
-  },
-  "Do...while loop": {
-    "prefix": "do",
-    "body": ["do {", "\t$1", "} while($2);"],
-    "description": "Creates a do...while loop"
-  },
-  "Create linked list": {
-    "prefix": "clist",
-    "body": [
-      "typedef struct _node * Link;",
-      "typedef struct _node node;",
-      "struct _node {",
-      "\tint value;",
-      "\tLink next;",
-      "};"
-    ],
-    "description": "Creates a linked list template"
   },
   "Create a function": {
     "prefix": "func",
@@ -181,6 +214,38 @@
     "prefix": "longfunc",
     "body": ["long $1 ()", "{", "\tlong $2 = $3;$4", "\treturn $3;", "}"],
     "description": "Creates a function that returns the long type"
+  },
+  "struct": {
+    "prefix": "struct",
+    "body": ["struct ${1:MyStruct} {", "\t$0", "};"],
+    "description": "Code snippet for struct"
+  },
+  "typedef struct": {
+    "prefix": "structt",
+    "body": ["typedef struct {", "\t$0", "} ${1:MyStruct};"],
+    "description": "Code snippet to define a type with struct"
+  },
+  "enum": {
+    "prefix": "enum",
+    "body": ["enum ${1:MyEnum} {", "\t$0", "};"],
+    "description": "Code snippet for enum"
+  },
+  "union": {
+    "prefix": "union",
+    "body": ["union ${1:MyUnion} {", "\t$0", "};"],
+    "description": "Code snippet for union"
+  },
+  "Create linked list": {
+    "prefix": "clist",
+    "body": [
+      "typedef struct _node * Link;",
+      "typedef struct _node node;",
+      "struct _node {",
+      "\tint value;",
+      "\tLink next;",
+      "};"
+    ],
+    "description": "Creates a linked list template"
   },
   "Print variable of type float (2 decimal places)": {
     "prefix": "pflo",

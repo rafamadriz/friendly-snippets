@@ -127,6 +127,10 @@
         "path": "./snippets/sql.json"
       },
       {
+        "language": "systemverilog",
+        "path": "./snippets/systemverilog.json"
+      },
+      {
         "language": [
           "shellscript",
           "shell",
@@ -158,6 +162,10 @@
         "path": "./snippets/java.json"
       },
       {
+        "language": "java-testing",
+        "path": "./snippets/java/java-tests.json"
+      },
+      {
         "language": "julia",
         "path": "./snippets/julia.json"
       },
@@ -168,7 +176,8 @@
           "pug",
           "eruby",
           "javascriptreact",
-          "htmldjango"
+          "htmldjango",
+          "astro"
         ],
         "path": "./snippets/html.json"
       },
@@ -295,7 +304,7 @@
       },
       {
         "language": [
-          "djangohtml", 
+          "djangohtml",
           "htmldjango"
         ],
         "path": "./snippets/frameworks/djangohtml.json"
@@ -412,6 +421,10 @@
       {
         "language": "dockerfile",
         "path": "./snippets/docker/docker_file.json"
+      },
+      {
+        "language": "edge",
+        "path": "./snippets/frameworks/edge.json"
       }
     ]
   }

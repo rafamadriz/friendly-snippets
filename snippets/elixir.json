@@ -169,7 +169,7 @@
   "test": {
     "prefix": "test",
     "body": [
-      "test ${1:name} do",
+      "test \"${1:name}\" do",
       "  $0",
       "end"
     ]

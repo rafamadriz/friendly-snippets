@@ -1,0 +1,208 @@
+{
+	"JUnit 4 - Imports for Tests": {
+		"prefix": "imports_junit4",
+		"body": [
+			"import static org.hamcrest.Matchers.*;",
+			"import static org.junit.Assert.assertEquals;",
+			"import static org.junit.Assert.assertThat;",
+			"import static org.mockito.Mockito.*;",
+			"import org.hamcrest.CoreMatchers;",
+			"import org.junit.After;",
+			"import org.junit.Before;",
+			"import org.junit.Test;",
+			"import org.mockito.ArgumentCaptor;",
+			"import org.mockito.Mock;"
+		],
+		"description": "Imports to write tests with JUnit 4, Mockito and Hamcrest"
+	},
+	"JUnit 5 - Imports for Tests": {
+		"prefix": "imports_junit5",
+		"body": [
+			"import static org.hamcrest.Matchers.*;",
+			"import static org.hamcrest.MatcherAssert.assertThat;",
+			"import static org.junit.jupiter.api.Assertions.assertEquals;",
+			"import static org.mockito.Mockito.*;",
+			"import org.hamcrest.CoreMatchers;",
+			"import org.junit.jupiter.api.AfterEach;",
+			"import org.junit.jupiter.api.BeforeEach;",
+			"import org.junit.jupiter.api.DisplayName;",
+			"import org.junit.jupiter.api.Test;",
+			"import org.junit.jupiter.api.extension.ExtendWith;",
+			"import org.junit.jupiter.params.ParameterizedTest;",
+			"import org.junit.jupiter.params.provider.CsvSource;",
+			"import org.mockito.ArgumentCaptor;",
+			"import org.mockito.junit.jupiter.MockitoExtension;",
+			"import org.mockito.Mock;"
+		],
+		"description": "Imports to write tests with JUnit 4, Mockito and Hamcrest"
+	},
+	"Assert - equals": {
+		"prefix": "test_equals",
+		"body": [
+			"assertEquals(${1:anObject}, ${2:anotherObject});"
+		],
+		"description": "assert equals"
+	},
+	"Assert - is": {
+		"prefix": "test_is",
+		"body": [
+			"assertThat(${1:mockedService.executeMagic()}, is(${2:\"42\"}));"
+		],
+		"description": "assert that is"
+	},
+	"Assert - is null": {
+		"prefix": "test_null",
+		"body": [
+			"assertThat(${1:mockedService.executeMagic()}, nullValue());"
+		],
+		"description": "assert that is null"
+	},
+	"Assert - is not null": {
+		"prefix": "test_not_null",
+		"body": [
+			"assertThat(${1:mockedService.executeMagic()}, notNullValue());"
+		],
+		"description": "assert that is not null"
+	},
+	"Assert - string is null or empty": {
+		"prefix": "test_nullorempty",
+		"body": [
+			"assertThat(${1:mockedService.executeMagic()}, emptyOrNullString());"
+		],
+		"description": "assert that a string is null or empty"
+	},
+	"Assert - string is not null and not empty": {
+		"prefix": "test_not_nullorempty",
+		"body": [
+			"assertThat(${1:mockedService.executeMagic()}, not(emptyOrNullString()));"
+		],
+		"description": "assert that string is not null or empty"
+	},
+	"Assert - isOneOf": {
+		"prefix": "test_isOneOf",
+		"body": [
+			"assertThat(${1:\"Test\"}, isOneOf(${2:\"Test\", \"TDD\"}));"
+		],
+		"description": "assert that isOneOf"
+	},
+	"Assert - hasSize": {
+		"prefix": "test_hasSize",
+		"body": [
+			"assertThat(List.of(\"Test\", \"TDD\"), hasSize(2));"
+		],
+		"description": "assert that hasSize"
+	},
+	"Assert - hasItem": {
+		"prefix": "test_hasItem",
+		"body": [
+			"assertThat(${1:List.of(\"Test\", \"TDD\")}, hasItem(${2:\"Test\"}));"
+		],
+		"description": "assert that hasItem"
+	},
+	"Assert - hasItems": {
+		"prefix": "test_hasItems",
+		"body": [
+			"assertThat(${1:List.of(\"Test\", \"TDD\")}, hasItem(${2:List.of(\"Test\", \"TDD\")}));"
+		],
+		"description": "assert that hasItem"
+	},
+	"Assert - isIn": {
+		"prefix": "test_isIn",
+		"body": [
+			"assertThat(${1:\"test\"}, isIn(${2:List.of(\"test\", \"TDD\")}));"
+		],
+		"description": "assert that isIn"
+	},
+	"Mockito - Create mock": {
+		"prefix": "mock_class",
+		"body": [
+			"${1:MyService} ${2:mockedService} = mock(${1:MyService}.class);"
+		],
+		"description": "Create a mock object of a class"
+	},
+	"Mock - Method return": {
+		"prefix": "mock_method_return",
+		"body": [
+			"when(${1:mockedService.executeMagicWith(any())}).thenReturn(${2:\"42\"});"
+		],
+		"description": "Mock a method's return"
+	},
+	"Mock - Method throws": {
+		"prefix": "mock_method_throw",
+		"body": [
+			"when(${1:mockedService.executeMagic()}).thenThrow(new ${2:IllegalArgumentException()};"
+		],
+		"description": "Mock a method to throw exception"
+	},
+	"Mockito - Verify call only": {
+		"prefix": "mock_verify_only",
+		"body": [
+			"verify(${1:mockedService}, only()).${2:executeMagic()};"
+		],
+		"description": "Verify if a mocked method was the only one called"
+	},
+	"Mockito - Verify call once": {
+		"prefix": "mock_verify_once",
+		"body": [
+			"verify(${1:mockedService}).${2:executeMagic()};"
+		],
+		"description": "Verify if a mocked method was called only once"
+	},
+	"Mockito - Verify call N times": {
+		"prefix": "mock_verify_times",
+		"body": [
+			"verify(${1:mockedService}, times(${2:2})).${3:executeMagic()};"
+		],
+		"description": "Verify if a mocked method was called `n` times"
+	},
+	"Mockito - Verify never called": {
+		"prefix": "mock_verify_never",
+		"body": [
+			"verify(${1:mockedService}, never()).${2:executeMagic()};"
+		],
+		"description": "Verify if a mocked method was never called"
+	},
+	"Mock - Argument captor": {
+		"prefix": "mock_arg_capture",
+		"body": [
+			"ArgumentCaptor<${1:Object}> ${2:argCaptor} = ArgumentCaptor.forClass(${1:Object}.class);",
+			"verify(${3:mockedService}).${4:executeMagicWith}(${2:argCaptor}.capture());",
+			"${1:Object} ${5:actualArg} = ${2:argCaptor}.getValue();"
+		],
+		"description": "Capture an argument given to a mocked method"
+	},
+	"JUnit 4 - Before each": {
+		"prefix": "test_before_junit4",
+		"body": "@Before\npublic void setup() {\n\t${1}\n}",
+		"description": "Create setup method with `@Before`"
+	},
+	"JUnit 4 - After each": {
+		"prefix": "test_after_junit4",
+		"body": "@After\npublic void tearDown() {\n\t${1}\n}",
+		"description": "Create tear down method with `@After`"
+	},
+	"JUnit 5 - Before each": {
+		"prefix": "test_before",
+		"body": "@BeforeEach\npublic void setup() {\n\t${1}\n}",
+		"description": "Create setup method with `@BeforeEach`"
+	},
+	"JUnit 5 - After each": {
+		"prefix": "test_after",
+		"body": "@AfterEach\npublic void tearDown() {\n\t${1}\n}",
+		"description": "Create tear down method with `@AfterEach`"
+	},
+	"JUnit 5 - Assert Throws": {
+		"prefix": "test_exception",
+		"body": "Assertions.assertThrows(${1:Exception}.class, () -> {\n\t${0}\n});",
+		"description": "Assertion to verify if an exception was thrown"
+	},
+	"JUnit 5 - Parameterized Test": {
+		"prefix": "test_parameterized",
+		"description": "Create parameterized test",
+		"body": [
+			"@ParameterizedTest(name = \"${1:{0\\} plus {1\\} should be {2\\}}\"",
+			"@CsvSource({\n\t${2:\"0, 0, 0\",\n\t\"1, 0, 1\",\n\t\"1, 1, 2\"}\n})",
+			"public void shouldAddTwoNumbers(int x, int y, int expectedSum) {\n\t${0}\n}"
+		]
+	}
+}
