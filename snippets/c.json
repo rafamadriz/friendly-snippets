@@ -101,7 +101,7 @@
       "#ifndef ${1:FILE_H}",
       "#define $1",
       "$0",
-      "#endif /* end of include guard: $1 */",
+      "#endif /* end of include guard: $1 */"
     ],
     "description": "Header include guard"
   },
