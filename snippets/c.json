@@ -100,9 +100,7 @@
     "body": [
       "#ifndef ${1:FILE_H}",
       "#define $1",
-      "",
       "$0",
-      "",
       "#endif /* end of include guard: $1 */",
     ],
     "description": "Header include guard"
@@ -113,9 +111,7 @@
       "#ifdef __cplusplus",
       "extern \"C\" {",
       "#endif",
-      "",
       "$0",
-      "",
       "#ifdef __cplusplus",
       "} /* extern \"C\" */",
       "#endif"
