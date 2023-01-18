@@ -30,8 +30,8 @@
     "prefix": "main",
     "body": [
       "int main(int argc, char *argv[])",
-      "{",
-      "\t$0",
+      "{\n",
+      "\t$0\n",
       "\treturn EXIT_SUCCESS;",
       "}"
     ],
@@ -41,8 +41,8 @@
     "prefix": "mainn",
     "body": [
       "int main(void)",
-      "{",
-      "\t$0",
+      "{\n",
+      "\t$0\n",
       "\treturn EXIT_SUCCESS;",
       "}"
     ],
@@ -99,8 +99,8 @@
     "prefix": "once",
     "body": [
       "#ifndef ${1:FILE_H}",
-      "#define $1",
-      "$0",
+      "#define $1\n",
+      "$0\n",
       "#endif /* end of include guard: $1 */"
     ],
     "description": "Header include guard"
@@ -110,8 +110,8 @@
     "body": [
       "#ifdef __cplusplus",
       "extern \"C\" {",
-      "#endif",
-      "$0",
+      "#endif\n",
+      "$0\n",
       "#ifdef __cplusplus",
       "} /* extern \"C\" */",
       "#endif"
@@ -539,7 +539,7 @@
       "typedef struct $1 ${1:Node};",
       "struct $1 {",
       "\t$0",
-      "\tNode *next;",
+      "\t$1 *${2:next};",
       "};"
     ],
     "description": "Creates a linked list template"
