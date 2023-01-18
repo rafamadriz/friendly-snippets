@@ -400,7 +400,7 @@
   "struct type": {
     "prefix": "stt",
     "body": [
-      "typedef struct $1 ${1:Box};"
+      "typedef struct $1 ${1:Box};",
       "struct $1 {",
       "\t$0",
       "};"
@@ -419,7 +419,7 @@
   "union type": {
     "prefix": "uot",
     "body": [
-      "typedef union $1 ${1:Cell};"
+      "typedef union $1 ${1:Cell};",
       "union $1 {",
       "\t$0",
       "};"
@@ -443,7 +443,7 @@
   "enum type": {
     "prefix": "enumt",
     "body": [
-      "typedef enum $1 ${1:Numbers};"
+      "typedef enum $1 ${1:Numbers};",
       "enum $1 {",
       "\t$0",
       "};"
