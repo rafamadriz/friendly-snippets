@@ -212,7 +212,7 @@
   },
   "case 1L": {
     "prefix": "casei",
-    "body": ["case ${1:0}: $0;"],
+    "body": ["case ${1:0}: $2;${3: break;}"],
     "description": "Code snippet for single-line case"
   },
   "while": {
