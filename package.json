@@ -83,6 +83,10 @@
         "path": "./snippets/fennel.json"
       },
       {
+        "language": "fsh",
+        "path": "./snippets/fsh.json"
+      },
+      {
         "language": "php",
         "path": "./snippets/php.json"
       },
