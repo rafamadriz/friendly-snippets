@@ -592,6 +592,19 @@
     ],
     "description": "Allocates memory to a pointer variable using calloc(), then deallocates using free()."
   },
+  "Comment block": {
+    "prefix": ",",
+    "body": ["/* $0 */"],
+    "description": "This is kind of convenient"
+  },
+  "Multiline comment": {
+    "prefix": ",,",
+    "body": [
+      "/* $0",
+      " */"
+    ],
+    "description": "This is kind of convenient"
+  },
   "Create linked list": {
     "prefix": "clist",
     "body": [
@@ -601,6 +614,6 @@
       "\t$1 *${2:next};",
       "};"
     ],
-    "description": "Creates a linked list template"
+    "description": "Create a linked list template"
   }
 }
