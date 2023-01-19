@@ -605,7 +605,7 @@
     ],
     "description": "This is kind of convenient"
   },
-  "Create linked list": {
+  "Linked list": {
     "prefix": "clist",
     "body": [
       "typedef struct $1 ${1:Node};",
@@ -615,5 +615,10 @@
       "};"
     ],
     "description": "Create a linked list template"
+  },
+  "Array length": {
+    "prefix": "alen",
+    "body": ["sizeof ${1:arr} / sizeof $1[0]"],
+    "description": "Calculate number of elements in an array"
   }
 }
