@@ -8,6 +8,7 @@
       "int main(int argc, char *argv[])",
       "{",
       "\t$0",
+      "",
       "\treturn EXIT_SUCCESS;",
       "}"
     ],
@@ -30,8 +31,9 @@
     "prefix": "main",
     "body": [
       "int main(int argc, char *argv[])",
-      "{\n",
-      "\t$0\n",
+      "{",
+      "\t$0",
+      "",
       "\treturn EXIT_SUCCESS;",
       "}"
     ],
@@ -41,8 +43,9 @@
     "prefix": "mainn",
     "body": [
       "int main(void)",
-      "{\n",
-      "\t$0\n",
+      "{",
+      "\t$0",
+      "",
       "\treturn EXIT_SUCCESS;",
       "}"
     ],
@@ -99,8 +102,10 @@
     "prefix": "once",
     "body": [
       "#ifndef ${1:FILE_H}",
-      "#define $1\n",
-      "$0\n",
+      "#define $1",
+      "",
+      "$0",
+      "",
       "#endif /* end of include guard: $1 */"
     ],
     "description": "Header include guard"
@@ -110,8 +115,10 @@
     "body": [
       "#ifdef __cplusplus",
       "extern \"C\" {",
-      "#endif\n",
-      "$0\n",
+      "#endif",
+      "",
+      "$0",
+      "",
       "#ifdef __cplusplus",
       "} /* extern \"C\" */",
       "#endif"
@@ -450,86 +457,138 @@
     ],
     "description": "Define a type with enum"
   },
-  "Print variable of type float (2 decimal places)": {
-    "prefix": "pflo",
-    "body": ["printf(\"$0 :>> %.2f\\n\", $0);"],
-    "description": "Calls printf() to log value of variable of type float rounded to 2 decimal places"
-  },
-  "Print variable of type integer": {
-    "prefix": "pint",
-    "body": ["printf(\"$0 :>> %d\\n\", $0);"],
-    "description": "Calls printf() to log value of variable of type signed integer"
-  },
-  "Print variable of type char": {
-    "prefix": "pcha",
-    "body": ["printf(\"$0 :>> %c\\n\", $0);"],
-    "description": "Calls printf() to log value of variable of type char"
-  },
-  "Print variable of type pointer": {
-    "prefix": "ppoint",
-    "body": ["printf(\"$0 :>> %p\\n\", (void *) $0);"],
-    "description": "Calls printf() to log value of variable of type pointer"
-  },
-  "Print variable of type size_t": {
-    "prefix": "psiz",
-    "body": ["printf(\"$0 :>> %zu\\n\", $0);"],
-    "description": "Calls printf() to log value of variable of type size_t"
-  },
   "printf": {
-    "prefix": "printf",
-    "body": ["printf(\"$1\\n\"$0);"],
+    "prefix": "pri",
+    "body": ["printf(\"${1:%s}\\n\"$0);"],
     "description": "Generic printf() snippet"
   },
+  "fprintf": {
+    "prefix": "fpri",
+    "body": ["fprintf(${1:stderr}, \"${2:%s}\\n\"$0);"],
+    "description": "Generic fprintf() snippet"
+  },
   "sprintf": {
-    "prefix": "sprintf",
-    "body": ["sprintf($1, \"$2\\n\"$0);"],
+    "prefix": "spri",
+    "body": ["sprintf(${1:buf}, \"${2:%s}\\n\"$0);"],
     "description": "Generic sprintf() snippet"
   },
-  "fprintf": {
-    "prefix": "fprintf",
-    "body": ["fprintf(${1:stderr}, \"$2\\n\"$0);"],
-    "description": "Generic fprintf() snippet"
+  "snprintf": {
+    "prefix": "snpri",
+    "body": ["sprintf(${1:buf}, ${2:max}, \"${3:%s}\\n\"$0);"],
+    "description": "Generic snprintf() snippet"
   },
   "scanf": {
     "prefix": "scanf",
-    "body": ["scanf(\"$1\"$0);"],
+    "body": ["scanf(\"${1:%i}\"$0);"],
     "description": "Generic scanf() snippet"
-  },
-  "sscanf": {
-    "prefix": "sscanf",
-    "body": ["sscanf($1, \"$2\"$0);"],
-    "description": "Generic sscanf() snippet"
   },
   "fscanf": {
     "prefix": "fscanf",
-    "body": ["fscanf($1, \"$2\"$0);"],
+    "body": ["fscanf(${1:stdin}, \"${2:%i}\"$0);"],
     "description": "Generic fscanf() snippet"
   },
-  "Allocate memory using malloc": {
-    "prefix": "mal",
+  "sscanf": {
+    "prefix": "sscanf",
+    "body": ["sscanf(${1:buf}, \"${2:%i}\"$0);"],
+    "description": "Generic sscanf() snippet"
+  },
+  "Print a variable": {
+    "prefix": "priv",
+    "body": ["printf(\"$0 = %${1:i}\\n\", $0);"],
+    "description": "Calls printf() to log value of a variable"
+  },
+  "warn": {
+    "prefix": "warn",
+    "body": ["warn(\"${1:%s}\"$0);"],
+    "description": "Generic warn() snippet"
+  },
+  "warnx": {
+    "prefix": "warnx",
+    "body": ["warnx(\"${1:%s}\"$0);"],
+    "description": "Generic warnx() snippet"
+  },
+  "err": {
+    "prefix": "err",
+    "body": ["err(\"${1:%s}\"$0);"],
+    "description": "Generic err() snippet"
+  },
+  "errx": {
+    "prefix": "errx",
+    "body": ["errx(\"${1:%s}\"$0);"],
+    "description": "Generic errx() snippet"
+  },
+  "assert": {
+    "prefix": "asr",
+    "body": ["assert($0);"],
+    "description": "Generic assert() snippet"
+  },
+  "static_assert": {
+    "prefix": "stasr",
+    "body": ["static_assert($0, \"${1:Oopsie!}\");"],
+    "description": "Generic static_assert() snippet"
+  },
+  "static_assert 1-param": {
+    "prefix": "stasr1",
+    "body": ["static_assert($0);"],
+    "description": "Generic C2X 1-parameter static_assert() snippet"
+  },
+  "malloc": {
+    "prefix": "mlc",
+    "body": ["${3:ptr} = malloc(sizeof(${1:int}[${2:1}])$0);"],
+    "description": "Code snippet for malloc()"
+  },
+  "calloc": {
+    "prefix": "clc",
+    "body": ["${3:ptr} = calloc(${2:1}, sizeof(${1:int})$0);"],
+    "description": "Code snippet for calloc()"
+  },
+  "realloc": {
+    "prefix": "rlc",
+    "body": ["${1:ptr} = realloc($1, sizeof(${2:int}[${3:1}])$0);"],
+    "description": "Code snippet for realloc()"
+  },
+  "free": {
+    "prefix": "fre",
+    "body": ["free(${1:ptr});"],
+    "description": "Code snippet for free()"
+  },
+  "malloc declaration": {
+    "prefix": "mlcd",
+    "body": ["${1:int} *${3:ptr} = malloc(sizeof($1[${2:1}])$0);"],
+    "description": "Code snippet for malloc() declaration"
+  },
+  "calloc declaration": {
+    "prefix": "clcd",
+    "body": ["${1:int} *${3:ptr} = calloc(${2:1}, sizeof($1)$0);"],
+    "description": "Code snippet for calloc() declaration"
+  },
+  "malloc template": {
+    "prefix": "mlct",
     "body": [
-      "${1:int} *${2:v} = malloc(${3:1} * sizeof($1));",
-      "",
-      "if (!$2) {",
-      "\tfprintf(stderr, \"Memory allocation failed!\\n\");",
-      "\t$4;",
+      "${1:int} *${3:ptr} = malloc(sizeof($1[${2:1}]));",
+      "if (!$3) {",
+      "\tfprintf(stderr, \"${4:Your memory is lost!}\\n\"$5);",
+      "\t${6:exit(EXIT_FAILURE)};",
       "}",
+      "",
       "$0",
-      "free($2);"
+      "",
+      "free($3);"
     ],
     "description": "Allocates memory to a pointer variable using malloc(), then deallocates using free()."
   },
-  "Allocate memory using calloc": {
-    "prefix": "cal",
+  "calloc template": {
+    "prefix": "clct",
     "body": [
-      "${1:int} *${2:v} = calloc(${3:1}, sizeof($1));",
-      "",
-      "if (!$2) {",
-      "\tfprintf(stderr, \"Memory allocation failed!\\n\");",
-      "\t$4;",
+      "${1:int} *${3:ptr} = calloc(${2:1}, sizeof($1));",
+      "if (!$3) {",
+      "\tfprintf(stderr, \"${4:Your memory is lost!}\\n\"$5);",
+      "\t${6:exit(EXIT_FAILURE)};",
       "}",
+      "",
       "$0",
-      "free($2);"
+      "",
+      "free($3);"
     ],
     "description": "Allocates memory to a pointer variable using calloc(), then deallocates using free()."
   },
