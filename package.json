@@ -419,6 +419,10 @@
         "path": "./snippets/verilog.json"
       },
       {
+        "language": "vhdl",
+        "path": "./snippets/vhdl.json"
+      },
+      {
         "language": "dockerfile",
         "path": "./snippets/docker/docker_file.json"
       },
