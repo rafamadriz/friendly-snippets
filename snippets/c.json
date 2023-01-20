@@ -329,7 +329,7 @@
     "description": "Code snippet for a function definition"
   },
   "Function with return var": {
-    "prefix": "func",
+    "prefix": "funv",
     "body": [
       "${2:int} ${1:func}(${3:void})",
       "{",
@@ -339,36 +339,6 @@
       "}"
     ],
     "description": "Define a function that uses a variable for return"
-  },
-  "Function with 1 parameter": {
-    "prefix": "fun1",
-    "body": [
-      "${2:void} ${1:fun}(${3:Type1} ${4:Parm1})",
-      "{",
-      "\t$4",
-      "}"
-    ],
-    "description": "Define a function with 1 parameter"
-  },
-  "Function with 2 parameters": {
-    "prefix": "fun2",
-    "body": [
-      "${2:void} ${1:fun}(${3:Type1} ${4:Parm1}, ${3:Type2} ${4:Parm2})",
-      "{",
-      "\t$4",
-      "}"
-    ],
-    "description": "Define a function with 2 parameters"
-  },
-  "Function with 3 parameters": {
-    "prefix": "fun3",
-    "body": [
-      "${2:void} ${1:fun}(${3:Type1} ${4:Parm1}, ${3:Type2} ${4:Parm2}, ${3:Type3} ${4:Parm3})",
-      "{",
-      "\t$4",
-      "}"
-    ],
-    "description": "Define a function with 3 parameters"
   },
   "typedef": {
     "prefix": "td",
@@ -604,6 +574,41 @@
       " */"
     ],
     "description": "This is kind of convenient"
+  },
+  "Doxygen template": {
+    "prefix": "dox",
+    "body": [
+      "/*!$1",
+      " * @brief ${2:This is something undocumented.}",
+      " *",
+      " * ${3:Nothing to say here...}$0",
+      " */"
+    ],
+    "description": "Generic Doxygen template to document a var/func/etc"
+  },
+  "Doxygen function": {
+    "prefix": "dfun",
+    "body": [
+      "/*!",
+      " * @brief ${4:This function is undocumented.}",
+      " *",
+      " * ${5:Nothing to say here...}",
+      " *$7",
+      " * @return ${6:Nothing.}$8",
+      " */",
+      "${2:void} ${1:fun}(${3:void})${9:;}"
+    ],
+    "description": "Document a function with Doxygen"
+  },
+  "Todo section": {
+    "prefix": "todo",
+    "body": [
+      "/*! TODO: ${1:I forgor...}",
+      " *",
+      " * @todo ${2:Cure my dementia.}",
+      " */"
+    ],
+    "description": "Doxygen snippet for todo section"
   },
   "Array length": {
     "prefix": "alen",
