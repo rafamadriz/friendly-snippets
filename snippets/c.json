@@ -315,15 +315,15 @@
   },
   "Function Declaration": {
     "prefix": "fund",
-    "body": ["${2:void} ${1:fun}(${3:void});"],
+    "body": ["$4${2:void} ${1:fun}(${3:void});"],
     "description": "Declare a function"
   },
   "Define a function": {
     "prefix": "fun",
     "body": [
-      "${2:void} ${1:fun}(${3:void})",
+      "$4${2:void} ${1:fun}(${3:void})",
       "{",
-      "\t$4",
+      "\t$0",
       "}"
     ],
     "description": "Code snippet for a function definition"
@@ -331,10 +331,10 @@
   "Function with return var": {
     "prefix": "funv",
     "body": [
-      "${2:int} ${1:func}(${3:void})",
+      "$4${2:int} ${1:func}(${3:void})",
       "{",
-      "\t$2 ${4:retval} = ${5:0};",
-      "\t$6",
+      "\t$2 ${5:retval} = ${6:0};",
+      "\t$0",
       "\treturn $4;",
       "}"
     ],
@@ -596,7 +596,7 @@
       " *$7",
       " * @return ${6:Nothing.}$8",
       " */",
-      "${2:void} ${1:fun}(${3:void})${9:;}"
+      "$9${2:void} ${1:fun}(${3:void})${10:;}"
     ],
     "description": "Document a function with Doxygen"
   },
