@@ -405,7 +405,7 @@
   },
   "enum constant": {
     "prefix": "enumc",
-    "body": ["enum { $0 };"],
+    "body": ["enum $1{ $0 };"],
     "description": "Define a constant with enum"
   },
   "enum": {
@@ -609,6 +609,20 @@
       " */"
     ],
     "description": "Doxygen snippet for todo section"
+  },
+  "Group section": {
+    "prefix": "dgr",
+    "body": [
+      "/*! @name ${1:Useless API.}${2: Details...}",
+      " * @{",
+      " */",
+      "",
+      "$0",
+      "",
+      "/*! @}",
+      " */"
+    ],
+    "description": "Group documented elements"
   },
   "Array length": {
     "prefix": "alen",
