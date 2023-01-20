@@ -594,16 +594,21 @@
   },
   "Comment block": {
     "prefix": ",",
-    "body": ["/* $0 */"],
+    "body": ["/*$0 */"],
     "description": "This is kind of convenient"
   },
   "Multiline comment": {
     "prefix": ",,",
     "body": [
-      "/* $0",
+      "/*$0",
       " */"
     ],
     "description": "This is kind of convenient"
+  },
+  "Array length": {
+    "prefix": "alen",
+    "body": ["sizeof ${1:arr} / sizeof $1[0]"],
+    "description": "Calculate number of elements in an array"
   },
   "Linked list": {
     "prefix": "clist",
@@ -615,10 +620,5 @@
       "};"
     ],
     "description": "Create a linked list template"
-  },
-  "Array length": {
-    "prefix": "alen",
-    "body": ["sizeof ${1:arr} / sizeof $1[0]"],
-    "description": "Calculate number of elements in an array"
   }
 }
