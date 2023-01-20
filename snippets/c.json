@@ -335,7 +335,7 @@
       "{",
       "\t$2 ${5:retval} = ${6:0};",
       "\t$0",
-      "\treturn $4;",
+      "\treturn $5;",
       "}"
     ],
     "description": "Define a function that uses a variable for return"
