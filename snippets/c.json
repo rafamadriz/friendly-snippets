@@ -30,8 +30,8 @@
     "prefix": "main",
     "body": [
       "int main(int argc, char *argv[])",
-      "{",
-      "\t$0",
+      "{\n",
+      "\t$0\n",
       "\treturn EXIT_SUCCESS;",
       "}"
     ],
@@ -41,8 +41,8 @@
     "prefix": "mainn",
     "body": [
       "int main(void)",
-      "{",
-      "\t$0",
+      "{\n",
+      "\t$0\n",
       "\treturn EXIT_SUCCESS;",
       "}"
     ],
@@ -99,8 +99,8 @@
     "prefix": "once",
     "body": [
       "#ifndef ${1:FILE_H}",
-      "#define $1",
-      "$0",
+      "#define $1\n",
+      "$0\n",
       "#endif /* end of include guard: $1 */"
     ],
     "description": "Header include guard"
@@ -110,8 +110,8 @@
     "body": [
       "#ifdef __cplusplus",
       "extern \"C\" {",
-      "#endif",
-      "$0",
+      "#endif\n",
+      "$0\n",
       "#ifdef __cplusplus",
       "} /* extern \"C\" */",
       "#endif"
@@ -130,118 +130,325 @@
   },
   "if": {
     "prefix": "if",
-    "body": ["if ($1) {", "\t$0", "}"],
+    "body": [
+      "if (${1:true}) {",
+      "\t$0",
+      "}"
+    ],
     "description": "Code snippet for if statement"
   },
+  "if else": {
+    "prefix": "ife",
+    "body": [
+      "if (${1:true}) {",
+      "\t$2",
+      "} else {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Code snippet for if with else"
+  },
   "else": {
-    "prefix": "else",
-    "body": ["else {", "\t$0", "}"],
+    "prefix": "el",
+    "body": [
+      "else {",
+      "\t$0",
+      "}"
+    ],
     "description": "Code snippet for else statement"
   },
   "else if": {
-    "prefix": "else if",
-    "body": ["else if ($1) {", "\t$0", "}"],
+    "prefix": "elif",
+    "body": [
+      "else if (${1:true}) {",
+      "\t$0",
+      "}"
+    ],
     "description": "Code snippet for else-if statement"
+  },
+  "if 1L": {
+    "prefix": "ifi",
+    "body": ["if (${1:true}) $0;"],
+    "description": "Code snippet for 1-line-if"
+  },
+  "else if 1L": {
+    "prefix": "elifi",
+    "body": ["else if (${1:true}) $0;"],
+    "description": "Code snippet for 1-line-if"
+  },
+  "ternary": {
+    "prefix": "t",
+    "body": ["$1 ? $2 : $0"],
+    "description": "Code snippet for ternary operator"
   },
   "switch": {
     "prefix": "switch",
-    "body": ["switch (${1:switch_on}) {", "\tdefault:", "\t\t$0", "\t\tbreak;", "}"],
+    "body": [
+      "switch (${1:switch_on}) {",
+      "$0",
+      "default:",
+      "\t$2",
+      "}"
+    ],
     "description": "Code snippet for switch statement"
+  },
+  "switch no default": {
+    "prefix": "switchndef",
+    "body": [
+      "switch (${1:switch_on}) {",
+      "$0",
+      "}"
+    ],
+    "description": "Code snippet for switch without default"
   },
   "case": {
     "prefix": "case",
-    "body": ["case $1:", "\t$0", "\tbreak;"],
+    "body": [
+      "case ${1:0}:",
+      "\t$2",
+      "\t${3:break;}"
+    ],
     "description": "Code snippet for case branch"
+  },
+  "case 1L": {
+    "prefix": "casei",
+    "body": ["case ${1:0}: $2;${3: break;}"],
+    "description": "Code snippet for single-line case"
   },
   "while": {
     "prefix": "while",
-    "body": ["while ($1) {", "\t$0", "}"],
-    "description": ""
+    "body": [
+      "while (${1:true}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Code snippet for while loop"
   },
-  "Do...while loop": {
+  "do...while loop": {
     "prefix": "do",
-    "body": ["do {", "\t$1", "} while($2);"],
-    "description": "Creates a do...while loop"
+    "body": [
+      "do {",
+      "\t$0",
+      "} while(${1:false});"
+    ],
+    "description": "Code snippet for do...while loop"
+  },
+  "return": {
+    "prefix": "ret",
+    "body": ["return $0;"],
+    "description": "Code snippet for return statement"
+  },
+  "exit()": {
+    "prefix": "ex",
+    "body": ["exit($0);"],
+    "description": "Code snippet for exit function"
   },
   "for": {
     "prefix": "for",
     "body": [
-      "for (${1:size_t} ${2:i} = ${3:0}; $2 < ${4:length}; $2++) {",
+      "for (size_t ${2:i} = 0; $2 < ${1:count}; ++$2) {",
       "\t$0",
       "}"
     ],
-    "description": "Code snippet for 'for' loop"
+    "description": "Mostly used 'for' loop variant"
   },
-  "forr": {
+  "for custom type": {
+    "prefix": "fort",
+    "body": [
+      "for (${1:int} ${2:i} = 0; $2 < ${4:count}; ++$2) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Mostly used 'for' loop variant with custom type"
+  },
+  "for non-zero start": {
+    "prefix": "for1",
+    "body": [
+      "for (${1:size_t} ${2:i} = ${3:1}; $2 <= ${4:finish}; ++$2) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "'for' loop variant with non-zero start"
+  },
+  "for main() args": {
+    "prefix": "forp",
+    "body": [
+      "for (int ${2:i} = ${1:1}; $2 < argc; ++$2) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "'for' loop variant with non-zero start"
+  },
+  "for reverse": {
     "prefix": "forr",
     "body": [
-      "for (${1:size_t} ${2:i} = ${3:length} - 1; $2 >= ${4:0}; $2--) {",
+      "for (${1:size_t} ${2:i} = ${3:count}; $2 > ${4:0}; --$2) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Mostly used reverse 'for' loop variant"
+  },
+  "for reverse custom": {
+    "prefix": "forr1",
+    "body": [
+      "for (${1:int} ${2:i} = ${3:start}; $2 >= ${4:finish}; --$2) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "More custom reverse 'for' loop variant"
+  },
+  "for custom": {
+    "prefix": "forc",
+    "body": [
+      "for (${1:size_t} ${2:i} = ${3:initval}; ${4:$2}; $2${5:++}) {",
       "\t$0",
       "}"
     ],
     "description": "Code snippet for reverse 'for' loop"
   },
-  "Create a function": {
+  "Function Declaration": {
+    "prefix": "fund",
+    "body": ["${2:void} ${1:fun}(${3:void});"],
+    "description": "Declare a function"
+  },
+  "Define a function": {
+    "prefix": "fun",
+    "body": [
+      "${2:void} ${1:fun}(${3:void})",
+      "{",
+      "\t$4",
+      "}"
+    ],
+    "description": "Code snippet for a function definition"
+  },
+  "Function with return var": {
     "prefix": "func",
-    "body": ["${2:void} ${1:func}(${4:void})", "{", "\t$3", "}"],
-    "description": "Creates a function"
+    "body": [
+      "${2:int} ${1:func}(${3:void})",
+      "{",
+      "\t$2 ${4:retval} = ${5:0};",
+      "\t$6",
+      "\treturn $4;",
+      "}"
+    ],
+    "description": "Define a function that uses a variable for return"
   },
-  "Create int function": {
-    "prefix": "intfunc",
-    "body": ["int $1 ()", "{", "\tint $2 = $3;$4", "\treturn $2;", "}"],
-    "description": "Creates a function that returns the int type"
+  "Function with 1 parameter": {
+    "prefix": "fun1",
+    "body": [
+      "${2:void} ${1:fun}(${3:Type1} ${4:Parm1})",
+      "{",
+      "\t$4",
+      "}"
+    ],
+    "description": "Define a function with 1 parameter"
   },
-  "Create float function": {
-    "prefix": "flfunc",
-    "body": ["float $1 ()", "{", "\tfloat $2 = $3;$4", "\treturn $2;", "}"],
-    "description": "Creates a function that returns the float type"
+  "Function with 2 parameters": {
+    "prefix": "fun2",
+    "body": [
+      "${2:void} ${1:fun}(${3:Type1} ${4:Parm1}, ${3:Type2} ${4:Parm2})",
+      "{",
+      "\t$4",
+      "}"
+    ],
+    "description": "Define a function with 2 parameters"
   },
-  "Create double function": {
-    "prefix": "doubfunc",
-    "body": ["double $1 ()", "{", "\tdouble $2 = $3;$4", "\treturn $2;", "}"],
-    "description": "Creates a function that returns the double type"
+  "Function with 3 parameters": {
+    "prefix": "fun3",
+    "body": [
+      "${2:void} ${1:fun}(${3:Type1} ${4:Parm1}, ${3:Type2} ${4:Parm2}, ${3:Type3} ${4:Parm3})",
+      "{",
+      "\t$4",
+      "}"
+    ],
+    "description": "Define a function with 3 parameters"
   },
-  "Create string function": {
-    "prefix": "strfunc",
-    "body": ["char[] $1 ()", "{", "\tchar[] $2 = {$3};$4", "\treturn $2;", "}"],
-    "description": "Creates a function that returns the char array type"
+  "typedef": {
+    "prefix": "td",
+    "body": ["typedef ${1:void} ${2:Emptiness};"],
+    "description": "Code snippet for typedef"
   },
-  "Create long function": {
-    "prefix": "longfunc",
-    "body": ["long $1 ()", "{", "\tlong $2 = $3;$4", "\treturn $3;", "}"],
-    "description": "Creates a function that returns the long type"
-  },
-  "struct": {
-    "prefix": "struct",
-    "body": ["struct ${1:MyStruct} {", "\t$0", "};"],
-    "description": "Code snippet for struct"
+  "Complicated typedef": {
+    "prefix": "tdd",
+    "body": ["typedef $0;"],
+    "description": "Code snippet to typedef function,array,etc. type"
   },
   "typedef struct": {
-    "prefix": "structt",
-    "body": ["typedef struct {", "\t$0", "} ${1:MyStruct};"],
-    "description": "Code snippet to define a type with struct"
+    "prefix": "tdst",
+    "body": ["typedef struct $1 ${1:Box};"],
+    "description": "Code snippet for implicit struct typedef"
+  },
+  "typedef union": {
+    "prefix": "tduo",
+    "body": ["typedef union $1 ${1:Cell};"],
+    "description": "Code snippet for implicit union typedef"
+  },
+  "typedef enum": {
+    "prefix": "tdenum",
+    "body": ["typedef enum $1 ${1:Numbers};"],
+    "description": "Code snippet for implicit enum typedef"
+  },
+  "struct": {
+    "prefix": "st",
+    "body": [
+      "struct ${1:MyStruct} {",
+      "\t$2",
+      "}$0;"
+    ],
+    "description": "Code snippet for struct"
+  },
+  "struct type": {
+    "prefix": "stt",
+    "body": [
+      "typedef struct $1 ${1:Box};",
+      "struct $1 {",
+      "\t$0",
+      "};"
+    ],
+    "description": "Define a type with struct"
+  },
+  "union": {
+    "prefix": "uo",
+    "body": [
+      "union ${1:MyUnion} {",
+      "\t$0",
+      "};"
+    ],
+    "description": "Code snippet for union"
+  },
+  "union type": {
+    "prefix": "uot",
+    "body": [
+      "typedef union $1 ${1:Cell};",
+      "union $1 {",
+      "\t$0",
+      "};"
+    ],
+    "description": "Define a type with union"
+  },
+  "enum constant": {
+    "prefix": "enumc",
+    "body": ["enum { $0 };"],
+    "description": "Define a constant with enum"
   },
   "enum": {
     "prefix": "enum",
-    "body": ["enum ${1:MyEnum} {", "\t$0", "};"],
-    "description": "Code snippet for enum"
-  },
-  "union": {
-    "prefix": "union",
-    "body": ["union ${1:MyUnion} {", "\t$0", "};"],
-    "description": "Code snippet for union"
-  },
-  "Create linked list": {
-    "prefix": "clist",
     "body": [
-      "typedef struct _node * Link;",
-      "typedef struct _node node;",
-      "struct _node {",
-      "\tint value;",
-      "\tLink next;",
+      "enum ${1:MyEnum} {",
+      "\t$0",
       "};"
     ],
-    "description": "Creates a linked list template"
+    "description": "Code snippet for enum"
+  },
+  "enum type": {
+    "prefix": "enumt",
+    "body": [
+      "typedef enum $1 ${1:Numbers};",
+      "enum $1 {",
+      "\t$0",
+      "};"
+    ],
+    "description": "Define a type with enum"
   },
   "Print variable of type float (2 decimal places)": {
     "prefix": "pflo",
@@ -325,5 +532,16 @@
       "free($2);"
     ],
     "description": "Allocates memory to a pointer variable using calloc(), then deallocates using free()."
+  },
+  "Create linked list": {
+    "prefix": "clist",
+    "body": [
+      "typedef struct $1 ${1:Node};",
+      "struct $1 {",
+      "\t$0",
+      "\t$1 *${2:next};",
+      "};"
+    ],
+    "description": "Creates a linked list template"
   }
 }
