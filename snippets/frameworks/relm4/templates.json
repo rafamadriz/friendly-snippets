@@ -1,0 +1,18 @@
+{
+	"Relm4 Widget Template": {
+        "prefix": "relm-template",
+        "description": "Relm4 Widget Template",
+        "body": [
+            "use relm4::{gtk, WidgetTemplate};",
+            "",
+            "#[relm4::widget_template]",
+            "impl WidgetTemplate for Widget {",
+            "    view! {",
+            "        gtk::Box {",
+            "            // Customize your widget",
+            "        }",
+            "    }",
+            "}"
+        ]
+    }
+}
