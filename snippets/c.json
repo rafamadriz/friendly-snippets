@@ -6,8 +6,7 @@
       "#include <stdio.h>",
       "",
       "int main(int argc, char *argv[])",
-      "{",
-      "\t$0",
+      "{$0",
       "",
       "\treturn EXIT_SUCCESS;",
       "}"
@@ -31,8 +30,7 @@
     "prefix": "main",
     "body": [
       "int main(int argc, char *argv[])",
-      "{",
-      "\t$0",
+      "{$0",
       "",
       "\treturn EXIT_SUCCESS;",
       "}"
@@ -43,8 +41,7 @@
     "prefix": "mainn",
     "body": [
       "int main(void)",
-      "{",
-      "\t$0",
+      "{$0",
       "",
       "\treturn EXIT_SUCCESS;",
       "}"
@@ -101,9 +98,8 @@
   "include once": {
     "prefix": "once",
     "body": [
-      "#ifndef ${1:FILE_H}",
+      "#ifndef ${1:FILE}_H",
       "#define $1",
-      "",
       "$0",
       "",
       "#endif /* end of include guard: $1 */"
@@ -138,8 +134,7 @@
   "if": {
     "prefix": "if",
     "body": [
-      "if (${1:true}) {",
-      "\t$0",
+      "if (${1:true}) {$0",
       "}"
     ],
     "description": "Code snippet for if statement"
@@ -147,10 +142,8 @@
   "if else": {
     "prefix": "ife",
     "body": [
-      "if (${1:true}) {",
-      "\t$2",
-      "} else {",
-      "\t$0",
+      "if (${1:true}) {$2",
+      "} else {$0",
       "}"
     ],
     "description": "Code snippet for if with else"
@@ -158,8 +151,7 @@
   "else": {
     "prefix": "el",
     "body": [
-      "else {",
-      "\t$0",
+      "else {$0",
       "}"
     ],
     "description": "Code snippet for else statement"
@@ -167,20 +159,19 @@
   "else if": {
     "prefix": "elif",
     "body": [
-      "else if (${1:true}) {",
-      "\t$0",
+      "else if (${1:true}) {$0",
       "}"
     ],
     "description": "Code snippet for else-if statement"
   },
   "if 1L": {
     "prefix": "ifi",
-    "body": ["if (${1:true}) $0;"],
+    "body": ["if (${1:true}) $0"],
     "description": "Code snippet for 1-line-if"
   },
   "else if 1L": {
     "prefix": "elifi",
-    "body": ["else if (${1:true}) $0;"],
+    "body": ["else if (${1:true}) $0"],
     "description": "Code snippet for 1-line-if"
   },
   "ternary": {
@@ -191,10 +182,8 @@
   "switch": {
     "prefix": "switch",
     "body": [
-      "switch (${1:switch_on}) {",
-      "$0",
-      "default:",
-      "\t$2",
+      "switch (${1:switch_on}) {$0",
+      "default:$2",
       "}"
     ],
     "description": "Code snippet for switch statement"
@@ -202,8 +191,7 @@
   "switch no default": {
     "prefix": "switchndef",
     "body": [
-      "switch (${1:switch_on}) {",
-      "$0",
+      "switch (${1:switch_on}) {$0",
       "}"
     ],
     "description": "Code snippet for switch without default"
@@ -211,22 +199,14 @@
   "case": {
     "prefix": "case",
     "body": [
-      "case ${1:0}:",
-      "\t$2",
-      "\t${3:break;}"
+      "case ${1:0}:$0"
     ],
     "description": "Code snippet for case branch"
-  },
-  "case 1L": {
-    "prefix": "casei",
-    "body": ["case ${1:0}: $2;${3: break;}"],
-    "description": "Code snippet for single-line case"
   },
   "while": {
     "prefix": "while",
     "body": [
-      "while (${1:true}) {",
-      "\t$0",
+      "while (${1:true}) {$0",
       "}"
     ],
     "description": "Code snippet for while loop"
@@ -234,8 +214,7 @@
   "do...while loop": {
     "prefix": "do",
     "body": [
-      "do {",
-      "\t$0",
+      "do {$0",
       "} while(${1:false});"
     ],
     "description": "Code snippet for do...while loop"
@@ -253,8 +232,7 @@
   "for": {
     "prefix": "for",
     "body": [
-      "for (size_t ${2:i} = 0; $2 < ${1:count}; ++$2) {",
-      "\t$0",
+      "for (size_t ${2:i} = 0; $2 < ${1:count}; ++$2) {$0",
       "}"
     ],
     "description": "Mostly used 'for' loop variant"
@@ -262,8 +240,7 @@
   "for custom type": {
     "prefix": "fort",
     "body": [
-      "for (${1:int} ${2:i} = 0; $2 < ${4:count}; ++$2) {",
-      "\t$0",
+      "for (${1:int} ${2:i} = 0; $2 < ${4:count}; ++$2) {$0",
       "}"
     ],
     "description": "Mostly used 'for' loop variant with custom type"
@@ -271,8 +248,7 @@
   "for non-zero start": {
     "prefix": "for1",
     "body": [
-      "for (${1:size_t} ${2:i} = ${3:1}; $2 <= ${4:finish}; ++$2) {",
-      "\t$0",
+      "for (${1:size_t} ${2:i} = ${3:1}; $2 <= ${4:finish}; ++$2) {$0",
       "}"
     ],
     "description": "'for' loop variant with non-zero start"
@@ -280,8 +256,7 @@
   "for main() args": {
     "prefix": "forp",
     "body": [
-      "for (int ${2:i} = ${1:1}; $2 < argc; ++$2) {",
-      "\t$0",
+      "for (int ${2:i} = ${1:1}; $2 < argc; ++$2) {$0",
       "}"
     ],
     "description": "'for' loop variant with non-zero start"
@@ -289,8 +264,7 @@
   "for reverse": {
     "prefix": "forr",
     "body": [
-      "for (${1:size_t} ${2:i} = ${3:count}; $2 > ${4:0}; --$2) {",
-      "\t$0",
+      "for (${1:size_t} ${2:i} = ${3:count}; $2 > ${4:0}; --$2) {$0",
       "}"
     ],
     "description": "Mostly used reverse 'for' loop variant"
@@ -298,8 +272,7 @@
   "for reverse custom": {
     "prefix": "forr1",
     "body": [
-      "for (${1:int} ${2:i} = ${3:start}; $2 >= ${4:finish}; --$2) {",
-      "\t$0",
+      "for (${1:int} ${2:i} = ${3:start}; $2 >= ${4:finish}; --$2) {$0",
       "}"
     ],
     "description": "More custom reverse 'for' loop variant"
@@ -307,8 +280,7 @@
   "for custom": {
     "prefix": "forc",
     "body": [
-      "for (${1:size_t} ${2:i} = ${3:initval}; ${4:$2}; $2${5:++}) {",
-      "\t$0",
+      "for (${1:size_t} ${2:i} = ${3:initval}; ${4:$2}; $2${5:++}) {$0",
       "}"
     ],
     "description": "Code snippet for reverse 'for' loop"
@@ -322,8 +294,7 @@
     "prefix": "fun",
     "body": [
       "$4${2:void} ${1:fun}(${3:void})",
-      "{",
-      "\t$0",
+      "{$0",
       "}"
     ],
     "description": "Code snippet for a function definition"
@@ -333,8 +304,7 @@
     "body": [
       "$4${2:int} ${1:func}(${3:void})",
       "{",
-      "\t$2 ${5:retval} = ${6:0};",
-      "\t$0",
+      "\t$2 ${5:retval} = ${6:0};$0",
       "\treturn $5;",
       "}"
     ],
@@ -368,9 +338,8 @@
   "struct": {
     "prefix": "st",
     "body": [
-      "struct ${1:MyStruct} {",
-      "\t$2",
-      "}$0;"
+      "struct ${1:MyStruct} {$0",
+      "};"
     ],
     "description": "Code snippet for struct"
   },
@@ -378,8 +347,7 @@
     "prefix": "stt",
     "body": [
       "typedef struct $1 ${1:Box};",
-      "struct $1 {",
-      "\t$0",
+      "struct $1 {$0",
       "};"
     ],
     "description": "Define a type with struct"
@@ -387,8 +355,7 @@
   "union": {
     "prefix": "uo",
     "body": [
-      "union ${1:MyUnion} {",
-      "\t$0",
+      "union ${1:MyUnion} {$0",
       "};"
     ],
     "description": "Code snippet for union"
@@ -397,8 +364,7 @@
     "prefix": "uot",
     "body": [
       "typedef union $1 ${1:Cell};",
-      "union $1 {",
-      "\t$0",
+      "union $1 {$0",
       "};"
     ],
     "description": "Define a type with union"
@@ -411,8 +377,7 @@
   "enum": {
     "prefix": "enum",
     "body": [
-      "enum ${1:MyEnum} {",
-      "\t$0",
+      "enum ${1:MyEnum} {$0",
       "};"
     ],
     "description": "Code snippet for enum"
@@ -421,8 +386,7 @@
     "prefix": "enumt",
     "body": [
       "typedef enum $1 ${1:Numbers};",
-      "enum $1 {",
-      "\t$0",
+      "enum $1 {$0",
       "};"
     ],
     "description": "Define a type with enum"
@@ -540,7 +504,6 @@
       "\tfprintf(stderr, \"${4:Your memory is lost!}\\n\"$5);",
       "\t${6:exit(EXIT_FAILURE)};",
       "}",
-      "",
       "$0",
       "",
       "free($3);"
@@ -555,7 +518,6 @@
       "\tfprintf(stderr, \"${4:Your memory is lost!}\\n\"$5);",
       "\t${6:exit(EXIT_FAILURE)};",
       "}",
-      "",
       "$0",
       "",
       "free($3);"
@@ -565,7 +527,7 @@
   "Comment block": {
     "prefix": ",",
     "body": ["/*$0 */"],
-    "description": "This is kind of convenient"
+    "description": "Convenient comment block template"
   },
   "Multiline comment": {
     "prefix": ",,",
@@ -573,7 +535,15 @@
       "/*$0",
       " */"
     ],
-    "description": "This is kind of convenient"
+    "description": "Convenient multiline comment template"
+  },
+  "Multiline 2-star comment": {
+    "prefix": ",d",
+    "body": [
+      "/**$0",
+      " **/"
+    ],
+    "description": "Convenient Doxygen 2-star-style comment template"
   },
   "Doxygen template": {
     "prefix": "dox",
