@@ -112,7 +112,6 @@
       "#ifdef __cplusplus",
       "extern \"C\" {",
       "#endif",
-      "",
       "$0",
       "",
       "#ifdef __cplusplus",
