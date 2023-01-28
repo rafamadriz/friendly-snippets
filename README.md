@@ -92,3 +92,4 @@ A good portion of the snippets have been forked from the following repositories:
 - [VSCode-LaTeX-Snippets](https://github.com/JeffersonQin/VSCode-LaTeX-Snippets)
 - [vscode-react-javascript-snippets](https://github.com/dsznajder/vscode-react-javascript-snippets)
 - [honza/vim-snippets - Verilog](https://github.com/honza/vim-snippets/blob/master/snippets/verilog.snippets)
+- [vscode-relm4-snippets](https://github.com/Relm4/vscode-relm4-snippets)
