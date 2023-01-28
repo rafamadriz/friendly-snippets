@@ -107,6 +107,22 @@
         "path": "./snippets/rust.json"
       },
       {
+        "language": "rust",
+        "path": "./snippets/frameworks/relm4/workers.json"
+      },
+      {
+        "language": "rust",
+        "path": "./snippets/frameworks/relm4/factories.json"
+      },
+      {
+        "language": "rust",
+        "path": "./snippets/frameworks/relm4/templates.json"
+      },
+      {
+        "language": "rust",
+        "path": "./snippets/frameworks/relm4/components.json"
+      },
+      {
         "language": "haskell",
         "path": "./snippets/haskell.json"
       },
