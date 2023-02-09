@@ -55,7 +55,10 @@
         "path": "./snippets/elixir.json"
       },
       {
-        "language": "eelixir",
+        "language": [
+          "eelixir",
+          "heex"
+        ],
         "path": "./snippets/eelixir.json"
       },
       {
