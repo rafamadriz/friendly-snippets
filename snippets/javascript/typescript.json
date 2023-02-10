@@ -184,7 +184,7 @@
 			"\t$0",
 			"}"
 		],
-		"description": "For-Of Loop"
+		"description": "For-Await-Of Loop"
 	},
 	"Function Statement": {
 		"prefix": "function",
