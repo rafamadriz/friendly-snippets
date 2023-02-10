@@ -312,11 +312,9 @@
         "prefix": "inheritedW",
         "body": [
             "class ${1:Name} extends InheritedWidget {",
-            "  ${1:Name}({Key? key, required this.child}) : super(key: key, child: child);",
+            "  const ${1:Name}({super.key, required super.child});",
             "",
-            "  final Widget child;",
-            "",
-            "  static ${1:Name}? of(BuildContext context) {",
+            "  static ${1:Name}? maybeOf(BuildContext context) {",
             "    return context.dependOnInheritedWidgetOfExactType<${1:Name}>();",
             "  }",
             "",
