@@ -55,7 +55,10 @@
         "path": "./snippets/elixir.json"
       },
       {
-        "language": "eelixir",
+        "language": [
+          "eelixir",
+          "heex"
+        ],
         "path": "./snippets/eelixir.json"
       },
       {
@@ -81,6 +84,10 @@
       {
         "language": "fennel",
         "path": "./snippets/fennel.json"
+      },
+      {
+        "language": "fsh",
+        "path": "./snippets/fsh.json"
       },
       {
         "language": "php",
@@ -433,6 +440,10 @@
       {
         "language": "verilog",
         "path": "./snippets/verilog.json"
+      },
+      {
+        "language": "vhdl",
+        "path": "./snippets/vhdl.json"
       },
       {
         "language": "dockerfile",

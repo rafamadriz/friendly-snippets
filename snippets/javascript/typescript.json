@@ -177,6 +177,15 @@
 		],
 		"description": "For-Of Loop"
 	},
+	"For-Await-Of Loop": {
+		"prefix": "forawaitof",
+		"body": [
+			"for await (const ${1:iterator} of ${2:object}) {",
+			"\t$0",
+			"}"
+		],
+		"description": "For-Await-Of Loop"
+	},
 	"Function Statement": {
 		"prefix": "function",
 		"body": [
