@@ -205,8 +205,8 @@
         "description": "k8s ConfigMap",
         "body": [
             "# https://kubernetes.io/docs/concepts/configuration/configmap/",
-            "kind: ConfigMap",
             "apiVersion: v1",
+            "kind: ConfigMap",
             "metadata:",
             "  name: ${1:myconfig}",
             "  namespace: ${2:default}",
