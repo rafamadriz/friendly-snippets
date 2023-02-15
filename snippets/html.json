@@ -1,7 +1,10 @@
 {
   "doctype": {
     "prefix": "doctype",
-    "body": ["<!DOCTYPE>", "$1"],
+    "body": [
+      "<!DOCTYPE>",
+      "$1"
+    ],
     "description": "HTML - Defines the document type",
     "scope": "text.html"
   },
@@ -19,7 +22,11 @@
   },
   "address": {
     "prefix": "address",
-    "body": ["<address>", "$1", "</address>"],
+    "body": [
+      "<address>",
+      "$1",
+      "</address>"
+    ],
     "description": "HTML - Defines an address element",
     "scope": "text.html"
   },
@@ -31,19 +38,31 @@
   },
   "article": {
     "prefix": "article",
-    "body": ["<article>", "\t$1", "</article>"],
+    "body": [
+      "<article>",
+      "\t$1",
+      "</article>"
+    ],
     "description": "HTML - Defines an article",
     "scope": "text.html"
   },
   "aside": {
     "prefix": "aside",
-    "body": ["<aside>", "\t$1", "</aside>$2"],
+    "body": [
+      "<aside>",
+      "\t$1",
+      "</aside>$2"
+    ],
     "description": "HTML - Defines content aside from the page content",
     "scope": "text.html"
   },
   "audio": {
     "prefix": "audio",
-    "body": ["<audio controls>", "\t$1", "</audio>"],
+    "body": [
+      "<audio controls>",
+      "\t$1",
+      "</audio>"
+    ],
     "description": "HTML - Defines sounds content",
     "scope": "text.html"
   },
@@ -67,7 +86,11 @@
   },
   "bdo": {
     "prefix": "bdo",
-    "body": ["<bdo dir=\"$1\">", "$2", "</bdo>"],
+    "body": [
+      "<bdo dir=\"$1\">",
+      "$2",
+      "</bdo>"
+    ],
     "description": "HTML - Defines the direction of text display",
     "scope": "text.html"
   },
@@ -79,13 +102,21 @@
   },
   "blockquote": {
     "prefix": "blockquote",
-    "body": ["<blockquote cite=\"$2\">", "\t$1", "</blockquote>"],
+    "body": [
+      "<blockquote cite=\"$2\">",
+      "\t$1",
+      "</blockquote>"
+    ],
     "description": "HTML - Defines a long quotation",
     "scope": "text.html"
   },
   "body": {
     "prefix": "body",
-    "body": ["<body>", "\t$0", "</body>"],
+    "body": [
+      "<body>",
+      "\t$0",
+      "</body>"
+    ],
     "description": "HTML - Defines the body element",
     "scope": "text.html"
   },
@@ -133,7 +164,11 @@
   },
   "colgroup": {
     "prefix": "colgroup",
-    "body": ["<colgroup>", "\t$1", "</colgroup>"],
+    "body": [
+      "<colgroup>",
+      "\t$1",
+      "</colgroup>"
+    ],
     "description": "HTML - Defines group of table columns",
     "scope": "text.html"
   },
@@ -145,7 +180,11 @@
   },
   "datalist": {
     "prefix": "datalist",
-    "body": ["<datalist>", "\t$1", "</datalist>"],
+    "body": [
+      "<datalist>",
+      "\t$1",
+      "</datalist>"
+    ],
     "description": "HTML - Defines a dropdown list",
     "scope": "text.html"
   },
@@ -163,7 +202,11 @@
   },
   "details": {
     "prefix": "details",
-    "body": ["<details>", "\t$1", "</details>"],
+    "body": [
+      "<details>",
+      "\t$1",
+      "</details>"
+    ],
     "description": "HTML - Defines details of an element",
     "scope": "text.html"
   },
@@ -181,13 +224,21 @@
   },
   "div": {
     "prefix": "div",
-    "body": ["<div>", "\t$1", "</div>"],
+    "body": [
+      "<div>",
+      "\t$1",
+      "</div>"
+    ],
     "description": "HTML - Defines a section in a document",
     "scope": "text.html"
   },
   "dl": {
     "prefix": "dl",
-    "body": ["<dl>", "\t$1", "</dl>"],
+    "body": [
+      "<dl>",
+      "\t$1",
+      "</dl>"
+    ],
     "description": "HTML - Defines a definition list",
     "scope": "text.html"
   },
@@ -211,7 +262,11 @@
   },
   "fieldset": {
     "prefix": "fieldset",
-    "body": ["<fieldset>", "\t$1", "</fieldset>"],
+    "body": [
+      "<fieldset>",
+      "\t$1",
+      "</fieldset>"
+    ],
     "description": "HTML - Defines a fieldset",
     "scope": "text.html"
   },
@@ -223,19 +278,31 @@
   },
   "figure": {
     "prefix": "figure",
-    "body": ["<figure>", "\t$1", "</figure>"],
+    "body": [
+      "<figure>",
+      "\t$1",
+      "</figure>"
+    ],
     "description": "HTML - Defines a group of media content, and their caption",
     "scope": "text.html"
   },
   "footer": {
     "prefix": "footer",
-    "body": ["<footer>", "\t$1", "</footer>"],
+    "body": [
+      "<footer>",
+      "\t$1",
+      "</footer>"
+    ],
     "description": "HTML - Defines a footer for a section or page",
     "scope": "text.html"
   },
   "form": {
     "prefix": "form",
-    "body": ["<form>", "\t$1", "</form>"],
+    "body": [
+      "<form>",
+      "\t$1",
+      "</form>"
+    ],
     "description": "HTML - Defines a form",
     "scope": "text.html"
   },
@@ -277,19 +344,31 @@
   },
   "head": {
     "prefix": "head",
-    "body": ["<head>", "\t$1", "</head>"],
+    "body": [
+      "<head>",
+      "\t$1",
+      "</head>"
+    ],
     "description": "HTML - Defines information about the document",
     "scope": "text.html"
   },
   "header": {
     "prefix": "header",
-    "body": ["<header>", "\t$1", "</header>"],
+    "body": [
+      "<header>",
+      "\t$1",
+      "</header>"
+    ],
     "description": "HTML - Defines a header for a section of page",
     "scope": "text.html"
   },
   "hgroup": {
     "prefix": "hgroup",
-    "body": ["<hgroup>", "\t$1", "</hgroup>"],
+    "body": [
+      "<hgroup>",
+      "\t$1",
+      "</hgroup>"
+    ],
     "description": "HTML - Defines information about a section in a document",
     "scope": "text.html"
   },
@@ -301,7 +380,11 @@
   },
   "html": {
     "prefix": "html",
-    "body": ["<html>", "\t$0", "</html>"],
+    "body": [
+      "<html>",
+      "\t$0",
+      "</html>"
+    ],
     "description": "HTML - Defines an html document",
     "scope": "text.html"
   },
@@ -392,13 +475,21 @@
   },
   "main": {
     "prefix": "main",
-    "body": ["<main>", "\t$1", "</main>"],
+    "body": [
+      "<main>",
+      "\t$1",
+      "</main>"
+    ],
     "description": "HTML - Defines an image map",
     "scope": "text.html"
   },
   "map": {
     "prefix": "map",
-    "body": ["<map name=\"$1\">", "\t$2", "</map>"],
+    "body": [
+      "<map name=\"$1\">",
+      "\t$2",
+      "</map>"
+    ],
     "description": "HTML - Defines an image map",
     "scope": "text.html"
   },
@@ -410,7 +501,11 @@
   },
   "menu": {
     "prefix": "menu",
-    "body": ["<menu>", "\t$1", "</menu>"],
+    "body": [
+      "<menu>",
+      "\t$1",
+      "</menu>"
+    ],
     "description": "HTML - Defines a menu list",
     "scope": "text.html"
   },
@@ -434,13 +529,21 @@
   },
   "nav": {
     "prefix": "nav",
-    "body": ["<nav>", "\t$1", "</nav>"],
+    "body": [
+      "<nav>",
+      "\t$1",
+      "</nav>"
+    ],
     "description": "HTML - Defines navigation links",
     "scope": "text.html"
   },
   "noscript": {
     "prefix": "noscript",
-    "body": ["<noscript>", "$1", "</noscript>"],
+    "body": [
+      "<noscript>",
+      "$1",
+      "</noscript>"
+    ],
     "description": "HTML - Defines a noscript section",
     "scope": "text.html"
   },
@@ -452,13 +555,21 @@
   },
   "ol": {
     "prefix": "ol",
-    "body": ["<ol>", "\t$1", "</ol>"],
+    "body": [
+      "<ol>",
+      "\t$1",
+      "</ol>"
+    ],
     "description": "HTML - Defines an ordered list",
     "scope": "text.html"
   },
   "optgroup": {
     "prefix": "optgroup",
-    "body": ["<optgroup>", "\t$1", "</optgroup>"],
+    "body": [
+      "<optgroup>",
+      "\t$1",
+      "</optgroup>"
+    ],
     "description": "HTML - Defines an option group",
     "scope": "text.html"
   },
@@ -488,7 +599,9 @@
   },
   "pre": {
     "prefix": "pre",
-    "body": ["<pre>$1</pre>"],
+    "body": [
+      "<pre>$1</pre>"
+    ],
     "description": "HTML - Defines preformatted text",
     "scope": "text.html"
   },
@@ -518,7 +631,11 @@
   },
   "ruby": {
     "prefix": "ruby",
-    "body": ["<ruby>", "$1", "</ruby>"],
+    "body": [
+      "<ruby>",
+      "$1",
+      "</ruby>"
+    ],
     "description": "HTML - Defines ruby annotations",
     "scope": "text.html"
   },
@@ -536,19 +653,31 @@
   },
   "script": {
     "prefix": "script",
-    "body": ["<script>", "\t$1", "</script>"],
+    "body": [
+      "<script>",
+      "\t$1",
+      "</script>"
+    ],
     "description": "HTML - Defines a script",
     "scope": "text.html"
   },
   "section": {
     "prefix": "section",
-    "body": ["<section>", "\t$1", "</section>"],
+    "body": [
+      "<section>",
+      "\t$1",
+      "</section>"
+    ],
     "description": "HTML - Defines a section",
     "scope": "text.html"
   },
   "select": {
     "prefix": "select",
-    "body": ["<select>", "\t$1", "</select>"],
+    "body": [
+      "<select>",
+      "\t$1",
+      "</select>"
+    ],
     "description": "HTML - Defines a selectable list",
     "scope": "text.html"
   },
@@ -578,7 +707,11 @@
   },
   "style": {
     "prefix": "style",
-    "body": ["<style>", "$1", "</style>"],
+    "body": [
+      "<style>",
+      "$1",
+      "</style>"
+    ],
     "description": "HTML - Defines a style definition",
     "scope": "text.html"
   },
@@ -602,13 +735,21 @@
   },
   "table": {
     "prefix": "table",
-    "body": ["<table>", "\t$1", "</table>"],
+    "body": [
+      "<table>",
+      "\t$1",
+      "</table>"
+    ],
     "description": "HTML - Defines a table",
     "scope": "text.html"
   },
   "tbody": {
     "prefix": "tbody",
-    "body": ["<tbody>", "\t$1", "</tbody>"],
+    "body": [
+      "<tbody>",
+      "\t$1",
+      "</tbody>"
+    ],
     "description": "HTML - Defines a table body",
     "scope": "text.html"
   },
@@ -626,13 +767,21 @@
   },
   "tfoot": {
     "prefix": "tfoot",
-    "body": ["<tfoot>", "\t$1", "</tfoot>"],
+    "body": [
+      "<tfoot>",
+      "\t$1",
+      "</tfoot>"
+    ],
     "description": "HTML - Defines a table footer",
     "scope": "text.html"
   },
   "thead": {
     "prefix": "thead",
-    "body": ["<thead>", "$1", "</thead>"],
+    "body": [
+      "<thead>",
+      "$1",
+      "</thead>"
+    ],
     "description": "HTML - Defines a table head",
     "scope": "text.html"
   },
@@ -674,7 +823,11 @@
   },
   "ul": {
     "prefix": "ul",
-    "body": ["<ul>", "\t$1", "</ul>"],
+    "body": [
+      "<ul>",
+      "\t$1",
+      "</ul>"
+    ],
     "description": "HTML - Defines an unordered list",
     "scope": "text.html"
   },
@@ -686,7 +839,11 @@
   },
   "video": {
     "prefix": "video",
-    "body": ["<video width=\"$1\" height=\"$2\" controls>", "\t$3", "</video>"],
+    "body": [
+      "<video width=\"$1\" height=\"$2\" controls>",
+      "\t$3",
+      "</video>"
+    ],
     "description": "HTML - Defines a video",
     "scope": "text.html"
   }

@@ -586,7 +586,11 @@
   },
   "For-Each Loop": {
     "prefix": "foreach",
-    "body": ["${1:array}.forEach(${2:element} => {", "\t$0", "});"],
+    "body": [
+      "${1:array}.forEach(${2:element} => {",
+      "\t$0",
+      "});"
+    ],
     "description": "For-Each Loop"
   },
   "For-In Loop": {
@@ -603,32 +607,56 @@
   },
   "For-Of Loop": {
     "prefix": "forof",
-    "body": ["for (const ${1:iterator} of ${2:object}) {", "\t$0", "}"],
+    "body": [
+      "for (const ${1:iterator} of ${2:object}) {",
+      "\t$0",
+      "}"
+    ],
     "description": "For-Of Loop"
   },
   "For-Await-Of Loop": {
     "prefix": "forawaitof",
-    "body": ["for await (const ${1:iterator} of ${2:object}) {", "\t$0", "}"],
+    "body": [
+      "for await (const ${1:iterator} of ${2:object}) {",
+      "\t$0",
+      "}"
+    ],
     "description": "For-Await-Of Loop"
   },
   "Function Statement": {
     "prefix": "function",
-    "body": ["function ${1:name}(${2:params}) {", "\t$0", "}"],
+    "body": [
+      "function ${1:name}(${2:params}) {",
+      "\t$0",
+      "}"
+    ],
     "description": "Function Statement"
   },
   "If Statement": {
     "prefix": "if",
-    "body": ["if (${1:condition}) {", "\t$0", "}"],
+    "body": [
+      "if (${1:condition}) {",
+      "\t$0",
+      "}"
+    ],
     "description": "If Statement"
   },
   "If-Else Statement": {
     "prefix": "ifelse",
-    "body": ["if (${1:condition}) {", "\t$0", "} else {", "\t", "}"],
+    "body": [
+      "if (${1:condition}) {",
+      "\t$0",
+      "} else {",
+      "\t",
+      "}"
+    ],
     "description": "If-Else Statement"
   },
   "New Statement": {
     "prefix": "new",
-    "body": ["const ${1:name} = new ${2:type}(${3:arguments});$0"],
+    "body": [
+      "const ${1:name} = new ${2:type}(${3:arguments});$0"
+    ],
     "description": "New Statement"
   },
   "Switch Statement": {
@@ -647,287 +675,455 @@
   },
   "While Statement": {
     "prefix": "while",
-    "body": ["while (${1:condition}) {", "\t$0", "}"],
+    "body": [
+      "while (${1:condition}) {",
+      "\t$0",
+      "}"
+    ],
     "description": "While Statement"
   },
   "Do-While Statement": {
     "prefix": "dowhile",
-    "body": ["do {", "\t$0", "} while (${1:condition});"],
+    "body": [
+      "do {",
+      "\t$0",
+      "} while (${1:condition});"
+    ],
     "description": "Do-While Statement"
   },
   "Try-Catch Statement": {
     "prefix": "trycatch",
-    "body": ["try {", "\t$0", "} catch (${1:error}) {", "\t", "}"],
+    "body": [
+      "try {",
+      "\t$0",
+      "} catch (${1:error}) {",
+      "\t",
+      "}"
+    ],
     "description": "Try-Catch Statement"
   },
   "Set Timeout Function": {
     "prefix": "settimeout",
-    "body": ["setTimeout(() => {", "\t$0", "}, ${1:timeout});"],
+    "body": [
+      "setTimeout(() => {",
+      "\t$0",
+      "}, ${1:timeout});"
+    ],
     "description": "Set Timeout Function"
   },
   "Set Interval Function": {
     "prefix": "setinterval",
-    "body": ["setInterval(() => {", "\t$0", "}, ${1:interval});"],
+    "body": [
+      "setInterval(() => {",
+      "\t$0",
+      "}, ${1:interval});"
+    ],
     "description": "Set Interval Function"
   },
   "Import external module.": {
     "prefix": "import statement",
-    "body": ["import { $0 } from \"${1:module}\";"],
+    "body": [
+      "import { $0 } from \"${1:module}\";"
+    ],
     "description": "Import external module."
   },
   "Region Start": {
     "prefix": "#region",
-    "body": ["//#region $0"],
+    "body": [
+      "//#region $0"
+    ],
     "description": "Folding Region Start"
   },
   "Region End": {
     "prefix": "#endregion",
-    "body": ["//#endregion"],
+    "body": [
+      "//#endregion"
+    ],
     "description": "Folding Region End"
   },
   "Log warning to console": {
     "prefix": "warn",
-    "body": ["console.warn($1);", "$0"],
+    "body": [
+      "console.warn($1);",
+      "$0"
+    ],
     "description": "Log warning to the console"
   },
   "Log error to console": {
     "prefix": "error",
-    "body": ["console.error($1);", "$0"],
+    "body": [
+      "console.error($1);",
+      "$0"
+    ],
     "description": "Log error to the console"
   },
   "concat": {
     "prefix": "concat",
-    "body": ["concat($1);", "$0"],
+    "body": [
+      "concat($1);",
+      "$0"
+    ],
     "description": "The concat() method concatenates the string arguments to the calling string and returns a new string."
   },
   "endsWith": {
     "prefix": "endsWith",
-    "body": ["endsWith($1);", "$0"],
+    "body": [
+      "endsWith($1);",
+      "$0"
+    ],
     "description": "The endsWith() method determines whether a string ends with the characters of a specified string, returning true or false as appropriate.    "
   },
   "fromCharCode": {
     "prefix": "fromCharCode",
-    "body": ["fromCharCode($1);", "$0"],
+    "body": [
+      "fromCharCode($1);",
+      "$0"
+    ],
     "description": "The static String.fromCharCode() method returns a string created from the specified sequence of UTF-16 code units."
   },
   "includes": {
     "prefix": "includes",
-    "body": ["includes($1);", "$0"],
+    "body": [
+      "includes($1);",
+      "$0"
+    ],
     "description": "The includes() method performs a case-sensitive search to determine whether one string may be found within another string, returning true or false as appropriate."
   },
   "indexOf": {
     "prefix": "indexOf",
-    "body": ["indexOf($1);", "$0"],
+    "body": [
+      "indexOf($1);",
+      "$0"
+    ],
     "description": "The indexOf() method, given one argument: a substring to search for, searches the entire calling string, and returns the index of the first occurrence of the specified substring. Given a second argument: a number, the method returns the first occurrence of the specified substring at an index greater than or equal to the specified number."
   },
   "lastIndexOf": {
     "prefix": "lastIndexOf",
-    "body": ["lastIndexOf($1);", "$0"],
+    "body": [
+      "lastIndexOf($1);",
+      "$0"
+    ],
     "description": "The lastIndexOf() method, given one argument: a substring to search for, searches the entire calling string, and returns the index of the last occurrence of the specified substring. Given a second argument: a number, the method returns the last occurrence of the specified substring at an index less than or equal to the specified number."
   },
   "localeCompare": {
     "prefix": "localeCompare",
-    "body": ["localeCompare($1);", "$0"],
+    "body": [
+      "localeCompare($1);",
+      "$0"
+    ],
     "description": "The localeCompare() method returns a number indicating whether a reference string comes before, or after, or is the same as the given string in sort order. In implementations with Intl.Collator API support, this method simply calls Intl.Collator."
   },
   "match": {
     "prefix": "match",
-    "body": ["match($1);", "$0"],
+    "body": [
+      "match($1);",
+      "$0"
+    ],
     "description": "The match() method retrieves the result of matching a string against a regular expression."
   },
   "matchAll": {
     "prefix": "matchAll",
-    "body": ["matchAll($1);", "$0"],
+    "body": [
+      "matchAll($1);",
+      "$0"
+    ],
     "description": "The matchAll() method returns an iterator of all results matching a string against a regular expression, including capturing groups."
   },
   "normalize": {
     "prefix": "normalize",
-    "body": ["normalize($1);", "$0"],
+    "body": [
+      "normalize($1);",
+      "$0"
+    ],
     "description": "The normalize() method returns the Unicode Normalization Form of the string."
   },
   "repeat": {
     "prefix": "repeat",
-    "body": ["repeat($1);", "$0"],
+    "body": [
+      "repeat($1);",
+      "$0"
+    ],
     "description": "The repeat() method constructs and returns a new string which contains the specified number of copies of the string on which it was called, concatenated together."
   },
   "replace": {
     "prefix": "replace",
-    "body": ["replace($1, $2);", "$0"],
+    "body": [
+      "replace($1, $2);",
+      "$0"
+    ],
     "description": "The replace() method returns a new string with one, some, or all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function called for each match. If pattern is a string, only the first occurrence will be replaced. The original string is left unchanged."
   },
   "replaceAll": {
     "prefix": "replaceAll",
-    "body": ["replaceAll($1, $2);", "$0"],
+    "body": [
+      "replaceAll($1, $2);",
+      "$0"
+    ],
     "description": "The replaceAll() method returns a new string with all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match. The original string is left unchanged."
   },
   "search": {
     "prefix": "search",
-    "body": ["search($1);", "$0"],
+    "body": [
+      "search($1);",
+      "$0"
+    ],
     "description": "The search() method executes a search for a match between a regular expression and this String object."
   },
   "slice": {
     "prefix": "slice",
-    "body": ["slice($1);", "$0"],
+    "body": [
+      "slice($1);",
+      "$0"
+    ],
     "description": "The slice() method extracts a section of a string and returns it as a new string, without modifying the original string."
   },
   "split": {
     "prefix": "split",
-    "body": ["split($1);", "$0"],
+    "body": [
+      "split($1);",
+      "$0"
+    ],
     "description": "The split() method takes a pattern and divides a String into an ordered list of substrings by searching for the pattern, puts these substrings into an array, and returns the array."
   },
   "startsWith": {
     "prefix": "startsWith",
-    "body": ["startsWith($1);", "$0"],
+    "body": [
+      "startsWith($1);",
+      "$0"
+    ],
     "description": "The startsWith() method determines whether a string begins with the characters of a specified string, returning true or false as appropriate."
   },
   "substring": {
     "prefix": "substring",
-    "body": ["substring($1);", "$0"],
+    "body": [
+      "substring($1);",
+      "$0"
+    ],
     "description": "The substring() method returns the part of the string between the start and end indexes, or to the end of the string."
   },
   "toLocaleLowerCase": {
     "prefix": "toLocaleLowerCase",
-    "body": ["toLocaleLowerCase($1);", "$0"],
+    "body": [
+      "toLocaleLowerCase($1);",
+      "$0"
+    ],
     "description": "The toLocaleLowerCase() method returns the calling string value converted to lower case, according to any locale-specific case mappings."
   },
   "toLocaleUpperCase": {
     "prefix": "toLocaleUpperCase",
-    "body": ["toLocaleUpperCase($1);", "$0"],
+    "body": [
+      "toLocaleUpperCase($1);",
+      "$0"
+    ],
     "description": "The toLocaleUpperCase() method returns the calling string value converted to upper case, according to any locale-specific case mappings."
   },
   "toLowerCase": {
     "prefix": "toLowerCase",
-    "body": ["toLowerCase()"],
+    "body": [
+      "toLowerCase()"
+    ],
     "description": "The toLowerCase() method returns the calling string value converted to lower case."
   },
   "toString": {
     "prefix": "toString",
-    "body": ["toString()"],
+    "body": [
+      "toString()"
+    ],
     "description": "The toString() method returns a string representing the specified string value."
   },
   "toUpperCase": {
     "prefix": "toUpperCase",
-    "body": ["toUpperCase()"],
+    "body": [
+      "toUpperCase()"
+    ],
     "description": "The toUpperCase() method returns the calling string value converted to uppercase (the value will be converted to a string if it isn't one)."
   },
   "valueOf": {
     "prefix": "valueOf",
-    "body": ["valueOf()"],
+    "body": [
+      "valueOf()"
+    ],
     "description": "The valueOf() method returns the primitive value of a String object."
   },
   "isFinite": {
     "prefix": "isFinite",
-    "body": ["isFinite($1);", "$0"],
+    "body": [
+      "isFinite($1);",
+      "$0"
+    ],
     "description": "The Number.isFinite() method determines whether the passed value is a finite number — that is, it checks that a given value is a number, and the number is neither positive Infinity, negative Infinity, nor NaN."
   },
   "parseFloat": {
     "prefix": "parseFloat",
-    "body": ["parseFloat($1);", "$0"],
+    "body": [
+      "parseFloat($1);",
+      "$0"
+    ],
     "description": "The Number.parseFloat() method parses an argument and returns a floating point number. If a number cannot be parsed from the argument, it returns NaN."
   },
   "isNaN": {
     "prefix": "isNaN",
-    "body": ["isNaN($1);", "$0"],
+    "body": [
+      "isNaN($1);",
+      "$0"
+    ],
     "description": "The Number.isNaN() method determines whether the passed value is the number value NaN, and returns false if the input is not of the Number type. It is a more robust version of the original, global isNaN() function."
   },
   "parseInt": {
     "prefix": "parseInt",
-    "body": ["parseInt($1);", "$0"],
+    "body": [
+      "parseInt($1);",
+      "$0"
+    ],
     "description": "The Number.parseInt() method parses a string argument and returns an integer of the specified radix or base."
   },
   "toFixed": {
     "prefix": "toFixed",
-    "body": ["toFixed($1);", "$0"],
+    "body": [
+      "toFixed($1);",
+      "$0"
+    ],
     "description": "The toFixed() method formats a number using fixed-point notation."
   },
   "toLocaleString": {
     "prefix": "toLocaleString",
-    "body": ["toLocaleString($1);", "$0"],
+    "body": [
+      "toLocaleString($1);",
+      "$0"
+    ],
     "description": "The toLocaleString() method returns a string with a language-sensitive representation of this number. In implementations with Intl.NumberFormat API support, this method simply calls Intl.NumberFormat."
   },
   "apply": {
     "prefix": "apply",
-    "body": ["apply($1);", "$0"],
+    "body": [
+      "apply($1);",
+      "$0"
+    ],
     "description": "The apply() method calls the specified function with a given this value, and arguments provided as an array (or an array-like object)."
   },
   "bind": {
     "prefix": "bind",
-    "body": ["bind($1);", "$0"],
+    "body": [
+      "bind($1);",
+      "$0"
+    ],
     "description": "The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called."
   },
   "call": {
     "prefix": "call",
-    "body": ["call($1);", "$0"],
+    "body": [
+      "call($1);",
+      "$0"
+    ],
     "description": "The call() method calls the function with a given this value and arguments provided individually."
   },
   "defineProperties": {
     "prefix": "defineProperties",
-    "body": ["defineProperties($1, $2);", "$0"],
+    "body": [
+      "defineProperties($1, $2);",
+      "$0"
+    ],
     "description": ""
   },
   "entries": {
     "prefix": "entries",
-    "body": ["entries($1);", "$0"],
+    "body": [
+      "entries($1);",
+      "$0"
+    ],
     "description": "The Object.entries() method returns an array of a given object's own enumerable string-keyed property key-value pairs."
   },
   "values": {
     "prefix": "values",
-    "body": ["values($1);", "$0"],
+    "body": [
+      "values($1);",
+      "$0"
+    ],
     "description": "The Object.values() method returns an array of a given object's own enumerable string-keyed property values."
   },
   "focus": {
     "prefix": "focus",
-    "body": ["focus()"],
+    "body": [
+      "focus()"
+    ],
     "description": "The HTMLElement.focus() method sets focus on the specified element, if it can be focused. The focused element is the element that will receive keyboard and similar events by default."
   },
   "blur": {
     "prefix": "blur",
-    "body": ["blur()"],
+    "body": [
+      "blur()"
+    ],
     "description": ""
   },
   "innerText": {
     "prefix": "innerText",
-    "body": ["innerText"],
+    "body": [
+      "innerText"
+    ],
     "description": "The innerText property of the HTMLElement interface represents the rendered text content of a node and its descendants."
   },
   "push": {
     "prefix": "push",
-    "body": ["push($1);", "$0"],
+    "body": [
+      "push($1);",
+      "$0"
+    ],
     "description": "The push() method adds one or more elements to the end of an array and returns the new length of the array."
   },
   "reverse": {
     "prefix": "reverse",
-    "body": ["reverse();", "$0"],
+    "body": [
+      "reverse();",
+      "$0"
+    ],
     "description": "The reverse() method reverses an array in place and returns the reference to the same array, the first array element now becoming the last, and the last array element becoming the first. In other words, elements order in the array will be turned towards the direction opposite to that previously stated."
   },
   "sort": {
     "prefix": "sort",
-    "body": ["sort($1);", "$0"],
+    "body": [
+      "sort($1);",
+      "$0"
+    ],
     "description": "The sort() method sorts the elements of an array in place and returns the reference to the same array, now sorted. The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values."
   },
   "splice": {
     "prefix": "splice",
-    "body": ["splice($1);", "$0"],
+    "body": [
+      "splice($1);",
+      "$0"
+    ],
     "description": "The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. To access part of an array without modifying it, see slice()."
   },
   "toJSON": {
     "prefix": "toJSON",
-    "body": ["toJSON();", "$0"],
+    "body": [
+      "toJSON();",
+      "$0"
+    ],
     "description": "The toJSON() method returns a string representation of the Date object."
   },
   "toDateString": {
     "prefix": "toDateString",
-    "body": ["toDateString();", "$0"],
+    "body": [
+      "toDateString();",
+      "$0"
+    ],
     "description": ""
   },
   "setTime": {
     "prefix": "setTime",
-    "body": ["setTime($1);", "$0"],
+    "body": [
+      "setTime($1);",
+      "$0"
+    ],
     "description": "The setTime() method sets the Date object to the time represented by a number of milliseconds since January 1, 1970, 00:00:00 UTC."
   },
   "setDate": {
     "prefix": "setDate",
-    "body": ["setDate($1);", "$0"],
+    "body": [
+      "setDate($1);",
+      "$0"
+    ],
     "description": "The setDate() method changes the day of the month of a given Date instance, based on local time."
   }
 }

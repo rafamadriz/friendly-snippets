@@ -31,32 +31,59 @@
   },
   "Checked block": {
     "prefix": "checked",
-    "body": ["checked", "{", "    $0", "}"],
+    "body": [
+      "checked",
+      "{",
+      "    $0",
+      "}"
+    ],
     "description": "Checked block"
   },
   "Class": {
     "prefix": "class",
-    "body": ["class ${1:Name}", "{", "    $0", "}"],
+    "body": [
+      "class ${1:Name}",
+      "{",
+      "    $0",
+      "}"
+    ],
     "description": "Class"
   },
   "Console.WriteLine": {
     "prefix": "cw",
-    "body": ["System.Console.WriteLine($0);"],
+    "body": [
+      "System.Console.WriteLine($0);"
+    ],
     "description": "Console.WriteLine"
   },
   "do...while loop": {
     "prefix": "do",
-    "body": ["do", "{", "    $0", "} while (${1:true});"],
+    "body": [
+      "do",
+      "{",
+      "    $0",
+      "} while (${1:true});"
+    ],
     "description": "do...while loop"
   },
   "Else statement": {
     "prefix": "else",
-    "body": ["else", "{", "    $0", "}"],
+    "body": [
+      "else",
+      "{",
+      "    $0",
+      "}"
+    ],
     "description": "Else statement"
   },
   "Enum": {
     "prefix": "enum",
-    "body": ["enum ${1:Name}", "{", "    $0", "}"],
+    "body": [
+      "enum ${1:Name}",
+      "{",
+      "    $0",
+      "}"
+    ],
     "description": "Enum"
   },
   "Implementing Equals() according to guidelines": {
@@ -140,12 +167,22 @@
   },
   "if statement": {
     "prefix": "if",
-    "body": ["if (${1:true})", "{", "    $0", "}"],
+    "body": [
+      "if (${1:true})",
+      "{",
+      "    $0",
+      "}"
+    ],
     "description": "if statement"
   },
   "else-if statement": {
     "prefix": "else if",
-    "body": ["else if (${1:true})", "{", "    $0", "}"],
+    "body": [
+      "else if (${1:true})",
+      "{",
+      "    $0",
+      "}"
+    ],
     "description": "else-if statement"
   },
   "Indexer": {
@@ -161,7 +198,12 @@
   },
   "Interface": {
     "prefix": "interface",
-    "body": ["interface I${1:Name}", "{", "    $0", "}"],
+    "body": [
+      "interface I${1:Name}",
+      "{",
+      "    $0",
+      "}"
+    ],
     "description": "Interface"
   },
   "Safely invoking an event": {
@@ -236,27 +278,47 @@
   },
   "Lock statement": {
     "prefix": "lock",
-    "body": ["lock (${1:this})", "{", "    $0", "}"],
+    "body": [
+      "lock (${1:this})",
+      "{",
+      "    $0",
+      "}"
+    ],
     "description": "Lock statement"
   },
   "MessageBox.Show": {
     "prefix": "mbox",
-    "body": ["System.Windows.Forms.MessageBox.Show(\"${1:Text}\");$0"],
+    "body": [
+      "System.Windows.Forms.MessageBox.Show(\"${1:Text}\");$0"
+    ],
     "description": "MessageBox.Show"
   },
   "Namespace": {
     "prefix": "namespace",
-    "body": ["namespace ${1:Name}", "{", "    $0", "}"],
+    "body": [
+      "namespace ${1:Name}",
+      "{",
+      "    $0",
+      "}"
+    ],
     "description": "Namespace"
   },
   "#if": {
     "prefix": "ifd",
-    "body": ["#if ${1:true}", "    $0", "#endif"],
+    "body": [
+      "#if ${1:true}",
+      "    $0",
+      "#endif"
+    ],
     "description": "#if"
   },
   "#region": {
     "prefix": "region",
-    "body": ["#region ${1:Name}", "    $0", "#endregion"],
+    "body": [
+      "#region ${1:Name}",
+      "    $0",
+      "#endregion"
+    ],
     "description": "#region"
   },
   "Property and backing field": {
@@ -274,12 +336,16 @@
   },
   "propg": {
     "prefix": "propg",
-    "body": ["public ${1:int} ${2:MyProperty} { get; private set; }$0"],
+    "body": [
+      "public ${1:int} ${2:MyProperty} { get; private set; }$0"
+    ],
     "description": "An automatically implemented property with a 'get' accessor and a private 'set' accessor. C# 3.0 or higher"
   },
   "prop": {
     "prefix": "prop",
-    "body": ["public ${1:int} ${2:MyProperty} { get; set; }$0"],
+    "body": [
+      "public ${1:int} ${2:MyProperty} { get; set; }$0"
+    ],
     "description": "An automatically implemented property. C# 3.0 or higher"
   },
   "sim": {
@@ -295,22 +361,47 @@
   },
   "Struct": {
     "prefix": "struct",
-    "body": ["struct ${1:Name}", "{", "    $0", "}"],
+    "body": [
+      "struct ${1:Name}",
+      "{",
+      "    $0",
+      "}"
+    ],
     "description": "Struct"
   },
   "svm": {
     "prefix": "svm",
-    "body": ["static void Main(string[] args)", "{", "    $0", "}"],
+    "body": [
+      "static void Main(string[] args)",
+      "{",
+      "    $0",
+      "}"
+    ],
     "description": "void Main()"
   },
   "Switch statement": {
     "prefix": "switch",
-    "body": ["switch (${1:switch_on})", "{", "    $0", "    default:", "}"],
+    "body": [
+      "switch (${1:switch_on})",
+      "{",
+      "    $0",
+      "    default:",
+      "}"
+    ],
     "description": "Switch statement"
   },
   "Try finally": {
     "prefix": "tryf",
-    "body": ["try", "{", "    $1", "}", "finally", "{", "    $0", "}"],
+    "body": [
+      "try",
+      "{",
+      "    $1",
+      "}",
+      "finally",
+      "{",
+      "    $0",
+      "}"
+    ],
     "description": "Try finally"
   },
   "Try catch": {
@@ -330,22 +421,42 @@
   },
   "Unchecked block": {
     "prefix": "unchecked",
-    "body": ["unchecked", "{", "    $0", "}"],
+    "body": [
+      "unchecked",
+      "{",
+      "    $0",
+      "}"
+    ],
     "description": "Unchecked block"
   },
   "Unsafe statement": {
     "prefix": "unsafe",
-    "body": ["unsafe", "{", "    $0", "}"],
+    "body": [
+      "unsafe",
+      "{",
+      "    $0",
+      "}"
+    ],
     "description": "Unsafe statement"
   },
   "Using statement": {
     "prefix": "using",
-    "body": ["using (${1:resource})", "{", "    $0", "}"],
+    "body": [
+      "using (${1:resource})",
+      "{",
+      "    $0",
+      "}"
+    ],
     "description": "Using statement"
   },
   "While loop": {
     "prefix": "while",
-    "body": ["while (${1:true})", "{", "    $0", "}"],
+    "body": [
+      "while (${1:true})",
+      "{",
+      "    $0",
+      "}"
+    ],
     "description": "While loop"
   },
   "constructor": {
@@ -412,7 +523,12 @@
   },
   "cls": {
     "prefix": "cls",
-    "body": ["${1:public} class ${2:$TM_FILENAME_BASE}", "{", "\t$0", "}"],
+    "body": [
+      "${1:public} class ${2:$TM_FILENAME_BASE}",
+      "{",
+      "\t$0",
+      "}"
+    ],
     "description": "Create new class"
   }
 }

@@ -260,7 +260,10 @@
     "description": "Snippet for main function"
   },
   "method declaration": {
-    "prefix": ["meth", "fum"],
+    "prefix": [
+      "meth",
+      "fum"
+    ],
     "body": "func (${1:receiver} ${2:type}) ${3:method}($4) $5 {\n\t$0\n}",
     "description": "Snippet for method declaration"
   },
@@ -275,12 +278,12 @@
     "description": "Snippet for a custom sort.Sort interface implementation, for a given slice type."
   },
   "json tag": {
-	"prefix": "json",
-	"body": "`json:\"$1\"`",
-	"description": "Snippet for struct json tag"
+    "prefix": "json",
+    "body": "`json:\"$1\"`",
+    "description": "Snippet for struct json tag"
   },
   "if key in a map": {
-	"prefix": "om",
-	"body": "if ${1:value}, ok := ${2:map}[${3:key}]; ok == true {\n\t$4\n}"
+    "prefix": "om",
+    "body": "if ${1:value}, ok := ${2:map}[${3:key}]; ok == true {\n\t$4\n}"
   }
 }

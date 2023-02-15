@@ -184,7 +184,7 @@
   },
   "IEx.pry": {
     "prefix": "pry",
-    "body":  [
+    "body": [
       "require IEx; IEx.pry",
       "$0"
     ]
