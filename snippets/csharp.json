@@ -530,5 +530,13 @@
       "}"
     ],
     "description": "Create new class"
+  },
+  "summary": {
+    "prefix": "summary",
+    "body": [
+      "/// <summary>",
+      "/// $0",
+      "/// </summary>"
+    ]
   }
 }
