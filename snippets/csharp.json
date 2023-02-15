@@ -358,17 +358,32 @@
     ],
     "description": "constructor"
   },
-  "xUnit Test": {
+  "async xunit test": {
+    "prefix": "afact",
+    "body": [
+      "[fact]",
+      "public async Task ${1:testname}()",
+      "{",
+      "// arrange",
+      "",
+      "// act",
+      "",
+      "// assert",
+      "}$0"
+    ],
+    "description": "create xunit test method"
+  },
+  "xunit test": {
     "prefix": "fact",
     "body": [
-      "[Fact]",
-      "public void ${1:TestName}()",
+      "[fact]",
+      "public void ${1:testname}()",
       "{",
-      "//Given",
+      "// arrange",
       "",
-      "//When",
+      "// act",
       "",
-      "//Then",
+      "// assert",
       "}$0"
     ],
     "description": "create xunit test method"
