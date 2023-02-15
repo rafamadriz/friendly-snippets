@@ -365,11 +365,12 @@
       "public async Task ${1:testname}()",
       "{",
       "// arrange",
+      "$0",
       "",
       "// act",
       "",
       "// assert",
-      "}$0"
+      "}"
     ],
     "description": "create xunit test method"
   },
@@ -380,11 +381,12 @@
       "public void ${1:testname}()",
       "{",
       "// arrange",
+      "$0",
       "",
       "// act",
       "",
       "// assert",
-      "}$0"
+      "}"
     ],
     "description": "create xunit test method"
   },
