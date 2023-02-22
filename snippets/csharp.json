@@ -472,15 +472,15 @@
   "async xunit test": {
     "prefix": "afact",
     "body": [
-      "[fact]",
+      "[Fact]",
       "public async Task ${1:testname}()",
       "{",
-      "// arrange",
+      "// Arrange",
       "$0",
       "",
-      "// act",
+      "// Act",
       "",
-      "// assert",
+      "// Assert",
       "}"
     ],
     "description": "create xunit test method"
@@ -488,15 +488,15 @@
   "xunit test": {
     "prefix": "fact",
     "body": [
-      "[fact]",
+      "[Fact]",
       "public void ${1:testname}()",
       "{",
-      "// arrange",
+      "// Arrange",
       "$0",
       "",
-      "// act",
+      "// Act",
       "",
-      "// assert",
+      "// Assert",
       "}"
     ],
     "description": "create xunit test method"
