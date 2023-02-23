@@ -80,5 +80,16 @@
       "prefix": "enum",
       "description": "Insert a enum.",
       "body": ["enum ${1:Name} {", "  $0", "}"]
+    },
+    "freezed": {
+      "prefix": "frz",
+      "description": "Create a Freezed class.",
+      "body": [
+        "import 'package:freezed_annotation/freezed_annotation.dart';\n",
+        "class ${1:Name} with _$${1:Name}{",
+        " const factory ${1:name}() = _${1:Name};\n",
+        " factory ${1:Name}.fromJson(Map<String, dynamic> json) => _$${1:Name}FromJson(json);",
+        "}"
+      ]
     }
 }
