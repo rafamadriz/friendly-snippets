@@ -99,10 +99,10 @@
     "prefix": "once",
     "body": [
       "#ifndef ${1:FILE}_H",
-      "#define $1",
+      "#define $1_H",
       "$0",
       "",
-      "#endif /* end of include guard: $1 */"
+      "#endif /* end of include guard: $1_H */"
     ],
     "description": "Header include guard"
   },
