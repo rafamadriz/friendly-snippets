@@ -342,8 +342,12 @@
     "body": "{ |${1:var}| $0 }"
   },
   "Insert byebug call": {
-    "prefix": "debug",
+    "prefix": "bye",
     "body": "require 'byebug'; byebug"
+  },
+  "Insert debug call": {
+    "prefix": "debug",
+    "body": "require 'debug'; debugger"
   },
   "Insert pry call": {
     "prefix": "pry",
