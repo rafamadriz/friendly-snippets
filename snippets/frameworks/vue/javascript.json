@@ -343,7 +343,7 @@
         "body": [
             "const $1 = ($2) => {",
             "$0",
-            "});"
+            "};"
         ],
         "description": "Method composition properties to be mixed into the Vue instance. "
     },
