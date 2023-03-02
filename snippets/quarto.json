@@ -27,7 +27,7 @@
   "Insert fenced code block": {
     "prefix": "fenced codeblock",
     "body": [
-      "```${1|python,c,c++,c#,ruby,go,java,php,htm,css,javascript,json,markdown,console|}",
+      "```${1|python,c,c++,c#,ruby,go,java,php,htm,css,javascript,json,markdown,console,r|}",
       "${TM_SELECTED_TEXT}$0",
       "```"
     ],
@@ -45,7 +45,7 @@
   "Insert raw code block": {
     "prefix": "raw codeblock",
     "body": [
-      "```{${1|html,latex,openxml,opendocument,asciidoc,docbook,markdown,dokuwiki,fb2,gfm,haddock,icml,ipynb,jats,jira,json,man,mediawiki,ms,muse,opml,org,plain,rst,rtf,tei,texinfo,textile,xwiki,zimwiki,native|}}",
+      "```{${1|html,latex,openxml,opendocument,asciidoc,docbook,markdown,dokuwiki,fb2,gfm,haddock,icml,ipynb,jats,jira,json,man,mediawiki,ms,muse,opml,org,plain,rst,rtf,tei,texinfo,textile,xwiki,zimwiki,native,r|}}",
       "${TM_SELECTED_TEXT}$0",
       "```"
     ],
