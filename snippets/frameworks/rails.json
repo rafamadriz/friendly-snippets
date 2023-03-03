@@ -291,11 +291,10 @@
 		"description": "has_one dependent"
 	},
 	"Save and open screenshot": {
-        	"prefix": "saos",
+		"prefix": "saos",
 		"body": [
 			"save_and_open_screenshot${0}"
 		],
 		"description": "save_and_open_screenshot"
 	}
 }
-
