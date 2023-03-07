@@ -550,7 +550,7 @@
       "/*!$1",
       " * @brief ${2:This is something undocumented.}",
       " *",
-      " * ${3:Nothing to say here...}$0",
+      " * ${3:Nothing to add here...}$0",
       " */"
     ],
     "description": "Doxygen template to document a var/func/etc"
@@ -561,7 +561,7 @@
       "/*!",
       " * @brief ${4:This function is undocumented.}",
       " *",
-      " * ${5:Nothing to say here...}",
+      " * ${5:Nothing to add here...}",
       " *",
       " * @return ${6:Nothing.}$0",
       " */",
@@ -582,7 +582,7 @@
   "Group section": {
     "prefix": "dgr",
     "body": [
-      "/*! @name ${1:Useless API.}${2: Details...}",
+      "/*! @name ${1:Useless API.}${2: No more details...}",
       " * @{",
       " */",
       "$0",
