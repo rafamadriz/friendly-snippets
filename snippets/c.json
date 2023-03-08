@@ -258,7 +258,7 @@
       "for (int ${2:i} = ${1:1}; $2 < argc; $2++) {$0",
       "}"
     ],
-    "description": "'for' loop variant with non-zero start"
+    "description": "'for' loop variant for cmdline arguments"
   },
   "for reverse": {
     "prefix": "forr",
@@ -279,7 +279,7 @@
   "for custom": {
     "prefix": "forc",
     "body": [
-      "for (${1:size_t} ${2:i} = ${3:initval}; ${4:$2}; $2${5:++}) {$0",
+      "for (${1:size_t} ${2:i} = ${3:initval}; $4; $2${5:++}) {$0",
       "}"
     ],
     "description": "Custom 'for' loop"
@@ -563,7 +563,7 @@
       " *",
       " * ${5:Nothing to add here...}",
       " *",
-      " * @return ${6:Nothing.}$0",
+      " * @return ${6:Umm...}$0",
       " */",
       "${2:void} ${1:fun}(${3:void});"
     ],
