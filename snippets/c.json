@@ -99,10 +99,10 @@
     "prefix": "once",
     "body": [
       "#ifndef ${1:FILE}_H",
-      "#define $1",
+      "#define $1_H",
       "$0",
       "",
-      "#endif /* end of include guard: $1 */"
+      "#endif /* end of include guard: $1_H */"
     ],
     "description": "Header include guard"
   },
@@ -231,7 +231,7 @@
   "for": {
     "prefix": "for",
     "body": [
-      "for (size_t ${2:i} = 0; $2 < ${1:count}; ++$2) {$0",
+      "for (size_t ${2:i} = 0; $2 < ${1:count}; $2++) {$0",
       "}"
     ],
     "description": "Mostly used 'for' loop"
@@ -239,7 +239,7 @@
   "for custom type": {
     "prefix": "fort",
     "body": [
-      "for (${1:int} ${2:i} = 0; $2 < ${4:count}; ++$2) {$0",
+      "for (${1:int} ${2:i} = 0; $2 < ${4:count}; $2++) {$0",
       "}"
     ],
     "description": "Mostly used 'for' loop with custom type"
@@ -247,7 +247,7 @@
   "for non-zero start": {
     "prefix": "for1",
     "body": [
-      "for (${1:size_t} ${2:i} = ${3:1}; $2 <= ${4:finish}; ++$2) {$0",
+      "for (${1:size_t} ${2:i} = ${3:1}; $2 <= ${4:finish}; $2++) {$0",
       "}"
     ],
     "description": "'for' loop with non-zero start"
@@ -255,7 +255,7 @@
   "for main() args": {
     "prefix": "forp",
     "body": [
-      "for (int ${2:i} = ${1:1}; $2 < argc; ++$2) {$0",
+      "for (int ${2:i} = ${1:1}; $2 < argc; $2++) {$0",
       "}"
     ],
     "description": "'for' loop variant with non-zero start"
@@ -263,7 +263,7 @@
   "for reverse": {
     "prefix": "forr",
     "body": [
-      "for (${1:size_t} ${2:i} = ${3:count}; $2 > ${4:0}; --$2) {$0",
+      "for (${1:size_t} ${2:i} = ${3:count}; $2 > ${4:0}; $2--) {$0",
       "}"
     ],
     "description": "Mostly used reverse 'for' loop"
@@ -271,7 +271,7 @@
   "for reverse custom": {
     "prefix": "forr1",
     "body": [
-      "for (${1:int} ${2:i} = ${3:start}; $2 >= ${4:finish}; --$2) {$0",
+      "for (${1:int} ${2:i} = ${3:start}; $2 >= ${4:finish}; $2--) {$0",
       "}"
     ],
     "description": "More custom reverse 'for' loop"

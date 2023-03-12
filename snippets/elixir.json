@@ -122,6 +122,14 @@
       "end"
     ]
   },
+  "do": {
+    "prefix": "do",
+    "body": [
+      "do",
+      "  $0",
+      "end"
+    ]
+  },
   "doc": {
     "prefix": "doc",
     "body": [
