@@ -296,5 +296,12 @@
 			"save_and_open_screenshot${0}"
 		],
 		"description": "save_and_open_screenshot"
+	},
+	"Save and open page": {
+		"prefix": "saop",
+		"body": [
+			"save_and_open_page${0}"
+		],
+		"description": "save_and_open_page"
 	}
 }
