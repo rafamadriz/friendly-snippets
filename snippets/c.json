@@ -181,19 +181,10 @@
   "switch": {
     "prefix": "switch",
     "body": [
-      "switch (${1:switch_on}) {$0",
-      "default:$2",
+      "switch (${1:expression}) {$0",
       "}"
     ],
     "description": "'switch' snippet"
-  },
-  "switch no default": {
-    "prefix": "switchndef",
-    "body": [
-      "switch (${1:switch_on}) {$0",
-      "}"
-    ],
-    "description": "'switch' without default"
   },
   "case": {
     "prefix": "case",
@@ -201,6 +192,13 @@
       "case ${1:0}:$0"
     ],
     "description": "'case' branch"
+  },
+  "default": {
+    "prefix": "default",
+    "body": [
+      "default:$0"
+    ],
+    "description": "'default' branch"
   },
   "while": {
     "prefix": "while",
