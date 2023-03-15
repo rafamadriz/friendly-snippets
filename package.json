@@ -275,7 +275,11 @@
       },
       {
         "language": "vue",
-        "path": "./snippets/frameworks/vue/pug.json"
+        "path": "./snippets/frameworks/vue/nuxt-html.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets/frameworks/vue/nuxt-js-ts.json"
       },
       {
         "language": "vue",
