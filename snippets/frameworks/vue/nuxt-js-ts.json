@@ -6,7 +6,10 @@
   },
   "useHead": {
     "prefix": "useHead",
-    "body": ["useHead({", "\t$0", "})"],
+    "body": [
+      "useHead({", 
+      "\t$0", 
+      "})"],
     "description": "The useHead composable function allows you to manage your head tags in a programmatic and reactive way, powered by Unhead. If the data comes from a user or other untrusted source, we recommend you check out useHeadSafe"
   }
 }
