@@ -1,7 +1,10 @@
 {
   "useAppConfig": {
     "prefix": "useAppConfig",
-    "body": ["const ${1:appConfig} = useAppConfig()", "\t$0"],
+    "body": [
+      "const ${1:appConfig} = useAppConfig()",
+      "\t$0"
+    ],
     "description": "Access the reactive app config defined in the project."
   },
   "useHead": {
@@ -9,7 +12,73 @@
     "body": [
       "useHead({", 
       "\t$0", 
-      "})"],
+      "})"
+    ],
     "description": "The useHead composable function allows you to manage your head tags in a programmatic and reactive way, powered by Unhead. If the data comes from a user or other untrusted source, we recommend you check out useHeadSafe"
+  },
+  "useError": {
+    "prefix": "useError",
+    "body": [
+      "const ${1:error} = useError()", 
+      "\t$0"
+    ],
+    "description": "useError composable returns the global Nuxt error that is being handled and it is available on both client and server."
+  },
+  "useFetch": {
+    "prefix": "useFetch",
+    "body": [
+      "const {${1:data},${2:pending},${3:error},${4:refresh}} = await useFetch('$5', {",
+      "$0",
+      "})"
+    ],
+    "description": "This composable provides a convenient wrapper around useAsyncData and $fetch. It automatically generates a key based on URL and fetch options, provides type hints for request url based on server routes, and infers API response type."  
+  },
+  "useNuxtApp": {
+    "prefix": "useAppConfig",
+    "body": [
+      "const ${1:nuxtApp} = useNuxtApp()",
+      "\t$0"
+    ],
+    "description": "useNuxtApp is a built-in composable that provides a way to access shared runtime context of Nuxt, which is available on both client and server side. It helps you access the Vue app instance, runtime hooks, runtime config variables and internal states, such as ssrContext and payload."
+  },
+  "useRoute": {
+    "prefix": "useRoute",
+    "body": [
+      "const ${1:route} = useRoute()",
+      "\t$0"
+    ],
+    "description": "The useRoute composable returns the current route and must be called in a setup function, plugin, or route middleware."
+  },
+  "useRouter": {
+    "prefix": "useRouter",
+    "body": [
+      "const ${1:router} = useRouter()",
+      "\t$0"
+    ],
+    "description": "The useRouter composable returns the router instance and must be called in a setup function, plugin, or route middleware. Within the template of a Vue component, you can access the router using $router instead. If you have a pages/ folder, useRouter is identical in behavior to the one provided by vue-router. Feel free to read the router documentation for more information on what each method does."
+  },
+  "useState": {
+    "prefix": "useState",
+    "body": [
+      "const ${1:route} = useRoute()",
+      "\t$0"
+    ],
+    "description": "The useRoute composable returns the current route and must be called in a setup function, plugin, or route middleware."
+  },
+  "definePageMeta": {
+    "prefix": "definePageMeta",
+    "body": [
+      "definePageMeta({",
+      "$0",
+      "})"
+    ],
+    "description": "definePageMeta is a compiler macro that you can use to set metadata for your page components located in the pages/ directory (unless set otherwise). This way you can set custom metadata for each static or dynamic route of your Nuxt application." 
+  },
+  "navigateTo": {
+    "prefix": "navigateTo",
+    "body": [
+      "navigateTo($0)"
+    ],
+    "description": "navigateTo is a router helper function that allows programmatically navigating users through your Nuxt application." 
   }
 }
