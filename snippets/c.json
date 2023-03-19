@@ -181,19 +181,10 @@
   "switch": {
     "prefix": "switch",
     "body": [
-      "switch (${1:switch_on}) {$0",
-      "default:$2",
+      "switch (${1:expression}) {$0",
       "}"
     ],
     "description": "'switch' snippet"
-  },
-  "switch no default": {
-    "prefix": "switchndef",
-    "body": [
-      "switch (${1:switch_on}) {$0",
-      "}"
-    ],
-    "description": "'switch' without default"
   },
   "case": {
     "prefix": "case",
@@ -201,6 +192,13 @@
       "case ${1:0}:$0"
     ],
     "description": "'case' branch"
+  },
+  "default": {
+    "prefix": "default",
+    "body": [
+      "default:$0"
+    ],
+    "description": "'default' branch"
   },
   "while": {
     "prefix": "while",
@@ -258,7 +256,7 @@
       "for (int ${2:i} = ${1:1}; $2 < argc; $2++) {$0",
       "}"
     ],
-    "description": "'for' loop variant with non-zero start"
+    "description": "'for' loop variant for cmdline arguments"
   },
   "for reverse": {
     "prefix": "forr",
@@ -279,7 +277,7 @@
   "for custom": {
     "prefix": "forc",
     "body": [
-      "for (${1:size_t} ${2:i} = ${3:initval}; ${4:$2}; $2${5:++}) {$0",
+      "for (${1:size_t} ${2:i} = ${3:initval}; $4; $2${5:++}) {$0",
       "}"
     ],
     "description": "Custom 'for' loop"
@@ -550,7 +548,7 @@
       "/*!$1",
       " * @brief ${2:This is something undocumented.}",
       " *",
-      " * ${3:Nothing to say here...}$0",
+      " * ${3:Nothing to add here...}$0",
       " */"
     ],
     "description": "Doxygen template to document a var/func/etc"
@@ -561,9 +559,9 @@
       "/*!",
       " * @brief ${4:This function is undocumented.}",
       " *",
-      " * ${5:Nothing to say here...}",
+      " * ${5:Nothing to add here...}",
       " *",
-      " * @return ${6:Nothing.}$0",
+      " * @return ${6:Umm...}$0",
       " */",
       "${2:void} ${1:fun}(${3:void});"
     ],
@@ -582,7 +580,7 @@
   "Group section": {
     "prefix": "dgr",
     "body": [
-      "/*! @name ${1:Useless API.}${2: Details...}",
+      "/*! @name ${1:Useless API.}${2: No more details...}",
       " * @{",
       " */",
       "$0",
