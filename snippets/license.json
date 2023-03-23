@@ -318,7 +318,7 @@
     ]
   },
   "ISC": {
-    "prefix": "ISC",
+    "prefix": "ISCL",
     "description": "ISC License",
     "body": [
       "The ISC License (ISC)",
