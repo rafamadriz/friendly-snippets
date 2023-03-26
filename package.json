@@ -17,6 +17,12 @@
         "path": "./snippets/global.json"
       },
       {
+        "language": [
+          "license"
+        ],
+        "path": "./snippets/license.json"
+      },
+      {
         "language": "c",
         "path": "./snippets/c.json"
       },
