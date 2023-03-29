@@ -52,5 +52,47 @@
     "prefix": "navigateTo",
     "body": ["navigateTo($0)"],
     "description": "navigateTo is a router helper function that allows programmatically navigating users through your Nuxt application."
-  }
+  },
+  "const $1 = defineCustomElement({",
+            "$0",
+            "})"
+      "<template lang=\"$1\">",
+      "\t<div$2>",
+      "\t\t$0",
+      "\t</div>",
+      "</template>"
+
+  "Anonymouse Route Middleware": {
+    "prefix": "addRouteMiddlewareAnonym",
+    "body": [
+      "addRouteMiddleware((to, from) => {",
+      "\tif(to.path === '$1') {",
+      "\t\treturn false",
+      "\t})"
+    ],
+    "description": "Anonymous route middleware does not have a name. It takes a function as the first argument, making the second middleware argument redundant"
+  },
+
+  "Named Route Middleware": {
+    "prefix": "addRouteMiddlewareNamed",
+    "body": [
+      "addRouteMiddleware('${1:named-middleware}', () => {",
+      "\t$0",
+      "\t})"
+    ],
+    "description": "Named route middleware takes a string as the first argument and a function as the second.
+When defined in a plugin, it overrides any existing middleware of the same name located in the middleware/ directory"
+  },
+
+  "Global Route Middleware": {
+    "prefix": "addRouteMiddlewareGlobal",
+    "body": [
+      "addRouteMiddleware('${1:global-middleware}', (to, from) => {",
+      "\t$0",
+      "},",
+      "\t{global: true}",
+      ")"
+    ],
+    "description": "Set an optional, third argument { global: true } to indicate whether the route middleware is global"
+  },
 }
