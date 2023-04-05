@@ -1,0 +1,869 @@
+{
+    "comment-block-sm": {
+        "prefix": "/2block-sm",
+        "body": [
+            "#===========================",
+            "#      ${1:COMMENT BLOCK}",
+            "#   ${2}",
+            "#   ",
+            "#==========================="
+        ],
+        "description": "Comment Block Small",
+        "scope": "COMMENT BLOCK SMALL"
+    },
+    "comment-block-md": {
+        "prefix": "//block-md",
+        "body": [
+            "#================================================",
+            "#                ${1:COMMENT BLOCK}",
+            "#   ${2}",
+            "#   ",
+            "#   ",
+            "#   ",
+            "#================================================"
+        ],
+        "description": "Comment Block Medium",
+        "scope": "COMMENT BLOCK MEDIUM"
+    },
+    "comment-block-lg": {
+        "prefix": "//block-lg",
+        "body": [
+            "#==========================================================================",
+            "#                              ${1:COMMENT BLOCK}",
+            "#   ${2}",
+            "#   ",
+            "#   ",
+            "#   ",
+            "#=========================================================================="
+        ],
+        "description": "COMMENT BLOCK LARGE",
+        "scope": ""
+    },
+    "comment-block-xl": {
+        "prefix": "//block-xl",
+        "body": [
+            "#===================================================================================================",
+            "#                                            ${1:COMMENT BLOCK}",
+            "#   ${2}",
+            "#   ",
+            "#   ",
+            "#   ",
+            "#==================================================================================================="
+        ],
+        "description": "COMMENT BLOCK EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-block-xxl": {
+        "prefix": "//block-xxl",
+        "body": [
+            "#==========================================================================================================================",
+            "#                                                      ${1:COMMENT BLOCK}",
+            "#   ${2}",
+            "#   ",
+            "#   ",
+            "#   ",
+            "#=========================================================================================================================="
+        ],
+        "description": "COMMENT BLOCK EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-block-info-sm": {
+        "prefix": "//*block-sm,//info-block-sm",
+        "body": [
+            "#===========================",
+            "#  *        ${1:INFO}",
+            "#   ${2}",
+            "#   ",
+            "#==========================="
+        ],
+        "description": "INFO BLOCK SMALL",
+        "scope": ""
+    },
+    "comment-block-info-md": {
+        "prefix": "//*block-md,//info-block-md",
+        "body": [
+            "#================================================",
+            "#  *                    ${1:INFO}",
+            "#    ${2}",
+            "#    ",
+            "#    ",
+            "# ",
+            "#================================================"
+        ],
+        "description": "INFO BLOCK MEDIUM",
+        "scope": ""
+    },
+    "comment-block-info-lg": {
+        "prefix": "//*block-lg,//info-block-lg",
+        "body": [
+            "#===========================================================================",
+            "#  *                                 ${1:INFO}",
+            "#    ${2}",
+            "#    ",
+            "#    ",
+            "# ",
+            "#==========================================================================="
+        ],
+        "description": "INFO BLOCK LARGE",
+        "scope": ""
+    },
+    "comment-block-info-xl": {
+        "prefix": "//*block-xl,//info-block-xl",
+        "body": [
+            "#===================================================================================================",
+            "#  *                                            ${1:INFO}",
+            "#    ${2}",
+            "#    ",
+            "#    ",
+            "# ",
+            "#==================================================================================================="
+        ],
+        "description": "INFO BLOCK EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-block-info-xxl": {
+        "prefix": "//*block-xxl,//info-block-xxl",
+        "body": [
+            "#==========================================================================================================================",
+            "#  *                                                      ${1:INFO}",
+            "#    ${2}",
+            "#    ",
+            "#    ",
+            "# ",
+            "#=========================================================================================================================="
+        ],
+        "description": "INFO BLOCK EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-block-error-sm": {
+        "prefix": "//!block-sm,//warning-block-sm",
+        "body": [
+            "#===========================",
+            "#  !      ${1:WARNING}",
+            "#   ${2}",
+            "#   ",
+            "#==========================="
+        ],
+        "description": "WARNING BLOCK SMALL",
+        "scope": ""
+    },
+    "comment-block-error-md": {
+        "prefix": "//!block-md,//warning-block-md",
+        "body": [
+            "#================================================",
+            "#  !                  ${1:WARNING}",
+            "#    ${2}",
+            "#    ",
+            "#    ",
+            "# ",
+            "#================================================"
+        ],
+        "description": "WARNING BLOCK MEDIUM ",
+        "scope": ""
+    },
+    "comment-block-error-lg": {
+        "prefix": "//!block-lg,//warning-block-lg",
+        "body": [
+            "#===========================================================================",
+            "#  !                              ${1:WARNING}",
+            "#    ${2}",
+            "#    ",
+            "#    ",
+            "# ",
+            "#==========================================================================="
+        ],
+        "description": "WARNING BLOCK LARGE",
+        "scope": ""
+    },
+    "comment-block-error-xl": {
+        "prefix": "//!block-xl,//warning-block-xl",
+        "body": [
+            "#===================================================================================================",
+            "#  !                                          ${1:WARNING}",
+            "#    ${2}",
+            "#    ",
+            "#    ",
+            "# ",
+            "#==================================================================================================="
+        ],
+        "description": "WARNING BLOCK EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-block-error-xxl": {
+        "prefix": "//!block-xxl,//warning-block-xxl",
+        "body": [
+            "#==========================================================================================================================",
+            "#  !                                                     ${1:WARNING}",
+            "#    ${2}",
+            "#    ",
+            "#    ",
+            "# ",
+            "#=========================================================================================================================="
+        ],
+        "description": "WARNING BLOCK EXTRA EXTRA LARGE  ",
+        "scope": ""
+    },
+    "comment-block-question-sm": {
+        "prefix": "//?block-sm,//question-block-sm",
+        "body": [
+            "#===========================",
+            "#  ?      ${1:QUESTION}",
+            "#   ${2}",
+            "#   ",
+            "#==========================="
+        ],
+        "description": "QUESTION MEDIUM  ",
+        "scope": ""
+    },
+    "comment-block-question-md": {
+        "prefix": "//?block-md,//question-block-md",
+        "body": [
+            "#================================================",
+            "#  ?                  ${1:QUESTION}",
+            "#    ${2}",
+            "#    ",
+            "#    ",
+            "# ",
+            "#================================================"
+        ],
+        "description": "QUESTION BLOCK MEDIUM  ",
+        "scope": ""
+    },
+    "comment-block-question-lg": {
+        "prefix": "//?block-lg,//question-block-lg",
+        "body": [
+            "#===========================================================================",
+            "#  ?                              ${1:QUESTION}",
+            "#    ${2}",
+            "#    ",
+            "#    ",
+            "# ",
+            "#==========================================================================="
+        ],
+        "description": "QUESTION BLOCK LARGE  ",
+        "scope": ""
+    },
+    "comment-block-question-xl": {
+        "prefix": "//?block-xl,//question-block-xl",
+        "body": [
+            "#===================================================================================================",
+            "#  ?                                         ${1:QUESTION}",
+            "#    ${2}",
+            "#    ",
+            "#    ",
+            "# ",
+            "#==================================================================================================="
+        ],
+        "description": "QUESTION BLOCK EXTRA LARGE  ",
+        "scope": ""
+    },
+    "comment-block-question-xxl": {
+        "prefix": "//?block-xxl,//question-block-xxl",
+        "body": [
+            "#==========================================================================================================================",
+            "#  ?                                                    ${1:QUESTION}",
+            "#    ${2}",
+            "#    ",
+            "#    ",
+            "# ",
+            "#=========================================================================================================================="
+        ],
+        "description": "QUESTION BLOCK EXTRA EXTRA LARGE  ",
+        "scope": ""
+    },
+    "comment-block-todo-sm": {
+        "prefix": "//todo-block-sm",
+        "body": [
+            "#===========================",
+            "#  todo      ${1:TODO}",
+            "#   ${2}",
+            "#   ",
+            "#==========================="
+        ],
+        "description": "TODO BLOCK SMALL",
+        "scope": ""
+    },
+    "comment-block-todo-md": {
+        "prefix": "//todo-block-md",
+        "body": [
+            "#================================================",
+            "#  todo                  ${1:TODO}",
+            "#    ${2}",
+            "#    ",
+            "#    ",
+            "# ",
+            "#================================================"
+        ],
+        "description": "TODO BLOCK MEDIUM",
+        "scope": ""
+    },
+    "comment-block-todo-lg": {
+        "prefix": "//todo-block-lg",
+        "body": [
+            "#===========================================================================",
+            "#  todo                             ${1:TODO}",
+            "#    ${2}",
+            "#    ",
+            "#    ",
+            "# ",
+            "#==========================================================================="
+        ],
+        "description": "TODO BLOCK LARGE",
+        "scope": ""
+    },
+    "comment-block-todo-xl": {
+        "prefix": "//todo-block-xl",
+        "body": [
+            "#===================================================================================================",
+            "#  todo                                        ${1:TODO}",
+            "#    ${2}",
+            "#    ",
+            "#    ",
+            "# ",
+            "#==================================================================================================="
+        ],
+        "description": "TODO BLOCK EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-block-todo-xxl": {
+        "prefix": "//todo-block-xxl",
+        "body": [
+            "#==========================================================================================================================",
+            "#  todo                                                   ${1:TODO}",
+            "#    ${2}",
+            "#    ",
+            "#    ",
+            "# ",
+            "#=========================================================================================================================="
+        ],
+        "description": "TODO BLOCK EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-block-about-sm": {
+        "prefix": "//about-block-sm",
+        "body": [
+            "#===========================",
+            "#  ?        ABOUT",
+            "#  @author    : ${2:}",
+            "#  @createdOn : ",
+            "#==========================="
+        ],
+        "description": "ABOUT BLOCK SMALL",
+        "scope": ""
+    },
+    "comment-block-about-md": {
+        "prefix": "//about-block-md",
+        "body": [
+            "#================================================",
+            "#  ?                    ABOUT",
+            "#  @author      : ${2:}",
+            "#  @email       : ",
+            "#  @repo        : ",
+            "#  @createdOn   : ",
+            "#  @description : ",
+            "#================================================"
+        ],
+        "description": "ABOUT BLOCK MEDIUM    ",
+        "scope": ""
+    },
+    "comment-block-about-lg": {
+        "prefix": "//about-block-lg",
+        "body": [
+            "#===========================================================================",
+            "#  ?                                ABOUT",
+            "#  @author         :  ${2:}",
+            "#  @email          :  ",
+            "#  @repo           :  ",
+            "#  @createdOn      :  ",
+            "#  @description    :  ",
+            "#==========================================================================="
+        ],
+        "description": "ABOUT BLOCK LARGE    ",
+        "scope": ""
+    },
+    "comment-block-about-xl": {
+        "prefix": "//about-block-xl",
+        "body": [
+            "#===================================================================================================",
+            "#  ?                                           ABOUT",
+            "#  @author         :  ${2:}",
+            "#  @email          :  ",
+            "#  @repo           :  ",
+            "#  @createdOn      :  ",
+            "#  @description    :  ",
+            "#==================================================================================================="
+        ],
+        "description": "ABOUT BLOCK EXTRA LARGE  ",
+        "scope": ""
+    },
+    "comment-block-about-xxl": {
+        "prefix": "//about-block-xxl",
+        "body": [
+            "#==========================================================================================================================",
+            "#  ?                                                     ABOUT",
+            "#  @author         :  ${2:}",
+            "#  @email          :  ",
+            "#  @repo           :  ",
+            "#  @createdOn      :  ",
+            "#  @description    :  ",
+            "#=========================================================================================================================="
+        ],
+        "description": "ABOUT BLOCK EXTRA EXTRA LARGE   ",
+        "scope": ""
+    },
+    "comment-block-function-sm": {
+        "prefix": "//()block-sm,//function-block-sm",
+        "body": [
+            "#===========================",
+            "# *   ${1:FUNCTION NAME}",
+            "# @param ${3:name} ${4:type}  ",
+            "# @return ${7:type}",
+            "#==========================="
+        ],
+        "description": "FUNCTION BLOCK SMALL  ",
+        "scope": ""
+    },
+    "comment-block-function-md": {
+        "prefix": "//()block-md,//function-block-md",
+        "body": [
+            "#================================================",
+            "# *              ${1:FUNCTION NAME}",
+            "# ?  ${2:What does it do?}",
+            "# @param ${3:name} ${4:type}  ",
+            "# @param ${5:name} ${6:type}  ",
+            "# @return ${7:type}",
+            "#================================================"
+        ],
+        "description": "FUNCTION BLOCK MEDIUM  ",
+        "scope": ""
+    },
+    "comment-block-function-lg": {
+        "prefix": "//()block-lg,//function-block-lg",
+        "body": [
+            "#===========================================================================",
+            "# *                           ${1:FUNCTION NAME}",
+            "# ?  ${2:What does it do?}",
+            "# @param ${3:name} ${4:type}  ",
+            "# @param ${5:name} ${6:type}  ",
+            "# @return ${7:type}",
+            "#==========================================================================="
+        ],
+        "description": "FUNCTION BLOCK LARGE  ",
+        "scope": ""
+    },
+    "comment-block-function-xl": {
+        "prefix": "//()block--xl,//function-block-xl",
+        "body": [
+            "#===================================================================================================",
+            "# *                                      ${1:FUNCTION NAME}",
+            "# ?  ${2:What does it do?}",
+            "# @param ${3:name} ${4:type}  ",
+            "# @param ${5:name} ${6:type}  ",
+            "# @return ${7:type}",
+            "#==================================================================================================="
+        ],
+        "description": "FUNCTION BLOCK EXTRA LARGE  ",
+        "scope": ""
+    },
+    "comment-block-function-xxl": {
+        "prefix": "//()block-xxl,//function-block-xxl",
+        "body": [
+            "#==========================================================================================================================",
+            "# *                                                  ${1:FUNCTION NAME}",
+            "# ?  ${2:What does it do?}",
+            "# @param ${3:name} ${4:type}  ",
+            "# @param ${5:name} ${6:type}  ",
+            "# @return ${7:type}",
+            "#=========================================================================================================================="
+        ],
+        "description": "FUNCTION BLOCK EXTRA EXTRA LARGE  ",
+        "scope": ""
+    },
+    "comment-header-sm": {
+        "prefix": "//header-sm",
+        "body": [
+            "#===========================",
+            "#     ${1:SECTION HEADER}",
+            "#==========================="
+        ],
+        "description": "SECTION HEADER SMALL",
+        "scope": ""
+    },
+    "comment-header-md": {
+        "prefix": "//header-md",
+        "body": [
+            "#================================================",
+            "#                ${1:SECTION HEADER}",
+            "#================================================"
+        ],
+        "description": "SECTION HEADER MEDIUM",
+        "scope": ""
+    },
+    "comment-header-lg": {
+        "prefix": "//header-lg",
+        "body": [
+            "#===========================================================================",
+            "#                            ${1:SECTION HEADER}",
+            "#==========================================================================="
+        ],
+        "description": "SECTION HEADER LARGE",
+        "scope": ""
+    },
+    "comment-header-xl": {
+        "prefix": "//header-xl",
+        "body": [
+            "#===================================================================================================",
+            "#                                          ${1:SECTION HEADER}",
+            "#==================================================================================================="
+        ],
+        "description": "SECTION HEADER EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-header-xxl": {
+        "prefix": "//header-xxl",
+        "body": [
+            "#==========================================================================================================================",
+            "#                                                     ${1:SECTION HEADER}",
+            "#=========================================================================================================================="
+        ],
+        "description": "SECTION HEADER EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-header-info-sm": {
+        "prefix": "//*header-sm,//info-header-sm",
+        "body": [
+            "#===========================",
+            "# *      ${1:INFO HEADER}",
+            "#==========================="
+        ],
+        "description": "INFO HEADER SMALL",
+        "scope": ""
+    },
+    "comment-header-info-md": {
+        "prefix": "//*header-md,//info-header-md",
+        "body": [
+            "#================================================",
+            "# *               ${1:INFO HEADER}",
+            "#================================================"
+        ],
+        "description": "INFO header MEDIUM",
+        "scope": ""
+    },
+    "comment-header-info-lg": {
+        "prefix": "//*header-lg,//info-header-lg",
+        "body": [
+            "#===========================================================================",
+            "# *                            ${1:INFO HEADER}",
+            "#==========================================================================="
+        ],
+        "description": "INFO HADER LARGE",
+        "scope": ""
+    },
+    "comment-header-info-xl": {
+        "prefix": "//*header-xl,//info-header-xl",
+        "body": [
+            "#===================================================================================================",
+            "# *                                         ${1:INFO HEADER}",
+            "#==================================================================================================="
+        ],
+        "description": "INFO HEADER",
+        "scope": ""
+    },
+    "comment-header-info-xxl": {
+        "prefix": "//*header-xxl,//info-header-xxl",
+        "body": [
+            "#==========================================================================================================================",
+            "# *                                                     ${1:INFO HEADER}",
+            "#=========================================================================================================================="
+        ],
+        "description": "INFO HEADER EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-header-warning-sm": {
+        "prefix": "//!header-sm,//warning-header-sm",
+        "body": [
+            "#===========================",
+            "# !    ${1:WARNING HEADER}",
+            "#==========================="
+        ],
+        "description": "WARNING HEADER SMALL",
+        "scope": ""
+    },
+    "comment-header-warning-md": {
+        "prefix": "//!header-md,//warning-header-md",
+        "body": [
+            "#================================================",
+            "# !               ${1:WARNING HEADER}",
+            "#================================================"
+        ],
+        "description": "WARNING HEADER MEDIUM",
+        "scope": ""
+    },
+    "comment-header-warning-lg": {
+        "prefix": "//!header-lg,//warning-header-lg",
+        "body": [
+            "#===========================================================================",
+            "# !                           ${1:WARNING HEADER}",
+            "#==========================================================================="
+        ],
+        "description": "WARNING HEADER LARGE",
+        "scope": ""
+    },
+    "comment-header-warning-xl": {
+        "prefix": "//!header-xl,//warning-header-xl",
+        "body": [
+            "#===================================================================================================",
+            "# !                                        ${1:WARNING HEADER}",
+            "#==================================================================================================="
+        ],
+        "description": "WARNING HEADER EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-header-warning-xxl": {
+        "prefix": "//!header-xxl,//warning-header-xxl",
+        "body": [
+            "#==========================================================================================================================",
+            "# !                                                   ${1:WARNING HEADER}",
+            "#=========================================================================================================================="
+        ],
+        "description": "WARNING HEADER EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-header-todo-sm": {
+        "prefix": "//todo-header-sm",
+        "body": [
+            "#========================",
+            "# todo    ${1:TODO HEADER}",
+            "#==========================="
+        ],
+        "description": "WARNING HEADER SMALL",
+        "scope": ""
+    },
+    "comment-header-todo-md": {
+        "prefix": "//todo-header-md",
+        "body": [
+            "#================================================",
+            "# todo           ${1:TODO HEADER}",
+            "#================================================"
+        ],
+        "description": "WARNING HEADER LARGE",
+        "scope": ""
+    },
+    "comment-header-todo-lg": {
+        "prefix": "//todo-header-lg",
+        "body": [
+            "#===========================================================================",
+            "# todo                         ${1:TODO HEADER}",
+            "#==========================================================================="
+        ],
+        "description": "WARNING HEADER LARGE",
+        "scope": ""
+    },
+    "comment-header-todo-xl": {
+        "prefix": "//todo-header-xl",
+        "body": [
+            "#===================================================================================================",
+            "# todo                                      ${1:TODO HEADER}",
+            "#==================================================================================================="
+        ],
+        "description": "WARNING HEADER EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-header-todo-xxl": {
+        "prefix": "//todo-header-xxl",
+        "body": [
+            "#==========================================================================================================================",
+            "# todo                                                 ${1:TODO HEADER}",
+            "#=========================================================================================================================="
+        ],
+        "description": "WARNING HEADER EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-header-question-sm": {
+        "prefix": "//?header-sm,//question-header-sm",
+        "body": [
+            "#========================",
+            "# ?    ${1:QUESTION HEADER}",
+            "#==========================="
+        ],
+        "description": "QUESTION HEADER SMALL",
+        "scope": ""
+    },
+    "comment-header-question-md": {
+        "prefix": "//?header-md,//question-header-md",
+        "body": [
+            "#================================================",
+            "# ?              ${1:QUESTION HEADER}",
+            "#================================================"
+        ],
+        "description": "QUESTION HEADER MEDIUM",
+        "scope": ""
+    },
+    "comment-header-question-lg": {
+        "prefix": "//?header-lg,//question-header-lg",
+        "body": [
+            "#===========================================================================",
+            "# ?                           ${1:QUESTION HEADER}",
+            "#==========================================================================="
+        ],
+        "description": "QUESTION HEADER LARGE",
+        "scope": ""
+    },
+    "comment-header-question-xl": {
+        "prefix": "//?header-xl,//question-header-xl",
+        "body": [
+            "#===================================================================================================",
+            "# ?                                       ${1:QUESTION HEADER}",
+            "#==================================================================================================="
+        ],
+        "description": "QUESTION HEADER EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-header-question-xxl": {
+        "prefix": "//?header-xxl,//question-header-xxl",
+        "body": [
+            "#==========================================================================================================================",
+            "# ?                                                   ${1:QUESTION HEADER}",
+            "#=========================================================================================================================="
+        ],
+        "description": "QUESTION HEADER EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-footer-sm": {
+        "prefix": "//end-sm",
+        "body": "#===== END OF ${1:SECTION} ======\n\n",
+        "description": "END SECTION SMALL",
+        "scope": ""
+    },
+    "comment-footer-md": {
+        "prefix": "//end-md",
+        "body": "#================ END OF ${1:SECTION} ================\n\n",
+        "description": "END SECTION MEDIUM",
+        "scope": ""
+    },
+    "comment-footer-lg": {
+        "prefix": "//end-lg",
+        "body": "#============================= END OF ${1:SECTION} ==============================\n\n",
+        "description": "END SECTION LARGE",
+        "scope": ""
+    },
+    "comment-footer-xl": {
+        "prefix": "//end-xl",
+        "body": "#=========================================== END OF ${1:SECTION} ============================================\n\n",
+        "description": "END SECTION EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-footer-xxl": {
+        "prefix": "//end-xxl",
+        "body": "#===================================================== END OF ${1:SECTION}======================================================\n\n",
+        "description": "END SECTION EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "divider-sm": {
+        "prefix": "//divider-sm",
+        "body": "#======== ${1:DIVISION} =========\n\n",
+        "description": "DIVIDER SMALL",
+        "scope": ""
+    },
+    "divider-md": {
+        "prefix": "//divider-md",
+        "body": "#=================== ${1:DIVISION} ===================\n\n",
+        "description": "DIVIDER MEDIUM",
+        "scope": ""
+    },
+    "divider-lg": {
+        "prefix": "//divider-lg",
+        "body": "#================================= ${1:DIVISION} ================================\n\n",
+        "description": "DIVIDER LARGE",
+        "scope": ""
+    },
+    "divider-xl": {
+        "prefix": "//divider-xl",
+        "body": "#============================================ ${1:DIVISION} =============================================\n\n",
+        "description": "DIVIDER EXTRA LARGE",
+        "scope": ""
+    },
+    "divider-xxl": {
+        "prefix": "//divider-xxl",
+        "body": "#======================================================== ${1:DIVISION} =========================================================\n\n",
+        "description": "DIVIDER EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "divider-plain-sm": {
+        "prefix": "//divider-plain-sm",
+        "body": "#===========================\n",
+        "description": "DIVIDER PLAIN SMALL",
+        "scope": ""
+    },
+    "divider-plain-md": {
+        "prefix": "//divider-plain-md",
+        "body": "#================================================\n\n",
+        "description": "DIVIDER PLAIN MEDIUM",
+        "scope": ""
+    },
+    "divider-plain-lg": {
+        "prefix": "//divider-plain-lg",
+        "body": "#===========================================================================\n\n",
+        "description": "DIVIDER PLAIN LARGE",
+        "scope": ""
+    },
+    "divider-plain-xl": {
+        "prefix": "//divider-plain-xl",
+        "body": "#===================================================================================================\n\n",
+        "description": "DIVIDER PLAIN EXTRA LARGE",
+        "scope": ""
+    },
+    "divider-plain-xxl": {
+        "prefix": "//divider-plain-xxl",
+        "body": "#===========================================================================================================================\n\n",
+        "description": "DIVIDER PLAIN EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "todo": {
+        "prefix": "//todo",
+        "body": "#todo  ${1:TODO} ",
+        "description": "COMMENT TODO",
+        "scope": ""
+    },
+    "question": {
+        "prefix": "//?,//question",
+        "body": "#?  ${1:QUESTION}",
+        "description": "COMMENT QUESTION",
+        "scope": ""
+    },
+    "warning": {
+        "prefix": "//!,//warning",
+        "body": "#! ${1:WARNING} ",
+        "description": "COMMENT WARNING",
+        "scope": ""
+    },
+    "info": {
+        "prefix": "//*,//info",
+        "body": "#* ${1:INFO} ",
+        "description": "COMMENT INFO",
+        "scope": ""
+    },
+    "comment": {
+        "prefix": "//comment",
+        "body": "# ${1:Comment} ",
+        "description": "SINGLE LINE COMMENT",
+        "scope": ""
+    },
+    "comment-multiline": {
+        "prefix": "//multiline",
+        "body": [
+            "\"\"\"",
+            "=   ${1}",
+            "=   ",
+            "=   ",
+            "=   ",
+            "=   ",
+            "=   ",
+            "   ",
+            "=   ",
+            "\"\"\""
+        ],
+        "description": "MULTI LINE COMMENT",
+        "scope": ""
+    }
+}

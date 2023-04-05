@@ -1,0 +1,869 @@
+{
+    "comment-block-sm": {
+        "prefix": "/2block-sm",
+        "body": [
+            "/**=======================",
+            " *     ${1:COMMENT BLOCK}",
+            " *  ${2}",
+            " *  ",
+            " *========================**/"
+        ],
+        "description": "COMMENT BLOCK SMALL",
+        "scope": ""
+    },
+    "comment-block-md": {
+        "prefix": "/2block-md",
+        "body": [
+            "/**==============================================",
+            " *                ${1:COMMENT BLOCK}",
+            " *  ${2}",
+            " *  ",
+            " *  ",
+            " *  ",
+            " *=============================================**/"
+        ],
+        "description": "COMMENT BLOCK MEDIUM",
+        "scope": ""
+    },
+    "comment-block-lg": {
+        "prefix": "/2block-lg",
+        "body": [
+            "/**========================================================================",
+            " *                             ${1:COMMENT BLOCK}",
+            " *  ${2}",
+            " *  ",
+            " *  ",
+            " *  ",
+            " *========================================================================**/"
+        ],
+        "description": "COMMENT BLOCK LARGE",
+        "scope": ""
+    },
+    "comment-block-xl": {
+        "prefix": "/2block-xl",
+        "body": [
+            "/**================================================================================================",
+            " *                                           ${1:COMMENT BLOCK}",
+            " *  ${2}",
+            " *  ",
+            " *  ",
+            " *  ",
+            " *================================================================================================**/"
+        ],
+        "description": "COMMENT BLOCK EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-block-xxl": {
+        "prefix": "/2block-xxl",
+        "body": [
+            "/**=======================================================================================================================",
+            " *                                                     ${1:COMMENT BLOCK}",
+            " *  ${2}",
+            " *  ",
+            " *  ",
+            " *  ",
+            " *=======================================================================================================================**/"
+        ],
+        "description": "COMMENT BLOCK EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-block-info-sm": {
+        "prefix": "/2*block-sm,/2info-block-sm",
+        "body": [
+            "/**=======================",
+            " * *       ${1:INFO}",
+            " *  ${2}",
+            " *  ",
+            " *========================**/"
+        ],
+        "description": "INFO BLOCK SMALL",
+        "scope": ""
+    },
+    "comment-block-info-md": {
+        "prefix": "/2*block-md,/2info-block-md",
+        "body": [
+            "/**==============================================",
+            " * *                   ${1:INFO}",
+            " *   ${2}",
+            " *   ",
+            " *   ",
+            " *",
+            " *=============================================**/"
+        ],
+        "description": "INFO BLOCK MEDIUM",
+        "scope": ""
+    },
+    "comment-block-info-lg": {
+        "prefix": "/2*block-lg,/2info-block-lg",
+        "body": [
+            "/**========================================================================",
+            " * *                                ${1:INFO}",
+            " *   ${2}",
+            " *   ",
+            " *   ",
+            " *",
+            " *========================================================================**/"
+        ],
+        "description": "INFO BLOCK LARGE",
+        "scope": ""
+    },
+    "comment-block-info-xl": {
+        "prefix": "/2*block-xl,/2info-block-xl",
+        "body": [
+            "/**================================================================================================",
+            " * *                                           ${1:INFO}",
+            " *   ${2}",
+            " *   ",
+            " *   ",
+            " *",
+            " *================================================================================================**/"
+        ],
+        "description": "INFO BLOCK EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-block-info-xxl": {
+        "prefix": "/2*block-xxl,/2info-block-xxl",
+        "body": [
+            "/**=======================================================================================================================",
+            " * *                                                     ${1:INFO}",
+            " *   ${2}",
+            " *   ",
+            " *   ",
+            " *",
+            " *=======================================================================================================================**/"
+        ],
+        "description": "INFO BLOCK EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-block-error-sm": {
+        "prefix": "/2!block-sm,/2warning-block-sm",
+        "body": [
+            "/**=======================",
+            " * !      ${1:WARNING}",
+            " *  ${2}",
+            " *  ",
+            " *========================**/"
+        ],
+        "description": "WARNING BLOCK SMALL",
+        "scope": ""
+    },
+    "comment-block-error-md": {
+        "prefix": "/2!block-md,/2warning-block-md",
+        "body": [
+            "/**==============================================",
+            " * !                  ${1:WARNING}",
+            " *   ${2}",
+            " *   ",
+            " *   ",
+            " *",
+            " *=============================================**/"
+        ],
+        "description": "WARNING BLOCK MEDIUM ",
+        "scope": ""
+    },
+    "comment-block-error-lg": {
+        "prefix": "/2!block-lg,/2warning-block-lg",
+        "body": [
+            "/**========================================================================",
+            " * !                              ${1:WARNING}",
+            " *   ${2}",
+            " *   ",
+            " *   ",
+            " *",
+            " *========================================================================**/"
+        ],
+        "description": "WARNING BLOCK LARGE",
+        "scope": ""
+    },
+    "comment-block-error-xl": {
+        "prefix": "/2!block-xl,/2warning-block-xl",
+        "body": [
+            "/**================================================================================================",
+            " * !                                          ${1:WARNING}",
+            " *   ${2}",
+            " *   ",
+            " *   ",
+            " *",
+            " *================================================================================================**/"
+        ],
+        "description": "WARNING BLOCK EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-block-error-xxl": {
+        "prefix": "/2!block-xxl,/2warning-block-xxl",
+        "body": [
+            "/**=======================================================================================================================",
+            " * !                                                     ${1:WARNING}",
+            " *   ${2}",
+            " *   ",
+            " *   ",
+            " *",
+            " *=======================================================================================================================**/"
+        ],
+        "description": "WARNING BLOCK EXTRA EXTRA LARGE  ",
+        "scope": ""
+    },
+    "comment-block-question-sm": {
+        "prefix": "/2?block-sm,/2question-block-sm",
+        "body": [
+            "/**=======================",
+            " * ?      ${1:QUESTION}",
+            " *  ${2}",
+            " *  ",
+            " *========================**/"
+        ],
+        "description": "QUESTION MEDIUM  ",
+        "scope": ""
+    },
+    "comment-block-question-md": {
+        "prefix": "/2?block-md,/2question-block-md",
+        "body": [
+            "/**==============================================",
+            " * ?                  ${1:QUESTION}",
+            " *   ${2}",
+            " *   ",
+            " *   ",
+            " *",
+            " *=============================================**/"
+        ],
+        "description": "QUESTION BLOCK MEDIUM  ",
+        "scope": ""
+    },
+    "comment-block-question-lg": {
+        "prefix": "/2?block-lg,/2question-block-lg",
+        "body": [
+            "/**========================================================================",
+            " * ?                              ${1:QUESTION}",
+            " *   ${2}",
+            " *   ",
+            " *   ",
+            " *",
+            " *========================================================================**/"
+        ],
+        "description": "QUESTION BLOCK LARGE  ",
+        "scope": ""
+    },
+    "comment-block-question-xl": {
+        "prefix": "/2?block-xl,/2question-block-xl",
+        "body": [
+            "/**================================================================================================",
+            " * ?                                         ${1:QUESTION}",
+            " *   ${2}",
+            " *   ",
+            " *   ",
+            " *",
+            " *================================================================================================**/"
+        ],
+        "description": "QUESTION BLOCK EXTRA LARGE  ",
+        "scope": ""
+    },
+    "comment-block-question-xxl": {
+        "prefix": "/2?block-xxl,/2question-block-xxl",
+        "body": [
+            "/**=======================================================================================================================",
+            " * ?                                                    ${1:QUESTION}",
+            " *   ${2}",
+            " *   ",
+            " *   ",
+            " *",
+            " *=======================================================================================================================**/"
+        ],
+        "description": "QUESTION BLOCK EXTRA EXTRA LARGE  ",
+        "scope": ""
+    },
+    "comment-block-todo-sm": {
+        "prefix": "/2todo-block-sm",
+        "body": [
+            "/**=======================",
+            " * todo      ${1:TODO}",
+            " *  ${2}",
+            " *  ",
+            " *========================**/"
+        ],
+        "description": "TODO BLOCK SMALL",
+        "scope": ""
+    },
+    "comment-block-todo-md": {
+        "prefix": "/2todo-block-md",
+        "body": [
+            "/**==============================================",
+            " * todo                  ${1:TODO}",
+            " *   ${2}",
+            " *   ",
+            " *   ",
+            " *",
+            " *=============================================**/"
+        ],
+        "description": "TODO BLOCK MEDIUM",
+        "scope": ""
+    },
+    "comment-block-todo-lg": {
+        "prefix": "/2todo-block-lg",
+        "body": [
+            "/**========================================================================",
+            " * todo                             ${1:TODO}",
+            " *   ${2}",
+            " *   ",
+            " *   ",
+            " *",
+            " *========================================================================**/"
+        ],
+        "description": "TODO BLOCK LARGE",
+        "scope": ""
+    },
+    "comment-block-todo-xl": {
+        "prefix": "/2todo-block-xl",
+        "body": [
+            "/**================================================================================================",
+            " * todo                                        ${1:TODO}",
+            " *   ${2}",
+            " *   ",
+            " *   ",
+            " *",
+            " *================================================================================================**/"
+        ],
+        "description": "TODO BLOCK EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-block-todo-xxl": {
+        "prefix": "/2todo-block-xxl",
+        "body": [
+            "/**=======================================================================================================================",
+            " * todo                                                   ${1:TODO}",
+            " *   ${2}",
+            " *   ",
+            " *   ",
+            " *",
+            " *=======================================================================================================================**/"
+        ],
+        "description": "TODO BLOCK EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-block-about-sm": {
+        "prefix": "/2about-block-sm",
+        "body": [
+            "/**======================",
+            " * ?        ABOUT",
+            " * @author    : ${2:}",
+            " * @createdOn : ",
+            " *========================**/"
+        ],
+        "description": "ABOUT BLOCK SMALL",
+        "scope": ""
+    },
+    "comment-block-about-md": {
+        "prefix": "/2about-block-md",
+        "body": [
+            "/**==============================================",
+            " * ?                    ABOUT",
+            " * @author      : ${2:}",
+            " * @email       : ",
+            " * @repo        : ",
+            " * @createdOn   : ",
+            " * @description : ",
+            " *=============================================**/"
+        ],
+        "description": "ABOUT BLOCK MEDIUM ",
+        "scope": ""
+    },
+    "comment-block-about-lg": {
+        "prefix": "/2about-block-lg",
+        "body": [
+            "/**========================================================================",
+            " * ?                                ABOUT",
+            " * @author         :  ${2:}",
+            " * @email          :  ",
+            " * @repo           :  ",
+            " * @createdOn      :  ",
+            " * @description    :  ",
+            " *========================================================================**/"
+        ],
+        "description": "ABOUT BLOCK EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-block-about-xl": {
+        "prefix": "/2about-block-xl",
+        "body": [
+            "/**================================================================================================",
+            " * ?                                           ABOUT",
+            " * @author         :  ${2:}",
+            " * @email          :  ",
+            " * @repo           :  ",
+            " * @createdOn      :  ",
+            " * @description    :  ",
+            " *================================================================================================**/"
+        ],
+        "description": "ABOUT BLOCK EXTRA EXTRA LARGE ",
+        "scope": ""
+    },
+    "comment-block-about-xxl": {
+        "prefix": "/2about-block-xxl",
+        "body": [
+            "/**=======================================================================================================================",
+            " * ?                                                     ABOUT",
+            " * @author         :  ${2:}",
+            " * @email          :  ",
+            " * @repo           :  ",
+            " * @createdOn      :  ",
+            " * @description    :  ",
+            " *=======================================================================================================================**/"
+        ],
+        "description": "ABOUT Block    ",
+        "scope": ""
+    },
+    "comment-block-function-sm": {
+        "prefix": "/2function-block-sm",
+        "body": [
+            "/**======================",
+            " **   ${1:FUNCTION NAME}",
+            " *@param ${3:name} ${4:type}  ",
+            " *@return ${7:type}",
+            " *========================**/"
+        ],
+        "description": "FUNCTION BLOCK SMALL  ",
+        "scope": ""
+    },
+    "comment-block-function-md": {
+        "prefix": "/2function-block-md",
+        "body": [
+            "/**==============================================",
+            " **              ${1:FUNCTION NAME}",
+            " *?  ${2:What does it do?}",
+            " *@param ${3:name} ${4:type}  ",
+            " *@param ${5:name} ${6:type}  ",
+            " *@return ${7:type}",
+            " *=============================================**/"
+        ],
+        "description": "FUNCTION BLOCK MEDIUM  ",
+        "scope": ""
+    },
+    "comment-block-function-lg": {
+        "prefix": "/2function-block-lg",
+        "body": [
+            "/**========================================================================",
+            " **                           ${1:FUNCTION NAME}",
+            " *?  ${2:What does it do?}",
+            " *@param ${3:name} ${4:type}  ",
+            " *@param ${5:name} ${6:type}  ",
+            " *@return ${7:type}",
+            " *========================================================================**/"
+        ],
+        "description": "FUNCTION BLOCK LARGE  ",
+        "scope": ""
+    },
+    "comment-block-function-xl": {
+        "prefix": "/2function-block-xl",
+        "body": [
+            "/**================================================================================================",
+            " **                                      ${1:FUNCTION NAME}",
+            " *?  ${2:What does it do?}",
+            " *@param ${3:name} ${4:type}  ",
+            " *@param ${5:name} ${6:type}  ",
+            " *@return ${7:type}",
+            " *================================================================================================**/"
+        ],
+        "description": "FUNCTION BLOCK EXTRA LARGE  ",
+        "scope": ""
+    },
+    "comment-block-function-xxl": {
+        "prefix": "/2function-block-xxl",
+        "body": [
+            "/**=======================================================================================================================",
+            " **                                                  ${1:FUNCTION NAME}",
+            " *?  ${2:What does it do?}",
+            " *@param ${3:name} ${4:type}  ",
+            " *@param ${5:name} ${6:type}  ",
+            " *@return ${7:type}",
+            " *=======================================================================================================================**/"
+        ],
+        "description": "FUNCTION BLOCK EXTRA EXTRA LARGE  ",
+        "scope": ""
+    },
+    "comment-header-sm": {
+        "prefix": "/2header-sm",
+        "body": [
+            "/**======================",
+            " *    ${1:SECTION HEADER}",
+            " *========================**/"
+        ],
+        "description": "SECTION HEADER SMALL",
+        "scope": ""
+    },
+    "comment-header-md": {
+        "prefix": "/2header-md",
+        "body": [
+            "/**============================================",
+            " *               ${1:SECTION HEADER}",
+            " *=============================================**/"
+        ],
+        "description": "SECTION HEADER MEDIUM",
+        "scope": ""
+    },
+    "comment-header-lg": {
+        "prefix": "/2header-lg",
+        "body": [
+            "/**========================================================================",
+            " *                           ${1:SECTION HEADER}",
+            " *========================================================================**/"
+        ],
+        "description": "SECTION HEADER LARGE",
+        "scope": ""
+    },
+    "comment-header-xl": {
+        "prefix": "/2header-xl",
+        "body": [
+            "/**================================================================================================",
+            " *                                         ${1:SECTION HEADER}",
+            " *================================================================================================**/"
+        ],
+        "description": "SECTION HEADER EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-header-xxl": {
+        "prefix": "/2header-xxl",
+        "body": [
+            "/**=======================================================================================================================",
+            " *                                                    ${1:SECTION HEADER}",
+            " *=======================================================================================================================**/"
+        ],
+        "description": "SECTION HEADER EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-header-info-sm": {
+        "prefix": "/2*header-sm,/2info-header-sm",
+        "body": [
+            "/**======================",
+            " **      ${1:INFO HEADER}",
+            " *========================**/"
+        ],
+        "description": "INFO HEADER SMALL",
+        "scope": ""
+    },
+    "comment-header-info-md": {
+        "prefix": "/2*header-md,/2info-header-md",
+        "body": [
+            "/**============================================",
+            " **               ${1:INFO HEADER}",
+            " *=============================================**/"
+        ],
+        "description": "INFO HEADER MEDIUM",
+        "scope": ""
+    },
+    "comment-header-info-lg": {
+        "prefix": "/2*header-lg,/2info-header-lg",
+        "body": [
+            "/**========================================================================",
+            " **                            ${1:INFO HEADER}",
+            " *========================================================================**/"
+        ],
+        "description": "INFO HEADER LARGE",
+        "scope": ""
+    },
+    "comment-header-info-xl": {
+        "prefix": "/2*header-xl,/2info-header-xl",
+        "body": [
+            "/**================================================================================================",
+            " **                                         ${1:INFO HEADER}",
+            " *================================================================================================**/"
+        ],
+        "description": "INFO HEADER EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-header-info-xxl": {
+        "prefix": "/2*header-xxl,/2info-header-xxl",
+        "body": [
+            "/**=======================================================================================================================",
+            " **                                                     ${1:INFO HEADER}",
+            " *=======================================================================================================================**/"
+        ],
+        "description": "INFO HEADER EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-header-warning-sm": {
+        "prefix": "/2!header-sm,/2warning-header-sm",
+        "body": [
+            "/**======================",
+            " *!    ${1:WARNING HEADER}",
+            " *========================**/"
+        ],
+        "description": "WARNING HEADER SMALL",
+        "scope": ""
+    },
+    "comment-header-warning-md": {
+        "prefix": "/2!header-md,/2warning-header-md",
+        "body": [
+            "/**============================================",
+            " *!               ${1:WARNING HEADER}",
+            " *=============================================**/"
+        ],
+        "description": "WARNING HEADER MEDIUM",
+        "scope": ""
+    },
+    "comment-header-warning-lg": {
+        "prefix": "/2!header-lg,/2warning-header-lg",
+        "body": [
+            "/**========================================================================",
+            " *!                           ${1:WARNING HEADER}",
+            " *========================================================================**/"
+        ],
+        "description": "WARNING HEADER LARGE",
+        "scope": ""
+    },
+    "comment-header-warning-xl": {
+        "prefix": "/2!header-xl,/2warning-header-xl",
+        "body": [
+            "/**================================================================================================",
+            " *!                                        ${1:WARNING HEADER}",
+            " *================================================================================================**/"
+        ],
+        "description": "WARNING HEADER EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-header-warning-xxl": {
+        "prefix": "/2!header-xxl,/2warning-header-xxl",
+        "body": [
+            "/**=======================================================================================================================",
+            " *!                                                   ${1:WARNING HEADER}",
+            " *=======================================================================================================================**/"
+        ],
+        "description": "WARNING HEADER EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-header-todo-sm": {
+        "prefix": "/2todo-header-sm",
+        "body": [
+            "/**======================",
+            " *todo    ${1:TODO HEADER}",
+            " *========================**/"
+        ],
+        "description": "WARNING HEADER SMALL",
+        "scope": ""
+    },
+    "comment-header-todo-md": {
+        "prefix": "/2todo-header-md",
+        "body": [
+            "/**============================================",
+            " *todo           ${1:TODO HEADER}",
+            " *=============================================**/"
+        ],
+        "description": "WARNING HEADER MEDIUM",
+        "scope": ""
+    },
+    "comment-header-todo-lg": {
+        "prefix": "/2todo-header-lg",
+        "body": [
+            "/**========================================================================",
+            " *todo                         ${1:TODO HEADER}",
+            " *========================================================================**/"
+        ],
+        "description": "WARNING HEADER LARGE",
+        "scope": ""
+    },
+    "comment-header-todo-xl": {
+        "prefix": "/2todo-header-xl",
+        "body": [
+            "/**================================================================================================",
+            " *todo                                      ${1:TODO HEADER}",
+            " *================================================================================================**/"
+        ],
+        "description": "WARNING HEADER EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-header-todo-xxl": {
+        "prefix": "/2todo-header-xxl,/2header-todo-xxl",
+        "body": [
+            "/**=======================================================================================================================",
+            " *todo                                                 ${1:TODO HEADER}",
+            " *=======================================================================================================================**/"
+        ],
+        "description": "WARNING HEADER EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-header-question-sm": {
+        "prefix": "/2?header-sm,/2question-header-sm",
+        "body": [
+            "/**======================",
+            " *?    ${1:QUESTION HEADER}",
+            " *========================**/"
+        ],
+        "description": "QUESTION HEADER SMALL",
+        "scope": ""
+    },
+    "comment-header-question-md": {
+        "prefix": "/2?header-md,/2question-header-md",
+        "body": [
+            "/**============================================",
+            " *?              ${1:QUESTION HEADER}",
+            " *=============================================**/"
+        ],
+        "description": "QUESTION HEADER MEDIUM",
+        "scope": ""
+    },
+    "comment-header-question-lg": {
+        "prefix": "/2?header-lg,/2question-header-lg",
+        "body": [
+            "/**========================================================================",
+            " *?                           ${1:QUESTION HEADER}",
+            " *========================================================================**/"
+        ],
+        "description": "QUESTION HEADER LARGE",
+        "scope": ""
+    },
+    "comment-header-question-xl": {
+        "prefix": "/2?header-xl,/2question-header-xl",
+        "body": [
+            "/**================================================================================================",
+            " *?                                       ${1:QUESTION HEADER}",
+            " *================================================================================================**/"
+        ],
+        "description": "QUESTION HEADER EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-header-question-xxl": {
+        "prefix": "/2?header-xxl,/2question-header-xxl",
+        "body": [
+            "/**=======================================================================================================================",
+            " *?                                                   ${1:QUESTION HEADER}",
+            " *=======================================================================================================================**/"
+        ],
+        "description": "QUESTION HEADER EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-footer-sm": {
+        "prefix": "/2end-sm",
+        "body": "/*==== END OF ${1:SECTION} ====*/\n\n",
+        "description": "END SECTION SMALL",
+        "scope": ""
+    },
+    "comment-footer-md": {
+        "prefix": "/2end-md",
+        "body": "/*=============== END OF ${1:SECTION} ==============*/\n\n",
+        "description": "END SECTION MEDIUM",
+        "scope": ""
+    },
+    "comment-footer-lg": {
+        "prefix": "/2end-lg",
+        "body": "/*============================ END OF ${1:SECTION} ============================*/\n\n",
+        "description": "END SECTION LARGE",
+        "scope": ""
+    },
+    "comment-footer-xl": {
+        "prefix": "/2end-xl",
+        "body": "/*========================================== END OF ${1:SECTION} ==========================================*/\n\n",
+        "description": "END SECTION EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-footer-xxl": {
+        "prefix": "/2end-xxl",
+        "body": "/*==================================================== END OF ${1:SECTION}====================================================*/\n\n",
+        "description": "END SECTION EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "divider-sm": {
+        "prefix": "/2divider-sm",
+        "body": "/*======= ${1:DIVISION} =======*/\n\n",
+        "description": "DIVIDER SMALL",
+        "scope": ""
+    },
+    "divider-md": {
+        "prefix": "/2divider-md",
+        "body": "/*================== ${1:DIVISION} =================*/\n\n",
+        "description": "DIVIDER MEDIUM",
+        "scope": ""
+    },
+    "divider-lg": {
+        "prefix": "/2divider-lg",
+        "body": "/*================================ ${1:DIVISION} ==============================*/\n\n",
+        "description": "DIVIDER LARGE",
+        "scope": ""
+    },
+    "divider-xl": {
+        "prefix": "/2divider-xl",
+        "body": "/*=========================================== ${1:DIVISION} ===========================================*/\n\n",
+        "description": "DIVIDER EXTRA LARGE",
+        "scope": ""
+    },
+    "divider-xxl": {
+        "prefix": "/2divider-xxl",
+        "body": "/*======================================================= ${1:DIVISION} =======================================================*/\n\n",
+        "description": "DIVIDER EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "divider-plain-sm": {
+        "prefix": "/2divider-plain-sm",
+        "body": "/*========================*/\n",
+        "description": "DIVIDER PLAIN SMALL",
+        "scope": ""
+    },
+    "divider-plain-md": {
+        "prefix": "/2divider-plain-md",
+        "body": "/*=============================================*/\n\n",
+        "description": "DIVIDER PLAIN MEDIUM",
+        "scope": ""
+    },
+    "divider-plain-lg": {
+        "prefix": "/2divider-plain-lg",
+        "body": "/*========================================================================*/\n\n",
+        "description": "DIVIDER PLAIN LARGE",
+        "scope": ""
+    },
+    "divider-plain-xl": {
+        "prefix": "/2divider-plain-xl",
+        "body": "/*================================================================================================*/\n\n",
+        "description": "DIVIDER PLAIN EXTRA LARGE",
+        "scope": ""
+    },
+    "divider-plain-xxl": {
+        "prefix": "/2divider-plain-xxl",
+        "body": "/*========================================================================================================================*/\n\n",
+        "description": "DIVIDER PLAIN EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "todo": {
+        "prefix": "/2todo",
+        "body": "//todo  ${1:TODO} ",
+        "description": "COMMENT TODO",
+        "scope": ""
+    },
+    "question": {
+        "prefix": "/2?,/2question",
+        "body": "//?  ${1:QUESTION}",
+        "description": "COMMENT QUESTION",
+        "scope": ""
+    },
+    "warning": {
+        "prefix": "/2!,/2warning",
+        "body": "//! ${1:WARNING} ",
+        "description": "COMMENT WARNING",
+        "scope": ""
+    },
+    "info": {
+        "prefix": "/2*,/2info",
+        "body": "//* ${1:INFO} ",
+        "description": "COMMENT INFO",
+        "scope": ""
+    },
+    "comment": {
+        "prefix": "/2comment",
+        "body": "/* ${1:Comment} */",
+        "description": "SINGLE LINE COMMENT",
+        "scope": ""
+    },
+    "comment-multiline": {
+        "prefix": "/2multiline",
+        "body": [
+            "/**",
+            " *  ${1}",
+            " *  ",
+            " *  ",
+            " *  ",
+            " *  ",
+            " *  ",
+            " *  ",
+            " *  ",
+            " **/"
+        ],
+        "description": "MULTI LINE COMMENT",
+        "scope": ""
+    }
+}

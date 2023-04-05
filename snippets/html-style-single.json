@@ -1,0 +1,139 @@
+{
+    "comment-footer-sm": {
+        "prefix": "/end-sm",
+        "body": "<!---- END OF ${1:SECTION} ---->\n\n",
+        "description": "END SECTION SMALL",
+        "scope": ""
+    },
+    "comment-footer-md": {
+        "prefix": "/end-md",
+        "body": "<!--------------- END OF ${1:SECTION} -------------->\n\n",
+        "description": "END SECTION MEDIUM",
+        "scope": ""
+    },
+    "comment-footer-lg": {
+        "prefix": "/end-lg",
+        "body": "<!---------------------------- END OF ${1:SECTION} ---------------------------->\n\n",
+        "description": "END SECTION LARGE",
+        "scope": ""
+    },
+    "comment-footer-xl": {
+        "prefix": "/end-xl",
+        "body": "<!------------------------------------------ END OF ${1:SECTION} ------------------------------------------>\n\n",
+        "description": "END SECTION EXTRA LARGE",
+        "scope": ""
+    },
+    "comment-footer-xxl": {
+        "prefix": "/end-xxl",
+        "body": "<!---------------------------------------------------- END OF ${1:SECTION}---------------------------------------------------->\n\n",
+        "description": "END SECTION EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "divider-sm": {
+        "prefix": "/divider-sm",
+        "body": "<!------- ${1:DIVISION} ------->\n\n",
+        "description": "DIVIDER SMALL",
+        "scope": ""
+    },
+    "divider-md": {
+        "prefix": "/divider-md",
+        "body": "<!------------------ ${1:DIVISION} ----------------->\n\n",
+        "description": "DIVIDER MEDIUM",
+        "scope": ""
+    },
+    "divider-lg": {
+        "prefix": "/divider-lg",
+        "body": "<!-------------------------------- ${1:DIVISION} ------------------------------>\n\n",
+        "description": "DIVIDER LARGE",
+        "scope": ""
+    },
+    "divider-xl": {
+        "prefix": "/divider-xl",
+        "body": "<!------------------------------------------- ${1:DIVISION} ------------------------------------------->\n\n",
+        "description": "DIVIDER EXTRA LARGE",
+        "scope": ""
+    },
+    "divider-xxl": {
+        "prefix": "/divider-xxl",
+        "body": "<!------------------------------------------------------- ${1:DIVISION} ------------------------------------------------------->\n\n",
+        "description": "DIVIDER EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "divider-plain-sm": {
+        "prefix": "/divider-plain-sm",
+        "body": "<!------------------------>\n",
+        "description": "DIVIDER PLAIN SMALL",
+        "scope": ""
+    },
+    "divider-plain-md": {
+        "prefix": "/divider-plain-md",
+        "body": "<!--------------------------------------------->\n\n",
+        "description": "DIVIDER PLAIN MEDIUM",
+        "scope": ""
+    },
+    "divider-plain-lg": {
+        "prefix": "/divider-plain-lg",
+        "body": "<!------------------------------------------------------------------------>\n\n",
+        "description": "DIVIDER PLAIN LARGE",
+        "scope": ""
+    },
+    "divider-plain-xl": {
+        "prefix": "/divider-plain-xl",
+        "body": "<!------------------------------------------------------------------------------------------------>\n\n",
+        "description": "DIVIDER PLAIN EXTRA LARGE",
+        "scope": ""
+    },
+    "divider-plain-xxl": {
+        "prefix": "/divider-plain-xxl",
+        "body": "<!------------------------------------------------------------------------------------------------------------------------>\n\n",
+        "description": "DIVIDER PLAIN EXTRA EXTRA LARGE",
+        "scope": ""
+    },
+    "todo": {
+        "prefix": "/todo",
+        "body": "<!--todo ${1:TODO} --->",
+        "description": "COMMENT TODO",
+        "scope": ""
+    },
+    "question": {
+        "prefix": "/?,/question",
+        "body": "<!--? ${1:QUESTION} --->",
+        "description": "COMMENT QUESTION",
+        "scope": ""
+    },
+    "warning": {
+        "prefix": "/!,/warning",
+        "body": "<!--! ${1:WARNING} --->",
+        "description": "COMMENT WARNING",
+        "scope": ""
+    },
+    "info": {
+        "prefix": "/*,/info",
+        "body": "<!--* ${1:INFO} --->",
+        "description": "COMMENT INFO",
+        "scope": ""
+    },
+    "comment": {
+        "prefix": "/comment",
+        "body": "<!-- ${1:COMMENT} --->",
+        "description": "SINGLE LINE COMMENT",
+        "scope": ""
+    },
+    "comment-multiline": {
+        "prefix": "/multiline",
+        "body": [
+            "<!--",
+            " *  ${1}",
+            " *  ",
+            " *  ",
+            " *  ",
+            " *  ",
+            " *  ",
+            " *  ",
+            " *  ",
+            " -->"
+        ],
+        "description": "MULTI LINE COMMENT",
+        "scope": ""
+    }
+}
