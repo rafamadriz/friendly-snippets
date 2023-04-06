@@ -26,6 +26,29 @@
                 "language": "c",
                 "path": "./snippets/c.json"
             },
+                "language": "c",
+                "path": "./snippets/js-style-single.json"
+            },
+            {
+                "language": "c",
+                "path": "./snippets/js-style-double.json"
+            },
+            {
+                "language": "cpp",
+                "path": "./snippets/js-style-single.json"
+            },
+            {
+                "language": "cpp",
+                "path": "./snippets/js-style-double.json"
+            },
+            {
+                "language": "csharp",
+                "path": "./snippets/js-style-single.json"
+            },
+            {
+                "language": "csharp",
+                "path": "./snippets/js-style-double.json"
+            },
             {
                 "language": "cpp",
                 "path": "./snippets/cpp.json"
@@ -464,101 +487,54 @@
                 "path": "./snippets/frameworks/edge.json"
             },
             {
-                "language": "css",
+                "language": [
+                    "css",
+                    "scss",
+                    "sass",
+                    "less",
+                    "stylus"
+                ],
                 "path": "./snippets/js-style-single.json"
             },
             {
-                "language": "css",
+                "language": [
+                    "css",
+                    "scss",
+                    "sass",
+                    "less",
+                    "stylus"
+                ],
                 "path": "./snippets/js-style-double.json"
             },
             {
-                "language": "scss",
+                "language": [
+                    "javascript",
+                    "javascriptreact",
+                ],
                 "path": "./snippets/js-style-single.json"
             },
             {
-                "language": "scss",
+                "language": [
+                    "javascript",
+                    "javascriptreact",
+                ],
                 "path": "./snippets/js-style-double.json"
             },
             {
-                "language": "sass",
+                "language": [
+                    "typescript",
+                    "typescriptreact"
+                ],
                 "path": "./snippets/js-style-single.json"
             },
             {
-                "language": "sass",
+                "language": [
+                    "typescript",
+                    "typescriptreact"
+                ],
                 "path": "./snippets/js-style-double.json"
             },
             {
-                "language": "less",
-                "path": "./snippets/js-style-single.json"
-            },
-            {
-                "language": "less",
-                "path": "./snippets/js-style-double.json"
-            },
-            {
-                "language": "stylus",
-                "path": "./snippets/js-style-single.json"
-            },
-            {
-                "language": "stylus",
-                "path": "./snippets/js-style-double.json"
-            },
-            {
-                "language": "javascript",
-                "path": "./snippets/js-style-single.json"
-            },
-            {
-                "language": "javascript",
-                "path": "./snippets/js-style-double.json"
-            },
-            {
-                "language": "javascriptreact",
-                "path": "./snippets/js-style-single.json"
-            },
-            {
-                "language": "javascriptreact",
-                "path": "./snippets/js-style-double.json"
-            },
-            {
-                "language": "typescript",
-                "path": "./snippets/js-style-single.json"
-            },
-            {
-                "language": "typescript",
-                "path": "./snippets/js-style-double.json"
-            },
-            {
-                "language": "typescriptreact",
-                "path": "./snippets/js-style-single.json"
-            },
-            {
-                "language": "typescriptreact",
-                "path": "./snippets/js-style-double.json"
-            },
-            {
-                "language": "c",
-                "path": "./snippets/js-style-single.json"
-            },
-            {
-                "language": "c",
-                "path": "./snippets/js-style-double.json"
-            },
-            {
-                "language": "cpp",
-                "path": "./snippets/js-style-single.json"
-            },
-            {
-                "language": "cpp",
-                "path": "./snippets/js-style-double.json"
-            },
-            {
-                "language": "csharp",
-                "path": "./snippets/js-style-single.json"
-            },
-            {
-                "language": "csharp",
-                "path": "./snippets/js-style-double.json"
-            },
             {
                 "language": "java",
                 "path": "./snippets/js-style-single.json"
