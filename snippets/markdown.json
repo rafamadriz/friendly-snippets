@@ -384,7 +384,7 @@
     ],
     "description": "Create a subscript."
   },
-  "Insert superscirpt": {
+  "Insert superscript": {
     "prefix": "sup",
     "body": [
       "${1}<sup>${0}"
