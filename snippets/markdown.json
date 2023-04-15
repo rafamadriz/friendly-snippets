@@ -376,5 +376,19 @@
       "${0}"
     ],
     "description": "Insert table with 5 rows and 5 columns. First row is heading."
+  },
+  "Insert subscript": {
+    "prefix": "sub",
+    "body": [
+      "${1}<sub>${0}"
+    ],
+    "description": "Create a subscript."
+  },
+  "Insert superscript": {
+    "prefix": "sup",
+    "body": [
+      "${1}<sup>${0}"
+    ],
+    "description": "Create a superscript."
   }
 }
