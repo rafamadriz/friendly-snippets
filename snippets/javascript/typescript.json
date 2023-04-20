@@ -265,6 +265,30 @@
 		],
 		"description": "Try-Catch Statement"
 	},
+	"Try-Finally Statement": {
+		"prefix": "tryfinally",
+		"body": [
+			"try {",
+			"\t$0",
+			"} finally {",
+			"\t",
+			"}"
+		],
+		"description": "Try-Finally Statement"
+	},
+	"Try-Catch-Finally Statement": {
+		"prefix": "trycatchfinally",
+		"body": [
+			"try {",
+			"\t$0",
+			"} catch (${1:error}) {",
+			"\t",
+			"} finally {",
+			"\t",
+			"}"
+		],
+		"description": "Try-Catch-Finally Statement"
+	},
 	"Set Timeout Function": {
 		"prefix": "settimeout",
 		"body": [
