@@ -19,17 +19,17 @@
   },
   "do": {
     "prefix": "do",
-    "body": ["do", "{", "\t$0", "} while($1);"],
+    "body": ["do {", "\t$0", "} while($1);"],
     "description": "Code snippet for do...while loop"
   },
   "while": {
     "prefix": "while",
-    "body": ["while ($1)", "{", "\t$2", "}"],
+    "body": ["while ($1) {", "\t$2", "}"],
     "description": ""
   },
   "foreach": {
     "prefix": "foreach",
-    "body": ["for(${1:auto} ${2:var} : ${3:collection_to_loop})", "{", "\t$0", "}"],
+    "body": ["for(${1:auto} ${2:var} : ${3:collection_to_loop}) {", "\t$0", "}"],
     "description": "Code snippet for range-based for loop (c++11) statement"
   },
   "if": {
@@ -60,8 +60,7 @@
   "class": {
     "prefix": "class",
     "body": [
-      "class ${1:MyClass}",
-      "{",
+      "class ${1:MyClass} {",
       "public:",
       "\t$1();",
       "\t$1($1 &&) = default;",
@@ -74,12 +73,10 @@
       "\t$2",
       "};",
       "",
-      "$1::$1()",
-      "{",
+      "$1::$1() {",
       "}",
       "",
-      "$1::~$1()",
-      "{",
+      "$1::~$1() {",
       "}"
     ],
     "description": "Code snippet for class"
@@ -87,8 +84,7 @@
   "eclass": {
     "prefix": "eclass",
     "body": [
-      "class ${1:MyClass}",
-      "{",
+      "class ${1:MyClass} {",
       "public:",
       "\t$2",
       "private:",
@@ -101,8 +97,7 @@
   "qclass": {
     "prefix": "qclass",
     "body": [
-      "class ${1:MyClass} : public QObject",
-      "{",
+      "class ${1:MyClass} : public QObject {",
       "\tQ_OBJECT;",
       "public:",
       "\nexplicit $1(QObject *parent = nullptr);",
@@ -118,8 +113,7 @@
   "classi": {
     "prefix": "classi",
     "body": [
-      "class ${1:MyClass}",
-      "{",
+      "class ${1:MyClass} {",
       "public:",
       "\t$1() = default;",
       "\t$1($1 &&) = default;",
@@ -136,12 +130,12 @@
   },
   "interface": {
     "prefix": "interface",
-    "body": ["__interface I${1:Interface}", "{", "\t$0", "};"],
+    "body": ["__interface I${1:Interface} {", "\t$0", "};"],
     "description": "Code snippet for interface (Visual C++)"
   },
   "namespace": {
     "prefix": "namespace",
-    "body": ["namespace ${1:MyNamespace}", "{", "\t$0", "}"]
+    "body": ["namespace ${1:MyNamespace} {", "\t$0", "}"]
   },
   "#ifdef": {
     "prefix": "#ifdef",
@@ -160,7 +154,7 @@
   },
   "struct": {
     "prefix": "struct",
-    "body": ["struct ${1:MyStruct}", "{", "\t$0", "};"],
+    "body": ["struct ${1:MyStruct} {", "\t$0", "};"],
     "description": "Code snippet for struct"
   },
   "switch": {
@@ -182,7 +176,7 @@
   },
   "union": {
     "prefix": "union",
-    "body": ["union ${1:MyUnion}", "{", "\t$0", "};"],
+    "body": ["union ${1:MyUnion} {", "\t$0", "};"],
     "description": "Code snippet for union"
   },
   "cout": {
@@ -243,8 +237,7 @@
   "Main function template": {
     "prefix": "main",
     "body": [
-      "int main (int argc, char *argv[])",
-      "{",
+      "int main (int argc, char *argv[]) {",
       "\t$1",
       "\treturn 0;",
       "}"
