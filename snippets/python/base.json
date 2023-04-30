@@ -156,7 +156,7 @@
     "description": "Code snippet for a with statement"
   },
   "self": {
-    "prefix": ".",
+    "prefix": "s",
     "body": "self.$0",
     "description": "Shortend snippet to reference the self property in an object."
   },
