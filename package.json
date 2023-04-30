@@ -452,6 +452,10 @@
         "path": "./snippets/frameworks/unreal.json"
       },
       {
+        "language": "unity",
+        "path": "./snippets/frameworks/unity.json"
+      },
+      {
         "language": "verilog",
         "path": "./snippets/verilog.json"
       },

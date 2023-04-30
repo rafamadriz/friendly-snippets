@@ -1,0 +1,685 @@
+{
+  "Unity MonoBehaviour": {
+    "prefix": "MonoBehaviour",
+    "description": "Unity MonoBehaviour class template.",
+    "body": [
+      "using UnityEngine;",
+      "",
+      "public class ${TM_FILENAME_BASE} : MonoBehaviour {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Unity StateMachineBehaviour": {
+    "prefix": "StateMachineBehaviour",
+    "description": "Unity StateMachineBehaviour class template.",
+    "body": [
+      "using UnityEngine;",
+      "",
+      "public class ${TM_FILENAME_BASE} : StateMachineBehaviour {",
+      "\tpublic override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ]
+  },
+  "Unity NetworkBehaviour": {
+    "prefix": "NetworkBehaviour",
+    "description": "Unity NetworkBehaviour class template.",
+    "body": [
+      "using UnityEngine;",
+      "using UnityEngine.Networking;",
+      "",
+      "public class ${TM_FILENAME_BASE} : NetworkBehaviour {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Unity ScriptableObject": {
+    "prefix": "ScriptableObject",
+    "description": "Unity ScriptableObject class template.",
+    "body": [
+      "using UnityEngine;",
+      "",
+      "[CreateAssetMenu(fileName = \"${1:${TM_FILENAME_BASE}}\", menuName = \"${2:${TM_FILEPATH/.*\\\\(.*)\\\\Assets\\\\.*/${1}/}/${TM_FILENAME_BASE}}\", order = ${3:0})]",
+      "public class ${TM_FILENAME_BASE} : ScriptableObject {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Unity Editor": {
+    "prefix": "Editor",
+    "description": "Unity Editor class template.",
+    "body": [
+      "using UnityEngine;",
+      "using UnityEditor;",
+      "",
+      "[CustomEditor(typeof(${1:${TM_FILENAME_BASE/(.*)Editor/${1}/}}))]",
+      "public class ${TM_FILENAME_BASE} : Editor {",
+      "\tpublic override void OnInspectorGUI() {",
+      "\t\tbase.OnInspectorGUI();",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ]
+  },
+  "Unity Editor with Reorderable List": {
+    "prefix": "EditorWithReorderableList",
+    "description": "Unity Editor class template with a ReorderableList.",
+    "body": [
+      "using UnityEngine;",
+      "using UnityEditor;",
+      "using UnityEditorInternal;",
+      "",
+      "[CustomEditor(typeof(${1:${TM_FILENAME_BASE/(.*)Editor/${1}/}}))]",
+      "public class ${TM_FILENAME_BASE} : Editor {",
+      "\tprivate SerializedProperty _property;",
+      "\tprivate ReorderableList _list;",
+      "",
+      "\tprivate void OnEnable() {",
+      "\t\t_property = serializedObject.FindProperty(\"${2}\");",
+      "\t\t_list = new ReorderableList(serializedObject, _property, true, true, true, true) {",
+      "\t\t\tdrawHeaderCallback = DrawListHeader,",
+      "\t\t\tdrawElementCallback = DrawListElement",
+      "\t\t};",
+      "\t}",
+      "",
+      "\tprivate void DrawListHeader(Rect rect) {",
+      "\t\tGUI.Label(rect, \"${2}\");",
+      "\t}",
+      "",
+      "\tprivate void DrawListElement(Rect rect, int index, bool isActive, bool isFocused) {",
+      "\t\tvar item = _property.GetArrayElementAtIndex(index);",
+      "\t\tEditorGUI.PropertyField(rect, item);",
+      "\t\t$0",
+      "\t}",
+      "",
+      "\tpublic override void OnInspectorGUI() {",
+      "\t\tserializedObject.Update();",
+      "\t\tEditorGUILayout.Space();",
+      "\t\t_list.DoLayoutList();",
+      "\t\tserializedObject.ApplyModifiedProperties();",
+      "\t}",
+      "}"
+    ]
+  },
+  "Unity EditorWindow": {
+    "prefix": "EditorWindow",
+    "description": "Unity EditorWindow class template.",
+    "body": [
+      "using UnityEngine;",
+      "using UnityEditor;",
+      "",
+      "public class ${TM_FILENAME_BASE} : EditorWindow {",
+      "",
+      "\t[MenuItem(\"${1:${TM_FILEPATH/.*\\\\(.*)\\\\Assets\\\\.*/${1}/}/${TM_FILENAME_BASE/(.*)Editor/${1}/}}\")]",
+      "\tprivate static void ShowWindow() {",
+      "\t\tvar window = GetWindow<${TM_FILENAME_BASE}>();",
+      "\t\twindow.titleContent = new GUIContent(\"${2:${TM_FILENAME_BASE/(.*)Editor/${1}/}}\");",
+      "\t\twindow.Show();",
+      "\t}",
+      "",
+      "\tprivate void OnGUI() {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ]
+  },
+  "Unity PropertyDrawer": {
+    "prefix": "PropertyDrawer",
+    "description": "Unity PropertyDrawer class template.",
+    "body": [
+      "using UnityEngine;",
+      "using UnityEditor;",
+      "",
+      "[CustomPropertyDrawer(typeof(${1:${TM_FILENAME_BASE/(.*)Drawer/${1}/}}))]",
+      "public class ${TM_FILENAME_BASE}: PropertyDrawer {",
+      "\tpublic override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ]
+  },
+  "Unity ScriptableWizard": {
+    "prefix": "ScriptableWizard",
+    "description": "Unity ScriptableWizard class template.",
+    "body": [
+      "using UnityEngine;",
+      "using UnityEditor;",
+      "",
+      "public class ${TM_FILENAME_BASE}: ScriptableWizard {",
+      "",
+      "\t[MenuItem(\"${1:${TM_FILEPATH/.*\\\\(.*)\\\\Assets\\\\.*/${1}/}/${TM_FILENAME_BASE/(.*)Wizard/${1}/}}\")]",
+      "\tprivate static void MenuEntryCall() {",
+      "\t\tDisplayWizard<${TM_FILENAME_BASE}>(\"${2:Title}\");",
+      "\t}",
+      "",
+      "\tprivate void OnWizardCreate() {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ]
+  },
+  "MonoBehaviour Awake": {
+    "prefix": "Awake()",
+    "description": "Awake is called when the script instance is being loaded.",
+    "body": ["private void Awake() {", "\t$0", "}"]
+  },
+  "MonoBehaviour FixedUpdate": {
+    "prefix": "FixedUpdate()",
+    "description": "This function is called every fixed framerate frame, if the MonoBehaviour is enabled.",
+    "body": ["private void FixedUpdate() {", "\t$0", "}"]
+  },
+  "MonoBehaviour LateUpdate": {
+    "prefix": "LateUpdate()",
+    "description": "LateUpdate is called every frame, if the Behaviour is enabled. It is called after all Update functions have been called.",
+    "body": ["private void LateUpdate() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnAnimatorIK": {
+    "prefix": "OnAnimatorIK(int)",
+    "description": "Callback for setting up animation IK (inverse kinematics).",
+    "body": ["private void OnAnimatorIK(int layerIndex) {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnAnimatorMove": {
+    "prefix": "OnAnimatorMove()",
+    "description": "Callback for processing animation movements for modifying root motion.",
+    "body": ["private void OnAnimatorMove() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnApplicationFocus": {
+    "prefix": "OnApplicationFocus(bool)",
+    "description": "Callback sent to all game objects when the player gets or loses focus.",
+    "body": ["private void OnApplicationFocus(bool focusStatus) {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnApplicationPause": {
+    "prefix": "OnApplicationPause(bool)",
+    "description": "Callback sent to all game objects when the player pauses.",
+    "body": ["private void OnApplicationPause(bool pauseStatus) {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnApplicationQuit": {
+    "prefix": "OnApplicationQuit()",
+    "description": "Callback sent to all game objects before the application is quit.",
+    "body": ["private void OnApplicationQuit() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnAudioFilterRead": {
+    "prefix": "OnAudioFilterRead(float[], int)",
+    "description": "If OnAudioFilterRead is implemented, Unity will insert a custom filter into the audio DSP chain.",
+    "body": [
+      "private void OnAudioFilterRead(float[] data, int channels) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "MonoBehaviour OnBecameInvisible": {
+    "prefix": "OnBecameInvisible()",
+    "description": "OnBecameInvisible is called when the renderer is no longer visible by any camera.",
+    "body": ["private void OnBecameInvisible() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnBecameVisible": {
+    "prefix": "OnBecameVisible()",
+    "description": "OnBecameVisible is called when the renderer became visible by any camera.",
+    "body": ["private void OnBecameVisible() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnCollisionEnter": {
+    "prefix": "OnCollisionEnter(Collision)",
+    "description": "OnCollisionEnter is called when this collider/rigidbody has begun\n touching another rigidbody/collider.",
+    "body": ["private void OnCollisionEnter(Collision other) {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnCollisionEnter2D": {
+    "prefix": "OnCollisionEnter2D(Collision2D)",
+    "description": "Sent when an incoming collider makes contact with this object's collider (2D physics only).",
+    "body": [
+      "private void OnCollisionEnter2D(Collision2D other) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "MonoBehaviour OnCollisionExit": {
+    "prefix": "OnCollisionExit(Collision)",
+    "description": "OnCollisionExit is called when this collider/rigidbody has stopped touching another rigidbody/collider.",
+    "body": ["private void OnCollisionExit(Collision other) {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnCollisionExit2D": {
+    "prefix": "OnCollisionExit2D(Collision2D)",
+    "description": "Sent when a collider on another object stops touching this object's collider (2D physics only).",
+    "body": ["private void OnCollisionExit2D(Collision2D other) {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnCollisionStay": {
+    "prefix": "OnCollisionStay(Collision)",
+    "description": "OnCollisionStay is called once per frame for every collider/rigidbody that is touching rigidbody/collider.",
+    "body": ["private void OnCollisionStay(Collision other) {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnCollisionStay2D": {
+    "prefix": "OnCollisionStay2D(Collision2D)",
+    "description": "Sent each frame where a collider on another object is touching this object's collider (2D physics only).",
+    "body": ["private void OnCollisionStay2D(Collision2D other) {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnConnectedToServer": {
+    "prefix": "OnConnectedToServer()",
+    "description": "Called on the client when you have successfully connected to a server.",
+    "body": ["private void OnConnectedToServer() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnControllerColliderHit": {
+    "prefix": "OnControllerColliderHit(ControllerColliderHit)",
+    "description": "OnControllerColliderHit is called when the controller hits a collider while performing a Move.",
+    "body": [
+      "private void OnControllerColliderHit(ControllerColliderHit hit) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "MonoBehaviour OnDestroy": {
+    "prefix": "OnDestroy()",
+    "description": "This function is called when the MonoBehaviour will be destroyed.",
+    "body": ["private void OnDestroy() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnDisable": {
+    "prefix": "OnDisable()",
+    "description": "This function is called when the behaviour becomes disabled or inactive.",
+    "body": ["private void OnDisable() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnDisconnectedFromServer": {
+    "prefix": "OnDisconnectedFromServer(NetworkDisconnection)",
+    "description": "Called on the client when the connection was lost or you disconnected from the server.",
+    "body": [
+      "private void OnDisconnectedFromServer(NetworkDisconnection info) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "MonoBehaviour OnDrawGizmos": {
+    "prefix": "OnDrawGizmos()",
+    "description": "Callback to draw gizmos that are pickable and always drawn.",
+    "body": ["private void OnDrawGizmos() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnDrawGizmosSelected": {
+    "prefix": "OnDrawGizmosSelected()",
+    "description": "Callback to draw gizmos only if the object is selected.",
+    "body": ["private void OnDrawGizmosSelected() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnEnable": {
+    "prefix": "OnEnable()",
+    "description": "This function is called when the object becomes enabled and active.",
+    "body": ["private void OnEnable() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnFailedToConnect": {
+    "prefix": "OnFailedToConnect(NetworkConnectionError)",
+    "description": "Called on the client when a connection attempt fails for some reason.",
+    "body": [
+      "private void OnFailedToConnect(NetworkConnectionError error) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "MonoBehaviour OnFailedToConnectToMasterServer": {
+    "prefix": "OnFailedToConnectToMasterServer(NetworkConnectionError)",
+    "description": "Called on clients or servers when there is a problem connecting to the MasterServer.",
+    "body": [
+      "private void OnFailedToConnectToMasterServer(NetworkConnectionError error) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "MonoBehaviour OnGUI": {
+    "prefix": "OnGUI()",
+    "description": "OnGUI is called for rendering and handling GUI events.",
+    "body": ["private void OnGUI() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnJointBreak": {
+    "prefix": "OnJointBreak(float)",
+    "description": "Called when a joint attached to the same game object broke.",
+    "body": ["private void OnJointBreak(float breakForce) {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnJointBreak2D": {
+    "prefix": "OnJointBreak2D(Joint2D)",
+    "description": "Called when a Joint2D attached to the same game object breaks.",
+    "body": ["private void OnJointBreak2D(Joint2D brokenJoint) {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnMasterServerEvent": {
+    "prefix": "OnMasterServerEvent(MasterServerEvent)",
+    "description": "Called on clients or servers when reporting events from the MasterServer.",
+    "body": [
+      "private void OnMasterServerEvent(MasterServerEvent msEvent) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "MonoBehaviour OnMouseDown": {
+    "prefix": "OnMouseDown()",
+    "description": "OnMouseDown is called when the user has pressed the mouse button while over the GUIElement or Collider.",
+    "body": ["private void OnMouseDown() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnMouseDrag": {
+    "prefix": "OnMouseDrag()",
+    "description": "OnMouseDrag is called when the user has clicked on a GUIElement or Collider and is still holding down the mouse.",
+    "body": ["private void OnMouseDrag() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnMouseEnter": {
+    "prefix": "OnMouseEnter()",
+    "description": "Called when the mouse enters the GUIElement or Collider.",
+    "body": ["private void OnMouseEnter() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnMouseExit": {
+    "prefix": "OnMouseExit()",
+    "description": "Called when the mouse is not any longer over the GUIElement or Collider.",
+    "body": ["private void OnMouseExit() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnMouseOver": {
+    "prefix": "OnMouseOver()",
+    "description": "Called every frame while the mouse is over the GUIElement or Collider.",
+    "body": ["private void OnMouseOver() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnMouseUp": {
+    "prefix": "OnMouseUp()",
+    "description": "OnMouseUp is called when the user has released the mouse button.",
+    "body": ["private void OnMouseUp() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnMouseUpAsButton": {
+    "prefix": "OnMouseUpAsButton()",
+    "description": "OnMouseUpAsButton is only called when the mouse is released over the same GUIElement or Collider as it was pressed.",
+    "body": ["private void OnMouseUpAsButton() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnNetworkInstantiate": {
+    "prefix": "OnNetworkInstantiate(NetworkMessageInfo)",
+    "description": "Called on objects which have been network instantiated with Network.Instantiate.",
+    "body": [
+      "private void OnNetworkInstantiate(NetworkMessageInfo info) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "MonoBehaviour OnParticleCollision": {
+    "prefix": "OnParticleCollision(GameObject)",
+    "description": "OnParticleCollision is called when a particle hits a collider.",
+    "body": [
+      "private void OnParticleCollision(GameObject other) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "MonoBehaviour OnParticleSystemStopped": {
+    "prefix": "OnParticleSystemStopped()",
+    "description": "OnParticleSystemStopped is called when all particles in the system have died, and no new particles will be born. New particles cease to be created either after Stop is called, or when the duration property of a non-looping system has been exceeded.",
+    "body": ["private void OnParticleSystemStopped() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnParticleTrigger": {
+    "prefix": "OnParticleTrigger()",
+    "description": "OnParticleTrigger is called when any particles in a particle system meet the conditions in the trigger module.",
+    "body": ["private void OnParticleTrigger() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnPlayerConnected": {
+    "prefix": "OnPlayerConnected(NetworkPlayer)",
+    "description": "Called on the server whenever a new player has successfully connected.",
+    "body": [
+      "private void OnPlayerConnected(NetworkPlayer player) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "MonoBehaviour OnPlayerDisconnected": {
+    "prefix": "OnPlayerDisconnected(NetworkPlayer)",
+    "description": "Called on the server whenever a player disconnected from the server.",
+    "body": [
+      "private void OnPlayerDisconnected(NetworkPlayer player) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "MonoBehaviour OnPostRender": {
+    "prefix": "OnPostRender()",
+    "description": "OnPostRender is called after a camera finishes rendering the scene.",
+    "body": ["private void OnPostRender() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnPreCull": {
+    "prefix": "OnPreCull()",
+    "description": "OnPreCull is called before a camera culls the scene.",
+    "body": ["private void OnPreCull() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnPreRender": {
+    "prefix": "OnPreRender()",
+    "description": "OnPreRender is called before a camera starts rendering the scene.",
+    "body": ["private void OnPreRender() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnRenderImage": {
+    "prefix": "OnRenderImage(RenderTexture, RenderTexture)",
+    "description": "OnRenderImage is called after all rendering is complete to render image.",
+    "body": [
+      "private void OnRenderImage(RenderTexture src, RenderTexture dest) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "MonoBehaviour OnRenderObject": {
+    "prefix": "OnRenderObject()",
+    "description": "OnRenderObject is called after camera has rendered the scene.",
+    "body": ["private void OnRenderObject() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnSerializeNetworkView": {
+    "prefix": "OnSerializeNetworkView(BitStream, NetworkMessageInfo)",
+    "description": "Used to customize synchronization of variables in a script watched by a network view.",
+    "body": [
+      "private void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "MonoBehaviour OnServerInitialized": {
+    "prefix": "OnServerInitialized()",
+    "description": "Called on the server whenever a Network.InitializeServer was invoked and has completed.",
+    "body": ["private void OnServerInitialized() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnTransformChildrenChanged": {
+    "prefix": "OnTransformChildrenChanged()",
+    "description": "Called when the list of children of the transform of the GameObject has changed.",
+    "body": ["private void OnTransformChildrenChanged() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnTransformParentChanged": {
+    "prefix": "OnTransformParentChanged()",
+    "description": "Called when the parent property of the transform of the GameObject has changed.",
+    "body": ["private void OnTransformParentChanged() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnTriggerEnter": {
+    "prefix": "OnTriggerEnter(Collider)",
+    "description": "OnTriggerEnter is called when the Collider other enters the trigger.",
+    "body": ["private void OnTriggerEnter(Collider other) {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnTriggerEnter2D": {
+    "prefix": "OnTriggerEnter2D(Collider2D)",
+    "description": "Sent when another object enters a trigger collider attached to this object (2D physics only).",
+    "body": ["private void OnTriggerEnter2D(Collider2D other) {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnTriggerExit": {
+    "prefix": "OnTriggerExit(Collider)",
+    "description": "OnTriggerExit is called when the Collider other has stopped touching the trigger.",
+    "body": ["private void OnTriggerExit(Collider other) {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnTriggerExit2D": {
+    "prefix": "OnTriggerExit2D(Collider2D)",
+    "description": "Sent when another object leaves a trigger collider attached to this object (2D physics only).",
+    "body": ["private void OnTriggerExit2D(Collider2D other) {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnTriggerStay": {
+    "prefix": "OnTriggerStay(Collider)",
+    "description": "OnTriggerStay is called once per frame for every Collider other that is touching the trigger.",
+    "body": ["private void OnTriggerStay(Collider other) {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnTriggerStay2D": {
+    "prefix": "OnTriggerStay2D(Collider2D)",
+    "description": "Sent each frame where another object is within a trigger collider attached to this object (2D physics only).",
+    "body": ["private void OnTriggerStay2D(Collider2D other) {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnValidate": {
+    "prefix": "OnValidate()",
+    "description": "Called when the script is loaded or a value is changed in the inspector (Called in the editor only).",
+    "body": ["private void OnValidate() {", "\t$0", "}"]
+  },
+  "MonoBehaviour OnWillRenderObject": {
+    "prefix": "OnWillRenderObject()",
+    "description": "OnWillRenderObject is called for each camera if the object is visible.",
+    "body": ["private void OnWillRenderObject() {", "\t$0", "}"]
+  },
+  "MonoBehaviour Reset": {
+    "prefix": "Reset()",
+    "description": "Reset is called when the user hits the Reset button in the Inspector's context menu or when adding the component the first time.",
+    "body": ["private void Reset() {", "\t$0", "}"]
+  },
+  "MonoBehaviour Start": {
+    "prefix": "Start()",
+    "description": "Start is called on the frame when a script is enabled just before any of the Update methods is called the first time.",
+    "body": ["private void Start() {", "\t$0", "}"]
+  },
+  "MonoBehaviour Update": {
+    "prefix": "Update()",
+    "description": "Update is called every frame, if the MonoBehaviour is enabled.",
+    "body": ["private void Update() {", "\t$0", "}"]
+  },
+  "StateMachineBehaviour OnStateEnter": {
+    "prefix": "OnStateEnter()",
+    "description": "Called on the first Update frame when a statemachine evaluate this state.",
+    "body": [
+      "private void OnStateEnter(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "StateMachineBehaviour OnStateExit": {
+    "prefix": "OnStateExit()",
+    "description": "Called on the last update frame when a statemachine evaluate this state.",
+    "body": [
+      "private void OnStateExit(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "StateMachineBehaviour OnStateIK": {
+    "prefix": "OnStateIK()",
+    "description": "Called right after MonoBehaviour.OnAnimatorIK.",
+    "body": [
+      "private void OnStateIK(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "StateMachineBehaviour OnStateMove": {
+    "prefix": "OnStateMove()",
+    "description": "Called right after MonoBehaviour.OnAnimatorMove.",
+    "body": [
+      "private void OnStateMove(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "StateMachineBehaviour OnStateUpdate": {
+    "prefix": "OnStateUpdate()",
+    "description": "Called on the first Update frame when a statemachine evaluate this state.",
+    "body": [
+      "private void OnStateUpdate(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Editor OnSceneGUI": {
+    "prefix": "OnSceneGUI()",
+    "description": "Enables the Editor to handle an event in the scene view.",
+    "body": ["private void OnSceneGUI() {", "\t$0", "}"]
+  },
+  "EditorWindow OnFocus": {
+    "prefix": "OnFocus()",
+    "description": "Called when the window gets keyboard focus.",
+    "body": ["private void OnFocus() {", "\t$0", "}"]
+  },
+  "EditorWindow OnHierarchyChange": {
+    "prefix": "OnHierarchyChange()",
+    "description": "Handler for message that is sent when an object or group of objects in the hierarchy changes.",
+    "body": ["private void OnHierarchyChange() {", "\t$0", "}"]
+  },
+  "EditorWindow OnInspectorUpdate": {
+    "prefix": "OnInspectorUpdate()",
+    "description": "OnInspectorUpdate is called at 10 frames per second to give the inspector a chance to update.",
+    "body": ["private void OnInspectorUpdate() {", "\t$0", "}"]
+  },
+  "EditorWindow OnLostFocus": {
+    "prefix": "OnLostFocus()",
+    "description": "Called when the window loses keyboard focus.",
+    "body": ["private void OnLostFocus() {", "\t$0", "}"]
+  },
+  "EditorWindow OnProjectChange": {
+    "prefix": "OnProjectChange()",
+    "description": "Handler for message that is sent whenever the state of the project changes.",
+    "body": ["private void OnProjectChange() {", "\t$0", "}"]
+  },
+  "EditorWindow OnSelectionChange": {
+    "prefix": "OnSelectionChange()",
+    "description": "Called whenever the selection has changed.",
+    "body": ["private void OnSelectionChange() {", "\t$0", "}"]
+  },
+  "ScriptableWizard OnWizardCreate": {
+    "prefix": "OnWizardCreate()",
+    "description": "This is called when the user clicks on the Create button.",
+    "body": ["private void OnWizardCreate() {", "\t$0", "}"]
+  },
+  "ScriptableWizard OnWizardOtherButton": {
+    "prefix": "OnWizardOtherButton()",
+    "description": "Allows you to provide an action when the user clicks on the other button.",
+    "body": ["private void OnWizardOtherButton() {", "\t$0", "}"]
+  },
+  "ScriptableWizard OnWizardUpdate": {
+    "prefix": "OnWizardUpdate()",
+    "description": "This is called when the wizard is opened or whenever the user changes something in the wizard.",
+    "body": ["private void OnWizardUpdate() {", "\t$0", "}"]
+  },
+  "Debug Log": {
+    "prefix": "Log",
+    "description": "Logs message to the Unity Console.",
+    "body": "Debug.Log($0);"
+  },
+  "Debug Log Error": {
+    "prefix": "LogError",
+    "description": "A variant of Debug.Log that logs an error message to the console.",
+    "body": "Debug.LogError($0);"
+  },
+  "Debug Log Warning": {
+    "prefix": "LogWarning",
+    "description": "A variant of Debug.Log that logs a warning message to the console.",
+    "body": "Debug.LogWarning($0);"
+  },
+  "Debug Log Exception": {
+    "prefix": "LogException",
+    "description": "A variant of Debug.Log that logs an error message from an exception to the console.",
+    "body": "Debug.LogException($0);"
+  },
+  "Debug LogFormat": {
+    "prefix": "LogFormat",
+    "description": "Logs a formatted message to the Unity Console.",
+    "body": "Debug.LogFormat($0);"
+  },
+  "Debug LogErrorFormat": {
+    "prefix": "LogErrorFormat",
+    "description": "Logs a formatted error message to the Unity console.",
+    "body": "Debug.LogErrorFormat($0);"
+  },
+  "Debug LogWarningFormat": {
+    "prefix": "LogWarningFormat",
+    "description": "Logs a formatted warning message to the Unity Console.",
+    "body": "Debug.LogWarningFormat($0);"
+  },
+  "Debug DrawLine": {
+    "prefix": "DrawLine",
+    "description": "Draws a line between specified start and end points.",
+    "body": "Debug.DrawLine(Vector3 start$1, Vector3 end$2, Color color = Color.white$3, float duration = 0.0f$4, bool depthTest = true$5);"
+  },
+  "Debug DrawRay": {
+    "prefix": "DrawRay",
+    "description": "Draws a line from start to start + dir in world coordinates.",
+    "body": "Debug.DrawRay(Vector3 start$1, Vector3 dir$2, Color color = Color.white$3, float duration = 0.0f$4, bool depthTest = true$5);"
+  },
+  "General class": {
+    "prefix": "class",
+    "description": "Creates a normal class.",
+    "body": ["public class ${TM_FILENAME_BASE} {", "\t$0", "}"]
+  },
+  "General interface": {
+    "prefix": "interface",
+    "description": "Creates a normal interface.",
+    "body": ["public interface ${TM_FILENAME_BASE} {", "\t$0", "}"]
+  }
+}
