@@ -470,6 +470,13 @@
       {
         "language": "edge",
         "path": "./snippets/frameworks/edge.json"
+      },
+      {
+        "language": [
+          "powershell",
+          "ps1"
+        ],
+        "path": "./snippets/PowerShell.json"
       }
     ]
   }
