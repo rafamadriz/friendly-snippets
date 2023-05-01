@@ -16,19 +16,18 @@ Use your plugin manager of choice, e.g.
 { "rafamadriz/friendly-snippets" }
 ```
 
-**Warning**: If using you're LuaSnip make sure to use
-`require("luasnip.loaders.from_vscode").load()` to load snippets. If you want
-to use `lazy_load()`, friendly-snippets will need to be added as a dependencie for LuaSnip like so:
-
-```lua
-{
-  "L3MON4D3/LuaSnip",
-  dependencies = { "rafamadriz/friendly-snippets" },
-}
-```
-
-For more info see [#262](https://github.com/rafamadriz/friendly-snippets/issues/262) and
-[folke/lazy.nvim#266](https://github.com/folke/lazy.nvim/issues/266)
+> **Warning**: If you're using LuaSnip make sure to use
+> `require("luasnip.loaders.from_vscode").load()` to load snippets. If you want
+> to use `lazy_load()`, friendly-snippets will need to be added as a dependencie for LuaSnip like so:
+>
+> ```lua
+> {
+>   "L3MON4D3/LuaSnip",
+>   dependencies = { "rafamadriz/friendly-snippets" },
+> }
+> ```
+>
+> For more info see [#262](https://github.com/rafamadriz/friendly-snippets/issues/262) and [folke/lazy.nvim#266](https://github.com/folke/lazy.nvim/issues/266)
 
 ### With Packer
 
@@ -79,7 +78,7 @@ let g:vsnip_filetypes.ruby = ['rails']
 
 ## Excluding snippets
 
-> **NOTE**: This is handled by your snippet engine and has nothing to do with this snippets collection
+> **Note**: This is handled by your snippet engine and has nothing to do with this snippets collection
 
 With LuaSnip, see `help luasnip-loaders`
 
