@@ -477,6 +477,10 @@
           "ps1"
         ],
         "path": "./snippets/PowerShell.json"
+      },
+      {
+        "language": "nushell",
+        "path": "./snippets/nushell.json"
       }
     ]
   }
