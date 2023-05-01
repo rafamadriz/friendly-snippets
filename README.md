@@ -16,6 +16,20 @@ Use your plugin manager of choice, e.g.
 { "rafamadriz/friendly-snippets" }
 ```
 
+**Warning**: If using you're LuaSnip make sure to use
+`require("luasnip.loaders.from_vscode").load()` to load snippets. If you want
+to use `lazy_load()`, friendly-snippets will need to be added as a dependencie for LuaSnip like so:
+
+```lua
+{
+  "L3MON4D3/LuaSnip",
+  dependencies = { "rafamadriz/friendly-snippets" },
+}
+```
+
+For more info see [#262](https://github.com/rafamadriz/friendly-snippets/issues/262) and
+[folke/lazy.nvim#266](https://github.com/folke/lazy.nvim/issues/266)
+
 ### With Packer
 
 ```lua
@@ -42,11 +56,6 @@ loading vscode snippets. Like for example:
 - [vim-vsnip](https://github.com/hrsh7th/vim-vsnip)
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 - [coc-snippets](https://github.com/neoclide/coc-snippets)
-
-> **Warning**: If using LuaSnip make sure to use
-> `require("luasnip.loaders.from_vscode").load()` instead of `lazy_load()`.
-> Using `lazy_load()` will create issues. See
-> [#262](https://github.com/rafamadriz/friendly-snippets/issues/262)
 
 ## Add snippets from a framework to a filetype.
 
