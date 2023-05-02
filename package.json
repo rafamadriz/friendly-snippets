@@ -479,7 +479,7 @@
         "path": "./snippets/PowerShell.json"
       },
       {
-        "language": "nushell",
+        "language": "nu",
         "path": "./snippets/nushell.json"
       }
     ]
