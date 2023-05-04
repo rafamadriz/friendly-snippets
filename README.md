@@ -17,8 +17,10 @@ Use your plugin manager of choice, e.g.
 ```
 
 > **Warning**: If you're using LuaSnip make sure to use
-> `require("luasnip.loaders.from_vscode").load()` to load snippets. If you want
-> to use `lazy_load()`, friendly-snippets will need to be added as a dependencie for LuaSnip like so:
+> `require("luasnip.loaders.from_vscode").lazy_load()`, and add
+> `friendly-snippets` as a dependency for LuaSnip, otherwise snippets might not
+> be detected. If you don't use `lazy_load()` you might notice a slower
+> startup-time
 >
 > ```lua
 > {
@@ -26,8 +28,6 @@ Use your plugin manager of choice, e.g.
 >   dependencies = { "rafamadriz/friendly-snippets" },
 > }
 > ```
->
-> For more info see [#262](https://github.com/rafamadriz/friendly-snippets/issues/262) and [folke/lazy.nvim#266](https://github.com/folke/lazy.nvim/issues/266)
 
 ### With Packer
 
