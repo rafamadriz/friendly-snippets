@@ -1,0 +1,254 @@
+{
+    "@article": {
+        "prefix": "@article",
+        "description": "An article from a magazine or a journal.",
+        "body": [
+            "@article{${1:name},",
+            "    author = {${2:author}},",
+            "    title = {${3:title}},",
+            "    journal = {${4:journal}},",
+            "    volume = {${5:?_volume}},",
+            "    number = {${6:?_number}},",
+            "    pages = {${7:?_pages}},",
+            "    year = {${8:year}},",
+            "    month = {${9:?_month}},",
+            "    note = {${10:?_note}},",
+            "}"
+        ]
+    },
+    "@book": {
+        "prefix": "@book",
+        "description": "A published book",
+        "body": [
+            "@book{${1:name},",
+            "    author = {${2:author}},",
+            "    title = {${3:title}},",
+            "    publisher = {${4:publisher}},",
+            "    volume = {${5:?_volume}},",
+            "    number = {${6:?_number}},",
+            "    series = {${7:?_series}},",
+            "    address = {${8:?_address}},",
+            "    edition = {${9:?_edition}},",
+            "    year = {${10:year}},",
+            "    month = {${11:?_month}},",
+            "    note = {${12:?_note}},",
+            "}"
+        ]
+    },
+    "@booklet": {
+        "prefix": "@booklet",
+        "description": "A bound work without a named publisher or sponsor.",
+        "body": [
+            "@booklet{${1:name},",
+            "    author = {${1:?_author}},",
+            "    title = {${2:title}},",
+            "    howpublished = {${3:?_howpublished}},",
+            "    address = {${4:?_address}},",
+            "    year = {${5:?_year}},",
+            "    month = {${6:?_month}},",
+            "    note = {${7:?_note}},",
+            "}"
+        ]
+    },
+    "@conference": {
+        "prefix": "@conference",
+        "description": "Equal to inproceedings",
+        "body": [
+            "@conference{${1:name},",
+            "    author = {${2:author}},",
+            "    title = {${3:title}},",
+            "    booktitle = {${4:booktitle}},",
+            "    editor = {${5:?_editor}},",
+            "    volume = {${6:?_volume}},",
+            "    number = {${7:?_number}},",
+            "    series = {${8:?_series}},",
+            "    pages = {${9:?_pages}},",
+            "    address = {${10:?_address}},",
+            "    year = {${11:year}},",
+            "    month = {${12:?_month}},",
+            "    publisher = {${13:?_publisher}},",
+            "    note = {${14:?_note}},",
+            "}"
+        ]
+    },
+    "@inbook": {
+        "prefix": "@inbook",
+        "description": "A section of a book without its own title.",
+        "body": [
+            "@inbook{${1:name},",
+            "    author = {${2:author}},",
+            "    editor = {${3:editor}},",
+            "    title = {${4:title}},",
+            "    chapter = {${5:chapter}},",
+            "    pages = {${6:pages}},",
+            "    publisher = {${7:publisher}},",
+            "    volume = {${8:?_volume}},",
+            "    number = {${9:?_number}},",
+            "    series = {${10:?_series}},",
+            "    type = {${11:?_type}},",
+            "    address = {${12:?_address}},",
+            "    edition = {${13:?_edition}},",
+            "    year = {${14:year}},",
+            "    month = {${15:?_month}},",
+            "    note = {${16:?_note}},",
+            "}"
+        ]
+    },
+    "@incollection": {
+        "prefix": "@incollection",
+        "description": "A section of a book having its own title.",
+        "body": [
+            "@incollection{${1:name},",
+            "    author = {${2:author}},",
+            "    title = {${3:title}},",
+            "    booktitle = {${4:booktitle}},",
+            "    publisher = {${5:publisher}},",
+            "    editor = {${6:?_editor}},",
+            "    volume = {${7:?_volume}},",
+            "    number = {${8:?_number}},",
+            "    series = {${9:?_series}},",
+            "    type = {${10:?_type}},",
+            "    chapter = {${11:?_chapter}},",
+            "    pages = {${12:?_pages}},",
+            "    address = {${13:?_address}},",
+            "    edition = {${14:?_edition}},",
+            "    year = {${15:year}},",
+            "    month = {${16:?_month}},",
+            "    note = {${17:?_note}},",
+            "}"
+        ]
+    },
+    "@inproceedings": {
+        "prefix": "@inproceedings",
+        "description": "An article in a conference proceedings.",
+        "body": [
+            "@inproceedings{${1:name},",
+            "    author = {${2:author}},",
+            "    title = {${3:title}},",
+            "    booktitle = {${4:booktitle}},",
+            "    editor = {${5:?_editor}},",
+            "    volume = {${6:?_volume}},",
+            "    number = {${7:?_number}},",
+            "    series = {${8:?_series}},",
+            "    pages = {${9:?_pages}},",
+            "    address = {${10:?_address}},",
+            "    organization = {${11:?_organization}},",
+            "    publisher = {${12:?_publisher}},",
+            "    year = {${13:year}},",
+            "    month = {${14:?_month}},",
+            "    note = {${15:?_note}},",
+            "}"
+        ]
+    },
+    "@manual": {
+        "prefix": "@manual",
+        "description": "Technical manual",
+        "body": [
+            "@manual{${1:name},",
+            "    title = {${2:title}},",
+            "    author = {${3:?_author}},",
+            "    organization = {${4:?_organization}},",
+            "    address = {${5:?_address}},",
+            "    edition = {${6:?_edition}},",
+            "    year = {${7:year}},",
+            "    month = {${8:?_month}},",
+            "    note = {${9:?_note}},",
+            "}"
+        ]
+    },
+    "@mastersthesis": {
+        "prefix": "@mastersthesis",
+        "description": "Master's thesis",
+        "body": [
+            "@mastersthesis{${1:name},",
+            "    author = {${2:author}},",
+            "    title = {${3:title}},",
+            "    school = {${4:school}},",
+            "    type = {${5:?_type}},",
+            "    address = {${6:?_address}},",
+            "    year = {${7:year}},",
+            "    month = {${8:?_month}},",
+            "    note = {${9:?_note}},",
+            "}"
+        ]
+    },
+    "@misc": {
+        "prefix": "@misc",
+        "description": "Template useful for other kinds of publication",
+        "body": [
+            "@misc{${1:name},",
+            "    author = {${2:?_author}},",
+            "    title = {${3:?_title}},",
+            "    howpublished = {${4:?_howpublished}},",
+            "    year = {${5:?_year}},",
+            "    month = {${6:?_month}},",
+            "    note = {${7:?_note}},",
+            "}"
+        ]
+    },
+    "@phdthesis": {
+        "prefix": "@phdthesis",
+        "description": "Ph.D. thesis",
+          "body": [
+              "@phdthesis{${1:name},",
+              "    author = {${2:author}},",
+              "    title = {${3:title}},",
+              "    school = {${4:school}},",
+              "    address = {${5:?_address}},",
+              "    year = {${6:year}},",
+              "    month = {${7:?_month}},",
+              "    keywords = {${8:?_keywords}},",
+              "    note = {${9:?_note}},",
+              "}"
+        ]
+    },
+    "@proceedings": {
+        "prefix": "@proceedings",
+        "description": "The proceedings of a conference.",
+        "body": [
+            "@proceedings{${1:name},",
+            "    title = {${2:title}},",
+            "    editor = {${3:?_editor}},",
+            "    volume = {${4:?_volume}},",
+            "    number = {${5:?_number}},",
+            "    series = {${6:?_series}},",
+            "    address = {${7:?_address}},",
+            "    organization = {${8:?_organization}},",
+            "    publisher = {${9:?_publisher}},",
+            "    year = {${10:year}},",
+            "    month = {${11:?_month}},",
+            "    note = {${12:?_note}},",
+            "}"
+        ]
+    },
+    "@techreport": {
+        "prefix": "@techreport",
+        "description": "Technical report from educational, commercial or standardization institution.",
+        "body": [
+            "@techreport{${1:name},",
+            "    author = {${2:author}},",
+            "    title = {${3:title}},",
+            "    institution = {${4:institution}},",
+            "    type = {${5:?_type}},",
+            "    number = {${6:?_number}},",
+            "    address = {${7:?_address}},",
+            "    year = {${8:year}},",
+            "    month = {${9:?_month}},",
+            "    note = {${10:?_note}},",
+            "}"
+        ]
+    },
+    "@unpublished": {
+        "prefix": "@unpublished",
+        "description": "An unpublished article, book, thesis, etc.",
+        "body": [
+            "@unpublished{${1:name},",
+            "    author = {${2:author}},",
+            "    title = {${3:title}},",
+            "    year = {${4:?_year}},",
+            "    month = {${5:?_month}},",
+            "    note = {${6:note}},",
+            "}"
+        ]
+    }
+}

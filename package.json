@@ -397,6 +397,13 @@
         "path": "./snippets/latex/vscode-latex-snippets.json"
       },
       {
+        "language": [
+          "bibtex",
+          "bib"
+        ],
+        "path": "./snippets/latex/bibtex.json"
+      },
+      {
         "language": "twig",
         "path": "./snippets/frameworks/twig.json"
       },
