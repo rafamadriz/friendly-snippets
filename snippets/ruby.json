@@ -235,7 +235,11 @@
   },
   "Insert frozen literal string": {
     "prefix": "frozen",
-    "body": "# frozen_string_literal: true$0"
+    "body": [
+      "# frozen_string_literal: true",
+      "",
+      ""
+    ]
   },
   "Insert require": {
     "prefix": "req",
