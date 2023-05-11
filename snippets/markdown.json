@@ -31,7 +31,7 @@
   },
   "Links": {
     "prefix": ["l", "link"],
-    "body": ["[${1}](${2}) ${0}"],
+    "body": ["[${1:text}](${2:url}) ${0}"],
     "description": "Add links"
   },
   "URLS": {
@@ -41,7 +41,7 @@
   },
   "Images": {
     "prefix": "img",
-    "body": ["![${1}](${2}) ${0}"],
+    "body": ["![${1:alt text}](${2:path}) ${0}"],
     "description": "Add images"
   },
   "Insert strikethrough": {
