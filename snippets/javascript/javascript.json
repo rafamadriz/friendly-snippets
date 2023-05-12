@@ -257,7 +257,7 @@
   },
   "const destructuring assignment awaited": {
     "prefix": "cda",
-    "body": "const { ${1:name} } = await ${2:value}"
+    "body": "const { ${2:name} } = await ${1:value}"
   },
   "const arrow function assignment": {
     "prefix": "cf",
