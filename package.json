@@ -486,6 +486,12 @@
         "path": "./snippets/PowerShell.json"
       },
       {
+        "language": [
+          "terraform"
+        ],
+        "path": "./snippets/terraform.json"
+      },
+      {
         "language": "nu",
         "path": "./snippets/nushell.json"
       }
