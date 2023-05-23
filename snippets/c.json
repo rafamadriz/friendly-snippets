@@ -1,6 +1,6 @@
 {
-  "Standard Starter Template": {
-    "prefix": "sst",
+  "Starter Template": {
+    "prefix": "st",
     "body": [
       "#include <stdlib.h>",
       "#include <stdio.h>",
@@ -14,15 +14,16 @@
     "description": "Standard starter template for a tiny C program"
   },
   "Preprocessor Starter Template": {
-    "prefix": "sstp",
+    "prefix": "#st",
     "body": [
       "// #define NDEBUG // disables assert()",
-      "#include <stdlib.h>",
-      "#include <stddef.h>",
-      "#include <stdbool.h>",
       "#include <assert.h>",
       "#include <errno.h>",
-      "#include <stdio.h>"
+      "#include <stdbool.h>",
+      "#include <stddef.h>",
+      "#include <stdint.h>",
+      "#include <stdio.h>",
+      "#include <stdlib.h>"
     ],
     "description": "Preprocessor starter template for a C project"
   },
@@ -96,7 +97,7 @@
     "description": "#ifndef snippet"
   },
   "include once": {
-    "prefix": "once",
+    "prefix": "#once",
     "body": [
       "#ifndef ${1:FILE}_H",
       "#define $1_H",
@@ -107,7 +108,7 @@
     "description": "Header include guard"
   },
   "extern C": {
-    "prefix": "nocpp",
+    "prefix": "#nocpp",
     "body": [
       "#ifdef __cplusplus",
       "extern \"C\" {",
@@ -139,7 +140,7 @@
     "description": "'if' snippet"
   },
   "if else": {
-    "prefix": "ife",
+    "prefix": "ifelse",
     "body": [
       "if (${1:true}) {$2",
       "} else {$0",
@@ -148,7 +149,7 @@
     "description": "'if' with 'else'"
   },
   "else": {
-    "prefix": "el",
+    "prefix": "else",
     "body": [
       "else {$0",
       "}"
@@ -156,7 +157,7 @@
     "description": "'else' snippet"
   },
   "else if": {
-    "prefix": "elif",
+    "prefix": "elseif",
     "body": [
       "else if (${1:true}) {$0",
       "}"
@@ -169,7 +170,7 @@
     "description": "1-line-if"
   },
   "elif 1L": {
-    "prefix": "elifi",
+    "prefix": "elseifi",
     "body": ["else if (${1:true}) $0"],
     "description": "1-line-else-if"
   },
@@ -217,32 +218,32 @@
     "description": "do...while loop snippet"
   },
   "return": {
-    "prefix": "ret",
+    "prefix": "return",
     "body": ["return ${1:0};"],
     "description": "'return' snippet"
   },
   "exit": {
-    "prefix": "ex",
-    "body": ["exit($0);"],
+    "prefix": "exit",
+    "body": ["exit(${1:EXIT_FAILURE});"],
     "description": "exit() snippet"
   },
   "for": {
     "prefix": "for",
     "body": [
-      "for (size_t ${2:i} = 0; $2 < ${1:count}; $2++) {$0",
+      "for ($1;$2;$3) {$0",
+      "}"
+    ],
+    "description": "Generic 'for' loop"
+  },
+  "for count0": {
+    "prefix": "for0",
+    "body": [
+      "for (${1:size_t} ${2:i} = 0; $2 < ${3:count}; $2++) {$0",
       "}"
     ],
     "description": "Mostly used 'for' loop"
   },
-  "for custom type": {
-    "prefix": "fort",
-    "body": [
-      "for (${1:int} ${2:i} = 0; $2 < ${4:count}; $2++) {$0",
-      "}"
-    ],
-    "description": "Mostly used 'for' loop with custom type"
-  },
-  "for non-zero start": {
+  "for count1": {
     "prefix": "for1",
     "body": [
       "for (${1:size_t} ${2:i} = ${3:1}; $2 <= ${4:finish}; $2++) {$0",
@@ -250,41 +251,17 @@
     ],
     "description": "'for' loop with non-zero start"
   },
-  "for main() args": {
-    "prefix": "forp",
+  "for argv[]": {
+    "prefix": "forarg",
     "body": [
       "for (int ${2:i} = ${1:1}; $2 < argc; $2++) {$0",
       "}"
     ],
     "description": "'for' loop variant for cmdline arguments"
   },
-  "for reverse": {
-    "prefix": "forr",
-    "body": [
-      "for (${1:size_t} ${2:i} = ${3:count}; $2 > ${4:0}; $2--) {$0",
-      "}"
-    ],
-    "description": "Mostly used reverse 'for' loop"
-  },
-  "for reverse custom": {
-    "prefix": "forr1",
-    "body": [
-      "for (${1:int} ${2:i} = ${3:start}; $2 >= ${4:finish}; $2--) {$0",
-      "}"
-    ],
-    "description": "More custom reverse 'for' loop"
-  },
-  "for custom": {
-    "prefix": "forc",
-    "body": [
-      "for (${1:size_t} ${2:i} = ${3:initval}; $4; $2${5:++}) {$0",
-      "}"
-    ],
-    "description": "Custom 'for' loop"
-  },
   "Function declaration": {
     "prefix": "fund",
-    "body": ["$4${2:void} ${1:fun}(${3:void});"],
+    "body": ["$4${2:void} ${1:fun}(${3:void});$0"],
     "description": "Declare a function"
   },
   "Function definition": {
@@ -297,7 +274,7 @@
     "description": "Define a function"
   },
   "Function with return var": {
-    "prefix": "funv",
+    "prefix": "funret",
     "body": [
       "$4${2:int} ${1:func}(${3:void})",
       "{",
@@ -308,32 +285,27 @@
     "description": "Define a function that uses a variable for return"
   },
   "typedef": {
-    "prefix": "td",
+    "prefix": "typedef",
     "body": ["typedef ${1:void} ${2:Emptiness};"],
     "description": "'typedef' snippet"
   },
   "Complicated typedef": {
-    "prefix": "tdd",
+    "prefix": "typedeff",
     "body": ["typedef $0;"],
     "description": "Declaration-like typedef for func-ptr,array,etc."
   },
   "typedef struct": {
-    "prefix": "tdst",
+    "prefix": "typedefst",
     "body": ["typedef struct $1 ${1:Box};"],
     "description": "Implicit struct typedef"
   },
   "typedef union": {
-    "prefix": "tduo",
+    "prefix": "typedefun",
     "body": ["typedef union $1 ${1:Cell};"],
     "description": "Implicit union typedef"
   },
-  "typedef enum": {
-    "prefix": "tdenum",
-    "body": ["typedef enum $1 ${1:Numbers};"],
-    "description": "Implicit enum typedef"
-  },
   "struct": {
-    "prefix": "st",
+    "prefix": "struct",
     "body": [
       "struct ${1:MyStruct} {$0",
       "};"
@@ -341,7 +313,7 @@
     "description": "'struct' snippet"
   },
   "struct type": {
-    "prefix": "stt",
+    "prefix": "typestruct",
     "body": [
       "typedef struct $1 ${1:Box};",
       "struct $1 {$0",
@@ -350,7 +322,7 @@
     "description": "Define a type with struct"
   },
   "union": {
-    "prefix": "uo",
+    "prefix": "union",
     "body": [
       "union ${1:MyUnion} {$0",
       "};"
@@ -358,7 +330,7 @@
     "description": "'union' snippet"
   },
   "union type": {
-    "prefix": "uot",
+    "prefix": "typeunion",
     "body": [
       "typedef union $1 ${1:Cell};",
       "union $1 {$0",
@@ -372,39 +344,30 @@
     "description": "Define a constant with enum"
   },
   "enum": {
-    "prefix": "enums",
+    "prefix": "enumst",
     "body": [
       "enum ${1:MyEnum} {$0",
       "};"
     ],
     "description": "'enum' struct-like snippet"
   },
-  "enum type": {
-    "prefix": "enumt",
-    "body": [
-      "typedef enum $1 ${1:Numbers};",
-      "enum $1 {$0",
-      "};"
-    ],
-    "description": "Define a type with enum"
-  },
   "printf": {
-    "prefix": "pri",
+    "prefix": "printf",
     "body": ["printf(\"${1:%s}\\n\"$0);"],
     "description": "printf() snippet"
   },
   "fprintf": {
-    "prefix": "fpri",
+    "prefix": "fprintf",
     "body": ["fprintf(${1:stderr}, \"${2:%s}\\n\"$0);"],
     "description": "fprintf() snippet"
   },
   "sprintf": {
-    "prefix": "spri",
+    "prefix": "sprintf",
     "body": ["sprintf(${1:buf}, \"${2:%s}\\n\"$0);"],
     "description": "sprintf() snippet"
   },
   "snprintf": {
-    "prefix": "snpri",
+    "prefix": "snprintf",
     "body": ["sprintf(${1:buf}, ${2:max}, \"${3:%s}\\n\"$0);"],
     "description": "snprintf() snippet"
   },
@@ -424,7 +387,7 @@
     "description": "sscanf() snippet"
   },
   "Print a variable": {
-    "prefix": "priv",
+    "prefix": "printv",
     "body": ["printf(\"$0 = %${1:i}\\n\", $0);"],
     "description": "Call printf() to log value of a variable"
   },
@@ -440,86 +403,53 @@
   },
   "err": {
     "prefix": "err",
-    "body": ["err(\"${1:%s}\"$0);"],
+    "body": ["err(${1:EXIT_FAILURE}, \"${2:%s}\"$0);"],
     "description": "err() snippet"
   },
   "errx": {
     "prefix": "errx",
-    "body": ["errx(\"${1:%s}\"$0);"],
+    "body": ["errx(${1:EXIT_FAILURE}, \"${1:%s}\"$0);"],
     "description": "errx() snippet"
   },
   "assert": {
-    "prefix": "asr",
+    "prefix": "assert",
     "body": ["assert($0);"],
     "description": "assert() snippet"
   },
   "static_assert": {
-    "prefix": "stasr",
+    "prefix": "static_assert",
     "body": ["static_assert($0, \"${1:Oopsie!}\");"],
     "description": "static_assert() snippet"
   },
   "static_assert 1-param": {
-    "prefix": "stasr1",
+    "prefix": "static_assert1",
     "body": ["static_assert($0);"],
     "description": "C2X 1-parameter static_assert() snippet"
   },
   "malloc": {
-    "prefix": "mlc",
-    "body": ["${3:ptr} = malloc(sizeof(${1:int}[${2:1}])$0);"],
+    "prefix": "malloc",
+    "body": ["malloc(sizeof(${1:int[69]})$0);"],
     "description": "malloc() snippet"
   },
   "calloc": {
-    "prefix": "clc",
-    "body": ["${3:ptr} = calloc(${2:1}, sizeof(${1:int})$0);"],
+    "prefix": "calloc",
+    "body": ["calloc(${2:1}, sizeof(${1:int})$0);"],
     "description": "calloc() snippet"
   },
   "realloc": {
-    "prefix": "rlc",
-    "body": ["${1:ptr} = realloc($1, sizeof(${2:int}[${3:1}])$0);"],
+    "prefix": "realloc",
+    "body": ["realloc(${1:ptr}, sizeof(${2:int[69]})$0);"],
     "description": "realloc() snippet"
   },
+  "reallocarray": {
+    "prefix": "reallocarray",
+    "body": ["reallocarray(${1:ptr}, ${3:69}, sizeof(${2:int})$0);"],
+    "description": "reallocarray() snippet"
+  },
   "free": {
-    "prefix": "fre",
-    "body": ["free(${1:ptr});"],
+    "prefix": "free",
+    "body": ["free(${1:NULL});"],
     "description": "free() snippet"
-  },
-  "malloc declaration": {
-    "prefix": "mlcd",
-    "body": ["${1:int} *${3:ptr} = malloc(sizeof($1[${2:1}])$0);"],
-    "description": "malloc() declaration snippet"
-  },
-  "calloc declaration": {
-    "prefix": "clcd",
-    "body": ["${1:int} *${3:ptr} = calloc(${2:1}, sizeof($1)$0);"],
-    "description": "calloc() declaration snippet"
-  },
-  "malloc template": {
-    "prefix": "mlct",
-    "body": [
-      "${1:int} *${3:ptr} = malloc(sizeof($1[${2:1}]));",
-      "if (!$3) {",
-      "\tfprintf(stderr, \"${4:Your memory is doomed!}\\n\"$5);",
-      "\t${6:exit(EXIT_FAILURE)};",
-      "}",
-      "$0",
-      "",
-      "free($3);"
-    ],
-    "description": "Use malloc() with fail option, then free()."
-  },
-  "calloc template": {
-    "prefix": "clct",
-    "body": [
-      "${1:int} *${3:ptr} = calloc(${2:1}, sizeof($1));",
-      "if (!$3) {",
-      "\tfprintf(stderr, \"${4:Your memory is doomed!}\\n\"$5);",
-      "\t${6:exit(EXIT_FAILURE)};",
-      "}",
-      "$0",
-      "",
-      "free($3);"
-    ],
-    "description": "Use calloc() with fail option, then free()."
   },
   "Comment block": {
     "prefix": ",",
@@ -543,7 +473,7 @@
     "description": "Doxygen 2-star-style comment"
   },
   "Doxygen template": {
-    "prefix": "dox",
+    "prefix": ",dox",
     "body": [
       "/*!$1",
       " * @brief ${2:This is something undocumented.}",
@@ -554,21 +484,20 @@
     "description": "Doxygen template to document a var/func/etc"
   },
   "Doxygen function": {
-    "prefix": "dfun",
+    "prefix": ",fun",
     "body": [
       "/*!",
-      " * @brief ${4:This function is undocumented.}",
+      " * @brief ${1:This function is undocumented.}",
       " *",
-      " * ${5:Nothing to add here...}",
+      " * ${2:Nothing to add here...}",
       " *",
-      " * @return ${6:Umm...}$0",
-      " */",
-      "${2:void} ${1:fun}(${3:void});"
+      " * @return ${3:Umm...}$0",
+      " */"
     ],
     "description": "Document a function with Doxygen"
   },
   "Todo section": {
-    "prefix": "todo",
+    "prefix": ",todo",
     "body": [
       "/*! TODO: ${1:I forgor...}",
       " *",
@@ -578,7 +507,7 @@
     "description": "Doxygen 'todo' section"
   },
   "Group section": {
-    "prefix": "dgr",
+    "prefix": ",grp",
     "body": [
       "/*! @name ${1:Useless API.}${2: No more details...}",
       " * @{",
@@ -590,19 +519,59 @@
     ],
     "description": "Group documented elements"
   },
+  "fputs() errcheck": {
+    "prefix": "errio_eof",
+    "body": [
+      "if (${1:status} == EOF$2) {",
+      "\t${3:err(EXIT_FAILURE, \"IO is hard! \\n\");}",
+      "}",
+      "$0"
+    ],
+    "description": "Error checking for int IO functions"
+  },
+  "fgets() errcheck": {
+    "prefix": "errio_null",
+    "body": [
+      "if (!${1:status}$2) {",
+      "\t${3:err(EXIT_FAILURE, \"IO is hard! \\n\");}",
+      "}",
+      "$0"
+    ],
+    "description": "Error checking for pointer-type IO functions"
+  },
+  "printf() errcheck": {
+    "prefix": "errpri",
+    "body": [
+      "if (${1:status} < 0) {",
+      "\t${2:err(EXIT_FAILURE, \"Ran out of ink! \\n\");}",
+      "}",
+      "$0"
+    ],
+    "description": "Error checking for printf()-like"
+  },
+  "getline() errcheck": {
+    "prefix": "errline",
+    "body": [
+      "if (!${1:status} == -1$2) {",
+      "\t${3:err(EXIT_FAILURE, \"Can't find the line! \\n\");}",
+      "}",
+      "$0"
+    ],
+    "description": "Error checking for getline function"
+  },
+  "malloc() errcheck": {
+    "prefix": "errmem",
+    "body": [
+      "if (!${1:status}) {",
+      "\t${2:err(EXIT_FAILURE, \"Your memory is doomed! \\n\");}",
+      "}",
+      "$0"
+    ],
+    "description": "Error checking for malloc()-like"
+  },
   "Array length": {
-    "prefix": "alen",
+    "prefix": "arrlen",
     "body": ["(sizeof ${1:arr} / sizeof $1[0])"],
     "description": "Calculate number of elements in an array"
-  },
-  "Linked list": {
-    "prefix": "clist",
-    "body": [
-      "typedef struct $1 ${1:Node};",
-      "struct $1 {$0",
-      "\t$1 *${2:next};",
-      "};"
-    ],
-    "description": "Create a linked list template"
   }
 }
