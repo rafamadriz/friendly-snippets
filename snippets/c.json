@@ -351,44 +351,54 @@
     ],
     "description": "'enum' struct-like snippet"
   },
+  "puts": {
+    "prefix": "puts",
+    "body": ["puts(\"${1:This function doesn't need newline.}\")$0"],
+    "description": "puts() snippet"
+  },
+  "fputs": {
+    "prefix": "fputs",
+    "body": ["fputs(\"${2:This is a simpler printf.\\n}\", ${1:stdout})$0"],
+    "description": "puts() snippet"
+  },
   "printf": {
     "prefix": "printf",
-    "body": ["printf(\"${1:%s}\\n\"$0);"],
+    "body": ["printf(\"${1:%s}\\n\"$2)$0"],
     "description": "printf() snippet"
   },
   "fprintf": {
     "prefix": "fprintf",
-    "body": ["fprintf(${1:stderr}, \"${2:%s}\\n\"$0);"],
+    "body": ["fprintf(${1:stderr}, \"${2:%s}\\n\"$3)$0"],
     "description": "fprintf() snippet"
   },
   "sprintf": {
     "prefix": "sprintf",
-    "body": ["sprintf(${1:buf}, \"${2:%s}\\n\"$0);"],
+    "body": ["sprintf(${1:buf}, \"${2:%s}\\n\"$3)$0"],
     "description": "sprintf() snippet"
   },
   "snprintf": {
     "prefix": "snprintf",
-    "body": ["sprintf(${1:buf}, ${2:max}, \"${3:%s}\\n\"$0);"],
+    "body": ["sprintf(${1:buf}, ${2:max}, \"${3:%s}\\n\"$3)$0"],
     "description": "snprintf() snippet"
   },
   "scanf": {
     "prefix": "scanf",
-    "body": ["scanf(\"${1:%i}\"$0);"],
+    "body": ["scanf(\"${1:%i}\"$2)$0"],
     "description": "scanf() snippet"
   },
   "fscanf": {
     "prefix": "fscanf",
-    "body": ["fscanf(${1:stdin}, \"${2:%i}\"$0);"],
+    "body": ["fscanf(${1:stdin}, \"${2:%i}\"$3)$0"],
     "description": "fscanf() snippet"
   },
   "sscanf": {
     "prefix": "sscanf",
-    "body": ["sscanf(${1:buf}, \"${2:%i}\"$0);"],
+    "body": ["sscanf(${1:buf}, \"${2:%i}\"$3)$0"],
     "description": "sscanf() snippet"
   },
   "Print a variable": {
     "prefix": "printv",
-    "body": ["printf(\"$0 = %${1:i}\\n\", $0);"],
+    "body": ["printf(\"${1:var} = %${2:i}\\n\", $3)$0"],
     "description": "Call printf() to log value of a variable"
   },
   "warn": {
@@ -428,22 +438,22 @@
   },
   "malloc": {
     "prefix": "malloc",
-    "body": ["malloc(sizeof(${1:int[69]})$0);"],
+    "body": ["malloc(sizeof(${1:int[69]})$2)$0"],
     "description": "malloc() snippet"
   },
   "calloc": {
     "prefix": "calloc",
-    "body": ["calloc(${2:1}, sizeof(${1:int})$0);"],
+    "body": ["calloc(${2:1}, sizeof(${1:int})$3)$0"],
     "description": "calloc() snippet"
   },
   "realloc": {
     "prefix": "realloc",
-    "body": ["realloc(${1:ptr}, sizeof(${2:int[69]})$0);"],
+    "body": ["realloc(${1:ptr}, sizeof(${2:int[69]})$3)$0"],
     "description": "realloc() snippet"
   },
   "reallocarray": {
     "prefix": "reallocarray",
-    "body": ["reallocarray(${1:ptr}, ${3:69}, sizeof(${2:int})$0);"],
+    "body": ["reallocarray(${1:ptr}, ${3:69}, sizeof(${2:int})$4)$0"],
     "description": "reallocarray() snippet"
   },
   "free": {
