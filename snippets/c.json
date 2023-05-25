@@ -520,7 +520,7 @@
     "prefix": "errio_eof",
     "body": [
       "if (${1:status} == EOF$2) {",
-      "\t${3:err(EXIT_FAILURE, \"IO is hard! \");}",
+      "\t${3:err(EXIT_FAILURE, \"IO is hard\");}",
       "}",
       "$0"
     ],
@@ -530,7 +530,7 @@
     "prefix": "errio_null",
     "body": [
       "if (!${1:status}$2) {",
-      "\t${3:err(EXIT_FAILURE, \"IO is hard! \");}",
+      "\t${3:err(EXIT_FAILURE, \"IO is hard\");}",
       "}",
       "$0"
     ],
@@ -540,7 +540,7 @@
     "prefix": "errpri",
     "body": [
       "if (${1:status} < 0) {",
-      "\t${2:err(EXIT_FAILURE, \"Ran out of ink! \");}",
+      "\t${2:err(EXIT_FAILURE, \"Ran out of ink\");}",
       "}",
       "$0"
     ],
@@ -549,8 +549,8 @@
   "getline() errcheck": {
     "prefix": "errline",
     "body": [
-      "if (!${1:status} == -1$2) {",
-      "\t${3:err(EXIT_FAILURE, \"Can't find the line! \");}",
+      "if (${1:status} == -1$2) {",
+      "\t${3:err(EXIT_FAILURE, \"Can't find the line\");}",
       "}",
       "$0"
     ],
@@ -560,7 +560,7 @@
     "prefix": "errmem",
     "body": [
       "if (!${1:status}) {",
-      "\t${2:err(EXIT_FAILURE, \"Your memory is doomed! \");}",
+      "\t${2:err(EXIT_FAILURE, \"Your memory is doomed\");}",
       "}",
       "$0"
     ],
