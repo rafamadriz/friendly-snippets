@@ -493,19 +493,6 @@
     ],
     "description": "Doxygen template to document a var/func/etc"
   },
-  "Doxygen function": {
-    "prefix": ",fun",
-    "body": [
-      "/*!",
-      " * @brief ${1:This function is undocumented.}",
-      " *",
-      " * ${2:Nothing to add here...}",
-      " *",
-      " * @return ${3:Umm...}$0",
-      " */"
-    ],
-    "description": "Document a function with Doxygen"
-  },
   "Todo section": {
     "prefix": ",todo",
     "body": [
