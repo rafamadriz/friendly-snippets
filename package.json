@@ -230,11 +230,11 @@
         "path": "./snippets/javascript/javascript.json"
       },
       {
-        "language": "javascript",
+        "language": "jsdoc",
         "path": "./snippets/javascript/jsdoc.json"
       },
       {
-        "language": "typescript",
+        "language": "tsdoc",
         "path": "./snippets/javascript/tsdoc.json"
       },
       {
