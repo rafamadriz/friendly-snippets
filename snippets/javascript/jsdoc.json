@@ -7,7 +7,7 @@
     "author email": {
         "prefix": "@au",
         "body": ["@author ${1:author_name} [${2:author_email}]"],
-        "description": "@author email (First Last)"
+        "description": "@author First Last [email]"
     },
     "Lisense desc": {
         "prefix": "@li",
