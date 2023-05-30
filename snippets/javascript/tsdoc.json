@@ -8,8 +8,8 @@
             " * @param a - Example parameter.\n",
             " * @returns ${2:What it returns}$0.\n",
             " *\n"
-            " * @example\n
-            " * ```\n
+            " * @example\n"
+            " * ```\n"
             " * write me later\n"
             " * ```"
             "*/"
