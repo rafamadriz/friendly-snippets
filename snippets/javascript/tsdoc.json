@@ -14,7 +14,7 @@
             " * ```",
             "*/"
         ],
-        "description": "[tsdoc]\nA full TSDoc comment with description, arguments, return, and example."
+        "description": "[tsdoc]\nA full TSDoc comment with description, parameters, return, and example."
     },
     "comment simple": {
         "prefix": "/*",
