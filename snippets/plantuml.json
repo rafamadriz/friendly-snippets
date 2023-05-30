@@ -1,209 +1,209 @@
 {
-  "Activity": {
-    "prefix": "act",
-    "body": "\"$1\"",
-    "description": "Describe the activity being done"
-  },
-  "Actor": {
-    "prefix": "act",
-    "body": "actor $0",
-    "description": "An actor in the system"
-  },
-  "Aggregation": {
-    "prefix": "ag",
-    "body": " o-- $1 $2",
-    "description": "An object aggregates X number of other objects"
-  },
-  "Arrow-down": {
-    "prefix": "down",
-    "body": " -down-> ",
-    "description": [
-      "down arrow, format: box -down-> box 2 (it will point downwards to the box 2"
-    ]
-  },
-  "Arrow-left": {
-    "prefix": "la",
-    "body": " -left-> ",
-    "description": [
-      "left arrow, format: box -left-> box 2 (it will point left towards the box 2"
-    ]
-  },
-  "Arrow-right": {
-    "prefix": "ra",
-    "body": " -right-> ",
-    "description": [
-      "Right arrow, format: box -right-> box 2 (it will point right towards the box 2"
-    ]
-  },
-  "Arrow-up": {
-    "prefix": "up",
-    "body": " -up-> ",
-    "description": [
-      "Up arrow, format: box -up-> box 2 (it will point upwards to the box 2"
-    ]
-  },
-  "Block comment": {
-    "prefix": "block",
-    "body": "/'\n' $1\n'/",
-    "description": "Places a block comment in the document"
-  },
-  "Boundary": {
-    "prefix": "bound",
-    "body": "boundary $0",
-    "description": "Model a boundary of the system"
-  },
-  "Class": {
-    "prefix": "cla",
-    "body": "class $1 {\n$2\n}\n",
-    "description": "Class Object where fields are defined: \n  public (+)\n  private (-)\n  protected (#) \n  package (~).\n\nFunctions can also be named here ex:\n  +funcName()"
-  },
-  "Cloud": {
-    "prefix": "cl",
-    "body": "cloud $1",
-    "description": "Model the cloud servers"
-  },
-  "Constant": {
-    "prefix": "const",
-    "body": "!define $1 $2",
-    "description": "$1 is param name, $2 is param value"
-  },
-  "Control": {
-    "prefix": "ctrl",
-    "body": "control $0",
-    "description": "Models a loop back for control"
-  },
-  "Composition": {
-    "prefix": "com",
-    "body": " *-- $1",
-    "description": "Model an object composition"
-  },
-  "Database": {
-    "prefix": "db",
-    "body": "database $0",
-    "description": "Models a Database (depicted as a cylinder)"
-  },
-  "Dotted aggregation": {
-    "prefix": "ag",
-    "body": " o.. $1 $2",
-    "description": "An object aggregates X number of other objects"
-  },
-  "Dotted composition": {
-    "prefix": "dcom",
-    "body": " *.. $1",
-    "description": "Model an object composition"
-  },
-  "Dotted extension": {
-    "prefix": "dext",
-    "body": " <|.. $1",
-    "description": "Arrow for object extends another object"
-  },
-  "Entity": {
-    "prefix": "ent",
-    "body": "entity $0",
-    "description": "Models an entity of the system"
-  },
-  "Example": {
-    "prefix": "example",
-    "body": ["@startuml\nAlice -> Bob\nBob -> Alice\n@enduml"],
-    "description": "Simple example to get started with PlantUML"
-  },
-  "Extend Arrow (left)": {
-    "prefix": "lext",
-    "body": " ..> $1",
-    "description": "Extend, Include"
-  },
-  "Extend Arrow (Right)": {
-    "prefix": "rext",
-    "body": " <.. $1",
-    "description": "Extend, Include"
-  },
-  "Extension": {
-    "prefix": "ext",
-    "body": " <|-- $1",
-    "description": "Arrow for object extends another object"
-  },
-  "Folder": {
-    "prefix": "fol",
-    "body": "folder $1",
-    "description": "A folder for project organization"
-  },
-  "Frame": {
-    "prefix": "frame",
-    "body": "frame $1",
-    "description": "A frame of the components"
-  },
-  "If-else": {
-    "prefix": "if",
-    "body": ["if $1 then\n->[ok] $2\nelse\n  -->[$3]\nendif\n"]
-  },
-  "Initial State activity": {
-    "prefix": "init-state",
-    "body": "(*) -> $1",
-    "description": "Model an initial starting point for the activity diagram"
-  },
-  "Node": {
-    "prefix": "no",
-    "body": "node $1",
-    "description": "A cube modelling a node in the system"
-  },
-  "Note left": {
-    "prefix": "note-lf",
-    "body": "note left : $0",
-    "description": "A note that appears on the left"
-  },
-  "Note right": {
-    "prefix": "note-rt",
-    "body": "note right : $0",
-    "description": "A note that appears on the right"
-  },
-  "Object": {
-    "prefix": "ob",
-    "body": "object $1 {\n$2\n}\n",
-    "description": "A default Object"
-  },
-  "Package": {
-    "prefix": "pa",
-    "body": ["package $1 {\n$2\n}\n"],
-    "description": "Package UML structure"
-  },
-  "Sequence Message": {
-    "prefix": "mess",
-    "body": "$1 -> $2",
-    "description": "An arrow for the message sent on a Sequence diagram"
-  },
-  "Sequence Return": {
-    "prefix": "ret",
-    "body": "$1 <-- $2",
-    "description": "An arrow for the message return on a Sequence diagram"
-  },
-  "State Final": {
-    "prefix": "sfinal",
-    "body": " --> [*]",
-    "description": "Describe the final state of objects"
-  },
-  "State Initial": {
-    "prefix": "sinit",
-    "body": "[*] --> ",
-    "description": "Describe the initial state of objects"
-  },
-  "Title": {
-    "prefix": "ti",
-    "body": "title $0",
-    "description": "The document title"
-  },
-  "Start Uml Template": {
-    "prefix": "startuml",
-    "body": "@startuml\n $1\n@enduml",
-    "description": "Inside $1 begin defining your diagram"
-  },
-  "Use Arrow (left)": {
-    "prefix": ">",
-    "body": " --> $1",
-    "description": "Object A uses -> () <That is our use case notation to the left>"
-  },
-  "Use Arrow (Right)": {
-    "prefix": "<",
-    "body": " <-- $1",
-    "description": "Object A uses -> () <That is our use case notation to the left>"
-  }
+    "Activity": {
+        "prefix": "act",
+        "body": "\"$1\"",
+        "description": "Describe the activity being done"
+    },
+    "Actor": {
+        "prefix": "act",
+        "body": "actor $0",
+        "description": "An actor in the system"
+    },
+    "Aggregation": {
+        "prefix": "ag",
+        "body": " o-- $1 $2",
+        "description": "An object aggregates X number of other objects"
+    },
+    "Arrow-down": {
+        "prefix": "down",
+        "body": " -down-> ",
+        "description": [
+            "down arrow, format: box -down-> box 2 (it will point downwards to the box 2"
+        ]
+    },
+    "Arrow-left": {
+        "prefix": "la",
+        "body": " -left-> ",
+        "description": [
+            "left arrow, format: box -left-> box 2 (it will point left towards the box 2"
+        ]
+    },
+    "Arrow-right": {
+        "prefix": "ra",
+        "body": " -right-> ",
+        "description": [
+            "Right arrow, format: box -right-> box 2 (it will point right towards the box 2"
+        ]
+    },
+    "Arrow-up": {
+        "prefix": "up",
+        "body": " -up-> ",
+        "description": [
+            "Up arrow, format: box -up-> box 2 (it will point upwards to the box 2"
+        ]
+    },
+    "Block comment": {
+        "prefix": "block",
+        "body": "/'\n' $1\n'/",
+        "description": "Places a block comment in the document"
+    },
+    "Boundary": {
+        "prefix": "bound",
+        "body": "boundary $0",
+        "description": "Model a boundary of the system"
+    },
+    "Class": {
+        "prefix": "cla",
+        "body": "class $1 {\n$2\n}\n",
+        "description": "Class Object where fields are defined: \n  public (+)\n  private (-)\n  protected (#) \n  package (~).\n\nFunctions can also be named here ex:\n  +funcName()"
+    },
+    "Cloud": {
+        "prefix": "cl",
+        "body": "cloud $1",
+        "description": "Model the cloud servers"
+    },
+    "Constant": {
+        "prefix": "const",
+        "body": "!define $1 $2",
+        "description": "$1 is param name, $2 is param value"
+    },
+    "Control": {
+        "prefix": "ctrl",
+        "body": "control $0",
+        "description": "Models a loop back for control"
+    },
+    "Composition": {
+        "prefix": "com",
+        "body": " *-- $1",
+        "description": "Model an object composition"
+    },
+    "Database": {
+        "prefix": "db",
+        "body": "database $0",
+        "description": "Models a Database (depicted as a cylinder)"
+    },
+    "Dotted aggregation": {
+        "prefix": "ag",
+        "body": " o.. $1 $2",
+        "description": "An object aggregates X number of other objects"
+    },
+    "Dotted composition": {
+        "prefix": "dcom",
+        "body": " *.. $1",
+        "description": "Model an object composition"
+    },
+    "Dotted extension": {
+        "prefix": "dext",
+        "body": " <|.. $1",
+        "description": "Arrow for object extends another object"
+    },
+    "Entity": {
+        "prefix": "ent",
+        "body": "entity $0",
+        "description": "Models an entity of the system"
+    },
+    "Example": {
+        "prefix": "example",
+        "body": ["@startuml\nAlice -> Bob\nBob -> Alice\n@enduml"],
+        "description": "Simple example to get started with PlantUML"
+    },
+    "Extend Arrow (left)": {
+        "prefix": "lext",
+        "body": " ..> $1",
+        "description": "Extend, Include"
+    },
+    "Extend Arrow (Right)": {
+        "prefix": "rext",
+        "body": " <.. $1",
+        "description": "Extend, Include"
+    },
+    "Extension": {
+        "prefix": "ext",
+        "body": " <|-- $1",
+        "description": "Arrow for object extends another object"
+    },
+    "Folder": {
+        "prefix": "fol",
+        "body": "folder $1",
+        "description": "A folder for project organization"
+    },
+    "Frame": {
+        "prefix": "frame",
+        "body": "frame $1",
+        "description": "A frame of the components"
+    },
+    "If-else": {
+        "prefix": "if",
+        "body": ["if $1 then\n->[ok] $2\nelse\n  -->[$3]\nendif\n"]
+    },
+    "Initial State activity": {
+        "prefix": "init-state",
+        "body": "(*) -> $1",
+        "description": "Model an initial starting point for the activity diagram"
+    },
+    "Node": {
+        "prefix": "no",
+        "body": "node $1",
+        "description": "A cube modelling a node in the system"
+    },
+    "Note left": {
+        "prefix": "note-lf",
+        "body": "note left : $0",
+        "description": "A note that appears on the left"
+    },
+    "Note right": {
+        "prefix": "note-rt",
+        "body": "note right : $0",
+        "description": "A note that appears on the right"
+    },
+    "Object": {
+        "prefix": "ob",
+        "body": "object $1 {\n$2\n}\n",
+        "description": "A default Object"
+    },
+    "Package": {
+        "prefix": "pa",
+        "body": ["package $1 {\n$2\n}\n"],
+        "description": "Package UML structure"
+    },
+    "Sequence Message": {
+        "prefix": "mess",
+        "body": "$1 -> $2",
+        "description": "An arrow for the message sent on a Sequence diagram"
+    },
+    "Sequence Return": {
+        "prefix": "ret",
+        "body": "$1 <-- $2",
+        "description": "An arrow for the message return on a Sequence diagram"
+    },
+    "State Final": {
+        "prefix": "sfinal",
+        "body": " --> [*]",
+        "description": "Describe the final state of objects"
+    },
+    "State Initial": {
+        "prefix": "sinit",
+        "body": "[*] --> ",
+        "description": "Describe the initial state of objects"
+    },
+    "Title": {
+        "prefix": "ti",
+        "body": "title $0",
+        "description": "The document title"
+    },
+    "Start Uml Template": {
+        "prefix": "startuml",
+        "body": "@startuml\n $1\n@enduml",
+        "description": "Inside $1 begin defining your diagram"
+    },
+    "Use Arrow (left)": {
+        "prefix": ">",
+        "body": " --> $1",
+        "description": "Object A uses -> () <That is our use case notation to the left>"
+    },
+    "Use Arrow (Right)": {
+        "prefix": "<",
+        "body": " <-- $1",
+        "description": "Object A uses -> () <That is our use case notation to the left>"
+    }
 }

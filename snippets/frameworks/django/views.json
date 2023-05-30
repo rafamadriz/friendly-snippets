@@ -1,85 +1,85 @@
 {
-  "createview": {
-    "prefix": "createview",
-    "body": "\r\nclass ${1:MODEL_NAME}CreateView(CreateView):\r\n    model = ${1:MODEL_NAME}\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n",
-    "description": "",
-    "scope": "source.python"
-  },
-  "deleteview": {
-    "prefix": "deleteview",
-    "body": "\r\nclass ${1:MODEL_NAME}DeleteView(DeleteView):\r\n    model = ${1:MODEL_NAME}\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n",
-    "description": "",
-    "scope": "source.python"
-  },
-  "detailview": {
-    "prefix": "detailview",
-    "body": "\r\nclass ${1:MODEL_NAME}DetailView(DetailView):\r\n    model = ${1:MODEL_NAME}\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n",
-    "description": "",
-    "scope": "source.python"
-  },
-  "listview": {
-    "prefix": "listview",
-    "body": "\r\nclass ${1:MODEL_NAME}ListView(ListView):\r\n    model = ${1:MODEL_NAME}\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n",
-    "description": "",
-    "scope": "source.python"
-  },
-  "templateview": {
-    "prefix": "templateview",
-    "body": "\r\nclass ${1:CLASS_NAME}(TemplateView):\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n",
-    "description": "",
-    "scope": "source.python"
-  },
-  "updateview": {
-    "prefix": "updateview",
-    "body": "\r\nclass ${1:MODEL_NAME}UpdateView(UpdateView):\r\n    model = ${1:MODEL_NAME}\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n",
-    "description": "",
-    "scope": "source.python"
-  },
-  "from views import": {
-    "prefix": "fvi",
-    "body": "from .views import $1",
-    "description": "",
-    "scope": "source.python"
-  },
-  "igenericviews": {
-    "prefix": "igenericviews",
-    "body": "from django.views.generic import ${1|CreateView,DetailView,FormView,ListView,TemplateView,UpdateView|}",
-    "description": "Generic class-based views",
-    "scope": "source.python"
-  },
-  "isettings": {
-    "prefix": "isettings",
-    "body": "from django.conf import settings",
-    "description": "from django.conf import settings",
-    "scope": "source.python"
-  },
-  "view": {
-    "prefix": "view",
-    "body": "def ${1:VIEWNAME}(request):",
-    "description": "View",
-    "scope": "source.python"
-  },
-  "dispatch": {
-    "prefix": "dispatch",
-    "body": "\r\ndef dispatch(self, request, *args, **kwargs):\r\n    return super(${1:CLASS_NAME}, self).dispatch(request, *args, **kwargs)\r\n",
-    "description": "",
-    "scope": "source.python"
-  },
-  "context": {
-    "prefix": "get_context_data",
-    "body": "\r\ndef get_context_data(self, **kwargs):\r\n    context = super(${1:CLASS_NAME}, self).get_context_data(**kwargs)\r\n    return context\r\n",
-    "description": "",
-    "scope": "source.python"
-  },
-  "get_queryset": {
-    "prefix": "get_queryset",
-    "body": [
-      "def get_queryset(self):",
-      "\tqueryset = super(${1:CLASS_NAME}, self).get_queryset()",
-      "\tqueryset = queryset${3: # TODO}",
-      "\treturn queryset"
-    ],
-    "description": "",
-    "scope": "source.python"
-  }
+    "createview": {
+        "prefix": "createview",
+        "body": "\r\nclass ${1:MODEL_NAME}CreateView(CreateView):\r\n    model = ${1:MODEL_NAME}\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n",
+        "description": "",
+        "scope": "source.python"
+    },
+    "deleteview": {
+        "prefix": "deleteview",
+        "body": "\r\nclass ${1:MODEL_NAME}DeleteView(DeleteView):\r\n    model = ${1:MODEL_NAME}\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n",
+        "description": "",
+        "scope": "source.python"
+    },
+    "detailview": {
+        "prefix": "detailview",
+        "body": "\r\nclass ${1:MODEL_NAME}DetailView(DetailView):\r\n    model = ${1:MODEL_NAME}\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n",
+        "description": "",
+        "scope": "source.python"
+    },
+    "listview": {
+        "prefix": "listview",
+        "body": "\r\nclass ${1:MODEL_NAME}ListView(ListView):\r\n    model = ${1:MODEL_NAME}\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n",
+        "description": "",
+        "scope": "source.python"
+    },
+    "templateview": {
+        "prefix": "templateview",
+        "body": "\r\nclass ${1:CLASS_NAME}(TemplateView):\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n",
+        "description": "",
+        "scope": "source.python"
+    },
+    "updateview": {
+        "prefix": "updateview",
+        "body": "\r\nclass ${1:MODEL_NAME}UpdateView(UpdateView):\r\n    model = ${1:MODEL_NAME}\r\n    template_name = \"${2:TEMPLATE_NAME}\"\r\n",
+        "description": "",
+        "scope": "source.python"
+    },
+    "from views import": {
+        "prefix": "fvi",
+        "body": "from .views import $1",
+        "description": "",
+        "scope": "source.python"
+    },
+    "igenericviews": {
+        "prefix": "igenericviews",
+        "body": "from django.views.generic import ${1|CreateView,DetailView,FormView,ListView,TemplateView,UpdateView|}",
+        "description": "Generic class-based views",
+        "scope": "source.python"
+    },
+    "isettings": {
+        "prefix": "isettings",
+        "body": "from django.conf import settings",
+        "description": "from django.conf import settings",
+        "scope": "source.python"
+    },
+    "view": {
+        "prefix": "view",
+        "body": "def ${1:VIEWNAME}(request):",
+        "description": "View",
+        "scope": "source.python"
+    },
+    "dispatch": {
+        "prefix": "dispatch",
+        "body": "\r\ndef dispatch(self, request, *args, **kwargs):\r\n    return super(${1:CLASS_NAME}, self).dispatch(request, *args, **kwargs)\r\n",
+        "description": "",
+        "scope": "source.python"
+    },
+    "context": {
+        "prefix": "get_context_data",
+        "body": "\r\ndef get_context_data(self, **kwargs):\r\n    context = super(${1:CLASS_NAME}, self).get_context_data(**kwargs)\r\n    return context\r\n",
+        "description": "",
+        "scope": "source.python"
+    },
+    "get_queryset": {
+        "prefix": "get_queryset",
+        "body": [
+            "def get_queryset(self):",
+            "\tqueryset = super(${1:CLASS_NAME}, self).get_queryset()",
+            "\tqueryset = queryset${3: # TODO}",
+            "\treturn queryset"
+        ],
+        "description": "",
+        "scope": "source.python"
+    }
 }

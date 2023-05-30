@@ -2,27 +2,17 @@
     "Tag if": {
         "prefix": "if",
         "description": "Control flow tag: if",
-        "body": [
-            "{% if ${1:condition} %}",
-            "\t$2",
-            "{% endif %}"
-        ]
+        "body": ["{% if ${1:condition} %}", "\t$2", "{% endif %}"]
     },
     "Tag else": {
         "prefix": "else",
         "description": "Control flow tag: else",
-        "body": [
-            "{% else %}",
-            "\t"
-        ]
+        "body": ["{% else %}", "\t"]
     },
     "Tag elsif": {
         "prefix": "elsif",
         "description": "Control flow tag: elsif",
-        "body": [
-            "{% elsif ${1:condition} %}",
-            "\t"
-        ]
+        "body": ["{% elsif ${1:condition} %}", "\t"]
     },
     "Tag if else": {
         "prefix": "ifelse",
@@ -38,11 +28,7 @@
     "Tag unless": {
         "prefix": "unless",
         "description": "Control flow tag: unless",
-        "body": [
-            "{% unless ${1:condition} %}",
-            "\t$2",
-            "{% endunless %}"
-        ]
+        "body": ["{% unless ${1:condition} %}", "\t$2", "{% endunless %}"]
     },
     "Tag case": {
         "prefix": "case",
@@ -59,24 +45,17 @@
     "Tag when": {
         "prefix": "when",
         "description": "Control flow tag: when",
-        "body": [
-            "{% when ${1:condition} %}",
-            "$0"
-        ]
+        "body": ["{% when ${1:condition} %}", "$0"]
     },
     "Tag cycle": {
         "prefix": "cycle",
         "description": "Iteration tag: cycle",
-        "body": [
-            "{% cycle '${1:odd}', '${2:even}' %}"
-        ]
+        "body": ["{% cycle '${1:odd}', '${2:even}' %}"]
     },
     "Tag cycle group": {
         "prefix": "cyclegroup",
         "description": "Iteration tag: cycle group",
-        "body": [
-            "{% cycle '${1:group name}': '${2:odd}', '${3:even}' %}"
-        ]
+        "body": ["{% cycle '${1:group name}': '${2:odd}', '${3:even}' %}"]
     },
     "Tag for": {
         "prefix": "for",
@@ -90,37 +69,27 @@
     "Tag Option limit": {
         "prefix": "limit",
         "description": "For loops option",
-        "body": [
-            "limit: ${1:5}"
-        ]
+        "body": ["limit: ${1:5}"]
     },
     "Tag Option offset": {
         "prefix": "offset",
         "description": "For loops option",
-        "body": [
-            "offset: ${1:0}"
-        ]
+        "body": ["offset: ${1:0}"]
     },
     "Tag Option reversed": {
         "prefix": "reversed",
         "description": "For loops option",
-        "body": [
-            "reversed"
-        ]
+        "body": ["reversed"]
     },
     "Tag break": {
         "prefix": "break",
         "description": "Iteration tag: break",
-        "body": [
-            "{% break %}"
-        ]
+        "body": ["{% break %}"]
     },
     "Tag continue": {
         "prefix": "continue",
         "description": "Iteration tag: continue",
-        "body": [
-            "{% continue %}"
-        ]
+        "body": ["{% continue %}"]
     },
     "Tag tablerow": {
         "prefix": "tablerow",
@@ -134,86 +103,62 @@
     "Tag assign": {
         "prefix": "assign",
         "description": "Variable tag: assign",
-        "body": [
-            "{% assign ${1:variable} = ${2:value} %}"
-        ]
+        "body": ["{% assign ${1:variable} = ${2:value} %}"]
     },
     "Tag increment": {
         "prefix": "increment",
         "description": "Variable tag: increment",
-        "body": [
-            "{% increment ${1:variable} %}"
-        ]
+        "body": ["{% increment ${1:variable} %}"]
     },
     "Tag decrement": {
         "prefix": "decrement",
         "description": "Variable tag: decrement",
-        "body": [
-            "{% decrement ${1:variable} %}"
-        ]
+        "body": ["{% decrement ${1:variable} %}"]
     },
     "Tag capture": {
         "prefix": "capture",
         "description": "Variable tag: capture",
-        "body": [
-            "{% capture ${1:variable} %}$2{% endcapture %}"
-        ]
+        "body": ["{% capture ${1:variable} %}$2{% endcapture %}"]
     },
     "Tag include": {
         "prefix": "include",
         "description": "Theme tag: include",
-        "body": [
-            "{% include '${1:snippet}' %}"
-        ]
+        "body": ["{% include '${1:snippet}' %}"]
     },
     "Tag include with parameters": {
         "prefix": "includewith",
         "description": "Theme tag: include with parameters",
-        "body": [
-            "{% include '${1:snippet}', ${2:variable}: ${3:value} %}"
-        ]
+        "body": ["{% include '${1:snippet}', ${2:variable}: ${3:value} %}"]
     },
     "Tag render": {
         "prefix": "render",
         "description": "Theme tag: render",
-        "body": [
-            "{% render '${1:snippet}' %}"
-        ]
+        "body": ["{% render '${1:snippet}' %}"]
     },
     "Tag render with parameters": {
         "prefix": "renderwith",
         "description": "Theme tag: render with parameters",
-        "body": [
-            "{% render '${1:snippet}', ${2:variable}: ${3:value} %}"
-        ]
+        "body": ["{% render '${1:snippet}', ${2:variable}: ${3:value} %}"]
     },
     "Tag section": {
         "prefix": "section",
         "description": "Theme tag: section",
-        "body": [
-            "{% section '${1:snippet}' %}"
-        ]
+        "body": ["{% section '${1:snippet}' %}"]
     },
     "Tag raw": {
         "prefix": "raw",
         "description": "Theme tag: raw",
-        "body": [
-            "{% raw %}$1{% endraw %}"
-        ]
+        "body": ["{% raw %}$1{% endraw %}"]
     },
     "Tag layout": {
         "prefix": "layout",
         "description": "Theme tag: layout",
-        "body": [
-            "{% layout '${1:layout}' %}"
-        ]
+        "body": ["{% layout '${1:layout}' %}"]
     },
     "Tag no layout": {
         "prefix": "layoutnone",
         "description": "Theme tag: layout none",
-        "body": [
-            "{% layout none %}"
-        ]
+        "body": ["{% layout none %}"]
     },
     "Tag paginate": {
         "prefix": "paginate",
@@ -229,72 +174,42 @@
     "Tag schema": {
         "prefix": "schema",
         "description": "Schema tag: schema",
-        "body": [
-            "{% schema %}",
-            "\t{",
-            "\t\t$1",
-            "\t}",
-            "{% endschema %}"
-        ]
+        "body": ["{% schema %}", "\t{", "\t\t$1", "\t}", "{% endschema %}"]
     },
     "Tag stylesheet": {
         "prefix": "stylesheet",
         "description": "Stylesheet tag: stylesheet",
-        "body": [
-            "{% stylesheet %}",
-            "\t$1",
-            "{% endstylesheet %}"
-        ]
+        "body": ["{% stylesheet %}", "\t$1", "{% endstylesheet %}"]
     },
     "Tag stylesheet for scss": {
         "prefix": "stylesheet_scss",
         "description": "Stylesheet tag: stylesheet for scss",
-        "body": [
-            "{% stylesheet '${1:scss}' %}",
-            "\t$2",
-            "{% endstylesheet %}"
-        ]
+        "body": ["{% stylesheet '${1:scss}' %}", "\t$2", "{% endstylesheet %}"]
     },
     "Tag javascript": {
         "prefix": "javascript",
         "description": "Javascript tag: javascript",
-        "body": [
-            "{% javascript %}",
-            "\t$4",
-            "{% endjavascript %}"
-        ]
+        "body": ["{% javascript %}", "\t$4", "{% endjavascript %}"]
     },
     "Tag comment, whitespaced": {
         "prefix": "comment-",
         "description": "Comment tag: comment, whitespaced",
-        "body": [
-            "{%- comment -%}$1{%- endcomment -%}"
-        ]
+        "body": ["{%- comment -%}$1{%- endcomment -%}"]
     },
     "Tag if, whitespaced": {
         "prefix": "if-",
         "description": "Control flow tag: if, whitespaced",
-        "body": [
-            "{%- if ${1:condition} -%}",
-            "\t$2",
-            "{%- endif -%}"
-        ]
+        "body": ["{%- if ${1:condition} -%}", "\t$2", "{%- endif -%}"]
     },
     "Tag else, whitespaced": {
         "prefix": "else-",
         "description": "Control flow tag: else, whitespaced",
-        "body": [
-            "{%- else -%}",
-            "\t"
-        ]
+        "body": ["{%- else -%}", "\t"]
     },
     "Tag elsif, whitespaced": {
         "prefix": "elsif-",
         "description": "Control flow tag: elsif, whitespaced",
-        "body": [
-            "{%- elsif ${1:condition} -%}",
-            "\t"
-        ]
+        "body": ["{%- elsif ${1:condition} -%}", "\t"]
     },
     "Tag if else, whitespaced": {
         "prefix": "ifelse-",
@@ -310,11 +225,7 @@
     "Tag unless, whitespaced": {
         "prefix": "unless-",
         "description": "Control flow tag: unless, whitespaced",
-        "body": [
-            "{%- unless ${1:condition} -%}",
-            "\t$2",
-            "{%- endunless -%}"
-        ]
+        "body": ["{%- unless ${1:condition} -%}", "\t$2", "{%- endunless -%}"]
     },
     "Tag case, whitespaced": {
         "prefix": "case-",
@@ -331,24 +242,17 @@
     "Tag when, whitespaced": {
         "prefix": "when-",
         "description": "Control flow tag: when, whitespaced",
-        "body": [
-            "{%- when ${1:condition} -%}",
-            "$0"
-        ]
+        "body": ["{%- when ${1:condition} -%}", "$0"]
     },
     "Tag cycle, whitespaced": {
         "prefix": "cycle-",
         "description": "Iteration tag: cycle, whitespaced",
-        "body": [
-            "{%- cycle '${1:odd}', '${2:even}' -%}"
-        ]
+        "body": ["{%- cycle '${1:odd}', '${2:even}' -%}"]
     },
     "Tag cycle group, whitespaced": {
         "prefix": "cyclegroup-",
         "description": "Iteration tag: cycle group, whitespaced",
-        "body": [
-            "{%- cycle '${1:group name}': '${2:odd}', '${3:even}' -%}"
-        ]
+        "body": ["{%- cycle '${1:group name}': '${2:odd}', '${3:even}' -%}"]
     },
     "Tag for, whitespaced": {
         "prefix": "for-",
@@ -362,9 +266,7 @@
     "Tag continue, whitespaced": {
         "prefix": "continue-",
         "description": "Iteration tag: continue, whitespaced",
-        "body": [
-            "{%- continue -%}"
-        ]
+        "body": ["{%- continue -%}"]
     },
     "Tag tablerow, whitespaced": {
         "prefix": "tablerow-",
@@ -378,16 +280,12 @@
     "Tag assign, whitespaced": {
         "prefix": "assign-",
         "description": "Variable tag: assign, whitespaced",
-        "body": [
-            "{%- assign ${1:variable} = ${2:value} -%}"
-        ]
+        "body": ["{%- assign ${1:variable} = ${2:value} -%}"]
     },
     "Tag capture, whitespaced": {
         "prefix": "capture-",
         "description": "Variable tag: capture, whitespaced",
-        "body": [
-            "{%- capture ${1:variable} -%}$2{%- endcapture -%}"
-        ]
+        "body": ["{%- capture ${1:variable} -%}$2{%- endcapture -%}"]
     },
     "Filter join": {
         "prefix": "join",
@@ -912,7 +810,7 @@
             "\t\"type\": \"richtext\",",
             "\t\"id\": \"$1\",",
             "\t\"label\": \"$2\",",
-            "\t\"default\": \"<p>$3<\/p>\"",
+            "\t\"default\": \"<p>$3</p>\"",
             "},$4"
         ]
     },
@@ -923,7 +821,7 @@
             "\t\"type\": \"html\",",
             "\t\"id\": \"$1\",",
             "\t\"label\": \"$2\",",
-            "\t\"default\": \"<div>$3<\/div>\"",
+            "\t\"default\": \"<div>$3</div>\"",
             "},$4"
         ]
     },

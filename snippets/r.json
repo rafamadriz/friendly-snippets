@@ -1,21 +1,15 @@
 {
     "library": {
         "prefix": "lib",
-        "body": [
-            "library(${1:package})"
-        ]
+        "body": ["library(${1:package})"]
     },
     "require": {
         "prefix": "req",
-        "body": [
-            "require(${1:package})"
-        ]
+        "body": ["require(${1:package})"]
     },
     "source": {
         "prefix": "src",
-        "body": [
-            "source(\"${1:file.R}\")"
-        ]
+        "body": ["source(\"${1:file.R}\")"]
     },
     "return": {
         "prefix": "ret",
@@ -43,65 +37,35 @@
     },
     "setClass": {
         "prefix": "sc",
-        "body": [
-            "setClass(\"${1:Class}\", slots = c(${2:name = \"type\"}))\n"
-        ]
+        "body": ["setClass(\"${1:Class}\", slots = c(${2:name = \"type\"}))\n"]
     },
     "if": {
         "prefix": "if",
-        "body": [
-            "if (${1:condition}) {",
-            "    ${0}",
-            "}\n"
-        ]
+        "body": ["if (${1:condition}) {", "    ${0}", "}\n"]
     },
     "else": {
         "prefix": "el",
-        "body": [
-            "else {",
-            "    ${0}",
-            "}\n"
-        ]
+        "body": ["else {", "    ${0}", "}\n"]
     },
     "else if": {
         "prefix": "ei",
-        "body": [
-            "else if (${1:condition}) {",
-            "    ${0}",
-            "}\n"
-        ]
+        "body": ["else if (${1:condition}) {", "    ${0}", "}\n"]
     },
     "function": {
         "prefix": "fun",
-        "body": [
-            "${1:name} <- function(${2:variables}) {",
-            "    ${0}",
-            "}\n"
-        ]
+        "body": ["${1:name} <- function(${2:variables}) {", "    ${0}", "}\n"]
     },
     "for": {
         "prefix": "for",
-        "body": [
-            "for (${1:variable} in ${2:vector}) {",
-            "    ${0}",
-            "}\n"
-        ]
+        "body": ["for (${1:variable} in ${2:vector}) {", "    ${0}", "}\n"]
     },
     "while": {
         "prefix": "while",
-        "body": [
-            "while (${1:condition}) {",
-            "    ${0}",
-            "}\n"
-        ]
+        "body": ["while (${1:condition}) {", "    ${0}", "}\n"]
     },
     "switch": {
         "prefix": "switch",
-        "body": [
-            "switch (${1:object},",
-            "    ${2:case} = ${3:action}",
-            ")\n"
-        ]
+        "body": ["switch (${1:object},", "    ${2:case} = ${3:action}", ")\n"]
     },
     "apply": {
         "prefix": "apply",

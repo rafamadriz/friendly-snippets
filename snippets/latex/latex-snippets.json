@@ -1,481 +1,410 @@
 {
-  "Align(ed)": {
-    "prefix": "ali",
-    "body": [
-      "\\begin{align}",
-      "\t$0",
-      "\\end{align}"
-    ],
-    "description": "Align(ed)"
-  },
-  "Cases": {
-    "prefix": "cas",
-    "body": [
-      "\\begin{cases}",
-      "\t${1:equation}, &\\text{ if }${2:case}\\\\\\\\",
-      "\t$0",
-      "\\end{cases}"
-    ],
-    "description": "Cases"
-  },
-  "Chapter": {
-    "prefix": "cha",
-    "body": [
-      "\\chapter{$1} % (fold)",
-      "\\label{chap:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
-      "${0:$TM_SELECTED_TEXT}",
-      "% chapter $1 (end)"
-    ],
-    "description": "Chapter"
-  },
-  "Description": {
-    "prefix": "desc",
-    "body": [
-      "\\\\begin{description}",
-      "\t\\item[$1] $0",
-      "\\\\end{description}"
-    ],
-    "description": "Description"
-  },
-  "Math": {
-    "prefix": "math",
-    "body": [
-      "\\begin{math}",
-      "\t$1",
-      "\\end{math}",
-      "$0"
-    ],
-    "description": "Add a Math"
-  },
-  "DisplayMath": {
-    "prefix": "displaymath",
-    "body": [
-      "\\begin{displaymath}",
-      "\t$1",
-      "\\end{displaymath}",
-      "$0"
-    ],
-    "description": "Display Math"
-  },
-  "Equation": {
-    "prefix": "equation",
-    "body": [
-      "\\begin{equation}",
-      "\t$0",
-      "\t\\label{eq:$1}",
-      "\\end{equation}"
-    ],
-    "description": "Add a Equation"
-  },
-  "Display Math — \\[ … \\]": {
-    "prefix": "$$",
-    "body": [
-      "\\[",
-      "\t$TM_SELECTED_TEXT$1",
-      "\\]"
-    ],
-    "description": "Display Math"
-  },
-  "Theorem": {
-    "prefix": "theorem",
-    "body": [
-      "\\begin{theorem}",
-      "\t$1",
-      "\t\\begin{displaymath}",
-      "\t\t$2",
-      "\t\\end{displaymath}",
-      "\t$3",
-      "\\end{theorem}",
-      "$0"
-    ],
-    "description": "Add a theorem"
-  },
-  "Definition": {
-    "prefix": "definition",
-    "body": [
-      "\\begin{definition}",
-      "\t$1",
-      "\t\\begin{displaymath}",
-      "\t\t$2",
-      "\t\\end{displaymath}",
-      "\t$3",
-      "\\end{definition}",
-      "$0"
-    ],
-    "description": "Add a definition"
-  },
-  "Proof": {
-    "prefix": "proof",
-    "body": [
-      "\\begin{proof}",
-      "\t$1",
-      "\t\\begin{displaymath}",
-      "\t\t$2",
-      "\t\\end{displaymath}",
-      "\t$3",
-      "\\end{proof}",
-      "$0"
-    ],
-    "description": "Add a proof"
-  },
-  "Algorithm": {
-    "prefix": "algo",
-    "body": [
-      "% \\usepackage{algorithm,algorithmicx,algpseudocode}",
-      "\\begin{algorithm}",
-      "\t\\floatname{algorithm}{${1:Algorithm}}",
-      "\t\\algrenewcommand\\algorithmicrequire{\\textbf{${2:Input: }}}",
-      "\t\\algrenewcommand\\algorithmicensure{\\textbf{${3:Output: }}}",
-      "\t\\caption{$4}",
-      "\t\\label{alg:$5}",
-      "\t\\begin{algorithmic}[1]",
-      "\t\t\\Require \\$input\\$",
-      "\t\t\\Ensure \\$output\\$",
-      "\t\t$6",
-      "\t\t\\State \\textbf{return} \\$state\\$",
-      "\t\\end{algorithmic}",
-      "\\end{algorithm}",
-      "$0"
-    ],
-    "description": "Add an algorithm"
-  },
-  "Algorithm:State": {
-    "prefix": "state",
-    "body": [
-      "\\State $1"
-    ],
-    "desciption": "Add an statement of algorithm"
-  },
-  "Algorithm:If": {
-    "prefix": "if",
-    "body": [
-      "\\If{$1}",
-      "\\ElsIf{$2}",
-      "\\Else",
-      "\\EndIf"
-    ],
-    "desciption": "Add an if statement of algorithm"
-  },
-  "Algorithm:For": {
-    "prefix": "for",
-    "body": [
-      "\\For{i=0:$1}",
-      "\t\\State $0",
-      "\\EndFor"
-    ],
-    "desciption": "Add an for statement of algorithm"
-  },
-  "Algorithm:While": {
-    "prefix": "while",
-    "body": [
-      "\\While{$1}",
-      "\t\\State $0",
-      "\\EndWhile"
-    ],
-    "desciption": "Add an for statement of algorithm"
-  },
-  "Algorithm:Ref": {
-    "prefix": "algo:ref",
-    "body": [
-      "${1:Algorithm}~\\ref{algo:$2}$0"
-    ],
-    "desciption": "Ref for Algorithm"
-  },
-  "Figure:Ref": {
-    "prefix": "figure:ref",
-    "body": [
-      "${1:Figure}~\\ref{fig:$2}$0"
-    ],
-    "description": "Ref for Figure"
-  },
-  "Gather(ed)": {
-    "prefix": "gat",
-    "body": [
-      "\\begin{gather}",
-      "\t$0",
-      "\\end{gather}"
-    ],
-    "description": "Gather(ed)"
-  },
-  "Itemize": {
-    "prefix": "item",
-    "body": [
-      "\\\\begin{itemize}",
-      "\t\\item $0",
-      "\\\\end{itemize}"
-    ],
-    "description": "Itemize"
-  },
-  "Listing:Ref": {
-    "prefix": "listing:ref",
-    "body": [
-      "${1:Listing}~\\ref{lst:$2}$0"
-    ],
-    "description": "Listing"
-  },
-  "Matrix": {
-    "prefix": "mat",
-    "body": [
-      "\\begin{${1:p/b/v/V/B/small}matrix}",
-      "\t$0",
-      "\\end{${1:p/b/v/V/B/small}matrix}"
-    ],
-    "description": "Matrix"
-  },
-  "Page": {
-    "prefix": "page",
-    "body": [
-      "${1:page}~\\pageref{$2}$0"
-    ],
-    "description": "Page"
-  },
-  "Paragraph": {
-    "prefix": "par",
-    "body": [
-      "\\paragraph{${1:paragraph name}} % (fold)",
-      "\\label{par:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
-      "${0:$TM_SELECTED_TEXT}",
-      "% paragraph $1 (end)"
-    ],
-    "description": "Paragraph"
-  },
-  "Part": {
-    "prefix": "part",
-    "body": [
-      "\\part{${1:part name}} % (fold)",
-      "\\label{prt:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
-      "${0:$TM_SELECTED_TEXT}",
-      "% part $1 (end)"
-    ],
-    "description": "Part"
-  },
-  "Region Start": {
-    "prefix": "#region",
-    "body": [
-      "%#Region $0"
-    ],
-    "description": "Folding Region Start"
-  },
-  "Region End": {
-    "prefix": "#endregion",
-    "body": [
-      "%#Endregion"
-    ],
-    "description": "Folding Region End"
-  },
-  "Section:Ref": {
-    "prefix": "section:ref",
-    "body": [
-      "${1:Section}~\\ref{sec:$2}$0"
-    ],
-    "description": "Section Reference"
-  },
-  "Split": {
-    "prefix": "spl",
-    "body": [
-      "\\begin{split}",
-      "\t$0",
-      "\\end{split}"
-    ],
-    "description": "Split"
-  },
-  "Section": {
-    "prefix": "sec",
-    "body": [
-      "\\section{$1} % (fold)",
-      "\\label{sec:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
-      "${0:$TM_SELECTED_TEXT}",
-      "% section $1 (end)"
-    ],
-    "description": "Section"
-  },
-  "Sub Paragraph": {
-    "prefix": "subp",
-    "body": [
-      "\\subparagraph{$1} % (fold)",
-      "\\label{subp:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
-      "${0:$TM_SELECTED_TEXT}",
-      "% subparagraph $1 (end)"
-    ],
-    "description": "Sub Paragraph"
-  },
-  "Sub Section": {
-    "prefix": "sub",
-    "body": [
-      "\\subsection{$1} % (fold)",
-      "\\label{sub:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
-      "${0:$TM_SELECTED_TEXT}",
-      "% subsection $1 (end)"
-    ],
-    "description": "Sub Section"
-  },
-  "Sub Sub Section": {
-    "prefix": "subs",
-    "body": [
-      "\\subsubsection{${1:subsubsection name}} % (fold)",
-      "\\label{sec:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
-      "${0:$TM_SELECTED_TEXT}",
-      "% subsubsection $1 (end)"
-    ],
-    "description": "Sub Sub Section"
-  },
-  "Table:Ref": {
-    "prefix": "table:ref",
-    "body": [
-      "${1:Table}~\\ref{tab:$2}$0"
-    ],
-    "description": "Table Reference"
-  },
-  "Tabular": {
-    "prefix": "tab",
-    "body": [
-      "\\\\begin{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${2:c}}",
-      "$0${2/((?<=[clr])([ |]*(c|l|r)))|./(?1: & )/g}",
-      "\\\\end{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}"
-    ],
-    "description": "Tabular"
-  },
-  "\\begin{}…\\end{}": {
-    "prefix": "begin",
-    "body": [
-      "\\\\begin{${1:env}}",
-      "\t${1/(enumerate|itemize|list)|(description)|.*/(?1:\\item )(?2:\\item)/}$0",
-      "\\\\end{${1:env}}"
-    ],
-    "description": "Begin - End"
-  },
-  "Figure": {
-    "prefix": "figure",
-    "body": [
-      "\\begin{figure}",
-      "\t\\begin{center}",
-      "\t\t\\includegraphics[width=0.95\\textwidth]{figures/$1}",
-      "\t\\end{center}",
-      "\t\\caption{$3}",
-      "\t\\label{fig:$4}",
-      "\\end{figure}",
-      "$0"
-    ],
-    "description": "Add a figure"
-  },
-  "Figure:ACM": {
-    "prefix": "figure:acm",
-    "body": [
-      "\\begin{figure}",
-      "\t\\includegraphics[width=0.45\\textwidth]{figures/$1}",
-      "\t\\caption{$2}",
-      "\t\\label{fig:$3}",
-      "\\end{figure}",
-      "$0"
-    ],
-    "description": "Add a figure (ACM)"
-  },
-  "Figure:ACM:*": {
-    "prefix": "figure:acm:*",
-    "body": [
-      "\\begin{figure*}",
-      "\t\\includegraphics[width=0.45\\textwidth]{figures/$1}",
-      "\t\\caption{$2}",
-      "\t\\label{fig:$3}",
-      "\\end{figure*}",
-      "$0"
-    ],
-    "description": "Add a figure (ACM)"
-  },
-  "Table": {
-    "prefix": "table",
-    "body": [
-      "\\begin{table}",
-      "\t\\caption{$1}",
-      "\t\\label{tab:$2}",
-      "\t\\begin{center}",
-      "\t\t\\begin{tabular}[c]{l|l}",
-      "\t\t\t\\hline",
-      "\t\t\t\\multicolumn{1}{c|}{\\textbf{$3}} & ",
-      "\t\t\t\\multicolumn{1}{c}{\\textbf{$4}} \\\\\\\\",
-      "\t\t\t\\hline",
-      "\t\t\ta & b \\\\\\\\",
-      "\t\t\tc & d \\\\\\\\",
-      "\t\t\t$5",
-      "\t\t\t\\hline",
-      "\t\t\\end{tabular}",
-      "\t\\end{center}",
-      "\\end{table}",
-      "$0"
-    ],
-    "description": "Add a table"
-  },
-  "Table:ACM": {
-    "prefix": "table:acm",
-    "body": [
-      "\\begin{table}",
-      "\t\\caption{$1}",
-      "\t\\label{tab:$2}",
-      "\t\\begin{tabular}{${3:ccl}}",
-      "\t\t\\toprule",
-      "\t\t$4",
-      "\t\ta & b & c \\\\\\\\",
-      "\t\t\\midrule",
-      "\t\td & e & f \\\\\\\\",
-      "\t\t\\bottomrule",
-      "\t\\end{tabular}",
-      "\\end{table}",
-      "$0"
-    ],
-    "description": "Add a table (ACM)"
-  },
-  "Table:ACM:*": {
-    "prefix": "table:acm:*",
-    "body": [
-      "\\begin{table*}",
-      "\t\\caption{$1}",
-      "\t\\label{tab:$2}",
-      "\t\\begin{tabular}{${3:ccl}}",
-      "\t\t\\toprule",
-      "\t\t$4",
-      "\t\ta & b & c \\\\\\\\",
-      "\t\t\\midrule",
-      "\t\td & e & f \\\\\\\\",
-      "\t\t\\bottomrule",
-      "\t\\end{tabular}",
-      "\\end{table*}",
-      "$0"
-    ],
-    "description": "Add a table (ACM)"
-  },
-  "Enumerate": {
-    "prefix": "enumerate",
-    "body": [
-      "\\\\begin{enumerate}",
-      "\t\\item $0",
-      "\\\\end{enumerate}"
-    ],
-    "description": "Add a enumerate"
-  },
-  "Compactitem": {
-    "prefix": "compactitem",
-    "body": [
-      "\\begin{compactitem}",
-      "\t\\item $1",
-      "\\end{compactitem}",
-      "$0"
-    ],
-    "description": "Add a compactitem (from package paralist)"
-  },
-  "Cite": {
-    "prefix": "cite",
-    "body": [
-      "~\\cite{$1}$0"
-    ],
-    "description": "Add a cite"
-  },
-  "EmptyPage": {
-    "prefix": "empty",
-    "body": [
-      "\\null\\thispagestyle{empty}",
-      "\\newpage",
-      "$0"
-    ],
-    "description": "Add a empty page"
-  }
+    "Align(ed)": {
+        "prefix": "ali",
+        "body": ["\\begin{align}", "\t$0", "\\end{align}"],
+        "description": "Align(ed)"
+    },
+    "Cases": {
+        "prefix": "cas",
+        "body": [
+            "\\begin{cases}",
+            "\t${1:equation}, &\\text{ if }${2:case}\\\\\\\\",
+            "\t$0",
+            "\\end{cases}"
+        ],
+        "description": "Cases"
+    },
+    "Chapter": {
+        "prefix": "cha",
+        "body": [
+            "\\chapter{$1} % (fold)",
+            "\\label{chap:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
+            "${0:$TM_SELECTED_TEXT}",
+            "% chapter $1 (end)"
+        ],
+        "description": "Chapter"
+    },
+    "Description": {
+        "prefix": "desc",
+        "body": [
+            "\\\\begin{description}",
+            "\t\\item[$1] $0",
+            "\\\\end{description}"
+        ],
+        "description": "Description"
+    },
+    "Math": {
+        "prefix": "math",
+        "body": ["\\begin{math}", "\t$1", "\\end{math}", "$0"],
+        "description": "Add a Math"
+    },
+    "DisplayMath": {
+        "prefix": "displaymath",
+        "body": ["\\begin{displaymath}", "\t$1", "\\end{displaymath}", "$0"],
+        "description": "Display Math"
+    },
+    "Equation": {
+        "prefix": "equation",
+        "body": [
+            "\\begin{equation}",
+            "\t$0",
+            "\t\\label{eq:$1}",
+            "\\end{equation}"
+        ],
+        "description": "Add a Equation"
+    },
+    "Display Math — \\[ … \\]": {
+        "prefix": "$$",
+        "body": ["\\[", "\t$TM_SELECTED_TEXT$1", "\\]"],
+        "description": "Display Math"
+    },
+    "Theorem": {
+        "prefix": "theorem",
+        "body": [
+            "\\begin{theorem}",
+            "\t$1",
+            "\t\\begin{displaymath}",
+            "\t\t$2",
+            "\t\\end{displaymath}",
+            "\t$3",
+            "\\end{theorem}",
+            "$0"
+        ],
+        "description": "Add a theorem"
+    },
+    "Definition": {
+        "prefix": "definition",
+        "body": [
+            "\\begin{definition}",
+            "\t$1",
+            "\t\\begin{displaymath}",
+            "\t\t$2",
+            "\t\\end{displaymath}",
+            "\t$3",
+            "\\end{definition}",
+            "$0"
+        ],
+        "description": "Add a definition"
+    },
+    "Proof": {
+        "prefix": "proof",
+        "body": [
+            "\\begin{proof}",
+            "\t$1",
+            "\t\\begin{displaymath}",
+            "\t\t$2",
+            "\t\\end{displaymath}",
+            "\t$3",
+            "\\end{proof}",
+            "$0"
+        ],
+        "description": "Add a proof"
+    },
+    "Algorithm": {
+        "prefix": "algo",
+        "body": [
+            "% \\usepackage{algorithm,algorithmicx,algpseudocode}",
+            "\\begin{algorithm}",
+            "\t\\floatname{algorithm}{${1:Algorithm}}",
+            "\t\\algrenewcommand\\algorithmicrequire{\\textbf{${2:Input: }}}",
+            "\t\\algrenewcommand\\algorithmicensure{\\textbf{${3:Output: }}}",
+            "\t\\caption{$4}",
+            "\t\\label{alg:$5}",
+            "\t\\begin{algorithmic}[1]",
+            "\t\t\\Require \\$input\\$",
+            "\t\t\\Ensure \\$output\\$",
+            "\t\t$6",
+            "\t\t\\State \\textbf{return} \\$state\\$",
+            "\t\\end{algorithmic}",
+            "\\end{algorithm}",
+            "$0"
+        ],
+        "description": "Add an algorithm"
+    },
+    "Algorithm:State": {
+        "prefix": "state",
+        "body": ["\\State $1"],
+        "desciption": "Add an statement of algorithm"
+    },
+    "Algorithm:If": {
+        "prefix": "if",
+        "body": ["\\If{$1}", "\\ElsIf{$2}", "\\Else", "\\EndIf"],
+        "desciption": "Add an if statement of algorithm"
+    },
+    "Algorithm:For": {
+        "prefix": "for",
+        "body": ["\\For{i=0:$1}", "\t\\State $0", "\\EndFor"],
+        "desciption": "Add an for statement of algorithm"
+    },
+    "Algorithm:While": {
+        "prefix": "while",
+        "body": ["\\While{$1}", "\t\\State $0", "\\EndWhile"],
+        "desciption": "Add an for statement of algorithm"
+    },
+    "Algorithm:Ref": {
+        "prefix": "algo:ref",
+        "body": ["${1:Algorithm}~\\ref{algo:$2}$0"],
+        "desciption": "Ref for Algorithm"
+    },
+    "Figure:Ref": {
+        "prefix": "figure:ref",
+        "body": ["${1:Figure}~\\ref{fig:$2}$0"],
+        "description": "Ref for Figure"
+    },
+    "Gather(ed)": {
+        "prefix": "gat",
+        "body": ["\\begin{gather}", "\t$0", "\\end{gather}"],
+        "description": "Gather(ed)"
+    },
+    "Itemize": {
+        "prefix": "item",
+        "body": ["\\\\begin{itemize}", "\t\\item $0", "\\\\end{itemize}"],
+        "description": "Itemize"
+    },
+    "Listing:Ref": {
+        "prefix": "listing:ref",
+        "body": ["${1:Listing}~\\ref{lst:$2}$0"],
+        "description": "Listing"
+    },
+    "Matrix": {
+        "prefix": "mat",
+        "body": [
+            "\\begin{${1:p/b/v/V/B/small}matrix}",
+            "\t$0",
+            "\\end{${1:p/b/v/V/B/small}matrix}"
+        ],
+        "description": "Matrix"
+    },
+    "Page": {
+        "prefix": "page",
+        "body": ["${1:page}~\\pageref{$2}$0"],
+        "description": "Page"
+    },
+    "Paragraph": {
+        "prefix": "par",
+        "body": [
+            "\\paragraph{${1:paragraph name}} % (fold)",
+            "\\label{par:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
+            "${0:$TM_SELECTED_TEXT}",
+            "% paragraph $1 (end)"
+        ],
+        "description": "Paragraph"
+    },
+    "Part": {
+        "prefix": "part",
+        "body": [
+            "\\part{${1:part name}} % (fold)",
+            "\\label{prt:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
+            "${0:$TM_SELECTED_TEXT}",
+            "% part $1 (end)"
+        ],
+        "description": "Part"
+    },
+    "Region Start": {
+        "prefix": "#region",
+        "body": ["%#Region $0"],
+        "description": "Folding Region Start"
+    },
+    "Region End": {
+        "prefix": "#endregion",
+        "body": ["%#Endregion"],
+        "description": "Folding Region End"
+    },
+    "Section:Ref": {
+        "prefix": "section:ref",
+        "body": ["${1:Section}~\\ref{sec:$2}$0"],
+        "description": "Section Reference"
+    },
+    "Split": {
+        "prefix": "spl",
+        "body": ["\\begin{split}", "\t$0", "\\end{split}"],
+        "description": "Split"
+    },
+    "Section": {
+        "prefix": "sec",
+        "body": [
+            "\\section{$1} % (fold)",
+            "\\label{sec:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
+            "${0:$TM_SELECTED_TEXT}",
+            "% section $1 (end)"
+        ],
+        "description": "Section"
+    },
+    "Sub Paragraph": {
+        "prefix": "subp",
+        "body": [
+            "\\subparagraph{$1} % (fold)",
+            "\\label{subp:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
+            "${0:$TM_SELECTED_TEXT}",
+            "% subparagraph $1 (end)"
+        ],
+        "description": "Sub Paragraph"
+    },
+    "Sub Section": {
+        "prefix": "sub",
+        "body": [
+            "\\subsection{$1} % (fold)",
+            "\\label{sub:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
+            "${0:$TM_SELECTED_TEXT}",
+            "% subsection $1 (end)"
+        ],
+        "description": "Sub Section"
+    },
+    "Sub Sub Section": {
+        "prefix": "subs",
+        "body": [
+            "\\subsubsection{${1:subsubsection name}} % (fold)",
+            "\\label{sec:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
+            "${0:$TM_SELECTED_TEXT}",
+            "% subsubsection $1 (end)"
+        ],
+        "description": "Sub Sub Section"
+    },
+    "Table:Ref": {
+        "prefix": "table:ref",
+        "body": ["${1:Table}~\\ref{tab:$2}$0"],
+        "description": "Table Reference"
+    },
+    "Tabular": {
+        "prefix": "tab",
+        "body": [
+            "\\\\begin{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${2:c}}",
+            "$0${2/((?<=[clr])([ |]*(c|l|r)))|./(?1: & )/g}",
+            "\\\\end{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}"
+        ],
+        "description": "Tabular"
+    },
+    "\\begin{}…\\end{}": {
+        "prefix": "begin",
+        "body": [
+            "\\\\begin{${1:env}}",
+            "\t${1/(enumerate|itemize|list)|(description)|.*/(?1:\\item )(?2:\\item)/}$0",
+            "\\\\end{${1:env}}"
+        ],
+        "description": "Begin - End"
+    },
+    "Figure": {
+        "prefix": "figure",
+        "body": [
+            "\\begin{figure}",
+            "\t\\begin{center}",
+            "\t\t\\includegraphics[width=0.95\\textwidth]{figures/$1}",
+            "\t\\end{center}",
+            "\t\\caption{$3}",
+            "\t\\label{fig:$4}",
+            "\\end{figure}",
+            "$0"
+        ],
+        "description": "Add a figure"
+    },
+    "Figure:ACM": {
+        "prefix": "figure:acm",
+        "body": [
+            "\\begin{figure}",
+            "\t\\includegraphics[width=0.45\\textwidth]{figures/$1}",
+            "\t\\caption{$2}",
+            "\t\\label{fig:$3}",
+            "\\end{figure}",
+            "$0"
+        ],
+        "description": "Add a figure (ACM)"
+    },
+    "Figure:ACM:*": {
+        "prefix": "figure:acm:*",
+        "body": [
+            "\\begin{figure*}",
+            "\t\\includegraphics[width=0.45\\textwidth]{figures/$1}",
+            "\t\\caption{$2}",
+            "\t\\label{fig:$3}",
+            "\\end{figure*}",
+            "$0"
+        ],
+        "description": "Add a figure (ACM)"
+    },
+    "Table": {
+        "prefix": "table",
+        "body": [
+            "\\begin{table}",
+            "\t\\caption{$1}",
+            "\t\\label{tab:$2}",
+            "\t\\begin{center}",
+            "\t\t\\begin{tabular}[c]{l|l}",
+            "\t\t\t\\hline",
+            "\t\t\t\\multicolumn{1}{c|}{\\textbf{$3}} & ",
+            "\t\t\t\\multicolumn{1}{c}{\\textbf{$4}} \\\\\\\\",
+            "\t\t\t\\hline",
+            "\t\t\ta & b \\\\\\\\",
+            "\t\t\tc & d \\\\\\\\",
+            "\t\t\t$5",
+            "\t\t\t\\hline",
+            "\t\t\\end{tabular}",
+            "\t\\end{center}",
+            "\\end{table}",
+            "$0"
+        ],
+        "description": "Add a table"
+    },
+    "Table:ACM": {
+        "prefix": "table:acm",
+        "body": [
+            "\\begin{table}",
+            "\t\\caption{$1}",
+            "\t\\label{tab:$2}",
+            "\t\\begin{tabular}{${3:ccl}}",
+            "\t\t\\toprule",
+            "\t\t$4",
+            "\t\ta & b & c \\\\\\\\",
+            "\t\t\\midrule",
+            "\t\td & e & f \\\\\\\\",
+            "\t\t\\bottomrule",
+            "\t\\end{tabular}",
+            "\\end{table}",
+            "$0"
+        ],
+        "description": "Add a table (ACM)"
+    },
+    "Table:ACM:*": {
+        "prefix": "table:acm:*",
+        "body": [
+            "\\begin{table*}",
+            "\t\\caption{$1}",
+            "\t\\label{tab:$2}",
+            "\t\\begin{tabular}{${3:ccl}}",
+            "\t\t\\toprule",
+            "\t\t$4",
+            "\t\ta & b & c \\\\\\\\",
+            "\t\t\\midrule",
+            "\t\td & e & f \\\\\\\\",
+            "\t\t\\bottomrule",
+            "\t\\end{tabular}",
+            "\\end{table*}",
+            "$0"
+        ],
+        "description": "Add a table (ACM)"
+    },
+    "Enumerate": {
+        "prefix": "enumerate",
+        "body": ["\\\\begin{enumerate}", "\t\\item $0", "\\\\end{enumerate}"],
+        "description": "Add a enumerate"
+    },
+    "Compactitem": {
+        "prefix": "compactitem",
+        "body": [
+            "\\begin{compactitem}",
+            "\t\\item $1",
+            "\\end{compactitem}",
+            "$0"
+        ],
+        "description": "Add a compactitem (from package paralist)"
+    },
+    "Cite": {
+        "prefix": "cite",
+        "body": ["~\\cite{$1}$0"],
+        "description": "Add a cite"
+    },
+    "EmptyPage": {
+        "prefix": "empty",
+        "body": ["\\null\\thispagestyle{empty}", "\\newpage", "$0"],
+        "description": "Add a empty page"
+    }
 }

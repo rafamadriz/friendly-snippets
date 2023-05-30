@@ -189,17 +189,17 @@
     "@phdthesis": {
         "prefix": "@phdthesis",
         "description": "Ph.D. thesis",
-          "body": [
-              "@phdthesis{${1:name},",
-              "    author = {${2:author}},",
-              "    title = {${3:title}},",
-              "    school = {${4:school}},",
-              "    address = {${5:?_address}},",
-              "    year = {${6:year}},",
-              "    month = {${7:?_month}},",
-              "    keywords = {${8:?_keywords}},",
-              "    note = {${9:?_note}},",
-              "}"
+        "body": [
+            "@phdthesis{${1:name},",
+            "    author = {${2:author}},",
+            "    title = {${3:title}},",
+            "    school = {${4:school}},",
+            "    address = {${5:?_address}},",
+            "    year = {${6:year}},",
+            "    month = {${7:?_month}},",
+            "    keywords = {${8:?_keywords}},",
+            "    note = {${9:?_note}},",
+            "}"
         ]
     },
     "@proceedings": {

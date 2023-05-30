@@ -1,47 +1,53 @@
 {
-  "copyright": {
-    "prefix": "c)",
-    "body": ["Copyright (c) ${CURRENT_YEAR} ${0:Author}. All Rights Reserved."],
-    "description": "Snippet to put copyright"
-  },
-  "diso": {
-    "prefix": "diso",
-    "body": ["${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}T${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}"],
-    "description": "ISO date time stamp"
-  },
-  "date": {
-    "prefix": "date",
-    "body": ["${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}"],
-    "description": "Put the date in (Y-m-D) format"
-  },
-  "dateMDY": {
-    "prefix": "dateMDY",
-    "body": ["${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR}"],
-    "description": "Put the date in (m/D/Y) format"
-  },
-  "time": {
-    "prefix": "time",
-    "body": ["${CURRENT_HOUR}:${CURRENT_MINUTE}"],
-    "description": "I give you back the time (H:M)"
-  },
-  "timeHMS": {
-    "prefix": "timeHMS",
-    "body": ["${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}"],
-    "description": "I give you back the time (H:M:S)"
-  },
-  "datetime": {
-    "prefix": "datetime",
-    "body": ["${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}"],
-    "description": "I give you back the time and date (Y-m-d H:M)"
-  },
-  "Lorem Ipsum Sentence": {
-    "prefix": "loremSent",
-    "body": "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-    "description": "Lorem Ipsum Sentence"
-  },
-  "Lorem Ipsum Paragraph": {
-    "prefix": "loremPara",
-    "body": "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
-    "description": "Lorem Ipsum Paragraph"
-  }
+    "copyright": {
+        "prefix": "c)",
+        "body": [
+            "Copyright (c) ${CURRENT_YEAR} ${0:Author}. All Rights Reserved."
+        ],
+        "description": "Snippet to put copyright"
+    },
+    "diso": {
+        "prefix": "diso",
+        "body": [
+            "${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}T${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}"
+        ],
+        "description": "ISO date time stamp"
+    },
+    "date": {
+        "prefix": "date",
+        "body": ["${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}"],
+        "description": "Put the date in (Y-m-D) format"
+    },
+    "dateMDY": {
+        "prefix": "dateMDY",
+        "body": ["${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR}"],
+        "description": "Put the date in (m/D/Y) format"
+    },
+    "time": {
+        "prefix": "time",
+        "body": ["${CURRENT_HOUR}:${CURRENT_MINUTE}"],
+        "description": "I give you back the time (H:M)"
+    },
+    "timeHMS": {
+        "prefix": "timeHMS",
+        "body": ["${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}"],
+        "description": "I give you back the time (H:M:S)"
+    },
+    "datetime": {
+        "prefix": "datetime",
+        "body": [
+            "${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}"
+        ],
+        "description": "I give you back the time and date (Y-m-d H:M)"
+    },
+    "Lorem Ipsum Sentence": {
+        "prefix": "loremSent",
+        "body": "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+        "description": "Lorem Ipsum Sentence"
+    },
+    "Lorem Ipsum Paragraph": {
+        "prefix": "loremPara",
+        "body": "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.",
+        "description": "Lorem Ipsum Paragraph"
+    }
 }

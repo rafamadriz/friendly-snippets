@@ -328,12 +328,7 @@
     },
     "Mounted": {
         "prefix": "mounted",
-        "body": [
-            "@override",
-            "bool get mounted {",
-            "  ${0:}",
-            "}"
-        ],
+        "body": ["@override", "bool get mounted {", "  ${0:}", "}"],
         "description": "Whether this State object is currently in a tree."
     },
     "Sink": {
@@ -372,9 +367,7 @@
     },
     "debugPrint": {
         "prefix": "debugP",
-        "body": [
-            "debugPrint(${1:statement});"
-        ],
+        "body": ["debugPrint(${1:statement});"],
         "description": "Prints a message to the console, which you can access using the flutter tool's `logs` command (flutter logs)."
     },
     "Material Package": {
@@ -475,12 +468,7 @@
     },
     "Test": {
         "prefix": "f-test",
-        "body": [
-            "test(",
-            "   \"${1:test description}\",",
-            "   () {},",
-            ");"
-        ],
+        "body": ["test(", "   \"${1:test description}\",", "   () {},", ");"],
         "description": "Create a test function"
     },
     "Test Widgets": {

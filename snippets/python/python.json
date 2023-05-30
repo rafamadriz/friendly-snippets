@@ -1,122 +1,128 @@
 {
-  "try/except": {
-    "prefix": "try/except",
-    "body": [
-      "try:",
-      "\t${1:pass}",
-      "except ${2:expression} as ${3:identifier}:",
-      "\t${4:pass}"
-    ],
-    "description": "Code snippet for a try/except statement"
-  },
-  "try/finally": {
-    "prefix": "try/finally",
-    "body": ["try:", "\t${1:pass}", "finally:", "\t${2:pass}"],
-    "description": "Code snippet for a try/finally statement"
-  },
-  "try/except/else": {
-    "prefix": "try/except/else",
-    "body": [
-      "try:",
-      "\t${1:pass}",
-      "except ${2:expression} as ${3:identifier}:",
-      "\t${4:pass}",
-      "else:",
-      "\t${5:pass}"
-    ],
-    "description": "Code snippet for a try/except/else statement"
-  },
-  "try/except/finally": {
-    "prefix": "try/except/finally",
-    "body": [
-      "try:",
-      "\t${1:pass}",
-      "except ${2:expression} as ${3:identifier}:",
-      "\t${4:pass}",
-      "finally:",
-      "\t${5:pass}"
-    ],
-    "description": "Code snippet for a try/except/finally statement"
-  },
-  "try/except/else/finally": {
-    "prefix": "try/except/else/finally",
-    "body": [
-      "try:",
-      "\t${1:pass}",
-      "except ${2:expression} as ${3:identifier}:",
-      "\t${4:pass}",
-      "else:",
-      "\t${5:pass}",
-      "finally:",
-      "\t${6:pass}"
-    ],
-    "description": "Code snippet for a try/except/else/finally statement"
-  },
-  "def(class method)": {
-    "prefix": "def class method",
-    "body": ["def ${1:funcname}(self, ${2:parameter_list}):", "\t${3:pass}"],
-    "description": "Code snippet for a class method"
-  },
-  "def(static class method)": {
-    "prefix": "def static class method",
-    "body": [
-      "@staticmethod",
-      "def ${1:funcname}(${2:parameter_list}):",
-      "\t${3:pass}"
-    ],
-    "description": "Code snippet for a static class method"
-  },
-  "def(abstract class method)": {
-    "prefix": "def abstract class method",
-    "body": [
-      "def ${1:funcname}(self, ${2:parameter_list}):",
-      "\traise NotImplementedError"
-    ],
-    "description": "Code snippet for an abstract class method"
-  },
-  "lambda": {
-    "prefix": "lambda",
-    "body": ["lambda ${1:parameter_list}: ${2:expression}"],
-    "description": "Code snippet for a lambda statement"
-  },
-  "if(main)": {
-    "prefix": "__main__",
-    "body": ["if __name__ == \"__main__\":", "    ${1:pass}"],
-    "description": "Code snippet for a `if __name__ == \"__main__\": ...` block"
-  },
-  "async/def": {
-    "prefix": "async/def",
-    "body": ["async def ${1:funcname}(${2:parameter_list}):", "\t${3:pass}"],
-    "description": "Code snippet for an async statement"
-  },
-  "async/for": {
-    "prefix": "async/for",
-    "body": ["async for ${1:target} in ${2:iter}:", "\t${3:block}"],
-    "description": "Code snippet for an async for statement"
-  },
-  "async/for/else": {
-    "prefix": "async/for/else",
-    "body": [
-      "async for ${1:target} in ${2:iter}:",
-      "\t${3:block}",
-      "else:",
-      "\t${4:block}"
-    ],
-    "description": "Code snippet for an async for statement with else"
-  },
-  "async/with": {
-    "prefix": "async/with",
-    "body": ["async with ${1:expr} as ${2:var}:", "\t${3:block}"],
-    "description": "Code snippet for an async with statement"
-  },
-  "add/new/cell": {
-    "prefix": "add/new/cell",
-    "body": "# %%",
-    "description": "Code snippet to add a new cell"
-  },
-  "mark/markdown": {
-    "prefix": "mark/markdown",
-    "body": "# %% [markdown]",
-    "description": "Code snippet to add a new markdown cell"
-  }
+    "try/except": {
+        "prefix": "try/except",
+        "body": [
+            "try:",
+            "\t${1:pass}",
+            "except ${2:expression} as ${3:identifier}:",
+            "\t${4:pass}"
+        ],
+        "description": "Code snippet for a try/except statement"
+    },
+    "try/finally": {
+        "prefix": "try/finally",
+        "body": ["try:", "\t${1:pass}", "finally:", "\t${2:pass}"],
+        "description": "Code snippet for a try/finally statement"
+    },
+    "try/except/else": {
+        "prefix": "try/except/else",
+        "body": [
+            "try:",
+            "\t${1:pass}",
+            "except ${2:expression} as ${3:identifier}:",
+            "\t${4:pass}",
+            "else:",
+            "\t${5:pass}"
+        ],
+        "description": "Code snippet for a try/except/else statement"
+    },
+    "try/except/finally": {
+        "prefix": "try/except/finally",
+        "body": [
+            "try:",
+            "\t${1:pass}",
+            "except ${2:expression} as ${3:identifier}:",
+            "\t${4:pass}",
+            "finally:",
+            "\t${5:pass}"
+        ],
+        "description": "Code snippet for a try/except/finally statement"
+    },
+    "try/except/else/finally": {
+        "prefix": "try/except/else/finally",
+        "body": [
+            "try:",
+            "\t${1:pass}",
+            "except ${2:expression} as ${3:identifier}:",
+            "\t${4:pass}",
+            "else:",
+            "\t${5:pass}",
+            "finally:",
+            "\t${6:pass}"
+        ],
+        "description": "Code snippet for a try/except/else/finally statement"
+    },
+    "def(class method)": {
+        "prefix": "def class method",
+        "body": [
+            "def ${1:funcname}(self, ${2:parameter_list}):",
+            "\t${3:pass}"
+        ],
+        "description": "Code snippet for a class method"
+    },
+    "def(static class method)": {
+        "prefix": "def static class method",
+        "body": [
+            "@staticmethod",
+            "def ${1:funcname}(${2:parameter_list}):",
+            "\t${3:pass}"
+        ],
+        "description": "Code snippet for a static class method"
+    },
+    "def(abstract class method)": {
+        "prefix": "def abstract class method",
+        "body": [
+            "def ${1:funcname}(self, ${2:parameter_list}):",
+            "\traise NotImplementedError"
+        ],
+        "description": "Code snippet for an abstract class method"
+    },
+    "lambda": {
+        "prefix": "lambda",
+        "body": ["lambda ${1:parameter_list}: ${2:expression}"],
+        "description": "Code snippet for a lambda statement"
+    },
+    "if(main)": {
+        "prefix": "__main__",
+        "body": ["if __name__ == \"__main__\":", "    ${1:pass}"],
+        "description": "Code snippet for a `if __name__ == \"__main__\": ...` block"
+    },
+    "async/def": {
+        "prefix": "async/def",
+        "body": [
+            "async def ${1:funcname}(${2:parameter_list}):",
+            "\t${3:pass}"
+        ],
+        "description": "Code snippet for an async statement"
+    },
+    "async/for": {
+        "prefix": "async/for",
+        "body": ["async for ${1:target} in ${2:iter}:", "\t${3:block}"],
+        "description": "Code snippet for an async for statement"
+    },
+    "async/for/else": {
+        "prefix": "async/for/else",
+        "body": [
+            "async for ${1:target} in ${2:iter}:",
+            "\t${3:block}",
+            "else:",
+            "\t${4:block}"
+        ],
+        "description": "Code snippet for an async for statement with else"
+    },
+    "async/with": {
+        "prefix": "async/with",
+        "body": ["async with ${1:expr} as ${2:var}:", "\t${3:block}"],
+        "description": "Code snippet for an async with statement"
+    },
+    "add/new/cell": {
+        "prefix": "add/new/cell",
+        "body": "# %%",
+        "description": "Code snippet to add a new cell"
+    },
+    "mark/markdown": {
+        "prefix": "mark/markdown",
+        "body": "# %% [markdown]",
+        "description": "Code snippet to add a new markdown cell"
+    }
 }
