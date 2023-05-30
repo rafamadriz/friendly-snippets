@@ -233,7 +233,7 @@
         "language": [
           "jsdoc",
           "javascript",
-          "javascriptreact",
+          "javascriptreact"
         ],
         "path": "./snippets/javascript/jsdoc.json"
       },
@@ -241,7 +241,7 @@
         "language": [
           "tsdoc",
           "typescript",
-          "typescriptreact",
+          "typescriptreact"
         ],
         "path": "./snippets/javascript/tsdoc.json"
       },
