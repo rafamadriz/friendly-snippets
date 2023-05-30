@@ -1,6 +1,6 @@
 {
   "comment": {
-        "prefix": "/*",
+        "prefix": "/**",
         "body": [
             "/**\n",
             " * ${1:What it does}$0.\n",
@@ -14,7 +14,82 @@
             " * ```"
             "*/"
         ],
-        "description": "A TSDoc comment with description, arguments, return, and example"
+        "description": "A complete TSDoc comment with description, arguments, return, and example."
     },
+    "TSDoc Comment": {
+        "prefix": "/*",
+        "body": [
+            "/**\n",
+            " * ${1:Comment}$0\n",
+            "*/"
+        ],
+        "description": "A simple TSDoc comment."
+    },
+    "alpha": {
+        "prefix": "@alpha",
+        "body": [
+            "@alpha"
+        ],
+        "description": "This tag can be used to indicate that the associated member is intended to eventually be used by third-party developers but is not yet stable enough to conform to semantic versioning requirements."
+    },
+    "beta": {
+        "prefix": "@beta",
+        "body": [
+            "@beta"
+        ],
+        "description": "This tag can be used to indicate that the associated member is intended to eventually be used by third-party developers but is not yet stable enough to conform to semantic versioning requirements."
+    },
+    "category": {
+        "prefix": "@category",
+        "body": [
+            "@category"
+        ],
+        "description": "The @category tag can be used to place several related API items under a common header when listed in a page's index. It may be specified multiple times to list a reflection under several headings."
+    },
+    "defaultValue": {
+        "prefix": "@defaultValue",
+        "body": [
+            "@defaultValue"
+        ],
+        "description": "The @defaultValue tag can be used to document the default value for an accessor or property."
+    },
+    "deprecated": {
+        "prefix": "@deprecated",
+        "body": [
+            "@deprecated"
+        ],
+        "description": "The @deprecated tag indicates that a declaration should not be used and may be removed in a future release."
+    },
+    "enum": {
+        "prefix": "@enum",
+        "body": [
+            "@enum"
+        ],
+        "description": "If present on an object with string or number literal values, TypeDoc will convert the variable as an enumeration instead of a variable."
+    },
+    "event": {
+        "prefix": "@event",
+        "body": [
+            "@event"
+        ],
+        "description": "The @event tag is used to mark a reflection as belonging in the \"Events\" group. It is equivalent to specifying @group Events in the comment."
+    },
+    "eventProperty": {
+        "prefix": "@eventProperty",
+        "body": [
+            "@eventProperty"
+        ],
+        "description": "The @eventProperty tag is used to mark a reflection as belonging in the \"Events\" group. It is equivalent to specifying @group Events in the comment."
+    },
+    "example": {
+        "prefix": "@example",
+        "body": [
+            "@example\n",
+            "* ```",
+            "* write me later",
+            "* ```",
+        ],
+        "description": "The example tag indicates that the following text is an example of how to use the function."
+    },    
 }
 
