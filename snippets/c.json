@@ -416,16 +416,6 @@
         ],
         "description": "Doxygen template to document a var/func/etc"
     },
-    "Todo section": {
-        "prefix": ",todo",
-        "body": [
-            "/*! TODO: ${1:I forgor...}",
-            " *",
-            " * @todo ${2:Cure my dementia.}",
-            " */"
-        ],
-        "description": "Doxygen 'todo' section"
-    },
     "Group section": {
         "prefix": ",grp",
         "body": [
