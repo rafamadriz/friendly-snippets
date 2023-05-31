@@ -1,574 +1,497 @@
 {
-  "Starter Template": {
-    "prefix": "st",
-    "body": [
-      "#include <stdlib.h>",
-      "#include <stdio.h>",
-      "",
-      "int main(int argc, char *argv[])",
-      "{$0",
-      "",
-      "\treturn EXIT_SUCCESS;",
-      "}"
-    ],
-    "description": "Standard starter template for a tiny C program"
-  },
-  "Preprocessor Starter Template": {
-    "prefix": "#st",
-    "body": [
-      "// #define NDEBUG // disables assert()",
-      "#include <assert.h>",
-      "#include <errno.h>",
-      "#include <stdbool.h>",
-      "#include <stddef.h>",
-      "#include <stdint.h>",
-      "#include <stdio.h>",
-      "#include <stdlib.h>"
-    ],
-    "description": "Preprocessor starter template for a C project"
-  },
-  "main() template": {
-    "prefix": "main",
-    "body": [
-      "int main(int argc, char *argv[])",
-      "{$0",
-      "",
-      "\treturn EXIT_SUCCESS;",
-      "}"
-    ],
-    "description": "Standard main() snippet"
-  },
-  "main(void) template": {
-    "prefix": "mainn",
-    "body": [
-      "int main(void)",
-      "{$0",
-      "",
-      "\treturn EXIT_SUCCESS;",
-      "}"
-    ],
-    "description": "No-args main() snippet"
-  },
-  "#include <...>": {
-    "prefix": "#inc",
-    "body": ["#include <$0>"],
-    "description": "#include <...> snippet"
-  },
-  "#include \"...\"": {
-    "prefix": "#Inc",
-    "body": ["#include \"$0\""],
-    "description": "#include \"...\" snippet"
-  },
-  "#define macro": {
-    "prefix": "#def",
-    "body": ["#define ${1:MACRO}"],
-    "description": "Textual macro snippet"
-  },
-  "#define macro()": {
-    "prefix": "#deff",
-    "body": ["#define ${1:MACRO}($2) ($3)"],
-    "description": "Function-like macro snippet"
-  },
-  "#if": {
-    "prefix": "#if",
-    "body": [
-      "#if ${1:0}",
-      "$0",
-      "#endif /* if $1 */"
-    ],
-    "description": "#if snippet"
-  },
-  "#ifdef": {
-    "prefix": "#ifdef",
-    "body": [
-      "#ifdef ${1:DEBUG}",
-      "$0",
-      "#endif /* ifdef $1 */"
-    ],
-    "description": "#ifdef snippet"
-  },
-  "#ifndef": {
-    "prefix": "#ifndef",
-    "body": [
-      "#ifndef ${1:DEBUG}",
-      "$0",
-      "#endif /* ifndef $1 */"
-    ],
-    "description": "#ifndef snippet"
-  },
-  "include once": {
-    "prefix": "#once",
-    "body": [
-      "#ifndef ${1:FILE}_H",
-      "#define $1_H",
-      "$0",
-      "",
-      "#endif /* end of include guard: $1_H */"
-    ],
-    "description": "Header include guard"
-  },
-  "extern C": {
-    "prefix": "#nocpp",
-    "body": [
-      "#ifdef __cplusplus",
-      "extern \"C\" {",
-      "#endif",
-      "$0",
-      "",
-      "#ifdef __cplusplus",
-      "} /* extern \"C\" */",
-      "#endif"
-    ],
-    "description": "Disable C++ name mangling in C headers"
-  },
-  "#error": {
-    "prefix": "#err",
-    "body": ["#error \"$0\""],
-    "description": "#error snippet"
-  },
-  "#warning": {
-    "prefix": "#warn",
-    "body": ["#warning \"$0\""],
-    "description": "#warning snippet"
-  },
-  "if": {
-    "prefix": "if",
-    "body": [
-      "if (${1:true}) {$0",
-      "}"
-    ],
-    "description": "'if' snippet"
-  },
-  "if else": {
-    "prefix": "ifelse",
-    "body": [
-      "if (${1:true}) {$2",
-      "} else {$0",
-      "}"
-    ],
-    "description": "'if' with 'else'"
-  },
-  "else": {
-    "prefix": "else",
-    "body": [
-      "else {$0",
-      "}"
-    ],
-    "description": "'else' snippet"
-  },
-  "else if": {
-    "prefix": "elseif",
-    "body": [
-      "else if (${1:true}) {$0",
-      "}"
-    ],
-    "description": "else-if snippet"
-  },
-  "if 1L": {
-    "prefix": "ifi",
-    "body": ["if (${1:true}) $0"],
-    "description": "1-line-if"
-  },
-  "elif 1L": {
-    "prefix": "elseifi",
-    "body": ["else if (${1:true}) $0"],
-    "description": "1-line-else-if"
-  },
-  "ternary": {
-    "prefix": "t",
-    "body": ["$1 ? $2 : $0"],
-    "description": "Ternary operator"
-  },
-  "switch": {
-    "prefix": "switch",
-    "body": [
-      "switch (${1:expression}) {$0",
-      "}"
-    ],
-    "description": "'switch' snippet"
-  },
-  "case": {
-    "prefix": "case",
-    "body": [
-      "case ${1:0}:$0"
-    ],
-    "description": "'case' branch"
-  },
-  "default": {
-    "prefix": "default",
-    "body": [
-      "default:$0"
-    ],
-    "description": "'default' branch"
-  },
-  "while": {
-    "prefix": "while",
-    "body": [
-      "while (${1:true}) {$0",
-      "}"
-    ],
-    "description": "'while' loop snippet"
-  },
-  "do...while": {
-    "prefix": "do",
-    "body": [
-      "do {$0",
-      "} while(${1:false});"
-    ],
-    "description": "do...while loop snippet"
-  },
-  "return": {
-    "prefix": "return",
-    "body": ["return ${1:0};"],
-    "description": "'return' snippet"
-  },
-  "exit": {
-    "prefix": "exit",
-    "body": ["exit(${1:EXIT_FAILURE});"],
-    "description": "exit() snippet"
-  },
-  "for": {
-    "prefix": "for",
-    "body": [
-      "for ($1;$2;$3) {$0",
-      "}"
-    ],
-    "description": "Generic 'for' loop"
-  },
-  "for count0": {
-    "prefix": "for0",
-    "body": [
-      "for (${1:size_t} ${2:i} = 0; $2 < ${3:count}; $2++) {$0",
-      "}"
-    ],
-    "description": "Mostly used 'for' loop"
-  },
-  "for count1": {
-    "prefix": "for1",
-    "body": [
-      "for (${1:size_t} ${2:i} = ${3:1}; $2 <= ${4:finish}; $2++) {$0",
-      "}"
-    ],
-    "description": "'for' loop with non-zero start"
-  },
-  "for argv[]": {
-    "prefix": "forarg",
-    "body": [
-      "for (int ${2:i} = ${1:1}; $2 < argc; $2++) {$0",
-      "}"
-    ],
-    "description": "'for' loop variant for cmdline arguments"
-  },
-  "Function declaration": {
-    "prefix": "fund",
-    "body": ["$4${2:void} ${1:fun}(${3:void});$0"],
-    "description": "Declare a function"
-  },
-  "Function definition": {
-    "prefix": "fun",
-    "body": [
-      "$4${2:void} ${1:fun}(${3:void})",
-      "{$0",
-      "}"
-    ],
-    "description": "Define a function"
-  },
-  "Function with return var": {
-    "prefix": "funret",
-    "body": [
-      "$4${2:int} ${1:func}(${3:void})",
-      "{",
-      "\t$2 ${5:retval} = ${6:0};$0",
-      "\treturn $5;",
-      "}"
-    ],
-    "description": "Define a function that uses a variable for return"
-  },
-  "typedef": {
-    "prefix": "typedef",
-    "body": ["typedef ${1:void} ${2:Emptiness};"],
-    "description": "'typedef' snippet"
-  },
-  "Complicated typedef": {
-    "prefix": "typedeff",
-    "body": ["typedef $0;"],
-    "description": "Declaration-like typedef for func-ptr,array,etc."
-  },
-  "typedef struct": {
-    "prefix": "typedefst",
-    "body": ["typedef struct $1 ${1:Box};"],
-    "description": "Implicit struct typedef"
-  },
-  "typedef union": {
-    "prefix": "typedefun",
-    "body": ["typedef union $1 ${1:Cell};"],
-    "description": "Implicit union typedef"
-  },
-  "struct": {
-    "prefix": "struct",
-    "body": [
-      "struct ${1:MyStruct} {$0",
-      "};"
-    ],
-    "description": "'struct' snippet"
-  },
-  "struct type": {
-    "prefix": "typestruct",
-    "body": [
-      "typedef struct $1 ${1:Box};",
-      "struct $1 {$0",
-      "};"
-    ],
-    "description": "Define a type with struct"
-  },
-  "union": {
-    "prefix": "union",
-    "body": [
-      "union ${1:MyUnion} {$0",
-      "};"
-    ],
-    "description": "'union' snippet"
-  },
-  "union type": {
-    "prefix": "typeunion",
-    "body": [
-      "typedef union $1 ${1:Cell};",
-      "union $1 {$0",
-      "};"
-    ],
-    "description": "Define a type with union"
-  },
-  "enum constant": {
-    "prefix": "enum",
-    "body": ["enum $1{ $0 };"],
-    "description": "Define a constant with enum"
-  },
-  "enum": {
-    "prefix": "enumst",
-    "body": [
-      "enum ${1:MyEnum} {$0",
-      "};"
-    ],
-    "description": "'enum' struct-like snippet"
-  },
-  "puts": {
-    "prefix": "puts",
-    "body": ["puts(\"${1:This function doesn't need newline.}\")$0"],
-    "description": "puts() snippet"
-  },
-  "fputs": {
-    "prefix": "fputs",
-    "body": ["fputs(\"${2:This is a simpler printf.\\n}\", ${1:stdout})$0"],
-    "description": "puts() snippet"
-  },
-  "printf": {
-    "prefix": "printf",
-    "body": ["printf(\"${1:%s}\\n\"$2)$0"],
-    "description": "printf() snippet"
-  },
-  "fprintf": {
-    "prefix": "fprintf",
-    "body": ["fprintf(${1:stderr}, \"${2:%s}\\n\"$3)$0"],
-    "description": "fprintf() snippet"
-  },
-  "sprintf": {
-    "prefix": "sprintf",
-    "body": ["sprintf(${1:buf}, \"${2:%s}\\n\"$3)$0"],
-    "description": "sprintf() snippet"
-  },
-  "snprintf": {
-    "prefix": "snprintf",
-    "body": ["sprintf(${1:buf}, ${2:max}, \"${3:%s}\\n\"$3)$0"],
-    "description": "snprintf() snippet"
-  },
-  "scanf": {
-    "prefix": "scanf",
-    "body": ["scanf(\"${1:%i}\"$2)$0"],
-    "description": "scanf() snippet"
-  },
-  "fscanf": {
-    "prefix": "fscanf",
-    "body": ["fscanf(${1:stdin}, \"${2:%i}\"$3)$0"],
-    "description": "fscanf() snippet"
-  },
-  "sscanf": {
-    "prefix": "sscanf",
-    "body": ["sscanf(${1:buf}, \"${2:%i}\"$3)$0"],
-    "description": "sscanf() snippet"
-  },
-  "Print a variable": {
-    "prefix": "printv",
-    "body": ["printf(\"${1:var} = %${2:i}\\n\", $3)$0"],
-    "description": "Call printf() to log value of a variable"
-  },
-  "warn": {
-    "prefix": "warn",
-    "body": ["warn(\"${1:%s}\"$0);"],
-    "description": "warn() snippet"
-  },
-  "warnx": {
-    "prefix": "warnx",
-    "body": ["warnx(\"${1:%s}\"$0);"],
-    "description": "warnx() snippet"
-  },
-  "err": {
-    "prefix": "err",
-    "body": ["err(${1:EXIT_FAILURE}, \"${2:%s}\"$0);"],
-    "description": "err() snippet"
-  },
-  "errx": {
-    "prefix": "errx",
-    "body": ["errx(${1:EXIT_FAILURE}, \"${1:%s}\"$0);"],
-    "description": "errx() snippet"
-  },
-  "assert": {
-    "prefix": "assert",
-    "body": ["assert($0);"],
-    "description": "assert() snippet"
-  },
-  "static_assert": {
-    "prefix": "static_assert",
-    "body": ["static_assert($0, \"${1:Oopsie!}\");"],
-    "description": "static_assert() snippet"
-  },
-  "static_assert 1-param": {
-    "prefix": "static_assert1",
-    "body": ["static_assert($0);"],
-    "description": "C2X 1-parameter static_assert() snippet"
-  },
-  "malloc": {
-    "prefix": "malloc",
-    "body": ["malloc(sizeof(${1:int[69]})$2)$0"],
-    "description": "malloc() snippet"
-  },
-  "calloc": {
-    "prefix": "calloc",
-    "body": ["calloc(${2:1}, sizeof(${1:int})$3)$0"],
-    "description": "calloc() snippet"
-  },
-  "realloc": {
-    "prefix": "realloc",
-    "body": ["realloc(${1:ptr}, sizeof(${2:int[69]})$3)$0"],
-    "description": "realloc() snippet"
-  },
-  "reallocarray": {
-    "prefix": "reallocarray",
-    "body": ["reallocarray(${1:ptr}, ${3:69}, sizeof(${2:int})$4)$0"],
-    "description": "reallocarray() snippet"
-  },
-  "free": {
-    "prefix": "free",
-    "body": ["free(${1:NULL});"],
-    "description": "free() snippet"
-  },
-  "Comment block": {
-    "prefix": ",",
-    "body": ["/*$0 */"],
-    "description": "Convenient comment block"
-  },
-  "Multiline comment": {
-    "prefix": ",,",
-    "body": [
-      "/*$0",
-      " */"
-    ],
-    "description": "Convenient multiline comment"
-  },
-  "Multiline 2-star comment": {
-    "prefix": ",d",
-    "body": [
-      "/**$0",
-      " **/"
-    ],
-    "description": "Doxygen 2-star-style comment"
-  },
-  "Doxygen template": {
-    "prefix": ",dox",
-    "body": [
-      "/*!$1",
-      " * @brief ${2:This is something undocumented.}",
-      " *",
-      " * ${3:Nothing to add here...}$0",
-      " */"
-    ],
-    "description": "Doxygen template to document a var/func/etc"
-  },
-  "Todo section": {
-    "prefix": ",todo",
-    "body": [
-      "/*! TODO: ${1:I forgor...}",
-      " *",
-      " * @todo ${2:Cure my dementia.}",
-      " */"
-    ],
-    "description": "Doxygen 'todo' section"
-  },
-  "Group section": {
-    "prefix": ",grp",
-    "body": [
-      "/*! @name ${1:Useless API.}${2: No more details...}",
-      " * @{",
-      " */",
-      "$0",
-      "",
-      "/*! @}",
-      " */"
-    ],
-    "description": "Group documented elements"
-  },
-  "fputs() errcheck": {
-    "prefix": "errio_eof",
-    "body": [
-      "if (${1:status} == EOF$2) {",
-      "\t${3:err(EXIT_FAILURE, \"IO is hard\");}",
-      "}",
-      "$0"
-    ],
-    "description": "Error checking for int IO functions"
-  },
-  "fgets() errcheck": {
-    "prefix": "errio_null",
-    "body": [
-      "if (!${1:status}$2) {",
-      "\t${3:err(EXIT_FAILURE, \"IO is hard\");}",
-      "}",
-      "$0"
-    ],
-    "description": "Error checking for pointer-type IO functions"
-  },
-  "printf() errcheck": {
-    "prefix": "errpri",
-    "body": [
-      "if (${1:status} < 0) {",
-      "\t${2:err(EXIT_FAILURE, \"Ran out of ink\");}",
-      "}",
-      "$0"
-    ],
-    "description": "Error checking for printf()-like"
-  },
-  "getline() errcheck": {
-    "prefix": "errline",
-    "body": [
-      "if (${1:status} == -1$2) {",
-      "\t${3:err(EXIT_FAILURE, \"Can't find the line\");}",
-      "}",
-      "$0"
-    ],
-    "description": "Error checking for getline function"
-  },
-  "malloc() errcheck": {
-    "prefix": "errmem",
-    "body": [
-      "if (!${1:status}) {",
-      "\t${2:err(EXIT_FAILURE, \"Your memory is doomed\");}",
-      "}",
-      "$0"
-    ],
-    "description": "Error checking for malloc()-like"
-  },
-  "Array length": {
-    "prefix": "arrlen",
-    "body": ["(sizeof ${1:arr} / sizeof $1[0])"],
-    "description": "Calculate number of elements in an array"
-  }
+    "Starter Template": {
+        "prefix": "st",
+        "body": [
+            "#include <stdlib.h>",
+            "#include <stdio.h>",
+            "",
+            "int main(int argc, char *argv[])",
+            "{$0",
+            "",
+            "\treturn EXIT_SUCCESS;",
+            "}"
+        ],
+        "description": "Standard starter template for a tiny C program"
+    },
+    "Preprocessor Starter Template": {
+        "prefix": "#st",
+        "body": [
+            "// #define NDEBUG // disables assert()",
+            "#include <assert.h>",
+            "#include <errno.h>",
+            "#include <stdbool.h>",
+            "#include <stddef.h>",
+            "#include <stdint.h>",
+            "#include <stdio.h>",
+            "#include <stdlib.h>"
+        ],
+        "description": "Preprocessor starter template for a C project"
+    },
+    "main() template": {
+        "prefix": "main",
+        "body": [
+            "int main(int argc, char *argv[])",
+            "{$0",
+            "",
+            "\treturn EXIT_SUCCESS;",
+            "}"
+        ],
+        "description": "Standard main() snippet"
+    },
+    "main(void) template": {
+        "prefix": "mainn",
+        "body": ["int main(void)", "{$0", "", "\treturn EXIT_SUCCESS;", "}"],
+        "description": "No-args main() snippet"
+    },
+    "#include <...>": {
+        "prefix": "#inc",
+        "body": ["#include <$0>"],
+        "description": "#include <...> snippet"
+    },
+    "#include \"...\"": {
+        "prefix": "#Inc",
+        "body": ["#include \"$0\""],
+        "description": "#include \"...\" snippet"
+    },
+    "#define macro": {
+        "prefix": "#def",
+        "body": ["#define ${1:MACRO}"],
+        "description": "Textual macro snippet"
+    },
+    "#define macro()": {
+        "prefix": "#deff",
+        "body": ["#define ${1:MACRO}($2) ($3)"],
+        "description": "Function-like macro snippet"
+    },
+    "#if": {
+        "prefix": "#if",
+        "body": ["#if ${1:0}", "$0", "#endif /* if $1 */"],
+        "description": "#if snippet"
+    },
+    "#ifdef": {
+        "prefix": "#ifdef",
+        "body": ["#ifdef ${1:DEBUG}", "$0", "#endif /* ifdef $1 */"],
+        "description": "#ifdef snippet"
+    },
+    "#ifndef": {
+        "prefix": "#ifndef",
+        "body": ["#ifndef ${1:DEBUG}", "$0", "#endif /* ifndef $1 */"],
+        "description": "#ifndef snippet"
+    },
+    "include once": {
+        "prefix": "#once",
+        "body": [
+            "#ifndef ${1:FILE}_H",
+            "#define $1_H",
+            "$0",
+            "",
+            "#endif /* end of include guard: $1_H */"
+        ],
+        "description": "Header include guard"
+    },
+    "extern C": {
+        "prefix": "#nocpp",
+        "body": [
+            "#ifdef __cplusplus",
+            "extern \"C\" {",
+            "#endif",
+            "$0",
+            "",
+            "#ifdef __cplusplus",
+            "} /* extern \"C\" */",
+            "#endif"
+        ],
+        "description": "Disable C++ name mangling in C headers"
+    },
+    "#error": {
+        "prefix": "#err",
+        "body": ["#error \"$0\""],
+        "description": "#error snippet"
+    },
+    "#warning": {
+        "prefix": "#warn",
+        "body": ["#warning \"$0\""],
+        "description": "#warning snippet"
+    },
+    "if": {
+        "prefix": "if",
+        "body": ["if (${1:true}) {$0", "}"],
+        "description": "'if' snippet"
+    },
+    "if else": {
+        "prefix": "ifelse",
+        "body": ["if (${1:true}) {$2", "} else {$0", "}"],
+        "description": "'if' with 'else'"
+    },
+    "else": {
+        "prefix": "else",
+        "body": ["else {$0", "}"],
+        "description": "'else' snippet"
+    },
+    "else if": {
+        "prefix": "elseif",
+        "body": ["else if (${1:true}) {$0", "}"],
+        "description": "else-if snippet"
+    },
+    "if 1L": {
+        "prefix": "ifi",
+        "body": ["if (${1:true}) $0"],
+        "description": "1-line-if"
+    },
+    "elif 1L": {
+        "prefix": "elseifi",
+        "body": ["else if (${1:true}) $0"],
+        "description": "1-line-else-if"
+    },
+    "ternary": {
+        "prefix": "t",
+        "body": ["$1 ? $2 : $0"],
+        "description": "Ternary operator"
+    },
+    "switch": {
+        "prefix": "switch",
+        "body": ["switch (${1:expression}) {$0", "}"],
+        "description": "'switch' snippet"
+    },
+    "case": {
+        "prefix": "case",
+        "body": ["case ${1:0}:$0"],
+        "description": "'case' branch"
+    },
+    "default": {
+        "prefix": "default",
+        "body": ["default:$0"],
+        "description": "'default' branch"
+    },
+    "while": {
+        "prefix": "while",
+        "body": ["while (${1:true}) {$0", "}"],
+        "description": "'while' loop snippet"
+    },
+    "do...while": {
+        "prefix": "do",
+        "body": ["do {$0", "} while(${1:false});"],
+        "description": "do...while loop snippet"
+    },
+    "return": {
+        "prefix": "return",
+        "body": ["return ${1:0};"],
+        "description": "'return' snippet"
+    },
+    "exit": {
+        "prefix": "exit",
+        "body": ["exit(${1:EXIT_FAILURE});"],
+        "description": "exit() snippet"
+    },
+    "for": {
+        "prefix": "for",
+        "body": ["for ($1;$2;$3) {$0", "}"],
+        "description": "Generic 'for' loop"
+    },
+    "for count0": {
+        "prefix": "for0",
+        "body": [
+            "for (${1:size_t} ${2:i} = 0; $2 < ${3:count}; $2++) {$0",
+            "}"
+        ],
+        "description": "Mostly used 'for' loop"
+    },
+    "for count1": {
+        "prefix": "for1",
+        "body": [
+            "for (${1:size_t} ${2:i} = ${3:1}; $2 <= ${4:finish}; $2++) {$0",
+            "}"
+        ],
+        "description": "'for' loop with non-zero start"
+    },
+    "for argv[]": {
+        "prefix": "forarg",
+        "body": ["for (int ${2:i} = ${1:1}; $2 < argc; $2++) {$0", "}"],
+        "description": "'for' loop variant for cmdline arguments"
+    },
+    "Function declaration": {
+        "prefix": "fund",
+        "body": ["$4${2:void} ${1:fun}(${3:void});$0"],
+        "description": "Declare a function"
+    },
+    "Function definition": {
+        "prefix": "fun",
+        "body": ["$4${2:void} ${1:fun}(${3:void})", "{$0", "}"],
+        "description": "Define a function"
+    },
+    "Function with return var": {
+        "prefix": "funret",
+        "body": [
+            "$4${2:int} ${1:func}(${3:void})",
+            "{",
+            "\t$2 ${5:retval} = ${6:0};$0",
+            "\treturn $5;",
+            "}"
+        ],
+        "description": "Define a function that uses a variable for return"
+    },
+    "typedef": {
+        "prefix": "typedef",
+        "body": ["typedef ${1:void} ${2:Emptiness};"],
+        "description": "'typedef' snippet"
+    },
+    "Complicated typedef": {
+        "prefix": "typedeff",
+        "body": ["typedef $0;"],
+        "description": "Declaration-like typedef for func-ptr,array,etc."
+    },
+    "typedef struct": {
+        "prefix": "typedefst",
+        "body": ["typedef struct $1 ${1:Box};"],
+        "description": "Implicit struct typedef"
+    },
+    "typedef union": {
+        "prefix": "typedefun",
+        "body": ["typedef union $1 ${1:Cell};"],
+        "description": "Implicit union typedef"
+    },
+    "struct": {
+        "prefix": "struct",
+        "body": ["struct ${1:MyStruct} {$0", "};"],
+        "description": "'struct' snippet"
+    },
+    "struct type": {
+        "prefix": "typestruct",
+        "body": ["typedef struct $1 ${1:Box};", "struct $1 {$0", "};"],
+        "description": "Define a type with struct"
+    },
+    "union": {
+        "prefix": "union",
+        "body": ["union ${1:MyUnion} {$0", "};"],
+        "description": "'union' snippet"
+    },
+    "union type": {
+        "prefix": "typeunion",
+        "body": ["typedef union $1 ${1:Cell};", "union $1 {$0", "};"],
+        "description": "Define a type with union"
+    },
+    "enum constant": {
+        "prefix": "enum",
+        "body": ["enum $1{ $0 };"],
+        "description": "Define a constant with enum"
+    },
+    "enum": {
+        "prefix": "enumst",
+        "body": ["enum ${1:MyEnum} {$0", "};"],
+        "description": "'enum' struct-like snippet"
+    },
+    "puts": {
+        "prefix": "puts",
+        "body": ["puts(\"${1:This function doesn't need newline.}\")$0"],
+        "description": "puts() snippet"
+    },
+    "fputs": {
+        "prefix": "fputs",
+        "body": ["fputs(\"${2:This is a simpler printf.\\n}\", ${1:stdout})$0"],
+        "description": "puts() snippet"
+    },
+    "printf": {
+        "prefix": "printf",
+        "body": ["printf(\"${1:%s}\\n\"$2)$0"],
+        "description": "printf() snippet"
+    },
+    "fprintf": {
+        "prefix": "fprintf",
+        "body": ["fprintf(${1:stderr}, \"${2:%s}\\n\"$3)$0"],
+        "description": "fprintf() snippet"
+    },
+    "sprintf": {
+        "prefix": "sprintf",
+        "body": ["sprintf(${1:buf}, \"${2:%s}\\n\"$3)$0"],
+        "description": "sprintf() snippet"
+    },
+    "snprintf": {
+        "prefix": "snprintf",
+        "body": ["sprintf(${1:buf}, ${2:max}, \"${3:%s}\\n\"$3)$0"],
+        "description": "snprintf() snippet"
+    },
+    "scanf": {
+        "prefix": "scanf",
+        "body": ["scanf(\"${1:%i}\"$2)$0"],
+        "description": "scanf() snippet"
+    },
+    "fscanf": {
+        "prefix": "fscanf",
+        "body": ["fscanf(${1:stdin}, \"${2:%i}\"$3)$0"],
+        "description": "fscanf() snippet"
+    },
+    "sscanf": {
+        "prefix": "sscanf",
+        "body": ["sscanf(${1:buf}, \"${2:%i}\"$3)$0"],
+        "description": "sscanf() snippet"
+    },
+    "Print a variable": {
+        "prefix": "printv",
+        "body": ["printf(\"${1:var} = %${2:i}\\n\", $3)$0"],
+        "description": "Call printf() to log value of a variable"
+    },
+    "warn": {
+        "prefix": "warn",
+        "body": ["warn(\"${1:%s}\"$0);"],
+        "description": "warn() snippet"
+    },
+    "warnx": {
+        "prefix": "warnx",
+        "body": ["warnx(\"${1:%s}\"$0);"],
+        "description": "warnx() snippet"
+    },
+    "err": {
+        "prefix": "err",
+        "body": ["err(${1:EXIT_FAILURE}, \"${2:%s}\"$0);"],
+        "description": "err() snippet"
+    },
+    "errx": {
+        "prefix": "errx",
+        "body": ["errx(${1:EXIT_FAILURE}, \"${1:%s}\"$0);"],
+        "description": "errx() snippet"
+    },
+    "assert": {
+        "prefix": "assert",
+        "body": ["assert($0);"],
+        "description": "assert() snippet"
+    },
+    "static_assert": {
+        "prefix": "static_assert",
+        "body": ["static_assert($0, \"${1:Oopsie!}\");"],
+        "description": "static_assert() snippet"
+    },
+    "static_assert 1-param": {
+        "prefix": "static_assert1",
+        "body": ["static_assert($0);"],
+        "description": "C2X 1-parameter static_assert() snippet"
+    },
+    "malloc": {
+        "prefix": "malloc",
+        "body": ["malloc(sizeof(${1:int[69]})$2)$0"],
+        "description": "malloc() snippet"
+    },
+    "calloc": {
+        "prefix": "calloc",
+        "body": ["calloc(${2:1}, sizeof(${1:int})$3)$0"],
+        "description": "calloc() snippet"
+    },
+    "realloc": {
+        "prefix": "realloc",
+        "body": ["realloc(${1:ptr}, sizeof(${2:int[69]})$3)$0"],
+        "description": "realloc() snippet"
+    },
+    "reallocarray": {
+        "prefix": "reallocarray",
+        "body": ["reallocarray(${1:ptr}, ${3:69}, sizeof(${2:int})$4)$0"],
+        "description": "reallocarray() snippet"
+    },
+    "free": {
+        "prefix": "free",
+        "body": ["free(${1:NULL});"],
+        "description": "free() snippet"
+    },
+    "Comment block": {
+        "prefix": ",",
+        "body": ["/*$0 */"],
+        "description": "Convenient comment block"
+    },
+    "Multiline comment": {
+        "prefix": ",,",
+        "body": ["/*$0", " */"],
+        "description": "Convenient multiline comment"
+    },
+    "Multiline 2-star comment": {
+        "prefix": ",d",
+        "body": ["/**$0", " **/"],
+        "description": "Doxygen 2-star-style comment"
+    },
+    "Doxygen template": {
+        "prefix": ",dox",
+        "body": [
+            "/*!$1",
+            " * @brief ${2:This is something undocumented.}",
+            " *",
+            " * ${3:Nothing to add here...}$0",
+            " */"
+        ],
+        "description": "Doxygen template to document a var/func/etc"
+    },
+    "Todo section": {
+        "prefix": ",todo",
+        "body": [
+            "/*! TODO: ${1:I forgor...}",
+            " *",
+            " * @todo ${2:Cure my dementia.}",
+            " */"
+        ],
+        "description": "Doxygen 'todo' section"
+    },
+    "Group section": {
+        "prefix": ",grp",
+        "body": [
+            "/*! @name ${1:Useless API.}${2: No more details...}",
+            " * @{",
+            " */",
+            "$0",
+            "",
+            "/*! @}",
+            " */"
+        ],
+        "description": "Group documented elements"
+    },
+    "fputs() errcheck": {
+        "prefix": "errio_eof",
+        "body": [
+            "if (${1:status} == EOF$2) {",
+            "\t${3:err(EXIT_FAILURE, \"IO is hard\");}",
+            "}",
+            "$0"
+        ],
+        "description": "Error checking for int IO functions"
+    },
+    "fgets() errcheck": {
+        "prefix": "errio_null",
+        "body": [
+            "if (!${1:status}$2) {",
+            "\t${3:err(EXIT_FAILURE, \"IO is hard\");}",
+            "}",
+            "$0"
+        ],
+        "description": "Error checking for pointer-type IO functions"
+    },
+    "printf() errcheck": {
+        "prefix": "errpri",
+        "body": [
+            "if (${1:status} < 0) {",
+            "\t${2:err(EXIT_FAILURE, \"Ran out of ink\");}",
+            "}",
+            "$0"
+        ],
+        "description": "Error checking for printf()-like"
+    },
+    "getline() errcheck": {
+        "prefix": "errline",
+        "body": [
+            "if (${1:status} == -1$2) {",
+            "\t${3:err(EXIT_FAILURE, \"Can't find the line\");}",
+            "}",
+            "$0"
+        ],
+        "description": "Error checking for getline function"
+    },
+    "malloc() errcheck": {
+        "prefix": "errmem",
+        "body": [
+            "if (!${1:status}) {",
+            "\t${2:err(EXIT_FAILURE, \"Your memory is doomed\");}",
+            "}",
+            "$0"
+        ],
+        "description": "Error checking for malloc()-like"
+    },
+    "Array length": {
+        "prefix": "arrlen",
+        "body": ["(sizeof ${1:arr} / sizeof $1[0])"],
+        "description": "Calculate number of elements in an array"
+    }
 }
