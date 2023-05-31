@@ -14,25 +14,19 @@
     "Tag assign": {
         "prefix": "assign",
         "description": "Variable tag: assign",
-        "body": [
-            "{%- assign ${variable} = ${value} -%}"
-        ]
+        "body": ["{%- assign ${variable} = ${value} -%}"]
     },
 
     "Tag break": {
         "prefix": "break",
         "description": "Iteration tag: break",
-        "body": [
-            "{%- break -%}"
-        ]
+        "body": ["{%- break -%}"]
     },
 
     "Tag capture": {
         "prefix": "capture",
         "description": "Variable tag: capture",
-        "body": [
-            "{%- capture ${variable} -%}${code:}{%- endcapture -%}"
-        ]
+        "body": ["{%- capture ${variable} -%}${code:}{%- endcapture -%}"]
     },
 
     "Tag case": {
@@ -51,57 +45,43 @@
     "Tag comment": {
         "prefix": "comment",
         "description": "Control flow tag: case",
-        "body": [
-            "{%- comment -%}${description:}{%- endcomment -%}"
-        ]
+        "body": ["{%- comment -%}${description:}{%- endcomment -%}"]
     },
 
     "Tag context variable": {
         "prefix": "convar",
         "description": "Context Variable",
-        "body": [
-            "{{ ${variable:} }}"
-        ]
+        "body": ["{{ ${variable:} }}"]
     },
 
     "Tag continue": {
         "prefix": "continue",
         "description": "Iteration tag: continue",
-        "body": [
-            "{%- continue -%}"
-        ]
+        "body": ["{%- continue -%}"]
     },
 
     "Tag cycle": {
         "prefix": "cycle",
         "description": "Iteration tag: cycle",
-        "body": [
-            "{%- cycle '${0:odd}', '${1:even}' -%}"
-        ]
+        "body": ["{%- cycle '${0:odd}', '${1:even}' -%}"]
     },
 
     "Tag collection directory": {
         "prefix": "cdirp",
         "description": "The full path to the collection's source direcotry",
-        "body": [
-            "{{ site.${my_collection}.directory }}"
-        ]
+        "body": ["{{ site.${my_collection}.directory }}"]
     },
 
     "Tag collection relative path": {
         "prefix": "crelp",
         "description": "The path to the document's source file realtive to the site source",
-        "body": [
-            "{{ site.collections.${my_collection}.relative_path }}"
-        ]
+        "body": ["{{ site.collections.${my_collection}.relative_path }}"]
     },
 
     "Tag decrement": {
         "prefix": "decrement",
         "description": "Variable tag: decrement",
-        "body": [
-            "{%- decrement ${variable} -%}"
-        ]
+        "body": ["{%- decrement ${variable} -%}"]
     },
 
     "Tag for": {
@@ -117,35 +97,25 @@
     "Tag increment": {
         "prefix": "increment",
         "description": "Variable tag: increment",
-        "body": [
-            "{%- increment ${variable} -%}"
-        ]
+        "body": ["{%- increment ${variable} -%}"]
     },
 
-		"Tag if": {
+    "Tag if": {
         "prefix": "if",
         "description": "Control flow tag: if",
-        "body": [
-            "{%- if ${condition} -%}",
-            "\t${code:}",
-            "{%- endif -%}"
-        ]
+        "body": ["{%- if ${condition} -%}", "\t${code:}", "{%- endif -%}"]
     },
 
     "Tag else": {
         "prefix": "else",
         "description": "Control flow tag: else",
-        "body": [
-            "{%- else -%}"
-        ]
+        "body": ["{%- else -%}"]
     },
 
     "Tag elsif": {
         "prefix": "elsif",
         "description": "Control flow tag: elsif",
-        "body": [
-            "{%- elsif ${condition} -%}"
-        ]
+        "body": ["{%- elsif ${condition} -%}"]
     },
 
     "Tag if else": {
@@ -163,9 +133,7 @@
     "Tag gist": {
         "prefix": "gist",
         "description": "Add a gist code block",
-        "body": [
-            "{%- gist ${gist:user/gist-id} -%}"
-        ]
+        "body": ["{%- gist ${gist:user/gist-id} -%}"]
     },
 
     "Tag highlight": {
@@ -181,36 +149,28 @@
     "Tag include": {
         "prefix": "include",
         "description": "Tag: include",
-        "body": [
-            "{%- include ${snippet} -%}"
-        ]
+        "body": ["{%- include ${snippet} -%}"]
     },
 
     "Site Vairable Date": {
         "prefix": "date",
         "description": "Tag: site.date",
-        "body": [
-            "{{ site.date | date: '${format: %b %d, %Y}' }}"
-        ]
+        "body": ["{{ site.date | date: '${format: %b %d, %Y}' }}"]
     },
 
     "Tag include relative": {
         "prefix": "increl",
         "description": "Tag: include relative",
-        "body": [
-            "{%- include_relative '${file:}' -%}"
-        ]
+        "body": ["{%- include_relative '${file:}' -%}"]
     },
 
     "Tag Post URL": {
         "prefix": "posturl",
         "description": "Tag: post_url",
-        "body": [
-            "{%- post_url ${url:} -%}"
-        ]
+        "body": ["{%- post_url ${url:} -%}"]
     },
 
-		"Tag unless": {
+    "Tag unless": {
         "prefix": "unless",
         "description": "Control flow tag: unless",
         "body": [
@@ -223,50 +183,37 @@
     "Tag when": {
         "prefix": "when",
         "description": "Control flow tag: when",
-        "body": [
-            "{%- when ${condition} -%}",
-            "${code:}"
-        ]
+        "body": ["{%- when ${condition} -%}", "${code:}"]
     },
 
     "Tag Option limit": {
         "prefix": "limit",
         "description": "For loops option",
-        "body": [
-            "limit: ${limit:5}"
-        ]
+        "body": ["limit: ${limit:5}"]
     },
 
     "Tag Option offset": {
         "prefix": "offset",
         "description": "For loops option",
-        "body": [
-            "offset: ${offset:0}"
-        ]
+        "body": ["offset: ${offset:0}"]
     },
 
     "Tag Option reversed": {
         "prefix": "reversed",
         "description": "For loops option",
-        "body": [
-            "reversed"
-        ]
+        "body": ["reversed"]
     },
 
     "Tag raw": {
         "prefix": "raw",
         "description": "Tag: raw",
-        "body": [
-            "{%- raw -%}${code:}{%- endraw -%}"
-        ]
+        "body": ["{%- raw -%}${code:}{%- endraw -%}"]
     },
 
     "Tag paginate next or previous page": {
         "prefix": "paginate",
         "description": "Tag: paginate next or previous page",
-        "body": [
-					"{{ paginator.${next:previous}_page }}"
-				]
+        "body": ["{{ paginator.${next:previous}_page }}"]
     },
 
     "Filter jsonify": {
@@ -491,7 +438,7 @@
         "body": "| upcase }}"
     },
 
-		"Filter url encode": {
+    "Filter url encode": {
         "prefix": "url_encode",
         "description": "String filter: url encode",
         "body": "| url_encode }}"

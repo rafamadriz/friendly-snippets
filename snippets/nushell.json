@@ -5,26 +5,17 @@
         "body": "#!/usr/bin/env nu"
     },
     "hexadecimal": {
-        "prefix": [
-            "hexadecimal",
-            "0x"
-        ],
+        "prefix": ["hexadecimal", "0x"],
         "description": "hexadecimal",
         "body": "0x[${1:ff}]"
     },
     "binary": {
-        "prefix": [
-            "binary",
-            "0b"
-        ],
+        "prefix": ["binary", "0b"],
         "description": "binary",
         "body": "0b[${1:1}]"
     },
     "octal": {
-        "prefix": [
-            "octal",
-            "0o"
-        ],
+        "prefix": ["octal", "0o"],
         "description": "octal",
         "body": "0o[${1:1}]"
     },
@@ -44,10 +35,7 @@
         "body": "${1:value}${2|b,kb,mb,gb,tb,pb,eb,zb,kib,mib,gib,tib,pib,eib,zib|}"
     },
     "range": {
-        "prefix": [
-            "range",
-            ".."
-        ],
+        "prefix": ["range", ".."],
         "description": "range",
         "body": "${1:from}..${2:to}"
     },
@@ -82,18 +70,12 @@
         "body": "${1:value} not-in ${2:list}"
     },
     "flag": {
-        "prefix": [
-            "flag",
-            "--"
-        ],
+        "prefix": ["flag", "--"],
         "description": "flag",
         "body": "--${1:long} (-${2:short}): ${3|int,float,string,bool,date,duration,filesize,range,list<>,record<>,table<>,closure,null|}"
     },
     "rest": {
-        "prefix": [
-            "rest",
-            "..."
-        ],
+        "prefix": ["rest", "..."],
         "description": "flag",
         "body": "...${1:name}: ${2|int,float,string,bool,date,duration,filesize,range,list<>,record<>,table<>,closure,null|}"
     },
@@ -105,10 +87,7 @@
     "@alias builtin": {
         "prefix": "@alias",
         "description": "\"alias\" invocation",
-        "body": [
-            "# ${1:documentation}",
-            "alias ${2:name} = ${3:value}"
-        ]
+        "body": ["# ${1:documentation}", "alias ${2:name} = ${3:value}"]
     },
     "all builtin": {
         "prefix": "all",
@@ -213,10 +192,7 @@
     "@const builtin": {
         "prefix": "@const",
         "description": "\"const\" invocation",
-        "body": [
-            "# ${1:documentation}",
-            "const ${2:name} = ${3:value}"
-        ]
+        "body": ["# ${1:documentation}", "const ${2:name} = ${3:value}"]
     },
     "cp builtin": {
         "prefix": "cp",
@@ -657,10 +633,7 @@
     "@let builtin": {
         "prefix": "@let",
         "description": "\"let\" invocation",
-        "body": [
-            "# ${1:documentation}",
-            "let ${2:name} = ${3:value}"
-        ]
+        "body": ["# ${1:documentation}", "let ${2:name} = ${3:value}"]
     },
     "let-env builtin": {
         "prefix": "let-env",
@@ -670,10 +643,7 @@
     "@let-env builtin": {
         "prefix": "@let-env",
         "description": "\"let-env\" invocation",
-        "body": [
-            "# ${1:documentation}",
-            "let-env ${2:name} = ${3:value}"
-        ]
+        "body": ["# ${1:documentation}", "let-env ${2:name} = ${3:value}"]
     },
     "loop builtin": {
         "prefix": "loop",
@@ -733,10 +703,7 @@
     "@mut builtin": {
         "prefix": "@mut",
         "description": "\"mut\" invocation",
-        "body": [
-            "# ${1:documentation}",
-            "mut ${2:name} = ${3:value}"
-        ]
+        "body": ["# ${1:documentation}", "mut ${2:name} = ${3:value}"]
     },
     "mv builtin": {
         "prefix": "mv",
@@ -761,10 +728,7 @@
     "@old-alias builtin": {
         "prefix": "@old-alias",
         "description": "\"old-alias\" invocation",
-        "body": [
-            "# ${1:documentation}",
-            "old-alias ${2:name} = ${3:value}"
-        ]
+        "body": ["# ${1:documentation}", "old-alias ${2:name} = ${3:value}"]
     },
     "open builtin": {
         "prefix": "open",

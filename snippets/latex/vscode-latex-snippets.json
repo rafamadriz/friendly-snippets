@@ -1,67 +1,67 @@
 {
     "Template": {
-        "prefix": ["template", "\\template"], 
+        "prefix": ["template", "\\template"],
         "body": [
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "\\documentclass{article}", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "\\usepackage{geometry}", 
-            "\\usepackage{graphicx}", 
-            "\\usepackage{amssymb}", 
-            "\\usepackage{amsmath}", 
-            "\\usepackage{amsthm}", 
-            "\\usepackage{empheq}", 
-            "\\usepackage{mdframed}", 
-            "\\usepackage{booktabs}", 
-            "\\usepackage{lipsum}", 
-            "\\usepackage{graphicx}", 
-            "\\usepackage{color}", 
-            "\\usepackage{psfrag}", 
-            "\\usepackage{pgfplots}", 
-            "\\usepackage{bm}", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "", 
-            "${3:% Other Settings}", 
-            "", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "\\geometry{a4paper}", 
-            "", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "\\definecolor{ocre}{RGB}{243,102,25}", 
-            "\\definecolor{mygray}{RGB}{243,243,244}", 
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+            "\\documentclass{article}",
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+            "",
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+            "\\usepackage{geometry}",
+            "\\usepackage{graphicx}",
+            "\\usepackage{amssymb}",
+            "\\usepackage{amsmath}",
+            "\\usepackage{amsthm}",
+            "\\usepackage{empheq}",
+            "\\usepackage{mdframed}",
+            "\\usepackage{booktabs}",
+            "\\usepackage{lipsum}",
+            "\\usepackage{graphicx}",
+            "\\usepackage{color}",
+            "\\usepackage{psfrag}",
+            "\\usepackage{pgfplots}",
+            "\\usepackage{bm}",
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+            "",
+            "${3:% Other Settings}",
+            "",
+            "%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+            "\\geometry{a4paper}",
+            "",
+            "%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%",
+            "\\definecolor{ocre}{RGB}{243,102,25}",
+            "\\definecolor{mygray}{RGB}{243,243,244}",
             "\\definecolor{deepGreen}{RGB}{26,111,0}",
             "\\definecolor{shallowGreen}{RGB}{235,255,255}",
             "\\definecolor{deepBlue}{RGB}{61,124,222}",
-            "\\definecolor{shallowBlue}{RGB}{235,249,255}", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%", 
-            "\\newcommand\\orangebox[1]{\\fcolorbox{ocre}{mygray}{\\hspace{1em}#1\\hspace{1em}}}", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "\\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\\normalfont}{0cm}{\\rmfamily\\bfseries}{}{1em}{{\\color{black}\\thmname{#1}~\\thmnumber{#2}}\\thmnote{\\,--\\,#3}}", 
-            "\\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\\normalfont}{0cm}{\\rmfamily\\bfseries}{}{1em}{{\\color{black}\\thmname{#1}~\\thmnumber{#2}}\\thmnote{\\,--\\,#3}}", 
-            "\\theoremstyle{mytheoremstyle}", 
-            "\\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]", 
-            "\\theoremstyle{mytheoremstyle}", 
-            "\\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]", 
-            "\\theoremstyle{myproblemstyle}", 
-            "\\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "\\usepgfplotslibrary{colorbrewer}", 
-            "\\pgfplotsset{width=8cm,compat=1.9}", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "\\title{${1:Title}}", 
-            "\\author{${2:Haoyun Qin}}", 
-            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", 
-            "", 
+            "\\definecolor{shallowBlue}{RGB}{235,249,255}",
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+            "",
+            "%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%",
+            "\\newcommand\\orangebox[1]{\\fcolorbox{ocre}{mygray}{\\hspace{1em}#1\\hspace{1em}}}",
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+            "",
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+            "\\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\\normalfont}{0cm}{\\rmfamily\\bfseries}{}{1em}{{\\color{black}\\thmname{#1}~\\thmnumber{#2}}\\thmnote{\\,--\\,#3}}",
+            "\\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\\normalfont}{0cm}{\\rmfamily\\bfseries}{}{1em}{{\\color{black}\\thmname{#1}~\\thmnumber{#2}}\\thmnote{\\,--\\,#3}}",
+            "\\theoremstyle{mytheoremstyle}",
+            "\\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]",
+            "\\theoremstyle{mytheoremstyle}",
+            "\\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]",
+            "\\theoremstyle{myproblemstyle}",
+            "\\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]",
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+            "",
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+            "\\usepgfplotslibrary{colorbrewer}",
+            "\\pgfplotsset{width=8cm,compat=1.9}",
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+            "",
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+            "\\title{${1:Title}}",
+            "\\author{${2:Haoyun Qin}}",
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+            "",
             "\\begin{document}",
             "    \\maketitle",
             "    $0",
@@ -71,44 +71,32 @@
     },
     "Large Summation": {
         "prefix": ["sumlarge", "\\sumlarge"],
-		"body": [
-			"\\displaystyle\\sum_{$1}^{$2}$3"
-		],
-		"description": "Insert a large summation notation."
+        "body": ["\\displaystyle\\sum_{$1}^{$2}$3"],
+        "description": "Insert a large summation notation."
     },
     "Inline Summation": {
         "prefix": ["suminline", "\\suminline"],
-        "body": [
-            "\\sum_{$1}^{$2}$3"
-        ],
+        "body": ["\\sum_{$1}^{$2}$3"],
         "description": "Insert an inline summation notation, (only in the cases when the environment is inline math environment)."
     },
     "Inline Math": {
         "prefix": ["mathinline", "\\mathinline"],
-        "body": [
-            "$ $1 $$0"
-        ],
+        "body": ["$ $1 $$0"],
         "description": "Insert inline Math Environment."
     },
     "Centered Math": {
         "prefix": ["mathcentered", "\\mathcentered"],
-        "body": [
-            "$$ $0 $$"
-        ],
+        "body": ["$$ $0 $$"],
         "description": "Insert centered Math Environment."
     },
     "Section": {
         "prefix": ["section", "\\section"],
-        "body": [
-            "\\section{$1}$0"
-        ],
+        "body": ["\\section{$1}$0"],
         "description": "Insert a new section."
     },
     "Subsection": {
         "prefix": ["subsection", "\\subsection"],
-        "body": [
-            "\\subsection{$1}$0"
-        ],
+        "body": ["\\subsection{$1}$0"],
         "description": "Insert a new subsection."
     },
     "Header": {
@@ -122,7 +110,7 @@
         "description": "Insert a subsection without index."
     },
     "Italic Text": {
-        "prefix": ["italic", "\\italic", "*"], 
+        "prefix": ["italic", "\\italic", "*"],
         "body": "\\textit{$1}$0",
         "description": "Insert italic text."
     },
@@ -138,17 +126,11 @@
     },
     "Itemize": {
         "prefix": ["- ", "\\itemize", "itemize"],
-        "body": [
-            "\\begin{itemize}",
-            "\t\\item $1",
-            "\\end{itemize}$0"
-        ]
+        "body": ["\\begin{itemize}", "\t\\item $1", "\\end{itemize}$0"]
     },
     "Up": {
         "prefix": ["to", "\\to"],
-        "body": [
-            "^ {$1}$0"
-        ],
+        "body": ["^ {$1}$0"],
         "description": "Superscript notation, as well as the power notation."
     },
     "Theorem": {
@@ -194,22 +176,20 @@
     },
     "Large Integral": {
         "prefix": ["integrallarge", "\\integrallarge"],
-		"body": [
-			"\\displaystyle\\int_{$1}^{$2}$3"
-		],
-		"description": "Insert large integral notation."
+        "body": ["\\displaystyle\\int_{$1}^{$2}$3"],
+        "description": "Insert large integral notation."
     },
     "Inline Integral": {
         "prefix": ["integralinline", "\\integralinline"],
-        "body": [
-            "\\int_{$1}^{$2}$3"
-        ],
+        "body": ["\\int_{$1}^{$2}$3"],
         "description": "Insert inline integral notation, (only in the cases when the environment is inline math environment)."
     },
     "Inline Fraction": {
         "prefix": ["fractioninline", "\\fractioninline"],
         "body": ["\\frac{$1}{$2}$0"],
-        "description": ["Insert inline fraction notation, (only in the cases when the environment is inline math environment)."]
+        "description": [
+            "Insert inline fraction notation, (only in the cases when the environment is inline math environment)."
+        ]
     },
     "Large Fraction": {
         "prefix": ["fractionlarge", "\\fractionlarge"],
@@ -239,8 +219,8 @@
         "prefix": ["plotgraph2d", "\\plotgraph2d"],
         "body": [
             "\\addplot [",
-            "\tdomain=${1:-10}:${2:10}," ,
-            "\tsamples=70,", 
+            "\tdomain=${1:-10}:${2:10},",
+            "\tsamples=70,",
             "\tcolor=${3:blue},",
             "\t]",
             "\t{${4:x^2 + 2*x + 1}};",
@@ -253,8 +233,8 @@
         "prefix": ["plotcircle2d", "\\plotcircle2d"],
         "body": [
             "\\addplot [",
-            "\tdomain=0:2*3.14159265," ,
-            "\tsamples=70,", 
+            "\tdomain=0:2*3.14159265,",
+            "\tsamples=70,",
             "\tcolor=${4:blue},",
             "\t]",
             "\t({${1:r}*cos(t)+${2:a}},{${1:r}*sin(t)+${3:b}});",
@@ -266,8 +246,8 @@
         "prefix": ["plotline2d", "\\plotline2d"],
         "body": [
             "\\addplot [",
-            "\tdomain=${4:x1}:${5:x2}," ,
-            "\tsamples=70,", 
+            "\tdomain=${4:x1}:${5:x2},",
+            "\tsamples=70,",
             "\tcolor=${3:blue},",
             "\t]",
             "\t{${1:a}*x+${2:b}};",
@@ -279,8 +259,8 @@
         "prefix": ["plotellipse2d", "\\plotellipse2d"],
         "body": [
             "\\addplot [",
-            "\tdomain=0:2*3.14159265," ,
-            "\tsamples=70,", 
+            "\tdomain=0:2*3.14159265,",
+            "\tsamples=70,",
             "\tcolor=${5:blue},",
             "\t]",
             "\t({${1:a}*cos(t)+${3:x}},{${2:b}*sin(t)+${4:y}});",
@@ -289,11 +269,14 @@
         "description": "Plot a 2D Ellipse in the 2D graph environment, noted that this can also be used in the 3D environment."
     },
     "Plot Quadratic Function 2D by Point": {
-        "prefix": ["plotquadraticfunction2dbypoint", "\\plotquadraticfunction2dbypoint"],
+        "prefix": [
+            "plotquadraticfunction2dbypoint",
+            "\\plotquadraticfunction2dbypoint"
+        ],
         "body": [
             "\\addplot [",
-            "\tdomain=${4:x1}:${5:x2}," ,
-            "\tsamples=70,", 
+            "\tdomain=${4:x1}:${5:x2},",
+            "\tsamples=70,",
             "\tcolor=${6:blue},",
             "\t]",
             "\t{${1:a}*(x-${2:m})*(x-${2:m})+${3:b}};",
@@ -347,15 +330,11 @@
     },
     "Create Align* Environment in Text": {
         "prefix": ["aligntext", "\\aligntext"],
-        "body": [
-            "\\begin{align*}",
-            "\t$1",
-            "\\end{align*}$0"
-        ],
+        "body": ["\\begin{align*}", "\t$1", "\\end{align*}$0"],
         "description": "Create an align environment when the context is in the text environment."
     },
     "Insert Problem Solving Index": {
-        "prefix": ["problemindex", "\\problemindex"], 
+        "prefix": ["problemindex", "\\problemindex"],
         "body": ["\\noindent\\textbf{$1} $0"],
         "description": "Insert problem solving index format."
     },

@@ -1,217 +1,195 @@
 {
-  "Module": {
-    "prefix": ["module"],
-    "body": [
-		"module ${1:Name} = {",
-		"\t${2:// Module contents}",
-		"}"
-	]
-  },
-  "Switch": {
-    "prefix": ["switch"],
-    "body": [
-      "switch ${1:value} {",
-      "| ${2:pattern1} => ${3:expression}",
-      "${4:| ${5:pattern2} => ${6:expression}}",
-      "}"
-    ]
-  },
-  "Try": {
-    "prefix": ["try"],
-    "body": [
-      "try {",
-      "\t${1:expression}",
-      "} catch {",
-      "| ${2:MyException} => ${3:expression}",
-      "}"
-    ]
-  },
-  "For Loop": {
-    "prefix": ["for"],
-    "body": [
-      "for ${1:i} in ${2:startValueInclusive} to ${3:endValueInclusive} {",
-      "\t${4:Js.log(${1:i})}",
-      "}"
-    ]
-  },
-  "Reverse For Loop": {
-    "prefix": ["for"],
-    "body": [
-      "for ${1:i} in ${2:startValueInclusive} downto ${3:endValueInclusive} {",
-      "\t${4:Js.log(${1:i})}",
-      "}"
-    ]
-  },
-  "Global External Object": {
-    "prefix": ["@bs", "external"],
-    "body": [
-      "@val external ${1:setTimeout}: ${2:(unit => unit, int) => float} = \"${3:setTimeout}\""
-    ]
-  },
-  "Global External Module": {
-    "prefix": ["@bs", "external"],
-    "body": [
-      "@scope(\"${1:Math}\") @val external ${2:random}: ${3:unit => float} = \"${4:random}\""
-    ]
-  },
-  "JS Module External": {
-    "prefix": ["@bs", "external"],
-    "body": [
-      "@module(\"${1:path}\") external ${2:dirname}: ${3:string => string} = \"${4:dirname}\""
-    ]
-  },
-  "JS Module Default External": {
-    "prefix": ["@bs", "external"],
-    "body": [
-      "@module external ${1:leftPad}: ${2:(string, int) => string} = \"${3:leftPad}\""
-    ]
-  },
-  "variable": {
-    "prefix": ["l", "let", "var"],
-    "body": ["let ${1:x} = ${2:\"hello\"}"]
-  },
-  "mutable variable": {
-    "prefix": ["lm", "letm", "mvar"],
-    "body": ["let ${1:x} = ref(${2:\"hello\"})"]
-  },
-  "type": {
-    "prefix": ["t", "tp", "type"],
-    "body": ["type ${1:x} = ${2:int}"]
-  },
-  "type with generic": {
-    "prefix": ["tpg", "typeg"],
-    "body": ["type ${1:x}<'${2:a}> = ${3:int}"]
-  },
-  "type polimorphic variant": {
-    "prefix": ["tpv", "typepv"],
-    "body": ["type ${1:x} = [ #${2:one} | #${3:two} ]"]
-  },
-  "inline functin": {
-    "prefix": ["fn"],
-    "body": [
-      "let ${1:name} = (${2}) => ${0}"
-    ]
-  },
-  "function": {
-    "prefix": ["function"],
-    "body": [
-      "let ${1:doSomeStuff} = (${2}) => {",
-      "\t${0}",
-      "}"
-    ]
-  },
-  "pipe functions": {
-    "prefix": ["fnpp", "funcpp", "pipe"],
-    "body": [
-		"${1:firstFunction}",
-		"\t->${2:secondFunction}"
-	]
-  },
-  "console.log": {
-    "prefix": ["cl", "col"],
-    "body": ["Js.log(${1:something})"]
-  },
-  "console.info": {
-    "prefix": ["ci", "coi"],
-    "body": ["Js.info(${1:something})"]
-  },
-  "console.warn": {
-    "prefix": ["cw", "cow"],
-    "body": ["Js.warn(${1:something})"]
-  },
-  "console.error": {
-    "prefix": ["ce", "cer"],
-    "body": ["Js.error(${1:something})"]
-  },
-  "console.trace": {
-    "prefix": ["ct", "ctr"],
-    "body": ["Js.trace(${1:something})"]
-  },
-  "console.timeStart": {
-    "prefix": ["cts"],
-    "body": ["Js.timeStart(${1:something})"]
-  },
-  "console.timeEnd": {
-    "prefix": ["cte"],
-    "body": ["Js.timeEnd(${1:something})"]
-  },
-  "Belt. fromString": {
-    "prefix": ["bfs", "bfstr"],
-    "body": ["Belt.Int.fromString(${1:10})"]
-  },
-  "Belt. toString": {
-    "prefix": ["bts", "btstr"],
-    "body": ["Belt.Int.toString(${1:10})"]
-  },
-  "if inline": {
-    "prefix": ["ifi"],
-    "body": ["if ${1:a} {${2:b}} else {${3:c}}"]
-  },
-  "Ternary operator": {
-    "prefix": ["to"],
-    "body": ["${1:a} ? ${2:b} : ${3:c}"]
-  },
-  "Object destructuring": {
-    "prefix": ["dob"],
-    "body": ["let {${1:a}} = ${2:data}"]
-  },
-  "Array destructuring": {
-    "prefix": ["dar"],
-    "body": ["let [${1:a}] = ${2:data}"]
-  },
-  "Raise exception": {
-    "prefix": ["rs", "raise"],
-    "body": ["raise(${1:SomeError}(${2:// write your text}))"]
-  },
-  "@genType": {
-    "prefix": ["gt"],
-    "body": ["@genType"]
-  },
-  "@genType import": {
-    "prefix": ["gti"],
-    "body": ["@genType.import(\"${1:./MyMath}\")"]
-  },
-  "@genType alias": {
-    "prefix": ["gta"],
-    "body": ["@genType.as(\"${1:CB}\")"]
-  },
-  "@@warning": {
-    "prefix": ["@w"],
-    "body": ["@@warning(\"${1:-27}\")"]
-  },
-  "alias": {
-    "prefix": ["@a"],
-    "body": ["@as(\"${1:aria-label}\")"]
-  },
-  "compiler deprecation warn": {
-    "prefix": ["@dw"],
-    "body": [
-      "@deprecated(\"${1:This field deprecated}. Use ${2:something} instead\")"
-    ]
-  },
-  "Top level js embed": {
-    "prefix": ["tle", "tlr"],
-    "body": [
-		"%%raw(`",
-		"\t${1://js code}",
-		"`)"
-	]
-  },
-  "expression level js embed": {
-    "prefix": ["ele", "exe", "elr"],
-    "body": ["%raw(\"${1://js expression}\")"]
-  },
-  "js debugger": {
-    "prefix": ["dbg"],
-    "body": ["%%debugger"]
-  },
-  "React Component": {
-    "prefix": ["react.component", "@react"],
-    "body": [
-		"@react.component",
-		"let make = (${1}) => {",
-		"\t${2}",
-		"}"
-	]
-  }
+    "Module": {
+        "prefix": ["module"],
+        "body": ["module ${1:Name} = {", "\t${2:// Module contents}", "}"]
+    },
+    "Switch": {
+        "prefix": ["switch"],
+        "body": [
+            "switch ${1:value} {",
+            "| ${2:pattern1} => ${3:expression}",
+            "${4:| ${5:pattern2} => ${6:expression}}",
+            "}"
+        ]
+    },
+    "Try": {
+        "prefix": ["try"],
+        "body": [
+            "try {",
+            "\t${1:expression}",
+            "} catch {",
+            "| ${2:MyException} => ${3:expression}",
+            "}"
+        ]
+    },
+    "For Loop": {
+        "prefix": ["for"],
+        "body": [
+            "for ${1:i} in ${2:startValueInclusive} to ${3:endValueInclusive} {",
+            "\t${4:Js.log(${1:i})}",
+            "}"
+        ]
+    },
+    "Reverse For Loop": {
+        "prefix": ["for"],
+        "body": [
+            "for ${1:i} in ${2:startValueInclusive} downto ${3:endValueInclusive} {",
+            "\t${4:Js.log(${1:i})}",
+            "}"
+        ]
+    },
+    "Global External Object": {
+        "prefix": ["@bs", "external"],
+        "body": [
+            "@val external ${1:setTimeout}: ${2:(unit => unit, int) => float} = \"${3:setTimeout}\""
+        ]
+    },
+    "Global External Module": {
+        "prefix": ["@bs", "external"],
+        "body": [
+            "@scope(\"${1:Math}\") @val external ${2:random}: ${3:unit => float} = \"${4:random}\""
+        ]
+    },
+    "JS Module External": {
+        "prefix": ["@bs", "external"],
+        "body": [
+            "@module(\"${1:path}\") external ${2:dirname}: ${3:string => string} = \"${4:dirname}\""
+        ]
+    },
+    "JS Module Default External": {
+        "prefix": ["@bs", "external"],
+        "body": [
+            "@module external ${1:leftPad}: ${2:(string, int) => string} = \"${3:leftPad}\""
+        ]
+    },
+    "variable": {
+        "prefix": ["l", "let", "var"],
+        "body": ["let ${1:x} = ${2:\"hello\"}"]
+    },
+    "mutable variable": {
+        "prefix": ["lm", "letm", "mvar"],
+        "body": ["let ${1:x} = ref(${2:\"hello\"})"]
+    },
+    "type": {
+        "prefix": ["t", "tp", "type"],
+        "body": ["type ${1:x} = ${2:int}"]
+    },
+    "type with generic": {
+        "prefix": ["tpg", "typeg"],
+        "body": ["type ${1:x}<'${2:a}> = ${3:int}"]
+    },
+    "type polimorphic variant": {
+        "prefix": ["tpv", "typepv"],
+        "body": ["type ${1:x} = [ #${2:one} | #${3:two} ]"]
+    },
+    "inline functin": {
+        "prefix": ["fn"],
+        "body": ["let ${1:name} = (${2}) => ${0}"]
+    },
+    "function": {
+        "prefix": ["function"],
+        "body": ["let ${1:doSomeStuff} = (${2}) => {", "\t${0}", "}"]
+    },
+    "pipe functions": {
+        "prefix": ["fnpp", "funcpp", "pipe"],
+        "body": ["${1:firstFunction}", "\t->${2:secondFunction}"]
+    },
+    "console.log": {
+        "prefix": ["cl", "col"],
+        "body": ["Js.log(${1:something})"]
+    },
+    "console.info": {
+        "prefix": ["ci", "coi"],
+        "body": ["Js.info(${1:something})"]
+    },
+    "console.warn": {
+        "prefix": ["cw", "cow"],
+        "body": ["Js.warn(${1:something})"]
+    },
+    "console.error": {
+        "prefix": ["ce", "cer"],
+        "body": ["Js.error(${1:something})"]
+    },
+    "console.trace": {
+        "prefix": ["ct", "ctr"],
+        "body": ["Js.trace(${1:something})"]
+    },
+    "console.timeStart": {
+        "prefix": ["cts"],
+        "body": ["Js.timeStart(${1:something})"]
+    },
+    "console.timeEnd": {
+        "prefix": ["cte"],
+        "body": ["Js.timeEnd(${1:something})"]
+    },
+    "Belt. fromString": {
+        "prefix": ["bfs", "bfstr"],
+        "body": ["Belt.Int.fromString(${1:10})"]
+    },
+    "Belt. toString": {
+        "prefix": ["bts", "btstr"],
+        "body": ["Belt.Int.toString(${1:10})"]
+    },
+    "if inline": {
+        "prefix": ["ifi"],
+        "body": ["if ${1:a} {${2:b}} else {${3:c}}"]
+    },
+    "Ternary operator": {
+        "prefix": ["to"],
+        "body": ["${1:a} ? ${2:b} : ${3:c}"]
+    },
+    "Object destructuring": {
+        "prefix": ["dob"],
+        "body": ["let {${1:a}} = ${2:data}"]
+    },
+    "Array destructuring": {
+        "prefix": ["dar"],
+        "body": ["let [${1:a}] = ${2:data}"]
+    },
+    "Raise exception": {
+        "prefix": ["rs", "raise"],
+        "body": ["raise(${1:SomeError}(${2:// write your text}))"]
+    },
+    "@genType": {
+        "prefix": ["gt"],
+        "body": ["@genType"]
+    },
+    "@genType import": {
+        "prefix": ["gti"],
+        "body": ["@genType.import(\"${1:./MyMath}\")"]
+    },
+    "@genType alias": {
+        "prefix": ["gta"],
+        "body": ["@genType.as(\"${1:CB}\")"]
+    },
+    "@@warning": {
+        "prefix": ["@w"],
+        "body": ["@@warning(\"${1:-27}\")"]
+    },
+    "alias": {
+        "prefix": ["@a"],
+        "body": ["@as(\"${1:aria-label}\")"]
+    },
+    "compiler deprecation warn": {
+        "prefix": ["@dw"],
+        "body": [
+            "@deprecated(\"${1:This field deprecated}. Use ${2:something} instead\")"
+        ]
+    },
+    "Top level js embed": {
+        "prefix": ["tle", "tlr"],
+        "body": ["%%raw(`", "\t${1://js code}", "`)"]
+    },
+    "expression level js embed": {
+        "prefix": ["ele", "exe", "elr"],
+        "body": ["%raw(\"${1://js expression}\")"]
+    },
+    "js debugger": {
+        "prefix": ["dbg"],
+        "body": ["%%debugger"]
+    },
+    "React Component": {
+        "prefix": ["react.component", "@react"],
+        "body": ["@react.component", "let make = (${1}) => {", "\t${2}", "}"]
+    }
 }

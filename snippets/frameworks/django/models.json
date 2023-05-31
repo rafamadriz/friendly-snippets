@@ -1,377 +1,377 @@
 {
-  "Model_full": {
-    "prefix": "Model_full",
-    "body": [
-      "class ${1:MODELNAME}(models.Model):",
-      "\t\"\"\"${2:Model definition for $1}.\"\"\"",
-      "",
-      "\t${3:# TODO: Define fields here}",
-      "",
-      "\tclass Meta:",
-      "\t\t\"\"\"Meta definition for $1.\"\"\"",
-      "",
-      "\t\tverbose_name = '$1'",
-      "\t\tverbose_name_plural = '$1s'",
-      "",
-      "\tdef ${4|__str__,__unicode__|}(self):",
-      "\t\t\"\"\"Unicode representation of $1.\"\"\"",
-      "\t\t${7|pass,return '{}'.format(self. ) # TODO,return f'{self. }' # TODO|}",
-      "",
-      "\tdef save(self):",
-      "\t\t\"\"\"Save method for $1.\"\"\"",
-      "\t\tpass",
-      "",
-      "\tdef get_absolute_url(self):",
-      "\t\t\"\"\"Return absolute url for $1.\"\"\"",
-      "\t\treturn ('')",
-      "",
-      "\t${6:# TODO: Define custom methods here}",
-      ""
-    ],
-    "description": "Model (full)",
-    "scope": "source.python"
-  },
-  "Model": {
-    "prefix": "Model",
-    "body": [
-      "class ${1:MODELNAME}(models.Model):",
-      "\t\"\"\"${2:Model definition for $1}.\"\"\"",
-      "",
-      "\t${3:# TODO: Define fields here}",
-      "",
-      "\tclass Meta:",
-      "\t\t\"\"\"Meta definition for $1.\"\"\"",
-      "",
-      "\t\tverbose_name = '$1'",
-      "\t\tverbose_name_plural = '$1s'",
-      "",
-      "\tdef ${4|__str__,__unicode__|}(self):",
-      "\t\t\"\"\"Unicode representation of $1.\"\"\"",
-      "\t\t${5|pass,return '{}'.format(self. ) # TODO,return f'{self. }' # TODO|}",
-      ""
-    ],
-    "description": "Model",
-    "scope": "source.python"
-  },
-  "modelmixin": {
-    "prefix": "modelmixin",
-    "body": [
-      "class $1Mixin(models.Model):",
-      "\t${2:# TODO}\r\n",
-      "\tclass Meta:",
-      "\t\tabstract = True"
-    ],
-    "description": "",
-    "scope": "source.python"
-  },
-  "queryset": {
-    "prefix": "qs",
-    "body": ["class $1QuerySet(models.QuerySet):", "\tpass"],
-    "description": "",
-    "scope": "source.python"
-  },
-  "manager": {
-    "prefix": "mngr",
-    "body": [
-      "class $1Manager(models.Manager):",
-      "\tdef get_queryset(self):",
-      "\t\treturn super ($1Manager, self).get_queryset().${2|filter,exclude,order_by,distinct,reverse|}($3)"
-    ],
-    "description": "Add extra Manager methods",
-    "scope": "source.python"
-  },
-  "queryset_from_manager": {
-    "prefix": "qs_mngr",
-    "body": [
-      "class $1Manager(models.Manager):",
-      "\tdef get_queryset(self):",
-      "\t\treturn $1QuerySet(self.model, using=self._db)"
-    ],
-    "description": "Modify the initial QuerySet the Manager returns.",
-    "scope": "source.python"
-  },
-  "mauto": {
-    "prefix": "mauto",
-    "body": "${1:FIELDNAME} = models.AutoField($2)",
-    "description": "AutoField (mauto).\n\nAn IntegerField that automatically increments according to available IDs.\n\n",
-    "scope": "source.python"
-  },
-  "mbigauto": {
-    "prefix": "mbigauto",
-    "body": "${1:FIELDNAME} = models.BigAutoField($2)",
-    "description": "BigAutoField (mbigauto).\n\n[New in Django 1.10.]\n\nA 64-bit integer, much like an AutoField.\n\n",
-    "scope": "source.python"
-  },
-  "mbigint": {
-    "prefix": "mbigint",
-    "body": "${1:FIELDNAME} = models.BigIntegerField($2)",
-    "description": "BigIntegerField (mbigint).\n\nA 64-bit integer, much like an IntegerField.\n\n",
-    "scope": "source.python"
-  },
-  "mbinary": {
-    "prefix": "mbinary",
-    "body": "${1:FIELDNAME} = models.BinaryField($2)",
-    "description": "BinaryField (mbinary).\n\nA field to store raw binary data.\n\n",
-    "scope": "source.python"
-  },
-  "mbool": {
-    "prefix": "mbool",
-    "body": "${1:FIELDNAME} = models.BooleanField($2)",
-    "description": "BooleanField (mbool).\n\nA true/false field.\n\n",
-    "scope": "source.python"
-  },
-  "mchar": {
-    "prefix": "mchar",
-    "body": "${1:FIELDNAME} = models.CharField($2, max_length=${3:50})",
-    "description": "CharField (mchar)",
-    "scope": "source.python"
-  },
-  "mcoseint": {
-    "prefix": "mcoseint",
-    "body": "${1:FIELDNAME} = models.CommaSeparatedIntegerField($2)",
-    "description": "CommaSeparatedIntegerField (mcoseint).\n\nThis field is deprecated since 1.9 in favor of CharField with validators.\n\n",
-    "scope": "source.python"
-  },
-  "mdate": {
-    "prefix": "mdate",
-    "body": "${1:FIELDNAME} = models.DateField($2, auto_now=${3:False}, auto_now_add=${4:False})",
-    "description": "DateField (mdate).\n\nA date, represented in Python by a datetime.date instance.\n\n",
-    "scope": "source.python"
-  },
-  "mdatetime": {
-    "prefix": "mdatetime",
-    "body": "${1:FIELDNAME} = models.DateTimeField($2, auto_now=${3:False}, auto_now_add=${4:False})",
-    "description": "DateTimeField (mdatetime).\n\nA date, represented in Python by a datetime.datetime instance.\n\n",
-    "scope": "source.python"
-  },
-  "mdecimal": {
-    "prefix": "mdecimal",
-    "body": "${1:FIELDNAME} = models.DecimalField($2, max_digits=${3:5}, decimal_places=${4:2})",
-    "description": "DecimalField (mdecimal).\n\nA fixed-precision decimal number, represented in Python by a Decimal instance.\n\n",
-    "scope": "source.python"
-  },
-  "mduration": {
-    "prefix": "mduration",
-    "body": "${1:FIELDNAME} = models.DurationField($2)",
-    "description": "DurationField (mduration).\n\nA field for storing periods of time - modeled in Python by timedelta.\n\n",
-    "scope": "source.python"
-  },
-  "memail": {
-    "prefix": "memail",
-    "body": "${1:FIELDNAME} = models.EmailField($2, max_length=${3:254})",
-    "description": "EmailField (memail).\n\nA CharField that checks that the value is a valid email address.\n\n",
-    "scope": "source.python"
-  },
-  "mfile": {
-    "prefix": "mfile",
-    "body": "${1:FIELDNAME} = models.FileField($2, upload_to=${3:None}, max_length=${4:100})",
-    "description": "FileField (mfile).\n\nA file-upload field.\n\n",
-    "scope": "source.python"
-  },
-  "mfilepath": {
-    "prefix": "mfilepath",
-    "body": "${1:FIELDNAME} = models.FilePathField($2, path=${3:None}, match=${4:None}, recursive=${5:recursive}, max_length=${6:100})",
-    "description": "FilePathField (mfilepath).\n\nA CharField whose choices are limited to the filenames in a certain directory on the filesystem.\n\n",
-    "scope": "source.python"
-  },
-  "mfloat": {
-    "prefix": "mfloat",
-    "body": "${1:FIELDNAME} = models.FloatField($2)",
-    "description": "FloatField (mfloat).\n\nA floating-point number represented in Python by a float instance.\n\n",
-    "scope": "source.python"
-  },
-  "fk": {
-    "prefix": "fk",
-    "body": "${1:FIELDNAME} = models.ForeignKey(${2:OTHERMODEL}, on_delete=models.${3|CASCADE,PROTECT,SET_NULL,SET_DEFAULT,SET(),DO_NOTHING|})",
-    "description": "ForeignKey (fk).\n\nA many-to-one relationship.\n\non_delete will become a required argument in Django 2.0. In older versions it defaults to CASCADE.\n\n",
-    "scope": "source.python"
-  },
-  "mip": {
-    "prefix": "mip",
-    "body": "${1:FIELDNAME} = models.IPAddressField($2)",
-    "description": "IPAddressField (mip).\n\nThis field has been deprecated since version 1.7 in favor of GenericIPAddressField.\n\n",
-    "scope": "source.python"
-  },
-  "mimg": {
-    "prefix": "mimg",
-    "body": "${1:FIELDNAME} = models.ImageField($2, upload_to=${3:None}, height_field=${4:None}, width_field=${5:None}, max_length=${5:100})",
-    "description": "ImageField (mimg).\n\nInherits all attributes and methods from FileField, but also validates that the uploaded object is a valid image.\n\n",
-    "scope": "source.python"
-  },
-  "mint": {
-    "prefix": "mint",
-    "body": "${1:FIELDNAME} = models.IntegerField($2)",
-    "description": "IntegerField (mint).\n\nAn integer. Values from -2147483648 to 2147483647 are safe in all databases supported by Django.\n\n",
-    "scope": "source.python"
-  },
-  "mgenericip": {
-    "prefix": "mgenericip",
-    "body": "${1:FIELDNAME} = models.GenericIPAddressField($2, protocol=${3:'both'}, unpack_ipv4=${4:False})",
-    "description": "GenericIPAddressField (mimg).\n\nAn IPv4 or IPv6 address, in string format.\n\n",
-    "scope": "source.python"
-  },
-  "m2m": {
-    "prefix": "m2m",
-    "body": "${1:FIELDNAME} = models.ManyToManyField(${2:OTHERMODEL})",
-    "description": "ManyToManyField (m2m).\n\nA many-to-many relationship.\n\n",
-    "scope": "source.python"
-  },
-  "mnullbool": {
-    "prefix": "mnullbool",
-    "body": "${1:FIELDNAME} = models.NullBooleanField($2)",
-    "description": "NullBooleanField (mnullbool).\n\nLike a BooleanField, but allows NULL as one of the options.\n\n",
-    "scope": "source.python"
-  },
-  "o2o": {
-    "prefix": "o2o",
-    "body": "${1:FIELDNAME} = models.OneToOneField(${2:OTHERMODEL}, on_delete=models.${3|CASCADE,PROTECT,SET_NULL,SET_DEFAULT,SET(),DO_NOTHING|})",
-    "description": "OneToOneField (o2o).\n\nA one-to-one relationship.\n\non_delete will become a required argument in Django 2.0. In older versions it defaults to CASCADE.\n\n",
-    "scope": "source.python"
-  },
-  "mphone": {
-    "prefix": "mphone",
-    "body": "${1:FIELDNAME} = models.PhoneNumberField($2)",
-    "description": "PhoneNumberField (mphone).\n\n*external package: django-phonenumber-field*\n\n",
-    "scope": "source.python"
-  },
-  "mposint": {
-    "prefix": "mposint",
-    "body": "${1:FIELDNAME} = models.PositiveIntegerField($2)",
-    "description": "PositiveIntegerField (mposint).\n\nLike an IntegerField, but must be either positive or zero (0).\n\n",
-    "scope": "source.python"
-  },
-  "mpossmallint": {
-    "prefix": "mpossmallint",
-    "body": "${1:FIELDNAME} = models.PositiveSmallIntegerField($2)",
-    "description": "PositiveSmallIntegerField (mpossmallint).\n\nLike a PositiveIntegerField, but only allows values under a certain (database-dependent) point.\n\n",
-    "scope": "source.python"
-  },
-  "mslug": {
-    "prefix": "mslug",
-    "body": "${1:FIELDNAME} = models.SlugField($2)",
-    "description": "SlugField (mslug).\n\nA slug is a short label for something, containing only letters, numbers, underscores or hyphens. They’re generally used in URLs.\n\n",
-    "scope": "source.python"
-  },
-  "msmallint": {
-    "prefix": "msmallint",
-    "body": "${1:FIELDNAME} = models.SmallIntegerField($2)",
-    "description": "SmallIntegerField (msmallint).\n\nLike an IntegerField, but only allows values under a certain (database-dependent) point.\n\n",
-    "scope": "source.python"
-  },
-  "mtext": {
-    "prefix": "mtext",
-    "body": "${1:FIELDNAME} = models.TextField($2)",
-    "description": "TextField (mtext).\n\nA large text field.\n\n",
-    "scope": "source.python"
-  },
-  "mtime": {
-    "prefix": "mtime",
-    "body": "${1:FIELDNAME} = models.TimeField($2, auto_now=${4:False}, auto_now_add=${5:False})",
-    "description": "TimeField (mtime).\n\nA time, represented in Python by a datetime.time instance.\n\n",
-    "scope": "source.python"
-  },
-  "murl": {
-    "prefix": "murl",
-    "body": "${1:FIELDNAME} = models.URLField($2, max_length=${3:200})",
-    "description": "URLField (murl).\n\nA CharField for a URL.\n\n",
-    "scope": "source.python"
-  },
-  "musstate": {
-    "prefix": "musstate",
-    "body": "${1:FIELDNAME} = models.USStateField($2)",
-    "description": "USStateField (musstate).\n\n*external package: django-localflavor*\n\n",
-    "scope": "source.python"
-  },
-  "muuid": {
-    "prefix": "muuid",
-    "body": "${1:FIELDNAME} = models.UUIDField($2)",
-    "description": "UUIDField (muuid).\n\nA field for storing universally unique identifiers. Uses Python’s UUID class.\n\n",
-    "scope": "source.python"
-  },
-  "mxml": {
-    "prefix": "mxml",
-    "body": "${1:FIELDNAME} = models.XMLField($2)",
-    "description": "XMLField (mxml).\n\n*All uses of XMLField can be replaced with TextField. This field has been deprecated since version 1.3*\n\n",
-    "scope": "source.python"
-  },
-  "mstore": {
-    "prefix": "mstore",
-    "body": "${1:FIELDNAME} = HStoreField()",
-    "description": "HStoreField (mstore).\n\n*PostgreSQL specific model fields*.\n\nA field for storing key-value pairs. The Python data type used is a dict.\n\n",
-    "scope": "source.python"
-  },
-  "mjson": {
-    "prefix": "mjson",
-    "body": "${1:FIELDNAME} = JSONField()",
-    "description": "JSONField (mjson).\n\n*PostgreSQL specific model fields*.\n\n[New in Django 1.11.]\n\nA field for storing JSON encoded data.\n\n",
-    "scope": "source.python"
-  },
-  "marray": {
-    "prefix": "marray",
-    "body": "${1:FIELDNAME} = ArrayField()",
-    "description": "ArrayField (marray).\n\n*PostgreSQL specific model fields*.\n\nA field for storing lists of data\n\n",
-    "scope": "source.python"
-  },
-  "fmai": {
-    "prefix": "fmai",
-    "body": "from .managers import $1QuerySet",
-    "description": "",
-    "scope": "source.python"
-  },
-  "fmi": {
-    "prefix": "fmi",
-    "body": "from .models import $1",
-    "description": "",
-    "scope": "source.python"
-  },
-  "imodels": {
-    "prefix": "imodels",
-    "body": "from django.db import models",
-    "description": "from ... import models",
-    "scope": "source.python"
-  },
-  "ipy2_unicode_compatible": {
-    "prefix": "iuc",
-    "body": "from django.utils.encoding import python_2_unicode_compatible",
-    "description": "For forwards compatibility, this decorator is available as of Django 1.4.2.",
-    "scope": "source.python"
-  },
-  "ipostgresmf": {
-    "prefix": "ipostgresmf",
-    "body": "from django.contrib.postgres.fields import ${1|ArrayField,JSONField,HStoreField|}",
-    "description": "PostgreSQL specific model fields",
-    "scope": "source.python"
-  },
-  "isignals": {
-    "prefix": "isignals",
-    "body": "from django.db.models.signals import ${1|pre_init,post_init,pre_save,post_save,pre_delete,post_delete,m2m_changed,class_prepared,Management signals,pre_migrate,post_migrate|}",
-    "description": "Signals for Django Model",
-    "scope": "source.python"
-  },
-  "__str__": {
-    "prefix": "str",
-    "body": ["def __str__(self):", "\treturn self${1: # TODO}"],
-    "description": "",
-    "scope": "source.python"
-  },
-  "get_absolute_url": {
-    "prefix": "get_absolute_url",
-    "body": [
-      "def get_absolute_url(self):",
-      "\tfrom django.core.urlresolvers import reverse",
-      "\treturn reverse('$1', kwargs={'pk': self.pk})"
-    ],
-    "description": "",
-    "scope": "source.python"
-  },
-  "receiver": {
-    "prefix": "receiver",
-    "body": [
-      "def ${1:FUNCTIONNAME}_${2|pre_init,post_init,pre_save,post_save,pre_delete,post_delete,m2m_changed,class_prepared,Management signals,pre_migrate,post_migrate|}_receiver(sender, instance, *args, **kwargs):",
-      "\tpass",
-      "\n\n${2|pre_init,post_init,pre_save,post_save,pre_delete,post_delete,m2m_changed,class_prepared,Management signals,pre_migrate,post_migrate|}.connect(${1:name}_${2|pre_init,post_init,pre_save,post_save,pre_delete,post_delete,m2m_changed,class_prepared,Management signals,pre_migrate,post_migrate|}_receiver, sender=${3:MODELNAME})"
-    ],
-    "description": "",
-    "scope": "source.python"
-  }
+    "Model_full": {
+        "prefix": "Model_full",
+        "body": [
+            "class ${1:MODELNAME}(models.Model):",
+            "\t\"\"\"${2:Model definition for $1}.\"\"\"",
+            "",
+            "\t${3:# TODO: Define fields here}",
+            "",
+            "\tclass Meta:",
+            "\t\t\"\"\"Meta definition for $1.\"\"\"",
+            "",
+            "\t\tverbose_name = '$1'",
+            "\t\tverbose_name_plural = '$1s'",
+            "",
+            "\tdef ${4|__str__,__unicode__|}(self):",
+            "\t\t\"\"\"Unicode representation of $1.\"\"\"",
+            "\t\t${7|pass,return '{}'.format(self. ) # TODO,return f'{self. }' # TODO|}",
+            "",
+            "\tdef save(self):",
+            "\t\t\"\"\"Save method for $1.\"\"\"",
+            "\t\tpass",
+            "",
+            "\tdef get_absolute_url(self):",
+            "\t\t\"\"\"Return absolute url for $1.\"\"\"",
+            "\t\treturn ('')",
+            "",
+            "\t${6:# TODO: Define custom methods here}",
+            ""
+        ],
+        "description": "Model (full)",
+        "scope": "source.python"
+    },
+    "Model": {
+        "prefix": "Model",
+        "body": [
+            "class ${1:MODELNAME}(models.Model):",
+            "\t\"\"\"${2:Model definition for $1}.\"\"\"",
+            "",
+            "\t${3:# TODO: Define fields here}",
+            "",
+            "\tclass Meta:",
+            "\t\t\"\"\"Meta definition for $1.\"\"\"",
+            "",
+            "\t\tverbose_name = '$1'",
+            "\t\tverbose_name_plural = '$1s'",
+            "",
+            "\tdef ${4|__str__,__unicode__|}(self):",
+            "\t\t\"\"\"Unicode representation of $1.\"\"\"",
+            "\t\t${5|pass,return '{}'.format(self. ) # TODO,return f'{self. }' # TODO|}",
+            ""
+        ],
+        "description": "Model",
+        "scope": "source.python"
+    },
+    "modelmixin": {
+        "prefix": "modelmixin",
+        "body": [
+            "class $1Mixin(models.Model):",
+            "\t${2:# TODO}\r\n",
+            "\tclass Meta:",
+            "\t\tabstract = True"
+        ],
+        "description": "",
+        "scope": "source.python"
+    },
+    "queryset": {
+        "prefix": "qs",
+        "body": ["class $1QuerySet(models.QuerySet):", "\tpass"],
+        "description": "",
+        "scope": "source.python"
+    },
+    "manager": {
+        "prefix": "mngr",
+        "body": [
+            "class $1Manager(models.Manager):",
+            "\tdef get_queryset(self):",
+            "\t\treturn super ($1Manager, self).get_queryset().${2|filter,exclude,order_by,distinct,reverse|}($3)"
+        ],
+        "description": "Add extra Manager methods",
+        "scope": "source.python"
+    },
+    "queryset_from_manager": {
+        "prefix": "qs_mngr",
+        "body": [
+            "class $1Manager(models.Manager):",
+            "\tdef get_queryset(self):",
+            "\t\treturn $1QuerySet(self.model, using=self._db)"
+        ],
+        "description": "Modify the initial QuerySet the Manager returns.",
+        "scope": "source.python"
+    },
+    "mauto": {
+        "prefix": "mauto",
+        "body": "${1:FIELDNAME} = models.AutoField($2)",
+        "description": "AutoField (mauto).\n\nAn IntegerField that automatically increments according to available IDs.\n\n",
+        "scope": "source.python"
+    },
+    "mbigauto": {
+        "prefix": "mbigauto",
+        "body": "${1:FIELDNAME} = models.BigAutoField($2)",
+        "description": "BigAutoField (mbigauto).\n\n[New in Django 1.10.]\n\nA 64-bit integer, much like an AutoField.\n\n",
+        "scope": "source.python"
+    },
+    "mbigint": {
+        "prefix": "mbigint",
+        "body": "${1:FIELDNAME} = models.BigIntegerField($2)",
+        "description": "BigIntegerField (mbigint).\n\nA 64-bit integer, much like an IntegerField.\n\n",
+        "scope": "source.python"
+    },
+    "mbinary": {
+        "prefix": "mbinary",
+        "body": "${1:FIELDNAME} = models.BinaryField($2)",
+        "description": "BinaryField (mbinary).\n\nA field to store raw binary data.\n\n",
+        "scope": "source.python"
+    },
+    "mbool": {
+        "prefix": "mbool",
+        "body": "${1:FIELDNAME} = models.BooleanField($2)",
+        "description": "BooleanField (mbool).\n\nA true/false field.\n\n",
+        "scope": "source.python"
+    },
+    "mchar": {
+        "prefix": "mchar",
+        "body": "${1:FIELDNAME} = models.CharField($2, max_length=${3:50})",
+        "description": "CharField (mchar)",
+        "scope": "source.python"
+    },
+    "mcoseint": {
+        "prefix": "mcoseint",
+        "body": "${1:FIELDNAME} = models.CommaSeparatedIntegerField($2)",
+        "description": "CommaSeparatedIntegerField (mcoseint).\n\nThis field is deprecated since 1.9 in favor of CharField with validators.\n\n",
+        "scope": "source.python"
+    },
+    "mdate": {
+        "prefix": "mdate",
+        "body": "${1:FIELDNAME} = models.DateField($2, auto_now=${3:False}, auto_now_add=${4:False})",
+        "description": "DateField (mdate).\n\nA date, represented in Python by a datetime.date instance.\n\n",
+        "scope": "source.python"
+    },
+    "mdatetime": {
+        "prefix": "mdatetime",
+        "body": "${1:FIELDNAME} = models.DateTimeField($2, auto_now=${3:False}, auto_now_add=${4:False})",
+        "description": "DateTimeField (mdatetime).\n\nA date, represented in Python by a datetime.datetime instance.\n\n",
+        "scope": "source.python"
+    },
+    "mdecimal": {
+        "prefix": "mdecimal",
+        "body": "${1:FIELDNAME} = models.DecimalField($2, max_digits=${3:5}, decimal_places=${4:2})",
+        "description": "DecimalField (mdecimal).\n\nA fixed-precision decimal number, represented in Python by a Decimal instance.\n\n",
+        "scope": "source.python"
+    },
+    "mduration": {
+        "prefix": "mduration",
+        "body": "${1:FIELDNAME} = models.DurationField($2)",
+        "description": "DurationField (mduration).\n\nA field for storing periods of time - modeled in Python by timedelta.\n\n",
+        "scope": "source.python"
+    },
+    "memail": {
+        "prefix": "memail",
+        "body": "${1:FIELDNAME} = models.EmailField($2, max_length=${3:254})",
+        "description": "EmailField (memail).\n\nA CharField that checks that the value is a valid email address.\n\n",
+        "scope": "source.python"
+    },
+    "mfile": {
+        "prefix": "mfile",
+        "body": "${1:FIELDNAME} = models.FileField($2, upload_to=${3:None}, max_length=${4:100})",
+        "description": "FileField (mfile).\n\nA file-upload field.\n\n",
+        "scope": "source.python"
+    },
+    "mfilepath": {
+        "prefix": "mfilepath",
+        "body": "${1:FIELDNAME} = models.FilePathField($2, path=${3:None}, match=${4:None}, recursive=${5:recursive}, max_length=${6:100})",
+        "description": "FilePathField (mfilepath).\n\nA CharField whose choices are limited to the filenames in a certain directory on the filesystem.\n\n",
+        "scope": "source.python"
+    },
+    "mfloat": {
+        "prefix": "mfloat",
+        "body": "${1:FIELDNAME} = models.FloatField($2)",
+        "description": "FloatField (mfloat).\n\nA floating-point number represented in Python by a float instance.\n\n",
+        "scope": "source.python"
+    },
+    "fk": {
+        "prefix": "fk",
+        "body": "${1:FIELDNAME} = models.ForeignKey(${2:OTHERMODEL}, on_delete=models.${3|CASCADE,PROTECT,SET_NULL,SET_DEFAULT,SET(),DO_NOTHING|})",
+        "description": "ForeignKey (fk).\n\nA many-to-one relationship.\n\non_delete will become a required argument in Django 2.0. In older versions it defaults to CASCADE.\n\n",
+        "scope": "source.python"
+    },
+    "mip": {
+        "prefix": "mip",
+        "body": "${1:FIELDNAME} = models.IPAddressField($2)",
+        "description": "IPAddressField (mip).\n\nThis field has been deprecated since version 1.7 in favor of GenericIPAddressField.\n\n",
+        "scope": "source.python"
+    },
+    "mimg": {
+        "prefix": "mimg",
+        "body": "${1:FIELDNAME} = models.ImageField($2, upload_to=${3:None}, height_field=${4:None}, width_field=${5:None}, max_length=${5:100})",
+        "description": "ImageField (mimg).\n\nInherits all attributes and methods from FileField, but also validates that the uploaded object is a valid image.\n\n",
+        "scope": "source.python"
+    },
+    "mint": {
+        "prefix": "mint",
+        "body": "${1:FIELDNAME} = models.IntegerField($2)",
+        "description": "IntegerField (mint).\n\nAn integer. Values from -2147483648 to 2147483647 are safe in all databases supported by Django.\n\n",
+        "scope": "source.python"
+    },
+    "mgenericip": {
+        "prefix": "mgenericip",
+        "body": "${1:FIELDNAME} = models.GenericIPAddressField($2, protocol=${3:'both'}, unpack_ipv4=${4:False})",
+        "description": "GenericIPAddressField (mimg).\n\nAn IPv4 or IPv6 address, in string format.\n\n",
+        "scope": "source.python"
+    },
+    "m2m": {
+        "prefix": "m2m",
+        "body": "${1:FIELDNAME} = models.ManyToManyField(${2:OTHERMODEL})",
+        "description": "ManyToManyField (m2m).\n\nA many-to-many relationship.\n\n",
+        "scope": "source.python"
+    },
+    "mnullbool": {
+        "prefix": "mnullbool",
+        "body": "${1:FIELDNAME} = models.NullBooleanField($2)",
+        "description": "NullBooleanField (mnullbool).\n\nLike a BooleanField, but allows NULL as one of the options.\n\n",
+        "scope": "source.python"
+    },
+    "o2o": {
+        "prefix": "o2o",
+        "body": "${1:FIELDNAME} = models.OneToOneField(${2:OTHERMODEL}, on_delete=models.${3|CASCADE,PROTECT,SET_NULL,SET_DEFAULT,SET(),DO_NOTHING|})",
+        "description": "OneToOneField (o2o).\n\nA one-to-one relationship.\n\non_delete will become a required argument in Django 2.0. In older versions it defaults to CASCADE.\n\n",
+        "scope": "source.python"
+    },
+    "mphone": {
+        "prefix": "mphone",
+        "body": "${1:FIELDNAME} = models.PhoneNumberField($2)",
+        "description": "PhoneNumberField (mphone).\n\n*external package: django-phonenumber-field*\n\n",
+        "scope": "source.python"
+    },
+    "mposint": {
+        "prefix": "mposint",
+        "body": "${1:FIELDNAME} = models.PositiveIntegerField($2)",
+        "description": "PositiveIntegerField (mposint).\n\nLike an IntegerField, but must be either positive or zero (0).\n\n",
+        "scope": "source.python"
+    },
+    "mpossmallint": {
+        "prefix": "mpossmallint",
+        "body": "${1:FIELDNAME} = models.PositiveSmallIntegerField($2)",
+        "description": "PositiveSmallIntegerField (mpossmallint).\n\nLike a PositiveIntegerField, but only allows values under a certain (database-dependent) point.\n\n",
+        "scope": "source.python"
+    },
+    "mslug": {
+        "prefix": "mslug",
+        "body": "${1:FIELDNAME} = models.SlugField($2)",
+        "description": "SlugField (mslug).\n\nA slug is a short label for something, containing only letters, numbers, underscores or hyphens. They’re generally used in URLs.\n\n",
+        "scope": "source.python"
+    },
+    "msmallint": {
+        "prefix": "msmallint",
+        "body": "${1:FIELDNAME} = models.SmallIntegerField($2)",
+        "description": "SmallIntegerField (msmallint).\n\nLike an IntegerField, but only allows values under a certain (database-dependent) point.\n\n",
+        "scope": "source.python"
+    },
+    "mtext": {
+        "prefix": "mtext",
+        "body": "${1:FIELDNAME} = models.TextField($2)",
+        "description": "TextField (mtext).\n\nA large text field.\n\n",
+        "scope": "source.python"
+    },
+    "mtime": {
+        "prefix": "mtime",
+        "body": "${1:FIELDNAME} = models.TimeField($2, auto_now=${4:False}, auto_now_add=${5:False})",
+        "description": "TimeField (mtime).\n\nA time, represented in Python by a datetime.time instance.\n\n",
+        "scope": "source.python"
+    },
+    "murl": {
+        "prefix": "murl",
+        "body": "${1:FIELDNAME} = models.URLField($2, max_length=${3:200})",
+        "description": "URLField (murl).\n\nA CharField for a URL.\n\n",
+        "scope": "source.python"
+    },
+    "musstate": {
+        "prefix": "musstate",
+        "body": "${1:FIELDNAME} = models.USStateField($2)",
+        "description": "USStateField (musstate).\n\n*external package: django-localflavor*\n\n",
+        "scope": "source.python"
+    },
+    "muuid": {
+        "prefix": "muuid",
+        "body": "${1:FIELDNAME} = models.UUIDField($2)",
+        "description": "UUIDField (muuid).\n\nA field for storing universally unique identifiers. Uses Python’s UUID class.\n\n",
+        "scope": "source.python"
+    },
+    "mxml": {
+        "prefix": "mxml",
+        "body": "${1:FIELDNAME} = models.XMLField($2)",
+        "description": "XMLField (mxml).\n\n*All uses of XMLField can be replaced with TextField. This field has been deprecated since version 1.3*\n\n",
+        "scope": "source.python"
+    },
+    "mstore": {
+        "prefix": "mstore",
+        "body": "${1:FIELDNAME} = HStoreField()",
+        "description": "HStoreField (mstore).\n\n*PostgreSQL specific model fields*.\n\nA field for storing key-value pairs. The Python data type used is a dict.\n\n",
+        "scope": "source.python"
+    },
+    "mjson": {
+        "prefix": "mjson",
+        "body": "${1:FIELDNAME} = JSONField()",
+        "description": "JSONField (mjson).\n\n*PostgreSQL specific model fields*.\n\n[New in Django 1.11.]\n\nA field for storing JSON encoded data.\n\n",
+        "scope": "source.python"
+    },
+    "marray": {
+        "prefix": "marray",
+        "body": "${1:FIELDNAME} = ArrayField()",
+        "description": "ArrayField (marray).\n\n*PostgreSQL specific model fields*.\n\nA field for storing lists of data\n\n",
+        "scope": "source.python"
+    },
+    "fmai": {
+        "prefix": "fmai",
+        "body": "from .managers import $1QuerySet",
+        "description": "",
+        "scope": "source.python"
+    },
+    "fmi": {
+        "prefix": "fmi",
+        "body": "from .models import $1",
+        "description": "",
+        "scope": "source.python"
+    },
+    "imodels": {
+        "prefix": "imodels",
+        "body": "from django.db import models",
+        "description": "from ... import models",
+        "scope": "source.python"
+    },
+    "ipy2_unicode_compatible": {
+        "prefix": "iuc",
+        "body": "from django.utils.encoding import python_2_unicode_compatible",
+        "description": "For forwards compatibility, this decorator is available as of Django 1.4.2.",
+        "scope": "source.python"
+    },
+    "ipostgresmf": {
+        "prefix": "ipostgresmf",
+        "body": "from django.contrib.postgres.fields import ${1|ArrayField,JSONField,HStoreField|}",
+        "description": "PostgreSQL specific model fields",
+        "scope": "source.python"
+    },
+    "isignals": {
+        "prefix": "isignals",
+        "body": "from django.db.models.signals import ${1|pre_init,post_init,pre_save,post_save,pre_delete,post_delete,m2m_changed,class_prepared,Management signals,pre_migrate,post_migrate|}",
+        "description": "Signals for Django Model",
+        "scope": "source.python"
+    },
+    "__str__": {
+        "prefix": "str",
+        "body": ["def __str__(self):", "\treturn self${1: # TODO}"],
+        "description": "",
+        "scope": "source.python"
+    },
+    "get_absolute_url": {
+        "prefix": "get_absolute_url",
+        "body": [
+            "def get_absolute_url(self):",
+            "\tfrom django.core.urlresolvers import reverse",
+            "\treturn reverse('$1', kwargs={'pk': self.pk})"
+        ],
+        "description": "",
+        "scope": "source.python"
+    },
+    "receiver": {
+        "prefix": "receiver",
+        "body": [
+            "def ${1:FUNCTIONNAME}_${2|pre_init,post_init,pre_save,post_save,pre_delete,post_delete,m2m_changed,class_prepared,Management signals,pre_migrate,post_migrate|}_receiver(sender, instance, *args, **kwargs):",
+            "\tpass",
+            "\n\n${2|pre_init,post_init,pre_save,post_save,pre_delete,post_delete,m2m_changed,class_prepared,Management signals,pre_migrate,post_migrate|}.connect(${1:name}_${2|pre_init,post_init,pre_save,post_save,pre_delete,post_delete,m2m_changed,class_prepared,Management signals,pre_migrate,post_migrate|}_receiver, sender=${3:MODELNAME})"
+        ],
+        "description": "",
+        "scope": "source.python"
+    }
 }

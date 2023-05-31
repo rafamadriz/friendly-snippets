@@ -1,32 +1,22 @@
 {
     "JSDoc Comment": {
         "prefix": "/*",
-        "body": [
-            "/**\n",
-            " * ${1:Comment}$0\n",
-            "*/"
-        ],
+        "body": ["/**\n", " * ${1:Comment}$0\n", "*/"],
         "description": "A JSDoc comment"
     },
     "author email": {
         "prefix": "@au",
-        "body": [
-            "@author ${1:author_name} [${2:author_email}]"
-        ],
+        "body": ["@author ${1:author_name} [${2:author_email}]"],
         "description": "@author email (First Last)"
     },
     "Lisense desc": {
         "prefix": "@li",
-        "body": [
-            "@license ${1:MIT}$0"
-        ],
+        "body": ["@license ${1:MIT}$0"],
         "description": "@lisence Description"
     },
     "Semantic version": {
         "prefix": "@ver",
-        "body": [
-            "@version ${1:0.1.0}$0"
-        ],
+        "body": ["@version ${1:0.1.0}$0"],
         "description": "@version Semantic version"
     },
     "File overview": {
@@ -40,44 +30,32 @@
     },
     "Contructor": {
         "prefix": "@constr",
-        "body": [
-            "@contructor"
-        ],
+        "body": ["@contructor"],
         "description": "@constructor"
     },
     "varname": {
         "prefix": "@p",
-        "body": [
-            "@param ${1:Type} ${2:varname} ${3:Description}"
-        ],
+        "body": ["@param ${1:Type} ${2:varname} ${3:Description}"],
         "description": "@param {Type} varname Description"
     },
     "return type desc": {
         "prefix": "@ret",
-        "body": [
-            "@return ${1:Type} ${2:Description}"
-        ],
+        "body": ["@return ${1:Type} ${2:Description}"],
         "description": "@return {Type} Description"
     },
     "private": {
         "prefix": "@pri",
-        "body": [
-            "@private"
-        ],
+        "body": ["@private"],
         "description": "@private"
     },
     "override": {
         "prefix": "@over",
-        "body": [
-            "@override"
-        ],
+        "body": ["@override"],
         "description": "@override"
     },
     "protected": {
         "prefix": "@pro",
-        "body": [
-            "@protected"
-        ],
+        "body": ["@protected"],
         "description": "@protected"
     }
 }

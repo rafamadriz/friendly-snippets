@@ -1,10 +1,10 @@
 {
-	"Relm4 Component": {
+    "Relm4 Component": {
         "prefix": "relm-component",
         "description": "Relm4 Component Widget",
         "body": [
             "use relm4::{gtk, Component, ComponentSender, ComponentParts};",
-			"",
+            "",
             "pub struct ComponentModel {}",
             "",
             "#[derive(Debug)]",

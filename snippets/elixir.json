@@ -1,228 +1,161 @@
 {
-  "defmodule": {
-    "prefix": "defmo",
-    "body": [
-      "defmodule ${1:module} do",
-      "  $0",
-      "end"
-    ],
-    "description": "Define a module"
-  },
-  "def": {
-    "prefix": "def",
-    "body": [
-      "def ${1:name}() do",
-      "  $0",
-      "end"
-    ],
-    "description": "Define a function"
-  },
-  "defp": {
-    "prefix": "defp",
-    "body": [
-      "defp ${1:name}() do",
-      "  $0",
-      "end"
-    ],
-    "description": "Define a private function"
-  },
-  "IO.puts": {
-    "prefix": "put",
-    "body": "IO.puts($0)"
-  },
-  "IO.inspect": {
-    "prefix": "ins",
-    "body": "IO.inspect($0)"
-  },
-  "IO.inspect with label": {
-    "prefix": "insl",
-    "body": "IO.inspect($1, label: \"$0\")"
-  },
-  "if .. do .. end": {
-    "prefix": "if",
-    "body": [
-      "if ${1:condition} do",
-      "  $0",
-      "end"
-    ]
-  },
-  "if .. do:": {
-    "prefix": "if:",
-    "body": "if ${1:condition}, do: $0"
-  },
-  "if .. do .. else .. end": {
-    "prefix": "ife",
-    "body": [
-      "if ${1:condition} do",
-      "  $2",
-      "else",
-      "  $0",
-      "end"
-    ]
-  },
-  "if .. do: .. else:": {
-    "prefix": "ife:",
-    "body": "if ${1:condition}, do: $2, else: $0"
-  },
-  "cond": {
-    "prefix": "cond",
-    "body": [
-      "cond do",
-      "  $1 -> ",
-      "  $0",
-      "end"
-    ]
-  },
-  "case": {
-    "prefix": "case",
-    "body": [
-      "case $1 do",
-      "  $2 -> ",
-      "    $0",
-      "end"
-    ]
-  },
-  "for": {
-    "prefix": "for",
-    "body": [
-      "for ${1:item} <- ${2:items} do",
-      "  $0",
-      "end"
-    ]
-  },
-  "def + doc": {
-    "prefix": "defd",
-    "body": [
-      "@doc \"\"\"",
-      "${1:doc}",
-      "\"\"\"",
-      "def ${2:name} do",
-      "  $0",
-      "end"
-    ]
-  },
-  "def + spec": {
-    "prefix": "defs",
-    "body": [
-      "@spec ${1:name}(${2:args}) :: ${3:no_return}",
-      "def $1{4:args} do",
-      "  $0",
-      "end"
-    ]
-  },
-  "def + doc + spec": {
-    "prefix": "defsd",
-    "body": [
-      "@doc \"\"\"",
-      "${1:doc}",
-      "\"\"\"",
-      "@spec ${2:name}(${3:args}) :: ${4:no_return}",
-      "def $2{5:args} do",
-      "  $0",
-      "end"
-    ]
-  },
-  "do": {
-    "prefix": "do",
-    "body": [
-      "do",
-      "  $0",
-      "end"
-    ]
-  },
-  "doc": {
-    "prefix": "doc",
-    "body": [
-      "@doc \"\"\"",
-      "$0",
-      "\"\"\""
-    ]
-  },
-  "doc s": {
-    "prefix": "docs",
-    "body": [
-      "@doc ~S\"\"\"",
-      "$0",
-      "\"\"\""
-    ]
-  },
-  "doc false": {
-    "prefix": "docf",
-    "body": "@doc false"
-  },
-  "moduledoc": {
-    "prefix": "mdoc",
-    "body": [
-      "@moduledoc \"\"\"",
-      "$0",
-      "\"\"\""
-    ]
-  },
-  "moduledoc s": {
-    "prefix": "mdocs",
-    "body": [
-      "@moduledoc ~S\"\"\"",
-      "$0",
-      "\"\"\""
-    ]
-  },
-  "moduledoc false": {
-    "prefix": "mdocf",
-    "body": "@moduledoc false"
-  },
-  "require": {
-    "prefix": "req",
-    "body": "require ${0:Logger}"
-  },
-  "test": {
-    "prefix": "test",
-    "body": [
-      "test \"${1:name}\" do",
-      "  $0",
-      "end"
-    ]
-  },
-  "des": {
-    "prefix": "desc",
-    "body": [
-      "describe \"${1:test group subject}\" do",
-      "  $0",
-      "end"
-    ]
-  },
-  "IEx.pry": {
-    "prefix": "pry",
-    "body":  [
-      "require IEx; IEx.pry",
-      "$0"
-    ]
-  },
-  "pipe char": {
-    "prefix": "p",
-    "body": "|> $0"
-  },
-  "pipe into each": {
-    "prefix": ">e",
-    "body": "|> Enum.each($0)"
-  },
-  "pipe into map": {
-    "prefix": ">m",
-    "body": "|> Enum.map($0)"
-  },
-  "pipe into filter": {
-    "prefix": ">f",
-    "body": "|> Enum.filter($0)"
-  },
-  "pipe into reduce": {
-    "prefix": ">r",
-    "body": "|> Enum.reduce(${1:acc}, fn ${2}, ${3:acc} -> $0 end)"
-  },
-  "word list": {
-    "prefix": "wl",
-    "body": "~w($0)"
-  },
-  "atom list": {
-    "prefix": "al",
-    "body": "~w($0)a"
-  }
+    "defmodule": {
+        "prefix": "defmo",
+        "body": ["defmodule ${1:module} do", "  $0", "end"],
+        "description": "Define a module"
+    },
+    "def": {
+        "prefix": "def",
+        "body": ["def ${1:name}() do", "  $0", "end"],
+        "description": "Define a function"
+    },
+    "defp": {
+        "prefix": "defp",
+        "body": ["defp ${1:name}() do", "  $0", "end"],
+        "description": "Define a private function"
+    },
+    "IO.puts": {
+        "prefix": "put",
+        "body": "IO.puts($0)"
+    },
+    "IO.inspect": {
+        "prefix": "ins",
+        "body": "IO.inspect($0)"
+    },
+    "IO.inspect with label": {
+        "prefix": "insl",
+        "body": "IO.inspect($1, label: \"$0\")"
+    },
+    "if .. do .. end": {
+        "prefix": "if",
+        "body": ["if ${1:condition} do", "  $0", "end"]
+    },
+    "if .. do:": {
+        "prefix": "if:",
+        "body": "if ${1:condition}, do: $0"
+    },
+    "if .. do .. else .. end": {
+        "prefix": "ife",
+        "body": ["if ${1:condition} do", "  $2", "else", "  $0", "end"]
+    },
+    "if .. do: .. else:": {
+        "prefix": "ife:",
+        "body": "if ${1:condition}, do: $2, else: $0"
+    },
+    "cond": {
+        "prefix": "cond",
+        "body": ["cond do", "  $1 -> ", "  $0", "end"]
+    },
+    "case": {
+        "prefix": "case",
+        "body": ["case $1 do", "  $2 -> ", "    $0", "end"]
+    },
+    "for": {
+        "prefix": "for",
+        "body": ["for ${1:item} <- ${2:items} do", "  $0", "end"]
+    },
+    "def + doc": {
+        "prefix": "defd",
+        "body": [
+            "@doc \"\"\"",
+            "${1:doc}",
+            "\"\"\"",
+            "def ${2:name} do",
+            "  $0",
+            "end"
+        ]
+    },
+    "def + spec": {
+        "prefix": "defs",
+        "body": [
+            "@spec ${1:name}(${2:args}) :: ${3:no_return}",
+            "def $1{4:args} do",
+            "  $0",
+            "end"
+        ]
+    },
+    "def + doc + spec": {
+        "prefix": "defsd",
+        "body": [
+            "@doc \"\"\"",
+            "${1:doc}",
+            "\"\"\"",
+            "@spec ${2:name}(${3:args}) :: ${4:no_return}",
+            "def $2{5:args} do",
+            "  $0",
+            "end"
+        ]
+    },
+    "do": {
+        "prefix": "do",
+        "body": ["do", "  $0", "end"]
+    },
+    "doc": {
+        "prefix": "doc",
+        "body": ["@doc \"\"\"", "$0", "\"\"\""]
+    },
+    "doc s": {
+        "prefix": "docs",
+        "body": ["@doc ~S\"\"\"", "$0", "\"\"\""]
+    },
+    "doc false": {
+        "prefix": "docf",
+        "body": "@doc false"
+    },
+    "moduledoc": {
+        "prefix": "mdoc",
+        "body": ["@moduledoc \"\"\"", "$0", "\"\"\""]
+    },
+    "moduledoc s": {
+        "prefix": "mdocs",
+        "body": ["@moduledoc ~S\"\"\"", "$0", "\"\"\""]
+    },
+    "moduledoc false": {
+        "prefix": "mdocf",
+        "body": "@moduledoc false"
+    },
+    "require": {
+        "prefix": "req",
+        "body": "require ${0:Logger}"
+    },
+    "test": {
+        "prefix": "test",
+        "body": ["test \"${1:name}\" do", "  $0", "end"]
+    },
+    "des": {
+        "prefix": "desc",
+        "body": ["describe \"${1:test group subject}\" do", "  $0", "end"]
+    },
+    "IEx.pry": {
+        "prefix": "pry",
+        "body": ["require IEx; IEx.pry", "$0"]
+    },
+    "pipe char": {
+        "prefix": "p",
+        "body": "|> $0"
+    },
+    "pipe into each": {
+        "prefix": ">e",
+        "body": "|> Enum.each($0)"
+    },
+    "pipe into map": {
+        "prefix": ">m",
+        "body": "|> Enum.map($0)"
+    },
+    "pipe into filter": {
+        "prefix": ">f",
+        "body": "|> Enum.filter($0)"
+    },
+    "pipe into reduce": {
+        "prefix": ">r",
+        "body": "|> Enum.reduce(${1:acc}, fn ${2}, ${3:acc} -> $0 end)"
+    },
+    "word list": {
+        "prefix": "wl",
+        "body": "~w($0)"
+    },
+    "atom list": {
+        "prefix": "al",
+        "body": "~w($0)a"
+    }
 }
