@@ -529,28 +529,28 @@
   "<c>": {
     "prefix": "<c>",
     "body": [
-      "<c>${1:text.}$0<c>"
+      "<c>${1:text.}$0</c>"
     ],
     "description": "This tag provides a mechanism to indicate that a fragment of text within a description should be set in a special font such as that used for a block of code. For lines of actual code, use <code>."
   },
   "<code>": {
     "prefix": "<code>",
     "body": [
-      "<code>${1:source code or program output.}$0<code>"
+      "<code>${1:source code or program output.}$0</code>"
     ],
     "description": "This tag is used to set one or more lines of source code or program output in some special font. For small code fragments in narrative, use <c>."
   },
   "<example>": {
     "prefix": "<example>",
     "body": [
-      "<example>${1:description.}$0<example>"
+      "<example>${1:description.}$0</example>"
     ],
     "description": "This tag allows example code within a comment, to specify how a method or other library member might be used. Ordinarily, this would also involve use of the tag <code> as well."
   },
   "<exception>": {
     "prefix": "<exception>",
     "body": [
-      "<exception cref=\"${1]:ExceptionName}\">${2:description.}$0<exception>"
+      "<exception cref=\"${1]:ExceptionName}\">${2:description.}$0</exception>"
     ],
     "description": "This tag provides a way to document the exceptions a method can throw. cref=\"member\" is the name of the exceptionh, which should be a member. The documentation generator checks that the given member exists and translates member to the canonical element name in the documentation file. Description is a description of the circumstances in which the exception is thrown."
   },
