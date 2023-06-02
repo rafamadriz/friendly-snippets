@@ -30,7 +30,11 @@
             },
             {
                 "language": ["csharp", "cs"],
-                "path": "./snippets/csharp.json"
+                "path": "./snippets/csharp/csharp.json"
+            },
+            {
+                "language": "csharpdoc",
+                "path": "./snippets/csharp/csharpdoc.json"
             },
             {
                 "language": ["gitcommit", "NeogitCommitMessage"],
@@ -70,7 +74,11 @@
             },
             {
                 "language": "lua",
-                "path": "./snippets/lua.json"
+                "path": "./snippets/lua/lua.json"
+            },
+            {
+                "language": "luadoc",
+                "path": "./snippets/lua/luadoc.json"
             },
             {
                 "language": "go",
