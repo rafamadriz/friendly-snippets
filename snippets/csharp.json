@@ -520,8 +520,8 @@
       "/// <summary>",
       "/// ${1:What it does.}",
       "/// </summary>",
-      "/// <param>Example parameter.</param>",
-      "/// <returns>${2:Something.}</returns>",
+      "/// <param name=\"parameterName\">${3:Parameter description.}</param>",
+      "/// <returns>${2:Type and description of the returned object.}</returns>",
       "/// <example>Write me later.</example>$0"
     ],
     "description": "A C# comment with description, parameters, return, and example."
@@ -529,28 +529,28 @@
   "<c>": {
     "prefix": "<c>",
     "body": [
-      "<c>${1:text.}<c>$0"
+      "<c>${1:text.}$0<c>"
     ],
     "description": "This tag provides a mechanism to indicate that a fragment of text within a description should be set in a special font such as that used for a block of code. For lines of actual code, use <code>."
   },
   "<code>": {
     "prefix": "<code>",
     "body": [
-      "<code>${1:source code or program output.}<code>$0"
+      "<code>${1:source code or program output.}$0<code>"
     ],
     "description": "This tag is used to set one or more lines of source code or program output in some special font. For small code fragments in narrative, use <c>."
   },
   "<example>": {
     "prefix": "<example>",
     "body": [
-      "<example>${1:description.}<example>$0"
+      "<example>${1:description.}$0<example>"
     ],
     "description": "This tag allows example code within a comment, to specify how a method or other library member might be used. Ordinarily, this would also involve use of the tag <code> as well."
   },
   "<exception>": {
     "prefix": "<exception>",
     "body": [
-      "<exception cref=\"${1]:ExceptionName}\">${2:description.}<exception>$0"
+      "<exception cref=\"${1]:ExceptionName}\">${2:description.}$0<exception>"
     ],
     "description": "This tag provides a way to document the exceptions a method can throw. cref=\"member\" is the name of the exceptionh, which should be a member. The documentation generator checks that the given member exists and translates member to the canonical element name in the documentation file. Description is a description of the circumstances in which the exception is thrown."
   },
@@ -566,8 +566,8 @@
     "body": [
       "<list type=\"bullet\">",
       "<item>",
-      "<description>${1:Item 1.}</description>$0",
-      "<description>${2:Item 2.}</description>$0",
+      "<description>${1:Item 1.}</description>",
+      "<description>${2:Item 2.}</description>",
       "<description>${3:Item 3.}</description>$0",
       "</item>",
       "</list>"
@@ -577,14 +577,14 @@
   "<para>": {
     "prefix": "<para>",
     "body": [
-      "<para>${1:content.}</para>$0"
+      "<para>${1:content.}$0</para>"
     ],
-    "description": "Adds a paragraph. This tag is for use inside other tags, such as <summary> (§D.3.16) or <returns> (§D.3.13), and permits structure to be added to text."
+    "description": "Adds a paragraph. This tag is for use inside other tags, such as <summary> or <returns>, and permits structure to be added to text."
   },
   "<param>": {
     "prefix": "<param>",
     "body": [
-      "<param name=\"${1:name}\">${2:description.}</param>$0"
+      "<param name=\"${1:name}\">${2:description.}$0</param>"
     ],
     "description": "This tag is used to describe a parameter for a method, constructor, or indexer."
   },
@@ -598,23 +598,23 @@
   "<permission>": {
     "prefix": "<permission>",
     "body": [
-      "<permission cref=\"${1:member}\">${2:description.}</permission>$0"
+      "<permission cref=\"${1:member}\">${2:description.}$0</permission>"
     ],
     "description": "This tag allows the security accessibility of a member to be documented."
   },
   "<remarks>": {
     "prefix": "<remarks>",
     "body": [
-      "<remarks>${1:description.}</remarks>$0"
+      "<remarks>${1:description.}$0</remarks>"
     ],
     "description": "This tag is used to specify extra information about a type. Use <summary> to describe the type itself and the members of a type."
   },
   "<returns>": {
     "prefix": "<returns>",
     "body": [
-      "<returns>${1:description.}</returns>$0"
+      "<returns>${1:Type and description of the returned object.}$0</returns>"
     ],
-    "description": "This tag is used to describe the return value of a method."
+    "description": "This tag is used to describe the return value of a method. It is important to specify the type of the returned object. If nothing is returned, an object of type void must be returned to represent this fact."
   },
   "<see>": {
     "prefix": "<see>",
@@ -633,28 +633,28 @@
   "<summary>": {
     "prefix": "<summary>",
     "body": [
-      "<summary>${1:description.}</summary>$0"
+      "<summary>${1:description.}$0</summary>"
     ],
     "description": "This tag can be used to describe a type or a member of a type. Use <remarks> to describe the type itself."
   },
   "<typeparam>": {
     "prefix": "<typeparam>",
     "body": [
-      "<typeparam name=\"${1:name}\">${2:description.}</typeparam>$0"
+      "<typeparam name=\"${1:name}\">${2:description.}$0</typeparam>"
     ],
     "description": "This tag is used to describe a type parameter for a generic type or method."
   },
   "<typeparamref>": {
     "prefix": "<typeparamref>",
     "body": [
-      "<typeparamref name=\"${1:description}\">${2:description.}</typeparamref>$0"
+      "<typeparamref name=\"${1:description}\">${2:description.}$0</typeparamref>"
     ],
     "description": "This tag is used to indicate that a word is a type parameter. The documentation file can be processed to format this type parameter in some distinct way."
   },
   "<value>": {
     "prefix": "<value>",
     "body": [
-      "<value>${1:description.}</value>$0"
+      "<value>${1:description.}$0</value>"
     ],
     "description": "This tag allows a property to be described."
   }
