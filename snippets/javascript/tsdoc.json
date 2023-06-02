@@ -5,7 +5,7 @@
             "/**",
             " * ${1:What it does}.",
             " *",
-            " * @param ${3:paramName} - ${4:Parameter description.}",
+            " * @param ${3:name} - ${4:Parameter description.}",
             " * @returns ${2:Type and description of the returned object.}",
             " *",
             " * @example",
