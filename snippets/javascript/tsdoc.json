@@ -10,7 +10,7 @@
             " *",
             " * @example",
             " * ```",
-            " * ${5:Write me later}$0",
+            " * ${5:Write me later.}$0",
             " * ```",
             "*/"
         ],
