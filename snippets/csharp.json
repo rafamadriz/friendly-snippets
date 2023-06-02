@@ -520,9 +520,9 @@
       "/// <summary>",
       "/// ${1:What it does.}",
       "/// </summary>",
-      "/// <param name=\"parameterName\">${3:Parameter description.}</param>",
+      "/// <param name=\"${3:parameterName}\">${4:Parameter description.</param>",
       "/// <returns>${2:Type and description of the returned object.}</returns>",
-      "/// <example>Write me later.</example>$0"
+      "/// <example>${5:Write me later.}</example>$0"
     ],
     "description": "A C# comment with description, parameters, return, and example."
   },
@@ -568,7 +568,7 @@
       "<item>",
       "<description>${1:Item 1.}</description>",
       "<description>${2:Item 2.}</description>",
-      "<description>${3:Item 3.}</description>$0",
+      "<description>${3:Item 3.}$0</description>",
       "</item>",
       "</list>"
     ],
