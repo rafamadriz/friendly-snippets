@@ -1,401 +1,661 @@
 {
-    "Attribute using recommended pattern": {
-        "prefix": "attribute",
-        "body": [
-            "[System.AttributeUsage(System.AttributeTargets.${1:All}, Inherited = ${2:false}, AllowMultiple = ${3:true})]",
-            "sealed class ${4:My}Attribute : System.Attribute",
-            "{",
-            "    // See the attribute guidelines at",
-            "    //  http://go.microsoft.com/fwlink/?LinkId=85236",
-            "    readonly string positionalString;",
-            "    ",
-            "    // This is a positional argument",
-            "    public ${4:My}Attribute(string positionalString)",
-            "    {",
-            "        this.positionalString = positionalString;",
-            "        ",
-            "        // TODO: Implement code here",
-            "        ${5:throw new System.NotImplementedException();}",
-            "    }",
-            "    ",
-            "    public string PositionalString",
-            "    {",
-            "        get { return positionalString; }",
-            "    }",
-            "    ",
-            "    // This is a named argument",
-            "    public int NamedInt { get; set; }",
-            "}"
-        ],
-        "description": "Attribute using recommended pattern"
-    },
-    "Checked block": {
-        "prefix": "checked",
-        "body": ["checked", "{", "    $0", "}"],
-        "description": "Checked block"
-    },
-    "Class": {
-        "prefix": "class",
-        "body": ["class ${1:Name}", "{", "    $0", "}"],
-        "description": "Class"
-    },
-    "Console.WriteLine": {
-        "prefix": "cw",
-        "body": ["System.Console.WriteLine($0);"],
-        "description": "Console.WriteLine"
-    },
-    "do...while loop": {
-        "prefix": "do",
-        "body": ["do", "{", "    $0", "} while (${1:true});"],
-        "description": "do...while loop"
-    },
-    "Else statement": {
-        "prefix": "else",
-        "body": ["else", "{", "    $0", "}"],
-        "description": "Else statement"
-    },
-    "Enum": {
-        "prefix": "enum",
-        "body": ["enum ${1:Name}", "{", "    $0", "}"],
-        "description": "Enum"
-    },
-    "Implementing Equals() according to guidelines": {
-        "prefix": "equals",
-        "body": [
-            "// override object.Equals",
-            "public override bool Equals(object obj)",
-            "{",
-            "    //",
-            "    // See the full list of guidelines at",
-            "    //   http://go.microsoft.com/fwlink/?LinkID=85237",
-            "    // and also the guidance for operator== at",
-            "    //   http://go.microsoft.com/fwlink/?LinkId=85238",
-            "    //",
-            "    ",
-            "    if (obj == null || GetType() != obj.GetType())",
-            "    {",
-            "        return false;",
-            "    }",
-            "    ",
-            "    // TODO: write your implementation of Equals() here",
-            "    ${1:throw new System.NotImplementedException();}",
-            "    return base.Equals (obj);",
-            "}",
-            "",
-            "// override object.GetHashCode",
-            "public override int GetHashCode()",
-            "{",
-            "    // TODO: write your implementation of GetHashCode() here",
-            "    ${2:throw new System.NotImplementedException();}",
-            "    return base.GetHashCode();",
-            "}"
-        ],
-        "description": "Implementing Equals() according to guidelines"
-    },
-    "Exception": {
-        "prefix": "exception",
-        "body": [
-            "[System.Serializable]",
-            "public class ${1:My}Exception : ${2:System.Exception}",
-            "{",
-            "    public ${1:My}Exception() { }",
-            "    public ${1:My}Exception(string message) : base(message) { }",
-            "    public ${1:My}Exception(string message, System.Exception inner) : base(message, inner) { }",
-            "    protected ${1:My}Exception(",
-            "        System.Runtime.Serialization.SerializationInfo info,",
-            "        System.Runtime.Serialization.StreamingContext context) : base(info, context) { }",
-            "}"
-        ],
-        "description": "Exception"
-    },
-    "Foreach statement": {
-        "prefix": "foreach",
-        "body": [
-            "foreach (${1:var} ${2:item} in ${3:collection})",
-            "{",
-            "    $0",
-            "}"
-        ],
-        "description": "Foreach statement"
-    },
-    "Reverse for loop": {
-        "prefix": "forr",
-        "body": [
-            "for (int ${1:i} = ${2:length} - 1; ${1:i} >= 0 ; ${1:i}--)",
-            "{",
-            "    $0",
-            "}"
-        ],
-        "description": "Reverse for loop"
-    },
-    "for loop": {
-        "prefix": "for",
-        "body": [
-            "for (int ${1:i} = 0; ${1:i} < ${2:length}; ${1:i}++)",
-            "{",
-            "    $0",
-            "}"
-        ],
-        "description": "for loop"
-    },
-    "if statement": {
-        "prefix": "if",
-        "body": ["if (${1:true})", "{", "    $0", "}"],
-        "description": "if statement"
-    },
-    "else-if statement": {
-        "prefix": "else if",
-        "body": ["else if (${1:true})", "{", "    $0", "}"],
-        "description": "else-if statement"
-    },
-    "Indexer": {
-        "prefix": "indexer",
-        "body": [
-            "${1:public} ${2:object} this[${3:int} index]",
-            "{",
-            "    get { $4 }",
-            "    set { $0 }",
-            "}"
-        ],
-        "description": "Indexer"
-    },
-    "Interface": {
-        "prefix": "interface",
-        "body": ["interface I${1:Name}", "{", "    $0", "}"],
-        "description": "Interface"
-    },
-    "Safely invoking an event": {
-        "prefix": "invoke",
-        "body": [
-            "${1:EventHandler} temp = ${2:MyEvent};",
-            "if (temp != null)",
-            "{",
-            "    temp($0);",
-            "}"
-        ],
-        "description": "Safely invoking an event"
-    },
-    "Simple iterator": {
-        "prefix": "iterator",
-        "body": [
-            "public System.Collections.Generic.IEnumerator<${1:ElementType}> GetEnumerator()",
-            "{",
-            "    $0throw new System.NotImplementedException();",
-            "    yield return default(${1:ElementType});",
-            "}"
-        ],
-        "description": "Simple iterator"
-    },
-    "Named iterator/indexer pair using a nested class": {
-        "prefix": "iterindex",
-        "body": [
-            "public ${1:Name}Iterator ${1:Name}",
-            "{",
-            "    get",
-            "    {",
-            "        return new ${1:Name}Iterator(this);",
-            "    }",
-            "}",
-            "",
-            "public class ${1:Name}Iterator",
-            "{",
-            "    readonly ${2:ClassName} outer;",
-            "    ",
-            "    internal ${1:Name}Iterator(${2:ClassName} outer)",
-            "    {",
-            "        this.outer = outer;",
-            "    }",
-            "    ",
-            "    // TODO: provide an appropriate implementation here",
-            "    public int Length { get { return 1; } }",
-            "    ",
-            "    public ${3:ElementType} this[int index]",
-            "    {",
-            "        get",
-            "        {",
-            "            //",
-            "            // TODO: implement indexer here",
-            "            //",
-            "            // you have full access to ${2:ClassName} privates",
-            "            //",
-            "            ${4:throw new System.NotImplementedException();}",
-            "            return default(${3:ElementType});",
-            "        }",
-            "    }",
-            "    ",
-            "    public System.Collections.Generic.IEnumerator<${3:ElementType}> GetEnumerator()",
-            "    {",
-            "        for (int i = 0; i < this.Length; i++)",
-            "        {",
-            "            yield return this[i];",
-            "        }",
-            "    }",
-            "}"
-        ],
-        "description": "Named iterator/indexer pair using a nested class"
-    },
-    "Lock statement": {
-        "prefix": "lock",
-        "body": ["lock (${1:this})", "{", "    $0", "}"],
-        "description": "Lock statement"
-    },
-    "MessageBox.Show": {
-        "prefix": "mbox",
-        "body": ["System.Windows.Forms.MessageBox.Show(\"${1:Text}\");$0"],
-        "description": "MessageBox.Show"
-    },
-    "Namespace": {
-        "prefix": "namespace",
-        "body": ["namespace ${1:Name}", "{", "    $0", "}"],
-        "description": "Namespace"
-    },
-    "#if": {
-        "prefix": "ifd",
-        "body": ["#if ${1:true}", "    $0", "#endif"],
-        "description": "#if"
-    },
-    "#region": {
-        "prefix": "region",
-        "body": ["#region ${1:Name}", "    $0", "#endregion"],
-        "description": "#region"
-    },
-    "Property and backing field": {
-        "prefix": "propfull",
-        "body": [
-            "private ${1:int} ${2:myVar};",
-            "public ${1:int} ${3:MyProperty}",
-            "{",
-            "    get { return ${2:myVar}; }",
-            "    set { ${2:myVar} = value; }",
-            "}",
-            "$0"
-        ],
-        "description": "Property and backing field"
-    },
-    "propg": {
-        "prefix": "propg",
-        "body": ["public ${1:int} ${2:MyProperty} { get; private set; }$0"],
-        "description": "An automatically implemented property with a 'get' accessor and a private 'set' accessor. C# 3.0 or higher"
-    },
-    "prop": {
-        "prefix": "prop",
-        "body": ["public ${1:int} ${2:MyProperty} { get; set; }$0"],
-        "description": "An automatically implemented property. C# 3.0 or higher"
-    },
-    "sim": {
-        "prefix": "sim",
-        "body": [
-            "static int Main(string[] args)",
-            "{",
-            "    $0",
-            "    return 0;",
-            "}"
-        ],
-        "description": "int Main()"
-    },
-    "Struct": {
-        "prefix": "struct",
-        "body": ["struct ${1:Name}", "{", "    $0", "}"],
-        "description": "Struct"
-    },
-    "svm": {
-        "prefix": "svm",
-        "body": ["static void Main(string[] args)", "{", "    $0", "}"],
-        "description": "void Main()"
-    },
-    "Switch statement": {
-        "prefix": "switch",
-        "body": ["switch (${1:switch_on})", "{", "    $0", "    default:", "}"],
-        "description": "Switch statement"
-    },
-    "Try finally": {
-        "prefix": "tryf",
-        "body": ["try", "{", "    $1", "}", "finally", "{", "    $0", "}"],
-        "description": "Try finally"
-    },
-    "Try catch": {
-        "prefix": "try",
-        "body": [
-            "try",
-            "{",
-            "    $1",
-            "}",
-            "catch (${2:System.Exception})",
-            "{",
-            "    $0",
-            "    throw;",
-            "}"
-        ],
-        "description": "Try catch"
-    },
-    "Unchecked block": {
-        "prefix": "unchecked",
-        "body": ["unchecked", "{", "    $0", "}"],
-        "description": "Unchecked block"
-    },
-    "Unsafe statement": {
-        "prefix": "unsafe",
-        "body": ["unsafe", "{", "    $0", "}"],
-        "description": "Unsafe statement"
-    },
-    "Using statement": {
-        "prefix": "using",
-        "body": ["using (${1:resource})", "{", "    $0", "}"],
-        "description": "Using statement"
-    },
-    "While loop": {
-        "prefix": "while",
-        "body": ["while (${1:true})", "{", "    $0", "}"],
-        "description": "While loop"
-    },
-    "constructor": {
-        "prefix": "ctor",
-        "body": [
-            "${1:public} ${2:$TM_FILENAME_BASE}(${3:Parameters})",
-            "{",
-            "    $0",
-            "}"
-        ],
-        "description": "constructor"
-    },
-    "xUnit Test": {
-        "prefix": "fact",
-        "body": [
-            "[Fact]",
-            "public void ${1:TestName}()",
-            "{",
-            "//Given",
-            "",
-            "//When",
-            "",
-            "//Then",
-            "}$0"
-        ],
-        "description": "create xunit test method"
-    },
-    "Creates a Method structure": {
-        "prefix": "method",
-        "body": [
-            "${1:public} ${2:void} ${3:MyMethod}(${4:string} ${5:parameter})",
-            "{",
-            "\t$0",
-            "}"
-        ],
-        "description": "Creates a Method structure"
-    },
-    "Creates an Async Method structure": {
-        "prefix": "method_async",
-        "body": [
-            "${1:public} async ${2:Task}<${3:object}> ${4:MyMethodAsync}(${5:string} ${6:parameter})",
-            "{",
-            "\t$0",
-            "}"
-        ],
-        "description": "Creates an async Method structure"
-    },
-    "cls": {
-        "prefix": "cls",
-        "body": ["${1:public} class ${2:$TM_FILENAME_BASE}", "{", "\t$0", "}"],
-        "description": "Create new class"
-    }
+  "Attribute using recommended pattern": {
+    "prefix": "attribute",
+    "body": [
+      "[System.AttributeUsage(System.AttributeTargets.${1:All}, Inherited = ${2:false}, AllowMultiple = ${3:true})]",
+      "sealed class ${4:My}Attribute : System.Attribute",
+      "{",
+      "    // See the attribute guidelines at",
+      "    //  http://go.microsoft.com/fwlink/?LinkId=85236",
+      "    readonly string positionalString;",
+      "    ",
+      "    // This is a positional argument",
+      "    public ${4:My}Attribute(string positionalString)",
+      "    {",
+      "        this.positionalString = positionalString;",
+      "        ",
+      "        // TODO: Implement code here",
+      "        ${5:throw new System.NotImplementedException();}",
+      "    }",
+      "    ",
+      "    public string PositionalString",
+      "    {",
+      "        get { return positionalString; }",
+      "    }",
+      "    ",
+      "    // This is a named argument",
+      "    public int NamedInt { get; set; }",
+      "}"
+    ],
+    "description": "Attribute using recommended pattern"
+  },
+  "Checked block": {
+    "prefix": "checked",
+    "body": [
+      "checked",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Checked block"
+  },
+  "Class": {
+    "prefix": "class",
+    "body": [
+      "class ${1:Name}",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Class"
+  },
+  "Console.WriteLine": {
+    "prefix": "cw",
+    "body": [
+      "System.Console.WriteLine($0);"
+    ],
+    "description": "Console.WriteLine"
+  },
+  "do...while loop": {
+    "prefix": "do",
+    "body": [
+      "do",
+      "{",
+      "    $0",
+      "} while (${1:true});"
+    ],
+    "description": "do...while loop"
+  },
+  "Else statement": {
+    "prefix": "else",
+    "body": [
+      "else",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Else statement"
+  },
+  "Enum": {
+    "prefix": "enum",
+    "body": [
+      "enum ${1:Name}",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Enum"
+  },
+  "Implementing Equals() according to guidelines": {
+    "prefix": "equals",
+    "body": [
+      "// override object.Equals",
+      "public override bool Equals(object obj)",
+      "{",
+      "    //",
+      "    // See the full list of guidelines at",
+      "    //   http://go.microsoft.com/fwlink/?LinkID=85237",
+      "    // and also the guidance for operator== at",
+      "    //   http://go.microsoft.com/fwlink/?LinkId=85238",
+      "    //",
+      "    ",
+      "    if (obj == null || GetType() != obj.GetType())",
+      "    {",
+      "        return false;",
+      "    }",
+      "    ",
+      "    // TODO: write your implementation of Equals() here",
+      "    ${1:throw new System.NotImplementedException();}",
+      "    return base.Equals (obj);",
+      "}",
+      "",
+      "// override object.GetHashCode",
+      "public override int GetHashCode()",
+      "{",
+      "    // TODO: write your implementation of GetHashCode() here",
+      "    ${2:throw new System.NotImplementedException();}",
+      "    return base.GetHashCode();",
+      "}"
+    ],
+    "description": "Implementing Equals() according to guidelines"
+  },
+  "Exception": {
+    "prefix": "exception",
+    "body": [
+      "[System.Serializable]",
+      "public class ${1:My}Exception : ${2:System.Exception}",
+      "{",
+      "    public ${1:My}Exception() { }",
+      "    public ${1:My}Exception(string message) : base(message) { }",
+      "    public ${1:My}Exception(string message, System.Exception inner) : base(message, inner) { }",
+      "    protected ${1:My}Exception(",
+      "        System.Runtime.Serialization.SerializationInfo info,",
+      "        System.Runtime.Serialization.StreamingContext context) : base(info, context) { }",
+      "}"
+    ],
+    "description": "Exception"
+  },
+  "Foreach statement": {
+    "prefix": "foreach",
+    "body": [
+      "foreach (${1:var} ${2:item} in ${3:collection})",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Foreach statement"
+  },
+  "Reverse for loop": {
+    "prefix": "forr",
+    "body": [
+      "for (int ${1:i} = ${2:length} - 1; ${1:i} >= 0 ; ${1:i}--)",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Reverse for loop"
+  },
+  "for loop": {
+    "prefix": "for",
+    "body": [
+      "for (int ${1:i} = 0; ${1:i} < ${2:length}; ${1:i}++)",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "for loop"
+  },
+  "if statement": {
+    "prefix": "if",
+    "body": [
+      "if (${1:true})",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "if statement"
+  },
+  "else-if statement": {
+    "prefix": "else if",
+    "body": [
+      "else if (${1:true})",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "else-if statement"
+  },
+  "Indexer": {
+    "prefix": "indexer",
+    "body": [
+      "${1:public} ${2:object} this[${3:int} index]",
+      "{",
+      "    get { $4 }",
+      "    set { $0 }",
+      "}"
+    ],
+    "description": "Indexer"
+  },
+  "Interface": {
+    "prefix": "interface",
+    "body": [
+      "interface I${1:Name}",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Interface"
+  },
+  "Safely invoking an event": {
+    "prefix": "invoke",
+    "body": [
+      "${1:EventHandler} temp = ${2:MyEvent};",
+      "if (temp != null)",
+      "{",
+      "    temp($0);",
+      "}"
+    ],
+    "description": "Safely invoking an event"
+  },
+  "Simple iterator": {
+    "prefix": "iterator",
+    "body": [
+      "public System.Collections.Generic.IEnumerator<${1:ElementType}> GetEnumerator()",
+      "{",
+      "    $0throw new System.NotImplementedException();",
+      "    yield return default(${1:ElementType});",
+      "}"
+    ],
+    "description": "Simple iterator"
+  },
+  "Named iterator/indexer pair using a nested class": {
+    "prefix": "iterindex",
+    "body": [
+      "public ${1:Name}Iterator ${1:Name}",
+      "{",
+      "    get",
+      "    {",
+      "        return new ${1:Name}Iterator(this);",
+      "    }",
+      "}",
+      "",
+      "public class ${1:Name}Iterator",
+      "{",
+      "    readonly ${2:ClassName} outer;",
+      "    ",
+      "    internal ${1:Name}Iterator(${2:ClassName} outer)",
+      "    {",
+      "        this.outer = outer;",
+      "    }",
+      "    ",
+      "    // TODO: provide an appropriate implementation here",
+      "    public int Length { get { return 1; } }",
+      "    ",
+      "    public ${3:ElementType} this[int index]",
+      "    {",
+      "        get",
+      "        {",
+      "            //",
+      "            // TODO: implement indexer here",
+      "            //",
+      "            // you have full access to ${2:ClassName} privates",
+      "            //",
+      "            ${4:throw new System.NotImplementedException();}",
+      "            return default(${3:ElementType});",
+      "        }",
+      "    }",
+      "    ",
+      "    public System.Collections.Generic.IEnumerator<${3:ElementType}> GetEnumerator()",
+      "    {",
+      "        for (int i = 0; i < this.Length; i++)",
+      "        {",
+      "            yield return this[i];",
+      "        }",
+      "    }",
+      "}"
+    ],
+    "description": "Named iterator/indexer pair using a nested class"
+  },
+  "Lock statement": {
+    "prefix": "lock",
+    "body": [
+      "lock (${1:this})",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Lock statement"
+  },
+  "MessageBox.Show": {
+    "prefix": "mbox",
+    "body": [
+      "System.Windows.Forms.MessageBox.Show(\"${1:Text}\");$0"
+    ],
+    "description": "MessageBox.Show"
+  },
+  "Namespace": {
+    "prefix": "namespace",
+    "body": [
+      "namespace ${1:Name}",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Namespace"
+  },
+  "#if": {
+    "prefix": "ifd",
+    "body": [
+      "#if ${1:true}",
+      "    $0",
+      "#endif"
+    ],
+    "description": "#if"
+  },
+  "#region": {
+    "prefix": "region",
+    "body": [
+      "#region ${1:Name}",
+      "    $0",
+      "#endregion"
+    ],
+    "description": "#region"
+  },
+  "Property and backing field": {
+    "prefix": "propfull",
+    "body": [
+      "private ${1:int} ${2:myVar};",
+      "public ${1:int} ${3:MyProperty}",
+      "{",
+      "    get { return ${2:myVar}; }",
+      "    set { ${2:myVar} = value; }",
+      "}",
+      "$0"
+    ],
+    "description": "Property and backing field"
+  },
+  "propg": {
+    "prefix": "propg",
+    "body": [
+      "public ${1:int} ${2:MyProperty} { get; private set; }$0"
+    ],
+    "description": "An automatically implemented property with a 'get' accessor and a private 'set' accessor. C# 3.0 or higher"
+  },
+  "prop": {
+    "prefix": "prop",
+    "body": [
+      "public ${1:int} ${2:MyProperty} { get; set; }$0"
+    ],
+    "description": "An automatically implemented property. C# 3.0 or higher"
+  },
+  "sim": {
+    "prefix": "sim",
+    "body": [
+      "static int Main(string[] args)",
+      "{",
+      "    $0",
+      "    return 0;",
+      "}"
+    ],
+    "description": "int Main()"
+  },
+  "Struct": {
+    "prefix": "struct",
+    "body": [
+      "struct ${1:Name}",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Struct"
+  },
+  "svm": {
+    "prefix": "svm",
+    "body": [
+      "static void Main(string[] args)",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "void Main()"
+  },
+  "Switch statement": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:switch_on})",
+      "{",
+      "    $0",
+      "    default:",
+      "}"
+    ],
+    "description": "Switch statement"
+  },
+  "Try finally": {
+    "prefix": "tryf",
+    "body": [
+      "try",
+      "{",
+      "    $1",
+      "}",
+      "finally",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Try finally"
+  },
+  "Try catch": {
+    "prefix": "try",
+    "body": [
+      "try",
+      "{",
+      "    $1",
+      "}",
+      "catch (${2:System.Exception})",
+      "{",
+      "    $0",
+      "    throw;",
+      "}"
+    ],
+    "description": "Try catch"
+  },
+  "Unchecked block": {
+    "prefix": "unchecked",
+    "body": [
+      "unchecked",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Unchecked block"
+  },
+  "Unsafe statement": {
+    "prefix": "unsafe",
+    "body": [
+      "unsafe",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Unsafe statement"
+  },
+  "Using statement": {
+    "prefix": "using",
+    "body": [
+      "using (${1:resource})",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Using statement"
+  },
+  "While loop": {
+    "prefix": "while",
+    "body": [
+      "while (${1:true})",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "While loop"
+  },
+  "constructor": {
+    "prefix": "ctor",
+    "body": [
+      "${1:public} ${2:$TM_FILENAME_BASE}(${3:Parameters})",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "constructor"
+  },
+  "xUnit Test": {
+    "prefix": "fact",
+    "body": [
+      "[Fact]",
+      "public void ${1:TestName}()",
+      "{",
+      "//Given",
+      "",
+      "//When",
+      "",
+      "//Then",
+      "}$0"
+    ],
+    "description": "create xunit test method"
+  },
+  "Creates a Method structure": {
+    "prefix": "method",
+    "body": [
+      "${1:public} ${2:void} ${3:MyMethod}(${4:string} ${5:parameter})",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "Creates a Method structure"
+  },
+  "Creates an Async Method structure": {
+    "prefix": "method_async",
+    "body": [
+      "${1:public} async ${2:Task}<${3:object}> ${4:MyMethodAsync}(${5:string} ${6:parameter})",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "Creates an async Method structure"
+  },
+  "cls": {
+    "prefix": "cls",
+    "body": [
+      "${1:public} class ${2:$TM_FILENAME_BASE}",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "Create new class"
+  },
+  "comment": {
+    "prefix": "///",
+    "body": [
+      "/// <summary>",
+      "/// ${1:What it does.}",
+      "/// </summary>",
+      "/// <param>Example parameter.</param>",
+      "/// <returns>${2:Something.}</returns>",
+      "/// <example>Write me later.</example>"
+    ],
+    "description": "A C# comment with description, parameters, return, and example."
+  },
+  "<c>": {
+    "prefix": "<c>",
+    "body": [
+      "<c>${1:text.}<c>"
+    ],
+    "description": "This tag provides a mechanism to indicate that a fragment of text within a description should be set in a special font such as that used for a block of code. For lines of actual code, use <code>."
+  },
+  "<code>": {
+    "prefix": "<code>",
+    "body": [
+      "<code>${1:source code or program output.}<code>"
+    ],
+    "description": "This tag is used to set one or more lines of source code or program output in some special font. For small code fragments in narrative, use <c>."
+  },
+  "<example>": {
+    "prefix": "<example>",
+    "body": [
+      "<example>${1:description.}<example>"
+    ],
+    "description": "This tag allows example code within a comment, to specify how a method or other library member might be used. Ordinarily, this would also involve use of the tag <code> as well."
+  },
+  "<exception>": {
+    "prefix": "<exception>",
+    "body": [
+      "<exception cref=\"${1]:ExceptionName}\">${2:description.}<exception>"
+    ],
+    "description": "This tag provides a way to document the exceptions a method can throw. cref=\"member\" is the name of the exceptionh, which should be a member. The documentation generator checks that the given member exists and translates member to the canonical element name in the documentation file. Description is a description of the circumstances in which the exception is thrown."
+  },
+  "<include>": {
+    "prefix": "<include>",
+    "body": [
+      "<include file=\"${1]:filename}\" path=\"${2:xpath}\"/>"
+    ],
+    "description": "This tag allows including information from an XML document that is external to the source code file. The external file must be a well-formed XML document, and an XPath expression is applied to that document to specify what XML from that document to include. The <include> tag is then replaced with the selected XML from the external document. Note this is a self closing tag."
+  },
+  "<list>": {
+    "prefix": "<list>",
+    "body": [
+      "<list type=\"bullet\">",
+      "<item>",
+      "<description>${1:Item 1.}</description>",
+      "<description>${2:Item 2.}</description>",
+      "<description>${3:Item 3.}</description>",
+      "</item>",
+      "</list>"
+    ],
+    "description": "This tag is used to create a list or table of items. It can contain a <listheader> block to define the heading row of either a table or definition list. (When defining a table, only an entry for term in the heading need be supplied.)\n\nEach item in the list is specified with an <item> block. When creating a definition list, both term and description must be specified. However, for a table, bulleted list, or numbered list, only description need be specified."
+  },
+  "<para>": {
+    "prefix": "<para>",
+    "body": [
+      "<para>${1:content.}</para>"
+    ],
+    "description": "Adds a paragraph. This tag is for use inside other tags, such as <summary> (§D.3.16) or <returns> (§D.3.13), and permits structure to be added to text."
+  },
+  "<param>": {
+    "prefix": "<param>",
+    "body": [
+      "<param name=\"${1:name}\">${2:description.}</param>"
+    ],
+    "description": "This tag is used to describe a parameter for a method, constructor, or indexer."
+  },
+  "<paramref>": {
+    "prefix": "<paramref>",
+    "body": [
+      "<paramref name=\"${1:name}\"/>"
+    ],
+    "description": "This tag is used to indicate that a word is a parameter. The documentation file can be processed to format this parameter in some distinct way."
+  },
+  "<permission>": {
+    "prefix": "<permission>",
+    "body": [
+      "<permission cref=\"${1:member}\">${2:description.}</permission>"
+    ],
+    "description": "This tag allows the security accessibility of a member to be documented."
+  },
+  "<remarks>": {
+    "prefix": "<remarks>",
+    "body": [
+      "<remarks>${1:description.}</remarks>"
+    ],
+    "description": "This tag is used to specify extra information about a type. Use <summary> to describe the type itself and the members of a type."
+  },
+  "<returns>": {
+    "prefix": "<returns>",
+    "body": [
+      "<returns>${1:description.}</returns>"
+    ],
+    "description": "This tag is used to describe the return value of a method."
+  },
+  "<see>": {
+    "prefix": "<see>",
+    "body": [
+      "<see cref=\"${1:member}\" href=\"${2:url}\" langword=\"${3:keyword}\"/>"
+    ],
+    "description": "This tag allows a link to be specified within text. Use <seealso> to indicate text that is to appear in a See Also subclause."
+  },
+  "<seealso>": {
+    "prefix": "<seealso>",
+    "body": [
+      "<seealso cref=\"${1:member}\" href=\"${2:url}\"/>"
+    ],
+    "description": "This tag allows an entry to be generated for the See Also subclause. Use <see> to specify a link from within text."
+  },
+  "<summary>": {
+    "prefix": "<summary>",
+    "body": [
+      "<summary>${1:description.}</summary>"
+    ],
+    "description": "This tag can be used to describe a type or a member of a type. Use <remarks> to describe the type itself."
+  },
+  "<typeparam>": {
+    "prefix": "<typeparam>",
+    "body": [
+      "<typeparam name=\"${1:name}\">${2:description.}</typeparam>"
+    ],
+    "description": "This tag is used to describe a type parameter for a generic type or method."
+  },
+  "<typeparamref>": {
+    "prefix": "<typeparamref>",
+    "body": [
+      "<typeparamref name=\"${1:description}\">${2:description.}</typeparamref>"
+    ],
+    "description": "This tag is used to indicate that a word is a type parameter. The documentation file can be processed to format this type parameter in some distinct way."
+  },
+  "<value>": {
+    "prefix": "<value>",
+    "body": [
+      "<value>${1:description.}</value>"
+    ],
+    "description": "This tag allows a property to be described."
+  }
 }
