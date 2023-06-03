@@ -144,6 +144,10 @@
         "prefix": ["{p", "{P"],
         "body": "{ ${1:|${2:variable}| }$0 "
     },
+    "Insert inline block with variable": {
+        "prefix": "b",
+        "body": "{ |${1:variable}| $2 }"
+    },
     "Insert encoding comment": {
         "prefix": "enc",
         "body": "# encoding: utf-8$0"
@@ -219,10 +223,6 @@
     "Insert key: value": {
         "prefix": ":",
         "body": "${1:key}: ${2:value}"
-    },
-    "Insert inline block": {
-        "prefix": "b",
-        "body": "{ |${1:var}| $0 }"
     },
     "Insert byebug call": {
         "prefix": "bye",
