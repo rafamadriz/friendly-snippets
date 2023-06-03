@@ -70,7 +70,11 @@
             },
             {
                 "language": "lua",
-                "path": "./snippets/lua.json"
+                "path": "./snippets/lua/lua.json"
+            },
+            {
+                "language": "luadoc",
+                "path": "./snippets/lua/luadoc.json"
             },
             {
                 "language": "go",
