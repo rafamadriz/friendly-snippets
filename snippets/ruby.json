@@ -216,14 +216,6 @@
         "prefix": "->a",
         "body": "->(${1:args}) { $0 }"
     },
-    "Insert do block": {
-        "prefix": "do",
-        "body": ["do", "\t$0", "end"]
-    },
-    "Insert do block with variables": {
-        "prefix": "dov",
-        "body": ["do |${1:v}|", "\t$0", "end"]
-    },
     "Insert key: value": {
         "prefix": ":",
         "body": "${1:key}: ${2:value}"
