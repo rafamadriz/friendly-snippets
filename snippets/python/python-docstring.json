@@ -21,7 +21,7 @@
             "    ${4:use_it_this_way(arg1, arg2)}",
             "\"\"\""
         ],
-        "description": "A Python docstring used on modules, including a one-line summary, details, and examples."
+        "description": "A Python docstring for modules, including a one-line summary, details, and examples."
     },
     "test module docstring": {
         "prefix": "\"\"\"test",
@@ -53,7 +53,7 @@
             "    ${7:use_it_this_way(arg1, arg2)}",
             "\"\"\""
         ],
-        "description": "A Python docstring used on functions, including short summary, details, args, returns, and examples. This is a synonism of the docstring method."
+        "description": "A Python docstring for functions, including short summary, details, args, returns, and examples. This is a synonism of the docstring method."
     },
     "method docstring": {
         "prefix": "\"\"\"method",
@@ -74,7 +74,7 @@
             "    ${7:use_it_this_way(arg1, arg2)}",
             "\"\"\""
         ],
-        "description": "A Python docstring used on methods, including a one-line summary, details, args, returns, and examples. This is a synonism of the docstring function."
+        "description": "A Python docstring for methods, including a one-line summary, details, args, returns, and examples. This is a synonism of the docstring function."
     },
     "generator docstring": {
         "prefix": "\"\"\"generator",
@@ -95,7 +95,7 @@
             "    ${7:use_it_this_way(arg1, arg2)}",
             "\"\"\""
         ],
-        "description": "A Python docstring used on generator functions and methods, including a one-line summary, details, parameters, yields, and example. It is the same, but it has yields instead of returns."
+        "description": "A Python docstring for generator methods, including a one-line summary, details, parameters, yields, and example. It is the same, but it has yields instead of returns."
     },
     "class docstring": {
         "prefix": "\"\"\"class",
@@ -109,7 +109,7 @@
             "    ${3:attribute_name}: ${4:type and description.}",
             "\"\"\""
         ],
-        "description": "A Python docstring used on classes, including a one-line summary, details, attributes, and returns."
+        "description": "A Python docstring for classes, including a one-line summary, details, attributes, and returns."
     },
     "exception docstring": {
         "prefix": "\"\"\"exception",
@@ -123,7 +123,7 @@
             "    ${3:attribute_name}: ${4:type and description.}",
             "\"\"\""
         ],
-        "description": "A Python docstring used on exceptions, including a one-line summary, description, and attributes."
+        "description": "A Python docstring for exceptions, including a one-line summary, description, and attributes."
     },
     "raises docstring": {
         "prefix": "\n\n\nraises",
@@ -131,7 +131,7 @@
             "Raises:",
             "    ${1:ErrorName}: ${2:Error description.}$0"
         ],
-        "description": "A Python docstring used on methods when we want to be exclicit about the errors it Raises. Use it only when is relevant."
+        "description": "A Python docstring for methods when we want to be exclicit about the errors it Raises. Use it only when is relevant."
     }
 
 }
