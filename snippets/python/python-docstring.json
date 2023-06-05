@@ -1,0 +1,137 @@
+{
+    "comment simple": {
+        "prefix": "\"\"\"",
+        "body": [
+            "\"\"\"",
+            "${1:A one-line summary.}$0",
+            "\"\"\""
+        ],
+        "description": "A simple Python docstring comment. Useful when you prefer to add the docstrings manually."
+    },
+    "module docstring": {
+        "prefix": "\"\"\"module",
+        "body": [
+            "\"\"\"",
+            "${1:A one-line summay.}",
+            "",
+            "${2:Detailed description.}$0",
+            "",
+            "Examples:",
+            "    # ${3:Description of my example.}",
+            "    ${4:use_it_this_way(arg1, arg2)}",
+            "\"\"\""
+        ],
+        "description": "A Python docstring used on modules, including a one-line summary, details, and examples."
+    },
+    "test module docstring": {
+        "prefix": "\"\"\"test",
+        "body": [
+            "\"\"\"",
+            "${1:A one-line summary.}",
+            "",
+            "${2:Detailed description.}$0",
+            "\"\"\""
+        ],
+        "description": "Module-level docstrings for test files are not required. They should be included only when there is additional information that can be provided.\n\nExamples include some specifics on how the test should be run, an explanation of an unusual setup pattern, dependency on the external environment, and so on. Docstrings that do not provide any new information should not be used, such as \"\"\"Tests for foo.bar.\"\"\""
+    },
+    "function docstring": {
+        "prefix": "\"\"\"function",
+        "body": [
+            "\"\"\"",
+            "${1:A one-line summay.}",
+            "",
+            "${2:Detailed description.}$0",
+            "",
+            "Args:",
+            "    ${4:argument_name}: ${5:type and description.}",
+            "",
+            "Returns:",
+            "    ${3:type and description of the returned object.}",
+            "",
+            "Examples:",
+            "    # ${6:Description of my example.}",
+            "    ${7:use_it_this_way(arg1, arg2)}",
+            "\"\"\""
+        ],
+        "description": "A Python docstring used on functions, including short summary, details, args, returns, and examples. This is a synonism of the method docstring."
+    },
+    "method docstring": {
+        "prefix": "\"\"\"method",
+        "body": [
+            "\"\"\"",
+            "${1:A one-line summay.}",
+            "",
+            "${2:Detailed description.}$0",
+            "",
+            "Args:",
+            "    ${4:argument_name}: ${5:type and description.}",
+            "",
+            "Returns:",
+            "    ${3:type and description of the returned object.}",
+            "",
+            "Examples:",
+            "    # ${6:Description of my example.}",
+            "    ${7:use_it_this_way(arg1, arg2)}",
+            "\"\"\""
+        ],
+        "description": "A Python docstring used on methods, including a one-line summary, details, args, returns, and examples. This is a synonism of the function docstring."
+    },
+    "generator docstring": {
+        "prefix": "\"\"\"generator",
+        "body": [
+            "\"\"\"",
+            "${1:A one-line summay.}",
+            "",
+            "${2:Detailed description.}$0",
+            "",
+            "Args:",
+            "    ${4:argument_name}: ${5:type and description.}",
+            "",
+            "Yields:",
+            "    ${3:type and description of the yielded object.}",
+            "",
+            "Examples:",
+            "    # ${6:Description of my example.}",
+            "    ${7:use_it_this_way(arg1, arg2)}",
+            "\"\"\""
+        ],
+        "description": "A Python docstring used on generator functions and methods, including a one-line summary, details, parameters, yields, and example. It is the same, but it has yields instead of returns."
+    },
+    "class docstring": {
+        "prefix": "\"\"\"class",
+        "body": [
+            "\"\"\"",
+            "${1:A one-line summay.}",
+            "",
+            "${2:Detailed description.}$0",
+            "",
+            "Attributes:",
+            "    ${3:attribute_name}: ${4:type and description.}",
+            "\"\"\""
+        ],
+        "description": "A Python docstring used on classes, including a one-line summary, details, attributes, and returns."
+    },
+    "exception docstring": {
+        "prefix": "\"\"\"exception",
+        "body": [
+            "\"\"\"",
+            "${1:A one-line summay.}",
+            "",
+            "${2:Detailed description.}$0",
+            "",
+            "Attributes:",
+            "    ${3:attribute_name}: ${4:type and description.}",
+            "\"\"\""
+        ],
+        "description": "A Python docstring used on exceptions, including a one-line summary, description, and attributes."
+    },
+    "raises docstring": {
+        "prefix": "\n\n\nraises",
+        "body": [
+            "Raises:",
+            "    ${1:ErrorName}: ${2:Error description.}$0"
+        ],
+        "description": "A Python docstring used on methods when we want to be exclicit about the errors it Raises. Use it only when is relevant."
+    }
+
+}
