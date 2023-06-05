@@ -53,10 +53,10 @@
             "    ${7:use_it_this_way(arg1, arg2)}",
             "\"\"\""
         ],
-        "description": "A Python docstring for functions, including short summary, details, args, returns, and examples. This is a synonism of the docstring method."
+        "description": "A Python docstring for functions and methods, including short summary, details, args, returns, and examples."
     },
-    "method docstring": {
-        "prefix": "\"\"\"method",
+    "function docstring typed": {
+        "prefix": "\"\"\"function_typed",
         "body": [
             "\"\"\"",
             "${1:A one-line summay.}",
@@ -64,17 +64,17 @@
             "${2:Detailed description.}$0",
             "",
             "Args:",
-            "    ${4:argument_name}: ${5:type and description.}",
+            "    ${5:argument_name} (${6:type}): ${7:description.}",
             "",
             "Returns:",
-            "    ${3:type and description of the returned object.}",
+            "    ${3:type}: {4:Description of the returned object.}",
             "",
             "Examples:",
-            "    # ${6:Description of my example.}",
-            "    ${7:use_it_this_way(arg1, arg2)}",
+            "    # ${8:Description of my example.}",
+            "    ${9:use_it_this_way(arg1, arg2)}",
             "\"\"\""
         ],
-        "description": "A Python docstring for methods, including a one-line summary, details, args, returns, and examples. This is a synonism of the docstring function."
+        "description": "Alternative Python docstring for functions and methods, with a different type syntax. Some teams prefer it."
     },
     "generator docstring": {
         "prefix": "\"\"\"generator",
