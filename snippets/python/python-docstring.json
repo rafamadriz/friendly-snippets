@@ -53,7 +53,7 @@
             "    ${7:use_it_this_way(arg1, arg2)}",
             "\"\"\""
         ],
-        "description": "A Python docstring used on functions, including short summary, details, args, returns, and examples. This is a synonism of the method docstring."
+        "description": "A Python docstring used on functions, including short summary, details, args, returns, and examples. This is a synonism of the docstring method."
     },
     "method docstring": {
         "prefix": "\"\"\"method",
@@ -74,7 +74,7 @@
             "    ${7:use_it_this_way(arg1, arg2)}",
             "\"\"\""
         ],
-        "description": "A Python docstring used on methods, including a one-line summary, details, args, returns, and examples. This is a synonism of the function docstring."
+        "description": "A Python docstring used on methods, including a one-line summary, details, args, returns, and examples. This is a synonism of the docstring function."
     },
     "generator docstring": {
         "prefix": "\"\"\"generator",
