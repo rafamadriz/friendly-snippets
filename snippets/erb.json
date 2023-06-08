@@ -48,7 +48,7 @@
     },
     "each": {
         "prefix": "each",
-        "body": ["<% ${1:items}.each do |${2:item}| %>", "  $2", "<% end %>"],
+        "body": ["<% ${1:items}.each do |${2:item}| %>", "  $3", "<% end %>"],
         "description": "each do"
     },
     "render": {
