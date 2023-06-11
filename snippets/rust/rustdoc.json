@@ -42,6 +42,90 @@
         ],
         "description": "A Rust comment to describe a test, with description and examples."
     },
+    "html_favicon_url": {
+        "prefix": "#![doc(html_favicon_url)]",
+        "body": [
+            "#![doc(html_favicon_url = \"${1:https://example.com/favicon.ico}$0\")]"
+        ],
+        "description": "This form of the doc attribute lets you control the favicon of your docs.\n\n* How to use: This style option must be added at the top of the src/lib.rs or main.rs file in your binary project."
+    },
+    "html_logo_url": {
+        "prefix": "#![doc(html_logo_url)]",
+        "body": [
+            "#![doc(html_logo_url = \"${1:https://example.com/logo.jpg}$0\")]"
+        ],
+        "description": "This form of the doc attribute lets you control the logo in the upper left hand side of the docs.\n\n* How to use: This style option must be added at the top of the src/lib.rs or main.rs file in your binary project."
+    },
+    "html_playground_url": {
+        "prefix": "#![doc(html_playground_url)]",
+        "body": [
+            "#![doc(html_playground_url = \"${1:https://playground.example.com/}$0\")]"
+        ],
+        "description": "This form of the doc attribute lets you control where the \"run\" buttons on your documentation examples make requests to.\n\n* How to use: This style option must be added at the top of the src/lib.rs or main.rs file in your binary project."
+    },
+    "issue_tracker_base_url": {
+        "prefix": "#![doc(issue_tracker_base_url)]",
+        "body": [
+            "#![doc(issue_tracker_base_url = \"${1:https://github.com/rust-lang/rust/issues/}$0\")]"
+        ],
+        "description": "This form of the doc attribute is mostly only useful for the standard library; When a feature is unstable, an issue number for tracking the feature must be given. rustdoc uses this number, plus the base URL given here, to link to the tracking issue.\n\n* How to use: This style option must be added at the top of the src/lib.rs or main.rs file in your binary project."
+    },
+    "html_root_url": {
+        "prefix": "#![doc(html_root_url)]",
+        "body": [
+            "#![doc(html_root_url = \"${1:https://docs.rs/serde/1.0}$0\")]"
+        ],
+        "description": "indicates the URL for generating links to external crates.\n\n* How to use: This style option must be added at the top of the src/lib.rs or main.rs file in your binary project."
+    },
+   "html_no_source": {
+        "prefix": "#![doc(html_no_source)]",
+        "body": [
+            "#![doc(html_no_source)]$0"
+        ],
+        "description": "By default, rustdoc will include the source code of your program, with links to it in the docs. But if you include this, it will not.\n\n* How to use: This style option must be added at the top of the src/lib.rs or main.rs file in your binary project."
+    },
+   "test_no_crate_inject": {
+        "prefix": "#![doc(test(no_crate_inject))]",
+        "body": [
+            "#![doc(test(no_crate_inject))]$0"
+        ],
+        "description": "By default, rustdoc will automatically add a line with extern crate my_crate; into each doctest.  But if you include this, it will not.\n\n* How to use: This style option must be added at the top of the src/lib.rs or main.rs file in your binary project."
+    },
+   "test_attr": {
+        "prefix": "#![doc(test(attr(deny(warnings))))]",
+        "body": [
+            "#![doc(test(attr(deny(warnings))))]$0"
+        ],
+        "description": "This form of the doc attribute allows you to add arbitrary attributes to all your doctests. For example, if you want your doctests to fail if they produce any warnings, you could add this.\n\n* How to use: This style option must be added at the top of the src/lib.rs or main.rs file in your binary project."
+    },
+   "inline": {
+        "prefix": "#[doc(inline)]",
+        "body": [
+            "#[doc(inline)]$0"
+        ],
+        "description": "These attribute is used on use statements, and control where the documentation shows up.\n\n* How to use: You can use this on use statements. For example:\n`pub use bar::Bar;`"
+    },
+   "no_inline": {
+        "prefix": "#[doc(no_inline)]",
+        "body": [
+            "#[doc(no_inline)]$0"
+        ],
+        "description": "These attribute is used on use statements, and control where the documentation shows up.\n\n* How to use: You can use this on use statements. For example:\n`pub use bar::Bar;`"
+    },
+   "hidden": {
+        "prefix": "#[doc(hidden)]",
+        "body": [
+            "#[doc(hidden)]$0"
+        ],
+        "description": "Any item annotated with #[doc(hidden)] will not appear in the documentation, unless the strip-hidden pass is removed.\n\n* How to use: You can use this on any item."
+    },
+    "alias": {
+        "prefix": "#[doc(alias)]",
+        "body": [
+            "#[doc(alias = \"${1:name}$0\")]"
+        ],
+        "description": "This feature allows you to add alias(es) to an item when using the rustdoc search through the doc(alias) attribute.\n\n* How to use: You can use this on any item."
+    },
     "broken_intra_doc_links": {
         "prefix": "#![warn(rustdoc::broken_intra_doc_links)]",
         "body": [
@@ -113,17 +197,10 @@
         "description": "How to report URLs which are not links, when generating the documentation.\n\n* Accepted vales: allow, warn, deny.\n\n* Default: warn\n\n* How to use: This lint option must be added at the top of the src/lib.rs or main.rs file in your binary project."
     },
     "cfg": {
-        "prefix": "#[cfg]",
+        "prefix": "#[cfg()]",
         "body": [
             "#[cfg(any(${1:unix}$0, doc))"
         ],
-        "description": "Documents the item can only be used on Unix.\n\n* Accepted vales: unix, windows"
-    },
-    "alias": {
-        "prefix": "#[doc(alias = \"\")]",
-        "body": [
-            "#[doc(alias = \"${1:name}$0\")]"
-        ],
-        "description": "This feature allows you to add alias(es) to an item when using the rustdoc search through the doc(alias) attribute."
+        "description": "Documents the item can only be used on Unix.\n\n* Accepted vales: unix, windows\n\n* How to use: This style option must be added at the top of the src/lib.rs or main.rs file in your binary project."
     }
 }
