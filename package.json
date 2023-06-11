@@ -106,7 +106,11 @@
             },
             {
                 "language": "rust",
-                "path": "./snippets/rust.json"
+                "path": "./snippets/rust/rust.json"
+            },
+            {
+                "language": "rustdoc",
+                "path": "./snippets/rust/rustdoc.json"
             },
             {
                 "language": "rust",
