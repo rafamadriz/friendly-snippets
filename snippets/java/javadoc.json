@@ -1,0 +1,73 @@
+{
+    "comment": {
+        "prefix": "/**",
+        "body": [
+            "/**",
+            "* ${1:Description.}$0",
+            "*",
+            "* @param ${3:name}  ${4:Type and description of the parameter.}",
+            "* @return ${2:Type and description of the returned object.}",
+            "*",
+            "* @example",
+            "* ```",
+            "* ${5:Write me later}",
+            "* ```",
+            "*/"
+        ],
+        "description": "A Java docstring including description, param, returns, and examples."
+    },
+    "comment_simple": {
+        "prefix": "/*",
+        "body": [
+            "/**",
+            "* ${1:Description.}$0",
+            "*/"
+        ],
+        "description": "A simple Java docstring with a description. Useful when the user prefers to manually add the other documentation tags."
+    },
+    "@param": {
+        "prefix": "@param",
+        "body": [
+            "@param ${1:name} ${2:Type and description of the parameter.}$0"
+        ],
+        "description": "Documents a parameter."
+    },
+    "@return": {
+        "prefix": "@return",
+        "body": [
+            "@param  ${1:name}  ${2:Type and description of the parameter.}$0"
+        ],
+        "description": "Documents a the returned object."
+    },
+    "@example": {
+        "prefix": "@example",
+        "body": [
+            "@example",
+            "```",
+            "${1:Write me later}$0",
+            "```"
+        ],
+        "description": "Adds an example to the documentation."
+    },
+    "@see": {
+        "prefix": "@see",
+        "body": [
+            "@see ${1:item.}$0"
+        ],
+        "description": "References another item or piece of documentation."
+    },
+    "@throws": {
+        "prefix": "@throws",
+        "body": [
+            "@throws ${1:IOException} ${2:Description.}$0"
+        ],
+        "description": "Document an error raised by the item. Synonism of @exception."
+    },
+    "@exception": {
+        "prefix": "@exception",
+        "body": [
+            "@exception ${1:IOException} ${2:Description.}$0"
+        ],
+        "description": "Document an error raised by the item. Synonism of @throws."
+    }
+}

@@ -181,6 +181,10 @@
                 "path": "./snippets/java/java-tests.json"
             },
             {
+                "language": "javadoc",
+                "path": "./snippets/javadoc.json"
+            },
+            {
                 "language": "julia",
                 "path": "./snippets/julia.json"
             },
