@@ -285,6 +285,10 @@
                 "path": "./snippets/python/unittest.json"
             },
             {
+                "language": "python-docstring",
+                "path": "./snippets/python/python-docstring.json"
+            },
+            {
                 "language": "django",
                 "path": "./snippets/frameworks/django/admin.json"
             },
