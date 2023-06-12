@@ -5,7 +5,7 @@
       "/// <summary>",
       "/// ${1:What it does.}",
       "/// </summary>",
-      "/// <param name=\"${3:parameterName}\">${4:Parameter description.</param>",
+      "/// <param name=\"${3:parameterName}\">${4:Parameter description.}</param>",
       "/// <returns>${2:Type and description of the returned object.}</returns>",
       "/// <example>${5:Write me later.}</example>$0"
     ],
