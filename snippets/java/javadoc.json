@@ -61,14 +61,14 @@
         "body": [
             "@throws ${1:IOException} ${2:Description.}$0"
         ],
-        "description": "Document an error raised by the item. Synonism of @exception."
+        "description": "Document an exception raised by the item. Synonism of @exception."
     },
     "@exception": {
         "prefix": "@exception",
         "body": [
             "@exception ${1:IOException} ${2:Description.}$0"
         ],
-        "description": "Document an error raised by the item. Synonism of @throws."
+        "description": "Document an exception raised by the item. Synonism of @throws."
     },
     "@since": {
         "prefix": "@since",
