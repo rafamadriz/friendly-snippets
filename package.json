@@ -158,7 +158,11 @@
             },
             {
                 "language": ["shellscript", "shell", "sh", "zsh"],
-                "path": "./snippets/shell.json"
+                "path": "./snippets/shell/shell.json"
+            },
+            {
+                "language": "shelldoc",
+                "path": "./snippets/shell/shelldoc.json"
             },
             {
                 "language": ["markdown", "rmd"],
