@@ -25,7 +25,7 @@
             "#   ${2: Description of the returned value.}",
             "#######################################"
         ],
-        "description": "A shell comment block for functions, including description, globals, arguments, outputs, and returns.\n\nYou can delete 'Globals'/'Arguments'/'Outputs' in functions with no input/output.\n\nIt doesn't includes, but accepts the optional keywords:\n  'See'\n  'Raises'"
+        "description": "A shell comment block for functions, including description, globals, arguments, outputs, and returns. For functions without I/O, use the simple version of this snippet instead.\n\nYou can delete 'Globals'/'Arguments'/'Outputs' in functions with no input/output.\n\nIt doesn't includes, but accepts the optional keywords:\n  'See'\n  'Raises'"
     },
     "comment_simple": {
         "prefix": "##",
