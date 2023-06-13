@@ -281,8 +281,8 @@
                 "path": "./snippets/python/unittest.json"
             },
             {
-                "language": "python-docstring",
-                "path": "./snippets/python/python-docstring.json"
+                "language": "pydoc",
+                "path": "./snippets/python/pydoc.json"
             },
             {
                 "language": "django",
