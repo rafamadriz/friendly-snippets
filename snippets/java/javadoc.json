@@ -5,14 +5,14 @@
             "/**",
             " * ${1:A one-line summay.}",
             " *",
-            " * ${1:Description.}$0",
+            " * ${2:Description.}$0",
             " *",
-            " * @param ${3:name}  ${4:Type and description of the parameter.}",
-            " * @return ${2:Type and description of the returned object.}",
+            " * @param ${4:name}  ${5:Type and description of the parameter.}",
+            " * @return ${6:Type and description of the returned object.}",
             " *",
             " * @example",
             " * ```",
-            " * ${5:Write me later}",
+            " * ${7:Write me later}",
             " * ```",
             " */"
         ],
@@ -24,7 +24,7 @@
             "/**",
             " * ${1:A one-line summay.}",
             " *",
-            " * ${1:Description.}$0",
+            " * ${2:Description.}$0",
             " */"
         ],
         "description": "A simple Java comment block with short summary and description. Useful when the user prefers to manually add the other documentation tags."
