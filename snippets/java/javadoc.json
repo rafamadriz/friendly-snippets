@@ -14,7 +14,7 @@
             "* ```",
             "*/"
         ],
-        "description": "A Java docstring including description, param, returns, and examples."
+        "description": "A Java comment block including description, param, returns, and examples."
     },
     "comment_simple": {
         "prefix": "/*",
@@ -23,7 +23,7 @@
             "* ${1:Description.}$0",
             "*/"
         ],
-        "description": "A simple Java docstring with a description. Useful when the user prefers to manually add the other documentation tags."
+        "description": "A simple Java comment block with a description. Useful when the user prefers to manually add the other documentation tags."
     },
     "@param": {
         "prefix": "@param",
