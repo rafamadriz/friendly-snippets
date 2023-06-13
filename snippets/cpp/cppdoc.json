@@ -13,7 +13,7 @@
             " * @example",
             " * // ${6: Description of my example.}",
             " * ${7:Write me later}",
-            "*/"
+            " */"
         ],
         "description": "A C++ comment block for functions, including description, param, return, and example."
     },
@@ -24,7 +24,7 @@
             " * brief ${1:A one-line summay.}",
             " *",
             " * ${2:Description.}$0",
-            "*/"
+            " */"
         ],
         "description": "A simple C++ comment block for classes, including short summary, and details. Useful when you prefer to add the other documentation tags manually."
     },
@@ -46,8 +46,8 @@
         "prefix": "@example",
         "body": [
             "@example",
-            " * // ${1: Description of my example.}$0",
-            " * ${2:Write me later}"
+            "* // ${1: Description of my example.}$0",
+            "* ${2:Write me later}"
         ],
         "description": "Example that demostrates how to use a function. It can be used several times."
     },
