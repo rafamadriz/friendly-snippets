@@ -16,7 +16,7 @@
             " * ```",
             " */"
         ],
-        "description": "A Java comment block including short summary, description, param, returns, and examples."
+        "description": "A Java comment block including short summary, description, param, return, and examples."
     },
     "comment_simple": {
         "prefix": "/*",
