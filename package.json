@@ -30,7 +30,11 @@
             },
             {
                 "language": ["csharp", "cs"],
-                "path": "./snippets/csharp.json"
+                "path": "./snippets/csharp/csharp.json"
+            },
+            {
+                "language": "csharpdoc",
+                "path": "./snippets/csharp/csharpdoc.json"
             },
             {
                 "language": ["gitcommit", "NeogitCommitMessage"],
@@ -106,7 +110,11 @@
             },
             {
                 "language": "rust",
-                "path": "./snippets/rust.json"
+                "path": "./snippets/rust/rust.json"
+            },
+            {
+                "language": "rustdoc",
+                "path": "./snippets/rust/rustdoc.json"
             },
             {
                 "language": "rust",
@@ -150,7 +158,11 @@
             },
             {
                 "language": ["shellscript", "shell", "sh", "zsh"],
-                "path": "./snippets/shell.json"
+                "path": "./snippets/shell/shell.json"
+            },
+            {
+                "language": "shelldoc",
+                "path": "./snippets/shell/shelldoc.json"
             },
             {
                 "language": ["markdown", "rmd"],
@@ -279,6 +291,10 @@
             {
                 "language": "python",
                 "path": "./snippets/python/unittest.json"
+            },
+            {
+                "language": "python-docstring",
+                "path": "./snippets/python/python-docstring.json"
             },
             {
                 "language": "django",
