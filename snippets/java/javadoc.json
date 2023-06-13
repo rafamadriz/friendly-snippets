@@ -39,7 +39,7 @@
     "@return": {
         "prefix": "@return",
         "body": [
-            "@param  ${1:name}  ${2:Type and description of the parameter.}$0"
+            "@param ${1:name} ${2:Type and description of the parameter.}$0"
         ],
         "description": "Documents a the returned object."
     },
