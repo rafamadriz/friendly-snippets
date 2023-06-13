@@ -38,7 +38,7 @@
     "@return": {
         "prefix": "@return",
         "body": [
-            "@return ${3:Type and description of the returned value.}$0"
+            "@return ${1:Type and description of the returned value.}$0"
         ],
         "description": "Type and description of the returned value."
     },
