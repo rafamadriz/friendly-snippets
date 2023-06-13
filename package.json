@@ -86,7 +86,11 @@
             },
             {
                 "language": "php",
-                "path": "./snippets/php.json"
+                "path": "./snippets/php/php.json"
+            },
+            {
+                "language": "phpdoc",
+                "path": "./snippets/php/phpdoc.json"
             },
             {
                 "language": "quarto",
