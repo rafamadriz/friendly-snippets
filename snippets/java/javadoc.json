@@ -3,6 +3,8 @@
         "prefix": "/**",
         "body": [
             "/**",
+            " * ${1:A one-line summay.}",
+            " *",
             " * ${1:Description.}$0",
             " *",
             " * @param ${3:name}  ${4:Type and description of the parameter.}",
@@ -14,16 +16,18 @@
             " * ```",
             " */"
         ],
-        "description": "A Java comment block including description, param, returns, and examples."
+        "description": "A Java comment block including short summary, description, param, returns, and examples."
     },
     "comment_simple": {
         "prefix": "/*",
         "body": [
             "/**",
+            " * ${1:A one-line summay.}",
+            " *",
             " * ${1:Description.}$0",
             " */"
         ],
-        "description": "A simple Java comment block with a description. Useful when the user prefers to manually add the other documentation tags."
+        "description": "A simple Java comment block with short summary and description. Useful when the user prefers to manually add the other documentation tags."
     },
     "@param": {
         "prefix": "@param",
