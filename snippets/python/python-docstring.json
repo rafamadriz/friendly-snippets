@@ -18,16 +18,18 @@
             "    ${7:use_it_this_way(arg1, arg2)}",
             "\"\"\""
         ],
-        "description": "A Python docstring for functions and methods, including short summary, details, args, returns, and examples. This docstring is an alias for \"\"\"function, as it is the most commonlly used docstring."
+        "description": "A Python docstring for functions and methods, including short summary, details, args, returns, and examples. This docstring is an synonism of \"\"\"function."
     },
     "comment simple": {
         "prefix": "\"\"",
         "body": [
             "\"\"\"",
-            "${1:A one-line summary.}$0",
+            "${1:A one-line summay.}",
+            "",
+            "${2:Detailed description.}$0",
             "\"\"\""
         ],
-        "description": "A simple Python docstring comment. Useful when you prefer to add the docstrings manually."
+        "description": "A simple Python docstring comment. Useful when you prefer to add the docstrings manually on functions."
     },    
     "module docstring": {
         "prefix": "\"\"\"module",
