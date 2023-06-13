@@ -78,5 +78,19 @@
             "@deprecated ${1:Text.}$0"
         ],
         "description": "Marks the function as deprecated, and no longer recommended for use."
+    },
+    "@todo": {
+        "prefix": "@todo",
+        "body": [
+            "@todo ${1:Text.}$0"
+        ],
+        "description": "Used to mark areas of the code that require improvement."
+    },
+    "@fixme": {
+        "prefix": "@fixme",
+        "body": [
+            "@fixme ${1:Text.}$0"
+        ],
+        "description": "Used to mark areas of the code that require fixing."
     }
 }
