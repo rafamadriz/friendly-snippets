@@ -15,7 +15,7 @@
             " * ${7:Write me later}",
             " */"
         ],
-        "description": "A PHP Pcomment block for functions, including description, param, return, and example."
+        "description": "A PHP comment block for functions, including description, param, return, and example."
     },
     "comment_simple": {
         "prefix": "/*",
