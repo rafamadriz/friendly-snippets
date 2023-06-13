@@ -45,7 +45,7 @@
     "@example": {
         "prefix": "@example",
         "body": [
-            "@example",
+            "* @example",
             "* // ${1: Description of my example.}$0",
             "* ${2:Write me later}"
         ],
