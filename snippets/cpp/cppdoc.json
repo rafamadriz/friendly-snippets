@@ -56,13 +56,13 @@
         "body": [
             "@throws ${1:ExceptionName} ${2:Description.}$0"
         ],
-        "description": "Indicates the exceptions that can be thrown by a function."
+        "description": "Indicates the exceptions that can be thrown by a function. This tag is a synonism of @exception."
     },
     "@exception": {
         "prefix": "@exception",
         "body": [
             "@exception ${1:ExceptionName} ${2:Description.}$0"
         ],
-        "description": "Indicates the exceptions that can be thrown by a function."
+        "description": "Indicates the exceptions that can be thrown by a function. This tag is a synonism of @throws."
     }
 }
