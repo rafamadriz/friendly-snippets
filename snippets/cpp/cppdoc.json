@@ -46,7 +46,7 @@
         "prefix": "@example",
         "body": [
             "@example",
-            "* // ${1: Description of my example.}$0",
+            "* // ${1:Description of my example.}$0",
             "* ${2:Write me later}"
         ],
         "description": "Example that demostrates how to use a function. It can be used several times."
