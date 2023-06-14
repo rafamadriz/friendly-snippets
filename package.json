@@ -166,7 +166,7 @@
             },
             {
                 "language": "java",
-                "path": "./snippets/java.json"
+                "path": "./snippets/java/java.json"
             },
             {
                 "language": "java-testing",
@@ -174,7 +174,7 @@
             },
             {
                 "language": "javadoc",
-                "path": "./snippets/javadoc.json"
+                "path": "./snippets/java/javadoc.json"
             },
             {
                 "language": "julia",
