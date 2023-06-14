@@ -12,13 +12,17 @@
             " * ```",
             " * ${5:Write me later.}$0",
             " * ```",
-            "*/"
+            " */"
         ],
         "description": "A full TSDoc comment with description, parameters, return, and example."
     },
     "comment simple": {
         "prefix": "/*",
-        "body": ["/**", " * ${1:Comment.}$0", "*/"],
+        "body": [
+            "/**", 
+            " * ${1:Comment.}$0", 
+            " */"
+        ],
         "description": "A simple TSDoc comment."
     },
     "alpha": {
