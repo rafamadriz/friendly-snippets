@@ -11,7 +11,7 @@
             " * @return ${3:Type and description of the returned value.}",
             " *",
             " * @example",
-            " * // ${6: Description of my example.}",
+            " * // ${6:Description of my example.}",
             " * ${7:Write me later}",
             " */"
         ],
@@ -46,7 +46,7 @@
         "prefix": "@example",
         "body": [
             "@example",
-            "* // ${1: Description of my example.}$0",
+            "* // ${1:Description of my example.}$0",
             "* ${2:Write me later}"
         ],
         "description": "Example that demostrates how to use a function. It can be used several times."
