@@ -1,5 +1,5 @@
 {
-  "---": {
+  "comment": {
     "prefix": "---",
     "body": [
       "--- ${1:A one-line summay.}",
@@ -8,7 +8,15 @@
       "-- @return ${3:type} ${4: Description of the returned object.}",
       "-- @usage ${8:Example about how to use it.}"
     ],
-    "description": "A lua comment with description, parameters, return, and example."
+    "description": "A lua comment with short summary, description, parameters, return, and example."
+  },
+  "comment_simple": {
+    "prefix": "--",
+    "body": [
+      "--- ${1:A one-line summay.}",
+      "-- ${2:Description.}$0"
+    ],
+    "description": "A simple lua comment with short summary and description. Useful when you prefer to add the tags manually on functions."
   },
   "@author": {
     "prefix": "@author",
