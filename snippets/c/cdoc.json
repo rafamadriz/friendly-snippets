@@ -3,17 +3,17 @@
         "prefix": "/**",
         "body": [
             "/**",
-            "* ${1:A one-line summay.}",
-            "*",
-            "* ${2:Description.}$0",
-            "*",
-            "* @param ${4:name} ${5:Type and description of the parameter.}",
-            "* @return ${3:Type and description of the returned value.}",
-            "*",
-            "* @example",
-            "* // ${6:Description of my example.}",
-            "* ${7:Write me later}",
-            "*/"
+            " * ${1:A one-line summay.}",
+            " *",
+            " * ${2:Description.}$0",
+            " *",
+            " * @param ${4:name} ${5:Type and description of the parameter.}",
+            " * @return ${3:Type and description of the returned value.}",
+            " *",
+            " * @example",
+            " * // ${6:Description of my example.}",
+            " * ${7:Write me later}",
+            " */"
         ],
         "description": "A C comment block for functions, including short summary, details, param, return, and example."
     },
@@ -21,10 +21,10 @@
         "prefix": "/*",
         "body": [
             "/**",
-            "* ${1:A one-line summay.}",
-            "*",
-            "* ${2:Description.}$0",
-            "*/"
+            " * ${1:A one-line summay.}",
+            " *",
+            " * ${2:Description.}$0",
+            " */"
         ],
         "description": "A simple C comment block for functions, including short summary, and details. Useful when you prefer to add the other documentation tags manually."
     },
@@ -38,7 +38,7 @@
     "@return": {
         "prefix": "@return",
         "body": [
-            "@return ${3:Type and description of the returned value.}$0"
+            "@return ${1:Type and description of the returned value.}$0"
         ],
         "description": "Type and description of the returned value."
     },
@@ -78,5 +78,19 @@
             "@deprecated ${1:Text.}$0"
         ],
         "description": "Marks the function as deprecated, and no longer recommended for use."
+    },
+    "@todo": {
+        "prefix": "@todo",
+        "body": [
+            "@todo ${1:Text.}$0"
+        ],
+        "description": "Used to mark areas of the code that require improvement."
+    },
+    "@fixme": {
+        "prefix": "@fixme",
+        "body": [
+            "@fixme ${1:Text.}$0"
+        ],
+        "description": "Used to mark areas of the code that require fixing."
     }
 }
