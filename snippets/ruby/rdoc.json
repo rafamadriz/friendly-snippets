@@ -9,8 +9,8 @@
             "# @param ${5:name} [${6:Type}] ${7:Description.}",
             "# @return [${3:Types}] ${4:Description}",
             "#",
-            "@example ${8:Example description.}",
-            "  ${9:Write me later}"
+            "# @example ${8:Example description.}",
+            "#   ${9:Write me later}"
         ],
         "description": "A Ruby comment block including short summary, description, param, return, and example."
     },
@@ -40,8 +40,8 @@
     "@example": {
         "prefix": "@example",
         "body": [
-            "@example ${1:Example description.}$0",
-            "  ${2:Write me later}"
+            "# @example ${1:Example description.}$0",
+            "#   ${2:Write me later}"
         ],
         "description": "Show an example snippet of code for an object. The first line is an optional title."
     },
