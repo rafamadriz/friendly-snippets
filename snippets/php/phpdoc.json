@@ -3,7 +3,7 @@
         "prefix": "/**",
         "body": [
             "/**",
-            " * brief ${1:A one-line summay.}",
+            " * ${1:A one-line summay.}",
             " *",
             " * ${2:Description.}$0",
             " *",
@@ -15,13 +15,13 @@
             " * ${7:Write me later}",
             " */"
         ],
-        "description": "A PHP Pcomment block for functions, including description, param, return, and example."
+        "description": "A PHP comment block for functions, including description, param, return, and example."
     },
     "comment_simple": {
         "prefix": "/*",
         "body": [
             "/**",
-            " * brief ${1:A one-line summay.}",
+            " * ${1:A one-line summay.}",
             " *",
             " * ${2:Description.}$0",
             " */"
@@ -45,7 +45,7 @@
     "@example": {
         "prefix": "@example",
         "body": [
-            "@example",
+            "* @example",
             "* // ${1:Description of my example.}$0",
             "* ${2:Write me later}"
         ],
