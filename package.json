@@ -289,6 +289,10 @@
                 "path": "./snippets/python/unittest.json"
             },
             {
+                "language": "pydoc",
+                "path": "./snippets/python/pydoc.json"
+            },
+            {
                 "language": "django",
                 "path": "./snippets/frameworks/django/admin.json"
             },
