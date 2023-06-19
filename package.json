@@ -178,11 +178,15 @@
             },
             {
                 "language": "java",
-                "path": "./snippets/java.json"
+                "path": "./snippets/java/java.json"
             },
             {
                 "language": "java-testing",
                 "path": "./snippets/java/java-tests.json"
+            },
+            {
+                "language": "javadoc",
+                "path": "./snippets/java/javadoc.json"
             },
             {
                 "language": "julia",

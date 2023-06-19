@@ -1,0 +1,127 @@
+{
+    "comment": {
+        "prefix": "/**",
+        "body": [
+            "/**",
+            " * ${1:A one-line summay.}",
+            " *",
+            " * ${2:Description.}$0",
+            " *",
+            " * @param ${4:name}  ${5:Type and description of the parameter.}",
+            " * @return ${6:Type and description of the returned object.}",
+            " *",
+            " * @example",
+            " * ```",
+            " * ${7:Write me later}",
+            " * ```",
+            " */"
+        ],
+        "description": "A Java comment block including short summary, description, param, return, and examples."
+    },
+    "comment_simple": {
+        "prefix": "/*",
+        "body": [
+            "/**",
+            " * ${1:A one-line summay.}",
+            " *",
+            " * ${2:Description.}$0",
+            " */"
+        ],
+        "description": "A simple Java comment block with short summary and description. Useful when the user prefers to manually add the other documentation tags."
+    },
+    "@param": {
+        "prefix": "@param",
+        "body": [
+            "@param ${1:name} ${2:Type and description of the parameter.}$0"
+        ],
+        "description": "Documents a parameter."
+    },
+    "@return": {
+        "prefix": "@return",
+        "body": [
+            "@param ${1:name} ${2:Type and description of the parameter.}$0"
+        ],
+        "description": "Documents a the returned object."
+    },
+    "@example": {
+        "prefix": "@example",
+        "body": [
+            "@example",
+            "```",
+            "${1:Write me later}$0",
+            "```"
+        ],
+        "description": "Adds an example to the documentation."
+    },
+    "@see": {
+        "prefix": "@see",
+        "body": [
+            "@see ${1:item.}$0"
+        ],
+        "description": "References another item or piece of documentation."
+    },
+    "@throws": {
+        "prefix": "@throws",
+        "body": [
+            "@throws ${1:IOException} ${2:Description.}$0"
+        ],
+        "description": "Document an exception raised by the item. Synonism of @exception."
+    },
+    "@exception": {
+        "prefix": "@exception",
+        "body": [
+            "@exception ${1:IOException} ${2:Description.}$0"
+        ],
+        "description": "Document an exception raised by the item. Synonism of @throws."
+    },
+    "@since": {
+        "prefix": "@since",
+        "body": [
+            "@since ${1:1.0}$0"
+        ],
+        "description": "Version of Java when the the product was implemented."
+    },
+    "@serial": {
+        "prefix": "@serial",
+        "body": [
+            "@serial ${1:Field description.}$0"
+        ],
+        "description": "The @serial tag should be placed in the javadoc comment for a default serializable field. Using @serial at a class level overrides @serial at a package level."
+    },
+    "@serialField": {
+        "prefix": "@serialField",
+        "body": [
+            "@serialField ${1:Field name} ${2:Field type} ${3:Field description.}$0"
+        ],
+        "description": "The @serialField tag is used to document an ObjectStreamField component of a serialPersistentFields array. One of these tags should be used for each ObjectStreamField component."
+    },
+    "@serialData": {
+        "prefix": "@serialData",
+        "body": [
+            "@serialData ${1:Data description.}$0"
+        ],
+        "description": "The @serialData tag describes the sequences and types of data written or read. The tag describes the sequence and type of optional data written by writeObject or all data written by the Externalizable.writeExternal method."
+    },
+    "@author": {
+        "prefix": "@author",
+        "body": [
+            "@author ${1:name}$0"
+        ],
+        "description": "You can provide one @author tag, multiple @author tags, or no @author tags. For classes and interfaces only, required."
+    },
+    "@version": {
+        "prefix": "@version",
+        "body": [
+            "@version ${1:1.39}, ${2:02/28/97}$0"
+        ],
+        "description": "The Java Software convention for the argument to the @version tag is the SCCS string \"%I%, %G%\". For classes and interfaces only, required."
+    },
+    "@deprecated": {
+        "prefix": "@deprecated",
+        "body": [
+            "@deprecated  As of JDK ${1:1.1}, replaced by",
+            "${2:{@link #setBounds(int,int,int,int)}}$0"
+        ],
+        "description": "The @deprecated description in the first sentence should at least tell the user when the API was deprecated and what to use as a replacement. Only the first sentence will appear in the summary section and index. Subsequent sentences can also explain why it has been deprecated."
+    }
+}
