@@ -12,7 +12,7 @@
             " * ```",
             " * ${5:Write me later.}$0",
             " * ```",
-            "*/"
+            " */"
         ],
         "description": "A full JSDoc comment with description, parameters, return, and example."
     },
@@ -21,7 +21,7 @@
         "body": [
             "/**",
             " * ${1:Comment.}$0",
-            "*/"
+            " */"
         ],
         "description": "A simpple JSDoc comment."
     },
