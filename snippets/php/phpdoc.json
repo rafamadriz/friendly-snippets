@@ -1,0 +1,70 @@
+{
+    "comment": {
+        "prefix": "/**",
+        "body": [
+            "/**",
+            " * ${1:A one-line summay.}",
+            " *",
+            " * ${2:Description.}$0",
+            " *",
+            " * @param ${4:name} ${5:Type and description of the parameter.}",
+            " * @return ${3:Type and description of the returned value.}",
+            " *",
+            " * @example",
+            " * // ${6:Description of my example.}",
+            " * ${7:Write me later}",
+            " */"
+        ],
+        "description": "A PHP comment block for functions, including description, param, return, and example."
+    },
+    "comment_simple": {
+        "prefix": "/*",
+        "body": [
+            "/**",
+            " * ${1:A one-line summay.}",
+            " *",
+            " * ${2:Description.}$0",
+            " */"
+        ],
+        "description": "A simple PHP comment block for classes, including short summary, and details. Useful when you prefer to add the other documentation tags manually."
+    },
+    "@param": {
+        "prefix": "@param",
+        "body": [
+            "@param ${1:name} ${2:Type and description of the parameter.}$0"
+        ],
+        "description": "Type and description of a function parameter."
+    },
+    "@return": {
+        "prefix": "@return",
+        "body": [
+            "@return ${3:Type and description of the returned value.}$0"
+        ],
+        "description": "Type and description of the returned value."
+    },
+    "@example": {
+        "prefix": "@example",
+        "body": [
+            "* @example",
+            "* // ${1:Description of my example.}$0",
+            "* ${2:Write me later}"
+        ],
+        "description": "Example that demostrates how to use a function. It can be used several times."
+    },
+    "@throws": {
+        "prefix": "@throws",
+        "body": [
+            "@throws ${1:ExceptionName} ${2:Description.}$0"
+        ],
+        "description": "Indicates the exceptions that can be thrown by a function. This tag is a synonism of @exception."
+    },
+    "@exception": {
+        "prefix": "@exception",
+        "body": [
+            "@exception ${1:ExceptionName} ${2:Description.}$0"
+        ],
+        "description": "Indicates the exceptions that can be thrown by a function. This tag is a synonism of @throws."
+    }
+}
+
+
