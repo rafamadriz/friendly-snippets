@@ -437,6 +437,10 @@
                 "path": "./snippets/frameworks/unity.json"
             },
             {
+                "language": "tcl",
+                "path": "./snippets/tcl.json"
+            },
+            {
                 "language": "verilog",
                 "path": "./snippets/verilog.json"
             },
