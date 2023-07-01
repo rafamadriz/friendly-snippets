@@ -1,0 +1,524 @@
+{
+  "Executes a command after a time delay": {
+    "prefix": "after",
+    "body": ["after ${0:time in ms}"],
+    "description": "This command is used to delay execution of the program or to execute a command in background sometime in the future."
+  },
+  "Append to variable": {
+    "prefix": "append",
+    "body": ["append ${1:varName} ${2:value}$0"],
+    "description": "Append all of the value arguments to the current value of variable varName. If varName does not exist, it is given a value equal to the concatenation of all the value arguments. The result of this command is the new value stored in variable varName."
+  },
+  "apply named function": {
+    "prefix": "apply named",
+    "body": ["apply ${1:function} ${0:value}"],
+    "description": "Apply a named function"
+  },
+  "apply anonymous function": {
+    "prefix": "apply anonymous",
+    "body": ["apply {${1:vars} ${2:body}} ${0:value}"],
+    "description": "Apply an anonymous function"
+  },
+  "Manipulate array variables": {
+    "prefix": "array",
+    "body": ["array ${1:option} ${2:arrayName} ${0:?arg arg ...?}"],
+    "description": [
+      "This command performs one of several operations on the variable given by arrayName.",
+      "Unless otherwise specified for individual commands, arrayName must be the name of an existing array variable.",
+      "The option argument determines what action is carried out by the command."
+    ]
+  },
+  "Get array names": {
+    "prefix": "array names",
+    "body": ["array names ${1:arrayName} ${2:?mode?} ${0:?pattern?}"],
+    "description": [
+      "Returns a list containing the names of all of the elements in the array that match pattern.",
+      "Mode may be one of -exact, -glob, or -regexp.",
+      "If specified, mode designates which matching rules to use to match pattern against the names of the elements in the array.",
+      "If not specified, mode defaults to -glob. See the documentation for string match for information on glob style matching, and the documentation for regexp for information on regexp matching. If pattern is omitted then the command returns all of the element names in the array. If there are no (matching) elements in the array, or if arrayName is not the name of an array variable, then an empty string is returned."
+    ]
+  },
+  "Get array elements": {
+    "prefix": "array get",
+    "body": ["array get ${1:arrayName} ${0:?pattern?}"],
+    "description": [
+      "Returns a list containing pairs of elements.",
+      "The first element in each pair is the name of an element in arrayName and the second element of each pair is the value of the array element.",
+      "The order of the pairs is undefined. If pattern is not specified, then all of the elements of the array are included in the result.",
+      "If pattern is specified, then only those elements whose names match pattern (using the matching rules of string match) are included.",
+      "If arrayName is not the name of an array variable, or if the array contains no elements, then an empty list is returned.",
+      "If traces on the array modify the list of elements, the elements returned are those that exist both before and after the call to array get."
+    ]
+  },
+  "Set array values": {
+    "prefix": "array set",
+    "body": ["array set ${1:arrayName} \"${0:list}\""],
+    "description": [
+      "Sets the values of one or more elements in arrayName.",
+      "list must have a form like that returned by array get, consisting of an even number of elements.",
+      "Each odd-numbered element in list is treated as an element name within arrayName, and the following element in list is used as a new value for that array element.",
+      "If the variable arrayName does not already exist and list is empty, arrayName is created with an empty array value."
+    ]
+  },
+  "Unset array elements": {
+    "prefix": "array unset",
+    "body": ["array unset ${1:arrayName} ${0:?pattern?}"],
+    "description": [
+      "Unsets all of the elements in the array that match pattern (using the matching rules of string match).",
+      "If arrayName is not the name of an array variable or there are no matching elements in the array, no error will be raised.",
+      "If pattern is omitted and arrayName is an array variable, then the command unsets the entire array. The command always returns an empty string."
+    ]
+  },
+  "Existence of array": {
+    "prefix": "array exists",
+    "body": ["array exists ${0:arrayName}"],
+    "description": "Returns 1 if arrayName is an array variable, 0 if there is no variable by that name or if it is a scalar variable."
+  },
+  "Evaluate script and trap exceptional returns": {
+    "prefix": "catch",
+    "body": ["catch ${1:script} ${2:resultVarName} ${0:optionsVarName}"],
+    "description": [
+      "The catch command may be used to prevent errors from aborting command interpretation.",
+      "The catch command calls the Tcl interpreter recursively to execute script, and always returns without raising an error, regardless of any errors that might occur while executing script."
+    ]
+  },
+  "Change working directory": {
+    "prefix": "cd",
+    "body": ["cd ${0:dirName}"],
+    "description": [
+      "Change the current working directory to dirName, or to the home directory (as specified in the HOME environment variable) if dirName is not given.",
+      "Returns an empty string. Note that the current working directory is a per-process resource; the cd command changes the working directory for all interpreters and (in a threaded environment) all threads."
+    ]
+  },
+  "Obtain and manipulate dates and times": {
+    "prefix": "clock",
+    "body": ["clock ${0:subCommand}"],
+    "description": [
+      "The clock command performs several operations that obtain and manipulate values that represent times.",
+      "The command supports several subcommands that determine what action is carried out by the command.",
+      "Subcommands could be one of add, clicks, format, microseconds, milliseconds, scan, or seconds."
+    ]
+  },
+  "Join lists together": {
+    "prefix": "concat",
+    "body": ["concat ${0:?arg arg ...?}"],
+    "description": [
+      "This command joins each of its arguments together with spaces after trimming leading and trailing white-space from each of them.",
+      "If all of the arguments are lists, this has the same effect as concatenating them into a single list.",
+      "Arguments that are empty (after trimming) are ignored entirely.",
+      "It permits any number of arguments; if no args are supplied, the result is an empty string."
+    ]
+  },
+  "Close an open channel": {
+    "prefix": "close",
+    "body": ["close ${1:channelId} ${0:?r(ead)|w(rite)?}"],
+    "description": "Closes or half-closes the channel given by channelId."
+  },
+  "Manipulate dictionaries": {
+    "prefix": "dict",
+    "body": ["dict ${1:option} ${2:arg} ${0:?arg ...?}"],
+    "description": [
+      "Performs one of several operations on dictionary values or variables containing dictionary values"
+    ]
+  },
+  "Create a dict": {
+    "prefix": "dict create",
+    "body": ["dict create ${1:?key value key value ...?}"],
+    "description": [
+      " Return a new dictionary that contains each of the key/value mappings listed as arguments (keys and values alternating, with each key being followed by its associated value.)"
+    ]
+  },
+  "Dict existence": {
+    "prefix": "dict exists",
+    "body": ["dict exists ${1:dictionaryValue} ${2:key} ${0:?key ...?}"],
+    "description": [
+      "This returns a boolean value indicating whether the given key (or path of keys through a set of nested dictionaries) exists in the given dictionary value.",
+      "This returns a true value exactly when dict get on that path will succeed."
+    ]
+  },
+  "Get a value from a dictionary for a key": {
+    "prefix": "dict get",
+    "body": ["dict get ${1:dictionaryValue} ${2:key} ${0:?key ...?}"],
+    "description": [
+      "This returns a boolean value indicating whether the given key (or path of keys through a set of nested dictionaries) exists in the given dictionary value.",
+      "This returns a true value exactly when dict get on that path will succeed."
+    ]
+  },
+  "Return keys for a dict": {
+    "prefix": "dict keys",
+    "body": ["dict keys ${1:dictionaryValue} ${0:?globPattern?}"],
+    "description": [
+      "Return a list of all keys in the given dictionary value.",
+      "If a pattern is supplied, only those keys that match it (according to the rules of string match) will be returned.",
+      "The returned keys will be in the order that they were inserted into the dictionary."
+    ]
+  },
+  "Return a dict with key removed": {
+    "prefix": "dict remove",
+    "body": ["dict remove ${1:dictionaryValue} ${0:?key ...?}"],
+    "description": [
+      "Return a new dictionary that is a copy of an old one passed in as first argument except without mappings for each of the keys listed.",
+      "It is legal for there to be no keys to remove, and it also legal for any of the keys to be removed to not be present in the input dictionary in the first place."
+    ]
+  },
+  "Add/update a mapping for a dict": {
+    "prefix": "dict set",
+    "body": ["dict set ${1:dictionaryValue} ${0:?key ...?}"],
+    "description": [
+      "Return a new dictionary that is a copy of an old one passed in as first argument except without mappings for each of the keys listed.",
+      "It is legal for there to be no keys to remove, and it also legal for any of the keys to be removed to not be present in the input dictionary in the first place."
+    ]
+  },
+  "Get size of a dict": {
+    "prefix": "dict size",
+    "body": ["dict set ${0:dictionaryValue}"],
+    "description": "Return the number of key/value mappings in the given dictionary value."
+  },
+  "Remove a mapping from a dict": {
+    "prefix": "dict unset",
+    "body": ["dict unset ${1:dictionaryValue} ${2:key} ${0:?key ...?}"],
+    "description": [
+      "This operation (the companion to dict set) takes the name of a variable containing a dictionary value and places an updated dictionary value in that variable that does not contain a mapping for the given key.",
+      "Where multiple keys are present, this describes a path through nested dictionaries to the mapping to remove.",
+      "At least one key must be specified, but the last key on the key-path need not exist.",
+      "All other components on the path must exist. The updated dictionary value is returned."
+    ]
+  },
+  "Generate an error": {
+    "prefix": "error",
+    "body": ["error ${1:message} ${2:?info?} ${0:?code?}"],
+    "description": [
+      "Returns a TCL_ERROR code, which causes command interpretation to be unwound.",
+      "Message is a string that is returned to the application to indicate what went wrong.",
+      "The -errorinfo return option of an interpreter is used to accumulate a stack trace of what was in progress when an error occurred; as nested commands unwind, the Tcl interpreter adds information to the -errorinfo return option.",
+      "If the info argument is present, it is used to initialize the -errorinfo return options and the first increment of unwind information will not be added by the Tcl interpreter.",
+      "In other words, the command containing the error command will not appear in the stack trace; in its place will be info. Historically, this feature had been most useful in conjunction with the catch command: if a caught error cannot be handled successfully, info can be used to return a stack trace reflecting the original point of occurrence of the error"
+    ]
+  },
+  "Evaluate a Tcl script": {
+    "prefix": "eval",
+    "body": ["eval ${1:arg} ${0:?arg?}"],
+    "description": [
+      "Eval takes one or more arguments, which together comprise a Tcl script containing one or more commands.",
+      "Eval concatenates all its arguments in the same fashion as the concat command, passes the concatenated string to the Tcl interpreter recursively, and returns the result of that evaluation (or any error generated by it).",
+      "Note that the list command quotes sequences of words in such a way that they are not further expanded by the eval command. "
+    ]
+  },
+  "Evaluate an expression": {
+    "prefix": "expr",
+    "body": ["expr {${1:arg} ${0:?arg?}}"],
+    "description": [
+      "Concatenates args (adding separator spaces between them), evaluates the result as a Tcl expression, and returns the value.",
+      "The operators permitted in Tcl expressions include a subset of the operators permitted in C expressions.",
+      "For those operators common to both Tcl and C, Tcl applies the same meaning and precedence as the corresponding C operators.",
+      "Expressions almost always yield numeric results (integer or floating-point values)."
+    ]
+  },
+  "Manipulate file names and attrbutes": {
+    "prefix": "file",
+    "body": ["file ${1:option} ${2:name} ${0:?arg arg ...?}"],
+    "description": [
+      "This command provides several operations on a file's name or attributes.",
+      "Name is the name of a file; if it starts with a tilde, then tilde substitution is done before executing the command.",
+      "Option indicates what to do with the file name. Any unique abbreviation for option is acceptable."
+    ]
+  },
+  "'For' loop": {
+    "prefix": "for",
+    "body": [
+      "for {set ${1:varName} 0} {$${1:varName} < 10} {incr ${1:varName}} {",
+      "  ${0:body}",
+      "}"
+    ],
+    "description": "For is a looping command, similar in structure to the C for statement. It returns an empty string."
+  },
+  "Iterate over all elements in one or more lists": {
+    "prefix": "foreach",
+    "body": ["foreach ${1:varName} \"${2:list}\" {", "  ${0:body}", "}"],
+    "description": [
+      "The foreach command implements a loop where the loop variable(s) take on values from one or more lists.",
+      "In the simplest case there is one loop variable, varname, and one list, list, that is a list of values to assign to varname.",
+      "The body argument is a Tcl script.",
+      "For each element of list (in order from first to last), foreach assigns the contents of the element to varname as if the lindex command had been used to extract the element, then calls the Tcl interpreter to execute body."
+    ]
+  },
+  "Format a string in the style of sprintf": {
+    "prefix": "format",
+    "body": ["format ${1:formatString} ${0:?arg arg ...?}"],
+    "description": [
+      "This command generates a formatted string in a fashion similar to the ANSI C sprintf procedure.",
+      "formatString indicates how to format the result, using % conversion specifiers as in sprintf, and the additional arguments, if any, provide values to be substituted into the result.",
+      "The return value from format is the formatted string."
+    ]
+  },
+  "Return names of files that match patterns": {
+    "prefix": "glob",
+    "body": ["glob ${1:?switches?} ${0:?pattern ...?}"],
+    "description": [
+      " This command performs file name “globbing” in a fashion similar to the csh shell or bash shell.",
+      "It returns a list of the files whose names match any of the pattern arguments.",
+      "No particular order is guaranteed in the list, so if a sorted list is required the caller should use lsort."
+    ]
+  },
+  "Execute scripts conditionally - if": {
+    "prefix": "if",
+    "body": ["if {${1:expr}} {", "  $2", "}", "$0"],
+    "description": "if statement"
+  },
+  "Execute scripts conditionally - if else": {
+    "prefix": "ife",
+    "body": ["if {${1:expr}} {", "  $2", "} else {", "  $3", "}", "$0"],
+    "description": "if else statement"
+  },
+  "Execute scripts conditionally - if elseif else": {
+    "prefix": "iffe",
+    "body": [
+      "if {${1:expr1}} {",
+      "  $2",
+      "} elseif {${3:expr2}} {",
+      "  $4",
+      "} else {",
+      "  $5",
+      "}",
+      "$0"
+    ],
+    "description": "if elseif else statement"
+  },
+  "Execute scripts conditionally - else": {
+    "prefix": "else",
+    "body": ["else {${1:expr}} {", "  $2", "}", "$0"],
+    "description": "else statement"
+  },
+  "Execute scripts conditionally - elseif": {
+    "prefix": "elseif",
+    "body": ["elseif {${1:expr}} {", "  $2", "} else {", "  $3", "}", "$0"],
+    "description": "elseif statement"
+  },
+  "Increment the value of a variable": {
+    "prefix": "incr",
+    "body": ["incr ${1:varName} ${0:?increment?}"],
+    "description": [
+      "Increments the value stored in the variable whose name is varName.",
+      "The value of the variable must be an integer.",
+      "If increment is supplied then its value (which must be an integer) is added to the value of variable varName; otherwise 1 is added to varName.",
+      "The new value is stored as a decimal string in variable varName and also returned as result.",
+      "Starting with the Tcl 8.5 release, the variable varName passed to incr may be unset, and in that case, it will be set to the value increment or to the default increment value of 1. "
+    ]
+  },
+  "Create a string by joining together list of elements": {
+    "prefix": "join",
+    "body": ["join \"${1:list}\" ${0:?joinString?}"],
+    "description": [
+      "The list argument must be a valid Tcl list.",
+      "This command returns the string formed by joining all of the elements of list together with joinString separating each adjacent pair of elements.",
+      "The joinString argument defaults to a space character."
+    ]
+  },
+  "Append list of elements onto a variable": {
+    "prefix": "lappend",
+    "body": ["lappend ${1:varName} ${0:?value value value ...?}"],
+    "description": [
+      "This command treats the variable given by varName as a list and appends each of the value arguments to that list as a separate element, with spaces between elements.",
+      "If varName does not exist, it is created as a list with elements given by the value arguments."
+    ]
+  },
+  "Assign list elements to variables": {
+    "prefix": "lassign",
+    "body": ["lassign \"${1:list}\" ${0:?varName ...?}"],
+    "description": [
+      "This command treats the value list as a list and assigns successive elements from that list to the variables given by the varName arguments in order.",
+      "If there are more variable names than list elements, the remaining variables are set to the empty string.",
+      "If there are more list elements than variables, a list of unassigned elements is returned."
+    ]
+  },
+  "Retrieve an element from a list": {
+    "prefix": "lindex",
+    "body": ["lindex \"${1:list}\" ${0:?index ...?}"],
+    "description": [
+      "The lindex command accepts a parameter, list, which it treats as a Tcl list.",
+      "It also accepts zero or more indices into the list.",
+      "The indices may be presented either consecutively on the command line, or grouped in a Tcl list and presented as a single argument."
+    ]
+  },
+  "Insert elements into a list": {
+    "prefix": "linsert",
+    "body": ["linsert \"${1:list}\" ${1:index} ${0:element element ...}"],
+    "description": [
+      "This command produces a new list from list by inserting all of the element arguments just before the index'th element of list.",
+      "Each element argument will become a separate element of the new list.",
+      "If index is less than or equal to zero, then the new elements are inserted at the beginning of the list.",
+      "If index is greater or equal to the length of list, it is as if it was end."
+    ]
+  },
+  "Create a list": {
+    "prefix": "list",
+    "body": ["list ${0:?arg arg ...?}"],
+    "description": [
+      "This command returns a list comprised of all the args, or an empty string if no args are specified.",
+      "Braces and backslashes get added as necessary, so that the lindex command may be used on the result to re-extract the original arguments, and also so that eval may be used to execute the resulting list, with arg1 comprising the command's name and the other args comprising its arguments."
+    ]
+  },
+  "Count the number of elements in a list": {
+    "prefix": "llength",
+    "body": ["llength \"{0:list}\""],
+    "description": "Treats list as a list and returns a decimal string giving the number of elements in it."
+  },
+  "Iterate over all elements in one or more lists and collect results": {
+    "prefix": "lmap",
+    "body": ["lmap ${1:varName} \"${2:list}\" {${0:body}}"],
+    "description": [
+      "The lmap command implements a loop where the loop variable(s) take on values from one or more lists, and the loop returns a list of results collected from each iteration.",
+      "'varName' is the loop variable, and 'list' is a list of values to assign to varname and the 'body' argument is a Tcl script.",
+      "For each element of list (in order from first to last), lmap assigns the contents of the element to varname as if the lindex command had been used to extract the element, then calls the Tcl interpreter to execute body.",
+      "If execution of the body completes normally then the result of the body is appended to an accumulator list. lmap returns the accumulator list. "
+    ]
+  },
+  "Return one or more adjacent elements from a list": {
+    "prefix": "list",
+    "body": ["list \"${1:list}\" ${2:first} {${0:last}}"],
+    "description": [
+      "This command will return a new list consisting of elements first through last, inclusive.",
+      "The index values first and last are interpreted the same as index values for the command string index, supporting simple index arithmetic and indices relative to the end of the list."
+    ]
+  },
+  "Build a list by repeating elements": {
+    "prefix": "lrepeat",
+    "body": ["lepeat ${1:cout} {${0:?element ...?}}"],
+    "description": "The lrepeat command creates a list of size 'count' * number of elements by repeating 'count' times the sequence of elements 'element ...'"
+  },
+  "Replace elements in a list with new elements": {
+    "prefix": "lreplace",
+    "body": [
+      "lreplace \"${1:list}\" ${2:first} ${3:last} {${0:?element element ...?}}"
+    ],
+    "description": [
+      "lreplace returns a new list formed by replacing zero or more elements of list with the element arguments.",
+      "first and last are index values specifying the first and last elements of the range to replace.",
+      "The index values first and last are interpreted the same as index values for the command string index, supporting simple index arithmetic and indices relative to the end of the list."
+    ]
+  },
+  "Reverse the order of a list": {
+    "prefix": "lreverse",
+    "body": ["lreverse \"${0:list}\""],
+    "description": "The lreverse command returns a list that has the same elements as its input list, list, except with the elements in the reverse order."
+  },
+  "Search a list for an element": {
+    "prefix": "lsearch",
+    "body": ["lsearch {1:?options?} \"${2:list}\"  {${0:pattern}}"],
+    "description": [
+      "This command searches the elements of list to see if one of them matches pattern.",
+      "If so, the command returns the index of the first matching element (unless the options -all or -inline are specified.)",
+      "If not, the command returns -1 or (if options -all or -inline are specified) the empty string."
+    ]
+  },
+  "Change an element in a list": {
+    "prefix": "lset",
+    "body": ["lset {1:varName} ${2:?index ...?} {${0:newValue}}"],
+    "description": [
+      "The lset command accepts a parameter, varName, which it interprets as the name of a variable containing a Tcl list.",
+      "It also accepts zero or more indices into the list.",
+      "The indices may be presented either consecutively on the command line, or grouped in a Tcl list and presented as a single argument.",
+      "Finally, it accepts a new value for an element of varName."
+    ]
+  },
+  "Sort the elements of a list": {
+    "prefix": "lsort",
+    "body": ["lsort {1:?options?} \"${0:list}\""],
+    "description": "This command sorts the elements of list, returning a new list in sorted order."
+  },
+  "Open a file-based or command pipeline channel": {
+    "prefix": "open",
+    "body": ["open ${1:fileName} ${2:access} ${0:permissions}"],
+    "description": "open a file channel"
+  },
+  "Print an array": {
+    "prefix": "parray",
+    "body": ["parray ${1:arrayName} ${0:?pattern?}", "$0"],
+    "description": "Prints on standard output the names and values of all elements in the array arrayName"
+  },
+  "Create a Tcl procedure": {
+    "prefix": "proc",
+    "body": ["proc ${1:name} {${2:args}} {", "  ${0:body}", "}"],
+    "description": [
+      "The proc command creates a new Tcl procedure named name, replacing any existing command or procedure there may have been by that name.",
+      "Whenever the new command is invoked, the contents of body will be executed by the Tcl interpreter."
+    ]
+  },
+  "Write to a channel": {
+    "prefix": "puts",
+    "body": ["puts ${1:?-nonewline?} ${2:?channelId?} ${0:string}"],
+    "description": "Writes the characters given by string to the channel give by channelId"
+  },
+  "Match a regular expression against a string": {
+    "prefix": "regexp",
+    "body": [
+      "regexp ${1:?switches?} {${2:exp}} ${3:string} ${4:?matchVar?} ${0:?subMatchVar subMatchVar ...?}"
+    ],
+    "description": [
+      "Determines whether the regular expression exp matches part or all of string and returns 1 if it does, 0 if it does not, unless -inline is specified"
+    ]
+  },
+  "Perform substitutions based on regular expression pattern matching": {
+    "prefix": "regsub",
+    "body": [
+      "regsub ${1:?switches?} {${2:exp}} ${3:string} ${4:subSpec} ${0:?varName?}"
+    ],
+    "description": [
+      "This command matches the regular expression exp against string, and either copies string to the variable whose name is given by varName or returns string if varName is not present."
+    ]
+  },
+  "Rename or delete a command": {
+    "prefix": "rename",
+    "body": ["rename ${1:oldName} ${2:newName}"],
+    "description": "Rename the command that used to be called oldName so that it is now called newName. If newName is an empty string then oldName is deleted."
+  },
+  "Read and write variables": {
+    "prefix": "set",
+    "body": ["set ${1:varName} ${0:value}"],
+    "description": "Returns the value of variable varName. If value is specified, then set the value of varName to value, creating a new variable if one does not already exist, and return its value."
+  },
+  "Evaluate one of several scripts, depending on a given value": {
+    "prefix": "switch",
+    "body": [
+      "switch ${1:?options?} ${2:string} {",
+      "  ${3:pattern1} {${0:expr1}}",
+      "  default {${4:default expr}}",
+      "}"
+    ],
+    "description": "Returns the value of variable varName. If value is specified, then set the value of varName to value, creating a new variable if one does not already exist, and return its value."
+  },
+  "Delete variables": {
+    "prefix": "unset",
+    "body": ["unset ${1:?-nocomplain?} ${2:?--?} ${0:?name name name ...?}"],
+    "description": [
+      "This command removes one or more variables.",
+      "Each name is a variable name, specified in any of the ways acceptable to the set command.",
+      "If a name refers to an element of an array then that element is removed without affecting the rest of the array.",
+      "If a name consists of an array name with no parenthesized index, then the entire array is deleted.",
+      "The unset command returns an empty string as result.",
+      "If -nocomplain is specified as the first argument, any possible errors are suppressed. The option may not be abbreviated, in order to disambiguate it from possible variable names. The option -- indicates the end of the options, and should be used if you wish to remove a variable with the same name as any of the options."
+    ]
+  },
+  "'While' loop": {
+    "prefix": "while",
+    "body": ["while {${1:test}} {", "  ${0:body}", "}"],
+    "description": "Evaluate test as an expression and if true, execute body until test evaluates to false or break is encountered."
+  },
+  "Comment block for procedure": {
+    "prefix": "#proc",
+    "body": [
+      "################################################################################",
+      "#",
+      "# Author: ${1:Author}",
+      "# Date: ${2:Date}",
+      "# Description: ${3:Description}",
+      "#",
+      "# Arguments:",
+      "# * ${4:`argument_name`} - ${5: description.}",
+      "#",
+      "################################################################################",
+      "$0"
+    ],
+    "description": "Documentation template for a TCL proc."
+  }
+}
