@@ -22,7 +22,11 @@
             },
             {
                 "language": "c",
-                "path": "./snippets/c.json"
+                "path": "./snippets/c/c.json"
+            },
+            {
+                "language": "cdoc",
+                "path": "./snippets/c/cdoc.json"
             },
             {
                 "language": "cpp",

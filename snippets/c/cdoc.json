@@ -1,0 +1,96 @@
+{
+    "comment": {
+        "prefix": "/**",
+        "body": [
+            "/**",
+            " * ${1:A one-line summay.}",
+            " *",
+            " * ${2:Description.}$0",
+            " *",
+            " * @param ${4:name} ${5:Type and description of the parameter.}",
+            " * @return ${3:Type and description of the returned value.}",
+            " *",
+            " * @example",
+            " * // ${6:Description of my example.}",
+            " * ${7:Write me later}",
+            " */"
+        ],
+        "description": "A C comment block for functions, including short summary, details, param, return, and example."
+    },
+     "comment_simple": {
+        "prefix": "/*",
+        "body": [
+            "/**",
+            " * ${1:A one-line summay.}",
+            " *",
+            " * ${2:Description.}$0",
+            " */"
+        ],
+        "description": "A simple C comment block for functions, including short summary, and details. Useful when you prefer to add the other documentation tags manually."
+    },
+    "@param": {
+        "prefix": "@param",
+        "body": [
+            "@param ${1:name} ${2:Type and description of the parameter.}$0"
+        ],
+        "description": "Type and description of a function parameter."
+    },
+    "@return": {
+        "prefix": "@return",
+        "body": [
+            "@return ${1:Type and description of the returned value.}$0"
+        ],
+        "description": "Type and description of the returned value."
+    },
+    "@example": {
+        "prefix": "@example",
+        "body": [
+            "* @example",
+            "* // ${1:Description of my example.}$0",
+            "* ${2:Write me later}"
+        ],
+        "description": "Example that demostrates how to use a function. It can be used several times."
+    },
+    "@note": {
+        "prefix": "@note",
+        "body": [
+            "@note ${1:Text.}$0"
+        ],
+        "description": "Anything worth mentioning that wouldn't fit in the description, or other documentation tags."
+    },
+    "@warning": {
+        "prefix": "@warning",
+        "body": [
+            "@warning ${1:Text.}$0"
+        ],
+        "description": "Indicates special considerations when using the function."
+    },
+    "@see": {
+        "prefix": "@see",
+        "body": [
+            "@see ${1:Text.}$0"
+        ],
+        "description": "References another function, or piece of documentation."
+    },
+    "@deprecated": {
+        "prefix": "@deprecated",
+        "body": [
+            "@deprecated ${1:Text.}$0"
+        ],
+        "description": "Marks the function as deprecated, and no longer recommended for use."
+    },
+    "@todo": {
+        "prefix": "@todo",
+        "body": [
+            "@todo ${1:Text.}$0"
+        ],
+        "description": "Used to mark areas of the code that require improvement."
+    },
+    "@fixme": {
+        "prefix": "@fixme",
+        "body": [
+            "@fixme ${1:Text.}$0"
+        ],
+        "description": "Used to mark areas of the code that require fixing."
+    }
+}
