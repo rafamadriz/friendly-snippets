@@ -443,29 +443,5 @@
         "prefix": ",d",
         "body": ["/**$0", " **/"],
         "description": "Doxygen 2-star-style comment"
-    },
-    "Doxygen template": {
-        "prefix": ",dox",
-        "body": [
-            "/*!$1",
-            " * @brief ${2:This is something undocumented.}",
-            " *",
-            " * ${3:Nothing to add here...}$0",
-            " */"
-        ],
-        "description": "Doxygen template to document a var/func/etc"
-    },
-    "Group section": {
-        "prefix": ",grp",
-        "body": [
-            "/*! @name ${1:Useless API.}${2: No more details...}",
-            " * @{",
-            " */",
-            "$0",
-            "",
-            "/*! @}",
-            " */"
-        ],
-        "description": "Group documented elements"
     }
 }
