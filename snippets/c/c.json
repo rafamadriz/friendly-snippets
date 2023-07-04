@@ -211,24 +211,13 @@
     },
     "Function declaration": {
         "prefix": "fund",
-        "body": ["$4${2:void} ${1:fun}(${3:void});$0"],
+        "body": ["${2:void} ${1:fun}(${3:void});"],
         "description": "Declare a function"
     },
     "Function definition": {
         "prefix": "fun",
-        "body": ["$4${2:void} ${1:fun}(${3:void})", "{$0", "}"],
+        "body": ["${2:void} ${1:fun}(${3:void})", "{$0", "}"],
         "description": "Define a function"
-    },
-    "Function with return var": {
-        "prefix": "funret",
-        "body": [
-            "$4${2:int} ${1:func}(${3:void})",
-            "{",
-            "\t$2 ${5:retval} = ${6:0};$0",
-            "\treturn $5;",
-            "}"
-        ],
-        "description": "Define a function that uses a variable for return"
     },
     "typedef": {
         "prefix": "typedef",
@@ -390,7 +379,57 @@
         "body": ["free(${1:NULL});"],
         "description": "free() snippet"
     },
-    "Comment block": {
+    "fputs() errcheck": {
+        "prefix": "errio_eof",
+        "body": [
+            "if (${1:status} == EOF$2) {",
+            "\t${3:err(EXIT_FAILURE, \"IO is hard\");}",
+            "}"
+        ],
+        "description": "Error checking for int IO functions"
+    },
+    "fgets() errcheck": {
+        "prefix": "errio_null",
+        "body": [
+            "if (!${1:status}$2) {",
+            "\t${3:err(EXIT_FAILURE, \"IO is hard\");}",
+            "}"
+        ],
+        "description": "Error checking for pointer-type IO functions"
+    },
+    "printf() errcheck": {
+        "prefix": "errpri",
+        "body": [
+            "if (${1:status} < 0) {",
+            "\t${2:err(EXIT_FAILURE, \"Ran out of ink\");}",
+            "}"
+        ],
+        "description": "Error checking for printf()-like"
+    },
+    "getline() errcheck": {
+        "prefix": "errline",
+        "body": [
+            "if (${1:status} == -1$2) {",
+            "\t${3:err(EXIT_FAILURE, \"Can't find the line\");}",
+            "}"
+        ],
+        "description": "Error checking for getline function"
+    },
+    "malloc() errcheck": {
+        "prefix": "errmem",
+        "body": [
+            "if (!${1:status}) {",
+            "\t${2:err(EXIT_FAILURE, \"Your memory is doomed\");}",
+            "}"
+        ],
+        "description": "Error checking for malloc()-like"
+    },
+    "Array length": {
+        "prefix": "arrlen",
+        "body": ["(sizeof ${1:arr} / sizeof $1[0])"],
+        "description": "Calculate number of elements in an array"
+    },
+        "Comment block": {
         "prefix": ",",
         "body": ["/*$0 */"],
         "description": "Convenient comment block"
@@ -428,60 +467,5 @@
             " */"
         ],
         "description": "Group documented elements"
-    },
-    "fputs() errcheck": {
-        "prefix": "errio_eof",
-        "body": [
-            "if (${1:status} == EOF$2) {",
-            "\t${3:err(EXIT_FAILURE, \"IO is hard\");}",
-            "}",
-            "$0"
-        ],
-        "description": "Error checking for int IO functions"
-    },
-    "fgets() errcheck": {
-        "prefix": "errio_null",
-        "body": [
-            "if (!${1:status}$2) {",
-            "\t${3:err(EXIT_FAILURE, \"IO is hard\");}",
-            "}",
-            "$0"
-        ],
-        "description": "Error checking for pointer-type IO functions"
-    },
-    "printf() errcheck": {
-        "prefix": "errpri",
-        "body": [
-            "if (${1:status} < 0) {",
-            "\t${2:err(EXIT_FAILURE, \"Ran out of ink\");}",
-            "}",
-            "$0"
-        ],
-        "description": "Error checking for printf()-like"
-    },
-    "getline() errcheck": {
-        "prefix": "errline",
-        "body": [
-            "if (${1:status} == -1$2) {",
-            "\t${3:err(EXIT_FAILURE, \"Can't find the line\");}",
-            "}",
-            "$0"
-        ],
-        "description": "Error checking for getline function"
-    },
-    "malloc() errcheck": {
-        "prefix": "errmem",
-        "body": [
-            "if (!${1:status}) {",
-            "\t${2:err(EXIT_FAILURE, \"Your memory is doomed\");}",
-            "}",
-            "$0"
-        ],
-        "description": "Error checking for malloc()-like"
-    },
-    "Array length": {
-        "prefix": "arrlen",
-        "body": ["(sizeof ${1:arr} / sizeof $1[0])"],
-        "description": "Calculate number of elements in an array"
     }
 }
