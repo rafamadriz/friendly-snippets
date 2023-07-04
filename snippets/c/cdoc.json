@@ -1,4 +1,28 @@
 {
+    "Doxygen template": {
+        "prefix": ",dox",
+        "body": [
+            "/*!$1",
+            " * @brief ${2:This is something undocumented.}",
+            " *",
+            " * ${3:Nothing to add here...}$0",
+            " */"
+        ],
+        "description": "Doxygen template to document a var/func/etc"
+    },
+    "Group section": {
+        "prefix": ",grp",
+        "body": [
+            "/*! @name ${1:Useless API.}${2: No more details...}",
+            " * @{",
+            " */",
+            "$0",
+            "",
+            "/*! @}",
+            " */"
+        ],
+        "description": "Group documented elements"
+    },
     "comment": {
         "prefix": "/**",
         "body": [
@@ -17,7 +41,7 @@
         ],
         "description": "A C comment block for functions, including short summary, details, param, return, and example."
     },
-     "comment_simple": {
+    "comment_simple": {
         "prefix": "/*",
         "body": [
             "/**",
