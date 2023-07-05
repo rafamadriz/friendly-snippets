@@ -364,16 +364,6 @@
         "body": ["static_assert($0);"],
         "description": "C2X 1-parameter static_assert() snippet"
     },
-    "warn": {
-        "prefix": "warn",
-        "body": ["warn(\"${1:%s}\"$0);"],
-        "description": "warn() snippet"
-    },
-    "warnx": {
-        "prefix": "warnx",
-        "body": ["warnx(\"${1:%s}\"$0);"],
-        "description": "warnx() snippet"
-    },
     "err": {
         "prefix": "err",
         "body": ["err(${1:EXIT_FAILURE}, \"${2:%s}\"$0);"],
@@ -383,6 +373,16 @@
         "prefix": "errx",
         "body": ["errx(${1:EXIT_FAILURE}, \"${2:%s}\"$0);"],
         "description": "errx() snippet"
+    },
+    "warn": {
+        "prefix": "warn",
+        "body": ["warn(\"${1:%s}\"$0);"],
+        "description": "warn() snippet"
+    },
+    "warnx": {
+        "prefix": "warnx",
+        "body": ["warnx(\"${1:%s}\"$0);"],
+        "description": "warnx() snippet"
     },
     "fputs() errcheck": {
         "prefix": "errio_eof",
