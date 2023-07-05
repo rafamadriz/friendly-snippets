@@ -1,9 +1,19 @@
 {
+    "Comment block": {
+        "prefix": "/",
+        "body": ["/*$0 */"],
+        "description": "Convenient comment block"
+    },
+    "Multiline comment": {
+        "prefix": "//",
+        "body": ["/*$0", " */"],
+        "description": "Convenient multiline comment"
+    },
     "Starter Template": {
-        "prefix": "st",
+        "prefix": ",",
         "body": [
-            "#include <stdlib.h>",
             "#include <stdio.h>",
+            "#include <stdlib.h>",
             "",
             "int main(int argc, char *argv[])",
             "{$0",
@@ -14,7 +24,7 @@
         "description": "Standard starter template for a tiny C program"
     },
     "Preprocessor Starter Template": {
-        "prefix": "#st",
+        "prefix": "#,",
         "body": [
             "// #define NDEBUG // disables assert()",
             "#include <assert.h>",
@@ -418,16 +428,6 @@
             "}"
         ],
         "description": "Error checking for malloc()-like"
-    },
-    "Comment block": {
-        "prefix": "/",
-        "body": ["/*$0 */"],
-        "description": "Convenient comment block"
-    },
-    "Multiline comment": {
-        "prefix": "//",
-        "body": ["/*$0", " */"],
-        "description": "Convenient multiline comment"
     },
     "Print a variable": {
         "prefix": "printv",
