@@ -30,7 +30,11 @@
             },
             {
                 "language": "cpp",
-                "path": "./snippets/cpp.json"
+                "path": "./snippets/cpp/cpp.json"
+            },
+            {
+                "language": "cppdoc",
+                "path": "./snippets/cpp/cppdoc.json"
             },
             {
                 "language": ["csharp", "cs"],
