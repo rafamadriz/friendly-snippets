@@ -2,7 +2,7 @@
   "comment": {
     "prefix": "---",
     "body": [
-      "--- ${1:A one-line summay.}",
+      "--- ${1:A one-line summary.}",
       "-- ${2:Description.}$0",
       "-- @param ${5:name} ${6:type} ${7:Parameter description.}",
       "-- @return ${3:type} ${4: Description of the returned object.}",
@@ -13,7 +13,7 @@
   "comment_simple": {
     "prefix": "--",
     "body": [
-      "--- ${1:A one-line summay.}",
+      "--- ${1:A one-line summary.}",
       "-- ${2:Description.}$0"
     ],
     "description": "A simple lua comment with short summary and description. Useful when you prefer to add the tags manually on functions."

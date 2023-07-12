@@ -3,7 +3,7 @@
         "prefix": "\"\"\"",
         "body": [
             "\"\"\"",
-            "${1:A one-line summay.}",
+            "${1:A one-line summary.}",
             "",
             "${2:Detailed description.}$0",
             "",
@@ -18,13 +18,13 @@
             "    ${7:use_it_this_way(arg1, arg2)}",
             "\"\"\""
         ],
-        "description": "A Python docstring for functions and methods, including short summary, details, args, returns, and examples. This docstring is an synonism of \"\"\"function."
+        "description": "A Python docstring for functions and methods, including short summary, details, args, returns, and examples. This docstring is an synonym of \"\"\"function."
     },
     "comment simple": {
         "prefix": "\"\"",
         "body": [
             "\"\"\"",
-            "${1:A one-line summay.}",
+            "${1:A one-line summary.}",
             "",
             "${2:Detailed description.}$0",
             "\"\"\""
@@ -35,7 +35,7 @@
         "prefix": "\"\"\"module",
         "body": [
             "\"\"\"",
-            "${1:A one-line summay.}",
+            "${1:A one-line summary.}",
             "",
             "${2:Detailed description.}$0",
             "",
@@ -61,7 +61,7 @@
         "prefix": "\"\"\"function",
         "body": [
             "\"\"\"",
-            "${1:A one-line summay.}",
+            "${1:A one-line summary.}",
             "",
             "${2:Detailed description.}$0",
             "",
@@ -82,7 +82,7 @@
         "prefix": "\"\"\"function_typed",
         "body": [
             "\"\"\"",
-            "${1:A one-line summay.}",
+            "${1:A one-line summary.}",
             "",
             "${2:Detailed description.}$0",
             "",
@@ -103,7 +103,7 @@
         "prefix": "\"\"\"generator",
         "body": [
             "\"\"\"",
-            "${1:A one-line summay.}",
+            "${1:A one-line summary.}",
             "",
             "${2:Detailed description.}$0",
             "",
@@ -124,7 +124,7 @@
         "prefix": "\"\"\"class",
         "body": [
             "\"\"\"",
-            "${1:A one-line summay.}",
+            "${1:A one-line summary.}",
             "",
             "${2:Detailed description.}$0",
             "",
@@ -138,7 +138,7 @@
         "prefix": "\"\"\"exception",
         "body": [
             "\"\"\"",
-            "${1:A one-line summay.}",
+            "${1:A one-line summary.}",
             "",
             "${2:Detailed description.}$0",
             "",

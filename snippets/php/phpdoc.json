@@ -3,7 +3,7 @@
         "prefix": "/**",
         "body": [
             "/**",
-            " * ${1:A one-line summay.}",
+            " * ${1:A one-line summary.}",
             " *",
             " * ${2:Description.}$0",
             " *",
@@ -21,7 +21,7 @@
         "prefix": "/*",
         "body": [
             "/**",
-            " * ${1:A one-line summay.}",
+            " * ${1:A one-line summary.}",
             " *",
             " * ${2:Description.}$0",
             " */"
@@ -56,14 +56,14 @@
         "body": [
             "@throws ${1:ExceptionName} ${2:Description.}$0"
         ],
-        "description": "Indicates the exceptions that can be thrown by a function. This tag is a synonism of @exception."
+        "description": "Indicates the exceptions that can be thrown by a function. This tag is a synonym of @exception."
     },
     "@exception": {
         "prefix": "@exception",
         "body": [
             "@exception ${1:ExceptionName} ${2:Description.}$0"
         ],
-        "description": "Indicates the exceptions that can be thrown by a function. This tag is a synonism of @throws."
+        "description": "Indicates the exceptions that can be thrown by a function. This tag is a synonym of @throws."
     }
 }
 
