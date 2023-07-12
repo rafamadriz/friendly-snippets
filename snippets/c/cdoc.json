@@ -17,7 +17,7 @@
         ],
         "description": "A C comment block for functions, including short summary, details, param, return, and example."
     },
-    "comment_simple": {
+      "comment_simple": {
         "prefix": "/*",
         "body": [
             "/**",
