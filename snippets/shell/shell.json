@@ -1,17 +1,4 @@
 {
-    "bash": {
-        "prefix": ["bash", "#!", "shebang"],
-        "body": "${1|#!/bin/bash,#!/usr/bin/env bash,#!/bin/sh,#!/usr/bin/env sh|}\n",
-        "description": [
-            "Option 1:\n",
-            "#!/bin/bash\n",
-            "Description: Shebang Bash executor.\n",
-            "Option 2:\n",
-            "#!/usr/bin/env bash\n",
-            "Description: Shell searchs for the first match of bash in the $PATH environment variable.\n",
-            "It can be useful if you aren't aware of the absolute path or don't want to search for it.\n"
-        ]
-    },
     "echo": {
         "prefix": "echo",
         "body": "echo \"${0:message}\"",

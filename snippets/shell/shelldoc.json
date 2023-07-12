@@ -1,0 +1,39 @@
+{
+    "shebang": {
+        "prefix": "#!/usr/bin/env",
+        "body": [
+            "#!/usr/bin/env ${1:sh}",
+            "#",
+            "# ${2:Description of the script.}$0"
+        ],
+        "description": [
+            "Shebang to specify what shell is going to run the script by default. It includes a description of the script. \n\nIt must be defined in the first line of the script.\n\nBy using #!/usr/bin/env we are making the shebang portable, meaning it is going to work correctly even if the interpreter is not located under /usr/bin"
+        ]
+    },
+    "comment": {
+        "prefix": "###",
+        "body": [
+            "#######################################",
+            "# ${1:Description of the function.}$0",
+            "# Globals:",
+            "#   ${3:MY_VAR}",
+            "# Arguments:",
+            "#   ${4:None}",
+            "# Outputs:",
+            "#   ${5:Output to STDOUT or STDERR.}",
+            "# Returns:",
+            "#   ${2: Description of the returned value.}",
+            "#######################################"
+        ],
+        "description": "A shell comment block for functions, including description, globals, arguments, outputs, and returns. For functions without I/O, use the simple version of this snippet instead.\n\nYou can delete 'Globals'/'Arguments'/'Outputs' in functions with no input/output.\n\nIt doesn't includes, but accepts the optional keywords:\n  'See'\n  'Raises'"
+    },
+    "comment_simple": {
+        "prefix": "##",
+        "body": [
+            "#######################################",
+            "# ${1:Description of the function.}$0",
+            "#######################################"
+        ],
+        "description": "A simple shell comment block for functions, with a description. Useful when the user prefers to add the other documentation tags manually."
+    }
+}
