@@ -391,29 +391,29 @@
     "fgets() errcheck": {
         "prefix": "chkio_null",
         "body": [
-            "if (!${1:status}$2) {",
-            "\t${3:err(EXIT_FAILURE, \"IO is very hard\");}",
+            "if (!${1:status}) {",
+            "\t${2:err(EXIT_FAILURE, \"IO is very hard\");}",
             "}"
         ],
         "description": "Error checking for pointer-type IO functions"
     },
-    "printf() errcheck": {
-        "prefix": "chkpri",
-        "body": [
-            "if (${1:status} < 0) {",
-            "\t${2:err(EXIT_FAILURE, \"Ran out of ink\");}",
-            "}"
-        ],
-        "description": "Error checking for printf()-like"
-    },
-    "getline() errcheck": {
-        "prefix": "chkline",
+    "fseek() errcheck": {
+        "prefix": "chkio_m1",
         "body": [
             "if (${1:status} == -1$2) {",
-            "\t${3:err(EXIT_FAILURE, \"Can't find the line\");}",
+            "\t${3:err(EXIT_FAILURE, \"IO is very very bad\");}",
             "}"
         ],
-        "description": "Error checking for getline function"
+        "description": "Error checking for fseek(), getline() like functions"
+    },
+    "printf() errcheck": {
+        "prefix": "chkio_neg",
+        "body": [
+            "if (${1:status} < 0$2) {",
+            "\t${3:err(EXIT_FAILURE, \"Ran out of ink\");}",
+            "}"
+        ],
+        "description": "Error checking for printf()-like functions"
     },
     "malloc() errcheck": {
         "prefix": "chkmem",
