@@ -2,7 +2,7 @@
     "comment": {
         "prefix": "###",
         "body": [
-            "# ${1:A one-line summay.}",
+            "# ${1:A one-line summary.}",
             "#",
             "# ${2:Description.}$0",
             "#",
@@ -17,7 +17,7 @@
     "comment_simple": {
         "prefix": "##",
         "body": [
-            "# ${1:A one-line summay.}",
+            "# ${1:A one-line summary.}",
             "#",
             "# ${2:Description.}$0"
         ],
