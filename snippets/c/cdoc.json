@@ -3,7 +3,7 @@
         "prefix": "/**",
         "body": [
             "/**",
-            " * ${1:A one-line summay.}",
+            " * ${1:A one-line summary.}",
             " *",
             " * ${2:Description.}$0",
             " *",
@@ -17,11 +17,11 @@
         ],
         "description": "A C comment block for functions, including short summary, details, param, return, and example."
     },
-     "comment_simple": {
+    "comment_simple": {
         "prefix": "/*",
         "body": [
             "/**",
-            " * ${1:A one-line summay.}",
+            " * ${1:A one-line summary.}",
             " *",
             " * ${2:Description.}$0",
             " */"

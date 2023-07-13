@@ -3,7 +3,7 @@
         "prefix": "/**",
         "body": [
             "/**",
-            " * ${1:A one-line summay.}",
+            " * ${1:A one-line summary.}",
             " *",
             " * ${2:Description.}$0",
             " *",
@@ -22,7 +22,7 @@
         "prefix": "/*",
         "body": [
             "/**",
-            " * ${1:A one-line summay.}",
+            " * ${1:A one-line summary.}",
             " *",
             " * ${2:Description.}$0",
             " */"
@@ -65,14 +65,14 @@
         "body": [
             "@throws ${1:IOException} ${2:Description.}$0"
         ],
-        "description": "Document an exception raised by the item. Synonism of @exception."
+        "description": "Document an exception raised by the item. Synonym of @exception."
     },
     "@exception": {
         "prefix": "@exception",
         "body": [
             "@exception ${1:IOException} ${2:Description.}$0"
         ],
-        "description": "Document an exception raised by the item. Synonism of @throws."
+        "description": "Document an exception raised by the item. Synonym of @throws."
     },
     "@since": {
         "prefix": "@since",
