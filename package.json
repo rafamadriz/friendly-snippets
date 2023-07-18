@@ -345,7 +345,7 @@
                 "path": "./snippets/kotlin/kotlin.json"
             },
             {
-                "language": "kotlin",
+                "language": "kdoc",
                 "path": "./snippets/kotlin/kdoc.json"
             },
             {
