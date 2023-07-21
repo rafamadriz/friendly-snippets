@@ -475,6 +475,10 @@
             {
                 "language": "nu",
                 "path": "./snippets/nushell.json"
+            },
+            {
+                "language": "reason",
+                "path": "./snippets/reason.json"
             }
         ]
     }
