@@ -483,6 +483,25 @@
             {
                 "language": "reason",
                 "path": "./snippets/reason.json"
+            },
+            {
+                "language": [
+                    "ocaml",
+                    "ocamlinterface"
+                ],
+                "path": "./snippets/ocaml/ocaml.json"
+            },
+            {
+                "language": "ocaml.ocamllex",
+                "path": "./snippets/ocaml/ocamllex.json"
+            },
+            {
+                "language": "dune-project",
+                "path": "./snippets/ocaml/dune-project.json"
+            },
+            {
+                "language": "dune",
+                "path": "./snippets/ocaml/dune.json"
             }
         ]
     }
