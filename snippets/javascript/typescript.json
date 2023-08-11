@@ -216,5 +216,38 @@
         "prefix": "#endregion",
         "body": ["//#endregion"],
         "description": "Folding Region End"
+    },
+    "Let String":{
+        "prefix": "letString",
+        "body": [
+            "let ${1:name}: string = $2",
+            "\t$0"
+        ],
+        "description": "Let String"
+    },
+    "Let Number":{
+        "prefix": "letNumber",
+        "body": [
+            "let ${1:name}: number = $2"
+        ],
+        "description": "Let Number"
+    },
+    "Let Boolen":{
+        "prefix": "letBoolean",
+        "body": [
+            "let ${1:name}: boolean = $2",
+            "\t$0"
+        ],
+        "description": "Let Boolean"
+    },
+    "Let Number Array":{
+        "prefix": "letNumber[]",
+        "body": [
+            "let ${1:name}: number[] = $2",
+            "\t$0"
+        ],
+        "description": "Let number array"
     }
+
+
 }
