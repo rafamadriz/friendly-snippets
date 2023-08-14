@@ -342,6 +342,16 @@
         ],
         "description": "React useMemo() hook"
     },
+    "createReactHook": {
+        "prefix": "crh",
+        "body": [ "export const use$0 = () => {", "", "}" ],
+        "description": "Create React Hook"
+    },
+    "createReactHookWithName": {
+        "prefix": "crhn",
+        "body": [  "export const ${TM_FILENAME_BASE} = () => {", "\t$0", "}"],
+        "description": "Create React Hook using File name" 
+    },
     "describeBlock": {
         "prefix": "desc",
         "body": ["describe('$1', () => {", "  $0", "})", ""],
