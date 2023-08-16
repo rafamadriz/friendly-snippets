@@ -1,0 +1,63 @@
+{
+  "Create launch config for Chrome": {
+    "prefix": "a-launch-chrome",
+    "body": [
+      "{",
+      "\t\"name\": \"Launch Angular\",",
+      "\t\"type\": \"${1:chrome}\",",
+      "\t\"request\": \"launch\",",
+      "\t\"preLaunchTask\": \"${2:npm: start}\",",
+      "\t\"url\": \"http://localhost:${3:4200}/\",",
+      "\t\"webRoot\": \"${4:\\${workspaceFolder\\}}\"",
+      "}"
+    ]
+  },
+  "Create launch config for Edge": {
+    "prefix": "a-launch-edge",
+    "body": [
+      "{",
+      "\t\"name\": \"Launch Angular\",",
+      "\t\"type\": \"${1:edge}\",",
+      "\t\"version\": \"${2:dev}\",",
+      "\t\"request\": \"launch\",",
+      "\t\"preLaunchTask\": \"${3:npm: start}\",",
+      "\t\"url\": \"http://localhost:${4:4200}/\",",
+      "\t\"webRoot\": \"${5:\\${workspaceFolder\\}}\"",
+      "}"
+    ]
+  },
+  "Create task to start Angular": {
+    "prefix": "a-task-start",
+    "body": [
+      "{",
+      "\t\"type\": \"npm\",",
+      "\t\"script\": \"${1:start}\",",
+      "\t\"isBackground\": true,",
+      "\t\"presentation\": {",
+      "\t\t\"focus\": true,",
+      "\t\t\"panel\": \"dedicated\"",
+      "\t},",
+      "\t\"group\": {",
+      "\t\t\"kind\": \"build\",",
+      "\t\t\"isDefault\": true",
+      "\t},",
+      "\t\"problemMatcher\": {",
+      "\t\t\"owner\": \"typescript\",",
+      "\t\t\"source\": \"ts\",",
+      "\t\t\"applyTo\": \"closedDocuments\",",
+      "\t\t\"fileLocation\": [\"relative\", \"\\${cwd\\}\"],",
+      "\t\t\"pattern\": \"\\$tsc\",",
+      "\t\t\"background\": {",
+      "\t\t\t\"activeOnStart\": true,",
+      "\t\t\t\"beginsPattern\": {",
+      "\t\t\t\t\"regexp\": \"(.*?)\"",
+      "\t\t\t},",
+      "\t\t\t\"endsPattern\": {",
+      "\t\t\t\t\"regexp\": \"Compiled |Failed to compile.\"",
+      "\t\t\t}",
+      "\t\t}",
+      "\t}",
+      "}"
+    ]
+  }
+}

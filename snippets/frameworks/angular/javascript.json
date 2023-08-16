@@ -1,0 +1,19 @@
+{
+  "Node.js Express Server": {
+    "prefix": "ex-node-server-simple",
+    "description": "Node.js Express Server",
+    "body": [
+      "const express = require('express');",
+      "const app = express();",
+      "const port = process.env.PORT || ${1:port};",
+      "const www = process.env.WWW || '${2:./}';",
+      "app.use(express.static(www));",
+      "console.log(`serving \\${www}`);",
+      "app.get('*', (req, res) => {",
+      "\tres.sendFile(`index.html`, { root: www });",
+      "});",
+      "app.listen(port, () => console.log(`listening on http://localhost:\\${port}`));",
+      "$0"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "Multi-stage Node and Angular Dockerfile": {
+    "prefix": "docker-angular-node-multi-stage",
+    "body": [
+      "# Client App",
+      "FROM johnpapa/angular-cli as client-app",
+      "LABEL authors=\"${1:John Papa}\"",
+      "WORKDIR /usr/src/app",
+      "COPY [\"package.json\", \"npm-shrinkwrap.json*\", \"./\"]",
+      "RUN npm install --silent",
+      "COPY . .",
+      "RUN ng build --prod",
+      "",
+      "# Node server",
+      "FROM ${2:node:12-alpine} as node-server",
+      "WORKDIR /usr/src/app",
+      "COPY [\"package.json\", \"npm-shrinkwrap.json*\", \"./\"]",
+      "RUN npm install --production --silent && mv node_modules ../",
+      "COPY ${3:server.js} .",
+      "COPY ${4:/server} /usr/src/app/server",
+      "",
+      "# Final image",
+      "FROM ${2:node:12-alpine}",
+      "WORKDIR /usr/src/app",
+      "COPY --from=node-server /usr/src /usr/src",
+      "COPY --from=client-app /usr/src/app/dist ./",
+      "EXPOSE ${5:3000}",
+      "# CMD [\"node\", \"server.js\"]",
+      "CMD [\"npm\", \"start\"]",
+      "$0"
+    ],
+    "description": "Multi-stage Node and Angular Dockerfile"
+  }
+}
