@@ -77,6 +77,10 @@
                 "path": "./snippets/glsl.json"
             },
             {
+                "language": "nix",
+                "path": "./snippets/nix.json"
+            },
+            {
                 "language": "liquid",
                 "path": "./snippets/liquid.json"
             },
