@@ -179,6 +179,11 @@
         "description": "blocktrans tag django template",
         "body": ["{% blocktrans %}", "  $1", "{% endblocktrans %}"]
     },
+    "blocktransinline": {
+        "prefix": "blocktransinline",
+        "description": "blocktrans tag django template (single line)",
+        "body": ["{% blocktrans %}$1{% endblocktrans %}"]
+    },
     "super": {
         "prefix": "super",
         "description": "Block super",

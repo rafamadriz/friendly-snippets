@@ -1,9 +1,19 @@
 {
+    "Comment block": {
+        "prefix": "/",
+        "body": ["/*$0 */"],
+        "description": "Convenient comment block"
+    },
+    "Multiline comment": {
+        "prefix": "//",
+        "body": ["/*$0", " */"],
+        "description": "Convenient multiline comment"
+    },
     "Starter Template": {
-        "prefix": "st",
+        "prefix": ",",
         "body": [
-            "#include <stdlib.h>",
             "#include <stdio.h>",
+            "#include <stdlib.h>",
             "",
             "int main(int argc, char *argv[])",
             "{$0",
@@ -14,7 +24,7 @@
         "description": "Standard starter template for a tiny C program"
     },
     "Preprocessor Starter Template": {
-        "prefix": "#st",
+        "prefix": "#,",
         "body": [
             "// #define NDEBUG // disables assert()",
             "#include <assert.h>",
@@ -49,7 +59,7 @@
         "description": "#include <...> snippet"
     },
     "#include \"...\"": {
-        "prefix": "#Inc",
+        "prefix": "#incl",
         "body": ["#include \"$0\""],
         "description": "#include \"...\" snippet"
     },
@@ -205,30 +215,19 @@
         "description": "'for' loop with non-zero start"
     },
     "for argv[]": {
-        "prefix": "forarg",
+        "prefix": "fora",
         "body": ["for (int ${2:i} = ${1:1}; $2 < argc; $2++) {$0", "}"],
         "description": "'for' loop variant for cmdline arguments"
     },
     "Function declaration": {
         "prefix": "fund",
-        "body": ["$4${2:void} ${1:fun}(${3:void});$0"],
+        "body": ["${2:void} ${1:fun}(${3:void});"],
         "description": "Declare a function"
     },
     "Function definition": {
         "prefix": "fun",
-        "body": ["$4${2:void} ${1:fun}(${3:void})", "{$0", "}"],
+        "body": ["${2:void} ${1:fun}(${3:void})", "{$0", "}"],
         "description": "Define a function"
-    },
-    "Function with return var": {
-        "prefix": "funret",
-        "body": [
-            "$4${2:int} ${1:func}(${3:void})",
-            "{",
-            "\t$2 ${5:retval} = ${6:0};$0",
-            "\treturn $5;",
-            "}"
-        ],
-        "description": "Define a function that uses a variable for return"
     },
     "typedef": {
         "prefix": "typedef",
@@ -270,15 +269,10 @@
         "body": ["typedef union $1 ${1:Cell};", "union $1 {$0", "};"],
         "description": "Define a type with union"
     },
-    "enum constant": {
+    "enum": {
         "prefix": "enum",
         "body": ["enum $1{ $0 };"],
-        "description": "Define a constant with enum"
-    },
-    "enum": {
-        "prefix": "enumst",
-        "body": ["enum ${1:MyEnum} {$0", "};"],
-        "description": "'enum' struct-like snippet"
+        "description": "Define an enumeration"
     },
     "puts": {
         "prefix": "puts",
@@ -325,46 +319,6 @@
         "body": ["sscanf(${1:buf}, \"${2:%i}\"$3)$0"],
         "description": "sscanf() snippet"
     },
-    "Print a variable": {
-        "prefix": "printv",
-        "body": ["printf(\"${1:var} = %${2:i}\\n\", $3)$0"],
-        "description": "Call printf() to log value of a variable"
-    },
-    "warn": {
-        "prefix": "warn",
-        "body": ["warn(\"${1:%s}\"$0);"],
-        "description": "warn() snippet"
-    },
-    "warnx": {
-        "prefix": "warnx",
-        "body": ["warnx(\"${1:%s}\"$0);"],
-        "description": "warnx() snippet"
-    },
-    "err": {
-        "prefix": "err",
-        "body": ["err(${1:EXIT_FAILURE}, \"${2:%s}\"$0);"],
-        "description": "err() snippet"
-    },
-    "errx": {
-        "prefix": "errx",
-        "body": ["errx(${1:EXIT_FAILURE}, \"${1:%s}\"$0);"],
-        "description": "errx() snippet"
-    },
-    "assert": {
-        "prefix": "assert",
-        "body": ["assert($0);"],
-        "description": "assert() snippet"
-    },
-    "static_assert": {
-        "prefix": "static_assert",
-        "body": ["static_assert($0, \"${1:Oopsie!}\");"],
-        "description": "static_assert() snippet"
-    },
-    "static_assert 1-param": {
-        "prefix": "static_assert1",
-        "body": ["static_assert($0);"],
-        "description": "C2X 1-parameter static_assert() snippet"
-    },
     "malloc": {
         "prefix": "malloc",
         "body": ["malloc(sizeof(${1:int[69]})$2)$0"],
@@ -390,94 +344,90 @@
         "body": ["free(${1:NULL});"],
         "description": "free() snippet"
     },
-    "Comment block": {
-        "prefix": ",",
-        "body": ["/*$0 */"],
-        "description": "Convenient comment block"
+    "assert": {
+        "prefix": "assert",
+        "body": ["assert($0);"],
+        "description": "assert() snippet"
     },
-    "Multiline comment": {
-        "prefix": ",,",
-        "body": ["/*$0", " */"],
-        "description": "Convenient multiline comment"
+    "static_assert": {
+        "prefix": "static_assert",
+        "body": ["static_assert(${1:false}, \"${2:Oopsie!}\");"],
+        "description": "static_assert() snippet"
     },
-    "Multiline 2-star comment": {
-        "prefix": ",d",
-        "body": ["/**$0", " **/"],
-        "description": "Doxygen 2-star-style comment"
+    "static_assert 1-param": {
+        "prefix": "static_assert1",
+        "body": ["static_assert($0);"],
+        "description": "C2X 1-parameter static_assert() snippet"
     },
-    "Doxygen template": {
-        "prefix": ",dox",
-        "body": [
-            "/*!$1",
-            " * @brief ${2:This is something undocumented.}",
-            " *",
-            " * ${3:Nothing to add here...}$0",
-            " */"
-        ],
-        "description": "Doxygen template to document a var/func/etc"
+    "err": {
+        "prefix": "err",
+        "body": ["err(${1:EXIT_FAILURE}, \"${2:%s}\"$0);"],
+        "description": "err() snippet"
     },
-    "Group section": {
-        "prefix": ",grp",
-        "body": [
-            "/*! @name ${1:Useless API.}${2: No more details...}",
-            " * @{",
-            " */",
-            "$0",
-            "",
-            "/*! @}",
-            " */"
-        ],
-        "description": "Group documented elements"
+    "errx": {
+        "prefix": "errx",
+        "body": ["errx(${1:EXIT_FAILURE}, \"${2:%s}\"$0);"],
+        "description": "errx() snippet"
+    },
+    "warn": {
+        "prefix": "warn",
+        "body": ["warn(\"${1:%s}\"$0);"],
+        "description": "warn() snippet"
+    },
+    "warnx": {
+        "prefix": "warnx",
+        "body": ["warnx(\"${1:%s}\"$0);"],
+        "description": "warnx() snippet"
     },
     "fputs() errcheck": {
-        "prefix": "errio_eof",
+        "prefix": "chkio_eof",
         "body": [
             "if (${1:status} == EOF$2) {",
             "\t${3:err(EXIT_FAILURE, \"IO is hard\");}",
-            "}",
-            "$0"
+            "}"
         ],
         "description": "Error checking for int IO functions"
     },
     "fgets() errcheck": {
-        "prefix": "errio_null",
+        "prefix": "chkio_null",
         "body": [
-            "if (!${1:status}$2) {",
-            "\t${3:err(EXIT_FAILURE, \"IO is hard\");}",
-            "}",
-            "$0"
+            "if (!${1:status}) {",
+            "\t${2:err(EXIT_FAILURE, \"IO is very hard\");}",
+            "}"
         ],
         "description": "Error checking for pointer-type IO functions"
     },
-    "printf() errcheck": {
-        "prefix": "errpri",
-        "body": [
-            "if (${1:status} < 0) {",
-            "\t${2:err(EXIT_FAILURE, \"Ran out of ink\");}",
-            "}",
-            "$0"
-        ],
-        "description": "Error checking for printf()-like"
-    },
-    "getline() errcheck": {
-        "prefix": "errline",
+    "fseek() errcheck": {
+        "prefix": "chkio_m1",
         "body": [
             "if (${1:status} == -1$2) {",
-            "\t${3:err(EXIT_FAILURE, \"Can't find the line\");}",
-            "}",
-            "$0"
+            "\t${3:err(EXIT_FAILURE, \"IO is very very bad\");}",
+            "}"
         ],
-        "description": "Error checking for getline function"
+        "description": "Error checking for fseek(), getline() like functions"
+    },
+    "printf() errcheck": {
+        "prefix": "chkio_neg",
+        "body": [
+            "if (${1:status} < 0$2) {",
+            "\t${3:err(EXIT_FAILURE, \"Ran out of ink\");}",
+            "}"
+        ],
+        "description": "Error checking for printf()-like functions"
     },
     "malloc() errcheck": {
-        "prefix": "errmem",
+        "prefix": "chkmem",
         "body": [
             "if (!${1:status}) {",
             "\t${2:err(EXIT_FAILURE, \"Your memory is doomed\");}",
-            "}",
-            "$0"
+            "}"
         ],
         "description": "Error checking for malloc()-like"
+    },
+    "Print a variable": {
+        "prefix": "printv",
+        "body": ["printf(\"$1 = %${2:i}\\n\", ${1:var})$0"],
+        "description": "Call printf() to log value of a variable"
     },
     "Array length": {
         "prefix": "arrlen",

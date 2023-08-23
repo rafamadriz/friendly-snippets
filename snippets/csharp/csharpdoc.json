@@ -1,0 +1,146 @@
+{
+  "comment": {
+    "prefix": "///",
+    "body": [
+      "/// <summary>",
+      "/// ${1:What it does.}",
+      "/// </summary>",
+      "/// <param name=\"${3:parameterName}\">${4:Parameter description.}</param>",
+      "/// <returns>${2:Type and description of the returned object.}</returns>",
+      "/// <example>${5:Write me later.}</example>$0"
+    ],
+    "description": "A C# comment with description, parameters, return, and example."
+  },
+  "<c>": {
+    "prefix": "<c>",
+    "body": [
+      "<c>${1:text.}$0</c>"
+    ],
+    "description": "This tag provides a mechanism to indicate that a fragment of text within a description should be set in a special font such as that used for a block of code. For lines of actual code, use <code>."
+  },
+  "<code>": {
+    "prefix": "<code>",
+    "body": [
+      "<code>${1:source code or program output.}$0</code>"
+    ],
+    "description": "This tag is used to set one or more lines of source code or program output in some special font. For small code fragments in narrative, use <c>."
+  },
+  "<example>": {
+    "prefix": "<example>",
+    "body": [
+      "<example>${1:description.}$0</example>"
+    ],
+    "description": "This tag allows example code within a comment, to specify how a method or other library member might be used. Ordinarily, this would also involve use of the tag <code> as well."
+  },
+  "<exception>": {
+    "prefix": "<exception>",
+    "body": [
+      "<exception cref=\"${1]:ExceptionName}\">${2:description.}$0</exception>"
+    ],
+    "description": "This tag provides a way to document the exceptions a method can throw. cref=\"member\" is the name of the exceptionh, which should be a member. The documentation generator checks that the given member exists and translates member to the canonical element name in the documentation file. Description is a description of the circumstances in which the exception is thrown."
+  },
+  "<include>": {
+    "prefix": "<include>",
+    "body": [
+      "<include file=\"${1]:filename}\" path=\"${2:xpath}\"/>$0"
+    ],
+    "description": "This tag allows including information from an XML document that is external to the source code file. The external file must be a well-formed XML document, and an XPath expression is applied to that document to specify what XML from that document to include. The <include> tag is then replaced with the selected XML from the external document. Note this is a self closing tag."
+  },
+  "<list>": {
+    "prefix": "<list>",
+    "body": [
+      "<list type=\"bullet\">",
+      "<item>",
+      "<description>${1:Item 1.}</description>",
+      "<description>${2:Item 2.}</description>",
+      "<description>${3:Item 3.}$0</description>",
+      "</item>",
+      "</list>"
+    ],
+    "description": "This tag is used to create a list or table of items. It can contain a <listheader> block to define the heading row of either a table or definition list. (When defining a table, only an entry for term in the heading need be supplied.)\n\nEach item in the list is specified with an <item> block. When creating a definition list, both term and description must be specified. However, for a table, bulleted list, or numbered list, only description need be specified."
+  },
+  "<para>": {
+    "prefix": "<para>",
+    "body": [
+      "<para>${1:content.}$0</para>"
+    ],
+    "description": "Adds a paragraph. This tag is for use inside other tags, such as <summary> or <returns>, and permits structure to be added to text."
+  },
+  "<param>": {
+    "prefix": "<param>",
+    "body": [
+      "<param name=\"${1:name}\">${2:description.}$0</param>"
+    ],
+    "description": "This tag is used to describe a parameter for a method, constructor, or indexer."
+  },
+  "<paramref>": {
+    "prefix": "<paramref>",
+    "body": [
+      "<paramref name=\"${1:name}\"/>$0"
+    ],
+    "description": "This tag is used to indicate that a word is a parameter. The documentation file can be processed to format this parameter in some distinct way."
+  },
+  "<permission>": {
+    "prefix": "<permission>",
+    "body": [
+      "<permission cref=\"${1:member}\">${2:description.}$0</permission>"
+    ],
+    "description": "This tag allows the security accessibility of a member to be documented."
+  },
+  "<remarks>": {
+    "prefix": "<remarks>",
+    "body": [
+      "<remarks>${1:description.}$0</remarks>"
+    ],
+    "description": "This tag is used to specify extra information about a type. Use <summary> to describe the type itself and the members of a type."
+  },
+  "<returns>": {
+    "prefix": "<returns>",
+    "body": [
+      "<returns>${1:Type and description of the returned object.}$0</returns>"
+    ],
+    "description": "This tag is used to describe the return value of a method. It is important to specify the type of the returned object. If nothing is returned, an object of type void must be returned to represent this fact."
+  },
+  "<see>": {
+    "prefix": "<see>",
+    "body": [
+      "<see cref=\"${1:member}\" href=\"${2:url}\" langword=\"${3:keyword}\"/>$0"
+    ],
+    "description": "This tag allows a link to be specified within text. Use <seealso> to indicate text that is to appear in a See Also subclause."
+  },
+  "<seealso>": {
+    "prefix": "<seealso>",
+    "body": [
+      "<seealso cref=\"${1:member}\" href=\"${2:url}\"/>$0"
+    ],
+    "description": "This tag allows an entry to be generated for the See Also subclause. Use <see> to specify a link from within text."
+  },
+  "<summary>": {
+    "prefix": "<summary>",
+    "body": [
+      "<summary>${1:description.}$0</summary>"
+    ],
+    "description": "This tag can be used to describe a type or a member of a type. Use <remarks> to describe the type itself."
+  },
+  "<typeparam>": {
+    "prefix": "<typeparam>",
+    "body": [
+      "<typeparam name=\"${1:name}\">${2:description.}$0</typeparam>"
+    ],
+    "description": "This tag is used to describe a type parameter for a generic type or method."
+  },
+  "<typeparamref>": {
+    "prefix": "<typeparamref>",
+    "body": [
+      "<typeparamref name=\"${1:description}\">${2:description.}$0</typeparamref>"
+    ],
+    "description": "This tag is used to indicate that a word is a type parameter. The documentation file can be processed to format this type parameter in some distinct way."
+  },
+  "<value>": {
+    "prefix": "<value>",
+    "body": [
+      "<value>${1:description.}$0</value>"
+    ],
+    "description": "This tag allows a property to be described."
+  }
+}

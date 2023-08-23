@@ -1,0 +1,91 @@
+{
+  "comment": {
+    "prefix": "---",
+    "body": [
+      "--- ${1:A one-line summary.}",
+      "-- ${2:Description.}$0",
+      "-- @param ${5:name} ${6:type} ${7:Parameter description.}",
+      "-- @return ${3:type} ${4: Description of the returned object.}",
+      "-- @usage ${8:Example about how to use it.}"
+    ],
+    "description": "A lua comment with short summary, description, parameters, return, and example."
+  },
+  "comment_simple": {
+    "prefix": "--",
+    "body": [
+      "--- ${1:A one-line summary.}",
+      "-- ${2:Description.}$0"
+    ],
+    "description": "A simple lua comment with short summary and description. Useful when you prefer to add the tags manually on functions."
+  },
+  "@author": {
+    "prefix": "@author",
+    "body": [
+      "@author ${1:text.}$0"
+    ],
+    "description": "An author of the module or file."
+  },
+  "@copyright": {
+    "prefix": "@copyright",
+    "body": [
+      "@copyright ${1:text.}$0"
+    ],
+    "description": "The copyright notice of the module or file. LuaDoc adds a © sign between the label (Copyright) and the given text (e.g. 2004-2007 Kepler Project)."
+  },
+  "@field": {
+    "prefix": "@field",
+    "body": [
+      "@field ${1:description.}$0"
+    ],
+    "description": "Describe a table field definition."
+  },
+  "@param": {
+    "prefix": "@param",
+    "body": [
+      "@param ${1:name} ${2:type} ${3:Parameter description.}$0"
+    ],
+    "description": "Describe function parameters. It requires the name of the parameter and its description."
+  },
+  "@release": {
+    "prefix": "@release",
+    "body": [
+      "@release ${1:text}$0"
+    ],
+    "description": "Free format string to describe the module or file release."
+  },
+  "@return": {
+    "prefix": "@return",
+    "body": [
+      "@return ${1:type} ${2:Description of the returned object.}$0"
+    ],
+    "description": "Describe a returning value of the function. Since Lua can return multiple values, this tag should appear more than once."
+  },
+  "@see": {
+    "prefix": "@see",
+    "body": [
+      "@see ${1:name of a function or table}$0"
+    ],
+    "description": "Refers to other descriptions of functions or tables."
+  },
+  "@class": {
+    "prefix": "@class",
+    "body": [
+      "@class ${1:name}$0"
+    ],
+    "description": "If LuaDoc cannot infer the type of documentation (function, table or module definition), the programmer can specify it explicitly."
+  },
+  "@description": {
+    "prefix": "@description",
+    "body": [
+      "@description ${1:text}$0"
+    ],
+    "description": "The description of the function or table. This is usually infered automatically."
+  },
+  "@name": {
+    "prefix": "@name",
+    "body": [
+      "@name ${1:text}$0"
+    ],
+    "description": "The name of the function or table definition. This is usually infered from the code analysis, and the programmer does not need to define it. If LuaDoc can infer the name of the function automatically it's even not recomended to define the name explicitly, to avoid redundancy."
+  }
+}

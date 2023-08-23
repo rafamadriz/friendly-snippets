@@ -85,6 +85,11 @@
         "prefix": "func",
         "body": ["func ${1:method}(${2:args}):", "\t${3:pass}"]
     },
+    
+    "match": {
+        "prefix": "match",
+        "body": ["match ${1:expression}: {\n${2:pattern(s)}:\n\t$0\n}"]
+    },
 
     "signal declaration": {
         "prefix": "signal",

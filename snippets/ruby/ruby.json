@@ -1,31 +1,31 @@
 {
     "Exception block": {
         "prefix": "begin",
-        "body": ["begin", "\t$1", "rescue => exception", "\t", "end"]
+        "body": ["begin", "\t$1", "rescue ${2:StandardError} => ${3:exception}", "\t$0", "end"]
     },
     "Exception block with ensure": {
         "prefix": "begin ensure",
         "body": [
             "begin",
             "\t$1",
-            "rescue => exception",
-            "\t",
+            "rescue ${2:StandardError} => ${3:exception}",
+            "\t$4",
             "ensure",
-            "\t",
+            "\t$0",
             "end"
         ]
     },
     "Exception block with else and ensure": {
-        "prefix": "begin",
+        "prefix": "begin else",
         "body": [
             "begin",
             "\t$1",
-            "rescue => exception",
-            "\t",
+            "rescue ${2:StandardError} => ${3:exception}",
+            "\t$4",
             "else",
-            "\t",
+            "\t$5",
             "ensure",
-            "\t",
+            "\t$0",
             "end"
         ]
     },
@@ -33,7 +33,7 @@
         "prefix": "class init",
         "body": [
             "class ${1:ClassName}",
-            "\tdef initialize",
+            "\tdef initialize(${2:args})",
             "\t\t$0",
             "\tend",
             "end"
@@ -53,15 +53,15 @@
     },
     "if else": {
         "prefix": "ife",
-        "body": ["if ${1:test}", "\t$0", "else", "\t", "end"]
+        "body": ["if ${1:test}", "\t$2", "else", "\t$0", "end"]
     },
     "if elsif": {
         "prefix": "ifei",
-        "body": ["if ${1:test}", "\t$0", "elsif ", "\t", "end"]
+        "body": ["if ${1:test}", "\t$2", "elsif ${3:test}", "\t$0", "end"]
     },
     "if elsif else": {
         "prefix": "ifee",
-        "body": ["if ${1:test}", "\t$0", "elsif ", "\t", "else", "\t", "end"]
+        "body": ["if ${1:test}", "\t$2", "elsif ${3:test}", "\t$4", "else", "\t$0", "end"]
     },
     "case": {
         "prefix": "case",
@@ -144,6 +144,10 @@
         "prefix": ["{p", "{P"],
         "body": "{ ${1:|${2:variable}| }$0 "
     },
+    "Insert inline block with variable": {
+        "prefix": "b",
+        "body": "{ |${1:variable}| $2 }"
+    },
     "Insert encoding comment": {
         "prefix": "enc",
         "body": "# encoding: utf-8$0"
@@ -216,21 +220,9 @@
         "prefix": "->a",
         "body": "->(${1:args}) { $0 }"
     },
-    "Insert do block": {
-        "prefix": "do",
-        "body": ["do", "\t$0", "end"]
-    },
-    "Insert do block with variables": {
-        "prefix": "dov",
-        "body": ["do |${1:v}|", "\t$0", "end"]
-    },
     "Insert key: value": {
         "prefix": ":",
         "body": "${1:key}: ${2:value}"
-    },
-    "Insert inline block": {
-        "prefix": "b",
-        "body": "{ |${1:var}| $0 }"
     },
     "Insert byebug call": {
         "prefix": "bye",
