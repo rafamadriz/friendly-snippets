@@ -346,7 +346,7 @@
     },
     "static_assert": {
         "prefix": "static_assert",
-        "body": ["static_assert(${1:false}, \"${2:Oopsie!}\");"],
+        "body": ["static_assert(${1:false}, \"${2:Oopsie}\");"],
         "description": "static_assert() snippet"
     },
     "err": {
@@ -388,7 +388,7 @@
         "description": "Error checking for pointer-type IO functions"
     },
     "fseek() errcheck": {
-        "prefix": "chkio_m1",
+        "prefix": "chkio_mi",
         "body": [
             "if (${1:status} == -1$2) {",
             "\t${3:err(EXIT_FAILURE, \"IO is super hard\");}",
