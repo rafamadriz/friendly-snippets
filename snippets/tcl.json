@@ -253,7 +253,7 @@
   },
   "Execute scripts conditionally - else": {
     "prefix": "else",
-    "body": ["else {${1:expr}} {", "\t$2", "}", "$0"],
+    "body": ["else {", "\t$1", "}", "$0"],
     "description": "else statement"
   },
   "Execute scripts conditionally - elseif": {
