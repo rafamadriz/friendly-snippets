@@ -1,0 +1,67 @@
+{
+  "lambda": {
+    "prefix": "fun",
+    "body": ["fun (${1:pattern}) -> ${2:${1:pattern}}"],
+    "description": "Snippet for a lambda function definition"
+  },
+  "let .. in": {
+    "prefix": "let",
+    "body": ["let ${1:pattern} = ${2:()} in$0"],
+    "description": "Snippet for a let .. in binding"
+  },
+  "function": {
+    "prefix": "func",
+    "body": ["function\n| $0"],
+    "description": "Snippet for a match function definition"
+  },
+  "variant pattern": {
+    "prefix": "|",
+    "body": ["| ${1:_} -> $0"],
+    "description": "Snippet for a variant definition"
+  },
+  "let (toplevel)": {
+    "prefix": "let",
+    "body": ["let ${1:pattern} = $0"],
+    "description": "Snippet for a let definition"
+  },
+  "val": {
+    "prefix": "val",
+    "body": ["val ${1:name} : $0"],
+    "description": "Snippet for a value definition"
+  },
+  "sig": {
+    "prefix": "sig",
+    "body": ["sig\n  ${1}\nend$0"],
+    "description": "Snippet for a signature block"
+  },
+  "struct": {
+    "prefix": "struct",
+    "body": ["struct\n  ${1}\nend$0"],
+    "description": "Snippet for a struct block"
+  },
+  "module": {
+    "prefix": "module",
+    "body": ["module ${1:M} = struct\n  ${2}\nend$0"],
+    "description": "Snippet for a module definition"
+  },
+  "module signature": {
+    "prefix": "module",
+    "body": ["module ${1:M} : sig\n  ${2}\nend$0"],
+    "description": "Snippet for a module signature definition"
+  },
+  "module type": {
+    "prefix": "module",
+    "body": ["module type ${1:M} = sig\n  ${2}\nend$0"],
+    "description": "Snippet for a module type definition"
+  },
+  "match": {
+    "prefix": "match",
+    "body": ["match ${1:scrutinee} with\n| ${2:pattern} -> ${3:${2:pattern}}"],
+    "description": "Snippet for a pattern match block definition"
+  },
+  "type declaration": {
+    "prefix": "type",
+    "body": ["type ${1:name} = $0"],
+    "description": "Snippet for a type declaration"
+  }
+}
