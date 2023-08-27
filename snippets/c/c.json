@@ -10,8 +10,9 @@
         "description": "Convenient multiline comment"
     },
     "Starter Template": {
-        "prefix": ",",
+        "prefix": "st",
         "body": [
+            "#include <stdbool.h>",
             "#include <stdio.h>",
             "#include <stdlib.h>",
             "",
@@ -24,9 +25,8 @@
         "description": "Standard starter template for a tiny C program"
     },
     "Preprocessor Starter Template": {
-        "prefix": "#,",
+        "prefix": "#st",
         "body": [
-            "// #define NDEBUG // disables assert()",
             "#include <assert.h>",
             "#include <errno.h>",
             "#include <stdbool.h>",
@@ -80,12 +80,12 @@
     },
     "#ifdef": {
         "prefix": "#ifdef",
-        "body": ["#ifdef ${1:DEBUG}", "$0", "#endif /* ifdef $1 */"],
+        "body": ["#ifdef ${1:MACRO}", "$0", "#endif /* ifdef $1 */"],
         "description": "#ifdef snippet"
     },
     "#ifndef": {
         "prefix": "#ifndef",
-        "body": ["#ifndef ${1:DEBUG}", "$0", "#endif /* ifndef $1 */"],
+        "body": ["#ifndef ${1:MACRO}", "$0", "#endif /* ifndef $1 */"],
         "description": "#ifndef snippet"
     },
     "include once": {
@@ -145,18 +145,13 @@
     },
     "if 1L": {
         "prefix": "ifi",
-        "body": ["if (${1:true}) $0"],
+        "body": ["if (${1:true})$0"],
         "description": "1-line-if"
     },
     "elif 1L": {
         "prefix": "elseifi",
-        "body": ["else if (${1:true}) $0"],
+        "body": ["else if (${1:true})$0"],
         "description": "1-line-else-if"
-    },
-    "ternary": {
-        "prefix": "t",
-        "body": ["$1 ? $2 : $0"],
-        "description": "Ternary operator"
     },
     "switch": {
         "prefix": "switch",
@@ -180,7 +175,7 @@
     },
     "do...while": {
         "prefix": "do",
-        "body": ["do {$0", "} while(${1:false});"],
+        "body": ["do {$0", "} while (${1:false});"],
         "description": "do...while loop snippet"
     },
     "return": {
@@ -198,26 +193,26 @@
         "body": ["for ($1;$2;$3) {$0", "}"],
         "description": "Generic 'for' loop"
     },
-    "for count0": {
-        "prefix": "for0",
+    "for count": {
+        "prefix": "forc",
         "body": [
-            "for (${1:size_t} ${2:i} = 0; $2 < ${3:count}; $2++) {$0",
+            "for (${1:size_t} ${2:i} = ${3:0}; $2 < ${4:count}; $2${5:++}) {$0",
             "}"
         ],
-        "description": "Mostly used 'for' loop"
+        "description": "'for' loop focusing on iteration times"
     },
-    "for count1": {
-        "prefix": "for1",
+    "for range": {
+        "prefix": "forg",
         "body": [
-            "for (${1:size_t} ${2:i} = ${3:1}; $2 <= ${4:finish}; $2++) {$0",
+            "for (${1:size_t} ${2:i} = ${3:1}; $2 <= ${4:last}; $2${5:++}) {$0",
             "}"
         ],
-        "description": "'for' loop with non-zero start"
+        "description": "'for' loop focusing on inclusive range"
     },
     "for argv[]": {
         "prefix": "fora",
-        "body": ["for (int ${2:i} = ${1:1}; $2 < argc; $2++) {$0", "}"],
-        "description": "'for' loop variant for cmdline arguments"
+        "body": ["for (int ${1:i} = ${2:1}; $1 < argc; $1++) {$0", "}"],
+        "description": "'for' loop for cmdline arguments"
     },
     "Function declaration": {
         "prefix": "fund",
@@ -306,17 +301,17 @@
     },
     "scanf": {
         "prefix": "scanf",
-        "body": ["scanf(\"${1:%i}\"$2)$0"],
+        "body": ["scanf(\"${1:%d}\"$2)$0"],
         "description": "scanf() snippet"
     },
     "fscanf": {
         "prefix": "fscanf",
-        "body": ["fscanf(${1:stdin}, \"${2:%i}\"$3)$0"],
+        "body": ["fscanf(${1:stdin}, \"${2:%d}\"$3)$0"],
         "description": "fscanf() snippet"
     },
     "sscanf": {
         "prefix": "sscanf",
-        "body": ["sscanf(${1:buf}, \"${2:%i}\"$3)$0"],
+        "body": ["sscanf(${1:buf}, \"${2:%d}\"$3)$0"],
         "description": "sscanf() snippet"
     },
     "malloc": {
@@ -326,7 +321,7 @@
     },
     "calloc": {
         "prefix": "calloc",
-        "body": ["calloc(${2:1}, sizeof(${1:int})$3)$0"],
+        "body": ["calloc(${1:1}, sizeof(${2:int})$3)$0"],
         "description": "calloc() snippet"
     },
     "realloc": {
@@ -336,7 +331,7 @@
     },
     "reallocarray": {
         "prefix": "reallocarray",
-        "body": ["reallocarray(${1:ptr}, ${3:69}, sizeof(${2:int})$4)$0"],
+        "body": ["reallocarray(${1:ptr}, ${2:69}, sizeof(${3:int})$4)$0"],
         "description": "reallocarray() snippet"
     },
     "free": {
@@ -351,13 +346,8 @@
     },
     "static_assert": {
         "prefix": "static_assert",
-        "body": ["static_assert(${1:false}, \"${2:Oopsie!}\");"],
+        "body": ["static_assert(${1:false}, \"${2:Oopsie}\");"],
         "description": "static_assert() snippet"
-    },
-    "static_assert 1-param": {
-        "prefix": "static_assert1",
-        "body": ["static_assert($0);"],
-        "description": "C2X 1-parameter static_assert() snippet"
     },
     "err": {
         "prefix": "err",
@@ -398,10 +388,10 @@
         "description": "Error checking for pointer-type IO functions"
     },
     "fseek() errcheck": {
-        "prefix": "chkio_m1",
+        "prefix": "chkio_mi",
         "body": [
             "if (${1:status} == -1$2) {",
-            "\t${3:err(EXIT_FAILURE, \"IO is very very bad\");}",
+            "\t${3:err(EXIT_FAILURE, \"IO is super hard\");}",
             "}"
         ],
         "description": "Error checking for fseek(), getline() like functions"
@@ -426,7 +416,7 @@
     },
     "Print a variable": {
         "prefix": "printv",
-        "body": ["printf(\"$1 = %${2:i}\\n\", ${1:var})$0"],
+        "body": ["printf(\"$1 = %${2:d}\\n\", ${1:var}$3);"],
         "description": "Call printf() to log value of a variable"
     },
     "Array length": {
