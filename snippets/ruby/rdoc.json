@@ -1,0 +1,211 @@
+{
+    "comment": {
+        "prefix": "###",
+        "body": [
+            "# ${1:A one-line summary.}",
+            "#",
+            "# ${2:Description.}$0",
+            "#",
+            "# @param ${5:name} [${6:Type}] ${7:Description.}",
+            "# @return [${3:Types}] ${4:Description}",
+            "#",
+            "# @example ${8:Example description.}",
+            "#   ${9:Write me later}"
+        ],
+        "description": "A Ruby comment block including short summary, description, param, return, and example."
+    },
+    "comment_simple": {
+        "prefix": "##",
+        "body": [
+            "# ${1:A one-line summary.}",
+            "#",
+            "# ${2:Description.}$0"
+        ],
+        "description": "A simple Ruby comment block with short summary and description. Useful when the user prefers to manually add the other documentation tags."
+    },
+    "@param": {
+        "prefix": "@param",
+        "body": [
+            "@param ${1:name} [${2:Type}] ${3:Description.}$0"
+        ],
+        "description": "Documents a single method parameter (either regular or keyword) with a given name, type and optional description."
+    },
+    "@return": {
+        "prefix": "@return",
+        "body": [
+            "@return [${1:Types}] ${2:Description}$0"
+        ],
+        "description": "Describes the return value (and type or types) of a method. You can list multiple return tags for a method in the case where a method has distinct return cases. In this case, each case should begin with “if …”."
+    },
+    "@example": {
+        "prefix": "@example",
+        "body": [
+            "# @example ${1:Example description.}$0",
+            "#   ${2:Write me later}"
+        ],
+        "description": "Show an example snippet of code for an object. The first line is an optional title."
+    },
+    "@see": {
+        "prefix": "@see",
+        "body": [
+            "@see #${1:name} ${2:description}$0"
+        ],
+        "description": "“See Also” references for an object. Accepts URLs or other code objects with an optional description at the end. Note that the URL or object will be automatically linked by YARD and does not need to be formatted with markup."
+    },
+    "@abstract": {
+        "prefix": "@abstract",
+        "body": [
+            "@abstract #${1:Description.}$0"
+        ],
+        "description": "Marks a class/module/method as abstract with optional implementor information."
+    },
+    "@api": {
+        "prefix": "@api",
+        "body": [
+            "@api #${1:Description.}$0"
+        ],
+        "description": "Declares the API that the object belongs to. Does not display in output, but useful for performing queries (+yardoc –query+). Any text is allowable in this tag, and there are no predefined values."
+    },
+    "@raise": {
+        "prefix": "@raise",
+        "body": [
+            "@raise [${1:Types}] ${2:Description.}$0"
+        ],
+        "description": "Describes that a method may raise a given exception, with an optional description of what it may mean."
+    },
+    "@since": {
+        "prefix": "@since",
+        "body": [
+            "@since ${1:1.0}$0"
+        ],
+        "description": "Lists the version that the object was first added."
+    },
+    "@author": {
+        "prefix": "@author",
+        "body": [
+            "@author ${1:name}$0"
+        ],
+        "description": "List the author or authors of a class, module, or method."
+    },
+    "@version": {
+        "prefix": "@version",
+        "body": [
+            "@version ${1:1.39}$0"
+        ],
+        "description": "Lists the version of a class, module or method. This is similar to a library version, but at finer granularity. In some cases, version of specific modules, classes, methods or generalized components might change independently between releases. A version tag is used to infer the API compatibility of a specific object."
+    },
+    "@deprecated": {
+        "prefix": "@deprecated",
+        "body": [
+            "@deprecated  ${1:Description}$0"
+        ],
+        "description": "Marks a method/class as deprecated with an optional description. The description should be used to inform users of the recommended migration path, and/or any useful information about why the object was marked as deprecated."
+    },
+    "@note": {
+        "prefix": "@note",
+        "body": [
+            "@note ${1:Description.}$0"
+        ],
+        "description": "Adds an emphasized note at the top of the docstring for the object."
+    },
+    "@option": {
+        "prefix": "@option",
+        "body": [
+            "@option [${1:Types}] ${2:option_key} (${3:default_value} ${4: Descripiton.})$0"
+        ],
+        "description": "Describe an options hash in a method. The tag takes the name of the options parameter first, followed by optional types, the option key name, a default value for the key and a description of the option. The default value should be placed within parentheses and is optional (can be omitted). Note that a @param tag need not be defined for the options hash itself, though it is useful to do so for completeness."
+    },
+    "@overload": {
+        "prefix": "@overload",
+        "body": [
+            "@overload ${1:method_signature(parameters)}$0"
+        ],
+        "description": "Describe that your method can be used in various contexts with various parameters or return types. The first line should declare the new method signature, and the following indented tag data will be a new documentation string with its own tags adding metadata for such an overload."
+    },
+    "@private": {
+        "prefix": "@private",
+        "body": [
+            "@private$0"
+        ],
+        "description": "Declares that the logical visibility of an object is private. In other words, it specifies that this method should be marked private but cannot due to Ruby’s visibility restrictions. This exists for classes, modules and constants that do not obey Ruby’s visibility rules. For instance, an inner class might be considered “private”, though Ruby would make no such distinction."
+    },
+    "@todo": {
+        "prefix": "@todo",
+        "body": [
+            "@todo ${1:Descripiton.}$0"
+        ],
+        "description": "Marks a TODO note in the object being documented."
+    },
+    "@yield": {
+        "prefix": "@yield",
+        "body": [
+            "@yield [${1:parameters}] ${2:Description.}$0"
+        ],
+        "description": "Describes what a method might yield to a given block. The types specifier list should not list types, but names of the parameters yielded to the block. If you define parameters with @yieldparam, you do not need to define the parameters in the type specification of @yield as well."
+    },
+    "@yieldreturn": {
+        "prefix": "@yieldreturn",
+        "body": [
+            "@yieldreturn [${1:Types}] ${2:Description.}$0"
+        ],
+        "description": "Documents the value and type that the block is expected to return to the method."
+    },
+    "@!attribute": {
+        "prefix": "@!attribute",
+        "body": [
+            "@!attribute [${1:r | w | rw}] ${2:attribute_name}$0"
+        ],
+        "description": "Defines an attribute with a given name, using indented block data as the attribute’s docstring. If the type specifier is supplied with “r”, “w”, or “rw”, the attribute is made readonly, writeonly or readwrite respectively. A readwrite attribute is the default, if no type is specified. The comment containing this directive does not need to be attached to any source, but if it is, that source code will be used as the method’s source. To define a regular method, see @!method."
+    },
+    "@!endgroup": {
+        "prefix": "@!endgroup",
+        "body": [
+            "@!endgroup ${1:callbacks}$0"
+        ],
+        "description": "Ends a group listing definition. Group definition automatically end when class or module blocks are closed, and defining a new group overrides the last group definition, but occasionally you need to end the current group to return to the default listing. Use @!group to begin a group listing."
+    },
+    "@!group": {
+        "prefix": "@!group",
+        "body": [
+            "@!group ${2:Rescription.}$0"
+        ],
+        "description": "Defines a group listing. All methods (and attributes) seen after this directive are placed into a group with the given description as the group name. The group listing is used by templates to organize methods and attributes into respective logical groups. To end a group listing use @!endgroup."
+    },
+    "@!macro": {
+        "prefix": "@!macro",
+        "body": [
+            "@!macro [${1:attach | new}] ${2:optional_name}$0"
+        ],
+        "description": "Defines a block of text to be expanded whenever the macro is called by name in subsequent docstrings. The macro data can be any arbitrary text data, be it regular documentation, meta-data tags or directives."
+    },
+    "@!method": {
+        "prefix": "@!method",
+        "body": [
+            "@!method ${1:method_signature(parameters)}$0"
+        ],
+        "description": "Defines a method object with a given method signature, using indented block data as the method’s docstring. The signature is similar to the @overload tag. The comment containing this directive does not need to be attached to any source, but if it is, that source code will be used as the method’s source. To define an attribute method, see @!attribute."
+    },
+    "@!parse": {
+        "prefix": "@!parse",
+        "body": [
+            "@!parse [${1:language}] ${2:code}$0"
+        ],
+        "description": "Parses a block of code as if it were present in the source file at that location. This directive is useful if a class has dynamic meta-programmed behaviour that cannot be recognized by YARD. You can specify the language of the code block using the types specification list. By default, the code language is “ruby”."
+    },
+    "@!scope": {
+        "prefix": "@!scope",
+        "body": [
+            "@!scope ${1:class | instance}$0"
+        ],
+        "description": "Modifies the current parsing scope (class or instance). If this directive is defined on a docstring attached to an object definition, it is applied only to that object. Otherwise, it applies the scope to all future objects in the namespace."
+    },
+    "@!visibility": {
+        "prefix": "@!visibility",
+        "body": [
+            "@!visibility ${1:public | protected | private}$0"
+        ],
+        "description": "Modifies the current parsing visibility (public, protected, or private). If this directive is defined on a docstring attached to an object definition, it is applied only to that object. Otherwise, it applies the visibility to all future objects in the namespace."
+    }
+}
+
+

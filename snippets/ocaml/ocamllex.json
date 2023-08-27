@@ -1,0 +1,7 @@
+{
+  "rule": {
+    "prefix": "rule",
+    "body": ["rule ${1:pattern} = parse", "| $0"],
+    "description": "Snippet for a rule"
+  }
+}
