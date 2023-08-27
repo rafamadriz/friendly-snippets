@@ -298,8 +298,8 @@
     },
     "useState": {
         "prefix": "us",
-        "body": "const [${1:setterName}, set${1:setterName}] = useState(${2:defVal})$0",
-        "description": "use state hook"
+        "body": "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initValue})$0",
+        "description": "React useState() hook"
     },
     "useEffect": {
         "prefix": "ue",
