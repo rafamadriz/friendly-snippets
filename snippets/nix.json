@@ -1,0 +1,85 @@
+{
+    "ifelse": {
+        "prefix": "if",
+        "body": [
+            "if $1 then",
+            "  $2",
+            "else$0"
+        ],
+        "description": "if-else block"
+    },
+    "letin": {
+        "prefix": "let",
+        "body": [
+            "let",
+            "  $1",
+            "in $0"
+        ],
+        "description": "let-in block"
+    },
+    "hash": {
+        "prefix": "hash",
+        "body": "hash = \"${1:sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=}\";",
+        "description": "Empty hash"
+    },
+    "fetchFrom": {
+        "prefix": "fetchFrom",
+        "body": [
+            "fetchFrom${1|GitHub,GitLab,Gitea,Gitiles,BitBucket,Savannah,RepoOrCz,SourceHut|} {",
+            "  owner = \"$2\";",
+            "  repo = \"$3\";",
+            "  rev = \"${4:v\\${version\\}}\";",
+            "  hash = \"${5:sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=}\";",
+            "};"
+        ],
+        "description": "fetchFromGitHub, or any other common fetcher from Nixpkgs"
+    },
+    "fetchurl": {
+        "prefix": "fetchurl",
+        "body": [
+            "fetchurl {",
+            "  url = \"$1\";",
+            "  hash = \"${2:sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=}\";",
+            "};"
+        ],
+        "description": "fetchurl with default empty hash"
+    },
+    "package-arguments": {
+        "prefix": "pkg",
+        "body": [
+            "{ lib",
+            ", ${1:stdenv}",
+            ", $2",
+            "}:",
+            "",
+            "$0"
+        ],
+        "description": "Package arguments, starting with { lib"
+    },
+    "stdenv.mkDerivation": {
+        "prefix": "mkd",
+        "body": [
+            "stdenv.mkDerivation (finalAttrs: {",
+            "  pname = \"$1\";",
+            "  version = \"$2\";",
+            "",
+            "  src = $3",
+            "",
+            "  nativeBuildInputs = [",
+            "    $4",
+            "  ];",
+            "  buildInputs = [",
+            "    $0",
+            "  ];",
+            "",
+            "  meta = {",
+            "    description = \"$5\";",
+            "    homepage = \"$6\";",
+            "    license = lib.licenses.$7;",
+            "    maintainers = with lib.maintainers; [ $8 ];",
+            "  };",
+            "})"
+        ],
+        "description": "Nixpkgs' stdenv.mkDerivation template"
+    }
+}
