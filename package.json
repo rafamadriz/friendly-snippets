@@ -122,7 +122,11 @@
             },
             {
                 "language": "ruby",
-                "path": "./snippets/ruby.json"
+                "path": "./snippets/ruby/ruby.json"
+            },
+            {
+                "language": "rdoc",
+                "path": "./snippets/ruby/rdoc.json"
             },
             {
                 "language": "rails",
