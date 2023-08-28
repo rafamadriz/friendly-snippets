@@ -294,15 +294,7 @@
             },
             {
                 "language": "angular",
-                "path": "./snippets/frameworks/angular/dockerfile.json"
-            },
-            {
-                "language": "angular",
                 "path": "./snippets/frameworks/angular/html.json"
-            },
-            {
-                "language": "angular",
-                "path": "./snippets/frameworks/angular/javascript.json"
             },
             {
                 "language": "angular",
