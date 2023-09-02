@@ -6,6 +6,7 @@
         "",
         "int main (int argc, char *argv[]) {",
             "\t$1",
+            "",
             "\treturn 0;",
         "}"
         ],
