@@ -392,7 +392,7 @@
     },
     "Cite": {
         "prefix": "cite",
-        "body": ["~\\cite{$1}$0"],
+        "body": ["\\cite{$1}$0"],
         "description": "Add a cite"
     },
     "EmptyPage": {
