@@ -1,0 +1,139 @@
+{
+  "class": {
+    "prefix": "a-class",
+    "body": ["[class]=\"${1:expression}\""],
+    "description": "Angular [class] binding"
+  },
+  "style": {
+    "prefix": "a-style",
+    "body": ["[style.${1:property}]=\"${2:expression}\""],
+    "description": "Angular [style] binding"
+  },
+  "ngClass": {
+    "prefix": "a-ngClass",
+    "body": ["[ngClass]=\"{${1:cssClass}: ${2:expression}}\""],
+    "description": "Angular ngClass"
+  },
+  "ngFor": {
+    "prefix": "a-ngFor",
+    "body": ["*ngFor=\"let ${1:item} of ${2:list}\"${0}"],
+    "description": "Angular *ngFor"
+  },
+  "ngFor with trackBy": {
+    "prefix": "a-ngFor-trackBy",
+    "body": ["*ngFor=\"let ${1:item} of ${2:list}; trackBy:${1:item}.id\"${0}"],
+    "description": "Angular *ngFor with trackBy"
+  },
+  "ngForAsync": {
+    "prefix": "a-ngForAsync",
+    "body": ["*ngFor=\"let ${1:item} of ${2:stream} | async as ${3:list}\"${0}"],
+    "description": "Angular *ngForAsync"
+  },
+  "ngForm": {
+    "prefix": "a-form",
+    "body": ["<form (ngSubmit)=\"onSubmit()\" #${1:form}=\"ngForm\">", "</form>"],
+    "description": "Form with ngSubmit and form attributes"
+  },
+  "ngFormArrayName": {
+    "prefix": "a-formArrayName",
+    "body": ["formArrayName=\"${1:control}\""],
+    "description": "Angular formArrayName"
+  },
+  "ngFormControlName": {
+    "prefix": "a-formControlName",
+    "body": ["formControlName=\"${1:control}\""],
+    "description": "Angular formControlName"
+  },
+  "ngFormGroup": {
+    "prefix": "a-formGroup",
+    "body": ["[formGroup]=\"${1:form}\""],
+    "description": "Angular formGroup"
+  },
+  "ngFormGroupName": {
+    "prefix": "a-formGroupName",
+    "body": ["[formGroupName]=\"${1:name}\""],
+    "description": "Angular formGroupName"
+  },
+  "ngFormSubmit": {
+    "prefix": "a-form-submit",
+    "body": ["<button type=\"submit\" [disabled]=\"!${1:form}.form.valid\">", "\tSave", "</button>"],
+    "description": "Angular form submit"
+  },
+  "ngIf": {
+    "prefix": "a-ngIf",
+    "body": ["*ngIf=\"${1:expression}\""],
+    "description": "Angular *ngIf"
+  },
+  "ngIfElse": {
+    "prefix": "a-ngIfElse",
+    "body": ["*ngIf=\"${1:expression};else ${2:templateName}\""],
+    "description": "Angular *ngIfElse"
+  },
+  "ngModel": {
+    "prefix": "a-ngModel",
+    "body": ["[(ngModel)]=\"${1:binding}\""],
+    "description": "Angular ngModel"
+  },
+  "ngRouterLink": {
+    "prefix": "a-routerLink",
+    "body": ["[routerLink]=\"['/${1:routePath}']\" routerLinkActive=\"${2:router-link-active}\" $0"],
+    "description": "Angular routerLink"
+  },
+  "ngRouterLinkWithParameter": {
+    "prefix": "a-routerLink-param",
+    "body": [
+      "[routerLink]=\"['${1:routePath}', ${2:routeParameterValue}]\"",
+      "routerLinkActive=\"${3:router-link-active}\"$0"
+    ],
+    "description": "Angular routerLink with a route parameter"
+  },
+  "ngSelect": {
+    "prefix": "a-select",
+    "body": [
+      "<select [(ngModel)]=\"${1:model}\">",
+      "\t<option *ngFor=\"let ${2:item} of ${3:list}\" [value]=\"${2:item}\">{{${2:item}}}</option>",
+      "</select>"
+    ],
+    "description": "<select> control with ngModel"
+  },
+  "ngStyle": {
+    "prefix": "a-ngStyle",
+    "body": ["[ngStyle]=\"{${1:style}: ${2:expression}}\""],
+    "description": "Angular ngStyle"
+  },
+  "ngSwitch": {
+    "prefix": "a-ngSwitch",
+    "body": [
+      "<div [ngSwitch]=\"${1:conditionExpression}\">",
+      "\t<div *ngSwitchCase=\"${2:expression}\">${3:output}</div>",
+      "\t<div *ngSwitchDefault>${4:output2}</div>",
+      "</div>"
+    ],
+    "description": "Angular ngSwitch"
+  },
+  "pre w/ json": {
+    "prefix": "a-prej",
+    "body": ["<pre>{{${1:model} | json}}</pre>$0"],
+    "description": "Angular pre debug | json"
+  },
+  "pre w/ async json": {
+    "prefix": "a-preja",
+    "body": ["<pre>{{${1:model} | async | json}}</pre>$0"],
+    "description": "Angular pre debug | async | json"
+  },
+  "ng-container": {
+    "prefix": "a-ng-container",
+    "body": ["<ng-container $0></ng-container>"],
+    "description": "Angular ng-container"
+  },
+  "ng-template": {
+    "prefix": "a-ng-template",
+    "body": ["<ng-template [ngTemplateOutlet]=\"${1:outlet}\" [ngOutletContext]=\"${2:context}\"></ng-template>"],
+    "description": "Angular ng-template"
+  },
+  "ng-content": {
+    "prefix": "a-ng-content",
+    "body": ["<ng-content select=\"${0:selector}\"></ng-content>"],
+    "description": "Angular ng-content"
+  }
+}

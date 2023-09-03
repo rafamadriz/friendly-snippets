@@ -301,6 +301,18 @@
                 "path": "./snippets/frameworks/vue/vue.json"
             },
             {
+                "language": "angular",
+                "path": "./snippets/frameworks/angular/html.json"
+            },
+            {
+                "language": "angular",
+                "path": "./snippets/frameworks/angular/typescript.json"
+            },
+            {
+                "language": "angular",
+                "path": "./snippets/frameworks/angular/jsonc.json"
+            },
+            {
                 "language": "python",
                 "path": "./snippets/python/base.json"
             },
