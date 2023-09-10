@@ -253,7 +253,7 @@
   },
   "Execute scripts conditionally - else": {
     "prefix": "else",
-    "body": ["else {${1:expr}} {", "\t$2", "}", "$0"],
+    "body": ["else {", "\t$1", "}", "$0"],
     "description": "else statement"
   },
   "Execute scripts conditionally - elseif": {
@@ -298,7 +298,7 @@
   },
   "Count the number of elements in a list": {
     "prefix": "llength",
-    "body": "llength \"{0:list}\"",
+    "body": "llength \"${0:list}\"",
     "description": "Treats list as a list and returns a decimal string giving the number of elements in it."
   },
   "Iterate over all elements in one or more lists and collect results": {

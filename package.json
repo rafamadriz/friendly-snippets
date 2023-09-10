@@ -78,6 +78,10 @@
                 "path": "./snippets/glsl.json"
             },
             {
+                "language": "nix",
+                "path": "./snippets/nix.json"
+            },
+            {
                 "language": "liquid",
                 "path": "./snippets/liquid.json"
             },
@@ -119,7 +123,11 @@
             },
             {
                 "language": "ruby",
-                "path": "./snippets/ruby.json"
+                "path": "./snippets/ruby/ruby.json"
+            },
+            {
+                "language": "rdoc",
+                "path": "./snippets/ruby/rdoc.json"
             },
             {
                 "language": "rails",
@@ -294,6 +302,18 @@
                 "path": "./snippets/frameworks/vue/vue.json"
             },
             {
+                "language": "angular",
+                "path": "./snippets/frameworks/angular/html.json"
+            },
+            {
+                "language": "angular",
+                "path": "./snippets/frameworks/angular/typescript.json"
+            },
+            {
+                "language": "angular",
+                "path": "./snippets/frameworks/angular/jsonc.json"
+            },
+            {
                 "language": "python",
                 "path": "./snippets/python/base.json"
             },
@@ -379,7 +399,11 @@
             },
             {
                 "language": "kotlin",
-                "path": "./snippets/kotlin.json"
+                "path": "./snippets/kotlin/kotlin.json"
+            },
+            {
+                "language": "kdoc",
+                "path": "./snippets/kotlin/kdoc.json"
             },
             {
                 "language": ["plaintex", "tex"],
@@ -476,6 +500,29 @@
             {
                 "language": "nu",
                 "path": "./snippets/nushell.json"
+            },
+            {
+                "language": "reason",
+                "path": "./snippets/reason.json"
+            },
+            {
+                "language": [
+                    "ocaml",
+                    "ocamlinterface"
+                ],
+                "path": "./snippets/ocaml/ocaml.json"
+            },
+            {
+                "language": "ocaml.ocamllex",
+                "path": "./snippets/ocaml/ocamllex.json"
+            },
+            {
+                "language": "dune-project",
+                "path": "./snippets/ocaml/dune-project.json"
+            },
+            {
+                "language": "dune",
+                "path": "./snippets/ocaml/dune.json"
             }
         ]
     }

@@ -1,0 +1,145 @@
+{
+    "comment": {
+        "prefix": "/**",
+        "body": [
+            "/**",
+            " * ${1:A one-line summary.}",
+            " *",
+            " * ${2:Description.}$0",
+            " *",
+            " * @param ${3:name}  ${4:Type and description of the parameter.}",
+            " * @return ${2:Type and description of the returned object.}",
+            " *",
+            " * Example:",
+            " * ```",
+            " * Write me later",
+            " * ```",
+            " */"
+        ],
+        "description": "A Kotlin comment block including short summary, description, param, return, and example."
+    },
+    "comment_simple": {
+        "prefix": "/*",
+        "body": [
+            "/**",
+            " * ${1:A one-line summary.}",
+            " *",
+            " * ${1:Description.}$0",
+            " */"
+        ],
+        "description": "A simple Kotlin comment block with short summary and description. Useful when the user prefers to manually add the other documentation tags."
+    },
+    "example": {
+        "prefix": "Example",
+        "body": [
+            " * Example:",
+            " * ```",
+            " * Write me later",
+            " * ```"
+        ],
+        "description": "While there is no dedicated tag for examples on Kotlin, we can still include them as plain text. This allows you illustrate the usage or behavior of a particular code element."
+    },
+    "@param": {
+        "prefix": "@param",
+        "body": [
+            "@param ${1:name} ${2:Type and description of the parameter.}$0"
+        ],
+        "description": "Documents a value parameter of a function or a type parameter of a class, property or function. To better separate the parameter name from the description, if you prefer, you can enclose the name of the parameter in brackets. This is a synonym of @parameter."
+    },
+    "@parameter": {
+        "prefix": "@parameter",
+        "body": [
+            "@parameter ${1:name} ${2:Type and description of the parameter.}$0"
+        ],
+        "description": "Documents a value parameter of a function or a type parameter of a class, property or function. To better separate the parameter name from the description, if you prefer, you can enclose the name of the parameter in brackets. This is a synonym of @param."
+    },
+    "@example": {
+        "prefix": "@example",
+        "body": [
+            "@example",
+            "```",
+            "${1:Write me later}$0",
+            "```"
+        ],
+        "description": "Adds an example to the documentation."
+    },
+    "@see": {
+        "prefix": "@see",
+        "body": [
+            "@see ${1:idenfitier.}$0"
+        ],
+        "description": "References another item or piece of documentation."
+    },
+    "@throws": {
+        "prefix": "@throws",
+        "body": [
+            "@throws ${1:IOException} ${2:Description.}$0"
+        ],
+        "description": "Documents an exception which can be thrown by a method. Since Kotlin does not have checked exceptions, there is also no expectation that all possible exceptions are documented, but you can still use this tag when it provides useful information for users of the class. Synonym of @exception."
+    },
+    "@exception": {
+        "prefix": "@exception",
+        "body": [
+            "@exception ${1:IOException} ${2:Description.}$0"
+        ],
+        "description": "Documents an exception which can be thrown by a method. Since Kotlin does not have checked exceptions, there is also no expectation that all possible exceptions are documented, but you can still use this tag when it provides useful information for users of the class. Synonym of @throws."
+    },
+    "@since": {
+        "prefix": "@since",
+        "body": [
+            "@since ${1:1.0}$0"
+        ],
+        "description": "Version of Java when the the product was implemented."
+    },
+    "@author": {
+        "prefix": "@author",
+        "body": [
+            "@author ${1:name}$0"
+        ],
+        "description": "You can provide one @author tag, multiple @author tags, or no @author tags. For classes and interfaces only, required."
+    },
+    "@Deprecated": {
+        "prefix": "@Deprecated",
+        "body": [
+            "@Deprecated  As of JDK ${1:1.1}, replaced by",
+            "${2:{@link #setBounds(int,int,int,int)}}$0"
+        ],
+        "description": "The @deprecated description in the first sentence should at least tell the user when the API was deprecated and what to use as a replacement. Only the first sentence will appear in the summary section and index. Subsequent sentences can also explain why it has been deprecated."
+    },
+    "@constructor": {
+        "prefix": "@constructor",
+        "body": [
+            "@constructor ${1:Description.}$0"
+        ],
+        "description": "Documents the primary constructor of a class."
+    },
+    "@receiver": {
+        "prefix": "@receiver",
+        "body": [
+            "@receiver ${1:Description}$0"
+        ],
+        "description": "Documents the receiver of an extension function."
+    },
+    "@property": {
+        "prefix": "@property",
+        "body": [
+            "@property ${1:name}$0"
+        ],
+        "description": "Documents the property of a class which has the specified name. This tag can be used for documenting properties declared in the primary constructor, where putting a doc comment directly before the property definition would be awkward."
+    },
+    "@sample": {
+        "prefix": "@sample",
+        "body": [
+            "@sample ${1:identifier}$0"
+        ],
+        "description": "Embeds the body of the function with the specified qualified name into the documentation for the current element, in order to show an example of how the element could be used."
+    },
+    "@suppress": {
+        "prefix": "@suppress",
+        "body": [
+            "@suppress$0"
+        ],
+        "description": "Excludes the element from the generated documentation. Can be used for elements which are not part of the official API of a module but still have to be visible externally."
+    }
+}
+

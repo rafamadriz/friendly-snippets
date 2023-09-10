@@ -108,8 +108,7 @@
             "\t\\floatname{algorithm}{${1:Algorithm}}",
             "\t\\algrenewcommand\\algorithmicrequire{\\textbf{${2:Input: }}}",
             "\t\\algrenewcommand\\algorithmicensure{\\textbf{${3:Output: }}}",
-            "\t\\caption{$4}",
-            "\t\\label{alg:$5}",
+            "\t\\caption{$4}\\label{alg:$5}",
             "\t\\begin{algorithmic}[1]",
             "\t\t\\Require \\$input\\$",
             "\t\t\\Ensure \\$output\\$",
@@ -290,8 +289,7 @@
             "\t\\begin{center}",
             "\t\t\\includegraphics[width=0.95\\textwidth]{figures/$1}",
             "\t\\end{center}",
-            "\t\\caption{$3}",
-            "\t\\label{fig:$4}",
+            "\t\\caption{$3}\\label{fig:$4}",
             "\\end{figure}",
             "$0"
         ],
@@ -302,8 +300,7 @@
         "body": [
             "\\begin{figure}",
             "\t\\includegraphics[width=0.45\\textwidth]{figures/$1}",
-            "\t\\caption{$2}",
-            "\t\\label{fig:$3}",
+            "\t\\caption{$2}\\label{fig:$3}",
             "\\end{figure}",
             "$0"
         ],
@@ -314,8 +311,7 @@
         "body": [
             "\\begin{figure*}",
             "\t\\includegraphics[width=0.45\\textwidth]{figures/$1}",
-            "\t\\caption{$2}",
-            "\t\\label{fig:$3}",
+            "\t\\caption{$2}\\label{fig:$3}",
             "\\end{figure*}",
             "$0"
         ],
@@ -325,8 +321,7 @@
         "prefix": "table",
         "body": [
             "\\begin{table}",
-            "\t\\caption{$1}",
-            "\t\\label{tab:$2}",
+            "\t\\caption{$1}\\label{tab:$2}",
             "\t\\begin{center}",
             "\t\t\\begin{tabular}[c]{l|l}",
             "\t\t\t\\hline",
@@ -348,8 +343,7 @@
         "prefix": "table:acm",
         "body": [
             "\\begin{table}",
-            "\t\\caption{$1}",
-            "\t\\label{tab:$2}",
+            "\t\\caption{$1}\\label{tab:$2}",
             "\t\\begin{tabular}{${3:ccl}}",
             "\t\t\\toprule",
             "\t\t$4",
@@ -367,8 +361,7 @@
         "prefix": "table:acm:*",
         "body": [
             "\\begin{table*}",
-            "\t\\caption{$1}",
-            "\t\\label{tab:$2}",
+            "\t\\caption{$1}\\label{tab:$2}",
             "\t\\begin{tabular}{${3:ccl}}",
             "\t\t\\toprule",
             "\t\t$4",
@@ -399,7 +392,7 @@
     },
     "Cite": {
         "prefix": "cite",
-        "body": ["~\\cite{$1}$0"],
+        "body": ["\\cite{$1}$0"],
         "description": "Add a cite"
     },
     "EmptyPage": {

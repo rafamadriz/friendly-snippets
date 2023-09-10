@@ -284,8 +284,8 @@
     },
     "useState": {
         "prefix": "us",
-        "body": "const [${1:val}, set${2:setterName}] = useState(${3:defVal})",
-        "description": "use state hook"
+        "body": "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initValue})$0",
+        "description": "React useState() hook"
     },
     "useEffect": {
         "prefix": "ue",
@@ -341,6 +341,16 @@
             "const ${1:memoizedValue} = useMemo(() => ${2:computeExpensiveValue}(${3:a}, ${4:b}), [${5:a}, ${6:b}])$0"
         ],
         "description": "React useMemo() hook"
+    },
+    "createReactHook": {
+        "prefix": "crh",
+        "body": [ "export const use$0 = () => {", "", "}" ],
+        "description": "Create React Hook"
+    },
+    "createReactHookWithName": {
+        "prefix": "crhn",
+        "body": [  "export const ${TM_FILENAME_BASE} = () => {", "\t$0", "}"],
+        "description": "Create React Hook using File name" 
     },
     "describeBlock": {
         "prefix": "desc",
