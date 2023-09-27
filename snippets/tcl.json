@@ -331,17 +331,17 @@
   },
   "Search a list for an element": {
     "prefix": "lsearch",
-    "body": "lsearch {1:?options?} \"${2:list}\" {${0:pattern}}",
+    "body": "lsearch ${1:?options?} \"${2:list}\" {${0:pattern}}",
     "description": "This command searches the elements of list to see if one of them matches pattern. If so, the command returns the index of the first matching element (unless the options -all or -inline are specified.) If not, the command returns -1 or (if options -all or -inline are specified) the empty string."
   },
   "Change an element in a list": {
     "prefix": "lset",
-    "body": ["lset {1:varName} ${2:?index ...?} {${3:newValue}}", "$0"],
+    "body": ["lset ${1:varName} ${2:?index ...?} {${3:newValue}}", "$0"],
     "description": "The lset command accepts a parameter, varName, which it interprets as the name of a variable containing a Tcl list. It also accepts zero or more indices into the list. The indices may be presented either consecutively on the command line, or grouped in a Tcl list and presented as a single argument. Finally, it accepts a new value for an element of varName."
   },
   "Sort the elements of a list": {
     "prefix": "lsort",
-    "body": "lsort {1:?options?} \"${0:list}\"",
+    "body": "lsort ${1:?options?} \"${0:list}\"",
     "description": "This command sorts the elements of list, returning a new list in sorted order."
   },
   "Open a file-based or command pipeline channel": {
