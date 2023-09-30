@@ -212,7 +212,7 @@
             "\tTO DISK ${2:filepath}",
             "\tWITH ${3:DIFERENTIAL};"
         ],
-        "description": "Diferencial backup database"
+        "description": "Differential backup database"
     },
     "primaryk": {
         "prefix": "primaryk",
