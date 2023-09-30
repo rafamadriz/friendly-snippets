@@ -18,6 +18,11 @@
         "body": ["${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}"],
         "description": "Put the date in (Y-m-D) format"
     },
+    "dateDMY": {
+      "prefix": "dateDMY",
+      "body": ["${CURRENT_DATE}/${CURRENT_MONTH}/${CURRENT_YEAR}"],
+      "description": "Put date in (DD/MM/YY) format"
+    },
     "dateMDY": {
         "prefix": "dateMDY",
         "body": ["${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR}"],
