@@ -19,7 +19,7 @@
     },
     "hash": {
         "prefix": "hash",
-        "body": "hash = \"${1:sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=}\";",
+        "body": "\"${1:sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=}\";",
         "description": "Empty hash"
     },
     "fetchFrom": {
@@ -81,5 +81,17 @@
             "})"
         ],
         "description": "Nixpkgs' stdenv.mkDerivation template"
+    },
+    "meta": {
+        "prefix": "meta",
+        "body": [
+            "meta = {",
+            "  description = \"$1\";",
+            "  homepage = \"$2\";",
+            "  license = lib.licenses.$3;",
+            "  maintainers = with lib.maintainers; [ $0 ];",
+            "};"
+        ],
+        "description": "Nixpkgs' minimal meta attribute set"
     }
 }
