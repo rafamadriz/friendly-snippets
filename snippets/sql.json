@@ -212,7 +212,7 @@
             "\tTO DISK ${2:filepath}",
             "\tWITH ${3:DIFERENTIAL};"
         ],
-        "description": "Diferencial backup database"
+        "description": "Differential backup database"
     },
     "primaryk": {
         "prefix": "primaryk",
@@ -222,14 +222,14 @@
     "primarykc": {
         "prefix": "primarykc",
         "body": ["CONSTRAINT ${1:attribute} PRIMARY KEY(${2:attribute(s)})"],
-        "description": "Constraint rimary Key"
+        "description": "Constraint Primary Key"
     },
     "foreingk": {
         "prefix": "foreingk",
         "body": [
             "FOREIGN KEY(${1:attribute}) REFERENCES ${2:tableName}(${3:attribute})"
         ],
-        "description": "Foreing Key"
+        "description": "Foreign Key"
     },
     "foreingkc": {
         "prefix": "foreingkc",
@@ -237,7 +237,7 @@
             "CONSTRAINT ${1:attribute} FOREIGN KEY (${2:attribute(s)})",
             "\tREFERENCES ${3:tableName}(${4:attribute})"
         ],
-        "description": "Constraint foreing Key"
+        "description": "Constraint foreign Key"
     },
     "check": {
         "prefix": "check",
