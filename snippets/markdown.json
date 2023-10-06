@@ -64,6 +64,11 @@
         "body": "***${1}*** $0",
         "description": "Insert bold and italic text"
     },
+    "Insert math block": {
+    "perfix": ["math", "m"],
+    "body": ["$","$0","$"],
+    "description": "Insert math block."
+    },
     "Insert quoted text": {
         "prefix": "quote",
         "body": "> ${1}",
