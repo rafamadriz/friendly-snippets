@@ -1,6 +1,6 @@
 # Friendly Snippets
 
-This is an experimental fork for project [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
+⚠️ **This is an experimental fork for project [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets)**
 
 Snippets collection for a set of different programming languages.
 
