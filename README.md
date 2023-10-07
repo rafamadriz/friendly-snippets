@@ -15,7 +15,7 @@ Use your plugin manager of choice, e.g.
 ### With Lazy.nvim
 
 ```lua
-{ "rafamadriz/friendly-snippets" }
+{ "SidonTheTroll/friendly-snippets" }
 ```
 
 > **Warning**: If you're using LuaSnip make sure to use
@@ -27,7 +27,7 @@ Use your plugin manager of choice, e.g.
 > ```lua
 > {
 >   "L3MON4D3/LuaSnip",
->   dependencies = { "rafamadriz/friendly-snippets" },
+>   dependencies = { "SidonTheTroll/friendly-snippets" },
 > }
 > ```
 
@@ -64,7 +64,7 @@ loading vscode snippets. Like for example:
 
 There's extra snippets included in this repo but they are not added by default,
 since it would be irrelevant for people not using those frameworks. See
-[`snippets/frameworks`](https://github.com/rafamadriz/friendly-snippets/tree/main/snippets/frameworks)
+[`snippets/frameworks`](https://github.com/SidonTheTroll/friendly-snippets/tree/main/snippets/frameworks)
 
 For example: if you want to add rails snippets to ruby.
 
