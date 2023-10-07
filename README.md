@@ -1,5 +1,7 @@
 # Friendly Snippets
 
+This is an experimental fork for project [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
+
 Snippets collection for a set of different programming languages.
 
 The only goal is to have one community driven repository for all kinds of
@@ -32,19 +34,19 @@ Use your plugin manager of choice, e.g.
 ### With Packer
 
 ```lua
-use "rafamadriz/friendly-snippets"
+use "SidonTheTroll/friendly-snippets"
 ```
 
 ### With vim-plug
 
 ```vim
-Plug "rafamadriz/friendly-snippets"
+Plug "SidonTheTroll/friendly-snippets"
 ```
 
 ### With coc.nvim
 
 ```vim
-:CocInstall https://github.com/rafamadriz/friendly-snippets@main
+:CocInstall https://github.com/SidonTheTroll/friendly-snippets@main
 ```
 
 ## Usage

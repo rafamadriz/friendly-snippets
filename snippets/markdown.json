@@ -64,10 +64,19 @@
         "body": "***${1}*** $0",
         "description": "Insert bold and italic text"
     },
+    "Insert math inline": {
+    "prefix": ["math", "m"],
+    "body": "$${0}$",
+    "description": "Insert math inline."
+    },
     "Insert math block": {
-    "perfix": ["math", "m"],
-    "body": ["$","$0","$"],
-    "description": "Insert math block."
+    "prefix": ["mathblock", "mb"],
+    "body": [
+      "$$",
+      "${0}",
+      "$$"
+    ],
+    "description": "Insert mathblock"
     },
     "Insert quoted text": {
         "prefix": "quote",
@@ -391,5 +400,10 @@
         "prefix": "sup",
         "body": ["${1}<sup>${0}"],
         "description": "Create a superscript."
+    },
+    "Insert alpha": {
+        "prefix": "\\alpha",
+        "body": "\\alpha ${0}",
+        "description": "Insert lowercase alpha"
     }
 }
