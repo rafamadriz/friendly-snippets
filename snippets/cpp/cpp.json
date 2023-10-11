@@ -266,5 +266,17 @@
             "}"
         ],
         "description": "A standard main function for a C++ program"
+    },
+    "#guard": {
+      "prefix": "#guard",
+      "body": [
+        "#ifndef INCLUDE_${TM_DIRECTORY/.*[\\\/](.*)/${1:/upcase}/}_${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H_",
+        "#define INCLUDE_${TM_DIRECTORY/.*[\\\/](.*)/${1:/upcase}/}_${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H_",
+        "",
+        "$0",
+        "",
+        "#endif  // INCLUDE_${TM_DIRECTORY/.*[\\\/](.*)/${1:/upcase}/}_${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H_"
+      ],
+      "description": "header guard. format :\n\tINCLUDE_<currdir_name>_<currfile_name>_H_"
     }
 }
