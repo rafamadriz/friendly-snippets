@@ -189,10 +189,9 @@
         "prefix": "try",
         "body": [
             "try {",
-            "\t",
+            "\t$2",
             "}",
-            "catch (const std::exception&) {",
-            "\t$1",
+            "catch (${1:const std::exception&}) {",
             "}"
         ],
         "description": "Code snippet for try catch"
@@ -244,12 +243,12 @@
     },
     "#inc": {
         "prefix": "#inc",
-        "body": ["#include \"$0\""],
+        "body": ["#include \"$1\"$2"],
         "description": "Code snippet for #include \" \""
     },
     "#inc<": {
         "prefix": "#inc<",
-        "body": ["#include <$0>"],
+        "body": ["#include <$1>$2"],
         "description": "Code snippet for #include < >"
     },
     "#def": {
@@ -307,11 +306,11 @@
       ],
       "description": ""
     },
-    "func": {
+    "af": {
       "prefix": "af",
       "body": [
-        "auto ${1:funcName}( $2 ) -> ${3:auto} {",
-        "\t${4}",
+        "auto ${1:name}( ${2:void} ) -> ${3:auto} {",
+        "\t${5}",
         "}"
       ],
       "description": "auto function and trailing return"
