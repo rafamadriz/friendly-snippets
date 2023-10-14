@@ -405,5 +405,45 @@
         "prefix": "\\alpha",
         "body": "\\alpha ${0}",
         "description": "Insert lowercase alpha"
+    },
+    "Insert Alpha": {
+        "prefix": "\\Alpha",
+        "body": "\\Alpha ${0}",
+        "description": "Insert uppercase alpha"
+    },
+    "Insert beta": {
+        "prefix": "\\beta",
+        "body": "\\beta ${0}",
+        "description": "Insert lowercase beta"
+    },
+    "Insert Beta": {
+        "prefix": "\\Beta",
+        "body": "\\Beta ${0}",
+        "description": "Insert uppercase beta"
+    },
+    "Insert gamma": {
+        "prefix": "\\gamma",
+        "body": "\\gamma ${0}",
+        "description": "Insert lowercase gamma"
+    },
+    "Insert Gamma": {
+        "prefix": "\\Gamma",
+        "body": "\\Gamma ${0}",
+        "description": "Insert uppercase gamma"
+    },
+    "Insert sigma": {
+        "prefix": "\\sigma",
+        "body": "\\sigma ${0}",
+        "description": "Insert lowercase sigma"
+    },
+    "Insert Sigma": {
+        "prefix": "\\Sigma",
+        "body": "\\Sigma ${0}",
+        "description": "Insert uppercase Sigma"
+    },
+    "Insert fraction": {
+        "prefix": "\\frac",
+        "body": "\\frac{${1}}{${2}}",
+        "description": "Insert fraction"
     }
 }
