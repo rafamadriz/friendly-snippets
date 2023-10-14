@@ -401,6 +401,11 @@
         "body": ["${1}<sup>${0}"],
         "description": "Create a superscript."
     },
+    "Insert break": {
+        "prefix": "br",
+        "body": "<br> ${0}",
+        "description": "Insert break"
+    },
     "Insert alpha": {
         "prefix": "\\alpha",
         "body": "\\alpha ${0}",
