@@ -107,6 +107,11 @@
         "body": ["@cannot('${1:ability}', ${2:args})", "  $3", "@end"],
         "description": "Edge: cannot tag from @adonisjs/bouncer allows you write conditionals around the bouncer permissions."
     },
+    "edge: Bouncer ctx.bouncer instance": {
+        "prefix": "bouncer.allows()",
+        "body": ["await bouncer.allows('${1:ability}')"],
+        "description": "Edge: Reference to the ctx.bouncer instance"
+    },
     "edge: Debugger": {
         "prefix": "@debugger",
         "body": ["@debugger"],
