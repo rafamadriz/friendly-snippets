@@ -137,6 +137,11 @@
         "body": "app",
         "description": "Reference to application instance"
     },
+    "edge: app.nodeEnvironment": {
+        "prefix": "app.nodeEnvironment",
+        "body": "app.nodeEnvironment",
+        "description": "Get current node environment"
+    },
     "edge: asset": {
         "prefix": "asset",
         "body": "asset('${1:filePath}')",
