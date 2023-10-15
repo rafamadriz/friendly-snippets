@@ -169,8 +169,13 @@
     },
     "edge: csrfField": {
         "prefix": "csrfField()",
-        "body": "csrfField()",
-        "description": "Add csrfField input field to form"
+        "body": "{{ csrfField() }}",
+        "description": "Add csrfField hidden input field to form"
+    },
+    "edge: csrfToken": {
+        "prefix": "csrfToken",
+        "body": "{{ csrfToken }}",
+        "description": "Add inline csrf token as content"
     },
     "edge: dashCase": {
         "prefix": "dashCase",
