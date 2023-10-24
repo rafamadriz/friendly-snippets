@@ -450,5 +450,10 @@
         "prefix": "\\frac",
         "body": "\\frac{${1}}{${2}}",
         "description": "Insert fraction"
+    },
+    "Insert text": {
+        "prefix": "\\text",
+        "body": "\\text{}",
+        "description": "Insert text"
     }
 }
