@@ -460,5 +460,10 @@
         "prefix": "\\implies",
         "body": "\\implies ",
         "description": "Insert imply sign"
+    },
+    "Insert therefore": {
+        "prefix": "\\therefore",
+        "body": "\\therefore",
+        "description": "Insert therefore"
     }
 }
