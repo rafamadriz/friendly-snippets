@@ -453,7 +453,7 @@
     },
     "Insert text": {
         "prefix": "\\text",
-        "body": "\\text{}",
+        "body": "\\text{${0}}",
         "description": "Insert text"
     }
 }
