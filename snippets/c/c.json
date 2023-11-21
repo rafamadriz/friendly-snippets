@@ -73,6 +73,11 @@
         "body": ["#define ${1:MACRO}($2) ($3)"],
         "description": "Function-like macro snippet"
     },
+    "_GNU_SOURCE": {
+        "prefix": "#gnu",
+        "body": ["#define _GNU_SOURCE"],
+        "description": "Enable GNU extensions"
+    },
     "#if": {
         "prefix": "#if",
         "body": ["#if ${1:0}", "$0", "#endif /* if $1 */"],
