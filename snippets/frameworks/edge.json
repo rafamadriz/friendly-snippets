@@ -107,6 +107,11 @@
         "body": ["@cannot('${1:ability}', ${2:args})", "  $3", "@end"],
         "description": "Edge: cannot tag from @adonisjs/bouncer allows you write conditionals around the bouncer permissions."
     },
+    "edge: Bouncer ctx.bouncer instance": {
+        "prefix": "bouncer.allows()",
+        "body": ["await bouncer.allows('${1:ability}')"],
+        "description": "Edge: Reference to the ctx.bouncer instance"
+    },
     "edge: Debugger": {
         "prefix": "@debugger",
         "body": ["@debugger"],
@@ -131,6 +136,11 @@
         "prefix": "app",
         "body": "app",
         "description": "Reference to application instance"
+    },
+    "edge: app.nodeEnvironment": {
+        "prefix": "app.nodeEnvironment",
+        "body": "app.nodeEnvironment",
+        "description": "Get current node environment"
     },
     "edge: asset": {
         "prefix": "asset",
@@ -169,8 +179,13 @@
     },
     "edge: csrfField": {
         "prefix": "csrfField()",
-        "body": "csrfField()",
-        "description": "Add csrfField input field to form"
+        "body": "{{ csrfField() }}",
+        "description": "Add csrfField hidden input field to form"
+    },
+    "edge: csrfToken": {
+        "prefix": "csrfToken",
+        "body": "{{ csrfToken }}",
+        "description": "Add inline csrf token as content"
     },
     "edge: dashCase": {
         "prefix": "dashCase",
@@ -326,5 +341,30 @@
         "prefix": "truncate",
         "body": "truncate(${1:value}, ${2:100})",
         "description": "Truncate string after given characters count"
+    },
+    "edge: i18n.locale": {
+        "prefix": "i18n.locale",
+        "body": "{{ i18n.locale }}",
+        "description": "An instance of i18n for the default locale is shared with the templates as a global property"
+    },
+    "edge: i18n.formatNumber()": {
+        "prefix": "i18n.formatNumber()",
+        "body": "{{ i18n.formatNumber(${1:value}) }}",
+        "description": "An instance of i18n and set formatNumber"
+    },
+    "edge: t": {
+        "prefix": "t",
+        "body": "t('${1:value}')",
+        "description": "The t helper is an alias for the i18n.formatMessage method"
+    },
+    "edge: getDefaultLocale": {
+        "prefix": "getDefaultLocale()",
+        "body": "{{ getDefaultLocale() }}",
+        "description": "Returns the default locale for the application"
+    },
+    "edge: getSupportedLocales": {
+        "prefix": "getSupportedLocales()",
+        "body": "{{ getSupportedLocales() }}",
+        "description": "Returns an array of the supported locales"
     }
 }
