@@ -658,7 +658,7 @@
     },
     "Insert implies": {
         "prefix": "\\implies",
-        "body": "\\implies ",
+        "body": "\\implies",
         "description": "Insert imply sign"
     },
     "Insert therefore": {
@@ -666,9 +666,54 @@
         "body": "\\therefore",
         "description": "Insert therefore"
     },
+    "Insert overleftarrow": {
+      "prefix": "\\overleftarrow",
+      "body": "\\overleftarrow{${0}}",
+      "description": "Insert overleftarrow"
+    },
     "Insert overrightarrow": {
       "prefix": "\\overrightarrow",
       "body": "\\overrightarrow{${0}}",
       "description": "Insert overrightarrow"
+    },
+    "Insert hat": {
+      "prefix": "\\hat",
+      "body": "\\hat{${0}}",
+      "description": "Insert hat aka cap"
+    },
+    "Insert times": {
+      "prefix": "\\times",
+      "body": "\\times",
+      "description": "Insert times"
+    },
+    "Insert frak text": {
+      "prefix": "\\frak",
+      "body": "\\frak{${0}}",
+      "description": "Insert frak text"
+    },
+    "Insert overset": {
+      "prefix": "\\overset",
+      "body": "\\overset{${1}}{${2}}",
+      "description": "Insert overset"
+    },
+    "Insert underset": {
+      "prefix": "\\underset",
+      "body": "\\underset{${1}}{${2}}",
+      "description": "Insert underset"
+    },
+    "Insert square root": {
+      "prefix": "\\sqrt",
+      "body": "\\sqrt{${0}}",
+      "description": "Insert square root"
+    },
+    "Insert integral": {
+      "prefix": "\\int",
+      "body": "\\int",
+      "description": "Insert integral"
+    },
+    "Insert proportional": {
+      "prefix": "\\propto",
+      "body": "\\propto",
+      "description": "Inserts proportional sign"
     }
 }
