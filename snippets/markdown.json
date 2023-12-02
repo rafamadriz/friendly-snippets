@@ -671,6 +671,11 @@
       "body": "\\overleftarrow{${0}}",
       "description": "Insert overleftarrow"
     },
+    "Insert rightarrow": {
+      "prefix": "\\rightarrow",
+      "body": "\\rightarrow",
+      "description": "Insert rightarrow"
+    },
     "Insert overrightarrow": {
       "prefix": "\\overrightarrow",
       "body": "\\overrightarrow{${0}}",
@@ -714,6 +719,6 @@
     "Insert proportional": {
       "prefix": "\\propto",
       "body": "\\propto",
-      "description": "Inserts proportional sign"
+      "description": "Insert proportional sign"
     }
 }
