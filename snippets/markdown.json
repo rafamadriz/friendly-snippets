@@ -676,6 +676,11 @@
       "body": "\\rightarrow",
       "description": "Insert rightarrow"
     },
+    "Insert leftrightarrows": {
+      "prefix": "\\leftrightarrows",
+      "body": "\\leftrightarrows",
+      "description": "Inserts leftrightarrows"
+    },
     "Insert overrightarrow": {
       "prefix": "\\overrightarrow",
       "body": "\\overrightarrow{${0}}",
