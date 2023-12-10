@@ -269,42 +269,42 @@
     "#guard": {
       "prefix": "#guard",
       "body": [
-        "#ifndef INCLUDE_${TM_DIRECTORY/.*[\\\/](.*)/${1:/upcase}/}_${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H_",
-        "#define INCLUDE_${TM_DIRECTORY/.*[\\\/](.*)/${1:/upcase}/}_${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H_",
+        "#ifndef INCLUDE${TM_DIRECTORY/.*[\\\/](.*)/_${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_",
+        "#define INCLUDE${TM_DIRECTORY/.*[\\\/](.*)/_${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_",
         "",
         "$0",
         "",
-        "#endif  // INCLUDE_${TM_DIRECTORY/.*[\\\/](.*)/${1:/upcase}/}_${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_H_"
+        "#endif  // INCLUDE${TM_DIRECTORY/.*[\\\/](.*)/_${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_"
       ],
-      "description": "header guard. format :\n\tINCLUDE_<currdir_name>_<currfile_name>_H_"
+      "description": "header guard. format :\n\tINCLUDE_<dirname>_<filename>_<extension>_"
     },
     "sca": {
       "prefix": "sca",
       "body": [
         "static_cast<${1:unsigned}>(${2:expr})$3"
       ],
-      "description": ""
+      "description": "static_cast<type>(expression)"
     },
     "dca": {
       "prefix": "dca",
       "body": [
         "dynamic_cast<${1:unsigned}>(${2:expr})$3"
       ],
-      "description": ""
+      "description": "dynamic_cast<type>(expression)"
     },
     "rca": {
       "prefix": "rca",
       "body": [
         "reinterpret_cast<${1:unsigned}>(${2:expr})$3"
       ],
-      "description": ""
+      "description": "reinterpret_cast<type>(expression)"
     },
     "cca": {
       "prefix": "cca",
       "body": [
         "const_cast<${1:unsigned}>(${2:expr})$3"
       ],
-      "description": ""
+      "description": "const_cast<type>(expression)"
     },
     "af": {
       "prefix": "af",
