@@ -1,43 +1,43 @@
 {
-    "DRF ApiView": {
+    "DRF APIView": {
         "prefix": "apiview",
         "body": ["class ${1:Name}APIView(APIView):", "\t${2}"],
-        "description": "Django-rest Views ``ApiView`` Class"
+        "description": "Django-rest Views ``APIView`` Class"
     },
-    "DRF CreateApiView": {
+    "DRF CreateAPIView": {
         "prefix": "createapiview",
         "body": [
-            "class ${1:Name}CreateApiView(generics.CreateApiView):",
+            "class ${1:Name}CreateAPIView(generics.CreateAPIView):",
             "\tserializer_class = ${2:$1Serializer}"
         ],
-        "description": "Django-rest Views ``CreateApi`` Class"
+        "description": "Django-rest Views ``CreateAPI`` Class"
     },
-    "DRF DestoryApiView": {
-        "prefix": "destoryapiview",
+    "DRF DestroyAPIView": {
+        "prefix": "destroyapiview",
         "body": [
-            "class ${1:Name}DestoryApiView(generics.DestoryApiView):",
+            "class ${1:Name}DestroyAPIView(generics.DestroyAPIView):",
             "\tserializer_class = ${2:$1Serializer}",
             "\tqueryset = $1.objects.filter(${3})"
         ],
-        "description": "Django-rest Views ``DestoryApiView`` Class"
+        "description": "Django-rest Views ``DestroyAPIView`` Class"
     },
-    "DRF ListApiView": {
+    "DRF ListAPIView": {
         "prefix": "listapiview",
         "body": [
-            "class ${1:Name}ListApiView(generics.ListApiView):",
+            "class ${1:Name}ListAPIView(generics.ListAPIView):",
             "\tserializer_class = ${2:$1Serializer}",
             "\tqueryset = $1.objects.filter(${3})"
         ],
-        "description": "Django-rest Views ``ListApiView`` Class"
+        "description": "Django-rest Views ``ListAPIView`` Class"
     },
-    "DRF ListCreateApiView": {
+    "DRF ListCreateAPIView": {
         "prefix": "listcreateapiview",
         "body": [
-            "class ${1:Name}ListCreateApiView(generics.ListCreateApiView):",
+            "class ${1:Name}ListCreateAPIView(generics.ListCreateAPIView):",
             "\tserializer_class = ${2:$1Serializer}",
             "\tqueryset = $1.objects.filter(${3})"
         ],
-        "description": "Django-rest Views ``ListCreateApiView`` Class"
+        "description": "Django-rest Views ``ListCreateAPIView`` Class"
     },
     "DRF RetrieveAPIView": {
         "prefix": "retrieveapiview",
@@ -49,7 +49,7 @@
         "description": "Django-rest Views ``RetrieveAPIView`` Class"
     },
     "DRF RetrieveDestroyAPIView": {
-        "prefix": "retrievedestoryapiview",
+        "prefix": "retrievedestroyapiview",
         "body": [
             "class ${1:Name}RetrieveDestroyAPIView(generics.RetrieveDestroyAPIView):",
             "\tserializer_class = ${2:$1Serializer}",
@@ -66,23 +66,23 @@
         ],
         "description": "Django-rest Views ``RetrieveUpdateAPIView`` Class"
     },
-    "DRF RetrieveUpdateDestoryAPIView": {
-        "prefix": "retrieveupdatedestoryapiview",
+    "DRF RetrieveUpdateDestroyAPIView": {
+        "prefix": "retrieveupdatedestroyapiview",
         "body": [
-            "class ${1:Name}RetrieveUpdateDestoryAPIView(generics.RetrieveUpdateDestoryAPIView):",
+            "class ${1:Name}RetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):",
             "\tserializer_class = ${2:$1Serializer}",
             "\tqueryset = $1.objects.filter(${3})"
         ],
-        "description": "Django-rest Views ``RetrieveUpdateDestoryAPIView`` Class"
+        "description": "Django-rest Views ``RetrieveUpdateDestroyAPIView`` Class"
     },
-    "DRF UpdateApiView": {
+    "DRF UpdateAPIView": {
         "prefix": "updateapiview",
         "body": [
-            "class ${1:Name}UpdateApiView(generics.UpdateApiView):",
+            "class ${1:Name}UpdateAPIView(generics.UpdateAPIView):",
             "\tserializer_class = ${2:$1Serializer}",
             "\tqueryset = $1.objects.filter(${3})"
         ],
-        "description": "Django-rest Views ``UpdateApiView`` Class"
+        "description": "Django-rest Views ``UpdateAPIView`` Class"
     },
 
     "DRF perform_create": {
@@ -101,11 +101,11 @@
         ],
         "description": "Django-rest Views ``perform_create`` method"
     },
-    "DRF perform_destory": {
-        "prefix": "performdestory",
+    "DRF perform_destroy": {
+        "prefix": "performdestroy",
         "body": [
-            "def perform_ddestory(self, instance):",
-            "\treturn ${1:super().perform_destory(instance)}"
+            "def perform_destroy(self, instance):",
+            "\treturn ${1:super().perform_destroy(instance)}"
         ],
         "description": "Django-rest Views ``perform_create`` method"
     },

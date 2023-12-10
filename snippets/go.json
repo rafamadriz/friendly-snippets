@@ -279,6 +279,11 @@
         "body": "`json:\"$1\"`",
         "description": "Snippet for struct json tag"
     },
+    "xml tag": {
+        "prefix": "xml",
+        "body": "`xml:\"$1\"`",
+        "description": "Snippet for struct xml tag"
+    },
     "if key in a map": {
         "prefix": "om",
         "body": "if ${1:value}, ok := ${2:map}[${3:key}]; ok {\n\t$4\n}"
