@@ -76,7 +76,7 @@
     "_GNU_SOURCE": {
         "prefix": "#gnu",
         "body": ["#define _GNU_SOURCE"],
-        "description": "Enable GNU extensions"
+        "description": "Enable GNU extensions (functions)"
     },
     "#if": {
         "prefix": "#if",
