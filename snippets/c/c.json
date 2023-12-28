@@ -296,7 +296,7 @@
     },
     "snprintf": {
         "prefix": "snprintf",
-        "body": ["sprintf(${1:buf}, ${2:max}, \"${3:%s}\\n\"$3)$0"],
+        "body": ["snprintf(${1:buf}, ${2:max}, \"${3:%s}\\n\"$3)$0"],
         "description": "snprintf() snippet"
     },
     "scanf": {
