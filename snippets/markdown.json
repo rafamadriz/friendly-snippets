@@ -402,7 +402,7 @@
         "description": "Create a superscript."
     },
     "Insert break": {
-        "prefix": "br",
+        "prefix": ["br", "break"],
         "body": "<br> ${0}",
         "description": "Insert break"
     },
