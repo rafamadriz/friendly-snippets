@@ -51,17 +51,17 @@
     },
     "Insert bold text": {
         "prefix": ["bold", "b"],
-        "body": "**${1}** $0",
+        "body": "**${1}**",
         "description": "Insert bold text"
     },
     "Insert italic text": {
         "prefix": ["i", "italic"],
-        "body": "*${1}* $0",
+        "body": "*${1}*",
         "description": "Insert italic text"
     },
     "Insert bold and italic text": {
         "prefix": ["bold and italic", "bi"],
-        "body": "***${1}*** $0",
+        "body": "***${1}***",
         "description": "Insert bold and italic text"
     },
     "Insert math inline": {
