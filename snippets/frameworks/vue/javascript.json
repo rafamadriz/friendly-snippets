@@ -6,6 +6,13 @@
     ],
     "description": "import ... from ..."
   },
+  "import-type": {
+    "prefix": "importType",
+    "body": [
+      "import type {$1} from '$2'"
+    ],
+    "description": "import type ... from ..."
+  },
   "nextTick": {
     "prefix": "nextTick",
     "body": [
