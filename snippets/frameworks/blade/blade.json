@@ -1,0 +1,49 @@
+{
+  "Blade-component": {
+    "prefix": "Blade::component",
+    "body": "Blade::component('${1:package-name}', ${2:PackageNameComponent}::class);",
+    "description": "Registering Package Components (AppServiceProvider boot method)"
+  },
+  "Blade-include": {
+    "prefix": "Blade::include",
+    "body": "Blade::include('${1:includes.input}', '${2:input}');",
+    "description": "Aliasing Includes (AppServiceProvider boot method)"
+  },
+  "Blade-if": {
+    "prefix": "Blade::if",
+    "body": [
+      "Blade::if('${1:env}', function ($${2:environment}) {",
+      "    ${3:return app()->environment($$environment);}",
+      "});"
+    ],
+    "description": "Custom If Statements (AppServiceProvider boot method)"
+  },
+  "Blade-directive": {
+    "prefix": "Blade::directive",
+    "body": [
+      "Blade::directive('${1:datetime}', function ($${2:expression}) {",
+      "    ${3:return \"<?php echo ($$expression)->format('m/d/Y H:i'); ?>\";}",
+      "});"
+    ],
+    "description": "Custom directive (AppServiceProvider boot method)"
+  },
+  "Blade-stringable": {
+    "prefix": "Blade::stringable",
+    "body": [
+      "Blade::stringable(function (${1:Money} $${2:money}) {",
+      "    ${3:return $$money->formatTo('en_GB');}",
+      "});"
+    ],
+    "description": "Custom echo handlers (AppServiceProvider boot method)"
+  },
+  "Blade-render": {
+    "prefix": "Blade::render",
+    "body": "Blade::render(${1:'Blade template string'}, ${2:\\$data});",
+    "description": "Transform a raw Blade template string into valid HTML (Laravel 9.x)"
+  },
+  "Blade-renderComponent": {
+    "prefix": "Blade::renderComponent",
+    "body": "Blade::renderComponent(new ${1:HelloComponent}(${2:\\$params}));",
+    "description": "Render a given class component by passing the component instance to the method  (Laravel 9.x)"
+  }
+}

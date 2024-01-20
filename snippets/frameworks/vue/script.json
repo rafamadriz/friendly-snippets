@@ -1,0 +1,1370 @@
+{
+  "Import": {
+    "prefix": "import",
+    "body": [
+      "import $1 from '$2'"
+    ],
+    "description": "import ... from ..."
+  },
+  "Import Type": {
+    "prefix": "importType",
+    "body": [
+      "import type {$1} from '$2'"
+    ],
+    "description": "import type ... from ..."
+  },
+  "nextTick": {
+    "prefix": "nextTick",
+    "body": [
+      "nextTick()"
+    ],
+    "description": "A utility for waiting for the next DOM update flush."
+  },
+  "defineProps": {
+    "prefix": "defineProps",
+    "body": [
+      "const props = defineProps({",
+      "\t$0",
+      "});"
+    ],
+    "description": "A list/hash of attributes that are exposed to accept data from the parent component. "
+  },
+  "defineProps Typescript": {
+    "prefix": "definePropsTS",
+    "body": [
+      "const props = defineProps<{",
+      "\t$0",
+      "}>()"
+    ],
+    "description": "A list/hash of attributes that are exposed to accept data from the parent component. "
+  },
+  "defineEmits": {
+    "prefix": "defineEmits",
+    "body": [
+      "const ${1:emit} = defineEmits([ $0 ]);"
+    ],
+    "description": "A list of events that componetnt can emits to the parent component. "
+  },
+  "defineEmits Typescript": {
+    "prefix": "defineEmitsTS",
+    "body": [
+      "const ${1:emit} = defineEmits<{",
+      "\t(e: '${2:event}', ${3:id}: ${4:type}: ${5:type}) ",
+      "\t$0",
+      "}>()"
+    ],
+    "description": "A list of events that componetnt can emits to the parent component. "
+  },
+  "defineEmits Typescript with Tuple": {
+    "prefix": "defineEmitsTStuple",
+    "body": [
+      "const ${1:emit} = defineEmits<{",
+      "\t${2:event}: [${3:id}: ${4:type}]",
+      "\t$0",
+      "}>()"
+    ],
+    "description": "(3.3+: alternative, more succinct syntax) a list of events that componetnt can emits to the parent component. "
+  },
+  "defineComponent": {
+    "prefix": "defineComponent",
+    "body": [
+      "const $1 = defineComponent({",
+      "\t$0",
+      "})"
+    ],
+    "description": "create a component vue component"
+  },
+  "defineAsyncComponent": {
+    "prefix": "defineAsyncComponent",
+    "body": [
+      "const $1 = defineAsyncComponent(() =>",
+      "\timport('$0')",
+      ");"
+    ],
+    "description": "create a async vue component"
+  },
+  "defineCustomElement": {
+    "prefix": "defineCustomElement",
+    "body": [
+      "const $1 = defineCustomElement({",
+      "\t$0",
+      "})"
+    ],
+    "description": "create a custom element vue"
+  },
+  "Data Option API": {
+    "prefix": "data",
+    "body": [
+      "data() {",
+      "\treturn {",
+      "\t\t$1",
+      "\t}",
+      "},$0"
+    ],
+    "description": "The data object for the Vue instance."
+  },
+  "Computed Option API": {
+    "prefix": "computed",
+    "body": [
+      "computed: {",
+      "\t$1",
+      "},$0"
+    ],
+    "description": "Computed properties to be mixed into the Vue instance. "
+  },
+  "Computed Composition API": {
+    "prefix": "computedVue",
+    "body": [
+      "const $1 = computed(() => {",
+      "\t$0",
+      "});"
+    ],
+    "description": "Computed properties to be mixed into the Vue instance. "
+  },
+  "Computed with Typescript": {
+    "prefix": "computedVueTS",
+    "body": [
+      "const $1 = computed<${2:type}>(() => {",
+      "\t$0",
+      "});"
+    ],
+    "description": "Computed properties to be mixed into the Vue instance. "
+  },
+  "Reactive": {
+    "prefix": "reactiveVue",
+    "body": [
+      "const $1 = reactive({",
+      "\t$0",
+      "})"
+    ],
+    "description": "Reactive properties to be mixed into the Vue instance. "
+  },
+  "Reactive with Typescript": {
+    "prefix": "reactiveVueTS",
+    "body": [
+      "interface $1 {",
+      "\t${2:property}: ${3:type}",
+      "}",
+      "",
+      "const $4:${5:type} = reactive({",
+      "\t$0",
+      "})"
+    ],
+    "description": "Reactive properties to be mixed into the Vue instance. "
+  },
+  "shallow-reactive-composition": {
+    "prefix": "shallowReactive",
+    "body": [
+      "const ${1:state} = shallowReactive({",
+      "\t$0",
+      "})"
+    ],
+    "description": "Shallow version of reactive(). Use with Caution !! Shallow data structures should only be used for root level state in a component. Avoid nesting it inside a deep reactive object as it creates a tree with inconsistent reactivity behavior which can be difficult to understand and debug."
+  },
+  "shallowReadonly": {
+    "prefix": "shallowReadonly",
+    "body": [
+      "const ${1:state} = shallowReadonly({",
+      "\t$0",
+      "})"
+    ],
+    "description": "Shallow version of readonly(). Use with Caution !! Shallow data structures should only be used for root level state in a component. Avoid nesting it inside a deep reactive object as it creates a tree with inconsistent reactivity behavior which can be difficult to understand and debug."
+  },
+  "toRaw": {
+    "prefix": "toRaw()",
+    "body": [
+      "toRaw($0)"
+    ],
+    "description": "Returns the raw, original object of a Vue-created proxy."
+  },
+  "effectScope": {
+    "prefix": "effectScope()",
+    "body": [
+      "const $1 = effectScope()",
+      "$0"
+    ],
+    "description": "Returns the current active effect scope if there is one."
+  },
+  "getCurrentScope": {
+    "prefix": "getCurrentScope",
+    "body": [
+      "const $1 = getCurrentScope()",
+      "$0"
+    ],
+    "description": "Returns the current active effect scope if there is one."
+  },
+  "onScopeDispose": {
+    "prefix": "onScopeDispose()",
+    "body": [
+      "const $1 = onScopeDispose()",
+      "$0"
+    ],
+    "description": "Registers a dispose callback on the current active effect scope. The callback will be invoked when the associated effect scope is stopped."
+  },
+  "Ref Vue": {
+    "prefix": "refVue",
+    "body": [
+      "const $1 = ref($2)",
+      "$0"
+    ],
+    "description": "Ref properties to be mixed into the Vue instance. "
+  },
+  "Ref with Typescript": {
+    "prefix": "refVueTS",
+    "body": [
+      "const $1 = ref<${2:type}>($3)",
+      "$0"
+    ],
+    "description": "Ref properties to be mixed into the Vue instance. "
+  },
+  "Template Ref with Typescript": {
+    "prefix": "trfVue",
+    "body": [
+      "const $0 = ref<HTMLInputElement | null>(null)"
+    ],
+    "description": "Template ref to be mixed into the Vue instance. "
+  },
+  "Component Ref with Typescript": {
+    "prefix": "crfVue",
+    "body": [
+      "const $1 = ref<InstanceType<typeof $0> | null>(null)"
+    ],
+    "description": "Template ref to be mixed into the Vue instance. "
+  },
+  "Methods with Options API": {
+    "prefix": "methods",
+    "body": [
+      "methods: {",
+      "\t$1",
+      "},$0"
+    ],
+    "description": "Methods to be mixed into the Vue instance."
+  },
+  "Arrow Function": {
+    "prefix": "functionVueArrow",
+    "body": [
+      "const $1 = ($2) => {",
+      " $0",
+      "};"
+    ],
+    "description": "Method composition properties to be mixed into the Vue instance. "
+  },
+  "Function": {
+    "prefix": "functionVue",
+    "body": [
+      "function ${1:name}($2) {",
+      " $0",
+      "}"
+    ],
+    "description": "Functions are one of the fundamental building blocks in JavaScript"
+  },
+  "Function with Typescript": {
+    "prefix": "functionVueTS",
+    "body": [
+      "function ${1:name}($2: ${3:type}): ${4:type} {",
+      " $0",
+      "}"
+    ],
+    "description": "TypeScript has a specific syntax for typing function parameters and return values."
+  },
+  "Type Typescript": {
+    "prefix": "typeTS",
+    "body": [
+      "type ${1:Name/capitalize} = {",
+      " $0",
+      "}"
+    ],
+    "description": "type alias typescript"
+  },
+  "Interface Typescript": {
+    "prefix": "interfaceTS",
+    "body": [
+      "interface ${1:name/capitalize} {",
+      " $0",
+      "}"
+    ],
+    "description": "interface from typescript"
+  },
+  "Interface Extended": {
+    "prefix": "interfaceExtendTS",
+    "body": [
+      "interface {1:name/capitalize} extends {2:name/capitalize} {",
+      " $0",
+      "}"
+    ],
+    "description": "Extending an interface from typescript"
+  },
+  "watch": {
+    "prefix": "watch",
+    "body": [
+      "watch($1, ($2, $3) => {",
+      " $0",
+      "});"
+    ],
+    "description": "Watch over a reactive source and call a function in reaction to state changes "
+  },
+  "watchEffect": {
+    "prefix": "watchEffect",
+    "body": [
+      "watchEffect($1, ($2, $3) => {",
+      " $0",
+      "});"
+    ],
+    "description": "watchEffect from vue composition "
+  },
+  "stoppingWatcher": {
+    "prefix": "stopWatcher",
+    "body": [
+      "setTimeout(() => {",
+      "\twatchEffect(() => {})",
+      "}, ${1:100})",
+      "$0"
+    ],
+    "description": "Stopping a Watcher vue"
+  },
+  "onBeforeMount": {
+    "prefix": "onBeforeMount",
+    "body": [
+      "onBeforeMount(() => {",
+      " $0",
+      "})"
+    ],
+    "description": "Vue before mount composition lifecycle hook"
+  },
+  "onMounted": {
+    "prefix": "onmounted",
+    "body": [
+      "onMounted(() => {",
+      " $0",
+      "})"
+    ],
+    "description": "Vue mounted lifecycle hook"
+  },
+  "onBeforeUnmount": {
+    "prefix": "onBeforeUnmount",
+    "body": [
+      "onBeforeUnmount(() => {",
+      " $0",
+      "})"
+    ],
+    "description": "Vue before unmount composition lifecycle hook"
+  },
+  "onUnmounted": {
+    "prefix": "onunmounted",
+    "body": [
+      "onUnmounted(() => {",
+      " $0",
+      "})"
+    ],
+    "description": "Vue unMounted lifecycle hook"
+  },
+  "beforeUpdate": {
+    "prefix": "beforeUpdate",
+    "body": [
+      "beforeUpdate() {",
+      "\t$1",
+      "},"
+    ],
+    "description": "Type: Function."
+  },
+  "updated": {
+    "prefix": "updated",
+    "body": [
+      "updated() {",
+      "\t$1",
+      "},"
+    ],
+    "description": "Type: Function."
+  },
+  "onBeforeUpdate": {
+    "prefix": "onBeforeUpdate",
+    "body": [
+      "onBeforeUpdate(() => {",
+      " $0",
+      "})"
+    ],
+    "description": "Vue before update composition lifecycle hook"
+  },
+  "onUpdated-composition": {
+    "prefix": "onupdated",
+    "body": [
+      "onUpdated(() => {",
+      " $0",
+      "})"
+    ],
+    "description": "Vue updated lifecycle hook"
+  },
+  "activated": {
+    "prefix": "activated",
+    "body": [
+      "activated() {",
+      "\t$0",
+      "},"
+    ],
+    "description": "Type: Function."
+  },
+  "deactivated": {
+    "prefix": "deactivated",
+    "body": [
+      "deactivated() {",
+      "\t$0",
+      "},"
+    ],
+    "description": "Type: Function."
+  },
+  "onActivated-composition": {
+    "prefix": "onActivated",
+    "body": [
+      "onActivated(() => {",
+      " $0",
+      "})"
+    ],
+    "description": "Vue activated composition lifecycle hook"
+  },
+  "onDeactivated-composition": {
+    "prefix": "onDeactivated",
+    "body": [
+      "onDeactivated(() => {",
+      " $0",
+      "})"
+    ],
+    "description": "Vue deactivated composition lifecycle hook"
+  },
+  "beforeDestroy": {
+    "prefix": "beforeDestroy",
+    "body": [
+      "beforeDestroy() {",
+      "\t$0",
+      "},"
+    ],
+    "description": "Type: Function."
+  },
+  "destroyed": {
+    "prefix": "destroyed",
+    "body": [
+      "destroyed() {",
+      "\t$0",
+      "},"
+    ],
+    "description": "Type: Function."
+  },
+  "errorCaptured": {
+    "prefix": "errorCaptured",
+    "body": [
+      "errorCaptured: (err, vm, info) => {",
+      "\t$0",
+      "},"
+    ],
+    "description": "Type: (err: Error, vm: Component, info: string) => ?boolean"
+  },
+  "createRenderer": {
+    "prefix": "createRenderer",
+    "body": [
+      "createRenderer({",
+      "\t$0",
+      "})"
+    ],
+    "description": "createRenderer({ })"
+  },
+  "importVueRouter": {
+    "prefix": "importVueRouter",
+    "body": [
+      "import VueRouter from 'vue-router'"
+    ],
+    "description": "import VueRouter from 'vue-router'"
+  },
+  "importuseRouter-composition": {
+    "prefix": "importuseRouter",
+    "body": [
+      "import useRouter from 'vue-router'"
+    ],
+    "description": "import useRouter from 'vue-router'"
+  },
+  "newVueRouter": {
+    "prefix": "newVueRouter",
+    "body": [
+      "const ${1:router} = new VueRouter({",
+      "\t$2",
+      "})$0"
+    ],
+    "description": "const router = newVueRouter({ })"
+  },
+  "useRouter-composition": {
+    "prefix": "useRouter",
+    "body": [
+      "const ${1:router} = useRouter()"
+    ],
+    "description": "const router = useRouter()"
+  },
+  "useRoute-composition": {
+    "prefix": "useRoute",
+    "body": [
+      "const ${1:route} = useRoute()",
+      "$0"
+    ],
+    "description": "const route = useRoute()"
+  },
+  "routerBeforeEach": {
+    "prefix": "routerBeforeEach",
+    "body": [
+      "${1:router}.beforeEach((to, from, next) => {",
+      "\t${2:// to and from are both route objects. must call `next`.}",
+      "})$0"
+    ],
+    "description": "router.beforeEach"
+  },
+  "routerBeforeResolve": {
+    "prefix": "routerBeforeResolve",
+    "body": [
+      "${1:router}.beforeResolve((to, from, next) => {",
+      "\t${2:// to and from are both route objects. must call `next`.}",
+      "})$0"
+    ],
+    "description": "router.beforeResolve"
+  },
+  "routerAfterEach": {
+    "prefix": "routerAfterEach",
+    "body": [
+      "${1:router}.afterEach((to, from) => {",
+      "\t${2:// to and from are both route objects.}",
+      "})$0"
+    ],
+    "description": "router.afterEach"
+  },
+  "routerPush": {
+    "prefix": "routerPush",
+    "body": [
+      "${1:router}.push($2)$0"
+    ],
+    "description": "router.push()"
+  },
+  "routerReplace": {
+    "prefix": "routerReplace",
+    "body": [
+      "${1:router}.replace($2)$0"
+    ],
+    "description": "router.replace()"
+  },
+  "routerGo": {
+    "prefix": "routerGo",
+    "body": [
+      "${1:router}.go($2)$0"
+    ],
+    "description": "router.go()"
+  },
+  "routerBack": {
+    "prefix": "routerBack",
+    "body": [
+      "${1:router}.back($2)$0"
+    ],
+    "description": "router.back()"
+  },
+  "routerForward": {
+    "prefix": "routerForward",
+    "body": [
+      "${1:router}.forward($2)$0"
+    ],
+    "description": "router.forward()"
+  },
+  "routerGetMatchedComponents": {
+    "prefix": "routerGetMatchedComponents",
+    "body": [
+      "${1:router}.getMatchedComponents($2)$0"
+    ],
+    "description": "router.getMatchedComponents()"
+  },
+  "routerResolve": {
+    "prefix": "routerResolve",
+    "body": [
+      "${1:router}.resolve($2)$0"
+    ],
+    "description": "router.resolve()"
+  },
+  "routerAddRoutes": {
+    "prefix": "routerAddRoutes",
+    "body": [
+      "${1:router}.addRoutes($2)$0"
+    ],
+    "description": "router.addRoutes()"
+  },
+  "routerOnReady": {
+    "prefix": "routerOnReady",
+    "body": [
+      "${1:router}.onReady($2)$0"
+    ],
+    "description": "router.onReady()"
+  },
+  "routerOnError": {
+    "prefix": "routerOnError",
+    "body": [
+      "${1:router}.onError($2)$0"
+    ],
+    "description": "router.onError()"
+  },
+  "routes": {
+    "prefix": "routes",
+    "body": [
+      "routes: [$1]$0"
+    ],
+    "description": "routes: []"
+  },
+  "beforeEnter": {
+    "prefix": "beforeEnter",
+    "body": [
+      "beforeEnter: (to, from, next) => {",
+      "\t${0:// ...}",
+      "}"
+    ],
+    "description": "beforeEnter: (to, from, next) => { }"
+  },
+  "beforeRouteEnter": {
+    "prefix": "beforeRouteEnter",
+    "body": [
+      "beforeRouteEnter (to, from, next) {",
+      "\t${0:// ...}",
+      "}"
+    ],
+    "description": "beforeRouteEnter (to, from, next) { }"
+  },
+  "beforeRouteLeave": {
+    "prefix": "beforeRouteLeave",
+    "body": [
+      "beforeRouteLeave (to, from, next) {",
+      "\t${0:// ...}",
+      "}"
+    ],
+    "description": "beforeRouteLeave (to, from, next) { }"
+  },
+  "scrollBehavior": {
+    "prefix": "scrollBehavior",
+    "body": [
+      "scrollBehavior (to, from, savedPosition) {",
+      "\t${1:// ...}",
+      "}"
+    ],
+    "description": "scrollBehavior (to, from, savedPosition) { }"
+  },
+  "onRenderTriggered-composition": {
+    "prefix": "onRenderTriggered",
+    "body": [
+      "onRenderTriggered(() => {",
+      " $0",
+      "})"
+    ],
+    "description": "Vue onRenderTriggered lifecycle hook"
+  },
+  "onErrorCaptured-composition": {
+    "prefix": "onErrorCaptured",
+    "body": [
+      "onErrorCaptured(() => {",
+      " $0",
+      "})"
+    ],
+    "description": "Vue oneErrorCaptured lifecycle hook"
+  },
+  "onRenderTracked-composition": {
+    "prefix": "onRenderTracked",
+    "body": [
+      "onRenderTracked(() => {",
+      " $0",
+      "})"
+    ],
+    "description": "Vue onRenderTracked lifecycle hook"
+  },
+  "onServerPrefetch-compositionSSR": {
+    "prefix": "onServerPrefetch",
+    "body": [
+      "onServerPrefetch(() => {",
+      " $0",
+      "})"
+    ],
+    "description": "Vue onServerPrefetch lifecycle hook SSR Only"
+  },
+  "Const Include Type": {
+    "prefix": "constType",
+    "body": [
+      "type ${1:Name/capitalize} = {",
+      " $2",
+      "}",
+      "",
+      "cont $3: ${4:Name/capitalize} = $0"
+    ],
+    "description": "const include type with typescript"
+  },
+  "Const Include Interface": {
+    "prefix": "constInterface",
+    "body": [
+      "interface ${1:Name/capitalize} {",
+      " $2",
+      "}",
+      "",
+      "cont $3: ${4:Name/capitalize} = $0"
+    ],
+    "description": "const include interface with typescript"
+  },
+  "Class Definition": {
+    "prefix": "class",
+    "body": [
+      "class ${1:name} {",
+      "\tconstructor(${2:parameters}) {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Class Definition"
+  },
+  "Public Method Definition": {
+    "prefix": "public method",
+    "body": [
+      "/**",
+      " * ${1:name}",
+      " */",
+      "public ${1:name}() {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Public Method Definition"
+  },
+  "Private Method Definition": {
+    "prefix": "private method",
+    "body": [
+      "private ${1:name}() {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Private Method Definition"
+  },
+  "Import external module.": {
+    "prefix": "import statement",
+    "body": [
+      "import { $0 } from \"${1:module}\";"
+    ],
+    "description": "Import external module."
+  },
+  "Property getter": {
+    "prefix": "get",
+    "body": [
+      "",
+      "public get ${1:value}() : ${2:string} {",
+      "\t${3:return $0}",
+      "}",
+      ""
+    ],
+    "description": "Property getter"
+  },
+  "Console Log": {
+    "prefix": "clog",
+    "body": [
+      "console.log($1);",
+      "$0"
+    ],
+    "description": "Log to the console"
+  },
+  "console.log a variable": {
+    "prefix": "cvar",
+    "body": "console.log('${1}:', ${1})"
+  },
+  "console.error": {
+    "prefix": "cerror",
+    "body": "console.error(${0})"
+  },
+  "console.warn": {
+    "prefix": "cwarn",
+    "body": "console.warn(${0})"
+  },
+  "console.dir": {
+    "prefix": "cdir",
+    "body": "console.dir('${1}:', ${1})"
+  },
+  "addEventListener": {
+    "prefix": "ae",
+    "body": "${1:document}.addEventListener('${2:event}', ${3:ev} => {\n\t${0}\n})"
+  },
+  "removeEventListener": {
+    "prefix": "rel",
+    "body": "${1:document}.removeEventListener('${2:event}', ${3:listener})"
+  },
+  "getElementById": {
+    "prefix": "getElId",
+    "body": "${1:document}.getElementById('${2:id}')"
+  },
+  "getElementsByClassName": {
+    "prefix": "getElClass",
+    "body": "Array.from(${1:document}.getElementsByClassName('${2:class}'))"
+  },
+  "getElementsByTagName": {
+    "prefix": "getElTag",
+    "body": "Array.from(${1:document}.getElementsByTagName('${2:tag}'))"
+  },
+  "querySelector": {
+    "prefix": "qSelect",
+    "body": "${1:document}.querySelector('${2:selector}')"
+  },
+  "querySelectorAll": {
+    "prefix": "qSelectAll",
+    "body": "Array.from(${1:document}.querySelectorAll('${2:selector}'))"
+  },
+  "createDocumentFragment": {
+    "prefix": "createDocFrag",
+    "body": "${1:document}.createDocumentFragment(${2:elem})"
+  },
+  "createElement": {
+    "prefix": "cEl",
+    "body": "${1:document}.createElement(${2:elem})"
+  },
+  "classList.add": {
+    "prefix": "classListAdd",
+    "body": "${1:el}.classList.add('${2:class}')"
+  },
+  "classList.remove": {
+    "prefix": "classListRemove",
+    "body": "${1:el}.classList.remove('${2:class}')"
+  },
+  "classList.toggle": {
+    "prefix": "classListToggle",
+    "body": "${1:el}.classList.toggle('${2:class}')"
+  },
+  "getAttribute": {
+    "prefix": "getAttr",
+    "body": "${1:el}.getAttribute('${2:attr}')"
+  },
+  "removeAttribute": {
+    "prefix": "removeAttr",
+    "body": "${1:el}.removeAttribute('${2:attr}')"
+  },
+  "setAttribute": {
+    "prefix": "setAttr",
+    "body": "${1:el}.setAttribute('${2:attr}', ${3:value})"
+  },
+  "appendChild": {
+    "prefix": "appendChild",
+    "body": "${1:el}.appendChild(${2:elem})"
+  },
+  "removeChild": {
+    "prefix": "removeChild",
+    "body": "${1:el}.removeChild(${2:elem})"
+  },
+  "forEach loop": {
+    "prefix": "forEach",
+    "body": "${1:iterable}.forEach((${2:item}) => {\n\t${0}\n})"
+  },
+  "map": {
+    "prefix": "map",
+    "body": "${1:iterable}.map((${2:item}) => {\n\t${0}\n})"
+  },
+  "reduce": {
+    "prefix": "reduce",
+    "body": "${1:iterable}.reduce((${2:previous}, ${3:current}) => {\n\t${0}\n}${4:, initial})"
+  },
+  "filter": {
+    "prefix": "filter",
+    "body": "${1:iterable}.filter((${2:item}) => {\n\t${0}\n})"
+  },
+  "find": {
+    "prefix": "find",
+    "body": "${1:iterable}.find((${2:item}) => {\n\t${0}\n})"
+  },
+  "every": {
+    "prefix": "every",
+    "body": "${1:iterable}.every((${2:item}) => {\n\t${0}\n})"
+  },
+  "some": {
+    "prefix": "some",
+    "body": "${1:iterable}.some((${2:item}) => {\n\t${0}\n})"
+  },
+  "before": {
+    "prefix": "before",
+    "body": "before(async () => {\n\t${0}\n})"
+  },
+  "beforeAll": {
+    "prefix": "beforeAll",
+    "body": "beforeAll(async () => {\n\t${0}\n})"
+  },
+  "beforeEach": {
+    "prefix": "beforeEach",
+    "body": "beforeEach(async () => {\n\t${0}\n})"
+  },
+  "after": {
+    "prefix": "after",
+    "body": "after(() => {\n\t${0}\n})"
+  },
+  "afterEach": {
+    "prefix": "afterEach",
+    "body": "afterEach(() => {\n\t${0}\n})"
+  },
+  "require": {
+    "prefix": "require",
+    "body": "require('${1:module}')"
+  },
+  "import module destructured": {
+    "prefix": "id",
+    "body": "import {$2} from '${1:module}'"
+  },
+  "typeof": {
+    "prefix": "to",
+    "body": "typeof ${1:source} === '${2:undefined}'"
+  },
+  "If-Else Statement": {
+    "prefix": "ifelse",
+    "body": [
+      "if (${1:condition}) {",
+      "\t$0",
+      "} else {",
+      "\t",
+      "}"
+    ],
+    "description": "If-Else Statement"
+  },
+  "else statement": {
+    "prefix": "el",
+    "body": "else {\n\t${0}\n}"
+  },
+  "else if statement": {
+    "prefix": "ei",
+    "body": "else if (${1:condition}) {\n\t${0}\n}"
+  },
+  "Set Interval Function": {
+    "prefix": "setinterval",
+    "body": [
+      "setInterval(() => {",
+      "\t$0",
+      "}, ${1:interval});"
+    ],
+    "description": "Set Interval Function"
+  },
+  "Region Start": {
+    "prefix": "#region",
+    "body": [
+      "//#region $0"
+    ],
+    "description": "Folding Region Start"
+  },
+  "Region End": {
+    "prefix": "#endregion",
+    "body": [
+      "//#endregion"
+    ],
+    "description": "Folding Region End"
+  },
+  "Switch Statement": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:key}) {",
+      "\tcase ${2:value}:",
+      "\t\t$0",
+      "\t\tbreak;",
+      "",
+      "\tdefault:",
+      "\t\tbreak;",
+      "}"
+    ],
+    "description": "Switch Statement"
+  },
+  "While Statement": {
+    "prefix": "while",
+    "body": [
+      "while (${1:condition}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "While Statement"
+  },
+  "Do-While Statement": {
+    "prefix": "dowhile",
+    "body": [
+      "do {",
+      "\t$0",
+      "} while (${1:condition});"
+    ],
+    "description": "Do-While Statement"
+  },
+  "Try-Catch Statement": {
+    "prefix": "trycatch",
+    "body": [
+      "try {",
+      "\t$0",
+      "} catch (${1:error}) {",
+      "\t",
+      "}"
+    ],
+    "description": "Try-Catch Statement"
+  },
+  "concat": {
+    "prefix": "concat",
+    "body": [
+      "concat($1);",
+      "$0"
+    ],
+    "description": "The concat() method concatenates the string arguments to the calling string and returns a new string."
+  },
+  "endsWith": {
+    "prefix": "endsWith",
+    "body": [
+      "endsWith($1);",
+      "$0"
+    ],
+    "description": "The endsWith() method determines whether a string ends with the characters of a specified string, returning true or false as appropriate.    "
+  },
+  "fromCharCode": {
+    "prefix": "fromCharCode",
+    "body": [
+      "fromCharCode($1);",
+      "$0"
+    ],
+    "description": "The static String.fromCharCode() method returns a string created from the specified sequence of UTF-16 code units."
+  },
+  "includes": {
+    "prefix": "includes",
+    "body": [
+      "includes($1);",
+      "$0"
+    ],
+    "description": "The includes() method performs a case-sensitive search to determine whether one string may be found within another string, returning true or false as appropriate."
+  },
+  "indexOf": {
+    "prefix": "indexOf",
+    "body": [
+      "indexOf($1);",
+      "$0"
+    ],
+    "description": "The indexOf() method, given one argument: a substring to search for, searches the entire calling string, and returns the index of the first occurrence of the specified substring. Given a second argument: a number, the method returns the first occurrence of the specified substring at an index greater than or equal to the specified number."
+  },
+  "lastIndexOf": {
+    "prefix": "lastIndexOf",
+    "body": [
+      "lastIndexOf($1);",
+      "$0"
+    ],
+    "description": "The lastIndexOf() method, given one argument: a substring to search for, searches the entire calling string, and returns the index of the last occurrence of the specified substring. Given a second argument: a number, the method returns the last occurrence of the specified substring at an index less than or equal to the specified number."
+  },
+  "localeCompare": {
+    "prefix": "localeCompare",
+    "body": [
+      "localeCompare($1);",
+      "$0"
+    ],
+    "description": "The localeCompare() method returns a number indicating whether a reference string comes before, or after, or is the same as the given string in sort order. In implementations with Intl.Collator API support, this method simply calls Intl.Collator."
+  },
+  "match": {
+    "prefix": "match",
+    "body": [
+      "match($1);",
+      "$0"
+    ],
+    "description": "The match() method retrieves the result of matching a string against a regular expression."
+  },
+  "matchAll": {
+    "prefix": "matchAll",
+    "body": [
+      "matchAll($1);",
+      "$0"
+    ],
+    "description": "The matchAll() method returns an iterator of all results matching a string against a regular expression, including capturing groups."
+  },
+  "normalize": {
+    "prefix": "normalize",
+    "body": [
+      "normalize($1);",
+      "$0"
+    ],
+    "description": "The normalize() method returns the Unicode Normalization Form of the string."
+  },
+  "repeat": {
+    "prefix": "repeat",
+    "body": [
+      "repeat($1);",
+      "$0"
+    ],
+    "description": "The repeat() method constructs and returns a new string which contains the specified number of copies of the string on which it was called, concatenated together."
+  },
+  "replace": {
+    "prefix": "replace",
+    "body": [
+      "replace($1, $2);",
+      "$0"
+    ],
+    "description": "The replace() method returns a new string with one, some, or all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function called for each match. If pattern is a string, only the first occurrence will be replaced. The original string is left unchanged."
+  },
+  "replaceAll": {
+    "prefix": "replaceAll",
+    "body": [
+      "replaceAll($1, $2);",
+      "$0"
+    ],
+    "description": "The replaceAll() method returns a new string with all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match. The original string is left unchanged."
+  },
+  "search": {
+    "prefix": "search",
+    "body": [
+      "search($1);",
+      "$0"
+    ],
+    "description": "The search() method executes a search for a match between a regular expression and this String object."
+  },
+  "slice": {
+    "prefix": "slice",
+    "body": [
+      "slice($1);",
+      "$0"
+    ],
+    "description": "The slice() method extracts a section of a string and returns it as a new string, without modifying the original string."
+  },
+  "split": {
+    "prefix": "split",
+    "body": [
+      "split($1);",
+      "$0"
+    ],
+    "description": "The split() method takes a pattern and divides a String into an ordered list of substrings by searching for the pattern, puts these substrings into an array, and returns the array."
+  },
+  "startsWith": {
+    "prefix": "startsWith",
+    "body": [
+      "startsWith($1);",
+      "$0"
+    ],
+    "description": "The startsWith() method determines whether a string begins with the characters of a specified string, returning true or false as appropriate."
+  },
+  "substring": {
+    "prefix": "substring",
+    "body": [
+      "substring($1);",
+      "$0"
+    ],
+    "description": "The substring() method returns the part of the string between the start and end indexes, or to the end of the string."
+  },
+  "toLocaleLowerCase": {
+    "prefix": "toLocaleLowerCase",
+    "body": [
+      "toLocaleLowerCase($1);",
+      "$0"
+    ],
+    "description": "The toLocaleLowerCase() method returns the calling string value converted to lower case, according to any locale-specific case mappings."
+  },
+  "toLocaleUpperCase": {
+    "prefix": "toLocaleUpperCase",
+    "body": [
+      "toLocaleUpperCase($1);",
+      "$0"
+    ],
+    "description": "The toLocaleUpperCase() method returns the calling string value converted to upper case, according to any locale-specific case mappings."
+  },
+  "toLowerCase": {
+    "prefix": "toLowerCase",
+    "body": [
+      "toLowerCase()"
+    ],
+    "description": "The toLowerCase() method returns the calling string value converted to lower case."
+  },
+  "toString": {
+    "prefix": "toString",
+    "body": [
+      "toString()"
+    ],
+    "description": "The toString() method returns a string representing the specified string value."
+  },
+  "toUpperCase": {
+    "prefix": "toUpperCase",
+    "body": [
+      "toUpperCase()"
+    ],
+    "description": "The toUpperCase() method returns the calling string value converted to uppercase (the value will be converted to a string if it isn't one)."
+  },
+  "valueOf": {
+    "prefix": "valueOf",
+    "body": [
+      "valueOf()"
+    ],
+    "description": "The valueOf() method returns the primitive value of a String object."
+  },
+  "isFinite": {
+    "prefix": "isFinite",
+    "body": [
+      "isFinite($1);",
+      "$0"
+    ],
+    "description": "The Number.isFinite() method determines whether the passed value is a finite number — that is, it checks that a given value is a number, and the number is neither positive Infinity, negative Infinity, nor NaN."
+  },
+  "parseFloat": {
+    "prefix": "parseFloat",
+    "body": [
+      "parseFloat($1);",
+      "$0"
+    ],
+    "description": "The Number.parseFloat() method parses an argument and returns a floating point number. If a number cannot be parsed from the argument, it returns NaN."
+  },
+  "isNaN": {
+    "prefix": "isNaN",
+    "body": [
+      "isNaN($1);",
+      "$0"
+    ],
+    "description": "The Number.isNaN() method determines whether the passed value is the number value NaN, and returns false if the input is not of the Number type. It is a more robust version of the original, global isNaN() function."
+  },
+  "parseInt": {
+    "prefix": "parseInt",
+    "body": [
+      "parseInt($1);",
+      "$0"
+    ],
+    "description": "The Number.parseInt() method parses a string argument and returns an integer of the specified radix or base."
+  },
+  "toFixed": {
+    "prefix": "toFixed",
+    "body": [
+      "toFixed($1);",
+      "$0"
+    ],
+    "description": "The toFixed() method formats a number using fixed-point notation."
+  },
+  "toLocaleString": {
+    "prefix": "toLocaleString",
+    "body": [
+      "toLocaleString($1);",
+      "$0"
+    ],
+    "description": "The toLocaleString() method returns a string with a language-sensitive representation of this number. In implementations with Intl.NumberFormat API support, this method simply calls Intl.NumberFormat."
+  },
+  "apply": {
+    "prefix": "apply",
+    "body": [
+      "apply($1);",
+      "$0"
+    ],
+    "description": "The apply() method calls the specified function with a given this value, and arguments provided as an array (or an array-like object)."
+  },
+  "bind": {
+    "prefix": "bind",
+    "body": [
+      "bind($1);",
+      "$0"
+    ],
+    "description": "The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called."
+  },
+  "call": {
+    "prefix": "call",
+    "body": [
+      "call($1);",
+      "$0"
+    ],
+    "description": "The call() method calls the function with a given this value and arguments provided individually."
+  },
+  "defineProperties": {
+    "prefix": "defineProperties",
+    "body": [
+      "defineProperties($1, $2);",
+      "$0"
+    ],
+    "description": ""
+  },
+  "entries": {
+    "prefix": "entries",
+    "body": [
+      "entries($1);",
+      "$0"
+    ],
+    "description": "The Object.entries() method returns an array of a given object's own enumerable string-keyed property key-value pairs."
+  },
+  "values": {
+    "prefix": "values",
+    "body": [
+      "values($1);",
+      "$0"
+    ],
+    "description": "The Object.values() method returns an array of a given object's own enumerable string-keyed property values."
+  },
+  "focus": {
+    "prefix": "focus",
+    "body": [
+      "focus()"
+    ],
+    "description": "The HTMLElement.focus() method sets focus on the specified element, if it can be focused. The focused element is the element that will receive keyboard and similar events by default."
+  },
+  "blur": {
+    "prefix": "blur",
+    "body": [
+      "blur()"
+    ],
+    "description": ""
+  },
+  "innerText": {
+    "prefix": "innerText",
+    "body": [
+      "innerText"
+    ],
+    "description": "The innerText property of the HTMLElement interface represents the rendered text content of a node and its descendants."
+  },
+  "push": {
+    "prefix": "push",
+    "body": [
+      "push($1);",
+      "$0"
+    ],
+    "description": "The push() method adds one or more elements to the end of an array and returns the new length of the array."
+  },
+  "reverse": {
+    "prefix": "reverse",
+    "body": [
+      "reverse();",
+      "$0"
+    ],
+    "description": "The reverse() method reverses an array in place and returns the reference to the same array, the first array element now becoming the last, and the last array element becoming the first. In other words, elements order in the array will be turned towards the direction opposite to that previously stated."
+  },
+  "sort": {
+    "prefix": "sort",
+    "body": [
+      "sort($1);",
+      "$0"
+    ],
+    "description": "The sort() method sorts the elements of an array in place and returns the reference to the same array, now sorted. The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values."
+  },
+  "splice": {
+    "prefix": "splice",
+    "body": [
+      "splice($1);",
+      "$0"
+    ],
+    "description": "The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. To access part of an array without modifying it, see slice()."
+  },
+  "toJSON": {
+    "prefix": "toJSON",
+    "body": [
+      "toJSON();",
+      "$0"
+    ],
+    "description": "The toJSON() method returns a string representation of the Date object."
+  },
+  "toDateString": {
+    "prefix": "toDateString",
+    "body": [
+      "toDateString();",
+      "$0"
+    ],
+    "description": ""
+  },
+  "setTime": {
+    "prefix": "setTime",
+    "body": [
+      "setTime($1);",
+      "$0"
+    ],
+    "description": "The setTime() method sets the Date object to the time represented by a number of milliseconds since January 1, 1970, 00:00:00 UTC."
+  },
+  "setDate": {
+    "prefix": "setDate",
+    "body": [
+      "setDate($1);",
+      "$0"
+    ],
+    "description": "The setDate() method changes the day of the month of a given Date instance, based on local time."
+  },
+  "defineModel": {
+    "prefix": "defineModel",
+    "body": [
+      "const ${1:name} = defineModel()",
+      "$0"
+    ],
+    "description": "v-model can be used on a component to implement a two-way binding.",
+    "markdownDescription":"(v-model component)[https://vuejs.org/guide/components/v-model.html]"
+  }
+}

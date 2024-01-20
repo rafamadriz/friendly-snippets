@@ -51,7 +51,7 @@
 
     "for range loop": {
         "prefix": "for",
-        "body": ["for $1 in range(${2:start}{$3:,end}):", "\t${4:pass}"]
+        "body": ["for $1 in range(${2:start},${3:end}):", "\t${4:pass}"]
     },
 
     "if elif else": {

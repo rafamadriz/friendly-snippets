@@ -73,6 +73,11 @@
         "body": ["#define ${1:MACRO}($2) ($3)"],
         "description": "Function-like macro snippet"
     },
+    "_GNU_SOURCE": {
+        "prefix": "#gnu",
+        "body": ["#define _GNU_SOURCE"],
+        "description": "Enable GNU extensions (functions)"
+    },
     "#if": {
         "prefix": "#if",
         "body": ["#if ${1:0}", "$0", "#endif /* if $1 */"],
@@ -214,13 +219,13 @@
         "body": ["for (int ${1:i} = ${2:1}; $1 < argc; $1++) {$0", "}"],
         "description": "'for' loop for cmdline arguments"
     },
-    "Function declaration": {
-        "prefix": "fund",
-        "body": ["${2:void} ${1:fun}(${3:void});"],
-        "description": "Declare a function"
+    "Function ...": {
+        "prefix": "fun",
+        "body": ["${2:void} ${1:fun}(${3:void})$0"],
+        "description": "Make a function declaration/definition/pointer"
     },
     "Function definition": {
-        "prefix": "fun",
+        "prefix": "func",
         "body": ["${2:void} ${1:fun}(${3:void})", "{$0", "}"],
         "description": "Define a function"
     },
@@ -296,7 +301,7 @@
     },
     "snprintf": {
         "prefix": "snprintf",
-        "body": ["sprintf(${1:buf}, ${2:max}, \"${3:%s}\\n\"$3)$0"],
+        "body": ["snprintf(${1:buf}, ${2:max}, \"${3:%s}\\n\"$3)$0"],
         "description": "snprintf() snippet"
     },
     "scanf": {
