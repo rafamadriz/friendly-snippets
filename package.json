@@ -277,6 +277,10 @@
                 "path": "./snippets/javascript/react-es7.json"
             },
             {
+                "language": "terraform",
+                "path": "./snippets/terraform.json"
+            },
+            {
                 "language": "svelte",
                 "path": "./snippets/svelte.json"
             },
