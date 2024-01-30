@@ -391,6 +391,8 @@
             "      app: ${1:myapp}",
             "  template:",
             "    metadata:",
+            "      annotations:",
+            "        kubectl.kubernetes.io/default-container:  ${1:myapp}",
             "      labels:",
             "        app: ${1:myapp}",
             "    spec:",
