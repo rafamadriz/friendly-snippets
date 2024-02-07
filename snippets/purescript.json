@@ -1,0 +1,91 @@
+{
+  "ado": {
+    "body": [
+      "ado",
+      "  ${1:binder} ← ${2:expression}",
+      "",
+      "  in ${3:experssion}"
+    ],
+    "description": "Ado-block",
+    "prefix": [
+      "ado"
+    ]
+  },
+  "case": {
+    "body": [
+      "case ${1:expression} of",
+      "  ${2:case1} → ${3:result}",
+      "  ${4:case2} → ${5:result}$0"
+    ],
+    "description": "Case statement",
+    "prefix": [
+      "case"
+    ]
+  },
+  "derive-instance": {
+    "body": [
+      "derive instance ${1:type}"
+    ],
+    "description": "Derive instance",
+    "prefix": [
+      "derive",
+      "drv"
+    ]
+  },
+  "derive-newtype-instance": {
+    "body": [
+      "derive newtype instance ${1:type}"
+    ],
+    "description": "Derive newtype instance",
+    "prefix": [
+      "derive-newtype",
+      "drvnt",
+      "dni"
+    ]
+  },
+  "do": {
+    "body": [
+      "do",
+      "  ${1:binder} ← ${2:expression}"
+    ],
+    "description": "Do-block",
+    "prefix": [
+      "do"
+    ]
+  },
+  "foreign-import": {
+    "body": [
+      "foreign import ${1:name} ∷ ${2:type}"
+    ],
+    "description": "Foreign import",
+    "prefix": [
+      "foreign",
+      "fri"
+    ]
+  },
+  "foreign-import-data": {
+    "body": [
+      "foreign import data ${1:name} ∷ ${2:kind}"
+    ],
+    "description": "Foreign import data",
+    "prefix": [
+      "foreign-data",
+      "frd"
+    ]
+  },
+  "open-row-type-alias": {
+    "body": [
+      "type ${1:type} r =",
+      "  ( ${2:field} ∷ ${3:type}",
+      "  , ${4:field} ∷ ${5:type}",
+      "  | r",
+      "  )"
+    ],
+    "description": "Type alias for an open row",
+    "prefix": [
+      "open-row-type-alias",
+      "rta",
+      "row"
+    ]
+  }
+}
