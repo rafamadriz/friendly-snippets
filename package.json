@@ -190,12 +190,16 @@
             },
             {
                 "language": ["markdown", "rmd"],
-                "path": "./snippets/markdown.json"
+                "path": "./snippets/markdown/*"
             },
             {
                 "language": ["markdown", "rmd"],
-                "path": "./snippets/markdown-math.json"
+                "path": "./snippets/markdown/markdown-math.json"
             },
+            {
+                "language": ["markdown", "rmd"],
+                "path": "./snippets/markdown/greek-alphabets.json"
+            }.
             {
                 "language": ["plaintex", "tex"],
                 "path": "./snippets/latex.json"

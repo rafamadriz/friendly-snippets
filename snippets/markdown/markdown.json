@@ -397,6 +397,11 @@
       "body": "\\propto",
       "description": "Insert proportional sign"
     },
+    "Insert Comment": {
+      "prefix": ["com", "comment"],
+      "body": "<!--- ${1:comment} --->",
+      "description": "Insert Comment"
+    },
     "Insert Note": {
       "prefix": ["note", "n"],
       "body": "> [!NOTE]\n> ",
