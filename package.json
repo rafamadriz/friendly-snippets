@@ -193,6 +193,10 @@
                 "path": "./snippets/markdown.json"
             },
             {
+                "language": ["markdown", "rmd"],
+                "path": "./snippets/markdown-math.json"
+            },
+            {
                 "language": ["plaintex", "tex"],
                 "path": "./snippets/latex.json"
             },
@@ -509,10 +513,7 @@
                 "path": "./snippets/reason.json"
             },
             {
-                "language": [
-                    "ocaml",
-                    "ocamlinterface"
-                ],
+                "language": ["ocaml","ocamlinterface"],
                 "path": "./snippets/ocaml/ocaml.json"
             },
             {
