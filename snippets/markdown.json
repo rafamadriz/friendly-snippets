@@ -725,5 +725,30 @@
       "prefix": "\\propto",
       "body": "\\propto",
       "description": "Insert proportional sign"
-    }
+    },
+    "Insert Note": {
+      "prefix": ["note", "n"],
+      "body": "> [!NOTE]\n> ",
+      "description": "Insert Note"
+    },
+    "Insert Tip": {
+      "prefix": ["tip", "t"],
+      "body": "> [!TIP]\n> ",
+      "description": "Insert Tip"
+    },
+    "Insert Important": {
+      "prefix": ["important", "imp"],
+      "body": "> [!IMPORTANT]\n> ",
+      "description": "Insert Important"
+    },
+    "Insert Warning": {
+      "prefix": ["warning", "w"],
+      "body": "> [!WARNING]\n> ",
+      "description": "Insert Warning"
+    },
+    "Insert Caution": {
+      "prefix": ["caution", "c"],
+      "body": "> [!CAUTION]\n> ",
+      "description": "Insert Caution"
+  }
 }
