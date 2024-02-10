@@ -750,5 +750,5 @@
       "prefix": ["caution", "c"],
       "body": "> [!CAUTION]\n> ",
       "description": "Insert Caution"
-  }
+    }
 }
