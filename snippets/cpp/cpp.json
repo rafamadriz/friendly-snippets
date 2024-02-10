@@ -189,10 +189,9 @@
         "prefix": "try",
         "body": [
             "try {",
-            "\t",
+            "\t$2",
             "}",
-            "catch (const std::exception&) {",
-            "\t$1",
+            "catch (${1:const std::exception&}) {",
             "}"
         ],
         "description": "Code snippet for try catch"
@@ -244,12 +243,12 @@
     },
     "#inc": {
         "prefix": "#inc",
-        "body": ["#include \"$0\""],
+        "body": ["#include \"$1\"$2"],
         "description": "Code snippet for #include \" \""
     },
     "#inc<": {
         "prefix": "#inc<",
-        "body": ["#include <$0>"],
+        "body": ["#include <$1>$2"],
         "description": "Code snippet for #include < >"
     },
     "#def": {
@@ -266,5 +265,54 @@
             "}"
         ],
         "description": "A standard main function for a C++ program"
+    },
+    "#guard": {
+      "prefix": "#guard",
+      "body": [
+        "#ifndef INCLUDE${TM_DIRECTORY/.*[\\\/](.*)/_${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_",
+        "#define INCLUDE${TM_DIRECTORY/.*[\\\/](.*)/_${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_",
+        "",
+        "$0",
+        "",
+        "#endif  // INCLUDE${TM_DIRECTORY/.*[\\\/](.*)/_${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_"
+      ],
+      "description": "header guard. format :\n\tINCLUDE_<dirname>_<filename>_<extension>_"
+    },
+    "sca": {
+      "prefix": "sca",
+      "body": [
+        "static_cast<${1:unsigned}>(${2:expr})$3"
+      ],
+      "description": "static_cast<type>(expression)"
+    },
+    "dca": {
+      "prefix": "dca",
+      "body": [
+        "dynamic_cast<${1:unsigned}>(${2:expr})$3"
+      ],
+      "description": "dynamic_cast<type>(expression)"
+    },
+    "rca": {
+      "prefix": "rca",
+      "body": [
+        "reinterpret_cast<${1:unsigned}>(${2:expr})$3"
+      ],
+      "description": "reinterpret_cast<type>(expression)"
+    },
+    "cca": {
+      "prefix": "cca",
+      "body": [
+        "const_cast<${1:unsigned}>(${2:expr})$3"
+      ],
+      "description": "const_cast<type>(expression)"
+    },
+    "af": {
+      "prefix": "af",
+      "body": [
+        "auto ${1:name}( ${2:void} ) -> ${3:auto} {",
+        "\t${5}",
+        "}"
+      ],
+      "description": "auto function and trailing return"
     }
 }
