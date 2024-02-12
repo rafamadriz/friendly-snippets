@@ -488,6 +488,18 @@
         ],
         "description": "Creates a React Functional Component with ES7 module system"
     },
+    "reactFunctionalViteComponent": {
+        "prefix": "rfcv",
+        "body": [
+            "export default function ${1:${TM_FILENAME_BASE}}() {",
+            "  return (",
+            "    <div>${1:first}</div>",
+            "  )",
+            "}",
+            ""
+        ],
+        "description": "Creates a React Functional Component with ES7 module system, compatible with Vite"
+    },
     "reactFunctionalComponentRedux": {
         "prefix": "rfcredux",
         "body": [
