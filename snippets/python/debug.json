@@ -30,5 +30,15 @@
     "Pretty print": {
         "prefix": "pprint",
         "body": "__import__('pprint').pprint(${1:expression})$0"
+    },
+    "debugpy remote attach": {
+        "prefix": "debugpy",
+        "body": [
+            "import debugpy, platform",
+            "debugpy.listen((platform.node(), ${1:5678}))",
+            "print(f\"debugpy listening on {platform.node()}:$1\", flush=True)",
+            "debugpy.wait_for_client()$0"
+        ],
+        "description": "Code snippet for debugpy remote attach"
     }
 }
