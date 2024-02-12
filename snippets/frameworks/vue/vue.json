@@ -30,6 +30,11 @@
         "body": ["<style lang=\"$1\">", "\t$0", "</style>"],
         "description": "style element with lang attribute"
     },
+    "styleLangScoped": {
+        "prefix": "styleLangScoped",
+        "body": ["<style lang=\"$1\" scoped>", "\t$0", "</style>"],
+        "description": "style scoped element with lang attribute"
+    },
     "styleScoped": {
         "prefix": "styleScoped",
         "body": ["<style scoped>", "\t$0", "</style>"],
@@ -284,29 +289,5 @@
             "</style>"
         ],
         "description": "Base for Vue File Setup Composition API - Typescript"
-    },
-    "Vue Single File Component with Class based Typescript format": {
-        "prefix": "vbase-ts-class",
-        "body": [
-            "<template>",
-            "\t<div>",
-            "",
-            "\t</div>",
-            "</template>",
-            "",
-            "<script lang=\"ts\">",
-            "\timport { Component, Vue } from 'vue-property-decorator';",
-            "",
-            "\t@Component",
-            "\texport default class $TM_FILENAME_BASE extends Vue {",
-            "\t\t",
-            "\t}",
-            "</script>",
-            "",
-            "<style scoped>",
-            "",
-            "</style>"
-        ],
-        "description": "Base for Vue File with Class based Typescript format"
     }
 }
