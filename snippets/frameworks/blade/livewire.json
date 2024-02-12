@@ -1,0 +1,17 @@
+{
+  "livewireStyles": {
+    "prefix": "livewire:styles",
+    "body": "@livewireStyles",
+    "description": "Livewire Styles directive"
+  },
+  "livewireScripts": {
+    "prefix": "livewire:scripts",
+    "body": "@livewireScripts",
+    "description": "Livewire Scripts directive"
+  },
+  "livewire-component": {
+    "prefix": "livewire:component",
+    "body": "@livewire('${1:component}', ['${2:user}' => \\$${3:user}]${4:, key(\\$$3->id)})",
+    "description": "Livewire nesting components"
+  }
+}

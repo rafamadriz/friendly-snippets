@@ -224,7 +224,8 @@
                     "eruby",
                     "javascriptreact",
                     "htmldjango",
-                    "astro"
+                    "astro",
+		    "blade"
                 ],
                 "path": "./snippets/html.json"
             },
@@ -421,9 +422,25 @@
                 "path": "./snippets/latex/bibtex.json"
             },
             {
-                "language": "twig",
+        	"language": "twig",
                 "path": "./snippets/frameworks/twig.json"
             },
+	    {
+	    	"language": "blade",
+	    	"path": "./snippets/frameworks/blade/blade.json"
+	    },
+	    {
+		"language": "blade",
+		"path": "./snippets/frameworks/blade/helpers.json"
+	    },
+	    {
+		"language": "blade",
+		"path": "./snippets/frameworks/blade/livewire.json"
+	    },
+	    {
+		"language": "blade",
+		"path": "./snippets/frameworks/blade/snippets.json"
+	    },
             {
                 "language": ["r", "rmd"],
                 "path": "./snippets/r.json"
@@ -530,3 +547,4 @@
         ]
     }
 }
+
