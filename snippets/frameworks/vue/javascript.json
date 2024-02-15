@@ -20,29 +20,74 @@
     ],
     "description": "A utility for waiting for the next DOM update flush."
   },
-  "defineAsyncComponent": {
-    "prefix": "defineAsyncComponent",
+  "defineProps": {
+    "prefix": "defineProps",
     "body": [
-      "const $1 = defineAsyncComponent(() =>",
-      "import('$0')",
-      ");"
+      "const props = defineProps({",
+      "\t$0",
+      "});"
     ],
-    "description": "create a async vue component"
+    "description": "A list/hash of attributes that are exposed to accept data from the parent component. "
+  },
+  "defineProps-TS": {
+    "prefix": "definePropsTS",
+    "body": [
+      "const props = defineProps<{",
+      "\t$0",
+      "}>()"
+    ],
+    "description": "A list/hash of attributes that are exposed to accept data from the parent component. "
+  },
+  "defineEmits": {
+    "prefix": "defineEmits",
+    "body": [
+      "const ${1:emit} = defineEmits([ $0 ]);"
+    ],
+    "description": "A list of events that componetnt can emits to the parent component. "
+  },
+  "defineEmits-TS": {
+    "prefix": "defineEmitsTS",
+    "body": [
+      "const ${5:emit} = defineEmits<{",
+      "\t(e: '${4:event}', ${3:id}: ${2:type}: ${1:type}) ",
+      "\t$0",
+      "}>()"
+    ],
+    "description": "A list of events that componetnt can emits to the parent component. "
+  },
+  "defineEmits-TS-tuple": {
+    "prefix": "defineEmitsTStuple",
+    "body": [
+      "const ${4:emit} = defineEmits<{",
+      "\t${3:event}: [${2:id}: ${1:type}]",
+      "\t$0",
+      "}>()"
+    ],
+    "description": "(3.3+: alternative, more succinct syntax) a list of events that componetnt can emits to the parent component. "
   },
   "defineComponent": {
     "prefix": "defineComponent",
     "body": [
       "const $1 = defineComponent({",
-      "$0",
+      "\t$0",
       "})"
     ],
     "description": "create a component vue component"
+  },
+  "defineAsyncComponent": {
+    "prefix": "defineAsyncComponent",
+    "body": [
+      "const $1 = defineAsyncComponent(() =>",
+      "\timport('$0')",
+      ");"
+    ],
+    "description": "create a async vue component"
   },
   "defineCustomElement": {
     "prefix": "defineCustomElement",
     "body": [
       "const $1 = defineCustomElement({",
-      "$0",
+      "\t$0",
       "})"
     ],
     "description": "create a custom element vue"
@@ -58,22 +103,6 @@
     ],
     "description": "The data object for the Vue instance."
   },
-  "props-composition": {
-    "prefix": "defineProps",
-    "body": [
-      "const props = defineProps({",
-      "$0",
-      "});"
-    ],
-    "description": "A list/hash of attributes that are exposed to accept data from the parent component. "
-  },
-  "emits-composition": {
-    "prefix": "emitsVue",
-    "body": [
-      "const emits = defineEmits([ $0 ]);"
-    ],
-    "description": "A list of events that componetnt can emits to the parent component. "
-  },
   "computed-options": {
     "prefix": "computed",
     "body": [
@@ -87,7 +116,16 @@
     "prefix": "computedVue",
     "body": [
       "const $1 = computed(() => {",
-      "$0",
+      "\t$0",
+      "});"
+    ],
+    "description": "Computed properties to be mixed into the Vue instance. "
+  },
+  "computed-composition-ts": {
+    "prefix": "computedVueTS",
+    "body": [
+      "const $2 = computed<${1:type}>(() => {",
+      "\t$0",
       "});"
     ],
     "description": "Computed properties to be mixed into the Vue instance. "
@@ -95,7 +133,22 @@
   "reactive-composition": {
     "prefix": "reactiveVue",
     "body": [
-      "const $1 = reactive($0)"
+      "const $1 = reactive({",
+      "\t$0",
+      "})"
+    ],
+    "description": "Reative properties to be mixed into the Vue instance. "
+  },
+  "reactive-composition-ts": {
+    "prefix": "reactiveVueTS",
+    "body": [
+      "interface $5 {",
+      "\t${4:property}: ${3:type}",
+      "}",
+      "",
+      "const $2:${1:type} = reactive({",
+      "\t$0",
+      "})"
     ],
     "description": "Reative properties to be mixed into the Vue instance. "
   },
