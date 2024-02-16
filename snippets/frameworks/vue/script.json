@@ -48,8 +48,8 @@
   "defineEmits-TS": {
     "prefix": "defineEmitsTS",
     "body": [
-      "const ${5:emit} = defineEmits<{",
-      "\t(e: '${4:event}', ${3:id}: ${2:type}: ${1:type}) ",
+      "const ${1:emit} = defineEmits<{",
+      "\t(e: '${2:event}', ${3:id}: ${4:type}: ${5:type}) ",
       "\t$0",
       "}>()"
     ],
@@ -58,8 +58,8 @@
   "defineEmits-TS-tuple": {
     "prefix": "defineEmitsTStuple",
     "body": [
-      "const ${4:emit} = defineEmits<{",
-      "\t${3:event}: [${2:id}: ${1:type}]",
+      "const ${1:emit} = defineEmits<{",
+      "\t${2:event}: [${3:id}: ${4:type}]",
       "\t$0",
       "}>()"
     ],
@@ -124,7 +124,7 @@
   "computed-composition-ts": {
     "prefix": "computedVueTS",
     "body": [
-      "const $2 = computed<${1:type}>(() => {",
+      "const $1 = computed<${2:type}>(() => {",
       "\t$0",
       "});"
     ],
@@ -142,27 +142,77 @@
   "reactive-composition-ts": {
     "prefix": "reactiveVueTS",
     "body": [
-      "interface $5 {",
-      "\t${4:property}: ${3:type}",
+      "interface $1 {",
+      "\t${2:property}: ${3:type}",
       "}",
       "",
-      "const $2:${1:type} = reactive({",
+      "const $4:${5:type} = reactive({",
       "\t$0",
       "})"
     ],
     "description": "Reactive properties to be mixed into the Vue instance. "
   },
   "shallow-reactive-composition": {
-    "prefix": "sreactVue",
+    "prefix": "shallowReactive",
     "body": [
-      "const $1 = shallowReactive({$0})"
+      "const ${1:state} = shallowReactive({",
+      "\t$0",
+      "})"
     ],
-    "description": "Shallow reative properties to be mixed into the Vue instance. "
+    "description": "Shallow version of reactive(). Use with Caution !! Shallow data structures should only be used for root level state in a component. Avoid nesting it inside a deep reactive object as it creates a tree with inconsistent reactivity behavior which can be difficult to understand and debug."
+  },
+  "shallowReadonly": {
+    "prefix": "shallowReadonly",
+    "body": [
+      "const ${1:state} = shallowReadonly({",
+      "\t$0",
+      "})"
+    ],
+    "description": "Shallow version of readonly(). Use with Caution !! Shallow data structures should only be used for root level state in a component. Avoid nesting it inside a deep reactive object as it creates a tree with inconsistent reactivity behavior which can be difficult to understand and debug."
+  },
+  "toRaw": {
+    "prefix": "toRaw()",
+    "body": [
+      "toRaw($0)"
+    ],
+    "description": "Returns the raw, original object of a Vue-created proxy."
+  },
+  "effectScope": {
+    "prefix": "effectScope()",
+    "body": [
+      "const $1 = effectScope()",
+      "$0"
+    ],
+    "description": "Returns the current active effect scope if there is one."
+  },
+  "getCurrentScope": {
+    "prefix": "getCurrentScope",
+    "body": [
+      "const $1 = getCurrentScope()",
+      "$0"
+    ],
+    "description": "Returns the current active effect scope if there is one."
+  },
+  "onScopeDispose": {
+    "prefix": "onScopeDispose()",
+    "body": [
+      "const $1 = onScopeDispose()",
+      "$0"
+    ],
+    "description": "Registers a dispose callback on the current active effect scope. The callback will be invoked when the associated effect scope is stopped."
   },
   "ref-composition": {
     "prefix": "refVue",
     "body": [
       "const $1 = ref($2)",
+      "$0"
+    ],
+    "description": "Ref properties to be mixed into the Vue instance. "
+  },
+  "ref-composition-ts": {
+    "prefix": "refVueTS",
+    "body": [
+      "const $3 = ref<${2:type}>($1)",
       "$0"
     ],
     "description": "Ref properties to be mixed into the Vue instance. "
@@ -190,7 +240,7 @@
     ],
     "description": "Methods to be mixed into the Vue instance."
   },
-  "method-composition": {
+  "function": {
     "prefix": "functionVue3",
     "body": [
       "const $1 = ($2) => {",
@@ -199,36 +249,14 @@
     ],
     "description": "Method composition properties to be mixed into the Vue instance. "
   },
-  "watch-options": {
+  "watch": {
     "prefix": "watch",
-    "body": [
-      "watch: {",
-      "\t$1",
-      "},$0"
-    ],
-    "description": "An object where keys are expressions to watch and values are the corresponding callbacks. The value can also be a string of a method name, or an Object that contains additional options. Note that you should not use an arrow function to define a watcher."
-  },
-  "watch-composition": {
-    "prefix": "cwatch",
     "body": [
       "watch($1, ($2, $3) => {",
       "$0",
       "});"
     ],
     "description": "Watch over a reactive source and call a function in reaction to state changes "
-  },
-  "watchWithOptions": {
-    "prefix": "watchWithOptions",
-    "body": [
-      "${1:key}: {",
-      "\tdeep: ${2:true},",
-      "\timmediate: ${3:true},",
-      "\thandler: function (${4:val}, ${5:oldVal}) {",
-      "\t\t$6",
-      "\t}",
-      "},$0"
-    ],
-    "description": "Vue Watcher with options."
   },
   "watchEffect-composition": {
     "prefix": "watchEffect",
@@ -239,28 +267,38 @@
     ],
     "description": "watchEffect from vue composition "
   },
-  "onBeforeMount-composition": {
+  "stoppingWatcher": {
+    "prefix": "stopWatcher",
+    "body": [
+      "setTimeout(() => {",
+      "\twatchEffect(() => {})",
+      "}, ${1:100})",
+      "$0"
+    ],
+    "description": "Stopping a Watcher vue"
+  },
+  "onBeforeMount": {
     "prefix": "onBeforeMount",
     "body": [
       "onBeforeMount(() => {$0})"
     ],
     "description": "Vue before mount composition lifecycle hook"
   },
-  "onMounted-composition": {
+  "onMounted": {
     "prefix": "onmounted",
     "body": [
       "onMounted(() => {$0})"
     ],
     "description": "Vue mounted lifecycle hook"
   },
-  "onBeforeUnmount-composition": {
+  "onBeforeUnmount": {
     "prefix": "onBeforeUnmount",
     "body": [
       "onBeforeUnmount(() => {$0})"
     ],
     "description": "Vue before unmount composition lifecycle hook"
   },
-  "onUnmounted-composition": {
+  "onUnmounted": {
     "prefix": "onunmounted",
     "body": [
       "onUnmounted(() => {$0})"
@@ -285,7 +323,7 @@
     ],
     "description": "Type: Function."
   },
-  "onBeforeUpdate-composition": {
+  "onBeforeUpdate": {
     "prefix": "onBeforeUpdate",
     "body": [
       "onBeforeUpdate(() => {$0})"
@@ -512,7 +550,7 @@
     "prefix": "beforeEnter",
     "body": [
       "beforeEnter: (to, from, next) => {",
-      "\t${1:// ...}",
+      "\t${0:// ...}",
       "}"
     ],
     "description": "beforeEnter: (to, from, next) => { }"
@@ -521,7 +559,7 @@
     "prefix": "beforeRouteEnter",
     "body": [
       "beforeRouteEnter (to, from, next) {",
-      "\t${1:// ...}",
+      "\t${0:// ...}",
       "}"
     ],
     "description": "beforeRouteEnter (to, from, next) { }"
@@ -530,7 +568,7 @@
     "prefix": "beforeRouteLeave",
     "body": [
       "beforeRouteLeave (to, from, next) {",
-      "\t${1:// ...}",
+      "\t${0:// ...}",
       "}"
     ],
     "description": "beforeRouteLeave (to, from, next) { }"
@@ -543,141 +581,6 @@
       "}"
     ],
     "description": "scrollBehavior (to, from, savedPosition) { }"
-  },
-  "path": {
-    "prefix": "path",
-    "body": [
-      "path"
-    ],
-    "description": "just a word"
-  },
-  "alias": {
-    "prefix": "alias",
-    "body": [
-      "alias"
-    ],
-    "description": "just a word"
-  },
-  "mode": {
-    "prefix": "mode",
-    "body": [
-      "mode"
-    ],
-    "description": "just a word"
-  },
-  "children": {
-    "prefix": "children",
-    "body": [
-      "children"
-    ],
-    "description": "just a word"
-  },
-  "meta": {
-    "prefix": "meta",
-    "body": [
-      "meta"
-    ],
-    "description": "just a word"
-  },
-  "asyncData": {
-    "prefix": "asyncData",
-    "body": [
-      "asyncData({${1:isDev}${2:, route}${3:, store}${4:, env}${5:, params}${6:, query}${7:, req}${8:, res}${9:, redirect}${10:, error}}) {",
-      "\t$11",
-      "},"
-    ],
-    "description": "Type: Function."
-  },
-  "click": {
-    "prefix": "click",
-    "body": [
-      "click"
-    ],
-    "description": "just a word"
-  },
-  "submit": {
-    "prefix": "submit",
-    "body": [
-      "submit"
-    ],
-    "description": "just a word"
-  },
-  "mouse": {
-    "prefix": "mouse",
-    "body": [
-      "mouse"
-    ],
-    "description": "just a word"
-  },
-  "scroll": {
-    "prefix": "scroll",
-    "body": [
-      "scroll"
-    ],
-    "description": "just a word"
-  },
-  "keyup": {
-    "prefix": "keyup",
-    "body": [
-      "keyup"
-    ],
-    "description": "just a word"
-  },
-  "enter": {
-    "prefix": "enter",
-    "body": [
-      "enter"
-    ],
-    "description": "just a word"
-  },
-  "page-down": {
-    "prefix": "page-down",
-    "body": [
-      "page-down"
-    ],
-    "description": "just a word"
-  },
-  "stop": {
-    "prefix": "stop",
-    "body": [
-      "stop"
-    ],
-    "description": "just a word"
-  },
-  "prevent": {
-    "prefix": "prevent",
-    "body": [
-      "prevent"
-    ],
-    "description": "just a word"
-  },
-  "self": {
-    "prefix": "self",
-    "body": [
-      "self"
-    ],
-    "description": "just a word"
-  },
-  "capture": {
-    "prefix": "capture",
-    "body": [
-      "capture"
-    ],
-    "description": "just a word"
-  },
-  "once": {
-    "prefix": "once",
-    "body": [
-      "once"
-    ],
-    "description": "just a word"
-  },
-  "passive": {
-    "prefix": "passive",
-    "body": [
-      "passive"
-    ],
-    "description": "just a word"
   },
   "onRenderTriggered-composition": {
     "prefix": "onRenderTriggered",

@@ -1,0 +1,46 @@
+{
+  "tailwind-base": {
+    "prefix": "tailwindBase",
+    "body": [
+      "@tailwind base;",
+      "@tailwind components;",
+      "@tailwind utilities;"
+    ],
+    "description": "An opinionated set of base styles for Tailwind projects."
+  },
+  "aspect-auto": {
+    "prefix": "aspect-auto",
+    "body": [
+      "aspect-auto $0"
+    ],
+    "description": "aspect-ratio: auto;"
+  },
+  "aspect-square": {
+    "prefix": "aspect-square",
+    "body": [
+      "aspect-square $0"
+    ],
+    "description": "aspect-ratio: 1 / 1;"
+  },
+  "aspect-video": {
+    "prefix": "aspect-video",
+    "body": [
+      "aspect-video $0"
+    ],
+    "description": "aspect-ratio: 16 / 9;"
+  },
+  "aspect-arbitrary": {
+    "prefix": "aspectArbitrary",
+    "body": [
+      "aspect-[$1] $0"
+    ],
+    "description": "aspect arbitrary values"
+  },
+  "container": {
+    "prefix": "container",
+    "body": [
+      "container"
+    ],
+    "description": "container => sm(640px), md(768px), lg(1024px), xl(1280px), 2xl(1536px) and use max-width overall"
+  }
+}
