@@ -1,0 +1,47 @@
+{
+  "root": {
+    "prefix": "root",
+    "body": "# EditorConfig is awesome: https://EditorConfig.org\n\n# top-most EditorConfig file\nroot = true\n\n# Unix-style newlines with a newline ending every file\n[*]\nend_of_line = lf\ninsert_final_newline = true\n\n# Matches multiple files with brace expansion notation\n# Set default charset\n[*.{js,py}]\ncharset = utf-8\n\n# 4 space indentation\n[*.py]\nindent_style = space\nindent_size = 4\n\n# Tab indentation (no size specified)\n[Makefile]\nindent_style = tab\n\n# Indentation override for all JS under lib directory\n[lib/**.js]\nindent_style = space\nindent_size = 2\n\n# Matches the exact files either package.json or .travis.yml\n[{package.json,.travis.yml}]\nindent_style = space\nindent_size = 2",
+    "description": "Editorconfig root configuration"
+  },
+  "indent_style": {
+    "prefix": "istyle",
+    "body": "indent_style = space",
+    "description": "Indentation Style (tab or space)"
+  },
+  "indent_size": {
+    "prefix": "isize",
+    "body": "indent_size = 2",
+    "description": "Indentation Size (integer or 'tab')"
+  },
+  "tab_width": {
+    "prefix": "tw",
+    "body": "tab_width = 4",
+    "description": "Width of a single tabstop character"
+  },
+  "end_of_line": {
+    "prefix": "eol",
+    "body": "end_of_line = lf",
+    "description": "Line ending file format (lf, crlf, or cr)"
+  },
+  "charset": {
+    "prefix": "char",
+    "body": "charset = utf-8",
+    "description": "File character encoding (latin1, utf-8, utf-16be, utf-16le, utf-8-bom)"
+  },
+  "trim_trailing_space": {
+    "prefix": "tts",
+    "body": "trim_trailing_whitespace = true",
+    "description": "Denotes whether whitespace is removed from the end of lines"
+  },
+  "insert_final_newline": {
+    "prefix": "ifn",
+    "body": "insert_final_newline = true",
+    "description": "Denotes whether file should end with a newline"
+  },
+  "max_line_length": {
+    "prefix": "mll",
+    "body": "max_line_length = 80",
+    "description": "Forces hard line wrapping after the amount of characters specified. 'off' to turn off this feature."
+  }
+}

@@ -45,6 +45,10 @@
                 "path": "./snippets/csharp/csharpdoc.json"
             },
             {
+                "language": "editorconfig",
+                "path": "./snippets/editorconfig.json"
+            },
+            {
                 "language": ["gitcommit", "NeogitCommitMessage"],
                 "path": "./snippets/gitcommit.json"
             },
@@ -547,6 +551,10 @@
             {
                 "language": "dune",
                 "path": "./snippets/ocaml/dune.json"
+            },
+            {
+                "language": "purescript",
+                "path": "./snippets/purescript.json"
             }
         ]
     }
