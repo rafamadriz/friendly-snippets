@@ -547,6 +547,10 @@
             {
                 "language": "dune",
                 "path": "./snippets/ocaml/dune.json"
+            },
+            {
+                "language": "purescript",
+                "path": "./snippets/purescript.json"
             }
         ]
     }
