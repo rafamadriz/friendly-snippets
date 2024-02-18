@@ -280,28 +280,36 @@
   "onBeforeMount": {
     "prefix": "onBeforeMount",
     "body": [
-      "onBeforeMount(() => {$0})"
+      "onBeforeMount(() => {",
+      " $0",
+      "})"
     ],
     "description": "Vue before mount composition lifecycle hook"
   },
   "onMounted": {
     "prefix": "onmounted",
     "body": [
-      "onMounted(() => {$0})"
+      "onMounted(() => {",
+      " $0",
+      "})"
     ],
     "description": "Vue mounted lifecycle hook"
   },
   "onBeforeUnmount": {
     "prefix": "onBeforeUnmount",
     "body": [
-      "onBeforeUnmount(() => {$0})"
+      "onBeforeUnmount(() => {",
+      " $0",
+      "})"
     ],
     "description": "Vue before unmount composition lifecycle hook"
   },
   "onUnmounted": {
     "prefix": "onunmounted",
     "body": [
-      "onUnmounted(() => {$0})"
+      "onUnmounted(() => {",
+      " $0",
+      "})"
     ],
     "description": "Vue unMounted lifecycle hook"
   },
@@ -326,14 +334,18 @@
   "onBeforeUpdate": {
     "prefix": "onBeforeUpdate",
     "body": [
-      "onBeforeUpdate(() => {$0})"
+      "onBeforeUpdate(() => {",
+      " $0",
+      "})"
     ],
     "description": "Vue before update composition lifecycle hook"
   },
   "onUpdated-composition": {
     "prefix": "onupdated",
     "body": [
-      "onUpdated(() => {$0})"
+      "onUpdated(() => {",
+      " $0",
+      "})"
     ],
     "description": "Vue updated lifecycle hook"
   },
@@ -358,14 +370,18 @@
   "onActivated-composition": {
     "prefix": "onActivated",
     "body": [
-      "onActivated(() => {$0})"
+      "onActivated(() => {",
+      " $0",
+      "})"
     ],
     "description": "Vue activated composition lifecycle hook"
   },
   "onDeactivated-composition": {
     "prefix": "onDeactivated",
     "body": [
-      "onDeactivated(() => {$0})"
+      "onDeactivated(() => {",
+      " $0",
+      "})"
     ],
     "description": "Vue deactivated composition lifecycle hook"
   },
@@ -373,7 +389,7 @@
     "prefix": "beforeDestroy",
     "body": [
       "beforeDestroy() {",
-      "\t$1",
+      "\t$0",
       "},"
     ],
     "description": "Type: Function."
@@ -382,7 +398,7 @@
     "prefix": "destroyed",
     "body": [
       "destroyed() {",
-      "\t$1",
+      "\t$0",
       "},"
     ],
     "description": "Type: Function."
@@ -391,7 +407,7 @@
     "prefix": "errorCaptured",
     "body": [
       "errorCaptured: (err, vm, info) => {",
-      "\t$1",
+      "\t$0",
       "},"
     ],
     "description": "Type: (err: Error, vm: Component, info: string) => ?boolean"
@@ -400,7 +416,7 @@
     "prefix": "createRenderer",
     "body": [
       "createRenderer({",
-      "\t$1",
+      "\t$0",
       "})"
     ],
     "description": "createRenderer({ })"
@@ -585,28 +601,36 @@
   "onRenderTriggered-composition": {
     "prefix": "onRenderTriggered",
     "body": [
-      "onRenderTriggered(() => {$0})"
+      "onRenderTriggered(() => {",
+      " $0",
+      "})"
     ],
     "description": "Vue onRenderTriggered lifecycle hook"
   },
   "onErrorCaptured-composition": {
     "prefix": "onErrorCaptured",
     "body": [
-      "onErrorCaptured(() => {$0})"
+      "onErrorCaptured(() => {",
+      " $0",
+      "})"
     ],
     "description": "Vue oneErrorCaptured lifecycle hook"
   },
   "onRenderTracked-composition": {
     "prefix": "onRenderTracked",
     "body": [
-      "onRenderTracked(() => {$0})"
+      "onRenderTracked(() => {",
+      " $0",
+      "})"
     ],
     "description": "Vue onRenderTracked lifecycle hook"
   },
   "onServerPrefetch-compositionSSR": {
     "prefix": "onServerPrefetch",
     "body": [
-      "onServerPrefetch(() => {$0})"
+      "onServerPrefetch(() => {",
+      " $0",
+      "})"
     ],
     "description": "Vue onServerPrefetch lifecycle hook SSR Only"
   }
