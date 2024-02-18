@@ -8,12 +8,26 @@
     ],
     "description": "An opinionated set of base styles for Tailwind projects."
   },
-  "aspect-ratio": {
-    "prefix": "aspect-ratio",
+  "aspect-auto": {
+    "prefix": "aspectAuto",
     "body": [
-      "aspect-${1|auto, square, video|}"
+      "aspect-auto"
     ],
-    "description": "aspect-ratio"
+    "description": "aspect-ratio: auto"
+  },
+  "aspect-square": {
+    "prefix": "aspectSquare",
+    "body": [
+      "aspect-square"
+    ],
+    "description": "aspect-ratio: 1 / 1;"
+  },
+  "aspect-video": {
+    "prefix": "aspectVideo",
+    "body": [
+      "aspect-video"
+    ],
+    "description": "aspect-ratio: 16 / 9;"
   },
   "aspect-arbitrary": {
     "prefix": "aspectArbitrary",
