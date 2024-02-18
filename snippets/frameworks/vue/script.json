@@ -212,7 +212,7 @@
   "ref-composition-ts": {
     "prefix": "refVueTS",
     "body": [
-      "const $3 = ref<${2:type}>($1)",
+      "const $1 = ref<${2:type}>($3)",
       "$0"
     ],
     "description": "Ref properties to be mixed into the Vue instance. "
