@@ -240,14 +240,59 @@
     ],
     "description": "Methods to be mixed into the Vue instance."
   },
-  "function": {
-    "prefix": "functionVue3",
+  "function-arrow": {
+    "prefix": "functionVueArrow",
     "body": [
       "const $1 = ($2) => {",
       " $0",
       "};"
     ],
     "description": "Method composition properties to be mixed into the Vue instance. "
+  },
+  "function": {
+    "prefix": "functionVue",
+    "body": [
+      "function ${1:name}($2) {",
+      " $0",
+      "}"
+    ],
+    "description": "Functions are one of the fundamental building blocks in JavaScript"
+  },
+  "function-ts": {
+    "prefix": "functionVueTS",
+    "body": [
+      "function ${1:name}($2: ${3:type}): ${4:type} {",
+      " $0",
+      "}"
+    ],
+    "description": "TypeScript has a specific syntax for typing function parameters and return values."
+  },
+  "type-typescript": {
+    "prefix": "typeTS",
+    "body": [
+      "type ${1:Name} = {",
+      " $0",
+      "}"
+    ],
+    "description": "type alias typescript"
+  },
+  "interface-typescript": {
+    "prefix": "interfaceTS",
+    "body": [
+      "interface ${1:Name} {",
+      " $0",
+      "}"
+    ],
+    "description": "interface from typescript"
+  },
+  "interface-extended": {
+    "prefix": "interfaceExtendTS",
+    "body": [
+      "interface ${1:Name} extends ${2:Name} {",
+      " $0",
+      "}"
+    ],
+    "description": "Extending an interface from typescript"
   },
   "watch": {
     "prefix": "watch",
