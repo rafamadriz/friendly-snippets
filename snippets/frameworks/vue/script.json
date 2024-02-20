@@ -244,7 +244,7 @@
     "prefix": "functionVue3",
     "body": [
       "const $1 = ($2) => {",
-      "$0",
+      " $0",
       "};"
     ],
     "description": "Method composition properties to be mixed into the Vue instance. "
@@ -253,7 +253,7 @@
     "prefix": "watch",
     "body": [
       "watch($1, ($2, $3) => {",
-      "$0",
+      " $0",
       "});"
     ],
     "description": "Watch over a reactive source and call a function in reaction to state changes "
@@ -262,7 +262,7 @@
     "prefix": "watchEffect",
     "body": [
       "watchEffect($1, ($2, $3) => {",
-      "$0",
+      " $0",
       "});"
     ],
     "description": "watchEffect from vue composition "
@@ -353,7 +353,7 @@
     "prefix": "activated",
     "body": [
       "activated() {",
-      "\t$1",
+      "\t$0",
       "},"
     ],
     "description": "Type: Function."
@@ -362,7 +362,7 @@
     "prefix": "deactivated",
     "body": [
       "deactivated() {",
-      "\t$1",
+      "\t$0",
       "},"
     ],
     "description": "Type: Function."
@@ -454,7 +454,8 @@
   "useRoute-composition": {
     "prefix": "useRoute",
     "body": [
-      "const ${1:route} = useRoute()"
+      "const ${1:route} = useRoute()",
+      "$0"
     ],
     "description": "const route = useRoute()"
   },
