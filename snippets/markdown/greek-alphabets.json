@@ -1,0 +1,242 @@
+{
+    "Insert alpha": {
+        "prefix": "\\alpha",
+        "body": "\\alpha",
+        "description": "Insert lowercase alpha"
+    },
+    "Insert Alpha": {
+        "prefix": "\\Alpha",
+        "body": "\\Alpha",
+        "description": "Insert uppercase Alpha"
+    },
+    "Insert beta": {
+        "prefix": "\\beta",
+        "body": "\\beta",
+        "description": "Insert lowercase beta"
+    },
+    "Insert Beta": {
+        "prefix": "\\Beta",
+        "body": "\\Beta",
+        "description": "Insert uppercase Beta"
+    },
+    "Insert gamma": {
+        "body": "\\gamma",
+        "prefix": "\\gamma",
+        "description": "Insert lowercase gamma"
+    },
+    "Insert Gamma": {
+        "prefix": "\\Gamma",
+        "body": "\\Gamma",
+        "description": "Insert uppercase Gamma"
+    },
+    "Insert delta": {
+        "prefix": "\\delta",
+        "body": "\\delta",
+        "description": "Insert lowercase delta"
+    },
+    "Insert Delta": {
+        "prefix": "\\Delta",
+        "body": "\\Delta",
+        "description": "Insert uppercase Delta"
+    },
+    "Insert epsilon": {
+        "prefix": "\\epsilon",
+        "body": "\\epsilon",
+        "description": "Insert lowercase epsilon"
+    },
+    "Insert Epsilon": {
+        "prefix": "\\Epsilon",
+        "body": "\\Epsilon",
+        "description": "Insert uppercase Epsilon"
+    },
+    "Insert zeta": {
+        "prefix": "\\zeta",
+        "body": "\\zeta",
+        "description": "Insert lowercase zeta"
+    },
+    "Insert Zeta": {
+        "prefix": "\\Zeta",
+        "body": "\\Zeta",
+        "description": "Insert uppercase Zeta"
+    },
+    "Insert eta": {
+        "body": "\\eta",
+        "prefix": "\\eta",
+        "description": "Insert lowercase eta"
+    },
+    "Insert Eta": {
+        "prefix": "\\Eta",
+        "body": "\\Eta",
+        "description": "Insert uppercase Eta"
+    },
+    "Insert theta": {
+        "prefix": "\\theta",
+        "body": "\\theta",
+        "description": "Insert lowercase theta"
+    },
+    "Insert Theta": {
+        "prefix": "\\theta",
+        "body": "\\Theta",
+        "description": "Insert uppercase Theta"
+    },
+    "Insert iota": {
+        "prefix": "\\iota",
+        "body": "\\iota",
+        "description": "Insert lowercase iota"
+    },
+    "Insert Iota": {
+        "prefix": "\\Iota",
+        "body": "\\Iota",
+        "description": "Insert uppercase Iota"
+    },
+    "Insert kappa": {
+        "prefix": "\\kappa",
+        "body": "\\kappa",
+        "description": "Insert lowercase kappa"
+    },
+    "Insert Kappa": {
+        "prefix": "\\Kappa",
+        "body": "\\Kappa",
+        "description": "Insert uppercase Kappa"
+    },
+    "Insert lambda": {
+        "prefix": "\\lambda",
+        "body": "\\lambda",
+        "description": "Insert lowercase lambda"
+    },
+    "Insert Lambda": {
+        "prefix": "\\Lambda",
+        "body": "\\Lambda",
+        "description": "Insert uppercase Lambda"
+    },
+    "Insert mu": {
+        "prefix": "\\mu",
+        "body": "\\mu",
+        "description": "Insert lowercase mu"
+    },
+    "Insert Mu": {
+        "prefix": "\\Mu",
+        "body": "\\Mu",
+        "description": "Insert uppercase Mu"
+    },
+    "Insert nu": {
+        "prefix": "\\nu",
+        "body": "\\nu",
+        "description": "Insert lowercase nu"
+    },
+    "Insert Nu": {
+        "prefix": "\\Nu",
+        "body": "\\Nu",
+        "description": "Insert uppercase Nu"
+    },
+    "Insert xi": {
+        "prefix": "\\xi",
+        "body": "\\xi",
+        "description": "Insert lowercase xi"
+    },
+    "Insert Xi": {
+        "prefix": "\\Xi",
+        "body": "\\Xi",
+        "description": "Insert uppercase Xi"
+    },
+    "Insert omicron": {
+        "prefix": "\\omicron",
+        "body": "\\omicron",
+        "description": "Insert lowercase omicron"
+    },
+    "Insert Omicron": {
+        "prefix": "\\Omicron",
+        "body": "\\Omicron",
+        "description": "Insert uppercase Omicron"
+    },
+    "Insert pi": {
+        "prefix": "\\pi",
+        "body": "\\pi",
+        "description": "Insert lowercase pi"
+    },
+    "Insert Pi": {
+        "prefix": "\\Pi",
+        "body": "\\Pi",
+        "description": "Insert uppercase Pi"
+    },
+    "Insert rho": {
+        "prefix": "\\rho",
+        "body": "\\rho",
+        "description": "Insert lowercase rho"
+    },
+        "Insert Rho": {
+        "prefix": "\\Rho",
+        "body": "\\Rho",
+        "description": "Insert uppercase Rho"
+    },
+    "Insert sigma": {
+        "prefix": "\\sigma",
+        "body": "\\sigma",
+        "description": "Insert lowercase sigma"
+    },
+    "Insert Sigma": {
+        "prefix": "\\Sigma",
+        "body": "\\Sigma",
+        "description": "Insert uppercase Sigma"
+    },
+    "Insert tau": {
+        "prefix": "\\tau",
+        "body": "\\tau",
+        "description": "Insert lowercase tau"
+    },
+    "Insert Tau": {
+        "prefix": "\\Tau",
+        "body": "\\Tau",
+        "description": "Insert uppercase Tau"
+    },
+    "Insert upsilon": {
+        "prefix": "\\upsilon",
+        "body": "\\upsilon",
+        "description": "Insert lowercase upsilon"
+    },
+    "Insert Upsilon": {
+        "prefix": "\\Upsilon",
+        "body": "\\Upsilon",
+        "description": "Insert uppercase Upsilon"
+    },
+    "Insert phi": {
+        "prefix": "\\phi",
+        "body": "\\phi",
+        "description": "Insert lowercase phi"
+    },
+    "Insert Phi": {
+        "prefix": "\\Phi",
+        "body": "\\Phi",
+        "description": "Insert uppercase Phi"
+    },
+    "Insert chi": {
+        "prefix": "\\chi",
+        "body": "\\chi",
+        "description": "Insert lowercase chi"
+    },
+    "Insert Chi": {
+        "prefix": "\\Chi",
+        "body": "\\Chi",
+        "description": "Insert uppercase Chi"
+    },
+    "Insert psi": {
+        "prefix": "\\psi",
+        "body": "\\psi",
+        "description": "Insert lowercase psi"
+    },
+    "Insert Psi": {
+        "prefix": "\\Psi",
+        "body": "\\Psi",
+        "description": "Insert uppercase Psi"
+    },
+    "Insert omega": {
+        "prefix": "\\omega",
+        "body": "\\omega",
+        "description": "Insert lowercase omega"
+    },
+    "Insert Omega": {
+      "prefix": "\\Omega",
+      "body": "\\Omega",
+      "description": "Insert uppercase Omega"
+    }
+}
