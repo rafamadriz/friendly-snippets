@@ -240,6 +240,10 @@
         "prefix": "irb",
         "body": "binding.irb"
     },
+    "Insert break call": {
+        "prefix": "break",
+        "body": "binding.break"
+    },
     "Insert RSpec.describe class": {
         "prefix": "rdesc",
         "body": ["RSpec.describe ${1:described_class} do", "\t$0", "end"]

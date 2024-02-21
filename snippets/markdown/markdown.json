@@ -387,6 +387,7 @@
         "body": ["${1}<sup>${0}"],
         "description": "Create a superscript."
     },
+<<<<<<< HEAD:snippets/markdown/markdown.json
     "Insert break": {
         "prefix": ["br", "break"],
         "body": "<br> ${0}",
@@ -426,5 +427,31 @@
       "prefix": ["caution", "c"],
       "body": "> [!CAUTION]\n> ",
       "description": "Insert Caution"
+=======
+    "Insert Note": {
+        "prefix": ["note", "n"],
+        "body": "> [!NOTE]\n> ",
+        "description": "Insert Note"
+    },
+    "Insert Tip": {
+        "prefix": ["tip", "t"],
+        "body": "> [!TIP]\n> ",
+        "description": "Insert Tip"
+    },
+    "Insert Important": {
+        "prefix": ["important", "imp"],
+        "body": "> [!IMPORTANT]\n> ",
+        "description": "Insert Important"
+    },
+    "Insert Warning": {
+        "prefix": ["warning", "w"],
+        "body": "> [!WARNING]\n> ",
+        "description": "Insert Warning"
+    },
+    "Insert Caution": {
+        "prefix": ["caution", "c"],
+        "body": "> [!CAUTION]\n> ",
+        "description": "Insert Caution"
+>>>>>>> dbd45e9ba76d535e4cba88afa1b7aa43bb765336:snippets/markdown.json
     }
 }
