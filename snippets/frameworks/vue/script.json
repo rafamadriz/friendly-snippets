@@ -679,5 +679,16 @@
       "})"
     ],
     "description": "Vue onServerPrefetch lifecycle hook SSR Only"
+  },
+  "Const Include Type": {
+    "prefix": "constType",
+    "body": [
+      "type ${1:Name/capitalize} = {",
+      " $2",
+      "}",
+      "",
+      "cont $3: ${4:Name/capitalize} = $0"
+    ],
+    "description": "const include type with typescript"
   }
 }

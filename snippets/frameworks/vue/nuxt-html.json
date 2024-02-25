@@ -16,7 +16,7 @@
   "Nuxt Link": {
     "prefix": "NuxtLink",
     "body": [
-      "<NuxtLink to=\"$1\">$0</NuxtLink>"
+      "<NuxtLink to=\"$1\" class=\"$2\" active-class=\"$3\">$0</NuxtLink>"
     ],
     "description": "Nuxt provides <NuxtLink> component to handle any kind of links within your application."
   },
@@ -24,7 +24,9 @@
     "prefix": "NuxtLayout",
     "body": [
       "<NuxtLayout>",
-      "</NuxtLayout>"
+      "  $1",
+      "</NuxtLayout>",
+      "$0"
     ],
     "description": "<NuxtLayout /> can be used to override default layout on app.vue, error.vue or even page components found in the /pages directory."
   },
