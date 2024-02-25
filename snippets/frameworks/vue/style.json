@@ -169,6 +169,13 @@
       "flex flex-col $0"
     ],
     "description": "Use flex-col to position flex items vertically"
+  },
+  "": {
+    "prefix": "",
+    "body": [
+      ""
+    ],
+    "description": ""
   }
     
 }
