@@ -213,9 +213,9 @@
     ],
     "description": "Utilities for controlling how grid items are aligned along their inline axis."
   },
-  "Justify Self":{
+  "Justify Self": {
     "prefix": "justifySelf",
-    "body":[
+    "body": [
       "${1|justify-self-auto,justify-self-start,justify-self-end,justify-self-center,justify-self-stretch|} $0"
     ],
     "description": "Utilities for controlling how an individual grid item is aligned along its inline axis."
