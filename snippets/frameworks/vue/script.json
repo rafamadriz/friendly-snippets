@@ -1,12 +1,12 @@
 {
-  "import": {
+  "Import": {
     "prefix": "import",
     "body": [
       "import $1 from '$2'"
     ],
     "description": "import ... from ..."
   },
-  "import-type": {
+  "Import Type": {
     "prefix": "importType",
     "body": [
       "import type {$1} from '$2'"
@@ -29,7 +29,7 @@
     ],
     "description": "A list/hash of attributes that are exposed to accept data from the parent component. "
   },
-  "defineProps-TS": {
+  "defineProps Typescript": {
     "prefix": "definePropsTS",
     "body": [
       "const props = defineProps<{",
@@ -45,7 +45,7 @@
     ],
     "description": "A list of events that componetnt can emits to the parent component. "
   },
-  "defineEmits-TS": {
+  "defineEmits Typescript": {
     "prefix": "defineEmitsTS",
     "body": [
       "const ${1:emit} = defineEmits<{",
@@ -55,7 +55,7 @@
     ],
     "description": "A list of events that componetnt can emits to the parent component. "
   },
-  "defineEmits-TS-tuple": {
+  "defineEmits Typescript with Tuple": {
     "prefix": "defineEmitsTStuple",
     "body": [
       "const ${1:emit} = defineEmits<{",
@@ -92,7 +92,7 @@
     ],
     "description": "create a custom element vue"
   },
-  "data-options": {
+  "Data Option API": {
     "prefix": "data",
     "body": [
       "data() {",
@@ -103,7 +103,7 @@
     ],
     "description": "The data object for the Vue instance."
   },
-  "computed-options": {
+  "Computed Option API": {
     "prefix": "computed",
     "body": [
       "computed: {",
@@ -112,7 +112,7 @@
     ],
     "description": "Computed properties to be mixed into the Vue instance. "
   },
-  "computed-composition": {
+  "Computed Composition API": {
     "prefix": "computedVue",
     "body": [
       "const $1 = computed(() => {",
@@ -121,7 +121,7 @@
     ],
     "description": "Computed properties to be mixed into the Vue instance. "
   },
-  "computed-composition-ts": {
+  "Computed with Typescript": {
     "prefix": "computedVueTS",
     "body": [
       "const $1 = computed<${2:type}>(() => {",
@@ -130,7 +130,7 @@
     ],
     "description": "Computed properties to be mixed into the Vue instance. "
   },
-  "reactive-composition": {
+  "Reactive": {
     "prefix": "reactiveVue",
     "body": [
       "const $1 = reactive({",
@@ -139,7 +139,7 @@
     ],
     "description": "Reactive properties to be mixed into the Vue instance. "
   },
-  "reactive-composition-ts": {
+  "Reactive with Typescript": {
     "prefix": "reactiveVueTS",
     "body": [
       "interface $1 {",
@@ -201,7 +201,7 @@
     ],
     "description": "Registers a dispose callback on the current active effect scope. The callback will be invoked when the associated effect scope is stopped."
   },
-  "ref-composition": {
+  "Ref Vue": {
     "prefix": "refVue",
     "body": [
       "const $1 = ref($2)",
@@ -209,7 +209,7 @@
     ],
     "description": "Ref properties to be mixed into the Vue instance. "
   },
-  "ref-composition-ts": {
+  "Ref with Typescript": {
     "prefix": "refVueTS",
     "body": [
       "const $1 = ref<${2:type}>($3)",
@@ -217,21 +217,21 @@
     ],
     "description": "Ref properties to be mixed into the Vue instance. "
   },
-  "template-ref-ts-composition": {
+  "Template Ref with Typescript": {
     "prefix": "trfVue",
     "body": [
       "const $0 = ref<HTMLInputElement | null>(null)"
     ],
     "description": "Template ref to be mixed into the Vue instance. "
   },
-  "component-ref-ts-composition": {
+  "Component Ref with Typescript": {
     "prefix": "crfVue",
     "body": [
       "const $1 = ref<InstanceType<typeof $0> | null>(null)"
     ],
     "description": "Template ref to be mixed into the Vue instance. "
   },
-  "methods-options": {
+  "Methods with Options API": {
     "prefix": "methods",
     "body": [
       "methods: {",
@@ -240,7 +240,7 @@
     ],
     "description": "Methods to be mixed into the Vue instance."
   },
-  "function-arrow": {
+  "Arrow Function": {
     "prefix": "functionVueArrow",
     "body": [
       "const $1 = ($2) => {",
@@ -249,7 +249,7 @@
     ],
     "description": "Method composition properties to be mixed into the Vue instance. "
   },
-  "function": {
+  "Function": {
     "prefix": "functionVue",
     "body": [
       "function ${1:name}($2) {",
@@ -258,7 +258,7 @@
     ],
     "description": "Functions are one of the fundamental building blocks in JavaScript"
   },
-  "function-ts": {
+  "Function with Typescript": {
     "prefix": "functionVueTS",
     "body": [
       "function ${1:name}($2: ${3:type}): ${4:type} {",
@@ -267,7 +267,7 @@
     ],
     "description": "TypeScript has a specific syntax for typing function parameters and return values."
   },
-  "type-typescript": {
+  "Type Typescript": {
     "prefix": "typeTS",
     "body": [
       "type ${1:Name} = {",
@@ -276,19 +276,19 @@
     ],
     "description": "type alias typescript"
   },
-  "interface-typescript": {
+  "Interface Typescript": {
     "prefix": "interfaceTS",
     "body": [
-      "interface ${1:Name} {",
+      "interface ${TM_SELECTED_TEXT/^(\\w+)/${1:Name/capitalize}/} {",
       " $0",
       "}"
     ],
     "description": "interface from typescript"
   },
-  "interface-extended": {
+  "Interface Extended": {
     "prefix": "interfaceExtendTS",
     "body": [
-      "interface ${1:Name} extends ${2:Name} {",
+      "interface ${TM_SELECTED_TEXT/^(\\w+)/${1:Name/capitalize}/} extends ${TM_SELECTED_TEXT/^(\\w+)/${2:Name/capitalize}/} {",
       " $0",
       "}"
     ],
@@ -303,7 +303,7 @@
     ],
     "description": "Watch over a reactive source and call a function in reaction to state changes "
   },
-  "watchEffect-composition": {
+  "watchEffect": {
     "prefix": "watchEffect",
     "body": [
       "watchEffect($1, ($2, $3) => {",

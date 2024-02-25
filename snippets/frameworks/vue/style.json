@@ -4,28 +4,36 @@
     "body": [
       "@tailwind base;",
       "@tailwind components;",
-      "@tailwind utilities;"
+      "@tailwind utilities;",
+      "$0"
     ],
     "description": "An opinionated set of base styles for Tailwind projects."
+  },
+  "container": {
+    "prefix": "container",
+    "body": [
+      "container $0"
+    ],
+    "description": "container => sm(640px), md(768px), lg(1024px), xl(1280px), 2xl(1536px) and use max-width overall"
   },
   "aspect-auto": {
     "prefix": "aspectAuto",
     "body": [
-      "aspect-auto"
+      "aspect-auto $0"
     ],
     "description": "aspect-ratio: auto"
   },
   "aspect-square": {
     "prefix": "aspectSquare",
     "body": [
-      "aspect-square"
+      "aspect-square $0"
     ],
     "description": "aspect-ratio: 1 / 1;"
   },
   "aspect-video": {
     "prefix": "aspectVideo",
     "body": [
-      "aspect-video"
+      "aspect-video $0"
     ],
     "description": "aspect-ratio: 16 / 9;"
   },
@@ -36,11 +44,131 @@
     ],
     "description": "aspect arbitrary values"
   },
-  "container": {
-    "prefix": "container",
+  "columns": {
+    "prefix": "columnsNumber",
     "body": [
-      "container"
+      "${1|columns-1,columns-2,columns-3,columns-4,columns-5,columns-6,columns-7,columns-8,columns-9,columns-10,columns-11,columns-12|} $0"
     ],
-    "description": "container => sm(640px), md(768px), lg(1024px), xl(1280px), 2xl(1536px) and use max-width overall"
+    "description": "Property => columns: 1, columns: 2, columns: 3, columns: 4, columns: 5, columns: 6, columns: 7, columns: 8, columns: 9, columns: 10, columns: 11, columns: 12"
+  },
+  "columns-auto": {
+    "prefix": "columnsAuto",
+    "body": [
+      "columns-auto $0"
+    ],
+    "description": "columns: auto"
+  },
+  "columns-3xs": {
+    "prefix": "columns3xs",
+    "body": [
+      "columns-3xs $0"
+    ],
+    "description": "columns: 16rem; /* 256px */"
+  },
+  "columns-2xs": {
+    "prefix": "columns2xs",
+    "body": [
+      "columns-2xs $0"
+    ],
+    "description": "columns: 18rem; /* 288px */"
+  },
+  "columns-xs": {
+    "prefix": "columnsXS",
+    "body": [
+      "columns-xs $0"
+    ],
+    "description": "columns: 20rem; /* 320px */"
+  },
+  "columns-sm": {
+    "prefix": "columnsSM",
+    "body": [
+      "columns-sm $0"
+    ],
+    "description": "columns: 24rem; /* 384px */"
+  },
+  "columns-lg": {
+    "prefix": "columnsLG",
+    "body": [
+      "columns-lg $0"
+    ],
+    "description": "columns: 32rem; /* 512px */"
+  },
+  "columns-xl": {
+    "prefix": "columnsXL",
+    "body": [
+      "columns-xl $0"
+    ],
+    "description": "columns: 36rem; /* 576px */"
+  },
+  "columns-2xl": {
+    "prefix": "columns2xl",
+    "body": [
+      "columns-2xl $0"
+    ],
+    "description": "columns: 42rem; /* 672px */"
+  },
+  "columns-3xl": {
+    "prefix": "columns3xl",
+    "body": [
+      "columns-3xl $0"
+    ],
+    "description": "columns: 48rem; /* 768px */"
+  },
+  "columns-4xl": {
+    "prefix": "columns4xl",
+    "body": [
+      "columns-4xl $0"
+    ],
+    "description": "columns: 56rem; /* 896px */"
+  },
+  "columns-5xl": {
+    "prefix": "columns5xl",
+    "body": [
+      "columns-5xl $0"
+    ],
+    "description": "columns: 64rem; /* 1024px */"
+  },
+  "columns-6xl": {
+    "prefix": "columns6xl",
+    "body": [
+      "columns-6xl $0"
+    ],
+    "description": "columns: 72rem; /* 1152px */"
+  },
+  "columns-7xl": {
+    "prefix": "columns7xl",
+    "body": [
+      "columns-7xl $0"
+    ],
+    "description": "columns: 80rem; /* 1280px */"
+  },
+  "flex-row": {
+    "prefix": "flexRow",
+    "body": [
+      "flex flex-row $0"
+    ],
+    "description": "Use flex-row to position flex items horizontally in the same direction"
+  },
+  "flex-row-reverse": {
+    "prefix": "flexRowReverse",
+    "body": [
+      "flex flex-row-reverse $0"
+    ],
+    "description": "Use flex-row-reverse to position flex items horizontally in the opposite direction"
+  },
+  "flex-col": {
+    "prefix": "flexCol",
+    "body": [
+      "flex flex-col $0"
+    ],
+    "description": "Use flex-col to position flex items vertically"
+  },
+  "flex-col-reverse": {
+    "prefix": "flexCol",
+    "body": [
+      "flex flex-col $0"
+    ],
+    "description": "Use flex-col to position flex items vertically"
   }
+    
 }

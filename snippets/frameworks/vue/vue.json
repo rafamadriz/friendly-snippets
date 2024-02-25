@@ -1,5 +1,5 @@
 {
-    "templateLang": {
+    "Template Language": {
         "prefix": "templateLang",
         "body": [
             "<template lang=\"$1\">",
@@ -10,32 +10,32 @@
         ],
         "description": "template element"
     },
-    "script": {
+    "Script": {
         "prefix": "script",
         "body": ["<script>", "export default {", "\t$0", "}", "</script>"],
         "description": "script element"
     },
-    "script-composition": {
+    "Script Setup": {
         "prefix": "scriptSetup",
         "body": ["<script setup>", "\t$0", "</script>"],
         "description": "script setup vue composition api element"
     },
-    "script-ts-composition": {
+    "Script Typescript Composition API": {
         "prefix": "scriptTsSetup",
         "body": ["<script setup lang=\"ts\">", "\t$0", "</script>"],
         "description": "script setup vue with lang ts composition api element"
     },
-    "styleLang": {
+    "Style Language": {
         "prefix": "styleLang",
         "body": ["<style lang=\"$1\">", "\t$0", "</style>"],
         "description": "style element with lang attribute"
     },
-    "styleLangScoped": {
+    "Style Language Scoped": {
         "prefix": "styleLangScoped",
         "body": ["<style lang=\"$1\" scoped>", "\t$0", "</style>"],
         "description": "style scoped element with lang attribute"
     },
-    "styleScoped": {
+    "Style Scoped": {
         "prefix": "styleScoped",
         "body": ["<style scoped>", "\t$0", "</style>"],
         "description": "style scoped vue attribute"

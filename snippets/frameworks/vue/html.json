@@ -1,5 +1,5 @@
 {
-    "template": {
+    "Template Vue": {
         "prefix": "template",
         "body": [
             "<template>",
@@ -52,12 +52,12 @@
         ],
         "description": "Expects: Array | Object | number | string"
     },
-    "v-on-shorthand": {
+    "v-on Shorthand": {
         "prefix": "@",
         "body": ["@${1:event}=\"${2:handle}\""],
         "description": "v-on shortcut from vue 3"
     },
-    "v-bind-shorthand": {
+    "v-bind Shorthand": {
         "prefix": "vBind",
         "body": [":{$1}=\"${2}\""],
         "description": "Expects: any (with argument) | Object (without argument)"
@@ -107,7 +107,7 @@
         "body": ["<slot$1>$2</slot>$0"],
         "description": "<slot></slot>. Expects: string. Used on content inserted into child components to indicate which named slot the content belongs to."
     },
-    "component": {
+    "Component": {
         "prefix": "component",
         "body": ["<component :is=\"${1:componentId}\"></component>$0"],
         "description": "component element"
@@ -117,22 +117,22 @@
         "body": ["<keep-alive$1>", "$2", "</keep-alive>$0"],
         "description": "keep-alive element"
     },
-    "transition": {
+    "Transition": {
         "prefix": "transition",
         "body": ["<transition$1>", "$2", "</transition>$0"],
         "description": "transition element"
     },
-    "transition-group": {
+    "Transition Group": {
         "prefix": "transitionGroup",
         "body": ["<transition-group$1>", "$2", "</transition-group>"],
         "description": "transition-group element"
     },
-    "routerLink": {
+    "Router Link": {
         "prefix": "routerLink",
         "body": ["<router-link $1>$2</router-link>$0"],
         "description": "router-link element"
     },
-    "routerLinkTo": {
+    "Router Link to": {
         "prefix": "routerLinkTo",
         "body": ["<router-link to=\"$1\">$2</router-link>$0"],
         "description": "<router-link to=''></router-link>. router-link element"
@@ -147,17 +147,17 @@
         "body": ["tag=\"$1\"$0"],
         "description": "tag=''"
     },
-    "routerView": {
+    "Router View": {
         "prefix": "routerView",
         "body": ["<router-view>$1</router-view>$0"],
         "description": "router-view element"
     },
-    "teleport": {
+    "Teleport": {
         "prefix": "teleport",
         "body": ["<Teleport to=\"$1\">", "$0", "</Teleport>"],
         "description": "<Teleport> is a built-in component that allows us to 'teleport' a part of a component's template into a DOM node that exists outside the DOM hierarchy of that component."
     },
-    "suspense": {
+    "Suspense": {
         "prefix": "suspense",
         "body": ["<Suspense>", "$0", "</Suspense>"],
         "description": "<Suspense> will render its default slot content in memory. If any async dependencies are encountered during the process, it will enter a pending state."
