@@ -9,6 +9,14 @@
     ],
     "description": "An opinionated set of base styles for Tailwind projects."
   },
+  "normalize.css": {
+    "prefix": "resetNormalizeCSS",
+    "body": [
+      "@import url('https://csstools.github.io/normalize.css/latest/normalize.css');",
+      "$0"
+    ],
+    "description": "reset css using normalize.css"
+  },
   "container": {
     "prefix": "container",
     "body": [
@@ -168,14 +176,48 @@
     "body": [
       "flex flex-col $0"
     ],
-    "description": "Use flex-col to position flex items vertically"
+    "description": "Use flex-col-reverse to position flex items vertically in the opposite direction"
   },
-  "": {
-    "prefix": "",
+  "flex-nowrap": {
+    "prefix": "flexNowrap",
     "body": [
-      ""
+      "flex flex-nowrap $0"
     ],
-    "description": ""
+    "description": "Use flex-nowrap to prevent flex items from wrapping, causing inflexible items to overflow the container if necessary"
+  },
+  "flex-wrap": {
+    "prefix": "flexWrap",
+    "body": [
+      "flex flex-wrap $0"
+    ],
+    "description": "Use flex-wrap to allow flex items to wrap"
+  },
+  "Flex Justify Content": {
+    "prefix": "flexJustify",
+    "body": [
+      "flex ${1|justify-normal,justify-start,justify-end,justify-end,justify-center,justify-between,justify-around,justify-evenly,justify-stretch|} $0"
+    ],
+    "description": "Utilities for controlling how flex items are positioned along a container's main axis."
+  },
+  "Grid Justify Content": {
+    "prefix": "gridJustify",
+    "body": [
+      "grid grid-flow-col ${1|justify-normal,justify-start,justify-end,justify-end,justify-center,justify-between,justify-around,justify-evenly,justify-stretch|} $0"
+    ],
+    "description": "Utilities for controlling how grid items are positioned along a container's main axis."
+  },
+  "Grid Justify Items": {
+    "prefix": "grid",
+    "body": [
+      "grid ${1|justify-items-start,justify-items-end,justify-items-center,justify-items-stretch|} $0"
+    ],
+    "description": "Utilities for controlling how grid items are aligned along their inline axis."
+  },
+  "Justify Self":{
+    "prefix": "justifySelf",
+    "body":[
+      "${1|justify-self-auto,justify-self-start,justify-self-end,justify-self-center,justify-self-stretch|} $0"
+    ],
+    "description": "Utilities for controlling how an individual grid item is aligned along its inline axis."
   }
-    
 }

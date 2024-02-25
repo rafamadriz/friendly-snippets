@@ -270,7 +270,7 @@
   "Type Typescript": {
     "prefix": "typeTS",
     "body": [
-      "type ${1:Name} = {",
+      "type ${1:Name/capitalize} = {",
       " $0",
       "}"
     ],
@@ -279,7 +279,7 @@
   "Interface Typescript": {
     "prefix": "interfaceTS",
     "body": [
-      "interface ${TM_SELECTED_TEXT/^(\\w+)/${1:Name/capitalize}/} {",
+      "interface ${1:name/capitalize} {",
       " $0",
       "}"
     ],
@@ -288,7 +288,7 @@
   "Interface Extended": {
     "prefix": "interfaceExtendTS",
     "body": [
-      "interface ${TM_SELECTED_TEXT/^(\\w+)/${1:Name/capitalize}/} extends ${TM_SELECTED_TEXT/^(\\w+)/${2:Name/capitalize}/} {",
+      "interface {1:name/capitalize} extends {2:name/capitalize} {",
       " $0",
       "}"
     ],
