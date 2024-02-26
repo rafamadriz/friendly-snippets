@@ -352,10 +352,7 @@
     "match": {
         "prefix": "match",
         "body": [
-            "match ${1:expr} {",
-            "    ${2:Some(expr)} => ${3:expr},",
-            "    ${4:None} => ${5:expr},",
-            "}"
+            "match ${1:expr} {}"
         ],
         "description": "match … { … }"
     },
@@ -393,6 +390,19 @@
             "}"
         ],
         "description": "struct … { … }"
+    },
+    "modtest": {
+        "prefix": "modtest",
+        "body": [
+            "#[cfg(test)]",
+            "mod test {",
+            "    #[test]",
+            "    fn ${1:name}() {",
+            "        ${2:todo!();}",
+            "    }",
+            "}"
+        ],
+        "description": "#[cfg(test)]\nmod test {...}"
     },
     "test": {
         "prefix": "test",
