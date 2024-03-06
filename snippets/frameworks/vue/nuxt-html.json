@@ -16,7 +16,7 @@
   "Nuxt Link": {
     "prefix": "NuxtLink",
     "body": [
-      "<NuxtLink to=\"$1\" class=\"$2\" active-class=\"$3\">$0</NuxtLink>"
+      "<NuxtLink :to=\"$1\" class=\"$2\" active-class=\"$3\">$0</NuxtLink>"
     ],
     "description": "Nuxt provides <NuxtLink> component to handle any kind of links within your application."
   },
