@@ -87,6 +87,13 @@
     ],
     "description": "Expects: varies based on value of form inputs element or output of components"
   },
+  "Input v-model modifiers": {
+    "prefix": "vModelModifiers",
+    "body": [
+      "${1|v-model.lazy=\"${2:something}\" $0, v-model.number=\"${2:something}\" $0, v-model.trim=\"${2:something}\" $0|}"
+    ],
+    "description": "v-model input with modifiers"
+  },
   "v-slot": {
     "prefix": "vSlot",
     "body": [
@@ -236,5 +243,95 @@
       "<button @click=\"$1\" class=\"$2\">$0</button>"
     ],
     "description": "button using @click vue"
+  },
+  "Class Binding": {
+    "prefix": ":class",
+    "body": [
+      ":class=\"{ $1: $2, $3 : $4 }\" $0"
+    ],
+    "description": "Class binding for vue"
+  },
+  "Class Binding to array": {
+    "prefix": ":classArray",
+    "body": [
+      ":class=\"[ $1, $2 ]\" $0"
+    ],
+    "description": "Class binding to array for vue"
+  },
+  "Class Binding to array with conditional": {
+    "prefix": ":classConditional",
+    "body": [
+      ":class=\"[ $1 ? $2 : $3, $4 ]\" $0"
+    ],
+    "description": "Class binding to array with conditional for vue"
+  },
+  "Class Binding use object to array": {
+    "prefix": ":classArrayObject",
+    "body": [
+      ":class=\"[{ $1: $2}, $3 ]\" $0"
+    ],
+    "description": "Class binding use object to array for vue"
+  },
+  "Style inline Binding": {
+    "prefix": ":class",
+    "body": [
+      ":style=\"{ $1: $2 }\" $0"
+    ],
+    "description": "Class binding for vue"
+  },
+  "Select Vue": {
+    "prefix": "selectVue",
+    "body": [
+      "<select v-model=\"$1\">",
+      "\t<option disabled value=\"$2\">$3</option>",
+      "\t<option>$4</option>",
+      "\t<option>$5</option>",
+      "\t<option>$6</option>",
+      "</select>"
+    ],
+    "description": "If the initial value of your v-model expression does not match any of the options, the <select> element will render in an \"unselected\" state. On iOS this will cause the user not being able to select the first item because iOS does not fire a change event in this case. It is therefore recommended to provide a disabled option with an empty value, as demonstrated in the example above."
+  },
+  "Multiple Select Vue": {
+    "prefix": "selectMultiple",
+    "body": [
+      "<select v-model=\"$1\" multiple>",
+      "\t<option>$1</option>",
+      "\t<option>$2</option>",
+      "\t<option>$3</option>",
+      "</select>"
+    ],
+    "description": "multiple select from vue using array and v-model"
+  },
+  "Input Vue": {
+    "prefix": "inputVue",
+    "body": [
+      "<input type=\"$1\" v-model=\"$2\" name=\"$3\" id=\"$4\" placeholder=\"$5\">",
+      "$0"
+    ],
+    "description": "Input from vue using v-model"
+  },
+  "Text Area Vue": {
+    "prefix": "textareaVue",
+    "body": [
+      "<textarea v-model=\"$1\" placeholder=\"$2\">$3</textarea>",
+      "$0"
+    ],
+    "description": "text area from vue using v-model"
+  },
+  "Checkbox Vue": {
+    "prefix": "checkboxVue",
+    "body": [
+      "<input type=\"checkbox\" id=\"$1\" value=\"$2\" v-model=\"$3\">",
+      "$0"
+    ],
+    "description": "Checkbox from vue using v-model"
+  },
+  "Radio Vue": {
+    "prefix": "radioVue",
+    "body": [
+      "<input type=\"radio\" id=\"$1\" value=\"$2\" v-model=\"$3\">",
+      "$0"
+    ],
+    "description": "radio button from vue using v-model"
   }
 }

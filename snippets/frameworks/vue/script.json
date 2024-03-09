@@ -1357,12 +1357,5 @@
       "$0"
     ],
     "description": "The setDate() method changes the day of the month of a given Date instance, based on local time."
-  },
-  "": {
-    "prefix": "",
-    "body": [
-      ""
-    ],
-    "description": ""
   }
 }
