@@ -111,4 +111,20 @@
     ],
     "description": "Set an optional, third argument { global: true } to indicate whether the route middleware is global"
   },
+  "Config Highlight Nuxt Content with Shiki": {
+    "prefix": "highlightNuxtContent",
+    "body": [
+      "highlight: {",
+      "\ttheme: {",
+      "\t\tdefault: '${1|catppuccin-latte,github-light,github-light-default,light-plus,material-theme,lighter,min-light,rose-pine-dawn,slack-ochin,solarized-light,vitesse-light|}'",
+      "\t\tdark: '${2|andromeeda,aurora-x,ayu-dark,catppuccin-frappe,catppuccin-macchiato,catppuccin-mocha,dark-plus,dracula,dracula-soft,github-dark,github-dark-default,github-dark-dimmed,material-theme,material-theme-darker,material-theme-ocean,material-theme-palenight,min-dark,monokai,night-owl,nord,one-dark-pro,poimandres,red,rose-pine,rose-pine-moon,slack-dark,solarized-dark,synthwave-84,tokyo-night,vesper,vitesse-black,vitesse-dark|}'",
+      "\t},",
+      "\tlangs: [",
+      "\t\t'$3'",
+      "\t],",
+      "},",
+      "$0"
+    ],
+    "description": "Config highlight Nuxt content with Shiki"
+  }
 }

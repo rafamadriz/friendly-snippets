@@ -230,7 +230,7 @@
     ],
     "description": "<Suspense> will render its default slot content in memory. If any async dependencies are encountered during the process, it will enter a pending state."
   },
-  "button": {
+  "button-vue": {
     "prefix": "button@click",
     "body": [
       "<button @click=\"$1\" class=\"$2\">$0</button>"
