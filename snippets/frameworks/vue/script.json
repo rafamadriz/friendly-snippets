@@ -1357,5 +1357,14 @@
       "$0"
     ],
     "description": "The setDate() method changes the day of the month of a given Date instance, based on local time."
+  },
+  "defineModel": {
+    "prefix": "defineModel",
+    "body": [
+      "const ${1:name} = defineModel()",
+      "$0"
+    ],
+    "description": "v-model can be used on a component to implement a two-way binding.",
+    "markdownDescription":"(v-model component)[https://vuejs.org/guide/components/v-model.html]"
   }
 }
