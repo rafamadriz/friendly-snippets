@@ -33,6 +33,24 @@
     ],
     "description": "This composable provides a convenient wrapper around useAsyncData and $fetch. It automatically generates a key based on URL and fetch options, provides type hints for request url based on server routes, and infers API response type."
   },
+  "$fetch": {
+    "prefix": "$fetch",
+    "body": [
+      "const ${1:name} = await $fetch('$0')"
+    ],
+    "description": "Nuxt uses ofetch to expose globally the $fetch helper for making HTTP requests."
+  },
+  "$fetch with method": {
+    "prefix": "$fetchMethod",
+    "body": [
+      "const ${1:name} = await $fetch('$2', {",
+      "\tmethod: '${3|POST, GET|}',",
+      "\tbody: { $4 }",
+      "})",
+      "$0"
+    ],
+    "description": "Nuxt uses ofetch to expose globally the $fetch helper for making HTTP requests."
+  },
   "useNuxtApp": {
     "prefix": "useAppConfig",
     "body": [
@@ -126,5 +144,29 @@
       "$0"
     ],
     "description": "Config highlight Nuxt content with Shiki"
+  },
+  "Link Stylesheets from useHead": {
+    "prefix": "linkStylesheet",
+    "body": [
+      "link: [{ rel: 'stylesheet', href: '$1' }]",
+      "$0"
+    ],
+    "description": " link stylesheets from useHead"
+  },
+  "useSeoMeta": {
+    "prefix": "useSeoMeta",
+    "body": [
+      "useSeoMeta({",
+      "\ttitle: '$1'",
+      "\togTitle: '$2'",
+      "\tdescription: '$3'",
+      "\togDescription: '$4'",
+      "\togImage: '$5'",
+      "\ttwitterCard: '$6'",
+      "})",
+      "$0"
+    ],
+    "description": "The useSeoMeta composable lets you define your site's SEO meta tags as a flat object with full TypeScript support.",
+    "markdownDescription":"(full list of parameters in the source code)[https://github.com/harlan-zw/zhead/blob/main/src/metaFlat.ts]"
   }
 }
