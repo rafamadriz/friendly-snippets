@@ -21,6 +21,10 @@
                 "path": "./snippets/license.json"
             },
             {
+                "language": "asciidoc",
+                "path": "./snippets/asciidoc.json"
+            },
+            {
                 "language": "c",
                 "path": "./snippets/c/c.json"
             },

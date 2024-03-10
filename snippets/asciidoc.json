@@ -1,0 +1,216 @@
+{
+	"header 1": {
+		"prefix": "h1",
+		"body": [
+			"= ${0}"
+		],
+		"description": "Add header level 1"
+	},
+	"header 2": {
+		"prefix": "h2",
+		"body": [
+			"== ${0}"
+		],
+		"description": "Add header level 2"
+	},
+	"header 3": {
+		"prefix": "h3",
+		"body": [
+			"=== ${0}"
+		],
+		"description": "Add header level 3"
+	},
+	"header 4": {
+		"prefix": "h4",
+		"body": [
+			"==== ${0}"
+		],
+		"description": "Add header level 4"
+	},
+	"header 5": {
+		"prefix": "h5",
+		"body": [
+			"===== ${0}"
+		],
+		"description": "Add header level 5"
+	},
+	"header 6": {
+		"prefix": "h6",
+		"body": [
+			"====== ${0}"
+		],
+		"description": "Add header level 6"
+	},
+	"note": {
+		"prefix": "note",
+		"body": [
+			"NOTE: ${0}"
+		],
+		"description": "Add single-paragraph note"
+	},
+	"note block": {
+		"prefix": "note block",
+		"body": [
+			"[NOTE]",
+			"==========",
+			"${0}",
+			"=========="
+		],
+		"description": "Add multi-line note"
+	},
+	"tip": {
+		"prefix": "tip",
+		"body": [
+			"TIP: ${0}"
+		],
+		"description": "Add single-paragraph tip"
+	},
+	"tip block": {
+		"prefix": "tip block",
+		"body": [
+			"[TIP]",
+			"==========",
+			"${0}",
+			"=========="
+		],
+		"description": "Add multi-line tip"
+	},
+	"important": {
+		"prefix": "important",
+		"body": [
+			"IMPORTANT: ${0}"
+		],
+		"description": "Add single-paragraph important note"
+	},
+	"important block": {
+		"prefix": "important block",
+		"body": [
+			"[IMPORTANT]",
+			"==========",
+			"${0}",
+			"=========="
+		],
+		"description": "Add single-paragraph important note"
+	},
+	"warning": {
+		"prefix": "warning",
+		"body": [
+			"WARNING: ${0}"
+		],
+		"description": "Add single-paragraph warning note"
+	},
+	"warning block": {
+		"prefix": "warning block",
+		"body": [
+			"[WARNING]",
+			"==========",
+			"${0}",
+			"=========="
+		],
+		"description": "Add multi-line warning note"
+	},
+	"caution": {
+		"prefix": "caution",
+		"body": [
+			"CAUTION: ${0}"
+		],
+		"description": "Add single-paragraph caution"
+	},
+	"caution block": {
+		"prefix": "caution block",
+		"body": [
+			"[CAUTION]",
+			"==========",
+			"${0}",
+			"=========="
+		],
+		"description": "Add multi-line caution"
+	},
+	"code block": {
+		"prefix": "codeblock",
+		"body": [
+			"[source,${1:language}]",
+			"----",
+			"$0",
+			"----"
+		],
+		"description": "Insert fenced code block"
+	},
+	"sidebar note": {
+		"prefix": "sidebar note",
+		"body": [
+			"****",
+			"${0}",
+			"****"
+		],
+		"description": "Add sidebar note"
+	},
+	"quote": {
+		"prefix": "quote",
+		"body": [
+			".${0: Optional Title}",
+			"[quote, ${1: cite author}, ${2: cite source}]",
+			"____",
+			"${3}",
+			"____"
+		],
+		"description": "Add quote"
+	},
+	"image": {
+		"prefix": "image",
+		"body": [
+			"image:${0: Path to image}[${1: Alt text}]"
+		],
+		"description": "Add image"
+	},
+	"unordered list": {
+		"prefix": [
+			"bullet",
+			"unorderedList"
+		],
+		"body": [
+			"* ${0}"
+		],
+		"description": "Add unordered list"
+	},
+	"ordered list": {
+		"prefix": "orderedList",
+		"body": [
+			". ${0}"
+		],
+		"description": "Add ordered list"
+	},
+	"labeled list": {
+		"prefix": "labeled list",
+		"body": [
+			"${0: Term 1}::",
+			"\t${1: Definition}"
+		],
+		"description": "Add labeled list"
+	},
+	"labeled horizontal list": {
+		"prefix": "labeled horizontal list",
+		"body": [
+			"[horizontal]",
+			"${0: Term 1}:: ${1: Definition}"
+		],
+		"description": "Add labeled horizontal list"
+	},
+	"table 4x3": {
+		"prefix": [
+			"table",
+			"4x3table"
+		],
+		"body": [
+			".${0: Optional Title}",
+			"[options=\"header,footer\"]",
+			"|=======================",
+			"|${1: Col 1}|${2: Col 2}|${3: Col 3}",
+			"|${4}       |${5}       |${6}",
+			"|${7}       |${8}       |${9}",
+			"|${10}      |${11}      |${12}",
+			"|======================="
+		],
+		"description": "Add labeled horizontal list"
+	}
+}
