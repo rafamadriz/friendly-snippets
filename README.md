@@ -16,7 +16,8 @@ Use your plugin manager of choice, e.g.
 { "rafamadriz/friendly-snippets" }
 ```
 
-> **Warning**: If you're using LuaSnip make sure to use
+> [!WARNING]
+> If you're using LuaSnip make sure to use
 > `require("luasnip.loaders.from_vscode").lazy_load()`, and add
 > `friendly-snippets` as a dependency for LuaSnip, otherwise snippets might not
 > be detected. If you don't use `lazy_load()` you might notice a slower
@@ -58,7 +59,8 @@ loading vscode snippets. Like for example:
 
 ## Add snippets from a framework to a filetype.
 
-> **Note**: This is handled by your snippet engine and has nothing to do with this snippets collection
+> [!NOTE]
+> This is handled by your snippet engine and has nothing to do with this snippets collection
 
 There's extra snippets included in this repo but they are not added by default,
 since it would be irrelevant for people not using those frameworks. See
@@ -80,7 +82,8 @@ let g:vsnip_filetypes.ruby = ['rails']
 
 ## Excluding snippets
 
-> **Note**: This is handled by your snippet engine and has nothing to do with this snippets collection
+> [!NOTE]
+> This is handled by your snippet engine and has nothing to do with this snippets collection
 
 With LuaSnip, see `help luasnip-loaders`
 
