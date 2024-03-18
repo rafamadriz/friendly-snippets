@@ -555,6 +555,10 @@
             {
                 "language": "purescript",
                 "path": "./snippets/purescript.json"
+            },
+            {
+                "language": "gleam",
+                "path": "./snippets/gleam.json"
             }
         ]
     }
