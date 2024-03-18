@@ -1,0 +1,231 @@
+{
+  "Public Function": {
+    "prefix": [
+      "pub",
+      "pub fn"
+    ],
+    "body": [
+      "pub fn ${1:function_name}(${2}) -> ${3:Nil} {",
+      "\t${0:todo}",
+      "}"
+    ],
+    "description": "public function"
+  },
+  "Private Function": {
+    "prefix": [
+      "fn"
+    ],
+    "body": [
+      "fn ${1:function_name}(${2}) -> ${3:Nil} {",
+      "\t${0:todo}",
+      "}"
+    ],
+    "description": "private function"
+  },
+  "Test Function": {
+    "prefix": [
+      "test"
+    ],
+    "body": [
+      "pub fn ${1:name}_test() {",
+      "\t${0}",
+      "}"
+    ],
+    "description": "test function"
+  },
+  "Anonymous Function": {
+    "prefix": [
+      "af",
+      "fn"
+    ],
+    "body": [
+      "fn(${1}) { ${0} }"
+    ],
+    "description": "anonymous function"
+  },
+  "Let assignment": {
+    "prefix": [
+      "let"
+    ],
+    "body": [
+      "let ${1} = ${0}"
+    ],
+    "description": "let assignment"
+  },
+  "Let Assert assignment": {
+    "prefix": [
+      "leta"
+    ],
+    "body": [
+      "let assert ${1} = ${0}"
+    ],
+    "description": "let assert assignment"
+  },
+  "Use expression": {
+    "prefix": [
+      "use"
+    ],
+    "body": [
+      "use ${1} <- ${0}"
+    ],
+    "description": "use expression"
+  },
+  "Case Expression": {
+    "prefix": [
+      "case"
+    ],
+    "body": [
+      "case ${1} {",
+      "\t${2} -> ${0}",
+      "}"
+    ],
+    "description": "case expression"
+  },
+  "Type": {
+    "prefix": [
+      "type"
+    ],
+    "body": [
+      "type ${1:Name} {",
+      "\t${0:$1}",
+      "}"
+    ],
+    "description": "type declaration"
+  },
+  "Public Type": {
+    "prefix": [
+      "pty",
+      "pub",
+      "pub type"
+    ],
+    "body": [
+      "pub type ${1:Name} {",
+      "\t${0:$1}",
+      "}"
+    ],
+    "description": "public type declaration"
+  },
+  "External attribute": {
+    "prefix": [
+      "external"
+    ],
+    "body": [
+      "@external(${1:erlang}, \"${2}\", \"${0}\")"
+    ],
+    "description": "external attribute"
+  },
+  "Public External Function": {
+    "prefix": [
+      "pexfn",
+      "pub",
+      "pub external",
+      "pub external fn"
+    ],
+    "body": [
+      "pub external fn ${1:function_name}(${2}) -> ${3:Nil} = \"${4}\" \"${0}\""
+    ],
+    "description": "public external function"
+  },
+  "Import": {
+    "prefix": [
+      "im",
+      "import"
+    ],
+    "body": [
+      "import ${0:gleam/result}"
+    ],
+    "description": "import"
+  },
+  "Import Unqualified": {
+    "prefix": [
+      "im.",
+      "import"
+    ],
+    "body": [
+      "import ${1:gleam/result}.{${0}}"
+    ],
+    "description": "import unqualified"
+  },
+  "Pipe": {
+    "prefix": [
+      "p",
+      "|>"
+    ],
+    "body": [
+      "|> ${0}"
+    ],
+    "description": "Pipe |>"
+  },
+  "Tuple": {
+    "prefix": [
+      "#",
+      "tuple"
+    ],
+    "body": [
+      "#(${0})"
+    ],
+    "description": "tuple #()"
+  },
+  "Block": {
+    "prefix": [
+      "bl"
+    ],
+    "body": [
+      "{",
+      "\t${0}",
+      "}"
+    ],
+    "description": "block"
+  },
+  "Should Equal": {
+    "prefix": [
+      "seq",
+      "should"
+    ],
+    "body": [
+      "should.equal(${0})"
+    ],
+    "description": "should.equal"
+  },
+  "Should Be True": {
+    "prefix": [
+      "strue",
+      "should",
+      "should.b"
+    ],
+    "body": [
+      "should.be_true(${0})"
+    ],
+    "description": "should.be_true"
+  },
+  "Should Be False": {
+    "prefix": [
+      "sfalse",
+      "should",
+      "should.b"
+    ],
+    "body": [
+      "should.be_false(${0})"
+    ],
+    "description": "should.be_false"
+  },
+  "Public Constant": {
+    "prefix": [
+      "pub",
+      "pub const"
+    ],
+    "body": [
+      "pub const ${1} = ${0}"
+    ],
+    "description": "public constant"
+  },
+  "Constant": {
+    "prefix": [
+      "const"
+    ],
+    "body": [
+      "const ${1} = ${0}"
+    ],
+    "description": "constant"
+  }
+}
