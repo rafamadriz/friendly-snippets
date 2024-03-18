@@ -555,7 +555,11 @@
             {
                 "language": "purescript",
                 "path": "./snippets/purescript.json"
-            }
+            },
+            {
+                "language": "asciidoc",
+                "path": "./snippets/asciidoc.json"
+            },
         ]
     }
 }
