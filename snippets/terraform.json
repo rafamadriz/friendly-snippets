@@ -6970,7 +6970,7 @@
     "description": "Define an output value",
     "body": [
       "output \"${output_name}\" {",
-      "   value = ${resource.name.attribute}",
+      "   value = ${resource_name_attribute}",
       "   description = ${description}",
       "}"
     ]
