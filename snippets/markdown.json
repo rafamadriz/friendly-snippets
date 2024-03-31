@@ -140,9 +140,9 @@
     "Insert table": {
         "prefix": "table",
         "body": [
-            "| ${1:Column1}  | ${2:Column2}   | ${3:Column3}   |",
-            "|-------------- | -------------- | -------------- |",
-            "| ${4:Item1}    | ${5:Item1}     | ${6:Item1}     |",
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} |",
+            "| ------------- | -------------- | -------------- |",
+            "| ${4:Item1} | ${5:Item1} | ${6:Item1} |",
             "${0}"
         ],
         "description": "Insert table with 2 rows and 3 columns. First row is heading."
@@ -150,9 +150,9 @@
     "Insert 2x1 table": {
         "prefix": "2x1table",
         "body": [
-            "| ${1:Column1}  |",
-            "|-------------- |",
-            "| ${2:Item1}    |",
+            "| ${1:Column1} |",
+            "| ------------- |",
+            "| ${2:Item1} |",
             "${0}"
         ],
         "description": "Insert table with 2 rows and 1 column. First row is heading."
@@ -160,10 +160,10 @@
     "Insert 3x1 table": {
         "prefix": "3x1table",
         "body": [
-            "| ${1:Column1}  |",
-            "|-------------- |",
-            "| ${2:Item1}    |",
-            "| ${3:Item2}    |",
+            "| ${1:Column1} |",
+            "| ------------- |",
+            "| ${2:Item1} |",
+            "| ${3:Item2} |",
             "${0}"
         ],
         "description": "Insert table with 3 rows and 1 column. First row is heading."
@@ -171,11 +171,11 @@
     "Insert 4x1 table": {
         "prefix": "4x1table",
         "body": [
-            "| ${1:Column1}  |",
-            "|-------------- |",
-            "| ${2:Item1}    |",
-            "| ${3:Item2}    |",
-            "| ${4:Item3}    |",
+            "| ${1:Column1} |",
+            "| ------------- |",
+            "| ${2:Item1} |",
+            "| ${3:Item2} |",
+            "| ${4:Item3} |",
             "${0}"
         ],
         "description": "Insert table with 4 rows and 1 column. First row is heading."
@@ -183,12 +183,12 @@
     "Insert 5x1 table": {
         "prefix": "5x1table",
         "body": [
-            "| ${1:Column1}  |",
-            "|-------------- |",
-            "| ${2:Item1}    |",
-            "| ${3:Item2}    |",
-            "| ${4:Item3}    |",
-            "| ${5:Item4}    |",
+            "| ${1:Column1} |",
+            "| ------------- |",
+            "| ${2:Item1} |",
+            "| ${3:Item2} |",
+            "| ${4:Item3} |",
+            "| ${5:Item4} |",
             "${0}"
         ],
         "description": "Insert table with 5 rows and 1 column. First row is heading."
@@ -196,9 +196,9 @@
     "Insert 2x2 table": {
         "prefix": "2x2table",
         "body": [
-            "| ${1:Column1}   | ${2:Column2}    |",
-            "|--------------- | --------------- |",
-            "| ${3:Item1.1}   | ${4:Item2.1}   |",
+            "| ${1:Column1} | ${2:Column2} |",
+            "| -------------- | --------------- |",
+            "| ${3:Item1.1} | ${4:Item2.1} |",
             "${0}"
         ],
         "description": "Insert table with 2 rows and 2 columns. First row is heading."
@@ -206,10 +206,10 @@
     "Insert 3x2 table": {
         "prefix": "3x2table",
         "body": [
-            "| ${1:Column1}   | ${2:Column2}    |",
-            "|--------------- | --------------- |",
-            "| ${3:Item1.1}   | ${4:Item2.1}   |",
-            "| ${5:Item1.2}   | ${6:Item2.2}   |",
+            "| ${1:Column1} | ${2:Column2} |",
+            "| -------------- | --------------- |",
+            "| ${3:Item1.1} | ${4:Item2.1} |",
+            "| ${5:Item1.2} | ${6:Item2.2} |",
             "${0}"
         ],
         "description": "Insert table with 3 rows and 2 columns. First row is heading."
@@ -217,11 +217,11 @@
     "Insert 4x2 table": {
         "prefix": "4x2table",
         "body": [
-            "| ${1:Column1}   | ${2:Column2}    |",
-            "|--------------- | --------------- |",
-            "| ${3:Item1.1}   | ${4:Item2.1}   |",
-            "| ${5:Item1.2}   | ${6:Item2.2}   |",
-            "| ${7:Item1.3}   | ${8:Item2.3}   |",
+            "| ${1:Column1} | ${2:Column2} |",
+            "| -------------- | --------------- |",
+            "| ${3:Item1.1} | ${4:Item2.1} |",
+            "| ${5:Item1.2} | ${6:Item2.2} |",
+            "| ${7:Item1.3} | ${8:Item2.3} |",
             "${0}"
         ],
         "description": "Insert table with 4 rows and 2 columns. First row is heading."
@@ -242,9 +242,9 @@
     "Insert 2x3 table": {
         "prefix": "2x3table",
         "body": [
-            "| ${1:Column1}    | ${2:Column2}    | ${3:Column3}    |",
-            "|---------------- | --------------- | --------------- |",
-            "| ${4:Item1.1}    | ${5:Item2.1}    | ${6:Item3.1}    |",
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} |",
+            "| --------------- | --------------- | --------------- |",
+            "| ${4:Item1.1} | ${5:Item2.1} | ${6:Item3.1} |",
             "${0}"
         ],
         "description": "Insert table with 2 rows and 3 columns. First row is heading."
@@ -252,10 +252,10 @@
     "Insert 3x3 table": {
         "prefix": "3x3table",
         "body": [
-            "| ${1:Column1}    | ${2:Column2}    | ${3:Column3}    |",
-            "|---------------- | --------------- | --------------- |",
-            "| ${4:Item1.1}    | ${5:Item2.1}    | ${6:Item3.1}    |",
-            "| ${7:Item1.2}    | ${8:Item2.2}    | ${9:Item3.2}    |",
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} |",
+            "| --------------- | --------------- | --------------- |",
+            "| ${4:Item1.1} | ${5:Item2.1} | ${6:Item3.1} |",
+            "| ${7:Item1.2} | ${8:Item2.2} | ${9:Item3.2} |",
             "${0}"
         ],
         "description": "Insert table with 3 rows and 3 columns. First row is heading."
@@ -263,11 +263,11 @@
     "Insert 4x3 table": {
         "prefix": "4x3table",
         "body": [
-            "| ${1:Column1}    | ${2:Column2}    | ${3:Column3}    |",
-            "|---------------- | --------------- | --------------- |",
-            "| ${4:Item1.1}    | ${5:Item2.1}    | ${6:Item3.1}    |",
-            "| ${7:Item1.2}    | ${8:Item2.2}    | ${9:Item3.2}    |",
-            "| ${10:Item1.3}   | ${11:Item2.3}   | ${12:Item3.3}   |",
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} |",
+            "| --------------- | --------------- | --------------- |",
+            "| ${4:Item1.1} | ${5:Item2.1} | ${6:Item3.1} |",
+            "| ${7:Item1.2} | ${8:Item2.2} | ${9:Item3.2} |",
+            "| ${10:Item1.3} | ${11:Item2.3} | ${12:Item3.3} |",
             "${0}"
         ],
         "description": "Insert table with 4 rows and 3 columns. First row is heading."
@@ -275,12 +275,12 @@
     "Insert 5x3 table": {
         "prefix": "5x3table",
         "body": [
-            "| ${1:Column1}    | ${2:Column2}    | ${3:Column3}    |",
-            "|---------------- | --------------- | --------------- |",
-            "| ${4:Item1.1}    | ${5:Item2.1}    | ${6:Item3.1}    |",
-            "| ${7:Item1.2}    | ${8:Item2.2}    | ${9:Item3.2}    |",
-            "| ${10:Item1.3}   | ${11:Item2.3}   | ${12:Item3.3}   |",
-            "| ${13:Item1.4}   | ${14:Item2.4}   | ${15:Item3.4}   |",
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} |",
+            "| --------------- | --------------- | --------------- |",
+            "| ${4:Item1.1} | ${5:Item2.1} | ${6:Item3.1} |",
+            "| ${7:Item1.2} | ${8:Item2.2} | ${9:Item3.2} |",
+            "| ${10:Item1.3} | ${11:Item2.3} | ${12:Item3.3} |",
+            "| ${13:Item1.4} | ${14:Item2.4} | ${15:Item3.4} |",
             "${0}"
         ],
         "description": "Insert table with 5 rows and 3 columns. First row is heading."
@@ -288,9 +288,9 @@
     "Insert 2x4 table": {
         "prefix": "2x4table",
         "body": [
-            "| ${1:Column1}    | ${2:Column2}    | ${3:Column3}    | ${4:Column4}    |",
-            "|---------------- | --------------- | --------------- | --------------- |",
-            "| ${5:Item1.1}    | ${6:Item2.1}    | ${7:Item3.1}    | ${8:Item4.1}    |",
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} |",
+            "| --------------- | --------------- | --------------- | --------------- |",
+            "| ${5:Item1.1} | ${6:Item2.1} | ${7:Item3.1} | ${8:Item4.1} |",
             "${0}"
         ],
         "description": "Insert table with 2 rows and 4 columns. First row is heading."
@@ -298,10 +298,10 @@
     "Insert 3x4 table": {
         "prefix": "3x4table",
         "body": [
-            "| ${1:Column1}    | ${2:Column2}    | ${3:Column3}    | ${4:Column4}    |",
-            "|---------------- | --------------- | --------------- | --------------- |",
-            "| ${5:Item1.1}    | ${6:Item2.1}    | ${7:Item3.1}    | ${8:Item4.1}    |",
-            "| ${9:Item1.2}    | ${10:Item2.2}   | ${11:Item3.2}   | ${12:Item4.2}   |",
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} |",
+            "| --------------- | --------------- | --------------- | --------------- |",
+            "| ${5:Item1.1} | ${6:Item2.1} | ${7:Item3.1} | ${8:Item4.1} |",
+            "| ${9:Item1.2} | ${10:Item2.2} | ${11:Item3.2} | ${12:Item4.2} |",
             "${0}"
         ],
         "description": "Insert table with 3 rows and 4 columns. First row is heading."
@@ -309,11 +309,11 @@
     "Insert 4x4 table": {
         "prefix": "4x4table",
         "body": [
-            "| ${1:Column1}    | ${2:Column2}    | ${3:Column3}    | ${4:Column4}    |",
-            "|---------------- | --------------- | --------------- | --------------- |",
-            "| ${5:Item1.1}    | ${6:Item2.1}    | ${7:Item3.1}    | ${8:Item4.1}    |",
-            "| ${9:Item1.2}    | ${10:Item2.2}   | ${11:Item3.2}   | ${12:Item4.2}   |",
-            "| ${13:Item1.3}   | ${14:Item2.3}   | ${15:Item3.3}   | ${16:Item4.3}   |",
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} |",
+            "| --------------- | --------------- | --------------- | --------------- |",
+            "| ${5:Item1.1} | ${6:Item2.1} | ${7:Item3.1} | ${8:Item4.1} |",
+            "| ${9:Item1.2} | ${10:Item2.2} | ${11:Item3.2} | ${12:Item4.2} |",
+            "| ${13:Item1.3} | ${14:Item2.3} | ${15:Item3.3} | ${16:Item4.3} |",
             "${0}"
         ],
         "description": "Insert table with 4 rows and 4 columns. First row is heading."
@@ -321,12 +321,12 @@
     "Insert 5x4 table": {
         "prefix": "5x4table",
         "body": [
-            "| ${1:Column1}    | ${2:Column2}    | ${3:Column3}    | ${4:Column4}    |",
-            "|---------------- | --------------- | --------------- | --------------- |",
-            "| ${5:Item1.1}    | ${6:Item2.1}    | ${7:Item3.1}    | ${8:Item4.1}    |",
-            "| ${9:Item1.2}    | ${10:Item2.2}   | ${11:Item3.2}   | ${12:Item4.2}   |",
-            "| ${13:Item1.3}   | ${14:Item2.3}   | ${15:Item3.3}   | ${16:Item4.3}   |",
-            "| ${17:Item1.4}   | ${18:Item2.4}   | ${19:Item3.4}   | ${20:Item4.4}   |",
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} |",
+            "| --------------- | --------------- | --------------- | --------------- |",
+            "| ${5:Item1.1} | ${6:Item2.1} | ${7:Item3.1} | ${8:Item4.1} |",
+            "| ${9:Item1.2} | ${10:Item2.2} | ${11:Item3.2} | ${12:Item4.2} |",
+            "| ${13:Item1.3} | ${14:Item2.3} | ${15:Item3.3} | ${16:Item4.3} |",
+            "| ${17:Item1.4} | ${18:Item2.4} | ${19:Item3.4} | ${20:Item4.4} |",
             "${0}"
         ],
         "description": "Insert table with 5 rows and 4 columns. First row is heading."
@@ -334,9 +334,9 @@
     "Insert 2x5 table": {
         "prefix": "2x5table",
         "body": [
-            "| ${1:Column1}    | ${2:Column2}    | ${3:Column3}    | ${4:Column4}    | ${5:Column5}    |",
-            "|---------------- | --------------- | --------------- | --------------- | --------------- |",
-            "| ${6:Item1.1}    | ${7:Item2.1}    | ${8:Item3.1}    | ${9:Item4.1}    | ${10:Item5.1}   |",
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} | ${5:Column5} |",
+            "| --------------- | --------------- | --------------- | --------------- | --------------- |",
+            "| ${6:Item1.1} | ${7:Item2.1} | ${8:Item3.1} | ${9:Item4.1} | ${10:Item5.1} |",
             "${0}"
         ],
         "description": "Insert table with 2 rows and 5 columns. First row is heading."
@@ -344,10 +344,10 @@
     "Insert 3x5 table": {
         "prefix": "3x5table",
         "body": [
-            "| ${1:Column1}    | ${2:Column2}    | ${3:Column3}    | ${4:Column4}    | ${5:Column5}    |",
-            "|---------------- | --------------- | --------------- | --------------- | --------------- |",
-            "| ${6:Item1.1}    | ${7:Item2.1}    | ${8:Item3.1}    | ${9:Item4.1}    | ${10:Item5.1}   |",
-            "| ${11:Item1.2}   | ${12:Item2.2}   | ${13:Item3.2}   | ${14:Item4.2}   | ${15:Item5.2}   |",
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} | ${5:Column5} |",
+            "| --------------- | --------------- | --------------- | --------------- | --------------- |",
+            "| ${6:Item1.1} | ${7:Item2.1} | ${8:Item3.1} | ${9:Item4.1} | ${10:Item5.1} |",
+            "| ${11:Item1.2} | ${12:Item2.2} | ${13:Item3.2} | ${14:Item4.2} | ${15:Item5.2} |",
             "${0}"
         ],
         "description": "Insert table with 3 rows and 5 columns. First row is heading."
@@ -355,11 +355,11 @@
     "Insert 4x5 table": {
         "prefix": "4x5table",
         "body": [
-            "| ${1:Column1}    | ${2:Column2}    | ${3:Column3}    | ${4:Column4}    | ${5:Column5}    |",
-            "|---------------- | --------------- | --------------- | --------------- | --------------- |",
-            "| ${6:Item1.1}    | ${7:Item2.1}    | ${8:Item3.1}    | ${9:Item4.1}    | ${10:Item5.1}   |",
-            "| ${11:Item1.2}   | ${12:Item2.2}   | ${13:Item3.2}   | ${14:Item4.2}   | ${15:Item5.2}   |",
-            "| ${16:Item1.3}   | ${17:Item2.3}   | ${18:Item3.3}   | ${19:Item4.3}   | ${20:Item5.3}   |",
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} | ${5:Column5} |",
+            "| --------------- | --------------- | --------------- | --------------- | --------------- |",
+            "| ${6:Item1.1} | ${7:Item2.1} | ${8:Item3.1} | ${9:Item4.1} | ${10:Item5.1} |",
+            "| ${11:Item1.2} | ${12:Item2.2} | ${13:Item3.2} | ${14:Item4.2} | ${15:Item5.2} |",
+            "| ${16:Item1.3} | ${17:Item2.3} | ${18:Item3.3} | ${19:Item4.3} | ${20:Item5.3} |",
             "${0}"
         ],
         "description": "Insert table with 4 rows and 5 columns. First row is heading."
@@ -367,12 +367,12 @@
     "Insert 5x5 table": {
         "prefix": "5x5table",
         "body": [
-            "| ${1:Column1}    | ${2:Column2}    | ${3:Column3}    | ${4:Column4}    | ${5:Column5}    |",
-            "|---------------- | --------------- | --------------- | --------------- | --------------- |",
-            "| ${6:Item1.1}    | ${7:Item2.1}    | ${8:Item3.1}    | ${9:Item4.1}    | ${10:Item5.1}   |",
-            "| ${11:Item1.2}   | ${12:Item2.2}   | ${13:Item3.2}   | ${14:Item4.2}   | ${15:Item5.2}   |",
-            "| ${16:Item1.3}   | ${17:Item2.3}   | ${18:Item3.3}   | ${19:Item4.3}   | ${20:Item5.3}   |",
-            "| ${21:Item1.4}   | ${22:Item2.4}   | ${23:Item3.4}   | ${24:Item4.4}   | ${25:Item5.4}   |",
+            "| ${1:Column1} | ${2:Column2} | ${3:Column3} | ${4:Column4} | ${5:Column5} |",
+            "| --------------- | --------------- | --------------- | --------------- | --------------- |",
+            "| ${6:Item1.1} | ${7:Item2.1} | ${8:Item3.1} | ${9:Item4.1} | ${10:Item5.1} |",
+            "| ${11:Item1.2} | ${12:Item2.2} | ${13:Item3.2} | ${14:Item4.2} | ${15:Item5.2} |",
+            "| ${16:Item1.3} | ${17:Item2.3} | ${18:Item3.3} | ${19:Item4.3} | ${20:Item5.3} |",
+            "| ${21:Item1.4} | ${22:Item2.4} | ${23:Item3.4} | ${24:Item4.4} | ${25:Item5.4} |",
             "${0}"
         ],
         "description": "Insert table with 5 rows and 5 columns. First row is heading."
