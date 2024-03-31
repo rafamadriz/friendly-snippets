@@ -184,21 +184,6 @@
         "body": ["writeln!(${1}, \"${2}\")"],
         "description": "writeln!(…, …)"
     },
-    "Err": {
-        "prefix": "Err",
-        "body": ["Err(${1})"],
-        "description": "Err(…)"
-    },
-    "Ok": {
-        "prefix": "Ok",
-        "body": ["Ok(${1:result})"],
-        "description": "Ok(…)"
-    },
-    "Some": {
-        "prefix": "Some",
-        "body": ["Some(${1})"],
-        "description": "Some(…)"
-    },
     "assert": {
         "prefix": "assert",
         "body": ["assert!(${1});"],
@@ -228,11 +213,6 @@
         "prefix": "derive",
         "body": ["#[derive(${1})]"],
         "description": "#[derive(…)]"
-    },
-    "else": {
-        "prefix": "else",
-        "body": ["else {", "    ${1:todo!();}", "}"],
-        "description": "else { … }"
     },
     "enum": {
         "prefix": "enum",
@@ -314,11 +294,6 @@
         ],
         "description": "impl … for … { … }"
     },
-    "impl": {
-        "prefix": "impl",
-        "body": ["impl ${1:Type} {", "    ${2:// add code here}", "}"],
-        "description": "impl … { … }"
-    },
     "inline-fn": {
         "prefix": "inline-fn",
         "body": [
@@ -328,16 +303,6 @@
             "}"
         ],
         "description": "inlined function"
-    },
-    "let": {
-        "prefix": "let",
-        "body": ["let ${1:pat} = ${2:expr};"],
-        "description": "let … = …;"
-    },
-    "loop": {
-        "prefix": "loop",
-        "body": ["loop {", "    ${2:todo!();}", "}"],
-        "description": "loop { … }"
     },
     "macro_rules": {
         "prefix": "macro_rules",
@@ -355,11 +320,6 @@
             "match ${1:expr} {}"
         ],
         "description": "match … { … }"
-    },
-    "mod": {
-        "prefix": "mod",
-        "body": ["mod ${1:name};"],
-        "description": "mod …;"
     },
     "mod-block": {
         "prefix": "mod-block",
