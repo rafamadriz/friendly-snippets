@@ -1,0 +1,676 @@
+{
+  "document header": {
+    "prefix": "header",
+    "body": [
+      "= ${1:${TM_FILENAME_BASE:Document Title}}",
+      "${2:Author} <${3:author@email.com}>",
+      "${4:version}, ${5:${CURRENT_YEAR:year}-${CURRENT_MONTH:month}-${CURRENT_DATE:day}}${6:: remark}",
+      "${7::attributes:}",
+      "",
+      "$0"
+    ],
+    "description": "Insert document header"
+  },
+  "document title": {
+    "prefix": ["h1", "document title"],
+    "body": ["= ${1:${TM_FILENAME_BASE:Document Title}}", "$0"],
+    "description": "Insert header level 1"
+  },
+  "document title 2": {
+    "prefix": ["h1", "document title+"],
+    "body": ["= ${1:${TM_FILENAME_BASE:Document Title}}: ${2:subtitle}", "$0"],
+    "description": "Insert header level 1 with subtitle"
+  },
+
+  "document attributes": {
+    "prefix": "document attributes",
+    "body": ["${1:author} <${2:email}>", "{localdatetime}", ":toc:", "$0"],
+    "description": "Insert document attributes"
+  },
+  "document attributes 2": {
+    "prefix": "document attributes+",
+    "body": [
+      "${1:author} <${2:email}>; ${3:author} <${4:email}>",
+      "{localdatetime}",
+      ":doctype: ${5:article}",
+      ":toc:",
+      ":toclevels: ${6:3}",
+      ":sectnums:",
+      ":xrefstyle: ${7:full}",
+      ":icons: font",
+      ":source-highlighter: ${8:highlight.js}",
+      ":experimental:",
+      ":imagesdir: ${9:images}",
+      "$0"
+    ],
+    "description": "Insert document attributes"
+  },
+
+  "section 1": {
+    "prefix": ["h2", "section 1"],
+    "body": ["== ${1:title}", "$0"],
+    "description": "Insert section level 1 (h2)"
+  },
+  "section 2": {
+    "prefix": ["h3", "section 2"],
+    "body": ["=== ${1:title}", "$0"],
+    "description": "Insert section level 2 (h3)"
+  },
+  "section 3": {
+    "prefix": ["h4", "section 3"],
+    "body": ["==== ${1:title}", "$0"],
+    "description": "Insert section level 3 (h4)"
+  },
+  "section 4": {
+    "prefix": ["h5", "section 4"],
+    "body": ["===== ${1:title}", "$0"],
+    "description": "Insert section level 4 (h5)"
+  },
+  "section 5": {
+    "prefix": ["h6", "section 5"],
+    "body": ["====== ${1:title}", "$0"],
+    "description": "Insert section level 5 (h6)"
+  },
+
+  "custom id": {
+    "prefix": ["custom id"],
+    "body": "[#${1:id}]$0",
+    "description": "Insert custom id"
+  },
+  "custom id 2": {
+    "prefix": ["custom id"],
+    "body": "[#${1:id},reftext=${2:text}]$0",
+    "description": "Insert custom id with reference text"
+  },
+
+  "thematic break": {
+    "prefix": ["thematic break", "horizontal rule"],
+    "body": ["'''", "$0"],
+    "description": "Insert thematic break (horizontal rule)"
+  },
+  "thematic break 2": {
+    "prefix": ["thematic break", "horizontal rule"],
+    "body": ["---", "$0"],
+    "description": "Insert thematic break (horizontal rule) in Markdown style"
+  },
+  "page break": {
+    "prefix": "page break",
+    "body": ["<<<", "$0"],
+    "description": "Insert page break"
+  },
+
+  "bold text": {
+    "prefix": ["bold", "b"],
+    "body": "*${1}* $0",
+    "description": "Insert bold text"
+  },
+  "italic text": {
+    "prefix": ["italic", "i"],
+    "body": "_${1}_ $0",
+    "description": "Insert italic text"
+  },
+  "monospace text": {
+    "prefix": ["monospace", "code"],
+    "body": "`${1}` $0",
+    "description": "Insert monospace text"
+  },
+  "bold and italic text": {
+    "prefix": ["bold and italic", "bi"],
+    "body": "*_${1}_* $0",
+    "description": "Insert bold and italic text"
+  },
+  "marked text": {
+    "prefix": ["mark"],
+    "body": "#${1}# $0",
+    "description": "Insert marked text"
+  },
+  "strikethrough text": {
+    "prefix": "strikethrough",
+    "body": "[.line-through]#${1}# $0",
+    "description": "Insert strikethrough text"
+  },
+  "underline text": {
+    "prefix": "underline",
+    "body": "[.underline]#${1}# $0",
+    "description": "Insert underline text"
+  },
+  "overline text": {
+    "prefix": "overline",
+    "body": "[.overline]#${1}# $0",
+    "description": "Insert overline text"
+  },
+  "small text": {
+    "prefix": "small",
+    "body": "[.small]#${1}# $0",
+    "description": "Insert small text"
+  },
+  "big text": {
+    "prefix": "big",
+    "body": "[.big]#${1}# $0",
+    "description": "Insert big text"
+  },
+  "superscript text": {
+    "prefix": "superscript",
+    "body": "^${1}^$0",
+    "description": "Insert superscript text"
+  },
+  "subscript text": {
+    "prefix": "subscript",
+    "body": "~${1}~$0",
+    "description": "Insert subscript text"
+  },
+
+  "unordered list": {
+    "prefix": "unordered list",
+    "body": ["* ${1:first}", "* ${2:second}", "* ${3:third}", "$0"],
+    "description": "Insert unordered list"
+  },
+  "ordered list": {
+    "prefix": "ordered list",
+    "body": [". ${1:first}", ". ${2:second}", ". ${3:third}", "$0"],
+    "description": "Insert ordered list"
+  },
+  "check list": {
+    "prefix": "check list",
+    "body": [
+      "* [${1: }] ${2:first}",
+      "* [${3: }] ${4:second}",
+      "* [${5: }] ${6:third}",
+      "$0"
+    ],
+    "description": "Insert check list"
+  },
+  "description list": {
+    "prefix": "description list",
+    "body": [
+      "${1:term}:: ${2:description}",
+      "${3:term}:: ${4:description}",
+      "${5:term}:: ${6:description}",
+      "$0"
+    ],
+    "description": "Insert description list"
+  },
+
+  "link simple": {
+    "prefix": "link",
+    "body": "${1:${TM_SELECTED_TEXT:link}}[${2:alt}]$0",
+    "description": "Insert simple link"
+  },
+  "link macro": {
+    "prefix": "link",
+    "body": ["${1:${TM_SELECTED_TEXT:link}}[${2:alt}] $0"],
+    "description": "Insert link macro with text"
+  },
+  "mailto link": {
+    "prefix": "mailto",
+    "body": "mailto:${1:${TM_SELECTED_TEXT:link}}[${2:alt}]$0",
+    "description": "Insert mailto link"
+  },
+
+  "cross reference": {
+    "prefix": ["<<", "cross reference"],
+    "body": ["<<${1:anchor}>> $0"],
+    "description": "cross reference"
+  },
+  "cross reference 2": {
+    "prefix": ["<<", "cross reference"],
+    "body": ["<<${1:anchor},${2:label}>> $0"],
+    "description": "cross reference with label"
+  },
+  "cross reference macro": {
+    "prefix": ["<<", "cross reference"],
+    "body": ["xref:${1:anchor}[${2:label}] $0"],
+    "description": "cross reference macro with label"
+  },
+
+  "footnote macro": {
+    "prefix": "footnote macro",
+    "body": ["footnote:[${1:text}] $0"],
+    "description": "Insert footnote macro"
+  },
+  "footnote macro 2": {
+    "prefix": "footnote macro",
+    "body": ["footnote:${1:id}[${2:text}] $0"],
+    "description": "Insert footnote macro with id"
+  },
+
+  "image inline": {
+    "prefix": "image",
+    "body": "image:${1:filepath}[${2:alt}]",
+    "description": "Insert image inline"
+  },
+  "image block macro": {
+    "prefix": "image",
+    "body": ["image::${1:filepath}[\"${2:alt}\"]", "$0"],
+    "description": "Insert image block macro"
+  },
+  "image block macro 2": {
+    "prefix": "image+",
+    "body": [".${1:title}", "image::${2:filepath}[\"${3:alt}\"]", "$0"],
+    "description": "Insert image block macro with title"
+  },
+
+  "audio block": {
+    "prefix": "audio macro",
+    "body": ["audio::${1:filepath}[]", "$0"],
+    "description": "Include audio block"
+  },
+  "video block": {
+    "prefix": "video macro",
+    "body": ["video::${1:filepath}[]", "$0"],
+    "description": "Include video block"
+  },
+
+  "icon macro": {
+    "prefix": "icon macro",
+    "body": "icon:${1:icon}[] $0",
+    "description": "Insert icon"
+  },
+  "keyboard macro": {
+    "prefix": "keyboard macro",
+    "body": "kbd:[${1:key}] $0",
+    "description": "Insert keyboard key"
+  },
+  "keyboard macro 2": {
+    "prefix": "keyboard macro",
+    "body": "kbd:[${1:key}+${2:key}] $0",
+    "description": "Insert keyboard key sequence"
+  },
+  "button macro": {
+    "prefix": "button macro",
+    "body": "btn:[${1:text}] $0",
+    "description": "Insert button"
+  },
+  "menu macro": {
+    "prefix": "menu macro",
+    "body": "menu:${1:menu}[${2:item}] $0",
+    "description": "Insert menu with item"
+  },
+  "menu macro 2": {
+    "prefix": "menu macro",
+    "body": "menu:${1:menu}[${2:item} > ${3:subitem}] $0",
+    "description": "Insert menu with subitem"
+  },
+  "menu macro 3": {
+    "prefix": "menu macro",
+    "body": "menu:${1:menu}[${2:item} > ${3:subitem} > ${4:subsubitem}] $0",
+    "description": "Insert menu with subsubitem"
+  },
+
+  "note paragraph": {
+    "prefix": ["note"],
+    "body": ["NOTE: ${1:text}", "$0"],
+    "description": "Insert NOTE admonition block as paragraph"
+  },
+  "note block": {
+    "prefix": ["note"],
+    "body": ["[NOTE]", "====", "${1:text}", "====", "$0"],
+    "description": "Insert NOTE block"
+  },
+  "note block 2": {
+    "prefix": ["note+"],
+    "body": ["[NOTE]", ".${1:title}", "====", "${2:text}", "====", "$0"],
+    "description": "Insert NOTE block"
+  },
+  "tip paragraph": {
+    "prefix": ["tip"],
+    "body": ["TIP: ${1:text}", "$0"],
+    "description": "Insert TIP admonition block as paragraph"
+  },
+  "tip block": {
+    "prefix": ["tip"],
+    "body": ["[TIP]", "====", "${1:text}", "====", "$0"],
+    "description": "Insert TIP block"
+  },
+  "tip block 2": {
+    "prefix": ["tip+"],
+    "body": ["[TIP]", ".${1:title}", "====", "${2:text}", "====", "$0"],
+    "description": "Insert TIP block"
+  },
+  "important paragraph": {
+    "prefix": ["important"],
+    "body": ["IMPORTANT: ${1:text}", "$0"],
+    "description": "Insert IMPORTANT admonition block as paragraph"
+  },
+  "important block": {
+    "prefix": ["important"],
+    "body": ["[IMPORTANT]", "====", "${1:text}", "====", "$0"],
+    "description": "Insert IMPORTANT block"
+  },
+  "important block 2": {
+    "prefix": ["important+"],
+    "body": ["[IMPORTANT]", ".${1:title}", "====", "${2:text}", "====", "$0"],
+    "description": "Insert IMPORTANT block"
+  },
+  "caution paragraph": {
+    "prefix": ["caution"],
+    "body": ["CAUTION: ${1:text}", "$0"],
+    "description": "Insert CAUTION admonition block as paragraph"
+  },
+  "caution block": {
+    "prefix": ["caution"],
+    "body": ["[CAUTION]", "====", "${1:text}", "====", "$0"],
+    "description": "Insert CAUTION block"
+  },
+  "caution block 2": {
+    "prefix": ["caution+"],
+    "body": ["[CAUTION]", ".${1:title}", "====", "${2:text}", "====", "$0"],
+    "description": "Insert CAUTION block"
+  },
+  "warning paragraph": {
+    "prefix": ["warning"],
+    "body": ["WARNING: ${1:text}", "$0"],
+    "description": "Insert WARNING admonition block as paragraph"
+  },
+  "warning block": {
+    "prefix": ["warning"],
+    "body": ["[WARNING]", "====", "${1:text}", "====", "$0"],
+    "description": "Insert WARNING block"
+  },
+  "warning block 2": {
+    "prefix": ["warning+"],
+    "body": ["[WARNING]", ".${1:title}", "====", "${2:text}", "====", "$0"],
+    "description": "Insert WARNING block"
+  },
+
+  "sidebar paragraph": {
+    "prefix": "sidebar paragraph",
+    "body": ["[sidebar]", "$1", "$0"],
+    "description": "Insert sidebar block as paragraph"
+  },
+  "sidebar paragraph 2": {
+    "prefix": "sidebar paragraph+",
+    "body": [".${1:title}", "[sidebar]", "21", "$0"],
+    "description": "Insert sidebar block as paragraph with title"
+  },
+  "sidebar block": {
+    "prefix": "sidebar",
+    "body": ["****", "$1", "****", "$0"],
+    "description": "Insert sidebar block"
+  },
+  "sidebar block 2": {
+    "prefix": "sidebar+",
+    "body": [".${1:title}", "****", "$2", "****", "$0"],
+    "description": "Insert sidebar block with title"
+  },
+
+  "example paragraph": {
+    "prefix": "example paragraph",
+    "body": ["[example]", "$1", "$0"],
+    "description": "Insert example block as paragraph"
+  },
+  "example paragraph 2": {
+    "prefix": "example paragraph+",
+    "body": [".${1:title}", "[example]", "21", "$0"],
+    "description": "Insert example block as paragraph with title"
+  },
+  "example block": {
+    "prefix": "example block",
+    "body": ["====", "$1", "====", "$0"],
+    "description": "Insert example block"
+  },
+  "example block 2": {
+    "prefix": "example block+",
+    "body": [".${1:title}", "====", "$2", "====", "$0"],
+    "description": "Insert example block with title"
+  },
+
+  "quote paragraph": {
+    "prefix": "quote paragraph",
+    "body": [
+      "[quote, ${2:attribution}, \"${3:citation title and information}\"]",
+      "$1",
+      "$0"
+    ],
+    "description": "Insert quote block as paragraph"
+  },
+  "quote paragraph 2": {
+    "prefix": "quote paragraph+",
+    "body": [
+      ".${1:title}",
+      "[quote, ${3:attribution}, \"${4:citation title and information}\"]",
+      "$2",
+      "$0"
+    ],
+    "description": "Insert quote block as paragraph with title"
+  },
+  "quote paragraph 3": {
+    "prefix": "quote paragraph",
+    "body": [
+      "\"${1:quote}\"",
+      "-- ${2:attribution}, ${3:citation title and information}",
+      "$0"
+    ],
+    "description": "Insert quote block as paragraph"
+  },
+  "quote block": {
+    "prefix": "quote block",
+    "body": [
+      "[quote, ${2:attribution}, \"${3:citation title and information}\"]",
+      "----",
+      "$1",
+      "----",
+      "$0"
+    ],
+    "description": "Insert quote block"
+  },
+  "quote block 2": {
+    "prefix": "quote block+",
+    "body": [
+      ".${1:title}",
+      "[quote, ${3:attribution}, \"${4:citation title and information}\"]",
+      "----",
+      "$2",
+      "----",
+      "$0"
+    ],
+    "description": "Insert quote block with title"
+  },
+
+  "verse paragraph": {
+    "prefix": "verse paragraph",
+    "body": [
+      "[verse, ${2:attribution}, \"${3:citation title and information}\"]",
+      "$1",
+      "$0"
+    ],
+    "description": "Insert verse block as paragraph"
+  },
+  "verse block": {
+    "prefix": "verse block",
+    "body": [
+      "[verse, ${2:attribution}, \"${3:citation title and information}\"]",
+      "____",
+      "$1",
+      "____",
+      "$0"
+    ],
+    "description": "Insert verse block"
+  },
+
+  "source code block": {
+    "prefix": "source code block",
+    "body": ["[source,${1:language}]", "----", "$2", "----", "$0"],
+    "description": "Insert source code block"
+  },
+  "source code block 2": {
+    "prefix": "source code block+",
+    "body": [
+      ".${1:title}",
+      "[source,${2:language}]",
+      "----",
+      "$3",
+      "----",
+      "$0"
+    ],
+    "description": "Insert source code block with title"
+  },
+  "source code block 3": {
+    "prefix": "source code block+",
+    "body": [
+      ".${1:title}",
+      "[source,${2:language}]",
+      "----",
+      "include::${3:filepath}[]",
+      "----",
+      "$0"
+    ],
+    "description": "Insert source code block with title via include"
+  },
+
+  "listing paragraph": {
+    "prefix": "listing paragraph",
+    "body": ["[listing]", "$1", "$0"],
+    "description": "Insert listing block as paragraph"
+  },
+  "listing block": {
+    "prefix": "listing block",
+    "body": ["----", "$1", "----", "$0"],
+    "description": "Insert listing block"
+  },
+
+  "literal paragraph": {
+    "prefix": "literal paragraph",
+    "body": ["[literal]", "$1", "$0"],
+    "description": "Insert literal block as paragraph"
+  },
+  "literal block": {
+    "prefix": "literal block",
+    "body": ["....", "$1", "....", "$0"],
+    "description": "Insert literal block"
+  },
+
+  "table": {
+    "prefix": "table",
+    "body": [
+      ".${1:title}",
+      "[cols=\"1,1,1\"]",
+      "|===",
+      "| ${2:column1} | ${3:column2} | ${4:column3}",
+      "",
+      "| ${5:cell1.1} | ${6:cell1.2} | ${7:cell1.3}",
+      "| ${8:cell2.1} | ${9:cell2.2} | ${10:cell2.3}",
+      "| ${11:cell3.1} | ${12:cell3.2} | ${13:cell3.3}",
+      "|===",
+      "$0"
+    ],
+    "description": "Insert 4x3 table with header"
+  },
+  "table 2": {
+    "prefix": "table",
+    "body": [
+      ".${1:title}",
+      "[%autowidth%header,cols=\"1,1,1\"]",
+      "|===",
+      "| ${2:column1} | ${3:column2} | ${4:column3}",
+      "",
+      "| ${5:cell1.1}",
+      "| ${6:cell1.2}",
+      "| ${7:cell1.3}",
+      "",
+      "| ${8:cell2.1}",
+      "| ${9:cell2.2}",
+      "| ${10:cell2.3}",
+      "",
+      "| ${11:cell3.1}",
+      "| ${12:cell3.2}",
+      "| ${13:cell3.3}",
+      "|===",
+      "$0"
+    ],
+    "description": "Insert 4x3 table with autowidth and header"
+  },
+
+  "open block": {
+    "prefix": "open block",
+    "body": ["--", "$1", "--", "$0"],
+    "description": "Insert open block"
+  },
+
+  "collapsible paragraph": {
+    "prefix": "collapsible paragraph",
+    "body": ["[example%collapsible]", "$1", "$0"],
+    "description": "Insert collapsible block as paragraph"
+  },
+  "collapsible block": {
+    "prefix": "collapsible block",
+    "body": ["[%collapsible]", "====", "$1", "====", "$0"],
+    "description": "Insert collapsible block"
+  },
+  "collapsible block 2": {
+    "prefix": "collapsible block+",
+    "body": [".${1:title}", "[%collapsible]", "====", "$2", "====", "$0"],
+    "description": "Insert collapsible block with title"
+  },
+  "collapsible block 3": {
+    "prefix": "collapsible block in block+",
+    "body": [
+      ".${1:title}",
+      "[%collapsible]",
+      "====",
+      "=====",
+      "$2",
+      "=====",
+      "====",
+      "$0"
+    ],
+    "description": "Insert collapsible block with title and inner block"
+  },
+  "collapsible block 4": {
+    "prefix": "collapsible code in block+",
+    "body": [
+      ".${1:title}",
+      "[%collapsible]",
+      "====",
+      "[source,${2:language}]",
+      "----",
+      "$3",
+      "----",
+      "====",
+      "$0"
+    ],
+    "description": "Insert collapsible block with title and inner code block"
+  },
+
+  "comment": {
+    "prefix": ["/", "comment"],
+    "body": "// $0",
+    "description": "Insert comment"
+  },
+  "comment block": {
+    "prefix": ["/", "comment block"],
+    "body": ["////", "$1", "////", "$0"],
+    "description": "Insert comment"
+  },
+
+  "include directive": {
+    "prefix": "include directive",
+    "body": ["include::${1:filepath}[]", "$0"],
+    "description": "Include content from file or URL"
+  },
+
+  "diagram plantuml": {
+    "prefix": "diagram plantuml",
+    "body": [
+      ".${1:title}",
+      "[plantuml, \"${2:file}\", svg]",
+      "....",
+      "$3",
+      "....",
+      "$0"
+    ],
+    "description": "Insert diagram with plantuml"
+  },
+  "diagram plantuml 2": {
+    "prefix": "diagram plantuml",
+    "body": [
+      ".${1:title}",
+      "[plantuml, \"${2:file}\", svg]",
+      "....",
+      "include::${3:filepath}[]",
+      "....",
+      "$0"
+    ],
+    "description": "Insert diagram with plantuml via include"
+  }
+}
