@@ -433,22 +433,22 @@
         	"language": "twig",
                 "path": "./snippets/frameworks/twig.json"
             },
-	    {
-	    	"language": "blade",
-	    	"path": "./snippets/frameworks/blade/blade.json"
-	    },
-	    {
-		"language": "blade",
-		"path": "./snippets/frameworks/blade/helpers.json"
-	    },
-	    {
-		"language": "blade",
-		"path": "./snippets/frameworks/blade/livewire.json"
-	    },
-	    {
-		"language": "blade",
-		"path": "./snippets/frameworks/blade/snippets.json"
-	    },
+            {
+                "language": "blade",
+                "path": "./snippets/frameworks/blade/blade.json"
+            },
+            {
+                "language": "blade",
+                "path": "./snippets/frameworks/blade/helpers.json"
+            },
+            {
+                "language": "blade",
+                "path": "./snippets/frameworks/blade/livewire.json"
+            },
+            {
+                "language": "blade",
+                "path": "./snippets/frameworks/blade/snippets.json"
+            },
             {
                 "language": ["r", "rmd"],
                 "path": "./snippets/r.json"
