@@ -559,6 +559,10 @@
             {
                 "language": "gleam",
                 "path": "./snippets/gleam.json"
+            },
+            {
+                "language": "asciidoc",
+                "path": "./snippets/asciidoc.json"
             }
         ]
     }
