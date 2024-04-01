@@ -4,6 +4,7 @@
     "body": [
       "@tailwind base;",
       "@tailwind components;",
+<<<<<<< HEAD
       "@tailwind utilities;",
       "$0"
     ],
@@ -44,6 +45,18 @@
       "aspect-video $0"
     ],
     "description": "aspect-ratio: 16 / 9;"
+=======
+      "@tailwind utilities;"
+    ],
+    "description": "An opinionated set of base styles for Tailwind projects."
+  },
+  "aspect-ratio": {
+    "prefix": "aspect-ratio",
+    "body": [
+      "aspect-${1|auto, square, video|}"
+    ],
+    "description": "aspect-ratio"
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
   },
   "aspect-arbitrary": {
     "prefix": "aspectArbitrary",
@@ -52,6 +65,7 @@
     ],
     "description": "aspect arbitrary values"
   },
+<<<<<<< HEAD
   "columns": {
     "prefix": "columnsNumber",
     "body": [
@@ -219,5 +233,13 @@
       "${1|justify-self-auto,justify-self-start,justify-self-end,justify-self-center,justify-self-stretch|} $0"
     ],
     "description": "Utilities for controlling how an individual grid item is aligned along its inline axis."
+=======
+  "container": {
+    "prefix": "container",
+    "body": [
+      "container"
+    ],
+    "description": "container => sm(640px), md(768px), lg(1024px), xl(1280px), 2xl(1536px) and use max-width overall"
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
   }
 }

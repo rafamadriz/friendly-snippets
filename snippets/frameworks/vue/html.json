@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "Template Vue": {
     "prefix": "template",
     "body": [
@@ -334,4 +335,169 @@
     ],
     "description": "radio button from vue using v-model"
   }
+=======
+    "template": {
+        "prefix": "template",
+        "body": [
+            "<template>",
+            "\t<${1:div}$2>",
+            "\t\t$0",
+            "\t</${1:div}>",
+            "</template>"
+        ],
+        "description": "template element"
+    },
+    "v-text": {
+        "prefix": "vText",
+        "body": ["v-text=\"${1:msg}\""],
+        "description": "Expects: string. Updates the element’s textContent."
+    },
+    "v-html": {
+        "prefix": "vHtml",
+        "body": ["v-html=\"${1:html}\""],
+        "description": "Expects: string. Updates the element’s innerHTML."
+    },
+    "v-show": {
+        "prefix": "vShow",
+        "body": ["v-show=\"${1:condition}\""],
+        "description": "Expects: any"
+    },
+    "v-if": {
+        "prefix": "vIf",
+        "body": ["v-if=\"${1:condition}\""],
+        "description": "Expects: any"
+    },
+    "v-else": {
+        "prefix": "vElse",
+        "body": ["v-else"],
+        "description": "Does not expect expression. previous sibling element must have v-if or v-else-if."
+    },
+    "v-else-if": {
+        "prefix": "vElseIf",
+        "body": ["v-else-if=\"${1:condition}\""],
+        "description": "Expects: any. previous sibling element must have v-if or v-else-if."
+    },
+    "v-for-without-key": {
+        "prefix": "vForWithoutKey",
+        "body": ["v-for=\"${1:item} in ${2:items}\""],
+        "description": "Expects: Array | Object | number | string"
+    },
+    "v-for": {
+        "prefix": "vFor",
+        "body": [
+            "v-for=\"(${1:item}, ${2:index}) in ${3:items}\" :key=\"${4:index}\""
+        ],
+        "description": "Expects: Array | Object | number | string"
+    },
+    "v-on-shorthand": {
+        "prefix": "@",
+        "body": ["@${1:event}=\"${2:handle}\""],
+        "description": "v-on shortcut from vue 3"
+    },
+    "v-bind-shorthand": {
+        "prefix": "vBind",
+        "body": [":{$1}=\"${2}\""],
+        "description": "Expects: any (with argument) | Object (without argument)"
+    },
+    "v-model": {
+        "prefix": "vModel",
+        "body": ["v-model=\"${1:something}\""],
+        "description": "Expects: varies based on value of form inputs element or output of components"
+    },
+    "v-slot": {
+        "prefix": "vSlot",
+        "body": ["#{$1:nameSlot}=\"${2}\""],
+        "description": "Expects: JavaScript expression that is valid in a function argument position (supports destructuring in supported environments). Optional - only needed if expecting props to be passed to the slot."
+    },
+    "v-pre": {
+        "prefix": "vPre",
+        "body": ["v-pre"],
+        "description": "Does not expect expression"
+    },
+    "v-cloak": {
+        "prefix": "vCloak",
+        "body": ["v-cloak"],
+        "description": "Does not expect expression"
+    },
+    "v-once": {
+        "prefix": "vOnce",
+        "body": ["v-once"],
+        "description": "Does not expect expression"
+    },
+    "key": {
+        "prefix": "key",
+        "body": [":key=\"${1:key}\""],
+        "description": "Expects: string. Children of the same common parent must have unique keys. Duplicate keys will cause render errors."
+    },
+    "ref": {
+        "prefix": "ref",
+        "body": ["ref=\"${1:reference}\"$0"],
+        "description": "Expects: string. ref is used to register a reference to an element or a child component. The reference will be registered under the parent component’s $refs object. If used on a plain DOM element, the reference will be that element; if used on a child component, the reference will be component instance."
+    },
+    "slotA": {
+        "prefix": "slotA",
+        "body": ["slot=\"$1\"$0"],
+        "description": "slot=''. Expects: string. Used on content inserted into child components to indicate which named slot the content belongs to."
+    },
+    "slotE": {
+        "prefix": "slotE",
+        "body": ["<slot$1>$2</slot>$0"],
+        "description": "<slot></slot>. Expects: string. Used on content inserted into child components to indicate which named slot the content belongs to."
+    },
+    "component": {
+        "prefix": "component",
+        "body": ["<component :is=\"${1:componentId}\"></component>$0"],
+        "description": "component element"
+    },
+    "keep-alive": {
+        "prefix": "keepAlive",
+        "body": ["<keep-alive$1>", "$2", "</keep-alive>$0"],
+        "description": "keep-alive element"
+    },
+    "transition": {
+        "prefix": "transition",
+        "body": ["<transition$1>", "$2", "</transition>$0"],
+        "description": "transition element"
+    },
+    "transition-group": {
+        "prefix": "transitionGroup",
+        "body": ["<transition-group$1>", "$2", "</transition-group>"],
+        "description": "transition-group element"
+    },
+    "routerLink": {
+        "prefix": "routerLink",
+        "body": ["<router-link $1>$2</router-link>$0"],
+        "description": "router-link element"
+    },
+    "routerLinkTo": {
+        "prefix": "routerLinkTo",
+        "body": ["<router-link to=\"$1\">$2</router-link>$0"],
+        "description": "<router-link to=''></router-link>. router-link element"
+    },
+    "to": {
+        "prefix": "to",
+        "body": ["to=\"$1\"$0"],
+        "description": "to=''"
+    },
+    "tag": {
+        "prefix": "tag",
+        "body": ["tag=\"$1\"$0"],
+        "description": "tag=''"
+    },
+    "routerView": {
+        "prefix": "routerView",
+        "body": ["<router-view>$1</router-view>$0"],
+        "description": "router-view element"
+    },
+    "teleport": {
+        "prefix": "teleport",
+        "body": ["<Teleport to=\"$1\">", "$0", "</Teleport>"],
+        "description": "<Teleport> is a built-in component that allows us to 'teleport' a part of a component's template into a DOM node that exists outside the DOM hierarchy of that component."
+    },
+    "suspense": {
+        "prefix": "suspense",
+        "body": ["<Suspense>", "$0", "</Suspense>"],
+        "description": "<Suspense> will render its default slot content in memory. If any async dependencies are encountered during the process, it will enter a pending state."
+    }
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
 }

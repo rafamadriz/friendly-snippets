@@ -1,12 +1,20 @@
 {
+<<<<<<< HEAD
   "Import": {
+=======
+  "import": {
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     "prefix": "import",
     "body": [
       "import $1 from '$2'"
     ],
     "description": "import ... from ..."
   },
+<<<<<<< HEAD
   "Import Type": {
+=======
+  "import-type": {
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     "prefix": "importType",
     "body": [
       "import type {$1} from '$2'"
@@ -29,7 +37,11 @@
     ],
     "description": "A list/hash of attributes that are exposed to accept data from the parent component. "
   },
+<<<<<<< HEAD
   "defineProps Typescript": {
+=======
+  "defineProps-TS": {
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     "prefix": "definePropsTS",
     "body": [
       "const props = defineProps<{",
@@ -45,7 +57,11 @@
     ],
     "description": "A list of events that componetnt can emits to the parent component. "
   },
+<<<<<<< HEAD
   "defineEmits Typescript": {
+=======
+  "defineEmits-TS": {
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     "prefix": "defineEmitsTS",
     "body": [
       "const ${1:emit} = defineEmits<{",
@@ -55,7 +71,11 @@
     ],
     "description": "A list of events that componetnt can emits to the parent component. "
   },
+<<<<<<< HEAD
   "defineEmits Typescript with Tuple": {
+=======
+  "defineEmits-TS-tuple": {
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     "prefix": "defineEmitsTStuple",
     "body": [
       "const ${1:emit} = defineEmits<{",
@@ -92,7 +112,11 @@
     ],
     "description": "create a custom element vue"
   },
+<<<<<<< HEAD
   "Data Option API": {
+=======
+  "data-options": {
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     "prefix": "data",
     "body": [
       "data() {",
@@ -103,7 +127,11 @@
     ],
     "description": "The data object for the Vue instance."
   },
+<<<<<<< HEAD
   "Computed Option API": {
+=======
+  "computed-options": {
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     "prefix": "computed",
     "body": [
       "computed: {",
@@ -112,7 +140,11 @@
     ],
     "description": "Computed properties to be mixed into the Vue instance. "
   },
+<<<<<<< HEAD
   "Computed Composition API": {
+=======
+  "computed-composition": {
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     "prefix": "computedVue",
     "body": [
       "const $1 = computed(() => {",
@@ -121,7 +153,11 @@
     ],
     "description": "Computed properties to be mixed into the Vue instance. "
   },
+<<<<<<< HEAD
   "Computed with Typescript": {
+=======
+  "computed-composition-ts": {
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     "prefix": "computedVueTS",
     "body": [
       "const $1 = computed<${2:type}>(() => {",
@@ -130,7 +166,11 @@
     ],
     "description": "Computed properties to be mixed into the Vue instance. "
   },
+<<<<<<< HEAD
   "Reactive": {
+=======
+  "reactive-composition": {
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     "prefix": "reactiveVue",
     "body": [
       "const $1 = reactive({",
@@ -139,7 +179,11 @@
     ],
     "description": "Reactive properties to be mixed into the Vue instance. "
   },
+<<<<<<< HEAD
   "Reactive with Typescript": {
+=======
+  "reactive-composition-ts": {
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     "prefix": "reactiveVueTS",
     "body": [
       "interface $1 {",
@@ -201,7 +245,11 @@
     ],
     "description": "Registers a dispose callback on the current active effect scope. The callback will be invoked when the associated effect scope is stopped."
   },
+<<<<<<< HEAD
   "Ref Vue": {
+=======
+  "ref-composition": {
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     "prefix": "refVue",
     "body": [
       "const $1 = ref($2)",
@@ -209,29 +257,48 @@
     ],
     "description": "Ref properties to be mixed into the Vue instance. "
   },
+<<<<<<< HEAD
   "Ref with Typescript": {
     "prefix": "refVueTS",
     "body": [
       "const $1 = ref<${2:type}>($3)",
+=======
+  "ref-composition-ts": {
+    "prefix": "refVueTS",
+    "body": [
+      "const $3 = ref<${2:type}>($1)",
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
       "$0"
     ],
     "description": "Ref properties to be mixed into the Vue instance. "
   },
+<<<<<<< HEAD
   "Template Ref with Typescript": {
+=======
+  "template-ref-ts-composition": {
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     "prefix": "trfVue",
     "body": [
       "const $0 = ref<HTMLInputElement | null>(null)"
     ],
     "description": "Template ref to be mixed into the Vue instance. "
   },
+<<<<<<< HEAD
   "Component Ref with Typescript": {
+=======
+  "component-ref-ts-composition": {
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     "prefix": "crfVue",
     "body": [
       "const $1 = ref<InstanceType<typeof $0> | null>(null)"
     ],
     "description": "Template ref to be mixed into the Vue instance. "
   },
+<<<<<<< HEAD
   "Methods with Options API": {
+=======
+  "methods-options": {
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     "prefix": "methods",
     "body": [
       "methods: {",
@@ -240,15 +307,24 @@
     ],
     "description": "Methods to be mixed into the Vue instance."
   },
+<<<<<<< HEAD
   "Arrow Function": {
     "prefix": "functionVueArrow",
     "body": [
       "const $1 = ($2) => {",
       " $0",
+=======
+  "function": {
+    "prefix": "functionVue3",
+    "body": [
+      "const $1 = ($2) => {",
+      "$0",
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
       "};"
     ],
     "description": "Method composition properties to be mixed into the Vue instance. "
   },
+<<<<<<< HEAD
   "Function": {
     "prefix": "functionVue",
     "body": [
@@ -294,20 +370,34 @@
     ],
     "description": "Extending an interface from typescript"
   },
+=======
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
   "watch": {
     "prefix": "watch",
     "body": [
       "watch($1, ($2, $3) => {",
+<<<<<<< HEAD
       " $0",
+=======
+      "$0",
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
       "});"
     ],
     "description": "Watch over a reactive source and call a function in reaction to state changes "
   },
+<<<<<<< HEAD
   "watchEffect": {
     "prefix": "watchEffect",
     "body": [
       "watchEffect($1, ($2, $3) => {",
       " $0",
+=======
+  "watchEffect-composition": {
+    "prefix": "watchEffect",
+    "body": [
+      "watchEffect($1, ($2, $3) => {",
+      "$0",
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
       "});"
     ],
     "description": "watchEffect from vue composition "
@@ -325,36 +415,52 @@
   "onBeforeMount": {
     "prefix": "onBeforeMount",
     "body": [
+<<<<<<< HEAD
       "onBeforeMount(() => {",
       " $0",
       "})"
+=======
+      "onBeforeMount(() => {$0})"
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     ],
     "description": "Vue before mount composition lifecycle hook"
   },
   "onMounted": {
     "prefix": "onmounted",
     "body": [
+<<<<<<< HEAD
       "onMounted(() => {",
       " $0",
       "})"
+=======
+      "onMounted(() => {$0})"
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     ],
     "description": "Vue mounted lifecycle hook"
   },
   "onBeforeUnmount": {
     "prefix": "onBeforeUnmount",
     "body": [
+<<<<<<< HEAD
       "onBeforeUnmount(() => {",
       " $0",
       "})"
+=======
+      "onBeforeUnmount(() => {$0})"
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     ],
     "description": "Vue before unmount composition lifecycle hook"
   },
   "onUnmounted": {
     "prefix": "onunmounted",
     "body": [
+<<<<<<< HEAD
       "onUnmounted(() => {",
       " $0",
       "})"
+=======
+      "onUnmounted(() => {$0})"
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     ],
     "description": "Vue unMounted lifecycle hook"
   },
@@ -379,18 +485,26 @@
   "onBeforeUpdate": {
     "prefix": "onBeforeUpdate",
     "body": [
+<<<<<<< HEAD
       "onBeforeUpdate(() => {",
       " $0",
       "})"
+=======
+      "onBeforeUpdate(() => {$0})"
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     ],
     "description": "Vue before update composition lifecycle hook"
   },
   "onUpdated-composition": {
     "prefix": "onupdated",
     "body": [
+<<<<<<< HEAD
       "onUpdated(() => {",
       " $0",
       "})"
+=======
+      "onUpdated(() => {$0})"
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     ],
     "description": "Vue updated lifecycle hook"
   },
@@ -398,7 +512,11 @@
     "prefix": "activated",
     "body": [
       "activated() {",
+<<<<<<< HEAD
       "\t$0",
+=======
+      "\t$1",
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
       "},"
     ],
     "description": "Type: Function."
@@ -407,7 +525,11 @@
     "prefix": "deactivated",
     "body": [
       "deactivated() {",
+<<<<<<< HEAD
       "\t$0",
+=======
+      "\t$1",
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
       "},"
     ],
     "description": "Type: Function."
@@ -415,18 +537,26 @@
   "onActivated-composition": {
     "prefix": "onActivated",
     "body": [
+<<<<<<< HEAD
       "onActivated(() => {",
       " $0",
       "})"
+=======
+      "onActivated(() => {$0})"
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     ],
     "description": "Vue activated composition lifecycle hook"
   },
   "onDeactivated-composition": {
     "prefix": "onDeactivated",
     "body": [
+<<<<<<< HEAD
       "onDeactivated(() => {",
       " $0",
       "})"
+=======
+      "onDeactivated(() => {$0})"
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     ],
     "description": "Vue deactivated composition lifecycle hook"
   },
@@ -434,7 +564,11 @@
     "prefix": "beforeDestroy",
     "body": [
       "beforeDestroy() {",
+<<<<<<< HEAD
       "\t$0",
+=======
+      "\t$1",
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
       "},"
     ],
     "description": "Type: Function."
@@ -443,7 +577,11 @@
     "prefix": "destroyed",
     "body": [
       "destroyed() {",
+<<<<<<< HEAD
       "\t$0",
+=======
+      "\t$1",
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
       "},"
     ],
     "description": "Type: Function."
@@ -452,7 +590,11 @@
     "prefix": "errorCaptured",
     "body": [
       "errorCaptured: (err, vm, info) => {",
+<<<<<<< HEAD
       "\t$0",
+=======
+      "\t$1",
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
       "},"
     ],
     "description": "Type: (err: Error, vm: Component, info: string) => ?boolean"
@@ -461,7 +603,11 @@
     "prefix": "createRenderer",
     "body": [
       "createRenderer({",
+<<<<<<< HEAD
       "\t$0",
+=======
+      "\t$1",
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
       "})"
     ],
     "description": "createRenderer({ })"
@@ -499,8 +645,12 @@
   "useRoute-composition": {
     "prefix": "useRoute",
     "body": [
+<<<<<<< HEAD
       "const ${1:route} = useRoute()",
       "$0"
+=======
+      "const ${1:route} = useRoute()"
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     ],
     "description": "const route = useRoute()"
   },
@@ -647,33 +797,46 @@
   "onRenderTriggered-composition": {
     "prefix": "onRenderTriggered",
     "body": [
+<<<<<<< HEAD
       "onRenderTriggered(() => {",
       " $0",
       "})"
+=======
+      "onRenderTriggered(() => {$0})"
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     ],
     "description": "Vue onRenderTriggered lifecycle hook"
   },
   "onErrorCaptured-composition": {
     "prefix": "onErrorCaptured",
     "body": [
+<<<<<<< HEAD
       "onErrorCaptured(() => {",
       " $0",
       "})"
+=======
+      "onErrorCaptured(() => {$0})"
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     ],
     "description": "Vue oneErrorCaptured lifecycle hook"
   },
   "onRenderTracked-composition": {
     "prefix": "onRenderTracked",
     "body": [
+<<<<<<< HEAD
       "onRenderTracked(() => {",
       " $0",
       "})"
+=======
+      "onRenderTracked(() => {$0})"
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     ],
     "description": "Vue onRenderTracked lifecycle hook"
   },
   "onServerPrefetch-compositionSSR": {
     "prefix": "onServerPrefetch",
     "body": [
+<<<<<<< HEAD
       "onServerPrefetch(() => {",
       " $0",
       "})"
@@ -1366,5 +1529,10 @@
     ],
     "description": "v-model can be used on a component to implement a two-way binding.",
     "markdownDescription":"(v-model component)[https://vuejs.org/guide/components/v-model.html]"
+=======
+      "onServerPrefetch(() => {$0})"
+    ],
+    "description": "Vue onServerPrefetch lifecycle hook SSR Only"
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
   }
 }

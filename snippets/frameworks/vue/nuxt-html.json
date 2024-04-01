@@ -1,18 +1,27 @@
 {
+<<<<<<< HEAD
   "Nuxt Welcome": {
+=======
+  "NuxtWelcome": {
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     "prefix": "NuxtWelcome",
     "body": [
       "<NuxtWelcome />"
     ],
     "description": "The <NuxtWelcome> component greets users in new projects made from the starter template. It includes links to the Nuxt documentation, source code, and social media accounts."
   },
+<<<<<<< HEAD
   "Nuxt Page": {
+=======
+  "NuxtPage": {
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     "prefix": "NuxtPage",
     "body": [
       "<NuxtPage />"
     ],
     "description": "<NuxtPage> is a built-in component that comes with Nuxt. NuxtPage is required to display top-level or nested pages located in the pages/ directory."
   },
+<<<<<<< HEAD
   "Nuxt Link": {
     "prefix": "NuxtLink",
     "body": [
@@ -31,6 +40,24 @@
     "description": "<NuxtLayout /> can be used to override default layout on app.vue, error.vue or even page components found in the /pages directory."
   },
   "Nuxt Error Boundary": {
+=======
+  "NuxtLink": {
+    "prefix": "NuxtLink",
+    "body": [
+      "<NuxtLink to=\"$1\">$0</NuxtLink>"
+    ],
+    "description": "Nuxt provides <NuxtLink> component to handle any kind of links within your application."
+  },
+  "NuxtLayout": {
+    "prefix": "NuxtLayout",
+    "body": [
+      "<NuxtLayout>",
+      "</NuxtLayout>"
+    ],
+    "description": "<NuxtLayout /> can be used to override default layout on app.vue, error.vue or even page components found in the /pages directory."
+  },
+  "NuxtErrorBoundary": {
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     "prefix": "NuxtErrorBoundary",
     "body": [
       "<NuxtErrorBoundary>",
@@ -38,14 +65,22 @@
     ],
     "description": "The <NuxtErrorBoundary> component handles client-side errors happening in its default slot, using Vue's onErrorCaptured hook."
   },
+<<<<<<< HEAD
   "Nuxt Loading Indicator": {
+=======
+  "NuxtLoadingIndicator": {
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     "prefix": "NuxtLoadingIndicator",
     "body": [
       "<NuxtLoadingIndicator />"
     ],
     "description": "The <NuxtLoadingIndicator> component displays a progress bar on page navigation."
   },
+<<<<<<< HEAD
   "Client Only": {
+=======
+  "ClientOnly": {
+>>>>>>> ea068f1becd91bcd4591fceb6420d4335e2e14d3
     "prefix": "ClientOnly",
     "body": [
       "<ClientOnly>",
