@@ -168,5 +168,13 @@
     ],
     "description": "The useSeoMeta composable lets you define your site's SEO meta tags as a flat object with full TypeScript support.",
     "markdownDescription":"(full list of parameters in the source code)[https://github.com/harlan-zw/zhead/blob/main/src/metaFlat.ts]"
+  },
+  "useRequestURL": {
+    "prefix": "useRequestURL",
+    "body": [
+      "const ${1:url} = useRequestURL()",
+      "$0"
+    ],
+    "description": "useRequestURL is a helper function that returns an URL object working on both server-side and client-side."
   }
 }
