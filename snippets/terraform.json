@@ -6944,5 +6944,45 @@
       "   }",
       "}"
     ]
+  },
+  "data_source": {
+    "prefix": "data",
+    "description": "Define a data source",
+    "body": [
+      "data \"${data_source_type}\" \"${data_source_name}\" {",
+      "   ${value} = \"${identifier}\"",
+      "}"
+    ]
+  },
+  "input_variable": {
+    "prefix": "input",
+    "description": "Define an input variable",
+    "body": [
+      "variable \"${name}\" {",
+      "   type = \"${type}\"",
+      "   description = \"${description}\"",
+      "   default = \"${default_value}\"",
+      "}"
+    ]
+  },
+  "output_variable": {
+    "prefix": "output",
+    "description": "Define an output value",
+    "body": [
+      "output \"${output_name}\" {",
+      "   value = ${resource_name_attribute}",
+      "   description = ${description}",
+      "}"
+    ]
+  },
+  "resource": {
+    "prefix": [ "resource", "res" ],
+    "description": "basic resource definition",
+    "body": [
+	    "resource \"${resource_type}\" \"${resource_name}\" {",
+		    "   ${field} = \"${value}\"",
+		    "}"
+
+    ]
   }
 }

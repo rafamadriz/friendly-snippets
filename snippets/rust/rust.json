@@ -231,7 +231,7 @@
     },
     "else": {
         "prefix": "else",
-        "body": ["else {", "    ${1:unimplemented!();}", "}"],
+        "body": ["else {", "    ${1:todo!();}", "}"],
         "description": "else { … }"
     },
     "enum": {
@@ -268,7 +268,7 @@
         "prefix": "pfn",
         "body": [
             "pub fn ${1:name}(${2:arg}: ${3:Type}) -> ${4:RetType} {",
-            "    ${5:unimplemented!();}",
+            "    ${5:todo!();}",
             "}"
         ],
         "description": "pub fn …(…) { … }"
@@ -277,7 +277,7 @@
         "prefix": "fn",
         "body": [
             "fn ${1:name}(${2:arg}: ${3:Type}) -> ${4:RetType} {",
-            "    ${5:unimplemented!();}",
+            "    ${5:todo!();}",
             "}"
         ],
         "description": "fn …(…) { … }"
@@ -286,7 +286,7 @@
         "prefix": "for",
         "body": [
             "for ${1:pat} in ${2:expr} {",
-            "    ${3:unimplemented!();}",
+            "    ${3:todo!();}",
             "}"
         ],
         "description": "for … in … { … }"
@@ -295,14 +295,14 @@
         "prefix": "if-let",
         "body": [
             "if let ${1:Some(pat)} = ${2:expr} {",
-            "    ${0:unimplemented!();}",
+            "    ${0:todo!();}",
             "}"
         ],
         "description": "if let … = … { … }"
     },
     "if": {
         "prefix": "if",
-        "body": ["if ${1:condition} {", "    ${2:unimplemented!();}", "}"],
+        "body": ["if ${1:condition} {", "    ${2:todo!();}", "}"],
         "description": "if … { … }"
     },
     "impl-trait": {
@@ -324,7 +324,7 @@
         "body": [
             "#[inline]",
             "pub fn ${1:name}() {",
-            "    ${2:unimplemented!();}",
+            "    ${2:todo!();}",
             "}"
         ],
         "description": "inlined function"
@@ -336,7 +336,7 @@
     },
     "loop": {
         "prefix": "loop",
-        "body": ["loop {", "    ${2:unimplemented!();}", "}"],
+        "body": ["loop {", "    ${2:todo!();}", "}"],
         "description": "loop { … }"
     },
     "macro_rules": {
@@ -346,7 +346,7 @@
     },
     "main": {
         "prefix": "main",
-        "body": ["fn main() {", "    ${1:unimplemented!();}", "}"],
+        "body": ["fn main() {", "    ${1:todo!();}", "}"],
         "description": "fn main() { … }"
     },
     "match": {
@@ -391,12 +391,25 @@
         ],
         "description": "struct … { … }"
     },
+    "modtest": {
+        "prefix": "modtest",
+        "body": [
+            "#[cfg(test)]",
+            "mod test {",
+            "    #[test]",
+            "    fn ${1:name}() {",
+            "        ${2:todo!();}",
+            "    }",
+            "}"
+        ],
+        "description": "#[cfg(test)]\nmod test {...}"
+    },
     "test": {
         "prefix": "test",
         "body": [
             "#[test]",
             "fn ${1:name}() {",
-            "    ${2:unimplemented!();}",
+            "    ${2:todo!();}",
             "}"
         ],
         "description": "#[test]"
@@ -415,14 +428,14 @@
         "prefix": "while-let",
         "body": [
             "while let ${1:Some(pat)} = ${2:expr} {",
-            "    ${0:unimplemented!();}",
+            "    ${0:todo!();}",
             "}"
         ],
         "description": "while let … = … { … }"
     },
     "while": {
         "prefix": "while",
-        "body": ["while ${1:condition} {", "    ${2:unimplemented!();}", "}"],
+        "body": ["while ${1:condition} {", "    ${2:todo!();}", "}"],
         "description": "while … { … }"
     }
 }
