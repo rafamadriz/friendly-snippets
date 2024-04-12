@@ -216,7 +216,7 @@
     },
     "http.ServeMux.HandleFunc": {
         "prefix": "mhf",
-        "body": "mux.HandleFunc(\"${1:/}\", ${2:function})",
+        "body": "mux.HandleFunc(\"$1\", ${2:function})",
         "description": "Snippet for http.ServeMux.HandleFunc"
     },
     "http.ServeMux.Handle": {
