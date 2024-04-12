@@ -9,8 +9,8 @@
         "body": "import (\n\t\"${1:package}\"\n)",
         "description": "Snippet for a import block"
     },
-    "single constant": {
-        "prefix": "co",
+    
+        "PREFIX": "co",
         "body": "const ${1:name} = ${2:value}",
         "description": "Snippet for a constant"
     },
@@ -116,11 +116,6 @@
     },
     "if err != nil": {
         "prefix": "ir",
-        "body": "if err != nil {\n\t${1:return ${2:nil, }${3:err}}\n}",
-        "description": "Snippet for if err != nil"
-    },
-    "if err != nil better": {
-        "prefix": "if err",
         "body": "if err != nil {\n\t${1:return ${2:nil, }${3:err}}\n}",
         "description": "Snippet for if err != nil"
     },
