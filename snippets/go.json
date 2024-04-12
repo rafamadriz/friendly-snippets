@@ -119,11 +119,6 @@
         "body": "if err != nil {\n\t${1:return ${2:nil, }${3:err}}\n}",
         "description": "Snippet for if err != nil"
     },
-    "if err != nil better": {
-        "prefix": "if err",
-        "body": "if err != nil {\n\t${1:return ${2:nil, }${3:err}}\n}",
-        "description": "Snippet for if err != nil"
-    },
     "fmt.Println": {
         "prefix": "fp",
         "body": "fmt.Println(\"$1\")",
