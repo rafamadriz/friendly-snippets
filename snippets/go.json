@@ -216,7 +216,12 @@
     },
     "http.ServeMux.HandleFunc": {
         "prefix": "mhf",
-        "body": "${1:mux}.HandleFunc(\"/\", function)",
+        "body": "mux.HandleFunc(\"${1:/}\", ${2:function})",
+        "description": "Snippet for http.ServeMux.HandleFunc"
+    },
+    "http.ServeMux.Handle": {
+        "prefix": "mh",
+        "body": "mux.Handle(\"$1\", ${2:handler})",
         "description": "Snippet for http.ServeMux.HandleFunc"
     },
     "goroutine anonymous function": {
