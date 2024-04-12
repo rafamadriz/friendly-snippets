@@ -212,17 +212,17 @@
     "http.NewServeMux()": {
         "prefix": "nmx",
         "body": "mux := http.NewServeMux()",
-        "description": "Snippet for http.NewServeMux()",
+        "description": "Snippet for http.NewServeMux()"
     },
     "http.ServeMux.HandleFunc": {
         "prefix": "mhf",
         "body": "mux.HandleFunc(\"${1:/}\", ${2:function})",
-        "description": "Snipper for http.ServeMux.HandleFunc()",
+        "description": "Snippet for http.ServeMux.HandleFunc"
     },
     "http.ServeMux.Handle": {
         "prefix": "mh",
         "body": "mux.Handle(\"${1:/}\", ${2:handler})",
-        "description": "",
+        "description": "Snippet for http.ServeMux.Handle"
     },
     "goroutine anonymous function": {
         "prefix": "go",
