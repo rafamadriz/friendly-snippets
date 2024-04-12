@@ -209,6 +209,16 @@
         "body": "http.Serve(\"${1::8080}\", ${2:nil})",
         "description": "Snippet for http.Serve"
     },
+    "http.NewServeMux": {
+        "prefix": "nmux",
+        "body": "mux := http.NewServeMux()$1",
+        "description": "Snippet for http.NewServeMux()"
+    },
+    "http.ServeMux.HandleFunc": {
+        "prefix": "mhf",
+        "body": "${1:mux}.HandleFunc(\"/\", function)",
+        "description": "Snippet for http.ServeMux.HandleFunc"
+    },
     "goroutine anonymous function": {
         "prefix": "go",
         "body": "go func($1) {\n\t$0\n}($2)",
