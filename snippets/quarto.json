@@ -124,5 +124,12 @@
             ":::"
         ],
         "description": "Insert callout block"
+    },
+    "Insert citation": {
+        "prefix": "cite",
+        "body": [
+            "[@${1:city-key}]"
+        ],
+        "description": "Insert a citation"
     }
 }
