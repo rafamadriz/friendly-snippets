@@ -138,5 +138,14 @@
             "[^${1:note text}]"
         ],
         "description": "Insert an inline footnote"
+    },
+    "Insert a footnote": {
+        "prefix": "footnote",
+        "body": [
+            "[^${1:note identifier}]",
+            "[^$1]: ${2:note text}"
+        ],
+        "description": "Insert an inline footnote"
     }
+
 }
