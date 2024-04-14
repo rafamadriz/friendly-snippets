@@ -131,5 +131,12 @@
             "[@${1:city-key}]"
         ],
         "description": "Insert a citation"
+    },
+    "Insert an inline footnote": {
+        "prefix": "footnote-inline",
+        "body": [
+            "[^${1:note text}]"
+        ],
+        "description": "Insert an inline footnote"
     }
 }
