@@ -1,17 +1,17 @@
 {
     "main title": {
         "prefix": ["main title", "="],
-        "body": ["============================\n${0}\n============================"],
+        "body": ["============================\n${0}\n============================\n\n"],
         "description": "Add main title"
     },
     "title": {
         "prefix": ["title", "="],
-        "body": ["${0}\n============================"],
+        "body": ["${0}\n============================\n\n"],
         "description": "Add title"
     },
     "section": {
         "prefix": ["section", "-"],
-        "body": ["${0}\n------------"]
+        "body": ["${0}\n------------\n\n"]
         "description": "Add section"
     },
     "Links": {
