@@ -111,5 +111,5 @@
             "${0}"
         ],
         "description": "Insert task list with 5 tasks"
-    },
+    }
 }
