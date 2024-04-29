@@ -563,6 +563,10 @@
             {
                 "language": "asciidoc",
                 "path": "./snippets/asciidoc.json"
+            },
+            {
+                "language": "beancount",
+                "path": "./snippets/beancount.json"
             }
         ]
     }
