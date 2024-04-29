@@ -100,5 +100,17 @@
         "prefix": "extension",
         "body": ["extension ${1:Type} {", "", "\t$0", "}"],
         "description": "extension declaration"
+    },
+    "swiftui-view": {
+        "prefix": "view",
+        "body": [
+            "struct ${1:Name}: View {",
+            "",
+            "\tvar body: some View {",
+            "\t\t$0",
+            "\t}",
+            "}"
+        ],
+        "description": "SwiftUI view declaration"
     }
 }
