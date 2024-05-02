@@ -16,7 +16,7 @@
     },
     "Links": {
         "prefix": ["l", "link", "hyperlink"],
-        "body": ["${1:text}_\n.. _${text} ${2:url}${0}"],
+        "body": ["${1:text}_\n.. _${1:text} ${2:url}${0}"],
         "description": "Add links"
     },
     "URLS": {
