@@ -17,8 +17,8 @@
             "#include <stdlib.h>",
             "",
             "int main(int argc, char *argv[])",
-            "{$0",
-            "",
+            "{",
+            "\t$0",
             "\treturn EXIT_SUCCESS;",
             "}"
         ],
@@ -41,8 +41,8 @@
         "prefix": "main",
         "body": [
             "int main(int argc, char *argv[])",
-            "{$0",
-            "",
+            "{",
+            "\t$0",
             "\treturn EXIT_SUCCESS;",
             "}"
         ],
