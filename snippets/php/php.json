@@ -230,5 +230,10 @@
             "}"
         ],
         "description": "Try catch block"
+    },
+    "Variable Dump": {
+        "prefix": "vd",
+        "body": ["var_dump($0);"],
+        "description": "var_dump"
     }
 }
