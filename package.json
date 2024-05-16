@@ -567,6 +567,10 @@
             {
                 "language": "beancount",
                 "path": "./snippets/beancount.json"
+            },
+            {
+                 "language": "rst",
+                 "path": "./snippets/rst.json"
             }
         ]
     }
