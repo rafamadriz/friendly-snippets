@@ -4,8 +4,9 @@
         "body": [
             "---",
             "title: ${1:title}",
-            "date: ${2:\"`r Sys.Date()`\"}",
-            "output: ${4:pdf_document}",
+            "author: ${2: author_name}",
+            "date: ${3:\"`r Sys.Date()`\"}",
+            "output: ${5:pdf_document}",
             "---"
         ]
     },

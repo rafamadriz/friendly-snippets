@@ -1,4 +1,27 @@
 {
+    "YAML Header": {
+        "prefix": "---",
+        "body": [
+            "---",
+            "title: ${1:title}",
+            "author: ${2: author_name}",
+            "date: ${3:\"`r Sys.Date()`\"}",
+            "output: ${5:pdf_document}",
+            "---"
+        ]
+    },
+    "Insert Inline Chunck": {
+        "prefix": "`",
+        "body": "`${0}`"
+    },
+    "Insert Code Language": {
+        "prefix": "```",
+        "body": ["```${1:lang}", "${0}", "```"]
+    },
+    "Insert Block Equation": {
+        "prefix": "$$",
+        "body": ["\\$$", "${0}", "\\$$"]
+    },
     "header 1": {
         "prefix": "h1",
         "body": ["# ${0}"],
