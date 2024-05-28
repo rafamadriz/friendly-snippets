@@ -1,0 +1,164 @@
+{
+	"orientaiton from pykv-snippets": {
+		"prefix": "orientation",
+		"body": "orientation: '${1|vertical,horizontal|}'"
+	},
+	"font_size from pykv-snippets": {
+		"prefix": "font_size",
+		"body": "font_size: "
+	},
+	"padding from pykv-snippets": {
+		"prefix": "padding",
+		"body": "padding: "
+	},
+	"size_x from pykv-snippets": {
+		"prefix": ["sx", "size_hint_x"],
+		"body": "size_hint_x: "
+	},
+	"size_y from pykv-snippets": {
+		"prefix": ["sy", "size_hint_y"],
+		"body": "size_hint_y: "
+	},
+	"size_hint from pykv-snippets" : {
+		"prefix" : "size_hint",
+		"body" : "size_hint: $1, $2"
+	},
+	"pos_hint from pykv-snippets" : {
+		"prefix" : "pos_hint",
+		"body" : "pos_hint: {'${1|x,right,center_x|}': $2, '${3|y,top,center_y|}': $4}$0"
+	},
+	"Rectangle: from pykv-snippets": {
+		"prefix": "rect",
+		"body": "Rectangle: "
+	},
+	"rectangle: from pykv-snippets": {
+		"prefix": "rect",
+		"body": "rectangle: "
+	},
+	"Color: from pykv-snippets": {
+		"prefix": "color",
+		"body": "Color: "
+	},
+	"color: from pykv-snippets": {
+		"prefix": "color",
+		"body": "color: "
+	},
+	"on_press from pykv-snippets": {
+		"prefix": ["onpress", "on_press"],
+		"body": "on_press: "
+	},
+	"on_release from pykv-snippets": {
+		"prefix": ["onrelease", "on_release"],
+		"body": "on_release: "
+	},
+	"on_text from pykv-snippets": {
+		"prefix": ["ontext", "on_text"],
+		"body": "on_text: "
+	},
+	"on_text_validate from pykv-snippets": {
+		"prefix": ["ontextvalidate", "on_text_validate"],
+		"body": "on_text_validate: "
+	},
+	"set from pykv-snippets": {
+		"prefix": "#:set",
+		"body": "#: set ${1:key} ${2:expr}"
+	},
+	"import from pykv-snippets": {
+		"prefix": "#:import",
+		"body": "#: import ${1:alias} ${2:package}"
+	},
+	"include from pykv-snippets": {
+		"prefix": "#:include",
+		"body": "#: include ${1:file}"
+	},
+	"size_hint_x from pykv-sippets": {
+		"prefix": ["sx", "size_hint_x"],
+		"body": "size_hint_x=",
+		"description": "keyword argument of Widget"
+	},
+	"size_hint_y from pykv-sippets": {
+		"prefix": ["sy", "size_hint_y"],
+		"body": "size_hint_y=",
+		"description": "keyword argument of Widget"
+	},
+	"size_hint from pykv-sippets": {
+		"prefix": "size_hint",
+		"body": "size_hint=($1, $2)$0",
+		"description": "keyword argument of Widget"
+	},
+	"pos_hint from pykv-sippets": {
+		"prefix": "pos_hint",
+		"body": "pos_hint={'${1|x,right,center_x|}': $2, '${3|y,top,center_y|}': $4}$0",
+		"description": "keyword argument of Widget"
+	},
+	"font_size from pykv-sippets": {
+		"prefix": "font_size",
+		"body": "font_size=",
+		"description": "keyword argument of Widget"
+	},
+	"orientation from pykv-sippets": {
+		"prefix": "orientation",
+		"body": "orientation='${1|vertical,horizontal|}'",
+		"description": "keyword argument of Layout classes"
+	},
+	"text from pykv-sippets": {
+		"prefix": "text",
+		"body": "text='$1'$0",
+		"description": "keyword argument of Widget"
+	},
+	"transition from pykv-snippets": {
+		"prefix": "transition",
+		"body": "transition=",
+		"description": "keyword argument of ScreenManager"
+	},
+	"background_color from pykv-snippets": {
+		"prefix": ["background_color", "bg"],
+		"body": "background_color=",
+		"description": "keyword argument of Button and so on"
+	},
+	"duration from pykv-snippets": {
+		"prefix": "duration",
+		"body": "duration=",
+		"description": "keyword argument of Animation"
+	},
+	"opacity from pykv-snippets": {
+		"prefix": "opacity",
+		"body": "opacity=",
+		"description": "keyword argument of Animation"
+	},
+	"step from pykv-snippets": {
+		"prefix": "step",
+		"body": "step=",
+		"description": "keyword argument of Animation"
+	},
+	"size from pykv-snippets": {
+		"prefix": "size",
+		"body": "size=",
+		"description": "keyword argument of Animation"
+	},
+	"on_press from pykv-sippets": {
+		"prefix": ["onpress", "on_press"],
+		"body": "on_press=${1:callback}",
+		"description": "keyword argument of Widget.bind"
+	},
+	"on_release from pykv-sippets": {
+		"prefix": ["onrelease", "on_release"],
+		"body": "on_release=${1:callback}",
+		"description": "keyword argument of Widget.bind"
+	},
+	"on_start from pykv-snippets": {
+		"prefix": ["onstart", "on_start"],
+		"body": "on_start=${1:callback}",
+		"description": "keyword argument of Widget.bind"
+	},
+	"on_complete from pykv-snippets": {
+		"prefix": ["oncomplete", "on_complete"],
+		"body": "on_complete=${1:callback}",
+		"description": "keyword argument of Widget.bind"
+	},
+	"on_progress from pykv-snippets": {
+		"prefix": ["onprogress", "on_progress"],
+		"body": "on_progress=${1:callback}",
+		"description": "keyword argument of Widget.bind"
+	}
+}
