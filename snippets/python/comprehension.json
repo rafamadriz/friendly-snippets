@@ -17,12 +17,12 @@
     "Dictionary comprehension": {
         "prefix": "dc",
         "body": "{${1:key}: ${2:value} for ${3:key}, ${4:value} in ${5:iterable}}$0",
-        "description": "Handy and faster way to create dictories based on existing dictionaries."
+        "description": "Handy and faster way to create dictionaries based on existing dictionaries."
     },
     "Dictionary comprehension if filter": {
         "prefix": "dci",
         "body": "{${1:key}: ${2:value} for ${3:key}, ${4:value} in ${5:iterable} if ${6:condition}}$0",
-        "description": "Handy and faster way to create dictories based on existing dictionaries, with conditional if statement."
+        "description": "Handy and faster way to create dictionaries based on existing dictionaries, with conditional if statement."
     },
     "Set comprehension": {
         "prefix": "sc",
