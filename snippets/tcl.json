@@ -1,22 +1,22 @@
 {
   "Executes a command after a time delay": {
     "prefix": "after",
-    "body": ["after ${1:time in ms} ${2:?script script ...?}", "$0"],
+    "body": ["after ${1:time in ms} ${0:?script script ...?}"],
     "description": "This command is used to delay execution of the program or to execute a command in background sometime in the future."
   },
   "Append to variable": {
     "prefix": "append",
-    "body": ["append ${1:varName} ${2:value}", "$0"],
+    "body": ["append ${1:varName} ${0:value}"],
     "description": "Append all of the value arguments to the current value of variable varName. If varName does not exist, it is given a value equal to the concatenation of all the value arguments. The result of this command is the new value stored in variable varName."
   },
   "Apply an anonymous function": {
     "prefix": "apply",
-    "body": ["apply ${1:function} ${2:?arg1 arg2 ...?}", "$0"],
+    "body": ["apply ${1:function} ${0:?arg1 arg2 ...?}"],
     "description": "The command apply applies the function func to the arguments arg1 arg2 ... and returns the result."
   },
   "Manipulate array variables": {
     "prefix": "array",
-    "body": ["array ${1:option} ${2:arrayName} ${3:?arg arg ...?}", "$0"],
+    "body": ["array ${1:option} ${2:arrayName} ${0:?arg arg ...?}"],
     "description": "This command performs one of several operations on the variable given by arrayName. Unless otherwise specified for individual commands, arrayName must be the name of an existing array variable. The option argument determines what action is carried out by the command."
   },
   "Get array names": {
@@ -31,12 +31,12 @@
   },
   "Set array values": {
     "prefix": "array set",
-    "body": ["array set ${1:arrayName} \"${2:list}\"", "$0"],
+    "body": ["array set ${1:arrayName} \"${0:list}\""],
     "description": "Sets the values of one or more elements in arrayName. list must have a form like that returned by array get, consisting of an even number of elements. Each odd-numbered element in list is treated as an element name within arrayName, and the following element in list is used as a new value for that array element. If the variable arrayName does not already exist and list is empty, arrayName is created with an empty array value."
   },
   "Unset array elements": {
     "prefix": "array unset",
-    "body": ["array unset ${1:arrayName} ${2:?pattern?}", "$0"],
+    "body": ["array unset ${1:arrayName} ${0:?pattern?}"],
     "description": "Unsets all of the elements in the array that match pattern (using the matching rules of string match). If arrayName is not the name of an array variable or there are no matching elements in the array, no error will be raised. If pattern is omitted and arrayName is an array variable, then the command unsets the entire array. The command always returns an empty string."
   },
   "Existence of array": {
@@ -51,12 +51,12 @@
   },
   "Change working directory": {
     "prefix": "cd",
-    "body": ["cd ${1:dirName}", "$0"],
+    "body": ["cd ${0:dirName}"],
     "description": "Change the current working directory to dirName, or to the home directory (as specified in the HOME environment variable) if dirName is not given. Returns an empty string. Note that the current working directory is a per-process resource; the cd command changes the working directory for all interpreters and (in a threaded environment) all threads."
   },
   "Obtain and manipulate dates and times": {
     "prefix": "clock",
-    "body": ["clock ${1:subCommand}", "$0"],
+    "body": ["clock ${0:subCommand}"],
     "description": "The clock command performs several operations that obtain and manipulate values that represent times. Subcommands could be one of add, clicks, format, microseconds, milliseconds, scan, seconds."
   },
   "Return formatted clock string": {
@@ -81,7 +81,7 @@
   },
   "Close an open channel": {
     "prefix": "close",
-    "body": ["close ${1:channelId} ${2:?r(ead)|w(rite)?}", "$0"],
+    "body": ["close ${1:channelId} ${0:?r(ead)|w(rite)?}"],
     "description": "Closes or half-closes the channel given by channelId. ChannelId must be an identifier for an open channel such as a Tcl standard channel (stdin, stdout, or stderr), the return value from an invocation of open or socket, or the result of a channel creation command provided by a Tcl extension."
   },
   "Join lists together": {
@@ -91,7 +91,7 @@
   },
   "Manipulate dictionaries": {
     "prefix": "dict",
-    "body": ["dict ${1:option} ${2:arg} ${3:?arg ...?}", "$0"],
+    "body": ["dict ${1:option} ${2:arg} ${0:?arg ...?}"],
     "description": "Performs one of several operations on dictionary values or variables containing dictionary values"
   },
   "Create a dict": {
@@ -122,8 +122,7 @@
   "Add/update a mapping for a dict": {
     "prefix": "dict set",
     "body": [
-      "dict set ${1:dictionaryValue} ${2:key} ${3:?key ...?} ${4:value}",
-      "$0"
+      "dict set ${1:dictionaryValue} ${2:key} ${3:?key ...?} ${0:value}"
     ],
     "description": "This operation takes the name of a variable containing a dictionary value and places an updated dictionary value in that variable containing a mapping from the given key to the given value. When multiple keys are present, this operation creates or updates a chain of nested dictionaries. The updated dictionary value is returned."
   },
@@ -134,17 +133,17 @@
   },
   "Remove a mapping from a dict": {
     "prefix": "dict unset",
-    "body": ["dict unset ${1:dictionaryValue} ${2:key} ${3:?key ...?}", "$0"],
+    "body": ["dict unset ${1:dictionaryValue} ${2:key} ${0:?key ...?}"],
     "description": "This operation (the companion to dict set) takes the name of a variable containing a dictionary value and places an updated dictionary value in that variable that does not contain a mapping for the given key. Where multiple keys are present, this describes a path through nested dictionaries to the mapping to remove. At least one key must be specified, but the last key on the key-path need not exist. All other components on the path must exist. The updated dictionary value is returned."
   },
   "Generate an error": {
     "prefix": "error",
-    "body": ["error ${1:message} ${2:?info?} ${3:?code?}", "$0"],
+    "body": ["error ${1:message} ${2:?info?} ${0:?code?}"],
     "description": "Returns a TCL_ERROR code, which causes command interpretation to be unwound. Message is a string that is returned to the application to indicate what went wrong. The -errorinfo return option of an interpreter is used to accumulate a stack trace of what was in progress when an error occurred; as nested commands unwind, the Tcl interpreter adds information to the -errorinfo return option. If the info argument is present, it is used to initialize the -errorinfo return options and the first increment of unwind information will not be added by the Tcl interpreter. In other words, the command containing the error command will not appear in the stack trace; in its place will be info. Historically, this feature had been most useful in conjunction with the catch command: if a caught error cannot be handled successfully, info can be used to return a stack trace reflecting the original point of occurrence of the error"
   },
   "Evaluate a Tcl script": {
     "prefix": "eval",
-    "body": ["eval ${1:arg} ${2:?arg?}", "$0"],
+    "body": ["eval ${1:arg} ${0:?arg?}"],
     "description": "Eval takes one or more arguments, which together comprise a Tcl script containing one or more commands. It concatenates all its arguments in the same fashion as the concat command, passes the concatenated string to the Tcl interpreter recursively, and returns the result of that evaluation (or any error generated by it). Note that the list command quotes sequences of words in such a way that they are not further expanded by the eval command."
   },
   "Evaluate an expression": {
@@ -164,12 +163,12 @@
   },
   "Copy file": {
     "prefix": "file copy",
-    "body": ["file copy ${1:-force} ${2:--} ${3:source} ${4:target}", "$0"],
+    "body": ["file copy ${1:-force} ${2:--} ${3:source} ${0:target}"],
     "description": "This command makes a copy of the file or directory source under the pathname target. If target is an existing directory, then multiple source files can be specified. In this case, the commmand makes a copy inside targetDir of each source file listed. If a directory is specified as a source, then the contents of the directory will be recursively copied into targetDir. Existing files will not be overwritten unless the -force option is specified (when Tcl will also attempt to adjust permissions on the destination file or directory if that is necessary to allow the copy to proceed). -- marks the end of switches; the argument following the -- will be treated as a source even if it starts with a -."
   },
   "Delete file": {
     "prefix": "file delete",
-    "body": ["file delete ${1:-force} ${2:--} ${3:source} ${4:target}", "$0"],
+    "body": ["file delete ${1:-force} ${2:--} ${3:source} ${0:target}"],
     "description": "Removes the file or directory specified by each pathname argument. Non-empty directories will be removed only if the -force option is specified. -- marks the end of switches; the argument following the -- will be treated as a source even if it starts with a -."
   },
   "Get the directory name": {
@@ -189,7 +188,7 @@
   },
   "Create a directory": {
     "prefix": "file mkdir",
-    "body": ["file mkdir ${1:dir ...}", "$0"],
+    "body": ["file mkdir ${0:dir ...}"],
     "description": "Creates each directory specified. For each pathname dir specified, this command will create all non-existing parent directories as well as dir itself. If an existing directory is specified, then no action is taken and no error is returned. Trying to overwrite an existing file with a directory will result in an error. Arguments are processed in the order specified, halting at the first error, if any."
   },
   "Get last filesystem component name": {
@@ -206,15 +205,14 @@
     "prefix": "for",
     "body": [
       "for {set ${1:varName} 0} {$${1:varName} < ${2:maxVal}} {incr ${1:varName}} {",
-      "\t${3:body}",
-      "}",
-      "$0"
+      "\t${0:body}",
+      "}"
     ],
     "description": "For is a looping command, similar in structure to the C for statement. It returns an empty string."
   },
   "Iterate over all elements in one or more lists": {
     "prefix": "foreach",
-    "body": ["foreach ${1:varName} \"${2:list}\" {", "\t${3:body}", "}", "$0"],
+    "body": ["foreach ${1:varName} \"${2:list}\" {", "\t${0:body}", "}"],
     "description": "The foreach command implements a loop where the loop variable(s) take on values from one or more lists. In the simplest case there is one loop variable, varname, and one list, list, that is a list of values to assign to varname. The body argument is a Tcl script. For each element of list (in order from first to last), foreach assigns the contents of the element to varname as if the lindex command had been used to extract the element, then calls the Tcl interpreter to execute body."
   },
   "Format a string in the style of sprintf": {
@@ -229,12 +227,12 @@
   },
   "Execute scripts conditionally - if": {
     "prefix": "if",
-    "body": ["if {${1:expr}} {", "\t$2", "}", "$0"],
+    "body": ["if {${1:expr}} {", "\t$0", "}"],
     "description": "if statement"
   },
   "Execute scripts conditionally - if else": {
     "prefix": "ife",
-    "body": ["if {${1:expr}} {", "\t$2", "} else {", "\t$3", "}", "$0"],
+    "body": ["if {${1:expr}} {", "\t$2", "} else {", "\t$0", "}"],
     "description": "if else statement"
   },
   "Execute scripts conditionally - if elseif else": {
@@ -245,25 +243,24 @@
       "} elseif {${3:expr2}} {",
       "\t$4",
       "} else {",
-      "\t$5",
-      "}",
-      "$0"
+      "\t$0",
+      "}"
     ],
     "description": "if elseif else statement"
   },
   "Execute scripts conditionally - else": {
     "prefix": "else",
-    "body": ["else {", "\t$1", "}", "$0"],
+    "body": ["else {", "\t$0", "}"],
     "description": "else statement"
   },
   "Execute scripts conditionally - elseif": {
     "prefix": "elseif",
-    "body": ["elseif {${1:expr}} {", "\t$2", "} else {", "\t$3", "}", "$0"],
+    "body": ["elseif {${1:expr}} {", "\t$2", "} else {", "\t$0", "}"],
     "description": "elseif statement"
   },
   "Increment the value of a variable": {
     "prefix": "incr",
-    "body": ["incr ${1:varName} ${2:?increment?}", "$0"],
+    "body": ["incr ${1:varName} ${0:?increment?}"],
     "description": "Increments the value stored in the variable whose name is varName. The value of the variable must be an integer. If increment is supplied then its value (which must be an integer) is added to the value of variable varName; otherwise 1 is added to varName. The new value is stored as a decimal string in variable varName and also returned as result. Starting with the Tcl 8.5 release, the variable varName passed to incr may be unset, and in that case, it will be set to the value increment or to the default increment value of 1. "
   },
   "Create a string by joining together list of elements": {
@@ -273,12 +270,12 @@
   },
   "Append list of elements onto a variable": {
     "prefix": "lappend",
-    "body": ["lappend ${1:varName} ${2:?value value value ...?}", "$0"],
+    "body": ["lappend ${1:varName} ${0:?value value value ...?}"],
     "description": "This command treats the variable given by varName as a list and appends each of the value arguments to that list as a separate element, with spaces between elements. If varName does not exist, it is created as a list with elements given by the value arguments."
   },
   "Assign list elements to variables": {
     "prefix": "lassign",
-    "body": ["lassign \"${1:list}\" ${2:?varName ...?}", "$0"],
+    "body": ["lassign \"${1:list}\" ${0:?varName ...?}"],
     "description": "This command treats the value list as a list and assigns successive elements from that list to the variables given by the varName arguments in order. If there are more variable names than list elements, the remaining variables are set to the empty string. If there are more list elements than variables, a list of unassigned elements is returned."
   },
   "Retrieve an element from a list": {
@@ -288,7 +285,7 @@
   },
   "Insert elements into a list": {
     "prefix": "linsert",
-    "body": ["linsert \"${1:list}\" ${1:index} ${2:element element ...}", "$0"],
+    "body": ["linsert \"${1:list}\" ${1:index} ${0:element element ...}"],
     "description": "This command produces a new list from list by inserting all of the element arguments just before the index'th element of list. Each element argument will become a separate element of the new list. If index is less than or equal to zero, then the new elements are inserted at the beginning of the list. If index is greater or equal to the length of list, it is as if it was end."
   },
   "Create a list": {
@@ -303,7 +300,7 @@
   },
   "Iterate over all elements in one or more lists and collect results": {
     "prefix": "lmap",
-    "body": ["lmap ${1:varName} \"${2:list}\" {${3:body}}", "$0"],
+    "body": ["lmap ${1:varName} \"${2:list}\" {${0:body}}"],
     "description": "The lmap command implements a loop where the loop variable(s) take on values from one or more lists, and the loop returns a list of results collected from each iteration. 'varName' is the loop variable, and 'list' is a list of values to assign to varname and the 'body' argument is a Tcl script. For each element of list (in order from first to last), lmap assigns the contents of the element to varname as if the lindex command had been used to extract the element, then calls the Tcl interpreter to execute body. If execution of the body completes normally then the result of the body is appended to an accumulator list. lmap returns the accumulator list."
   },
   "Return one or more adjacent elements from a list": {
@@ -313,14 +310,13 @@
   },
   "Build a list by repeating elements": {
     "prefix": "lrepeat",
-    "body": ["lepeat ${1:count} {${2:?element ...?}}", "$0"],
+    "body": ["lepeat ${1:count} {${0:?element ...?}}"],
     "description": "The lrepeat command creates a list of size 'count' * number of elements by repeating 'count' times the sequence of elements 'element ...'"
   },
   "Replace elements in a list with new elements": {
     "prefix": "lreplace",
     "body": [
-      "lreplace \"${1:list}\" ${2:first} ${3:last} {${4:?element element ...?}}",
-      "$0"
+      "lreplace \"${1:list}\" ${2:first} ${3:last} {${0:?element element ...?}}"
     ],
     "description": "lreplace returns a new list formed by replacing zero or more elements of list with the element arguments. first and last are index values specifying the first and last elements of the range to replace. The index values first and last are interpreted the same as index values for the command string index, supporting simple index arithmetic and indices relative to the end of the list."
   },
@@ -336,7 +332,7 @@
   },
   "Change an element in a list": {
     "prefix": "lset",
-    "body": ["lset ${1:varName} ${2:?index ...?} {${3:newValue}}", "$0"],
+    "body": ["lset ${1:varName} ${2:?index ...?} {${0:newValue}}"],
     "description": "The lset command accepts a parameter, varName, which it interprets as the name of a variable containing a Tcl list. It also accepts zero or more indices into the list. The indices may be presented either consecutively on the command line, or grouped in a Tcl list and presented as a single argument. Finally, it accepts a new value for an element of varName."
   },
   "Sort the elements of a list": {
@@ -351,17 +347,17 @@
   },
   "Print an array": {
     "prefix": "parray",
-    "body": ["parray ${1:arrayName} ${2:?pattern?}", "$0"],
+    "body": ["parray ${1:arrayName} ${0:?pattern?}"],
     "description": "Prints on standard output the names and values of all elements in the array arrayName"
   },
   "Create a Tcl procedure": {
     "prefix": "proc",
-    "body": ["proc ${1:name} {${2:args}} {", "\t${3:body}", "}", "$0"],
+    "body": ["proc ${1:name} {${2:args}} {", "\t${0:body}", "}"],
     "description": "The proc command creates a new Tcl procedure named name, replacing any existing command or procedure there may have been by that name. Whenever the new command is invoked, the contents of body will be executed by the Tcl interpreter."
   },
   "Write to a channel": {
     "prefix": "puts",
-    "body": ["puts ${1:-nonewline} ${2:?channelId?} \"${3:string}\"", "$0"],
+    "body": ["puts ${1:-nonewline} ${2:?channelId?} \"${0:string}\""],
     "description": "Writes the characters given by string to the channel give by channelId"
   },
   "Match a regular expression against a string": {
@@ -372,19 +368,18 @@
   "Perform substitutions based on regular expression pattern matching": {
     "prefix": "regsub",
     "body": [
-      "regsub ${1:?switches?} {${2:exp}} ${3:string} {${4:subSpec}} ${5:?varName?}",
-      "$0"
+      "regsub ${1:?switches?} {${2:exp}} ${3:string} {${4:subSpec}} ${0:?varName?}"
     ],
     "description": "This command matches the regular expression exp against string, and either copies string to the variable whose name is given by varName or returns string if varName is not present."
   },
   "Rename or delete a command": {
     "prefix": "rename",
-    "body": ["rename ${1:oldName} ${2:newName}", "$0"],
+    "body": ["rename ${1:oldName} ${0:newName}"],
     "description": "Rename the command that used to be called oldName so that it is now called newName. If newName is an empty string then oldName is deleted."
   },
   "Read and write variables": {
     "prefix": "set",
-    "body": ["set ${1:varName} ${2:value}", "$0"],
+    "body": ["set ${1:varName} ${0:value}"],
     "description": "Returns the value of variable varName. If value is specified, then set the value of varName to value, creating a new variable if one does not already exist, and return its value."
   },
   "Evaluate one of several scripts, depending on a given value": {
@@ -399,28 +394,27 @@
   },
   "Delete variables": {
     "prefix": "unset",
-    "body": ["unset ${1:-nocomplain} ${2:--} ${3:?name name name ...?}", "$0"],
+    "body": ["unset ${1:-nocomplain} ${2:--} ${0:?name name name ...?}"],
     "description": "This command removes one or more variables. Each name is a variable name, specified in any of the ways acceptable to the set command. If a name refers to an element of an array then that element is removed without affecting the rest of the array. If a name consists of an array name with no parenthesized index, then the entire array is deleted. The unset command returns an empty string as result. If -nocomplain is specified as the first argument, any possible errors are suppressed. The option may not be abbreviated, in order to disambiguate it from possible variable names. The option -- indicates the end of the options, and should be used if you wish to remove a variable with the same name as any of the options."
   },
   "'While' loop": {
     "prefix": "while",
-    "body": ["while {${1:test}} {", "\t${2:body}", "}", "$0"],
+    "body": ["while {${1:test}} {", "\t${0:body}", "}"],
     "description": "Evaluate test as an expression and if true, execute body until test evaluates to false or break is encountered."
   },
   "Comment block for procedure": {
-    "prefix": "#proc",
+    "prefix": "#proc documentation",
     "body": [
       "################################################################################",
       "#",
-      "# Author: ${1:Author}",
-      "# Date: ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR}",
+      "# Author:      ${1:Author}",
+      "# Date:        ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR}",
       "# Description: ${2:Description}",
       "#",
       "# Arguments:",
-      "# * ${3:`argument_name`} - ${4: description.}",
+      "# * ${3:`argument_name`} - ${0: description.}",
       "#",
-      "################################################################################",
-      "$0"
+      "################################################################################"
     ],
     "description": "Documentation template for a TCL proc."
   }

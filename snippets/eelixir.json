@@ -20,11 +20,11 @@
         "body": ["<%= if ${1} do %>", "  $0", "<% end %>"]
     },
     "ife": {
-        "prefix": "if",
+        "prefix": "ife",
         "body": ["<%= if ${1} do %>", "  $2", "<% else %>", "  $0", "<% end %>"]
     },
     "lin": {
-        "prefix": "if",
+        "prefix": "lin",
         "body": "<%= link \"${1:Submit}\", to: ${2:\"/users\"}, method: ${3::delete} %>"
     }
 }
