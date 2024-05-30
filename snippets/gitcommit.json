@@ -46,5 +46,17 @@
     "breaking change conventional commit footer": {
         "prefix": "BREAK",
         "body": ["BREAKING CHANGE: $0"]
+    },
+    "co-authored by": {
+        "prefix": "co",
+        "body": ["Co-authored-by: ${1:name} <${2:email}>", "$0"]
+    },
+    "signed off by": {
+        "prefix": "si",
+        "body": ["Signed-off-by: ${1:name} <${2:email}>", "$0"]
+    },
+    "on behalf of": {
+        "prefix": "on",
+        "body": ["On-behalf-of: ${1:org} <${2:email}>", "$0"]
     }
 }

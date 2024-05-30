@@ -85,6 +85,10 @@
                 "path": "./snippets/nix.json"
             },
             {
+                "language": "kivy",
+                "path": "./snippets/kivy.json"
+            },
+            {
                 "language": "liquid",
                 "path": "./snippets/liquid.json"
             },
