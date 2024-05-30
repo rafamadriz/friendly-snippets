@@ -203,7 +203,7 @@
             "except ${2:Exception} as ${3:e}:",
             "\t${4:raise $3}",
             "finally:",
-            "\t${5:pass}$0"
+            "\t${5:pass}"
         ],
         "description": "try/except/finally blocks"
     },
