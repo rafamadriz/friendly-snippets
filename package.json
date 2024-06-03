@@ -331,7 +331,7 @@
             },
             {
                 "language": "python",
-                "path": "./snippets/python/base.json"
+                "path": "./snippets/python/python.json"
             },
             {
                 "language": "python",
@@ -339,15 +339,11 @@
             },
             {
                 "language": "python",
-                "path": "./snippets/python/debug.json"
-            },
-            {
-                "language": "python",
-                "path": "./snippets/python/python.json"
-            },
-            {
-                "language": "python",
                 "path": "./snippets/python/unittest.json"
+            },
+            {
+                "language": "python",
+                "path": "./snippets/python/debug.json"
             },
             {
                 "language": "pydoc",
