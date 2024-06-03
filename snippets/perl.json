@@ -1,0 +1,168 @@
+{
+  "print statement": {
+    "prefix": "print",
+    "body": ["print \"$1\\n\";"]
+  },
+  "if statement": {
+    "prefix": "if",
+    "body": ["if ( ${1:condition} ) {", "\t${0:body}", "}"]
+  },
+  "if else statement": {
+    "prefix": "ife",
+    "body": [
+      "if ( ${1:condition} ) {",
+      "\t${2:body}",
+      "} else {",
+      "\t${0:body}",
+      "}"
+    ]
+  },
+  "if else if statement": {
+    "prefix": "iffe",
+    "body": [
+      "if ( ${1:condition} ) {",
+      "\t${2:body}",
+      "} elsif ( ${3:condition} ) {",
+      "\t${0:body}",
+      "}"
+    ]
+  },
+  "else statement": {
+    "prefix": "else",
+    "body": ["else {", "\t${0:body}", "}"]
+  },
+  "elsif statement": {
+    "prefix": "elsif",
+    "body": ["elsif ( ${1:condition} ) {", "\t${0:body}", "}"]
+  },
+  "unless": {
+    "prefix": "unless",
+    "body": ["unless ( ${1:condition} ) {", "\t${0:body}", "}"]
+  },
+  "for loop": {
+    "prefix": "for",
+    "body": [
+      "for (my $${1:loop var} = 0; $$1 < ${2:count}; $$1++) {",
+      "\t${0:body}",
+      "}"
+    ]
+  },
+  "foreach loop": {
+    "prefix": "foreach",
+    "body": ["foreach my $${1:element} ( @${2:array} ) {", "\t${0:body}", "}"]
+  },
+  "while Loop": {
+    "prefix": "while",
+    "body": ["while ( ${1:condition} ) {", "\t${0:body}", "}"]
+  },
+  "do while Loop": {
+    "prefix": "dowhile",
+    "body": ["do {", "\t${0:body}", "} while ( ${1:condition} );"]
+  },
+  "subroutine": {
+    "prefix": "sub",
+    "body": ["sub ${1:subroutine name} {", "\t${0:sub body}", "}"]
+  },
+  "Comment block for subroutine": {
+    "prefix": "#sub documentation",
+    "body": [
+      "################################################################################",
+      "#",
+      "# Author:      ${1:Author}",
+      "# Date:        ${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR}",
+      "# Description: ${2:Description}",
+      "#",
+      "# Arguments:",
+      "# * ${3:argument_name} - ${4:description}",
+      "#",
+      "################################################################################"
+    ]
+  },
+  "open file to read": {
+    "prefix": "openr",
+    "body": [
+      "open(my $${1:fh}, '<', \"${2:file name}\") or die \"Cannot open file '$2' for reading: $!\";"
+    ]
+  },
+  "open file to write": {
+    "prefix": "openw",
+    "body": [
+      "open(my $${1:fh}, '>', \"${2:file name}\") or die \"Cannot open file '$2' for writing: $!\";"
+    ]
+  },
+  "print to file": {
+    "prefix": "file print",
+    "body": ["print ${1:fh} \"$2\\n\";"]
+  },
+  "read file into a scalar": {
+    "prefix": "slurp",
+    "body": [
+      "local $/;",
+      "open(my $${1:fh}, '<', \"${2:file name}\") or die \"Cannot open file '$2' for reading: $!\";",
+      "my $${3:contents} = <$$1>;",
+      "close($$1);"
+    ]
+  },
+  "read a directory": {
+    "prefix": "readdir",
+    "body": [
+      "opendir(my $$dir, '$1') or die \"Cannot open directory '$1': $!\";",
+      "my @files = readdir($$dir);",
+      "closedir($$dir);"
+    ]
+  },
+  "create a directory": {
+    "prefix": "mkdir",
+    "body": ["mkdir \"${1:dir}\" or die \"Cannot create directory '$1': $!\";"]
+  },
+  "split a string": {
+    "prefix": "split",
+    "body": [
+      "my @${1:array var} = split(/${2:delimiter pattern}/, \"${3:string}\");"
+    ]
+  },
+  "join array": {
+    "prefix": "join",
+    "body": [
+      "my $${1:string var} = join('${2:delimiter pattern}', @${3:array var});"
+    ]
+  },
+  "format time": {
+    "prefix": "strftime",
+    "body": [
+      "use POSIX qw(strftime);",
+      "my $formatted = strftime('%Y-%m-%d %H:%M:%S', localtime($1));"
+    ]
+  },
+  "try catch block": {
+    "prefix": "trycatch",
+    "body": [
+      "use Try::Tiny;",
+      "try {",
+      "\t${0:body}",
+      "} catch {",
+      "\tmy $${1:err} = shift;",
+      "\tprint \"Error: $$1\\n\";",
+      "};"
+    ]
+  },
+  "perl module": {
+    "prefix": "perlmod",
+    "body": [
+      "package ${1:ModuleName};",
+      "use strict;",
+      "use warnings;",
+      "",
+      "sub new {",
+      "\tmy ($$class, %args) = @_;",
+      "\tmy $$self = bless {%args}, $$class;",
+      "\treturn $$self;",
+      "}",
+      "",
+      "# Add more methods here",
+      "$0",
+      "",
+      "1; # Return true to indicate successful module loading"
+    ]
+  }
+}
