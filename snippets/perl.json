@@ -5,7 +5,7 @@
   },
   "if statement": {
     "prefix": "if",
-    "body": ["if ( ${1:condition} ) {", "\t${0:body}", "}"]
+    "body": ["if ( ${1:condition} ) {", "\t${2:body}", "}"]
   },
   "if else statement": {
     "prefix": "ife",
@@ -13,7 +13,7 @@
       "if ( ${1:condition} ) {",
       "\t${2:body}",
       "} else {",
-      "\t${0:body}",
+      "\t${3:body}",
       "}"
     ]
   },
@@ -23,48 +23,48 @@
       "if ( ${1:condition} ) {",
       "\t${2:body}",
       "} elsif ( ${3:condition} ) {",
-      "\t${0:body}",
+      "\t${3:body}",
       "}"
     ]
   },
   "else statement": {
     "prefix": "else",
-    "body": ["else {", "\t${0:body}", "}"]
+    "body": ["else {", "\t${1:body}", "}"]
   },
   "elsif statement": {
     "prefix": "elsif",
-    "body": ["elsif ( ${1:condition} ) {", "\t${0:body}", "}"]
+    "body": ["elsif ( ${1:condition} ) {", "\t${2:body}", "}"]
   },
   "unless": {
     "prefix": "unless",
-    "body": ["unless ( ${1:condition} ) {", "\t${0:body}", "}"]
+    "body": ["unless ( ${1:condition} ) {", "\t${2:body}", "}"]
   },
   "for loop": {
     "prefix": "for",
     "body": [
       "for (my $${1:loop var} = 0; $$1 < ${2:count}; $$1++) {",
-      "\t${0:body}",
+      "\t${3:body}",
       "}"
     ]
   },
   "foreach loop": {
     "prefix": "foreach",
-    "body": ["foreach my $${1:element} ( @${2:array} ) {", "\t${0:body}", "}"]
+    "body": ["foreach my $${1:element} ( @${2:array} ) {", "\t${3:body}", "}"]
   },
   "while Loop": {
     "prefix": "while",
-    "body": ["while ( ${1:condition} ) {", "\t${0:body}", "}"]
+    "body": ["while ( ${1:condition} ) {", "\t${2:body}", "}"]
   },
   "do while Loop": {
     "prefix": "dowhile",
-    "body": ["do {", "\t${0:body}", "} while ( ${1:condition} );"]
+    "body": ["do {", "\t${2:body}", "} while ( ${1:condition} );"]
   },
   "subroutine": {
     "prefix": "sub",
-    "body": ["sub ${1:subroutine name} {", "\t${0:sub body}", "}"]
+    "body": ["sub ${1:sub_name} {", "\t${2:body}", "}"]
   },
   "Comment block for subroutine": {
-    "prefix": "#sub documentation",
+    "prefix": "documentation",
     "body": [
       "################################################################################",
       "#",
@@ -97,10 +97,9 @@
   "read file into a scalar": {
     "prefix": "slurp",
     "body": [
-      "local $/;",
-      "open(my $${1:fh}, '<', \"${2:file name}\") or die \"Cannot open file '$2' for reading: $!\";",
-      "my $${3:contents} = <$$1>;",
-      "close($$1);"
+      "use File::Slurp;",
+      "",
+      "my \\$${1:contents} = read_file(${2:file_path})"
     ]
   },
   "read a directory": {
@@ -138,29 +137,36 @@
     "prefix": "trycatch",
     "body": [
       "use Try::Tiny;",
+      "",
       "try {",
-      "\t${0:body}",
+      "\t${1:body}",
       "} catch {",
-      "\tmy $${1:err} = shift;",
-      "\tprint \"Error: $$1\\n\";",
+      "\tmy \\$catch_error = shift;",
+      "\tprint \"Error: \\$catch_error\\n\";",
+      "} finally {",
+      "\tif (@_) {",
+      "\t\tprint \"The try block died with error: @_\\n\"",
+      "\t} else {",
+      "\t\tprint \"The try ran successfully.\\n\"",
+      "\t}",
       "};"
     ]
   },
   "perl module": {
-    "prefix": "perlmod",
+    "prefix": "module package",
     "body": [
       "package ${1:ModuleName};",
       "use strict;",
       "use warnings;",
       "",
       "sub new {",
-      "\tmy ($$class, %args) = @_;",
-      "\tmy $$self = bless {%args}, $$class;",
-      "\treturn $$self;",
+      "\tmy (\\$class, %args) = @_;",
+      "\tmy \\$self = bless {%args}, \\$class;",
+      "\treturn \\$self;",
       "}",
       "",
       "# Add more methods here",
-      "$0",
+      "$1",
       "",
       "1; # Return true to indicate successful module loading"
     ]
