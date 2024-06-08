@@ -125,7 +125,7 @@
   "join array": {
     "prefix": "join",
     "body": [
-      "my \\$${1:string var} = join('${2:delimiter pattern}', \\@${3:array_var});"
+      "my \\$${1:string var} = join('${2:delimiter pattern}', @${3:array_var});"
     ]
   },
   "format time": {
