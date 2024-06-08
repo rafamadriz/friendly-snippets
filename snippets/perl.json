@@ -1,11 +1,11 @@
 {
   "print statement": {
     "prefix": "print",
-    "body": ["print \"$1\\n\";"]
+    "body": ["print \"$0\\n\";"]
   },
   "if statement": {
     "prefix": "if",
-    "body": ["if ( ${1:condition} ) {", "\t${2:body}", "}"]
+    "body": ["if ( ${1:condition} ) {", "\t${0:body}", "}"]
   },
   "if else statement": {
     "prefix": "ife",
@@ -13,7 +13,7 @@
       "if ( ${1:condition} ) {",
       "\t${2:body}",
       "} else {",
-      "\t${3:body}",
+      "\t${0:body}",
       "}"
     ]
   },
@@ -23,45 +23,45 @@
       "if ( ${1:condition} ) {",
       "\t${2:body}",
       "} elsif ( ${3:condition} ) {",
-      "\t${3:body}",
+      "\t${0:body}",
       "}"
     ]
   },
   "else statement": {
     "prefix": "else",
-    "body": ["else {", "\t${1:body}", "}"]
+    "body": ["else {", "\t${0:body}", "}"]
   },
   "elsif statement": {
     "prefix": "elsif",
-    "body": ["elsif ( ${1:condition} ) {", "\t${2:body}", "}"]
+    "body": ["elsif ( ${1:condition} ) {", "\t${0:body}", "}"]
   },
   "unless": {
     "prefix": "unless",
-    "body": ["unless ( ${1:condition} ) {", "\t${2:body}", "}"]
+    "body": ["unless ( ${1:condition} ) {", "\t${0:body}", "}"]
   },
   "for loop": {
     "prefix": "for",
     "body": [
       "for (my \\$${1:loop var} = 0; \\$$1 < ${2:count}; \\$$1++) {",
-      "\t${3:body}",
+      "\t${0:body}",
       "}"
     ]
   },
   "foreach loop": {
     "prefix": "foreach",
-    "body": ["foreach my \\$${1:element} ( @${2:array} ) {", "\t${3:body}", "}"]
+    "body": ["foreach my \\$${1:element} ( @${2:array} ) {", "\t${0:body}", "}"]
   },
   "while Loop": {
     "prefix": "while",
-    "body": ["while ( ${1:condition} ) {", "\t${2:body}", "}"]
+    "body": ["while ( ${1:condition} ) {", "\t${0:body}", "}"]
   },
   "do while Loop": {
     "prefix": "dowhile",
-    "body": ["do {", "\t${2:body}", "} while ( ${1:condition} );"]
+    "body": ["do {", "\t${0:body}", "} while ( ${1:condition} );"]
   },
   "subroutine": {
     "prefix": "sub",
-    "body": ["sub ${1:sub_name} {", "\t${2:body}", "}"]
+    "body": ["sub ${1:sub_name} {", "\t${0:body}", "}"]
   },
   "Comment block for subroutine": {
     "prefix": "documentation",
@@ -92,22 +92,22 @@
   },
   "print to file": {
     "prefix": "file print",
-    "body": ["print ${1:fh} \"$2\\n\";"]
+    "body": ["print \\$${1:fh} \"${0:string}\\n\";"]
   },
   "read file into a scalar": {
     "prefix": "slurp",
     "body": [
       "use File::Slurp;",
       "",
-      "my \\$${1:contents} = read_file(${2:file_path})"
+      "my \\$${1:contents} = read_file(\"${2:file_path}\")"
     ]
   },
   "read a directory": {
     "prefix": "readdir",
     "body": [
-      "opendir(my \\$$dir, '$1') or die \"Cannot open directory '$1': \\$!\";",
-      "my @files = readdir(\\$$dir);",
-      "closedir(\\$$dir);"
+      "opendir(my \\$${1:dir}, '$2') or die \"Cannot open directory '$2': \\$!\";",
+      "my @files = readdir(\\$$1);",
+      "closedir(\\$$1);"
     ]
   },
   "create a directory": {
@@ -119,13 +119,13 @@
   "split a string": {
     "prefix": "split",
     "body": [
-      "my @${1:array var} = split(/${2:delimiter pattern}/, \"${3:string}\");"
+      "my @${1:array var} = split(/${2:delimiter pattern}/, \"${0:string}\");"
     ]
   },
   "join array": {
     "prefix": "join",
     "body": [
-      "my \\$${1:string var} = join('${2:delimiter pattern}', @${3:array var});"
+      "my \\$${1:string var} = join('${2:delimiter pattern}', @${0:array var});"
     ]
   },
   "format time": {
@@ -141,7 +141,7 @@
       "use Try::Tiny;",
       "",
       "try {",
-      "\t${1:body}",
+      "\t${0:body}",
       "} catch {",
       "\tmy \\$catch_error = shift;",
       "\tprint \"Error: \\$catch_error\\n\";",
@@ -168,7 +168,7 @@
       "}",
       "",
       "# Add more methods here",
-      "$1",
+      "$0",
       "",
       "1; # Return true to indicate successful module loading"
     ]
