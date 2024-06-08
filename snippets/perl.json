@@ -42,14 +42,14 @@
   "for loop": {
     "prefix": "for",
     "body": [
-      "for (my $${1:loop var} = 0; $$1 < ${2:count}; $$1++) {",
+      "for (my \\$${1:loop var} = 0; \\$$1 < ${2:count}; \\$$1++) {",
       "\t${3:body}",
       "}"
     ]
   },
   "foreach loop": {
     "prefix": "foreach",
-    "body": ["foreach my $${1:element} ( @${2:array} ) {", "\t${3:body}", "}"]
+    "body": ["foreach my \\$${1:element} ( @${2:array} ) {", "\t${3:body}", "}"]
   },
   "while Loop": {
     "prefix": "while",
@@ -81,13 +81,13 @@
   "open file to read": {
     "prefix": "openr",
     "body": [
-      "open(my $${1:fh}, '<', \"${2:file name}\") or die \"Cannot open file '$2' for reading: $!\";"
+      "open(my \\$${1:fh}, '<', \"${2:file name}\") or die \"Cannot open file '$2' for reading: \\$!\";"
     ]
   },
   "open file to write": {
     "prefix": "openw",
     "body": [
-      "open(my $${1:fh}, '>', \"${2:file name}\") or die \"Cannot open file '$2' for writing: $!\";"
+      "open(my \\$${1:fh}, '>', \"${2:file name}\") or die \"Cannot open file '$2' for writing: \\$!\";"
     ]
   },
   "print to file": {
@@ -105,14 +105,16 @@
   "read a directory": {
     "prefix": "readdir",
     "body": [
-      "opendir(my $$dir, '$1') or die \"Cannot open directory '$1': $!\";",
-      "my @files = readdir($$dir);",
-      "closedir($$dir);"
+      "opendir(my \\$$dir, '$1') or die \"Cannot open directory '$1': \\$!\";",
+      "my @files = readdir(\\$$dir);",
+      "closedir(\\$$dir);"
     ]
   },
   "create a directory": {
     "prefix": "mkdir",
-    "body": ["mkdir \"${1:dir}\" or die \"Cannot create directory '$1': $!\";"]
+    "body": [
+      "mkdir \"${1:dir}\" or die \"Cannot create directory '$1': \\$!\";"
+    ]
   },
   "split a string": {
     "prefix": "split",
@@ -123,7 +125,7 @@
   "join array": {
     "prefix": "join",
     "body": [
-      "my $${1:string var} = join('${2:delimiter pattern}', @${3:array var});"
+      "my \\$${1:string var} = join('${2:delimiter pattern}', @${3:array var});"
     ]
   },
   "format time": {
