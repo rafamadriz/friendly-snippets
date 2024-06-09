@@ -575,6 +575,10 @@
             {
                  "language": "rst",
                  "path": "./snippets/rst.json"
+            },
+            {
+                 "language": "loremipsum",
+                 "path": "./snippets/loremipsum.json"
             }
         ]
     }
