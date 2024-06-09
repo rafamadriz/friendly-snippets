@@ -328,5 +328,38 @@
         "prefix": "hc",
         "body": ["healthcheck:", "\t\ttest: ${1:command}"],
         "description": ""
+    },
+        "DockerCompose": {
+        "prefix": "docker-compose",
+        "body": [
+            "version: '3'",
+            "services:",
+            "\t$1:",
+            "\t\timage: ${2:image}",
+            "\t\tcontainer_name: ${3:container_name}",
+            "\t\tports:",
+            "\t\t\t- \"${4:host_port}:${5:container_port}\"",
+            "\t\tvolumes:",
+            "\t\t\t- ${6:host_volume}:${7:container_volume}",
+            "\t\tenvironment:",
+            "\t\t\t- ${8:env_var}=${9:env_value}"
+        ],
+        "description": "A full Docker Compose example snippet"
+    },
+    "JenkinsCompose": {
+        "prefix": "jenkins-compose",
+        "body": [
+            "jenkins:",
+            "\timage: jenkins/jenkins:lts",
+            "\tcontainer_name: jenkins",
+            "\tports:",
+            "\t\t- \"8080:8080\"",
+            "\t\t- \"50000:50000\"",
+            "\tvolumes:",
+            "\t\t- jenkins_home:/var/jenkins_home",
+            "\tenvironment:",
+            "\t\t- JENKINS_OPTS=--prefix=/Jenkins"
+        ],
+        "description": "A Jenkins Docker Compose example snippet"
     }
 }
