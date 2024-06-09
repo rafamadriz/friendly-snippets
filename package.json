@@ -506,6 +506,10 @@
                 "path": "./snippets/tcl.json"
             },
             {
+                "language": "perl",
+                "path": "./snippets/perl.json"
+            },
+            {
                 "language": "verilog",
                 "path": "./snippets/verilog.json"
             },
