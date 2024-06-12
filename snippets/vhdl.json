@@ -8,11 +8,30 @@
             "use IEEE.numeric_std.all;"
         ]
     },
+    "library": {
+        "prefix": "lib",
+        "description": "Add a Library and Use statement",
+        "body": [
+            "library ${1:library_name};",
+            "use ${1:library_name}.${2:package_name}.${3:entity_name};"
+        ]
+    },
+    "xilinx_library": {
+        "prefix": "libx",
+        "description": "Add a the standard Xilinx Unisim Library",
+        "body": [
+            "library UNISIM;",
+            "use UNISIM.VComponents.all;"
+        ]
+    },
     "entity_declaration": {
         "prefix": "ent",
         "description": "Entity Declaration",
         "body": [
             "entity ${1:$TM_FILENAME_BASE} is",
+            "\tgeneric (",
+            "\t\t${2}",
+            "\t);",
             "\tport (",
             "\t\t$0",
             "\t);",
@@ -65,6 +84,11 @@
             "end package body ${1:$TM_FILENAME_BASE};"
         ]
     },
+    "when": {
+        "prefix": "when",
+        "description": "When Statement",
+        "body": ["when ${1:condition} =>", "\t$0"]
+    },
     "case": {
         "prefix": "case",
         "description": "Case Statement",
@@ -98,6 +122,25 @@
         "description": "If Statement",
         "body": ["if ${1:condition} then", "\t$0", "end if;"]
     },
+    "if_else": {
+        "prefix": "if",
+        "description": "If Statement",
+        "body": [
+            "if ${1:condition} then",
+            "\t$2",
+            "else",
+            "\t$0",
+            "end if;"
+        ]
+    },
+    "else_if": {
+        "prefix": "elsif",
+        "description": "Elsif Statement",
+        "body": [
+            "elsif ${1:condition} then",
+            "\t$0"
+        ]
+    },
     "if_generate": {
         "prefix": "if",
         "description": "If Generate Statement",
@@ -106,6 +149,11 @@
             "\t$0",
             "end generate $1;"
         ]
+    },
+    "while": {
+        "prefix": "while",
+        "description": "While Loop",
+        "body": ["while ${1:condition} loop", "\t$0", "end loop;"]
     },
     "for": {
         "prefix": "for",
@@ -201,8 +249,13 @@
             "end process $1;"
         ]
     },
-    "std_logic_vector": {
+    "std_logic": {
         "prefix": "std",
+        "description": "std_logic Type",
+        "body": "std_logic"
+    },
+    "std_logic_vector": {
+        "prefix": "stdv",
         "description": "std_logic_vector Type",
         "body": "std_logic_vector(${1:7} ${2|downto,to|} ${3:0})"
     },
@@ -221,10 +274,10 @@
         "description": "unsigned Type",
         "body": "unsigned(${1:7} ${2|downto,to|} ${3:0})"
     },
-    "zeroes": {
+    "others": {
         "prefix": "oth",
-        "description": "Zero Others",
-        "body": "others => '0'"
+        "description": "Set all others",
+        "body": "(others => ${0|0,1|})"
     },
     "integer_range_limitation": {
         "prefix": "intr",
