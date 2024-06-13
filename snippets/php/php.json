@@ -1,13 +1,19 @@
 {
-    "class …": {
-        "prefix": "class",
+    "Initial php structure": {
+        "prefix": "php",
         "body": [
-            "class ${1:ClassName} ${2:extends ${3:AnotherClass}} ${4:implements ${5:Interface}} {",
+            "<?php",
+            "",
+            "declare(strict_types=1);",
+            "",
+            "namespace ${1:MyNameSpace};",
+            "",
+            "class $TM_FILENAME_BASE ${2:extends ${3:AnotherClass}} ${4:implements ${5:Interface}} {",
             "\t$0",
             "}",
             ""
         ],
-        "description": "Class definition"
+        "description": "Initial php definition"
     },
     "PHPDoc class …": {
         "prefix": "doc_class",
