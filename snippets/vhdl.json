@@ -107,6 +107,17 @@
             "end generate $1;"
         ]
     },
+    "if_else": {
+        "prefix": "ifelse",
+        "description": "If else Statement",
+        "body": [
+            "if ${1:condition} then",
+            "\t$0",
+            "else",
+            "\t",
+            "end if;"
+        ]
+    },
     "for": {
         "prefix": "for",
         "description": "For Loop",
@@ -201,34 +212,94 @@
             "end process $1;"
         ]
     },
-    "std_logic_vector": {
+    "std_logic": {
         "prefix": "std",
+        "description": "std_logic Type",
+        "body": "std_logic;"
+    },
+    "std_logic initialised": {
+        "prefix": "stdi",
+        "description": "std_logic Type",
+        "body": "std_logic := '0';"
+    },
+    "std_logic_vector": {
+        "prefix": "stdv",
         "description": "std_logic_vector Type",
-        "body": "std_logic_vector(${1:7} ${2|downto,to|} ${3:0})"
+        "body": "std_logic_vector(${1:7} ${2|downto,to|} ${3:0});"
+    },
+    "std_logic_vector initialised": {
+        "prefix": "stdvi",
+        "description": "std_logic_vector Type",
+        "body": "std_logic_vector(${1:7} ${2|downto,to|} ${3:0}) := (others => '0');"
     },
     "std_ulogic_vector": {
-        "prefix": "stdu",
+        "prefix": "stduv",
         "description": "std_ulogic_vector Type",
-        "body": "std_ulogic_vector(${1:7} ${2|downto,to|} ${3:0})"
+        "body": "std_ulogic_vector(${1:7} ${2|downto,to|} ${3:0});"
+    },
+    "std_ulogic_vector initialised": {
+        "prefix": "stduvi",
+        "description": "std_ulogic_vector Type",
+        "body": "std_ulogic_vector(${1:7} ${2|downto,to|} ${3:0}) := (others => '0');"
     },
     "signed": {
         "prefix": "si",
         "description": "signed Type",
         "body": "signed(${1:7} ${2|downto,to|} ${3:0})"
     },
+    "signed initialised": {
+      "prefix": "sii",
+      "description": "signed Type initialised",
+      "body": "signed(${1:7} ${2|downto,to|} ${3:0}) := (others => '0');"
+    },
     "unsigned": {
         "prefix": "uns",
         "description": "unsigned Type",
         "body": "unsigned(${1:7} ${2|downto,to|} ${3:0})"
     },
+    "unsigned initialised": {
+        "prefix": "unsi",
+        "description": "unsigned Type",
+        "body": "unsigned(${1:7} ${2|downto,to|} ${3:0}) := (others => '0');"
+    },
     "zeroes": {
         "prefix": "oth",
         "description": "Zero Others",
-        "body": "others => '0'"
+        "body": "(others => '0')"
+    },
+    "zeroes_arr": {
+        "prefix": "otharr",
+        "description": "Zero Others Array",
+        "body": "(others => (others => '0'))"
+    },
+    "ones": {
+        "prefix": "oth1",
+        "description": "Zero Others",
+        "body": "(others => '1')"
+    },
+    "ones_arr": {
+        "prefix": "otharr1",
+        "description": "Zero Others Array",
+        "body": "(others => (others => '1'))"
+    },
+    "zeroes": {
+        "prefix": "oth",
+        "description": "Zero Others",
+        "body": "(others => '0')"
+    },
+    "zeroes_arr": {
+        "prefix": "otharr",
+        "description": "Zero Others Array",
+        "body": "(others => (others => '0'))"
     },
     "integer_range_limitation": {
         "prefix": "intr",
         "description": "Integer (Range Limitation)",
         "body": "integer range ${1:0} ${2|downto,to|} ${3:255}"
+    },
+    "while loop": {
+        "prefix": "while",
+        "description": "While Loop",
+        "body": ["while ${1:condition} loop", "\t$0", "end loop;"]
     }
 }
