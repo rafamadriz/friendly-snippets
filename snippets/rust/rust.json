@@ -415,12 +415,5 @@
             "}"
         ],
         "description": "async fn …(…) { … }"
-    },
-    "box-dyn": {
-        "prefix": "box-dyn",
-        "body": [
-            "Box<dyn ${1:Name}>"
-        ],
-        "description": "Box<dyn …>"
     }
 }
