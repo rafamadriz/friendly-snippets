@@ -1,0 +1,29 @@
+{
+	"Init cmake": {
+		"prefix": "cmi",
+		"body": [
+			"cmake_minimum_required(VERSION ${1:3.5})",
+			"project(${2:myProject})",
+			"",
+			"if(NOT CMAKE_BUILD_TYPE)",
+			"\tset(default_build_type \"Debug\")",
+			"\tmessage(STATUS \"Set the build type to `\\${default_build_type}` as none was specified.\")",
+			"\tset(CMAKE_BUILD_TYPE \\${default_build_type} CACHE STRING \"Chooce the build type.\" FORCE)",
+			"set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS",
+			"\t\"Debug\" \"Release\" \"MinSizeRel\" \"RelWithDebInfo\")",
+			"endif()",
+			"message(STATUS \"$2 Build Type: \\${CMAKE_BUILD_TYPE}\")",
+			"",
+			"# Set the verson for $2",
+			"set($2_Version_Major ${3:0})",
+			"set($2_Version_Minor ${4:1})",
+			"set($2_Version_Patch ${5:0})",
+			"set($2_Version_Status \"-dev\")",
+			"set(PROJECT_VERSION",
+			"\t\"\\${$2_Version_Major}.\\${$2_Version_Minor}.\\${$2_Version_Patch}\\${$2_Version_Status}\"",
+			")",
+			"message(STATUS \"\\${PROJECT_NAME} version: \\${PROJECT_VERSION})"
+		],
+		"description": "Init 'CMakeLists.txt'."
+	}
+}
