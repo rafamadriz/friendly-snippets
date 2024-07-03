@@ -67,5 +67,57 @@
 			"set(${1:variable} ${2:value} CACHE ${3|BOOL,FILEPATH,PATH,STRING|} \"${4:message} FORCE)$5"
 		],
 		"description": "Add the snippet set() for cache entry"
+	},
+	"option()": {
+		"prefix": "opt",
+		"body": [
+			"option(${1:variable} \"${2:message}\" ${3|ON,OFF|})"
+		],
+		"description": "Add the snippet for option()"
+	},
+	"aux_source_directory": {
+		"prefix": "aux",
+		"body": [
+			"aux_source_directory(${1:./} ${2:SOURCES})"
+		],
+		"description": "Add the snippet for aux_source_directory()"
+	},
+	"add_subdirectory()": {
+		"prefix": "asub",
+		"body": [
+			"add_subdirectory(${1:./src})"
+		],
+		"description": "Add the snippet for add_subdirectory()"
+	},
+	"add_executable()": {
+		"prefix": "exe",
+		"body": [
+			"add_executable(",
+			"\t${1:exe}",
+			"${2:\\${SOURCES}}",
+			")"
+		],
+		"description": "Add the snippet add_executable() to build source files as an exeutable file"
+	},
+	"add_library()": {
+		"prefix": "lib",
+		"body": [
+			"add_library(",
+			"\t${1:myLib}",
+			"\t${2|STATIC,SHARED,MODULE|}",
+			"\t${3:\\${SOURCES}}",
+			")"
+		],
+		"description": "Add the snippet add_library() to build source files as a library"
+	},
+	"target_link_libraries()": {
+		"prefix": "tll",
+		"body": [
+			"target_link_libraries(",
+			"\t${1:myTarget}",
+			"\t${2:myLib}",
+			")"
+		],
+		"description": "Add the snippet target_link_libraries() to link libraries"
 	}
 }
