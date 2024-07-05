@@ -119,5 +119,22 @@
 			")"
 		],
 		"description": "Add the snippet target_link_libraries() to link libraries"
+	},
+	"target_include_directories()": {
+		"prefix": "tid",
+		"body": [
+			"target_include_directories(",
+			"\t${1:myTarget}",
+			"\t${2|PUBLIC,INTERFACE,PRIVATE|} ${3:\\${PROJECT_SOURCE_DIR}/includes}",
+			")"
+		],
+		"description": "Add the snippet target_include_directories() to set the include directories for target"
+	},
+	"include_directories()": {
+		"prefix": "i_d",
+		"body": [
+			"include_directories(${1:\\${PROJECT_SOURCE_DIR}})"
+		],
+		"description": "Add the snippet include_directories() to set include directories"
 	}
 }
