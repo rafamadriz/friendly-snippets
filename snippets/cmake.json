@@ -18,7 +18,7 @@
 			"set($2_Version_Major ${3:0})",
 			"set($2_Version_Minor ${4:1})",
 			"set($2_Version_Patch ${5:0})",
-			"set($2_Version_Status \"-dev\")",
+			"set($2_Version_Status \"${6:-dev}\")",
 			"set(PROJECT_VERSION",
 			"\t\"\\${$2_Version_Major}.\\${$2_Version_Minor}.\\${$2_Version_Patch}\\${$2_Version_Status}\"",
 			")",
@@ -94,7 +94,7 @@
 		"body": [
 			"add_executable(",
 			"\t${1:exe}",
-			"${2:\\${SOURCES}}",
+			"\t${2:\\${SOURCES}}",
 			")"
 		],
 		"description": "Add the snippet add_executable() to build source files as an exeutable file"
@@ -136,5 +136,47 @@
 			"include_directories(${1:\\${PROJECT_SOURCE_DIR}})"
 		],
 		"description": "Add the snippet include_directories() to set include directories"
+	},
+	"find_package()": {
+		"prefix": "f_p",
+		"body": [
+			"find_package(${1:OpenCV} REQUIRED)"
+		],
+		"description": "Add the snippet find_package()"
+	},
+	"if() ... endif()": {
+		"prefix": "if",
+		"body": [
+			"if(${1:condition})",
+			"\t${2:commands}",
+			"endif()"
+		],
+		"description": "Add the snippet if()"
+	},
+	"else if()": {
+		"prefix": "elif",
+		"body": [
+			"else if(${1:condition})",
+			"\t${2:commands}"
+		],
+		"description": "Add the snippet 'else if()'"
+	},
+	"else()": {
+		"prefix": "else",
+		"body": [
+			"else()",
+			"\t${1:commands}"
+		],
+		"description": "Add the snippet else()"
+	},
+	"if() ... else() ... endif()":{
+		"prefix": "ife",
+		"body": [
+			"if(${1:condition})",
+			"\t${2:commands}",
+			"else()",
+			"endif()"
+		],
+		"description": "Add the snippet 'if() ... else() ... endif()'"
 	}
 }
