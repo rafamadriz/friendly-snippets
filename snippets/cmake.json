@@ -156,10 +156,10 @@
 	"else if()": {
 		"prefix": "elif",
 		"body": [
-			"else if(${1:condition})",
+			"elseif(${1:condition})",
 			"\t${2:commands}"
 		],
-		"description": "Add the snippet 'else if()'"
+		"description": "Add the snippet 'elseif()'"
 	},
 	"else()": {
 		"prefix": "else",
@@ -178,5 +178,16 @@
 			"endif()"
 		],
 		"description": "Add the snippet 'if() ... else() ... endif()'"
+	},
+	"configure_file": {
+		"prefix": "conf",
+		"body": [
+			"configure_file(",
+			"\t${1:\\${PROJECT_SOURCE_DIR}/includes/version.h.in}",
+			"\t${2:\\${PROJECT_SOURCE_DIR}/includes/version.h}",
+			"\t@ONLY",
+			")"
+		],
+		"description": "Add the snippet for configure_file()"
 	}
 }
