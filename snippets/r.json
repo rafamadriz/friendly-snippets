@@ -127,7 +127,7 @@
             "",
             "${1:name}Server <- function(id) {",
             "  moduleServer(id, function(input, output, session) {",
-            "    ${3}"
+            "    ${3}",
             "  })",
             "}\n"
         ]
