@@ -397,5 +397,23 @@
         "prefix": "while",
         "body": ["while ${1:condition} {", "    ${2:todo!();}", "}"],
         "description": "while … { … }"
+    },
+    "pafn": {
+        "prefix": "pafn",
+        "body": [
+            "pub async fn ${1:name}(${2:arg}: ${3:Type}) -> ${4:RetType} {",
+            "    ${5:todo!();}",
+            "}"
+        ],
+        "description": "pub async fn …(…) { … }"
+    },
+    "afn": {
+        "prefix": "afn",
+        "body": [
+            "async fn ${1:name}(${2:arg}: ${3:Type}) -> ${4:RetType} {",
+            "    ${5:todo!();}",
+            "}"
+        ],
+        "description": "async fn …(…) { … }"
     }
 }

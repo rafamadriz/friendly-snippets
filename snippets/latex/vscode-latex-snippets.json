@@ -81,12 +81,12 @@
     },
     "Inline Math": {
         "prefix": ["mathinline", "\\mathinline"],
-        "body": ["$ $1 $$0"],
+        "body": ["\\$ $1 \\$$0"],
         "description": "Insert inline Math Environment."
     },
     "Centered Math": {
         "prefix": ["mathcentered", "\\mathcentered"],
-        "body": ["$$ $0 $$"],
+        "body": ["\\$$ $0 \\$$"],
         "description": "Insert centered Math Environment."
     },
     "Section": {
