@@ -230,5 +230,15 @@
 			"set(CMAKE_CXX_STANDDARD_REQUIRED ON)"
 		],
 		"description": "Add the snippet to set c++ standard"
+	},
+	"install()": {
+		"prefix": "inst",
+		"body": [
+			"install(",
+			"\t${1|FILES,TARGETS|} ${2:source_files}",
+			"\tDESTINATION ${3:target_path}",
+			")"
+		],
+		"description": "Add the snippet for install()"
 	}
 }
