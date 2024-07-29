@@ -190,12 +190,12 @@
 		],
 		"description": "Add the snippet for configure_file()"
 	},
-	"include(FetchContent)": {
-		"prefix": "inF",
+	"include()": {
+		"prefix": "inc",
 		"body": [
-			"include(FetchContent)"
+			"include(${1:FetchContent})"
 		],
-		"description": "Add the snippet for include(FetchContent)"
+		"description": "Add the snippet for include()"
 	},
 	"FetchContent_Declare()": {
 		"prefix": "Fet",
