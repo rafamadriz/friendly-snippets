@@ -173,8 +173,9 @@
 		"prefix": "ife",
 		"body": [
 			"if(${1:condition})",
-			"\t${2:commands}",
+			"\t${2:command1}",
 			"else()",
+			"\t${3:command2}",
 			"endif()"
 		],
 		"description": "Add the snippet 'if() ... else() ... endif()'"
