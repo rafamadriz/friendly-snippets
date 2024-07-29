@@ -167,7 +167,7 @@
   },
   "git_module": {
     "prefix": "tf-git_module",
-    "description": "Define a module with genertic Git source.",
+    "description": "Define a module with generic Git source.",
     "body": ["module \"${myModuleName}\" {", "   source = \"git://\"", "}"]
   },
   "github_private_module": {
