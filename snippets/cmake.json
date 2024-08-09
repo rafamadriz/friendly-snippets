@@ -83,7 +83,7 @@
 		"description": "Add the snippet for aux_source_directory()"
 	},
 	"add_subdirectory()": {
-		"prefix": "asub",
+		"prefix": "ads",
 		"body": [
 			"add_subdirectory(${1:./src})"
 		],
