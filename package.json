@@ -579,7 +579,11 @@
             {
                  "language": "loremipsum",
                  "path": "./snippets/loremipsum.json"
-            }
+            },
+			{
+				"language": "cmake",
+				"path": "./snippets/cmake.json"
+			}
         ]
     }
 }
