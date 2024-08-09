@@ -94,7 +94,7 @@
 		"body": [
 			"add_executable(",
 			"\t${1:exe}",
-			"\t${2:\\${SOURCES}}",
+			"\t${2:\\${SOURCES\\}}",
 			")"
 		],
 		"description": "Add the snippet add_executable() to build source files as an exeutable file"
@@ -105,7 +105,7 @@
 			"add_library(",
 			"\t${1:myLib}",
 			"\t${2|STATIC,SHARED,MODULE|}",
-			"\t${3:\\${SOURCES}}",
+			"\t${3:\\${SOURCES\\}}",
 			")"
 		],
 		"description": "Add the snippet add_library() to build source files as a library"
@@ -125,7 +125,7 @@
 		"body": [
 			"target_include_directories(",
 			"\t${1:myTarget}",
-			"\t${2|PUBLIC,INTERFACE,PRIVATE|} ${3:\\${PROJECT_SOURCE_DIR}/includes}",
+			"\t${2|PUBLIC,INTERFACE,PRIVATE|} ${3:\\${PROJECT_SOURCE_DIR\\}/includes}",
 			")"
 		],
 		"description": "Add the snippet target_include_directories() to set the include directories for target"
@@ -133,7 +133,7 @@
 	"include_directories()": {
 		"prefix": "i_d",
 		"body": [
-			"include_directories(${1:\\${PROJECT_SOURCE_DIR}})"
+			"include_directories(${1:\\${PROJECT_SOURCE_DIR\\}})"
 		],
 		"description": "Add the snippet include_directories() to set include directories"
 	},
@@ -184,8 +184,8 @@
 		"prefix": "conf",
 		"body": [
 			"configure_file(",
-			"\t${1:\\${PROJECT_SOURCE_DIR}/includes/version.h.in}",
-			"\t${2:\\${PROJECT_SOURCE_DIR}/includes/version.h}",
+			"\t${1:\\${PROJECT_SOURCE_DIR\\}/includes/version.h.in}",
+			"\t${2:\\${PROJECT_SOURCE_DIR\\}/includes/version.h}",
 			"\t@ONLY",
 			")"
 		],
