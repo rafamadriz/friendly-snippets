@@ -243,5 +243,14 @@
 			")"
 		],
 		"description": "Add the snippet for install()"
+	},
+	"add_test()": {
+		"prefix": "adt",
+		"body": [
+			"add_test(",
+			"\t${1:test_myTest} ${1}",
+			")"
+		],
+		"description": "Add the snippet for add_test()"
 	}
 }
