@@ -9,12 +9,12 @@
 			"\tset(default_build_type \"Debug\")",
 			"\tmessage(STATUS \"Set the build type to `\\${default_build_type}` as none was specified.\")",
 			"\tset(CMAKE_BUILD_TYPE \\${default_build_type} CACHE STRING \"Chooce the build type.\" FORCE)",
-			"set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS",
+			"\tset_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS",
 			"\t\"Debug\" \"Release\" \"MinSizeRel\" \"RelWithDebInfo\")",
 			"endif()",
 			"message(STATUS \"$2 Build Type: \\${CMAKE_BUILD_TYPE}\")",
 			"",
-			"# Set the verson for $2",
+			"# Set the version for $2",
 			"set($2_Version_Major ${3:0})",
 			"set($2_Version_Minor ${4:1})",
 			"set($2_Version_Patch ${5:0})",
@@ -31,7 +31,7 @@
 		"body":[
 			"project(${1:myProject})$2"
 		],
-		"description": "Add the snippet for prject()"
+		"description": "Add the snippet for project()"
 	},
 	"cmake_minimum_required()": {
 		"prefix": "cmr",
@@ -43,7 +43,7 @@
 	"message()": {
 		"prefix": "msg",
 		"body": [
-			"message(${1|STATUS,DEBUG,WARNING,SEND_ERROR_FATAL_ERROR|} \"${2:message}\")$3"
+			"message(${1|STATUS,DEBUG,WARNING,SEND_ERROR,FATAL_ERROR|} \"${2:message}\")$3"
 		],
 		"description": "Add the snippet for message()"
 	},
@@ -52,7 +52,7 @@
 		"body": [
 			"set(CMAKE_EXPORT_COMPILE_COMMANDS ON)"
 		],
-		"description": "Add teh snippet to generate 'compile_commands.json'"
+		"description": "Add the snippet to generate 'compile_commands.json'"
 	},
 	"set a variable": {
 		"prefix": "sv",
