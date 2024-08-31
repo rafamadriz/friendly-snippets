@@ -69,6 +69,11 @@
         "body": ["concat_idents!(${1})"],
         "description": "concat_idents!(…)"
     },
+    "dbg": {
+        "prefix": "dbg",
+        "body": ["dbg!(${1});"],
+        "description": "dbg!(…)"
+    },
     "debug_assert": {
         "prefix": "debug_assert",
         "body": ["debug_assert!(${1});"],
@@ -91,12 +96,12 @@
     },
     "format": {
         "prefix": "format",
-        "body": ["format!(\"${1}\")"],
+        "body": ["format!(\"${1}\"${2})"],
         "description": "format!(…)"
     },
     "format_args": {
         "prefix": "format_args",
-        "body": ["format_args!(\"${1}\")"],
+        "body": ["format_args!(\"${1}\"${2})"],
         "description": "format_args!(…)"
     },
     "include": {
@@ -136,13 +141,23 @@
     },
     "print": {
         "prefix": "print",
-        "body": ["print!(\"${1}\");"],
+        "body": ["print!(\"${1}\"${2});"],
         "description": "print!(…);"
     },
     "println": {
         "prefix": "println",
-        "body": ["println!(\"${1}\");"],
+        "body": ["println!(\"${1}\"${2});"],
         "description": "println!(…);"
+    },
+    "eprint": {
+        "prefix": "eprint",
+        "body": ["eprint!(\"${1}\"${2});"],
+        "description": "eprint!(…);"
+    },
+    "eprintln": {
+        "prefix": "eprintln",
+        "body": ["eprintln!(\"${1}\"${2});"],
+        "description": "eprintln!(…);"
     },
     "stringify": {
         "prefix": "stringify",
@@ -285,6 +300,26 @@
         "body": ["if ${1:condition} {", "    ${2:todo!();}", "}"],
         "description": "if … { … }"
     },
+    "ifelse": {
+        "prefix": "ifelse",
+        "body": [
+            "if ${1:condition} {",
+            "    ${2:todo!();}",
+            "} else {",
+            "    ${2:todo!();}",
+            "}"
+        ],
+        "description": "if … { … } else { … }"
+    },
+    "impl": {
+        "prefix": "impl",
+        "body": [
+            "impl ${1:Type} {",
+            "    ${2:// add code here}",
+            "}"
+        ],
+        "description": "impl Type { … }"
+    },
     "impl-trait": {
         "prefix": "impl-trait",
         "body": [
@@ -304,6 +339,11 @@
         ],
         "description": "inlined function"
     },
+    "let": {
+        "prefix": "let",
+        "body": ["let ${1:var} = ${2:value};"],
+        "description": "let … = …;"
+    },
     "macro_rules": {
         "prefix": "macro_rules",
         "body": ["macro_rules! ${1:name} {", "    (${2}) => (${3})", "}"],
@@ -317,7 +357,10 @@
     "match": {
         "prefix": "match",
         "body": [
-            "match ${1:expr} {}"
+            "match ${1:expr} {",
+            "    ${2:pattern} => ${3:expr},",
+            "    ${4:pattern} => ${5:expr},",
+            "}"
         ],
         "description": "match … { … }"
     },
@@ -383,6 +426,11 @@
         "prefix": "type",
         "body": ["type ${1:Alias} = ${2:Type};"],
         "description": "type … = …;"
+    },
+    "use": {
+        "prefix": "use",
+        "body": ["use ${1:module}::${2:thing};"],
+        "description": "use …::…;"
     },
     "while-let": {
         "prefix": "while-let",
