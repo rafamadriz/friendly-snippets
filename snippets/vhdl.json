@@ -100,6 +100,13 @@
             "with ${1:src} select ${2:dst} <= ${3:value} when $4{condition};"
         ]
     },
+    "when_else": {
+        "prefix": "whenelse",
+        "description": "When-Else assignment",
+        "body": [
+            "${1:dst} <= ${2: true_value} when ${3: condition} else ${4:false_value}"
+        ]
+    },
     "if": {
         "prefix": "if",
         "description": "If Statement",
