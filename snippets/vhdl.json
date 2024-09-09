@@ -352,16 +352,6 @@
         "description": "Zero Others Array",
         "body": "(others => (others => '1'))"
     },
-    "zeroes": {
-        "prefix": "oth",
-        "description": "Zero Others",
-        "body": "(others => '0')"
-    },
-    "zeroes_arr": {
-        "prefix": "otharr",
-        "description": "Zero Others Array",
-        "body": "(others => (others => '0'))"
-    },
     "integer_range_limitation": {
         "prefix": "intr",
         "description": "Integer (Range Limitation)",
