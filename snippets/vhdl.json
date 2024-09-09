@@ -80,7 +80,7 @@
         ]
     },
     "case_generate": {
-        "prefix": "case",
+        "prefix": "casegen",
         "description": "Case Generate Statement",
         "body": [
             "${1:generate_label}: case ${2:expression} generate",
@@ -99,7 +99,7 @@
         "body": ["if ${1:condition} then", "\t$0", "end if;"]
     },
     "if_generate": {
-        "prefix": "if",
+        "prefix": "ifgen",
         "description": "If Generate Statement",
         "body": [
             "${1:generate_label}: if ${2:condition} generate",
@@ -124,7 +124,7 @@
         "body": ["for ${1:loop_var} in ${2:range} loop", "\t$0", "end loop;"]
     },
     "for_generate": {
-        "prefix": "for",
+        "prefix": "forgen",
         "description": "For Generate",
         "body": [
             "${1:generate_label}: for ${2:iteration} generate",
