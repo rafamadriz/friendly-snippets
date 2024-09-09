@@ -206,23 +206,21 @@
         "prefix": "function, pfunc",
         "description": "Pure function declaration",
         "body": [
-            "function ${1:func_name}(${2:parameters})",
+            "function ${1:func_name}(${2:})",
             "\treturn ${3:return_type} is",
-            "\t${4:variables}",
             "begin",
             "\t$0",
-            "end function $1"
+            "end function $1;"
         ]
     },
     "procedure": {
         "prefix": "procedure",
         "description": "Procedure declaration",
         "body": [
-            "procedure ${1:proc_name}(${2:parameters}) is",
-            "\t${3:variables}",
+            "procedure ${1:proc_name}(${2:}) is",
             "begin",
             "\t$0",
-            "end procedure $1"
+            "end procedure $1;"
         ]
     },
     "testbench_process": {
