@@ -202,6 +202,17 @@
             "constant ${1:const_name} : ${2:integer} := ${3:0};"
         ]
     },
+    "function": {
+        "prefix": "function, pfunc",
+        "description": "Pure function declaration",
+        "body": [
+            "function ${1:func_name}(${2:parameters})",
+            "\treturn ${3:return_type} is",
+            "begin",
+            "\t$0",
+            "end function $1"
+        ]
+    }
     "testbench_process": {
         "prefix": "tproc, processt",
         "description": "Testbench Process (No Sensitivity List)",
