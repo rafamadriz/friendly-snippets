@@ -285,7 +285,7 @@
     "std_logic": {
         "prefix": "std",
         "description": "std_logic Type",
-        "body": "std_logic;"
+        "body": "std_logic"
     },
     "std_logic initialised": {
         "prefix": "stdi",
@@ -295,7 +295,7 @@
     "std_logic_vector": {
         "prefix": "stdv",
         "description": "std_logic_vector Type",
-        "body": "std_logic_vector(${1:7} ${2|downto,to|} ${3:0});"
+        "body": "std_logic_vector(${1:7} ${2|downto,to|} ${3:0})"
     },
     "std_logic_vector initialised": {
         "prefix": "stdvi",
@@ -305,7 +305,7 @@
     "std_ulogic_vector": {
         "prefix": "stduv",
         "description": "std_ulogic_vector Type",
-        "body": "std_ulogic_vector(${1:7} ${2|downto,to|} ${3:0});"
+        "body": "std_ulogic_vector(${1:7} ${2|downto,to|} ${3:0})"
     },
     "std_ulogic_vector initialised": {
         "prefix": "stduvi",
