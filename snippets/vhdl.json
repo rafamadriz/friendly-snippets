@@ -181,6 +181,27 @@
             "signal ${1:signal_name} : ${2:std_logic} := ${3:'0'};"
         ]
     },
+    "variable": {
+        "prefix": "variable",
+        "description": "variable declaration",
+        "body": [
+            "variable ${1:var_name} : ${2:integer};"
+        ]
+    },
+    "variable initialised": {
+        "prefix": "vari, variablei",
+        "description": "Variable declaration with initialisation",
+        "body": [
+            "variable ${1:var_name} : ${2:integer} := ${3:0};"
+        ]
+    },
+    "constant": {
+        "prefix": "constant",
+        "description": "Constant declaration with initialisation",
+        "body": [
+            "constant ${1:const_name} : ${2:integer} := ${3:0};"
+        ]
+    },
     "testbench_process": {
         "prefix": "tproc, processt",
         "description": "Testbench Process (No Sensitivity List)",
