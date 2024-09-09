@@ -212,7 +212,7 @@
             "\t$0",
             "end function $1"
         ]
-    }
+    },
     "testbench_process": {
         "prefix": "tproc, processt",
         "description": "Testbench Process (No Sensitivity List)",
