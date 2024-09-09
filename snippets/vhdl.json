@@ -93,6 +93,11 @@
             "end generate $1;"
         ]
     },
+    "when_in_case": {
+        "prefix": "cwhen, whenc",
+        "description": "when alternative of a case statement",
+        "body": [ "when ${1:choice} => $0" ]
+    },
     "with_select": {
         "prefix": "with",
         "description": "With-Select assignment",
