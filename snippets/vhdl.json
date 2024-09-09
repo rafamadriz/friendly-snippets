@@ -104,7 +104,7 @@
         "prefix": "whenelse",
         "description": "When-Else assignment",
         "body": [
-            "${1:dst} <= ${2: true_value} when ${3: condition} else ${4:false_value}"
+            "${1:dst} <= ${2: true_value} when ${3: condition} else ${4:false_value};"
         ]
     },
     "if": {
