@@ -93,6 +93,13 @@
             "end generate $1;"
         ]
     },
+    "with_select": {
+        "prefix": "with",
+        "description": "With-Select assignment",
+        "body": [
+            "with ${1:src} select ${2:dst} <= ${3:value} when $4{condition};"
+        ]
+    },
     "if": {
         "prefix": "if",
         "description": "If Statement",
