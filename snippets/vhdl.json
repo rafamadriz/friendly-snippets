@@ -167,6 +167,20 @@
             "subtype ${1:subtype_name} is ${2:base_type} range ${3:0} ${4|to,downto|} ${5:7};"
         ]
     },
+    "signal": {
+        "prefix": "signal",
+        "description": "Signal declaration",
+        "body": [
+            "signal ${1:signal_name} : ${2:std_logic};"
+        ]
+    },
+    "signal initialised": {
+        "prefix": "sigi, signali",
+        "description": "Signal declaration with initialisation",
+        "body": [
+            "signal ${1:signal_name} : ${2:std_logic} := ${3:'0'};"
+        ]
+    },
     "testbench_process": {
         "prefix": "tproc, processt",
         "description": "Testbench Process (No Sensitivity List)",
