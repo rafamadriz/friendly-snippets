@@ -91,12 +91,12 @@
     },
     "format": {
         "prefix": "format",
-        "body": ["format!(\"${1}\")"],
+        "body": ["format!(\"{}\", ${1})"],
         "description": "format!(…)"
     },
     "format_args": {
         "prefix": "format_args",
-        "body": ["format_args!(\"${1}\")"],
+        "body": ["format_args!(\"{}\", ${1})"],
         "description": "format_args!(…)"
     },
     "include": {
@@ -136,13 +136,23 @@
     },
     "print": {
         "prefix": "print",
-        "body": ["print!(\"${1}\");"],
+        "body": ["print!(\"{}\", ${1});"],
         "description": "print!(…);"
     },
     "println": {
         "prefix": "println",
-        "body": ["println!(\"${1}\");"],
+        "body": ["println!(\"{}\", ${1});"],
         "description": "println!(…);"
+    },
+    "eprint": {
+        "prefix": "eprint",
+        "body": ["eprint!(\"{}\", ${1});"],
+        "description": "eprint!(…);"
+    },
+    "eprintln": {
+        "prefix": "eprintln",
+        "body": ["eprintln!(\"{}\", ${1});"],
+        "description": "eprintln!(…);"
     },
     "stringify": {
         "prefix": "stringify",
