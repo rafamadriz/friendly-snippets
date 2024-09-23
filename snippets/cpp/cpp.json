@@ -156,7 +156,7 @@
     },
     "#ifdef": {
         "prefix": "#ifdef",
-        "body": ["#ifdef ${1:DEBUG}", "$0", "#endif // ${DEBUG}"],
+        "body": ["#ifdef ${1:DEBUG}", "$0", "#endif // $1"],
         "description": "Code snippet for #ifdef"
     },
     "#ifndef": {
