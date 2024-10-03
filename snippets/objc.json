@@ -282,7 +282,7 @@
     },
     "Block field": {
         "prefix": "fieldblock",
-        "body": [":(${1:void} (^${2:nullability}) (${3:parameters}))${4:name)"],
+        "body": [":(${1:void} (^${2:nullability}) (${3:parameters}))${4:name}"],
         "description": "Create a block field"
     },
     "Block typedef": {
