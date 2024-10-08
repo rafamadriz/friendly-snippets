@@ -249,7 +249,7 @@
     },
     "max": {
         "prefix": "max",
-        "body": "max($1, $2${, $3:...})$0",
+        "body": "max($1, $2, ${3:...})$0",
         "description": "max",
         "scope": "source.fortran"
     },
@@ -267,7 +267,7 @@
     },
     "min": {
         "prefix": "min",
-        "body": "min($1, $2${, $3:...})$0",
+        "body": "min($1, $2, ${3:...})$0",
         "description": "min",
         "scope": "source.fortran"
     },
