@@ -92,7 +92,7 @@
   },
   "print to file": {
     "prefix": "file print",
-    "body": ["print \\$${1:fh} \"${1:string}\\n\";"]
+    "body": ["print \\$${1:fh} \"${2:string}\\n\";"]
   },
   "read file into a scalar": {
     "prefix": "slurp",
