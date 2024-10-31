@@ -241,7 +241,7 @@
         "body": [
             "try {",
             "\t${1://code...}",
-            "} catch (${2:\\Throwable} ${3:\\$th}) {",
+            "} catch (${2:\\\\Throwable} ${3:\\$th}) {",
             "\t${4://throw \\$th;}",
             "}"
         ],
