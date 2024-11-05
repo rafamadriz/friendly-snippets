@@ -224,15 +224,15 @@
         "body": ["CONSTRAINT ${1:attribute} PRIMARY KEY(${2:attribute(s)})"],
         "description": "Constraint Primary Key"
     },
-    "foreingk": {
-        "prefix": "foreingk",
+    "foreignk": {
+        "prefix": "foreignk",
         "body": [
             "FOREIGN KEY(${1:attribute}) REFERENCES ${2:tableName}(${3:attribute})"
         ],
         "description": "Foreign Key"
     },
-    "foreingkc": {
-        "prefix": "foreingkc",
+    "foreignkc": {
+        "prefix": "foreignkc",
         "body": [
             "CONSTRAINT ${1:attribute} FOREIGN KEY (${2:attribute(s)})",
             "\tREFERENCES ${3:tableName}(${4:attribute})"
