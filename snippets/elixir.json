@@ -16,12 +16,12 @@
     },
     "df": {
         "prefix": "df",
-        "body": "def ${1:name}(), do: $2",
+        "body": "def ${1:name}(), do: $0",
         "description": "Define a one-liner function"
     },
     "dfw": {
         "prefix": "dfw",
-        "body": "def ${1:name}(${2:args}) when ${3:guard}, do: $4",
+        "body": "def ${1:name}(${2:args}) when ${3:guard}, do: $0",
         "description": "Define a one-liner function with when guard"
     },
     "IO.puts": {
