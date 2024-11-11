@@ -20,7 +20,7 @@
         "description": "Define a one-liner function"
     },
     "dfw": {
-        "prefix": "defw",
+        "prefix": "dfw",
         "body": "def ${1:name}(${2:args}) when ${3:guard}, do: $4",
         "description": "Define a one-liner function with when guard"
     },
