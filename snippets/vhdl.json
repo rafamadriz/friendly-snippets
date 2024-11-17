@@ -80,7 +80,7 @@
         ]
     },
     "case_generate": {
-        "prefix": "case",
+        "prefix": "casegen",
         "description": "Case Generate Statement",
         "body": [
             "${1:generate_label}: case ${2:expression} generate",
@@ -93,18 +93,48 @@
             "end generate $1;"
         ]
     },
+    "when_in_case": {
+        "prefix": "cwhen, whenc",
+        "description": "when alternative of a case statement",
+        "body": [ "when ${1:choice} => $0" ]
+    },
+    "with_select": {
+        "prefix": "with",
+        "description": "With-Select assignment",
+        "body": [
+            "with ${1:src} select ${2:dst} <= ${3:value} when $4{condition};"
+        ]
+    },
+    "when_else": {
+        "prefix": "whenelse",
+        "description": "When-Else assignment",
+        "body": [
+            "${1:dst} <= ${2: true_value} when ${3: condition} else ${4:false_value};"
+        ]
+    },
     "if": {
         "prefix": "if",
         "description": "If Statement",
         "body": ["if ${1:condition} then", "\t$0", "end if;"]
     },
     "if_generate": {
-        "prefix": "if",
+        "prefix": "ifgen",
         "description": "If Generate Statement",
         "body": [
             "${1:generate_label}: if ${2:condition} generate",
             "\t$0",
             "end generate $1;"
+        ]
+    },
+    "if_else": {
+        "prefix": "ifelse",
+        "description": "If else Statement",
+        "body": [
+            "if ${1:condition} then",
+            "\t$0",
+            "else",
+            "\t",
+            "end if;"
         ]
     },
     "for": {
@@ -113,7 +143,7 @@
         "body": ["for ${1:loop_var} in ${2:range} loop", "\t$0", "end loop;"]
     },
     "for_generate": {
-        "prefix": "for",
+        "prefix": "forgen",
         "description": "For Generate",
         "body": [
             "${1:generate_label}: for ${2:iteration} generate",
@@ -154,6 +184,62 @@
         "description": "Subtype declaration",
         "body": [
             "subtype ${1:subtype_name} is ${2:base_type} range ${3:0} ${4|to,downto|} ${5:7};"
+        ]
+    },
+    "signal": {
+        "prefix": "signal",
+        "description": "Signal declaration",
+        "body": [
+            "signal ${1:signal_name} : ${2:std_logic};"
+        ]
+    },
+    "signal initialised": {
+        "prefix": "sigi, signali",
+        "description": "Signal declaration with initialisation",
+        "body": [
+            "signal ${1:signal_name} : ${2:std_logic} := ${3:'0'};"
+        ]
+    },
+    "variable": {
+        "prefix": "variable",
+        "description": "variable declaration",
+        "body": [
+            "variable ${1:var_name} : ${2:integer};"
+        ]
+    },
+    "variable initialised": {
+        "prefix": "vari, variablei",
+        "description": "Variable declaration with initialisation",
+        "body": [
+            "variable ${1:var_name} : ${2:integer} := ${3:0};"
+        ]
+    },
+    "constant": {
+        "prefix": "constant",
+        "description": "Constant declaration with initialisation",
+        "body": [
+            "constant ${1:const_name} : ${2:integer} := ${3:0};"
+        ]
+    },
+    "function": {
+        "prefix": "function, pfunc",
+        "description": "Pure function declaration",
+        "body": [
+            "function ${1:func_name}(${2:})",
+            "\treturn ${3:return_type} is",
+            "begin",
+            "\t$0",
+            "end function $1;"
+        ]
+    },
+    "procedure": {
+        "prefix": "procedure",
+        "description": "Procedure declaration",
+        "body": [
+            "procedure ${1:proc_name}(${2:}) is",
+            "begin",
+            "\t$0",
+            "end procedure $1;"
         ]
     },
     "testbench_process": {
@@ -201,34 +287,84 @@
             "end process $1;"
         ]
     },
-    "std_logic_vector": {
+    "std_logic": {
         "prefix": "std",
+        "description": "std_logic Type",
+        "body": "std_logic"
+    },
+    "std_logic initialised": {
+        "prefix": "stdi",
+        "description": "std_logic Type",
+        "body": "std_logic := '0';"
+    },
+    "std_logic_vector": {
+        "prefix": "stdv",
         "description": "std_logic_vector Type",
         "body": "std_logic_vector(${1:7} ${2|downto,to|} ${3:0})"
     },
+    "std_logic_vector initialised": {
+        "prefix": "stdvi",
+        "description": "std_logic_vector Type",
+        "body": "std_logic_vector(${1:7} ${2|downto,to|} ${3:0}) := (others => '0');"
+    },
     "std_ulogic_vector": {
-        "prefix": "stdu",
+        "prefix": "stduv",
         "description": "std_ulogic_vector Type",
         "body": "std_ulogic_vector(${1:7} ${2|downto,to|} ${3:0})"
+    },
+    "std_ulogic_vector initialised": {
+        "prefix": "stduvi",
+        "description": "std_ulogic_vector Type",
+        "body": "std_ulogic_vector(${1:7} ${2|downto,to|} ${3:0}) := (others => '0');"
     },
     "signed": {
         "prefix": "si",
         "description": "signed Type",
         "body": "signed(${1:7} ${2|downto,to|} ${3:0})"
     },
+    "signed initialised": {
+      "prefix": "sii",
+      "description": "signed Type initialised",
+      "body": "signed(${1:7} ${2|downto,to|} ${3:0}) := (others => '0');"
+    },
     "unsigned": {
         "prefix": "uns",
         "description": "unsigned Type",
         "body": "unsigned(${1:7} ${2|downto,to|} ${3:0})"
     },
+    "unsigned initialised": {
+        "prefix": "unsi",
+        "description": "unsigned Type",
+        "body": "unsigned(${1:7} ${2|downto,to|} ${3:0}) := (others => '0');"
+    },
     "zeroes": {
         "prefix": "oth",
         "description": "Zero Others",
-        "body": "others => '0'"
+        "body": "(others => '0')"
+    },
+    "zeroes_arr": {
+        "prefix": "otharr",
+        "description": "Zero Others Array",
+        "body": "(others => (others => '0'))"
+    },
+    "ones": {
+        "prefix": "oth1",
+        "description": "Zero Others",
+        "body": "(others => '1')"
+    },
+    "ones_arr": {
+        "prefix": "otharr1",
+        "description": "Zero Others Array",
+        "body": "(others => (others => '1'))"
     },
     "integer_range_limitation": {
         "prefix": "intr",
         "description": "Integer (Range Limitation)",
         "body": "integer range ${1:0} ${2|downto,to|} ${3:255}"
+    },
+    "while loop": {
+        "prefix": "while",
+        "description": "While Loop",
+        "body": ["while ${1:condition} loop", "\t$0", "end loop;"]
     }
 }

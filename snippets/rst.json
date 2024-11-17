@@ -1,0 +1,115 @@
+{
+    "main title": {
+        "prefix": ["main title", "="],
+        "body": ["============================\n${0}\n============================\n\n"],
+        "description": "Add main title"
+    },
+    "title": {
+        "prefix": ["title", "="],
+        "body": ["${0}\n============================\n\n"],
+        "description": "Add title"
+    },
+    "section": {
+        "prefix": ["section", "-"],
+        "body": ["${0}\n------------\n\n"],
+        "description": "Add section"
+    },
+    "Links": {
+        "prefix": ["l", "link", "hyperlink"],
+        "body": ["${1:text}_\n.. _${1:text} ${2:url}${0}"],
+        "description": "Add links"
+    },
+    "URLS": {
+        "prefix": ["u", "url"],
+        "body": ["<${1}> ${0}"],
+        "description": "Add urls"
+    },
+    "Images": {
+        "prefix": "img",
+        "body": [".. image:: ${1:path}${0}"],
+        "description": "Add images"
+    },
+    "Insert strong emphasized text": {
+        "prefix": ["bold", "b", "strong emphasis"],
+        "body": "**${1}** $0",
+        "description": "Insert bold text"
+    },
+    "Insert emphasized text": {
+        "prefix": ["i", "italic", "emphasis"],
+        "body": "*${1}* $0",
+        "description": "Insert italic text"
+    },
+    "Insert quoted text": {
+        "prefix": "quote",
+        "body": "::\n\n  ${1}",
+        "description": "Insert quoted text"
+    },
+    "Insert code": {
+        "prefix": ["code", "literal"],
+        "body": "`${1}` $0",
+        "description": "Insert code"
+    },
+    "Insert code block": {
+        "prefix": "codeblock",
+        "body": ["::\n $0"],
+        "description": "Insert code block"
+    },
+    "Insert unordered list": {
+        "prefix": "unordered list",
+        "body": ["- ${1:first}", "- ${2:second}", "- ${3:third}", "$0"],
+        "description": "Insert unordered list"
+    },
+    "Insert ordered list": {
+        "prefix": "ordered list",
+        "body": ["1. ${1:first}", "2. ${2:second}", "3. ${3:third}", "$0"],
+        "description": "Insert ordered list"
+    },
+    "Insert transition": {
+        "prefix": ["horizontal rule", "transition"],
+        "body": "----------\n\n",
+        "description": "Insert transition rule"
+    },
+    "Insert task list": {
+        "prefix": "task",
+        "body": ["- [${1| ,x|}] ${2:text}", "${0}"],
+        "description": "Insert task list"
+    },
+    "Insert task list 2": {
+        "prefix": "task2",
+        "body": ["- [${1| ,x|}] ${2:text}", "- [${3| ,x|}] ${4:text}", "${0}"],
+        "description": "Insert task list with 2 tasks"
+    },
+    "Insert task list 3": {
+        "prefix": "task3",
+        "body": [
+            "- [${1| ,x|}] ${2:text}",
+            "- [${3| ,x|}] ${4:text}",
+            "- [${5| ,x|}] ${6:text}",
+            "${0}"
+        ],
+        "description": "Insert task list with 3 tasks"
+    },
+    "Insert task list 4": {
+        "prefix": "task4",
+        "body": [
+            "- [${1| ,x|}] ${2:text}",
+            "- [${3| ,x|}] ${4:text}",
+            "- [${5| ,x|}] ${6:text}",
+            "- [${7| ,x|}] ${8:text}",
+            "${0}"
+        ],
+        "description": "Insert task list with 4 tasks"
+    },
+    "Insert task list 5": {
+        "prefix": "task5",
+        "body": [
+            "- [${1| ,x|}] ${2:text}",
+            "- [${3| ,x|}] ${4:text}",
+            "- [${5| ,x|}] ${6:text}",
+            "- [${7| ,x|}] ${8:text}",
+            "- [${9| ,x|}] ${10:text}",
+            "${0}"
+        ],
+        "description": "Insert task list with 5 tasks"
+    }
+}

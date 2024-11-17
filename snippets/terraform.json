@@ -141,11 +141,6 @@
     "description": "Outputs are a way to tell Terraform what data is important.",
     "body": ["output \"${myOutput}\" {", "   value = \"\"", "}"]
   },
-  "resource": {
-    "prefix": "tf-resource",
-    "description": "define a provisioner.",
-    "body": ["resource \"${1}\" \"${2}\" {", "\t${3}", "}"]
-  },
   "depends_on": {
     "prefix": "tf-depends_on",
     "description": "Define explicit dependencies.",
@@ -172,7 +167,7 @@
   },
   "git_module": {
     "prefix": "tf-git_module",
-    "description": "Define a module with genertic Git source.",
+    "description": "Define a module with generic Git source.",
     "body": ["module \"${myModuleName}\" {", "   source = \"git://\"", "}"]
   },
   "github_private_module": {

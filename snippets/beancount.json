@@ -1,0 +1,174 @@
+{
+	"option": {
+		"prefix": "option",
+		"body": [
+			"option \"${1:name}\" \"${2:value}\"",
+			"$0"
+		],
+		"description": "Add option."
+	},
+
+	"open directive": {
+		"prefix": "open",
+		"body": [
+            "${1:$CURRENT_YEAR}-${2:$CURRENT_MONTH}-${3:$CURRENT_DATE} open ${4|Assets:,Liabilities:,Equity:,Income:,Expenses:|} ${5:[ConstraintCurrency] [BookingMethod]}",
+            "$0"
+		],
+		"description": "Open an account."
+	},
+
+	"close directive": {
+		"prefix": "close",
+		"body": [
+            "${1:$CURRENT_YEAR}-${2:$CURRENT_MONTH}-${3:$CURRENT_DATE} close ${4|Assets:,Liabilities:,Equity:,Income:,Expenses:|}",
+            "$0"
+		],
+		"description": "Close an account."
+	},
+
+	"commoditiy directive": {
+		"prefix": "commodity",
+		"body": [
+			"${1:$CURRENT_YEAR}-${2:$CURRENT_MONTH}-${3:$CURRENT_DATE} commodity ${4:ISO/Ticker}",
+            "  name: \"${5:FullName}\"",
+            "  asset-class: \"${6|cash,stock|}\"",
+            "$0"
+		],
+		"description": "Add a commodity metadata (optional)."
+    },
+
+    "completed transaction directive": {
+		"prefix": "txn*",
+		"body": [
+			"${1:$CURRENT_YEAR}-${2:$CURRENT_MONTH}-${3:$CURRENT_DATE} * \"${4:Payee}\" \"${5:Narration}\"",
+            "  $0"
+		],
+		"description": "Add a completed transaction."
+    },
+
+    "incomplete transaction directive": {
+        "prefix": "txn!",
+        "body": [
+			"${1:$CURRENT_YEAR}-${2:$CURRENT_MONTH}-${3:$CURRENT_DATE} ! \"${4:Payee}\" \"${5:Narration}\"",
+         "  $0"
+		],
+		"description": "Add an incomplete transaction."
+    },
+
+    "balance assertion": {
+        "prefix": "balance",
+        "body": [
+			"${1:$CURRENT_YEAR}-${2:$CURRENT_MONTH}-${3:$CURRENT_DATE} balance ${4|Assets:,Liabilities:,Equity:,Income:,Expenses:|} ${5:Amount}",
+            "$0"
+		],
+		"description": "Assert balance on given day."
+    },
+
+    "pad": {
+        "prefix": "pad",
+        "body": [
+			"${1:$CURRENT_YEAR}-${2:$CURRENT_MONTH}-${3:$CURRENT_DATE} pad ${4:AccountTo} ${5:AccountFrom}",
+            "$0"
+		],
+		"description": "Pad balance between two accounts."
+    },
+
+    "note": {
+        "prefix": "note",
+        "body": [
+			"${1:$CURRENT_YEAR}-${2:$CURRENT_MONTH}-${3:$CURRENT_DATE} note ${4|Assets:,Liabilities:,Equity:,Income:,Expenses:|} ${5:Description}",
+            "$0"
+		],
+		"description": "Insert a dated comment."
+    },
+
+    "document": {
+        "prefix": "document",
+        "body": [
+			"${1:$CURRENT_YEAR}-${2:$CURRENT_MONTH}-${3:$CURRENT_DATE} document ${4|Assets:,Liabilities:,Equity:,Income:,Expenses:|} \"${5:PathToDocument}\"",
+            "$0"
+		],
+		"description": "Insert a dated document relating to a account."
+    },
+    
+    "price": {
+        "prefix": "price",
+        "body": [
+			"${1:$CURRENT_YEAR}-${2:$CURRENT_MONTH}-${3:$CURRENT_DATE} price ${4:Commodity} ${5:Price}",
+            "$0"
+		],
+		"description": "Add a dated price between commodities (for unrealized gains)."
+    },
+
+    "event": {
+        "prefix": "event",
+        "body": [
+			"${1:$CURRENT_YEAR}-${2:$CURRENT_MONTH}-${3:$CURRENT_DATE} event \"${4:Key}\" \"${5:Value}\"",
+            "$0"
+		],
+		"description": "Add a dated event/variable to track."
+    },
+
+    "plugin": {
+        "prefix": "plugin",
+        "body": [
+			"plugin \"${4:PluginName}\" \"${5:ConfigString}\"",
+            "$0"
+		],
+		"description": "Load a plugin."
+    },
+
+    "include": {
+        "prefix": "include",
+        "body": [
+			"include \"${4:Filename}\"",
+            "$0"
+		],
+		"description": "Include a beancount file."
+	},
+
+	"query": {
+		"prefix": "query",
+		"body": [
+			"${1:$CURRENT_YEAR}-${2:$CURRENT_MONTH}-${3:$CURRENT_DATE} query \"${4:Name}\" \"${5:SQLContents}\"",
+            "$0"
+		],
+		"description": "Insert query into the stream of transactions."
+	},
+
+	"custom": {
+		"prefix": "custom",
+		"body": [
+			"${1:$CURRENT_YEAR}-${2:$CURRENT_MONTH}-${3:$CURRENT_DATE} custom \"${4:TypeName}\" ${5:Value...}",
+            "$0"
+		],
+		"description": "Add a custom directive."
+	},
+	
+	"pushtag": {
+		"prefix": "pushtag",
+		"body": [
+			"pushtag #${1:TagName}",
+			"$0"
+		],
+		"description": "Push a tag onto the stack."
+	},
+
+	"poptag": {
+		"prefix": "poptag",
+		"body": [
+			"poptag #${1:TagName}",
+			"$0"
+		],
+		"description": "Pop a tag from the stack."
+	},
+
+	"budget": {
+		"prefix": "budget",
+		"body": [
+			"${1:$CURRENT_YEAR}-${2:$CURRENT_MONTH}-${3:$CURRENT_DATE} custom \"budget\" ${5:Expenses:} \"${6|daily,weekly,monthly,quaterly,yearly|}\" ${7:Amount}",
+            "$0"
+		],
+		"description": "Add a Fava compatible budget directive."
+	}
+}

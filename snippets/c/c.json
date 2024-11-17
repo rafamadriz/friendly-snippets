@@ -18,7 +18,6 @@
             "",
             "int main(int argc, char *argv[])",
             "{$0",
-            "",
             "\treturn EXIT_SUCCESS;",
             "}"
         ],
@@ -42,7 +41,6 @@
         "body": [
             "int main(int argc, char *argv[])",
             "{$0",
-            "",
             "\treturn EXIT_SUCCESS;",
             "}"
         ],
@@ -50,7 +48,7 @@
     },
     "main(void) template": {
         "prefix": "mainn",
-        "body": ["int main(void)", "{$0", "", "\treturn EXIT_SUCCESS;", "}"],
+        "body": ["int main(void)", "{$0", "\treturn EXIT_SUCCESS;", "}"],
         "description": "No-args main() snippet"
     },
     "#include <...>": {

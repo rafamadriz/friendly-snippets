@@ -8,9 +8,9 @@
         "prefix": "block",
         "description": "block tag django template",
         "body": [
-            "{% block ${blockname} %}",
+            "{% block ${1:blockname} %}",
             "$2",
-            "{% endblock ${blockname} %}"
+            "{% endblock $1 %}"
         ]
     },
     "comment": {

@@ -81,12 +81,12 @@
     },
     "Inline Math": {
         "prefix": ["mathinline", "\\mathinline"],
-        "body": ["$ $1 $$0"],
+        "body": ["\\$ $1 \\$$0"],
         "description": "Insert inline Math Environment."
     },
     "Centered Math": {
         "prefix": ["mathcentered", "\\mathcentered"],
-        "body": ["$$ $0 $$"],
+        "body": ["\\$$ $0 \\$$"],
         "description": "Insert centered Math Environment."
     },
     "Section": {
@@ -224,7 +224,7 @@
             "\tcolor=${3:blue},",
             "\t]",
             "\t{${4:x^2 + 2*x + 1}};",
-            "\\addlegendentry{$${5:x^2 + 2x + 1}$}",
+            "\\addlegendentry{\\$${5:x^2 + 2x + 1}\\$}",
             "$0"
         ],
         "description": "Plot a 2D Graph in the 2D graph environment, noted that this can also be used in the 3D environment."
@@ -238,7 +238,7 @@
             "\tcolor=${4:blue},",
             "\t]",
             "\t({${1:r}*cos(t)+${2:a}},{${1:r}*sin(t)+${3:b}});",
-            "\\addlegendentry{$(x-${2:a})^2+(y-${3:b})^2=${1:r}^2$}$0"
+            "\\addlegendentry{\\$(x-${2:a})^2+(y-${3:b})^2=${1:r}^2\\$}$0"
         ],
         "description": "Plot a 2D Circle in the 2D graph environment, noted that this can also be used in the 3D environment."
     },
@@ -251,7 +251,7 @@
             "\tcolor=${3:blue},",
             "\t]",
             "\t{${1:a}*x+${2:b}};",
-            "\\addlegendentry{$ y=${1:a}x+${2:b}$}$0"
+            "\\addlegendentry{\\$ y=${1:a}x+${2:b}\\$}$0"
         ],
         "description": "Plot a 2D Line in the 2D graph environment, noted that this can also be used in the 3D environment."
     },
@@ -264,7 +264,7 @@
             "\tcolor=${5:blue},",
             "\t]",
             "\t({${1:a}*cos(t)+${3:x}},{${2:b}*sin(t)+${4:y}});",
-            "\\addlegendentry{$\\frac{(x-${3:x})^2}{${1:a}^2}+\\frac{(y-${4:y})^2}{${2:b}^2}=1$}$0"
+            "\\addlegendentry{\\$\\frac{(x-${3:x})^2}{${1:a}^2}+\\frac{(y-${4:y})^2}{${2:b}^2}=1\\$}$0"
         ],
         "description": "Plot a 2D Ellipse in the 2D graph environment, noted that this can also be used in the 3D environment."
     },
@@ -280,7 +280,7 @@
             "\tcolor=${6:blue},",
             "\t]",
             "\t{${1:a}*(x-${2:m})*(x-${2:m})+${3:b}};",
-            "\\addlegendentry{$ y=${1:a}(x-${2:m})^2+${3:b}$}$0"
+            "\\addlegendentry{\\$ y=${1:a}(x-${2:m})^2+${3:b}\\$}$0"
         ],
         "description": "Plot a 2D graph of a quadratic function in the 2D graph environment by the given extrema, noted that this can also be used in the 3D environment."
     },

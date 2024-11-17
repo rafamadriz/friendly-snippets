@@ -17,8 +17,7 @@
     "Chapter": {
         "prefix": "cha",
         "body": [
-            "\\chapter{$1} % (fold)",
-            "\\label{chap:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
+            "\\chapter{$1}\\label{chap:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}} % (fold)",
             "${0:$TM_SELECTED_TEXT}",
             "% chapter $1 (end)"
         ],
@@ -182,8 +181,7 @@
     "Paragraph": {
         "prefix": "par",
         "body": [
-            "\\paragraph{${1:paragraph name}} % (fold)",
-            "\\label{par:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
+            "\\paragraph{${1:paragraph name}}\\label{par:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}} % (fold)",
             "${0:$TM_SELECTED_TEXT}",
             "% paragraph $1 (end)"
         ],
@@ -192,8 +190,7 @@
     "Part": {
         "prefix": "part",
         "body": [
-            "\\part{${1:part name}} % (fold)",
-            "\\label{prt:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
+            "\\part{${1:part name}}\\label{prt:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}} % (fold)",
             "${0:$TM_SELECTED_TEXT}",
             "% part $1 (end)"
         ],
@@ -222,8 +219,7 @@
     "Section": {
         "prefix": "sec",
         "body": [
-            "\\section{$1} % (fold)",
-            "\\label{sec:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
+            "\\section{$1}\\label{sec:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}} % (fold)",
             "${0:$TM_SELECTED_TEXT}",
             "% section $1 (end)"
         ],
@@ -232,8 +228,7 @@
     "Sub Paragraph": {
         "prefix": "subp",
         "body": [
-            "\\subparagraph{$1} % (fold)",
-            "\\label{subp:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
+            "\\subparagraph{$1}\\label{subp:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}} % (fold)",
             "${0:$TM_SELECTED_TEXT}",
             "% subparagraph $1 (end)"
         ],
@@ -242,8 +237,7 @@
     "Sub Section": {
         "prefix": "sub",
         "body": [
-            "\\subsection{$1} % (fold)",
-            "\\label{sub:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
+            "\\subsection{$1}\\label{sub:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}} % (fold)",
             "${0:$TM_SELECTED_TEXT}",
             "% subsection $1 (end)"
         ],
@@ -252,8 +246,7 @@
     "Sub Sub Section": {
         "prefix": "subs",
         "body": [
-            "\\subsubsection{${1:subsubsection name}} % (fold)",
-            "\\label{sec:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}}",
+            "\\subsubsection{${1:subsubsection name}}\\label{sec:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}} % (fold)",
             "${0:$TM_SELECTED_TEXT}",
             "% subsubsection $1 (end)"
         ],
@@ -277,7 +270,7 @@
         "prefix": "begin",
         "body": [
             "\\\\begin{${1:env}}",
-            "\t${1/(enumerate|itemize|list)|(description)|(.*)/${1:+\\item }${2:+\\item[] }${3:+ }/}$0",
+            "\t${1/(enumerate|itemize|list)|(description)|(.*)/${1:+\\item }${2:+\\item[] }${3:+}/}$0",
             "\\\\end{${1:env}}"
         ],
         "description": "Begin - End"

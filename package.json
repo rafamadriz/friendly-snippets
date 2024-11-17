@@ -85,6 +85,10 @@
                 "path": "./snippets/nix.json"
             },
             {
+                "language": "kivy",
+                "path": "./snippets/kivy.json"
+            },
+            {
                 "language": "liquid",
                 "path": "./snippets/liquid.json"
             },
@@ -229,7 +233,7 @@
                     "javascriptreact",
                     "htmldjango",
                     "astro",
-		    "blade"
+                    "blade"
                 ],
                 "path": "./snippets/html.json"
             },
@@ -255,14 +259,6 @@
             },
             {
                 "language": "javascriptreact",
-                "path": "./snippets/javascript/react.json"
-            },
-            {
-                "language": "javascriptreact",
-                "path": "./snippets/javascript/react-native.json"
-            },
-            {
-                "language": "javascriptreact",
                 "path": "./snippets/javascript/next.json"
             },
             {
@@ -274,12 +270,24 @@
                 "path": "./snippets/javascript/next-ts.json"
             },
             {
+                "language": "javascriptreact",
+                "path": "./snippets/javascript/react.json"
+            },
+            {
+                "language": "javascriptreact",
+                "path": "./snippets/javascript/react-native.json"
+            },
+            {
                 "language": "typescriptreact",
                 "path": "./snippets/javascript/react-native-ts.json"
             },
             {
                 "language": ["javascriptreact", "typescriptreact"],
                 "path": "./snippets/javascript/react-es7.json"
+            },
+            {
+                "language": "remix",
+                "path": "./snippets/frameworks/remix-ts.json"
             },
             {
                 "language": "terraform",
@@ -327,7 +335,7 @@
             },
             {
                 "language": "python",
-                "path": "./snippets/python/base.json"
+                "path": "./snippets/python/python.json"
             },
             {
                 "language": "python",
@@ -335,15 +343,11 @@
             },
             {
                 "language": "python",
-                "path": "./snippets/python/debug.json"
-            },
-            {
-                "language": "python",
-                "path": "./snippets/python/python.json"
-            },
-            {
-                "language": "python",
                 "path": "./snippets/python/unittest.json"
+            },
+            {
+                "language": "python",
+                "path": "./snippets/python/debug.json"
             },
             {
                 "language": "pydoc",
@@ -430,25 +434,25 @@
                 "path": "./snippets/latex/bibtex.json"
             },
             {
-        	"language": "twig",
+                "language": "twig",
                 "path": "./snippets/frameworks/twig.json"
             },
-	    {
-	    	"language": "blade",
-	    	"path": "./snippets/frameworks/blade/blade.json"
-	    },
-	    {
-		"language": "blade",
-		"path": "./snippets/frameworks/blade/helpers.json"
-	    },
-	    {
-		"language": "blade",
-		"path": "./snippets/frameworks/blade/livewire.json"
-	    },
-	    {
-		"language": "blade",
-		"path": "./snippets/frameworks/blade/snippets.json"
-	    },
+            {
+                "language": "blade",
+                "path": "./snippets/frameworks/blade/blade.json"
+            },
+            {
+                "language": "blade",
+                "path": "./snippets/frameworks/blade/helpers.json"
+            },
+            {
+                "language": "blade",
+                "path": "./snippets/frameworks/blade/livewire.json"
+            },
+            {
+                "language": "blade",
+                "path": "./snippets/frameworks/blade/snippets.json"
+            },
             {
                 "language": ["r", "rmd"],
                 "path": "./snippets/r.json"
@@ -504,6 +508,10 @@
             {
                 "language": "tcl",
                 "path": "./snippets/tcl.json"
+            },
+            {
+                "language": "perl",
+                "path": "./snippets/perl.json"
             },
             {
                 "language": "verilog",
@@ -563,6 +571,26 @@
             {
                 "language": "asciidoc",
                 "path": "./snippets/asciidoc.json"
+            },
+            {
+                "language": "beancount",
+                "path": "./snippets/beancount.json"
+            },
+            {
+                 "language": "rst",
+                 "path": "./snippets/rst.json"
+            },
+            {
+                 "language": "loremipsum",
+                 "path": "./snippets/loremipsum.json"
+            },
+						{
+							"language": "cmake",
+							"path": "./snippets/cmake.json"
+						},
+            {
+                 "language": "zig",
+                 "path": "./snippets/zig.json"
             }
         ]
     }

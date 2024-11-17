@@ -25,10 +25,26 @@
     "function __construct": {
         "prefix": "con",
         "body": [
-            "${1:public} function __construct(${2:${3:Type} \\$${4:var}${5: = ${6:null}}}) {",
-            "\t\\$this->${4:var} = \\$${4:var};$0",
+            "public function __construct(${1: priarg}) {",
             "}"
-        ]
+        ],
+        "description": "Create __construct method using the last php syntax."
+    },
+    "Private argument": {
+        "prefix": "priarg",
+        "body": [
+            "${1:private} ${2:${3:Type} \\$${4:var}${5: = ${6:null}}}"
+        ],
+        "description": "Private argument to use on __construct method."
+    },
+    "function __construct (php 7 or lower)": {
+        "prefix": "con7",
+        "body": [
+            "public function __construct(${1:${2:Type} \\$${3:var}${4: = ${5:null}}}) {",
+            "\t\\$this->${3:var} = \\$${3:var};$0",
+            "}"
+        ],
+        "description": "Create a __construct method using syntax <= 7.4."
     },
     "PHPDoc property": {
         "prefix": "doc_v",
@@ -230,5 +246,10 @@
             "}"
         ],
         "description": "Try catch block"
+    },
+    "Variable Dump": {
+        "prefix": "vd",
+        "body": ["var_dump($0);"],
+        "description": "var_dump"
     }
 }
