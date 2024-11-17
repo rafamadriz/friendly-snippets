@@ -1,23 +1,56 @@
 {
-    "single import": {
-        "prefix": "im",
-        "body": "import \"${1:package}\"",
-        "description": "Snippet for import statement"
+    "Single Import": {
+        "prefix": "importPackage",
+        "body": [
+            "import \"${1:package}\"",
+            "$0"
+        ],
+        "description": "Snippet for import single package"
     },
-    "multiple imports": {
-        "prefix": "ims",
-        "body": "import (\n\t\"${1:package}\"\n)",
-        "description": "Snippet for a import block"
+    "Multiple Imports": {
+        "prefix": "importMultiple",
+        "body": [
+            "import (",
+            "\t\"${1:package}\"",
+            "$0",
+            ")"
+        ],
+        "description": "Snippet for multiple import package"
     },
-    "single constant": {
-        "prefix": "co",
-        "body": "const ${1:name} = ${2:value}",
+    "Single Constant": {
+        "prefix": "const",
+        "body": [
+            "const ${1:name} = ${2:value}",
+            "$0"
+        ],
         "description": "Snippet for a constant"
     },
-    "multiple constants": {
-        "prefix": "cos",
-        "body": "const (\n\t${1:name} = ${2:value}\n)",
+    "Multiple Constants": {
+        "prefix": "constMultiple",
+        "body": [
+            "const (",
+            "\t${1:name} = ${2:value}",
+            "\t$3",
+            ")",
+            "$0"
+        ],
         "description": "Snippet for a constant block"
+    },
+    "variable declaration": {
+        "prefix": "var",
+        "body": "var ${1:name} ${2:type}",
+        "description": "Snippet for a variable"
+    },
+    "variables declaration": {
+        "prefix": "vars",
+        "body": [
+            "var (",
+            "\t${1:name} ${2:type} = ${3:value}",
+            "\t$4",
+            ")",
+            "$0"
+        ],
+        "description": "Snippet for a variable"
     },
     "type function declaration": {
         "prefix": "tyf",
@@ -43,16 +76,6 @@
         "prefix": "func",
         "body": "func $1($2) $3 {\n\t$0\n}",
         "description": "Snippet for function declaration"
-    },
-    "variable declaration": {
-        "prefix": "var",
-        "body": "var ${1:name} ${2:type}",
-        "description": "Snippet for a variable"
-    },
-    "variables declaration": {
-        "prefix": "vars",
-        "body": "var (\n\t${1:name} ${2:type} = ${3:value}\n)",
-        "description": "Snippet for a variable"
     },
     "switch statement": {
         "prefix": "switch",
