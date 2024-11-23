@@ -431,6 +431,10 @@
         "prefix": "cl",
         "body": "console.log(${0})"
     },
+    "console.log with log": {
+        "prefix": "log",
+        "body": "console.log(${0})"
+    },
     "console.log a variable": {
         "prefix": "cv",
         "body": "console.log('${1}:', ${1})"
