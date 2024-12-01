@@ -22,7 +22,7 @@
 				".target = target,",
 				".optimize = optimize,",
 				"});",
-				"\n\n\n b.installArtifact(exe);",
+				"\n\n\n b.installArtifact(exe);"
 		],
 		"description": "Building an exe"
 	}
