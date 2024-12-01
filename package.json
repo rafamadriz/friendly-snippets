@@ -584,10 +584,10 @@
                  "language": "loremipsum",
                  "path": "./snippets/loremipsum.json"
             },
-						{
-							"language": "cmake",
-							"path": "./snippets/cmake.json"
-						},
+	    {
+		"language": "cmake",
+		"path": "./snippets/cmake.json"
+	    },
             {
                  "language": "zig",
                  "path": "./snippets/zig.json"
