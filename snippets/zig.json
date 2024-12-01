@@ -2,7 +2,7 @@
 	"Import": {
 		"prefix": "import",
 		"body": ["const ${1} = @import(\"${1}\")"],
-		"description": "Importing Librarys"
+		"description": "Importing Libraries"
 	},
 	"CImport": {
 		"prefix": "cimport",
