@@ -251,5 +251,16 @@
         "prefix": "vd",
         "body": ["var_dump($0);"],
         "description": "var_dump"
+    },
+    "enum …": {
+        "prefix": "enum",
+        "body": [
+            "enum ${1:EnumName}",
+            "{",
+            "\tcase $0;",
+            "}",
+            ""
+        ],
+        "description": "Enum definition"
     }
 }
