@@ -1,280 +1,280 @@
 {
-    "h1": {
-        "prefix": "h1",
-        "body": ["* $0"],
-        "description": "level 1 heading"
-    },
-    "h2": {
-        "prefix": "h2",
-        "body": ["** $0"],
-        "description": "level 2 heading"
-    },
-    "h3": {
-        "prefix": "h3",
-        "body": ["*** $0"],
-        "description": "level 3 heading"
-    },
-    "h4": {
-        "prefix": "h4",
-        "body": ["**** $0"],
-        "description": "level 4 heading"
-    },
-    "h5": {
-        "prefix": "h5",
-        "body": ["***** $0"],
-        "description": "level 5 heading"
-    },
-    "h6": {
-        "prefix": "h6",
-        "body": ["****** $0"],
-        "description": "level 6 heading"
-    },
+  "h1": {
+    "prefix": "h1",
+    "body": ["* $0"],
+    "description": "level 1 heading"
+  },
+  "h2": {
+    "prefix": "h2",
+    "body": ["** $0"],
+    "description": "level 2 heading"
+  },
+  "h3": {
+    "prefix": "h3",
+    "body": ["*** $0"],
+    "description": "level 3 heading"
+  },
+  "h4": {
+    "prefix": "h4",
+    "body": ["**** $0"],
+    "description": "level 4 heading"
+  },
+  "h5": {
+    "prefix": "h5",
+    "body": ["***** $0"],
+    "description": "level 5 heading"
+  },
+  "h6": {
+    "prefix": "h6",
+    "body": ["****** $0"],
+    "description": "level 6 heading"
+  },
 
-    "hr": {
-        "prefix": "hr",
-        "body": ["___", "$0"],
-        "description": "horizontal rule"
-    },
+  "hr": {
+    "prefix": "hr",
+    "body": ["___", "$0"],
+    "description": "horizontal rule"
+  },
 
-    "bold": {
-        "prefix": "bold",
-        "body": ["*$0*"],
-        "description": "bold words"
-    },
-    "italic": {
-        "prefix": "italic",
-        "body": ["/$0/"],
-        "description": "italic words"
-    },
-    "underline": {
-        "prefix": "underline",
-        "body": ["_$0_"],
-        "description": "underline words"
-    },
-    "spoiler": {
-        "prefix": "spoiler",
-        "body": ["!$0!"],
-        "description": "spoiler"
-    },
-    "strikethrough": {
-        "prefix": "strikethrough",
-        "body": ["-$0-"],
-        "description": "strike through"
-    },
-    "inlinecomment": {
-        "prefix": "inlinecomment",
-        "body": ["%$0%"],
-        "description": "inline comment"
-    },
+  "bold": {
+    "prefix": "bold",
+    "body": ["*$0*"],
+    "description": "bold words"
+  },
+  "italic": {
+    "prefix": "italic",
+    "body": ["/$0/"],
+    "description": "italic words"
+  },
+  "underline": {
+    "prefix": "underline",
+    "body": ["_$0_"],
+    "description": "underline words"
+  },
+  "spoiler": {
+    "prefix": "spoiler",
+    "body": ["!$0!"],
+    "description": "spoiler"
+  },
+  "strikethrough": {
+    "prefix": "strikethrough",
+    "body": ["-$0-"],
+    "description": "strike through"
+  },
+  "inlinecomment": {
+    "prefix": "inlinecomment",
+    "body": ["%$0%"],
+    "description": "inline comment"
+  },
 
-    "inlinecode": {
-        "prefix": "inlinecode",
-        "body": ["`$0`"],
-        "description": "inline code"
-    },
-    "code": {
-        "prefix": "code",
-        "body": ["@code ${1:lang}", "$0", "@end"],
-        "description": "code block"
-    },
+  "inlinecode": {
+    "prefix": "inlinecode",
+    "body": ["`$0`"],
+    "description": "inline code"
+  },
+  "code": {
+    "prefix": "code",
+    "body": ["@code ${1:lang}", "$0", "@end"],
+    "description": "code block"
+  },
 
-    "data": {
-        "prefix": "data",
-        "body": ["@data", "$0", "@end"],
-        "description": "data tags"
-    },
+  "data": {
+    "prefix": "data",
+    "body": ["@data", "$0", "@end"],
+    "description": "data tags"
+  },
 
-    "link": {
-        "prefix": "link",
-        "body": ["{${1:object}}[${2:description}]"],
-        "description": "links"
-    },
-    "anchor": {
-        "prefix": "anchor",
-        "body": ["[${1:description}]{${2:object}}"],
-        "description": "anchors"
-    },
+  "link": {
+    "prefix": "link",
+    "body": ["{${1:object}}[${2:description}]"],
+    "description": "links"
+  },
+  "anchor": {
+    "prefix": "anchor",
+    "body": ["[${1:description}]{${2:object}}"],
+    "description": "anchors"
+  },
 
-    "subscript": {
-        "prefix": "subscript",
-        "body": [",$0,"],
-        "description": "subscript"
-    },
-    "superscript": {
-        "prefix": "superscript",
-        "body": ["^$0^"],
-        "description": "superscript"
-    },
-    "inlinemath": {
-        "prefix": "inlinemath",
-        "body": ["$$0$"],
-        "description": "inline math"
-    },
-    "rigidmath": {
-        "prefix": "rigidmath",
-        "body": ["$|$0|$"],
-        "description": "inline math (rigid syntax version)"
-    },
-    "math": {
-        "prefix": "math",
-        "body": ["@math", "$0", "@end"],
-        "description": "math block"
-    },
+  "subscript": {
+    "prefix": "subscript",
+    "body": [",$0,"],
+    "description": "subscript"
+  },
+  "superscript": {
+    "prefix": "superscript",
+    "body": ["^$0^"],
+    "description": "superscript"
+  },
+  "inlinemath": {
+    "prefix": "inlinemath",
+    "body": ["$$0$"],
+    "description": "inline math"
+  },
+  "rigidmath": {
+    "prefix": "rigidmath",
+    "body": ["$|$0|$"],
+    "description": "inline math (rigid syntax version)"
+  },
+  "math": {
+    "prefix": "math",
+    "body": ["@math", "$0", "@end"],
+    "description": "math block"
+  },
 
-    "table": {
-        "prefix": "table",
-        "body": ["@table", "$0", "@end"],
-        "description": "table"
-    },
+  "table": {
+    "prefix": "table",
+    "body": ["@table", "$0", "@end"],
+    "description": "table"
+  },
 
-    "unordered_list": {
-        "prefix": "ulist1",
-        "body": ["- ${1:item}"],
-        "description": "level 1 unordered list"
-    },
-    "unordered_list_2": {
-        "prefix": "ulist2",
-        "body": ["-- ${1:item}"],
-        "description": "level 2 unordered list"
-    },
-    "unordered_list_3": {
-        "prefix": "ulist3",
-        "body": ["--- ${1:item}"],
-        "description": "level 3 unordered list"
-    },
-    "unordered_list_4": {
-        "prefix": "ulist4",
-        "body": ["---- ${1:item}"],
-        "description": "level 4 unordered list"
-    },
-    "unordered_list_5": {
-        "prefix": "ulist5",
-        "body": ["----- ${1:item}"],
-        "description": "level 5 unordered list"
-    },
-    "unordered_list_6": {
-        "prefix": "ulist6",
-        "body": ["------ ${1:item}"],
-        "description": "level 6 unordered list"
-    },
+  "unordered_list": {
+    "prefix": "ulist1",
+    "body": ["- ${1:item}"],
+    "description": "level 1 unordered list"
+  },
+  "unordered_list_2": {
+    "prefix": "ulist2",
+    "body": ["-- ${1:item}"],
+    "description": "level 2 unordered list"
+  },
+  "unordered_list_3": {
+    "prefix": "ulist3",
+    "body": ["--- ${1:item}"],
+    "description": "level 3 unordered list"
+  },
+  "unordered_list_4": {
+    "prefix": "ulist4",
+    "body": ["---- ${1:item}"],
+    "description": "level 4 unordered list"
+  },
+  "unordered_list_5": {
+    "prefix": "ulist5",
+    "body": ["----- ${1:item}"],
+    "description": "level 5 unordered list"
+  },
+  "unordered_list_6": {
+    "prefix": "ulist6",
+    "body": ["------ ${1:item}"],
+    "description": "level 6 unordered list"
+  },
 
-    "ordered_list": {
-        "prefix": "olist1",
-        "body": ["~ ${1:item}"],
-        "description": "level 1 ordered list"
-    },
-    "ordered_list_2": {
-        "prefix": "olist2",
-        "body": ["~~ ${1:item}"],
-        "description": "level 2 ordered list"
-    },
-    "ordered_list_3": {
-        "prefix": "olist3",
-        "body": ["~~~ ${1:item}"],
-        "description": "level 3 ordered list"
-    },
-    "ordered_list_4": {
-        "prefix": "olist4",
-        "body": ["~~~~ ${1:item}"],
-        "description": "level 4 ordered list"
-    },
-    "ordered_list_5": {
-        "prefix": "olist5",
-        "body": ["~~~~~ ${1:item}"],
-        "description": "level 5 ordered list"
-    },
-    "ordered_list_6": {
-        "prefix": "olist6",
-        "body": ["~~~~~~ ${1:item}"],
-        "description": "level 6 ordered list"
-    },
+  "ordered_list": {
+    "prefix": "olist1",
+    "body": ["~ ${1:item}"],
+    "description": "level 1 ordered list"
+  },
+  "ordered_list_2": {
+    "prefix": "olist2",
+    "body": ["~~ ${1:item}"],
+    "description": "level 2 ordered list"
+  },
+  "ordered_list_3": {
+    "prefix": "olist3",
+    "body": ["~~~ ${1:item}"],
+    "description": "level 3 ordered list"
+  },
+  "ordered_list_4": {
+    "prefix": "olist4",
+    "body": ["~~~~ ${1:item}"],
+    "description": "level 4 ordered list"
+  },
+  "ordered_list_5": {
+    "prefix": "olist5",
+    "body": ["~~~~~ ${1:item}"],
+    "description": "level 5 ordered list"
+  },
+  "ordered_list_6": {
+    "prefix": "olist6",
+    "body": ["~~~~~~ ${1:item}"],
+    "description": "level 6 ordered list"
+  },
 
-    "quote_1": {
-        "prefix": "quote1",
-        "body": ["> $0"],
-        "description": "level 1 quote"
-    },
-    "quote_2": {
-        "prefix": "quote2",
-        "body": [">> $0"],
-        "description": "level 2 quote"
-    },
-    "quote_3": {
-        "prefix": "quote3",
-        "body": [">>> $0"],
-        "description": "level 3 quote"
-    },
-    "quote_4": {
-        "prefix": "quote4",
-        "body": [">>>> $0"],
-        "description": "level 4 quote"
-    },
-    "quote_5": {
-        "prefix": "quote5",
-        "body": [">>>>> $0"],
-        "description": "level 5 quote"
-    },
-    "quote_6": {
-        "prefix": "quote6",
-        "body": [">>>>>> $0"],
-        "description": "level 6 quote"
-    },
+  "quote_1": {
+    "prefix": "quote1",
+    "body": ["> $0"],
+    "description": "level 1 quote"
+  },
+  "quote_2": {
+    "prefix": "quote2",
+    "body": [">> $0"],
+    "description": "level 2 quote"
+  },
+  "quote_3": {
+    "prefix": "quote3",
+    "body": [">>> $0"],
+    "description": "level 3 quote"
+  },
+  "quote_4": {
+    "prefix": "quote4",
+    "body": [">>>> $0"],
+    "description": "level 4 quote"
+  },
+  "quote_5": {
+    "prefix": "quote5",
+    "body": [">>>>> $0"],
+    "description": "level 5 quote"
+  },
+  "quote_6": {
+    "prefix": "quote6",
+    "body": [">>>>>> $0"],
+    "description": "level 6 quote"
+  },
 
-    "task": {
-        "prefix": "task",
-        "body": ["- ( ) ${1:task}"],
-        "description": "task"
-    },
-    "done_task": {
-        "prefix": "dtask",
-        "body": ["- (x) ${1:task}"],
-        "description": "task (done)"
-    },
-    "input_task": {
-        "prefix": "itask",
-        "body": ["- (?) ${1:task}"],
-        "description": "task (needs further input)"
-    },
-    "urgent_task": {
-        "prefix": "utask",
-        "body": ["- (!) ${1:task}"],
-        "description": "task (high priority)"
-    },
-    "recurring_task": {
-        "prefix": "rtask",
-        "body": ["- (+) ${1:task}"],
-        "description": "task (recurring, with children)"
-    },
-    "pending_task": {
-        "prefix": "ptask",
-        "body": ["- (-) ${1:task}"],
-        "description": "task (in progress)"
-    },
-    "hold_task": {
-        "prefix": "htask",
-        "body": ["- (=) ${1:task}"],
-        "description": "task (on hold)"
-    },
-    "cancelled_task": {
-        "prefix": "ctask",
-        "body": ["- (_) ${1:task}"],
-        "description": "task (cancelled)"
-    },
+  "task": {
+    "prefix": "task",
+    "body": ["- ( ) ${1:task}"],
+    "description": "task"
+  },
+  "done_task": {
+    "prefix": "dtask",
+    "body": ["- (x) ${1:task}"],
+    "description": "task (done)"
+  },
+  "input_task": {
+    "prefix": "itask",
+    "body": ["- (?) ${1:task}"],
+    "description": "task (needs further input)"
+  },
+  "urgent_task": {
+    "prefix": "utask",
+    "body": ["- (!) ${1:task}"],
+    "description": "task (high priority)"
+  },
+  "recurring_task": {
+    "prefix": "rtask",
+    "body": ["- (+) ${1:task}"],
+    "description": "task (recurring, with children)"
+  },
+  "pending_task": {
+    "prefix": "ptask",
+    "body": ["- (-) ${1:task}"],
+    "description": "task (in progress)"
+  },
+  "hold_task": {
+    "prefix": "htask",
+    "body": ["- (=) ${1:task}"],
+    "description": "task (on hold)"
+  },
+  "cancelled_task": {
+    "prefix": "ctask",
+    "body": ["- (_) ${1:task}"],
+    "description": "task (cancelled)"
+  },
 
-    "single_footnote": {
-        "prefix": "footnote",
-        "body": ["^ ${1:title}", "${2:content}"],
-        "description": "footnote (short version)"
-    },
-    "single_footnote": {
-        "prefix": "footnoter",
-        "body": ["^^ ${1:title}", "${2:content}", "^^"],
-        "description": "footnote (ranged version)"
-    },
+  "single_footnote": {
+    "prefix": "footnote",
+    "body": ["^ ${1:title}", "${2:content}"],
+    "description": "footnote (short version)"
+  },
+  "ranged_single_footnote": {
+    "prefix": "footnoter",
+    "body": ["^^ ${1:title}", "${2:content}", "^^"],
+    "description": "footnote (ranged version)"
+  },
 
-    "var": {
-        "prefix": "var",
-        "body": ["&${1:variable}&"],
-        "description": "variable"
-    }
+  "var": {
+    "prefix": "var",
+    "body": ["&${1:variable}&"],
+    "description": "variable"
+  }
 }
