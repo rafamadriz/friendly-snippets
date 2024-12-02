@@ -266,7 +266,7 @@
         "body": ["^ ${1:title}", "${2:content}"],
         "description": "footnote (short version)"
     },
-    "single_footnote": {
+    "ranged_single_footnote": {
         "prefix": "footnoter",
         "body": ["^^ ${1:title}", "${2:content}", "^^"],
         "description": "footnote (ranged version)"
