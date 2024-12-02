@@ -93,5 +93,15 @@
             "};"
         ],
         "description": "Nixpkgs' minimal meta attribute set"
+    },
+    "with": {
+        "prefix": "with",
+        "body": ["with $1; $0;"],
+        "description": "with expression"
+    },
+    "inherit": {
+        "prefix": "inherit",
+        "body": ["inherit $1;"],
+        "description": "inherit expression"
     }
 }
