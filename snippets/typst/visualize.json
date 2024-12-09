@@ -1,0 +1,44 @@
+{
+    "Images": {
+        "prefix": "img",
+        "body": [
+            "#image(${0:\"img.png\"}, ${1:width: 80%})"
+        ],
+        "description": "Add images"
+    },
+    "Figure Images": {
+        "prefix": ["img_figure", "figure_img"],
+        "body": [
+            "#figure(",
+            "image(${1:\"img.png\"}, ${2:width: 80%}),",
+            "cation: [",
+            "${0: cation}",
+            "],",
+            ")"
+        ],
+        "description": "Add images with figure"
+    },
+    "highlight": {
+        "prefix": "highlight",
+        "body": ["#highlight[${0: important}]"],
+        "description": "Add highlight"
+    },
+    "highlight full": {
+        "prefix": "highlight_full",
+        "body": [
+            "#highlight(",
+            "fill: blue,",
+            "stroke: fuchsia,",
+            "extent: 4pt,",
+            "radius: 5pt,",
+            "top-edge: \"ascender\",",
+            "bottom-edge: \"descender\",",
+            ")[${0: important}]"],
+        "description": "Add highlight with full options"
+    },
+    "lorem": {
+        "prefix": "lorem",
+        "body": ["#lorem(${0: num})"],
+        "description": "This function yields a Latin-like Lorem Ipsum blind text with the given number of words."
+    }
+}
