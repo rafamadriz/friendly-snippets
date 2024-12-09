@@ -1,0 +1,168 @@
+{
+    "header 1": {
+        "prefix": "h1",
+        "body": ["= ${0}"],
+        "description": "Add header level 1"
+    },
+    "header 2": {
+        "prefix": "h2",
+        "body": ["== ${0}"],
+        "description": "Add header level 2"
+    },
+    "header 3": {
+        "prefix": "h3",
+        "body": ["=== ${0}"],
+        "description": "Add header level 3"
+    },
+    "header 4": {
+        "prefix": "h4",
+        "body": ["==== ${0}"],
+        "description": "Add header level 4"
+    },
+    "header 5": {
+        "prefix": "h5",
+        "body": ["===== ${0}"],
+        "description": "Add header level 5"
+    },
+    "header 6": {
+        "prefix": "h6",
+        "body": ["====== ${0}"],
+        "description": "Add header level 6"
+    },
+    "Strong emphasis": {
+        "prefix": "emp",
+        "body": ["*${0}*"],
+        "description": "Strong emphasis"
+    },
+    "Emphasis": {
+        "prefix": "emp",
+        "body": ["_${0}_"],
+        "description": "emphasis"
+    },
+    "Raw text": {
+        "prefix": "raw",
+        "body": ["`${0}`"],
+        "description": "Raw text"
+    },
+    "Label": {
+        "prefix": "lable",
+        "body": ["<${0}>"],
+        "description": "Label"
+    },
+    "Reference": {
+        "prefix": "reference",
+        "body": ["@${0}"],
+        "description": "Reference"
+    },
+    "Links": {
+        "prefix": ["l", "link"],
+        "body": ["#link(${1:url})[${2:test}] ${0}"], 
+        "description": "Add links\n\nexample:\n\n#link(\"https://example.com\")[repo link]\n\nsnippet:\n"
+    },
+    "Internal Links": {
+        "prefix": ["l", "link_internal"],
+        "body": ["#link((${1:page: 1, x: 0pt, y: 0pt}))[${2:test}] ${0}"], 
+        "description": "add internal links"
+    },
+    "Lable Links": {
+        "prefix": ["l", "link_label"],
+        "body": ["#link(${1:<intro>})[${2:Go to intro}] ${0}"], 
+        "description": "add lable links"
+    },
+    "Bullet list": {
+        "prefix": ["list.b"],
+        "body": [
+            "- ${0: item}"
+        ], 
+        "description": "add Bullet list"
+    },
+    "2 Bullet list": {
+        "prefix": ["list.b.2"],
+        "body": [
+            "- ${0: item}",
+            "- ${1: item}"
+        ], 
+        "description": "add 2 Bullet list"
+    },
+    "3 Bullet list": {
+        "prefix": ["list.b.3"],
+        "body": [
+            "- ${0: item}",
+            "- ${1: item}",
+            "- ${2: item}"
+        ], 
+        "description": "add 3 Bullet list"
+    },
+    "4 Bullet list": {
+        "prefix": ["list.b.4"],
+        "body": [
+            "- ${0: item}",
+            "- ${1: item}",
+            "- ${2: item}",
+            "- ${3: item}"
+        ], 
+        "description": "add 4 Bullet list"
+    },
+    "Numbered list": {
+        "prefix": ["list.n"],
+        "body": [
+            "+ ${0: item}"
+        ], 
+        "description": "add Numbered list"
+    },
+    "2 Numbered list": {
+        "prefix": ["list.n.2"],
+        "body": [
+            "+ ${0: item}",
+            "+ ${1: item}"
+        ], 
+        "description": "add 2 Numbered list"
+    },
+    "3 Numbered list": {
+        "prefix": ["list.n.3"],
+        "body": [
+            "+ ${0: item}",
+            "+ ${1: item}",
+            "+ ${2: item}"
+        ], 
+        "description": "add 3 Numbered list"
+    },
+    "4 Numbered list": {
+        "prefix": ["list.n.4"],
+        "body": [
+            "+ ${0: item}",
+            "+ ${1: item}",
+            "+ ${2: item}",
+            "+ ${3: item}"
+        ], 
+        "description": "add 4 Numbered list"
+    },
+    "Term list": {
+        "prefix": ["term.list", "list.term"],
+        "body": [
+            "/ Term: ${0: description}"
+        ], 
+        "description": "add Term list"
+    },
+    "Math": {
+        "prefix": ["maths"],
+        "body": [
+            "$${0:x^2}$"
+        ], 
+        "description": "maths block"
+    },
+    "Comment block": {
+        "prefix": ["comment.b"],
+        "body": [
+            "/* ${0:comment} */"
+        ], 
+        "description": "Comment block"
+    },
+    "Comment line": {
+        "prefix": ["comment.l"],
+        "body": [
+            "// ${0:comment}"
+        ], 
+        "description": "Comment line"
+    }
+}
