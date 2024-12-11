@@ -52,14 +52,14 @@
   "Console.WriteLine": {
     "prefix": "cw",
     "body": [
-      "System.Console.WriteLine($0);"
+      "Console.WriteLine($0);"
     ],
     "description": "Console.WriteLine"
   },
   "Console.ReadLine": {
     "prefix": "cr",
     "body": [
-      "System.Console.ReadLine($0);"
+      "Console.ReadLine($0);"
     ],
     "description": "Console.ReadLine"
   },
