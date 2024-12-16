@@ -144,6 +144,16 @@
         "body": ["println!(\"${1}\");"],
         "description": "println!(…);"
     },
+      "eprintln": {
+        "prefix": "eprintln",
+        "body": ["eprintln!(\"${1}\");"],
+        "description": "eprintln!(…);"
+    },
+      "eprint": {
+        "prefix": "eprint",
+        "body": ["eprint!(\"${1}\");"],
+        "description": "eprint!(…);"
+    },
     "stringify": {
         "prefix": "stringify",
         "body": ["stringify!(${1})"],
