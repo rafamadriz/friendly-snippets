@@ -7,17 +7,17 @@
     "return": {
         "prefix": "rt",
         "body": ["return $0"],
-        "description": "return value"
+        "description": "Return value"
     },
     "assigment": {
         "prefix": "ll",
         "body": ["local ${1:varName} = ${0:value}"],
-        "description": "define a variable"
+        "description": "Define a variable"
     },
     "local": {
         "prefix": "l",
         "body": ["local ${0}"],
-        "description": "declare a variable"
+        "description": "Declare a variable"
     },
     "locreq": {
         "prefix": "lreq",
@@ -72,15 +72,32 @@
             "\t${0}",
             "end"
         ],
-        "description": "read file line by line"
+        "description": "Read file line by line"
     },
     "function": {
         "prefix": "fu",
-        "body": ["function ${1:name}($2)", "\t${0}", "end"]
+        "body": ["function$1($2)", "\t${0}", "end"],
+        "description": "Define a function"
     },
-    "inline-function": {
+    "assign-function": {
         "prefix": "f=",
-        "body": ["local ${1:name} = function($2)", "\t${0}", "end"]
+        "body": ["${1:name} = function($2)", "\t${0}", "end"],
+        "description": "Assign a function to a variable"
+    },
+    "local-function": {
+        "prefix": "lfu",
+        "body": ["local function ${1:name}($2)", "\t${0}", "end"],
+        "description": "Define a local function"
+    },
+    "local-assign-function": {
+        "prefix": "lf=",
+        "body": ["local ${1:name} = function($2)", "\t${0}", "end"],
+        "description": "Assign a function to a local variable"
+    },
+    "member-function": {
+        "prefix": "f,",
+        "body": ["${1:name} = function($2)", "\t${0}", "end,"],
+        "description": "Assign a function to a table key"
     },
     "print": {
         "prefix": "p",
