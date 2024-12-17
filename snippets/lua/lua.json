@@ -76,7 +76,7 @@
     },
     "function": {
         "prefix": "fu",
-        "body": ["function$1($2)", "\t${0}", "end"],
+        "body": ["function ${1:name}($2)", "\t${0}", "end"],
         "description": "Define a function"
     },
     "assign-function": {
@@ -93,6 +93,11 @@
         "prefix": "lf=",
         "body": ["local ${1:name} = function($2)", "\t${0}", "end"],
         "description": "Assign a function to a local variable"
+    },
+    "anonymous-function": {
+        "prefix": "f)",
+        "body": ["function($1)", "\t${0}", "end"],
+        "description": "Create an anonymous function"
     },
     "member-function": {
         "prefix": "f,",
