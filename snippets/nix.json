@@ -103,5 +103,24 @@
         "prefix": "inherit",
         "body": ["inherit $1;"],
         "description": "inherit expression"
-    }
+    }, 
+    "module": {
+        "prefix": "module";
+        "body": [
+            "{lib, pkgs, config}: ",
+            "",
+            "imports = [",
+            "    $1",
+            "];",
+            "",
+            "options = {",
+            "    $2",
+            "};",
+            "",
+            "config = {",
+            "    $3",
+            "};"
+        ],
+        "description": "Nix module system template",
+    },
 }
