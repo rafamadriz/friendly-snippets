@@ -29,6 +29,26 @@
     "body": ["*ngFor=\"let ${1:item} of ${2:stream} | async as ${3:list}\"${0}"],
     "description": "Angular *ngForAsync"
   },
+  "ngForNext": {
+    "prefix": "a-ngForNext",
+    "body": [
+        "@for (${1:item} of ${2:items}; track ${3:trackBy}) {", 
+        "\t${0:content}",
+        "}"
+    ],
+    "description": "Angular new control flow syntax ngFor"
+  },
+  "ngForEmptyNext": {
+    "prefix": "a-ngForEmptyNext",
+    "body": [
+        "@for (${1:item} of ${2:items}; track ${3:trackBy}) {",
+        "\t${4:forBlock}",
+        "} @empty {",
+        "\t${0:emptyBlock}",
+        "}"
+    ],
+    "description": "Angular new control flow syntax ngFor with empty block"
+  },
   "ngForm": {
     "prefix": "a-form",
     "body": ["<form (ngSubmit)=\"onSubmit()\" #${1:form}=\"ngForm\">", "</form>"],
