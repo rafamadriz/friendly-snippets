@@ -17,12 +17,12 @@
             "",
             "type State = {}",
             "",
-            "export default class ${1:${TM_FILENAME_BASE}} extends Component<Props, State> {",
+            "export default class ${TM_FILENAME_BASE} extends Component<Props, State> {",
             "  state = {}",
             "",
             "  render() {",
             "    return (",
-            "      <div>${1:first}</div>",
+            "      <div>${0}</div>",
             "    )",
             "  }",
             "}"
@@ -37,17 +37,17 @@
             "",
             "type State = {}",
             "",
-            "class ${1:${TM_FILENAME_BASE}} extends Component<Props, State> {",
+            "class ${TM_FILENAME_BASE} extends Component<Props, State> {",
             "  state = {}",
             "",
             "  render() {",
             "    return (",
-            "      <div>${1:first}</div>",
+            "      <div>${0}</div>",
             "    )",
             "  }",
             "}",
             "",
-            "export default ${1:${TM_FILENAME_BASE}}"
+            "export default ${TM_FILENAME_BASE}"
         ],
         "description": "Creates a React component class with ES7 module system and TypeScript interfaces"
     },
@@ -58,13 +58,13 @@
             "",
             "type Props = {}",
             "",
-            "function ${1:${TM_FILENAME_BASE}}({}: Props) {",
+            "function ${TM_FILENAME_BASE}({}: Props) {",
             "  return (",
-            "    <div>${1:first}</div>",
+            "    <div>${0}</div>",
             "  )",
             "}",
             "",
-            "export default ${1:${TM_FILENAME_BASE}}"
+            "export default ${TM_FILENAME_BASE}"
         ],
         "description": "Creates a React Functional Component with ES7 module system and TypeScript interface"
     },
@@ -75,9 +75,9 @@
             "",
             "type Props = {}",
             "",
-            "export default function ${1:${TM_FILENAME_BASE}}({}: Props) {",
+            "export default function ${TM_FILENAME_BASE}({}: Props) {",
             "  return (",
-            "    <div>${1:first}</div>",
+            "    <div>${0}</div>",
             "  )",
             "}"
         ],
@@ -90,13 +90,13 @@
             "",
             "type Props = {}",
             "",
-            "const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
+            "const ${TM_FILENAME_BASE} = (props: Props) => {",
             "  return (",
-            "    <div>${1:first}</div>",
+            "    <div>${0}</div>",
             "  )",
             "}",
             "",
-            "export default ${1:${TM_FILENAME_BASE}}"
+            "export default ${TM_FILENAME_BASE}"
         ],
         "description": "Creates a React Arrow Function Component with ES7 module system and TypeScript interface"
     },
@@ -107,9 +107,9 @@
             "",
             "type Props = {}",
             "",
-            "const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
+            "const ${TM_FILENAME_BASE} = (props: Props) => {",
             "  return (",
-            "    <div>${1:first}</div>",
+            "    <div>${0}</div>",
             "  )",
             "}"
         ],
@@ -122,10 +122,10 @@
             "",
             "type Props = {}",
             "",
-            "export default class ${1:${TM_FILENAME_BASE}} extends PureComponent<Props> {",
+            "export default class ${TM_FILENAME_BASE} extends PureComponent<Props> {",
             "  render() {",
             "    return (",
-            "      <div>${1:first}</div>",
+            "      <div>${0}</div>",
             "    )",
             "  }",
             "}"
@@ -139,15 +139,15 @@
             "",
             "type Props = {}",
             "",
-            "class ${1:${TM_FILENAME_BASE}} extends PureComponent<Props> {",
+            "class ${TM_FILENAME_BASE} extends PureComponent<Props> {",
             "  render() {",
             "    return (",
-            "      <div>${1:first}</div>",
+            "      <div>${0}</div>",
             "    )",
             "  }",
             "}",
             "",
-            "export default ${1:${TM_FILENAME_BASE}}"
+            "export default ${TM_FILENAME_BASE}"
         ],
         "description": "Creates a React pure component class with ES7 module system and TypeScript interface"
     },
@@ -161,12 +161,12 @@
             "",
             "type State = {}",
             "",
-            "export class ${1:${TM_FILENAME_BASE}} extends Component<Props, State> {",
+            "export class ${TM_FILENAME_BASE} extends Component<Props, State> {",
             "  state = {}",
             "",
             "  render() {",
             "    return (",
-            "      <div>${1:first}</div>",
+            "      <div>${0}</div>",
             "    )",
             "  }",
             "}",
@@ -175,7 +175,7 @@
             "",
             "const mapDispatchToProps = {}",
             "",
-            "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})"
+            "export default connect(mapStateToProps, mapDispatchToProps)(${TM_FILENAME_BASE})"
         ],
         "description": "Creates a React component class with connected redux and ES7 module system and TypeScript interfaces"
     },
@@ -187,15 +187,15 @@
             "",
             "type Props = {}",
             "",
-            "const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
+            "const ${TM_FILENAME_BASE} = (props: Props) => {",
             "  return (",
             "    <View>",
-            "      <Text>${1:first}</Text>",
+            "      <Text>${0}</Text>",
             "    </View>",
             "  )",
             "}",
             "",
-            "export default ${1:${TM_FILENAME_BASE}}"
+            "export default ${TM_FILENAME_BASE}"
         ],
         "description": "Creates a React Native Arrow Function Component with ES7 module system in TypeScript"
     },
@@ -207,15 +207,15 @@
             "",
             "type Props = {}",
             "",
-            "const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
+            "const ${TM_FILENAME_BASE} = (props: Props) => {",
             "  return (",
             "    <View>",
-            "      <Text>${1:first}</Text>",
+            "      <Text>${0}</Text>",
             "    </View>",
             "  )",
             "}",
             "",
-            "export default ${1:${TM_FILENAME_BASE}}",
+            "export default ${TM_FILENAME_BASE}",
             "",
             "const styles = StyleSheet.create({})"
         ],
@@ -226,9 +226,9 @@
         "body": [
             "import React from 'react'",
             "",
-            "export const ${1:${TM_FILENAME_BASE}} = () => {",
+            "export const ${TM_FILENAME_BASE} = () => {",
             "  return (",
-            "    <div>${1:first}</div>",
+            "    <div>${0}</div>",
             "  )",
             "}",
             ""
@@ -241,15 +241,15 @@
             "import React from 'react'",
             "import PropTypes from 'prop-types'",
             "",
-            "const ${1:${TM_FILENAME_BASE}} = props => {",
+            "const ${TM_FILENAME_BASE} = props => {",
             "  return (",
-            "    <div>${1:first}</div>",
+            "    <div>${0}</div>",
             "  )",
             "}",
             "",
-            "${1:${TM_FILENAME_BASE}}.propTypes = {}",
+            "${TM_FILENAME_BASE}.propTypes = {}",
             "",
-            "export default ${1:${TM_FILENAME_BASE}}"
+            "export default ${TM_FILENAME_BASE}"
         ],
         "description": "Creates a React Arrow Function Component with ES7 module system with PropTypes"
     },
@@ -258,13 +258,13 @@
         "body": [
             "import React from 'react'",
             "",
-            "const ${1:${TM_FILENAME_BASE}} = () => {",
+            "const ${TM_FILENAME_BASE} = () => {",
             "  return (",
-            "    <div>${1:first}</div>",
+            "    <div>${0}</div>",
             "  )",
             "}",
             "",
-            "export default ${1:${TM_FILENAME_BASE}}"
+            "export default ${TM_FILENAME_BASE}"
         ],
         "description": "Creates a React Arrow Function Component with ES7 module system"
     },
@@ -273,10 +273,10 @@
         "body": [
             "import React, { Component } from 'react'",
             "",
-            "export default class ${1:${TM_FILENAME_BASE}} extends Component {",
+            "export default class ${TM_FILENAME_BASE} extends Component {",
             "  render() {",
             "    return (",
-            "      <div>${1:first}</div>",
+            "      <div>${0}</div>",
             "    )",
             "  }",
             "}",
@@ -290,12 +290,12 @@
             "import PropTypes from 'prop-types'",
             "import React, { Component } from 'react'",
             "",
-            "export default class ${1:${TM_FILENAME_BASE}} extends Component {",
-            "  static propTypes = {${2:second}: ${3:third}}",
+            "export default class ${TM_FILENAME_BASE} extends Component {",
+            "  static propTypes = {${1:first}: ${2:second}}",
             "",
             "  render() {",
             "    return (",
-            "      <div>${1:first}</div>",
+            "      <div>${0}</div>",
             "    )",
             "  }",
             "}",
@@ -309,10 +309,10 @@
             "import React, { Component } from 'react'",
             "import { connect } from 'react-redux'",
             "",
-            "export class ${1:${TM_FILENAME_BASE}} extends Component {",
+            "export class ${TM_FILENAME_BASE} extends Component {",
             "  render() {",
             "    return (",
-            "      <div>${1:first}</div>",
+            "      <div>${0}</div>",
             "    )",
             "  }",
             "}",
@@ -321,7 +321,7 @@
             "",
             "const mapDispatchToProps = {}",
             "",
-            "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})"
+            "export default connect(mapStateToProps, mapDispatchToProps)(${TM_FILENAME_BASE})"
         ],
         "description": "Creates a React component class with connected redux and ES7 module system"
     },
@@ -332,14 +332,14 @@
             "import React, { Component } from 'react'",
             "import { connect } from 'react-redux'",
             "",
-            "export class ${1:${TM_FILENAME_BASE}} extends Component {",
+            "export class ${TM_FILENAME_BASE} extends Component {",
             "  static propTypes = {",
-            "    ${2:second}: ${3:third}",
+            "    ${1:first}: ${2:second}",
             "  }",
             "",
             "  render() {",
             "    return (",
-            "      <div>${1:first}</div>",
+            "      <div>${0}</div>",
             "    )",
             "  }",
             "}",
@@ -348,7 +348,7 @@
             "",
             "const mapDispatchToProps = {}",
             "",
-            "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})"
+            "export default connect(mapStateToProps, mapDispatchToProps)(${TM_FILENAME_BASE})"
         ],
         "description": "Creates a React component class with PropTypes with connected redux and ES7 module system"
     },
@@ -357,15 +357,15 @@
         "body": [
             "import React, { Component } from 'react'",
             "",
-            "export class ${1:${TM_FILENAME_BASE}} extends Component {",
+            "export class ${TM_FILENAME_BASE} extends Component {",
             "  render() {",
             "    return (",
-            "      <div>${1:first}</div>",
+            "      <div>${0}</div>",
             "    )",
             "  }",
             "}",
             "",
-            "export default ${1:${TM_FILENAME_BASE}}"
+            "export default ${TM_FILENAME_BASE}"
         ],
         "description": "Creates a React component class with ES7 module system"
     },
@@ -375,17 +375,17 @@
             "import PropTypes from 'prop-types'",
             "import React, { Component } from 'react'",
             "",
-            "export class ${1:${TM_FILENAME_BASE}} extends Component {",
+            "export class ${TM_FILENAME_BASE} extends Component {",
             "  static propTypes = {}",
             "",
             "  render() {",
             "    return (",
-            "      <div>${1:first}</div>",
+            "      <div>${0}</div>",
             "    )",
             "  }",
             "}",
             "",
-            "export default ${1:${TM_FILENAME_BASE}}"
+            "export default ${TM_FILENAME_BASE}"
         ],
         "description": "Creates a React component class with ES7 module system"
     },
@@ -394,15 +394,15 @@
         "body": [
             "import React, { PureComponent } from 'react'",
             "",
-            "export class ${1:${TM_FILENAME_BASE}} extends PureComponent {",
+            "export class ${TM_FILENAME_BASE} extends PureComponent {",
             "  render() {",
             "    return (",
-            "      <div>${1:first}</div>",
+            "      <div>${0}</div>",
             "    )",
             "  }",
             "}",
             "",
-            "export default ${1:${TM_FILENAME_BASE}}"
+            "export default ${TM_FILENAME_BASE}"
         ],
         "description": "Creates a React pure component class with ES7 module system export"
     },
@@ -411,10 +411,10 @@
         "body": [
             "import React, { PureComponent } from 'react'",
             "",
-            "export default class ${1:${TM_FILENAME_BASE}} extends PureComponent {",
+            "export default class ${TM_FILENAME_BASE} extends PureComponent {",
             "  render() {",
             "    return (",
-            "      <div>${1:first}</div>",
+            "      <div>${0}</div>",
             "    )",
             "  }",
             "}",
@@ -428,12 +428,12 @@
             "import PropTypes from 'prop-types'",
             "import React, { PureComponent } from 'react'",
             "",
-            "export default class ${1:${TM_FILENAME_BASE}} extends PureComponent {",
+            "export default class ${TM_FILENAME_BASE} extends PureComponent {",
             "  static propTypes = {}",
             "",
             "  render() {",
             "    return (",
-            "      <div>${1:first}</div>",
+            "      <div>${0}</div>",
             "    )",
             "  }",
             "}",
@@ -446,13 +446,13 @@
         "body": [
             "import React, { memo } from 'react'",
             "",
-            "const ${1:${TM_FILENAME_BASE}} = memo(() => {",
+            "const ${TM_FILENAME_BASE} = memo(() => {",
             "  return (",
-            "    <div>${1:first}</div>",
+            "    <div>${0}</div>",
             "  )",
             "})",
             "",
-            "export default ${1:${TM_FILENAME_BASE}}"
+            "export default ${TM_FILENAME_BASE}"
         ],
         "description": "Creates a React Memo Function Component with ES7 module system"
     },
@@ -462,15 +462,15 @@
             "import PropTypes from 'prop-types'",
             "import React, { memo } from 'react'",
             "",
-            "const ${1:${TM_FILENAME_BASE}} = memo((props) => {",
+            "const ${TM_FILENAME_BASE} = memo((props) => {",
             "  return (",
-            "    <div>${1:first}</div>",
+            "    <div>${0}</div>",
             "  )",
             "})",
             "",
-            "${1:${TM_FILENAME_BASE}}.propTypes = {}",
+            "${TM_FILENAME_BASE}.propTypes = {}",
             "",
-            "export default ${1:${TM_FILENAME_BASE}}"
+            "export default ${TM_FILENAME_BASE}"
         ],
         "description": "Creates a React Memo Function Component with ES7 module system with PropTypes"
     },
@@ -479,9 +479,9 @@
         "body": [
             "import React from 'react'",
             "",
-            "export default function ${1:${TM_FILENAME_BASE}}() {",
+            "export default function ${TM_FILENAME_BASE}() {",
             "  return (",
-            "    <div>${1:first}</div>",
+            "    <div>${0}</div>",
             "  )",
             "}",
             ""
@@ -491,9 +491,9 @@
     "reactFunctionalViteComponent": {
         "prefix": "rfcv",
         "body": [
-            "export default function ${1:${TM_FILENAME_BASE}}() {",
+            "export default function ${TM_FILENAME_BASE}() {",
             "  return (",
-            "    <div>${1:first}</div>",
+            "    <div>${0}</div>",
             "  )",
             "}",
             ""
@@ -506,9 +506,9 @@
             "import React from 'react'",
             "import { connect } from 'react-redux'",
             "",
-            "export const ${1:${TM_FILENAME_BASE}} = (props) => {",
+            "export const ${TM_FILENAME_BASE} = (props) => {",
             "  return (",
-            "    <div>${1:first}</div>",
+            "    <div>${0}</div>",
             "  )",
             "}",
             "",
@@ -516,7 +516,7 @@
             "",
             "const mapDispatchToProps = {}",
             "",
-            "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})"
+            "export default connect(mapStateToProps, mapDispatchToProps)(${TM_FILENAME_BASE})"
         ],
         "description": "Creates a React functional component with connected redux and ES7 module system"
     },
@@ -527,21 +527,21 @@
             "import React from 'react'",
             "import { connect } from 'react-redux'",
             "",
-            "export const ${1:${TM_FILENAME_BASE}} = (props) => {",
+            "export const ${TM_FILENAME_BASE} = (props) => {",
             "  return (",
-            "    <div>${1:first}</div>",
+            "    <div>${0}</div>",
             "  )",
             "}",
             "",
-            "${1:${TM_FILENAME_BASE}}.propTypes = {",
-            "  ${2:second}: PropTypes.${3:third}",
+            "${TM_FILENAME_BASE}.propTypes = {",
+            "  ${1:first}: PropTypes.${2:second}",
             "}",
             "",
             "const mapStateToProps = (state) => ({})",
             "",
             "const mapDispatchToProps = {}",
             "",
-            "export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})"
+            "export default connect(mapStateToProps, mapDispatchToProps)(${TM_FILENAME_BASE})"
         ],
         "description": "DEPRECATED: Creates a React functional component with PropTypes with connected redux and ES7 module system"
     },
@@ -551,15 +551,15 @@
             "import React from 'react'",
             "import PropTypes from 'prop-types'",
             "",
-            "function ${1:${TM_FILENAME_BASE}}(props) {",
+            "function ${TM_FILENAME_BASE}(props) {",
             "  return (",
-            "    <div>${1:first}</div>",
+            "    <div>${0}</div>",
             "  )",
             "}",
             "",
-            "${1:${TM_FILENAME_BASE}}.propTypes = {}",
+            "${TM_FILENAME_BASE}.propTypes = {}",
             "",
-            "export default ${1:${TM_FILENAME_BASE}}",
+            "export default ${TM_FILENAME_BASE}",
             ""
         ],
         "description": "Creates a React Functional Component with ES7 module system with PropTypes"
@@ -569,13 +569,13 @@
         "body": [
             "import React from 'react'",
             "",
-            "function ${1:${TM_FILENAME_BASE}}() {",
+            "function ${TM_FILENAME_BASE}() {",
             "  return (",
-            "    <div>${1:first}</div>",
+            "    <div>${0}</div>",
             "  )",
             "}",
             "",
-            "export default ${1:${TM_FILENAME_BASE}}"
+            "export default ${TM_FILENAME_BASE}"
         ],
         "description": "Creates a React Functional Component with ES7 module system"
     },
@@ -626,13 +626,13 @@
     },
     "consoleLogObject": {
         "prefix": "clo",
-        "body": ["console.log('${1:first}', ${1:first})"],
+        "body": ["console.log('${1:first}', ${2:second})"],
         "description": "Logs property with name."
     },
     "consoleLogJson": {
         "prefix": "clj",
         "body": [
-            "console.log('${1:first}', JSON.stringify(${1:first}, null, 2))"
+            "console.log('${1:first}', JSON.stringify(${2:second}, null, 2))"
         ],
         "description": "Logs stringified JSON property with name."
     },
@@ -681,12 +681,12 @@
         "prefix": "useEffectSnippet",
         "body": [
             "useEffect(() => {",
-            "  ${1:first}",
+            "  ${1:setup}",
             "",
             "  return () => {",
-            "    ${2:second}",
+            "    ${2:return}",
             "  }",
-            "}, [${3:third}])",
+            "}, [${3:dependencies?}])",
             ""
         ]
     },
@@ -731,7 +731,7 @@
     "useState": {
         "prefix": "useStateSnippet",
         "body": [
-            "const [${1:first}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:second})"
+            "const [${1:state}, set${2:State}] = useState(${3:initValue})"
         ]
     },
     "importAs": {
@@ -992,11 +992,11 @@
             "import { Text, View } from 'react-native'",
             "import React, { Component } from 'react'",
             "",
-            "export default class ${1:${TM_FILENAME_BASE}} extends Component {",
+            "export default class ${TM_FILENAME_BASE} extends Component {",
             "  render() {",
             "    return (",
             "      <View>",
-            "        <Text>${1:first}</Text>",
+            "        <Text>${0}</Text>",
             "      </View>",
             "    )",
             "  }",
@@ -1009,17 +1009,17 @@
             "import { Text, View } from 'react-native'",
             "import React, { Component } from 'react'",
             "",
-            "export class ${1:${TM_FILENAME_BASE}} extends Component {",
+            "export class ${TM_FILENAME_BASE} extends Component {",
             "  render() {",
             "    return (",
             "      <View>",
-            "        <Text>${1:first}</Text>",
+            "        <Text>${0}</Text>",
             "      </View>",
             "    )",
             "  }",
             "}",
             "",
-            "export default ${1:${TM_FILENAME_BASE}}"
+            "export default ${TM_FILENAME_BASE}"
         ]
     },
     "reactNativeComponentWithStyles": {
@@ -1028,11 +1028,11 @@
             "import { Text, StyleSheet, View } from 'react-native'",
             "import React, { Component } from 'react'",
             "",
-            "export default class ${1:${TM_FILENAME_BASE}} extends Component {",
+            "export default class ${TM_FILENAME_BASE} extends Component {",
             "  render() {",
             "    return (",
             "      <View>",
-            "        <Text>${1:first}</Text>",
+            "        <Text>${0}</Text>",
             "      </View>",
             "    )",
             "  }",
@@ -1047,10 +1047,10 @@
             "import { View, Text } from 'react-native'",
             "import React from 'react'",
             "",
-            "export default function ${1:${TM_FILENAME_BASE}}() {",
+            "export default function ${TM_FILENAME_BASE}() {",
             "  return (",
             "    <View>",
-            "      <Text>${1:first}</Text>",
+            "      <Text>${0}</Text>",
             "    </View>",
             "  )",
             "}"
@@ -1062,10 +1062,10 @@
             "import { StyleSheet, Text, View } from 'react-native'",
             "import React from 'react'",
             "",
-            "export default function ${1:${TM_FILENAME_BASE}}() {",
+            "export default function ${TM_FILENAME_BASE}() {",
             "  return (",
             "    <View>",
-            "      <Text>${1:first}</Text>",
+            "      <Text>${0}</Text>",
             "    </View>",
             "  )",
             "}",
@@ -1079,15 +1079,15 @@
             "import { View, Text } from 'react-native'",
             "import React from 'react'",
             "",
-            "const ${1:${TM_FILENAME_BASE}} = () => {",
+            "const ${TM_FILENAME_BASE} = () => {",
             "  return (",
             "    <View>",
-            "      <Text>${1:first}</Text>",
+            "      <Text>${0}</Text>",
             "    </View>",
             "  )",
             "}",
             "",
-            "export default ${1:${TM_FILENAME_BASE}}"
+            "export default ${TM_FILENAME_BASE}"
         ]
     },
     "reactNativeFunctionalExportComponentWithStyles": {
@@ -1096,15 +1096,15 @@
             "import { StyleSheet, Text, View } from 'react-native'",
             "import React from 'react'",
             "",
-            "const ${1:${TM_FILENAME_BASE}} = () => {",
+            "const ${TM_FILENAME_BASE} = () => {",
             "  return (",
             "    <View>",
-            "      <Text>${1:first}</Text>",
+            "      <Text>${0}</Text>",
             "    </View>",
             "  )",
             "}",
             "",
-            "export default ${1:${TM_FILENAME_BASE}}",
+            "export default ${TM_FILENAME_BASE}",
             "",
             "const styles = StyleSheet.create({})"
         ]
@@ -1119,11 +1119,11 @@
             "import { Text, View } from 'react-native'",
             "import React, { PureComponent } from 'react'",
             "",
-            "export default class ${1:${TM_FILENAME_BASE}} extends PureComponent {",
+            "export default class ${TM_FILENAME_BASE} extends PureComponent {",
             "  render() {",
             "    return (",
             "      <View>",
-            "        <Text>${1:first}</Text>",
+            "        <Text>${0}</Text>",
             "      </View>",
             "    )",
             "  }",
@@ -1136,17 +1136,17 @@
             "import { Text, View } from 'react-native'",
             "import React, { PureComponent } from 'react'",
             "",
-            "export class ${1:${TM_FILENAME_BASE}} extends PureComponent {",
+            "export class ${TM_FILENAME_BASE} extends PureComponent {",
             "  render() {",
             "    return (",
             "      <View>",
-            "        <Text>${1:first}</Text>",
+            "        <Text>${0}</Text>",
             "      </View>",
             "    )",
             "  }",
             "}",
             "",
-            "export default ${1:${TM_FILENAME_BASE}}"
+            "export default ${TM_FILENAME_BASE}"
         ]
     },
     "reactNativeStyles": {
@@ -1169,7 +1169,7 @@
     },
     "reduxConst": {
         "prefix": "rxconst",
-        "body": ["export const ${1:first} = '${1:first}'"]
+        "body": ["export const ${1:first} = '${2:second}'"]
     },
     "reduxReducer": {
         "prefix": "rxreducer",
@@ -1206,15 +1206,15 @@
             "",
             "}",
             "",
-            "const ${1:${TM_FILENAME_BASE}} = createSlice({",
-            "  name: ${2:second},",
+            "const ${TM_FILENAME_BASE} = createSlice({",
+            "  name: ${0},",
             "  initialState,",
             "  reducers: {}",
             "});",
             "",
-            "export const {} = ${1:${TM_FILENAME_BASE}}.actions",
+            "export const {} = ${TM_FILENAME_BASE}.actions",
             "",
-            "export default ${1:${TM_FILENAME_BASE}}.reducer"
+            "export default ${TM_FILENAME_BASE}.reducer"
         ]
     },
     "mappingToProps": {
@@ -1248,13 +1248,13 @@
             "import { Provider } from 'react-redux'",
             "",
             "import store from '~/store'",
-            "import { ${1:${TM_FILENAME_BASE}} } from '../${1:${TM_FILENAME_BASE}}'",
+            "import { ${TM_FILENAME_BASE} } from '../${TM_FILENAME_BASE}'",
             "",
-            "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
+            "describe('<${TM_FILENAME_BASE} />', () => {",
             "  const defaultProps = {}",
             "  const wrapper = renderer.create(",
             "    <Provider store={store}>",
-            "     <${1:${TM_FILENAME_BASE}} {...defaultProps} />",
+            "     <${TM_FILENAME_BASE} {...defaultProps} />",
             "    </Provider>,",
             "  )",
             "",
@@ -1272,11 +1272,11 @@
             "import React from 'react'",
             "import renderer from 'react-test-renderer'",
             "",
-            "import ${1:${TM_FILENAME_BASE}} from '../${1:${TM_FILENAME_BASE}}'",
+            "import ${TM_FILENAME_BASE} from '../${TM_FILENAME_BASE}'",
             "",
-            "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
+            "describe('<${TM_FILENAME_BASE} />', () => {",
             "  const defaultProps = {}",
-            "  const wrapper = renderer.create(<${1:${TM_FILENAME_BASE}} {...defaultProps} />)",
+            "  const wrapper = renderer.create(<${TM_FILENAME_BASE} {...defaultProps} />)",
             "",
             "  test('render', () => {",
             "    expect(wrapper).toMatchSnapshot()",
@@ -1293,13 +1293,13 @@
             "import { Provider } from 'react-redux'",
             "",
             "import store from '~/store'",
-            "import ${1:${TM_FILENAME_BASE}} from '../${1:${TM_FILENAME_BASE}}'",
+            "import ${TM_FILENAME_BASE} from '../${TM_FILENAME_BASE}'",
             "",
-            "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
+            "describe('<${TM_FILENAME_BASE} />', () => {",
             "  const defaultProps = {}",
             "  const wrapper = renderer.create(",
             "    <Provider store={store}>",
-            "      <${1:${TM_FILENAME_BASE}} {...defaultProps} />",
+            "      <${TM_FILENAME_BASE} {...defaultProps} />",
             "    </Provider>,",
             "  )",
             "",
@@ -1315,11 +1315,11 @@
             "import React from 'react'",
             "import renderer from 'react-test-renderer'",
             "",
-            "import { ${1:${TM_FILENAME_BASE}} } from '../${1:${TM_FILENAME_BASE}}'",
+            "import { ${TM_FILENAME_BASE} } from '../${TM_FILENAME_BASE}'",
             "",
-            "describe('<${1:${TM_FILENAME_BASE}} />', () => {",
+            "describe('<${TM_FILENAME_BASE} />', () => {",
             "  const defaultProps = {}",
-            "  const wrapper = renderer.create(<${1:${TM_FILENAME_BASE}} {...defaultProps} />)",
+            "  const wrapper = renderer.create(<${TM_FILENAME_BASE} {...defaultProps} />)",
             "",
             "  test('render', () => {",
             "    expect(wrapper).toMatchSnapshot()",
@@ -1522,7 +1522,7 @@
     },
     "bindThis": {
         "prefix": "bnd",
-        "body": ["this.${1:first} = this.${1:first}.bind(this)"],
+        "body": ["this.${1:first} = this.${2:second}.bind(this)"],
         "description": "Binds this to a method"
     },
     "commentBigBlock": {
@@ -1548,7 +1548,7 @@
             "  return hocComponent",
             "}",
             "",
-            "export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(${1:first}(WrapperComponent))",
+            "export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(${2:second}(WrapperComponent))",
             ""
         ]
     },
