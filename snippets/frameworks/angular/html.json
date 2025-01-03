@@ -151,6 +151,20 @@
     ],
     "description": "Angular ngSwitch"
   },
+  "ngSwitchNew": {
+    "prefix": "a-ngSwitchNext",
+    "body": [
+        "@switch (${1:expression}) {",
+        "\t@case (${2:case}) {",
+        "\t\t${3:caseBlock}",
+        "\t}${0}",
+        "\t@default {",
+        "\t\t${4:defaultBlock}",
+        "\t}",
+        "}"
+    ],
+    "description": "Angular new control flow syntax for ngSwitch"
+  },
   "pre w/ json": {
     "prefix": "a-prej",
     "body": ["<pre>{{${1:model} | json}}</pre>$0"],
