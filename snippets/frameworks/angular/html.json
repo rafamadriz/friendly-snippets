@@ -33,7 +33,7 @@
     "prefix": "a-ngForNext",
     "body": [
         "@for (${1:item} of ${2:items}; track ${3:trackBy}) {", 
-        "\t${0:content}",
+        "\t${0:forBlock}",
         "}"
     ],
     "description": "Angular new control flow syntax ngFor"
