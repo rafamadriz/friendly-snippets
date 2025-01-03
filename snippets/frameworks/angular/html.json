@@ -89,6 +89,26 @@
     "body": ["*ngIf=\"${1:expression};else ${2:templateName}\""],
     "description": "Angular *ngIfElse"
   },
+  "ngIfNext": {
+    "prefix": "a-ngIfNext",\
+    "body": [
+        "@if (${1:expression}) {",
+        "\t${0:ifBlock}",
+        "}"
+    ],
+    "description": "Angular new control flow syntax for ngIf"
+  },
+  "ngIfElseNext": {
+    "prefix": "a-ngIfElseNext",\
+    "body": [
+        "@if (${1:expression}) {",
+        "\t${2:ifBlock}",
+        "} @else {",
+        "\t${0:elseBlock}",
+        "}"
+    ],
+    "description": "Angular new control flow syntax for ngIf"
+  },
   "ngModel": {
     "prefix": "a-ngModel",
     "body": ["[(ngModel)]=\"${1:binding}\""],
