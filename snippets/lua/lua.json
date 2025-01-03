@@ -21,7 +21,7 @@
     },
     "locreq": {
         "prefix": "lreq",
-        "body": ["local ${1:var} = require(${2:module})"],
+        "body": ["local ${1:module} = require(\"${2:$1}\")$0"],
         "description": "Require module as a variable"
     },
     "class": {
