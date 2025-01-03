@@ -29,6 +29,26 @@
     "body": ["*ngFor=\"let ${1:item} of ${2:stream} | async as ${3:list}\"${0}"],
     "description": "Angular *ngForAsync"
   },
+  "ngForNext": {
+    "prefix": "a-ngForNext",
+    "body": [
+        "@for (${1:item} of ${2:items}; track ${3:trackBy}) {", 
+        "\t${0:forBlock}",
+        "}"
+    ],
+    "description": "Angular new control flow syntax ngFor"
+  },
+  "ngForEmptyNext": {
+    "prefix": "a-ngForEmptyNext",
+    "body": [
+        "@for (${1:item} of ${2:items}; track ${3:trackBy}) {",
+        "\t${4:forBlock}",
+        "} @empty {",
+        "\t${0:emptyBlock}",
+        "}"
+    ],
+    "description": "Angular new control flow syntax ngFor with empty block"
+  },
   "ngForm": {
     "prefix": "a-form",
     "body": ["<form (ngSubmit)=\"onSubmit()\" #${1:form}=\"ngForm\">", "</form>"],
@@ -68,6 +88,26 @@
     "prefix": "a-ngIfElse",
     "body": ["*ngIf=\"${1:expression};else ${2:templateName}\""],
     "description": "Angular *ngIfElse"
+  },
+  "ngIfNext": {
+    "prefix": "a-ngIfNext",\
+    "body": [
+        "@if (${1:expression}) {",
+        "\t${0:ifBlock}",
+        "}"
+    ],
+    "description": "Angular new control flow syntax for ngIf"
+  },
+  "ngIfElseNext": {
+    "prefix": "a-ngIfElseNext",\
+    "body": [
+        "@if (${1:expression}) {",
+        "\t${2:ifBlock}",
+        "} @else {",
+        "\t${0:elseBlock}",
+        "}"
+    ],
+    "description": "Angular new control flow syntax for ngIf"
   },
   "ngModel": {
     "prefix": "a-ngModel",
@@ -110,6 +150,20 @@
       "</div>"
     ],
     "description": "Angular ngSwitch"
+  },
+  "ngSwitchNew": {
+    "prefix": "a-ngSwitchNext",
+    "body": [
+        "@switch (${1:expression}) {",
+        "\t@case (${2:case}) {",
+        "\t\t${3:caseBlock}",
+        "\t}${0}",
+        "\t@default {",
+        "\t\t${4:defaultBlock}",
+        "\t}",
+        "}"
+    ],
+    "description": "Angular new control flow syntax for ngSwitch"
   },
   "pre w/ json": {
     "prefix": "a-prej",
