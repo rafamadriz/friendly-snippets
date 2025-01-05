@@ -107,18 +107,19 @@
     "module": {
         "prefix": "module";
         "body": [
-            "{lib, pkgs, config}: ",
+            "{lib, pkgs, config}: {",
             "",
-            "imports = [",
+            "  imports = [",
             "    $1",
-            "];",
+            "  ];",
             "",
-            "options = {",
+            "  options = {",
             "    $2",
-            "};",
+            "  };",
             "",
-            "config = {",
+            "  config = {",
             "    $3",
+            "  };",
             "};"
         ],
         "description": "Nix module system template",
