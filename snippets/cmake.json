@@ -1,0 +1,256 @@
+{
+	"Init cmake": {
+		"prefix": "cmi",
+		"body": [
+			"cmake_minimum_required(VERSION ${1:3.16})",
+			"project(${2:myProject})",
+			"",
+			"if(NOT CMAKE_BUILD_TYPE)",
+			"\tset(default_build_type \"Debug\")",
+			"\tmessage(STATUS \"Set the build type to `\\${default_build_type}` as none was specified.\")",
+			"\tset(CMAKE_BUILD_TYPE \\${default_build_type} CACHE STRING \"Chooce the build type.\" FORCE)",
+			"\tset_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS",
+			"\t\"Debug\" \"Release\" \"MinSizeRel\" \"RelWithDebInfo\")",
+			"endif()",
+			"message(STATUS \"$2 Build Type: \\${CMAKE_BUILD_TYPE}\")",
+			"",
+			"# Set the version for $2",
+			"set($2_Version_Major ${3:0})",
+			"set($2_Version_Minor ${4:1})",
+			"set($2_Version_Patch ${5:0})",
+			"set($2_Version_Status \"${6:-dev}\")",
+			"set(${7:PROJECT_VERSION}",
+			"\t\"\\${$2_Version_Major}.\\${$2_Version_Minor}.\\${$2_Version_Patch}\\${$2_Version_Status}\"",
+			")",
+			"message(STATUS \"\\${PROJECT_NAME} version: \\${PROJECT_VERSION}\")"
+		],
+		"description": "Init 'CMakeLists.txt'."
+	},
+	"project()": {
+		"prefix": "prj",
+		"body":[
+			"project(${1:myProject})$2"
+		],
+		"description": "Add the snippet for project()"
+	},
+	"cmake_minimum_required()": {
+		"prefix": "cmr",
+		"body": [
+			"cmake_minimum_required(VERSION ${1:3.16})$2"
+		],
+		"description": "Add the snippet for cmake_minimum_required()"
+	},
+	"message()": {
+		"prefix": "msg",
+		"body": [
+			"message(${1|STATUS,DEBUG,WARNING,SEND_ERROR,FATAL_ERROR|} \"${2:message}\")$3"
+		],
+		"description": "Add the snippet for message()"
+	},
+	"export compile commands": {
+		"prefix": "ecc",
+		"body": [
+			"set(CMAKE_EXPORT_COMPILE_COMMANDS ON)"
+		],
+		"description": "Add the snippet to generate 'compile_commands.json'"
+	},
+	"set a variable": {
+		"prefix": "sv",
+		"body": [
+			"set(${1:variable} ${2:0})$3"
+		],
+		"description": "Add the snippet to use set() for defining a variable"
+	},
+	"set variable cache": {
+		"prefix": "sc",
+		"body": [
+			"set(${1:variable} ${2:value} CACHE ${3|BOOL,FILEPATH,PATH,STRING|} \"${4:message} FORCE)$5"
+		],
+		"description": "Add the snippet set() for cache entry"
+	},
+	"option()": {
+		"prefix": "opt",
+		"body": [
+			"option(${1:variable} \"${2:message}\" ${3|ON,OFF|})"
+		],
+		"description": "Add the snippet for option()"
+	},
+	"aux_source_directory": {
+		"prefix": "aux",
+		"body": [
+			"aux_source_directory(${1:./} ${2:SOURCES})"
+		],
+		"description": "Add the snippet for aux_source_directory()"
+	},
+	"add_subdirectory()": {
+		"prefix": "ads",
+		"body": [
+			"add_subdirectory(${1:./src})"
+		],
+		"description": "Add the snippet for add_subdirectory()"
+	},
+	"add_executable()": {
+		"prefix": "exe",
+		"body": [
+			"add_executable(",
+			"\t${1:exe}",
+			"\t${2:\\${SOURCES\\}}",
+			")"
+		],
+		"description": "Add the snippet add_executable() to build source files as an exeutable file"
+	},
+	"add_library()": {
+		"prefix": "lib",
+		"body": [
+			"add_library(",
+			"\t${1:myLib}",
+			"\t${2|STATIC,SHARED,MODULE|}",
+			"\t${3:\\${SOURCES\\}}",
+			")"
+		],
+		"description": "Add the snippet add_library() to build source files as a library"
+	},
+	"target_link_libraries()": {
+		"prefix": "tll",
+		"body": [
+			"target_link_libraries(",
+			"\t${1:myTarget}",
+			"\t${2:myLib}",
+			")"
+		],
+		"description": "Add the snippet target_link_libraries() to link libraries"
+	},
+	"target_include_directories()": {
+		"prefix": "tid",
+		"body": [
+			"target_include_directories(",
+			"\t${1:myTarget}",
+			"\t${2|PUBLIC,INTERFACE,PRIVATE|} ${3:\\${PROJECT_SOURCE_DIR\\}/includes}",
+			")"
+		],
+		"description": "Add the snippet target_include_directories() to set the include directories for target"
+	},
+	"include_directories()": {
+		"prefix": "i_d",
+		"body": [
+			"include_directories(${1:\\${PROJECT_SOURCE_DIR\\}})"
+		],
+		"description": "Add the snippet include_directories() to set include directories"
+	},
+	"find_package()": {
+		"prefix": "f_p",
+		"body": [
+			"find_package(${1:OpenCV} REQUIRED)"
+		],
+		"description": "Add the snippet find_package()"
+	},
+	"if() ... endif()": {
+		"prefix": "if",
+		"body": [
+			"if(${1:condition})",
+			"\t${2:commands}",
+			"endif()"
+		],
+		"description": "Add the snippet if()"
+	},
+	"else if()": {
+		"prefix": "elif",
+		"body": [
+			"elseif(${1:condition})",
+			"\t${2:commands}"
+		],
+		"description": "Add the snippet 'elseif()'"
+	},
+	"else()": {
+		"prefix": "else",
+		"body": [
+			"else()",
+			"\t${1:commands}"
+		],
+		"description": "Add the snippet else()"
+	},
+	"if() ... else() ... endif()":{
+		"prefix": "ife",
+		"body": [
+			"if(${1:condition})",
+			"\t${2:command1}",
+			"else()",
+			"\t${3:command2}",
+			"endif()"
+		],
+		"description": "Add the snippet 'if() ... else() ... endif()'"
+	},
+	"configure_file": {
+		"prefix": "conf",
+		"body": [
+			"configure_file(",
+			"\t${1:\\${PROJECT_SOURCE_DIR\\}/includes/version.h.in}",
+			"\t${2:\\${PROJECT_SOURCE_DIR\\}/includes/version.h}",
+			"\t@ONLY",
+			")"
+		],
+		"description": "Add the snippet for configure_file()"
+	},
+	"include()": {
+		"prefix": "inc",
+		"body": [
+			"include(${1:FetchContent})"
+		],
+		"description": "Add the snippet for include()"
+	},
+	"FetchContent_Declare()": {
+		"prefix": "Fet",
+		"body": [
+			"include(FetchContent)",
+			"FetchContent_Declare(",
+			"\t${1:repo_name}",
+			"\tGIT_REPOSITORY ${2:repo_url}",
+			"\tGIT_TAG ${3:tag}",
+			")",
+			"FetchContent_MakeAvailable($1)"
+		],
+		"description": "Add the snippet for FetchContent_Declare()"
+	},
+	"Use googletest": {
+		"prefix": "gtest",
+		"body": [
+			"include(FetchContent)",
+			"set(gtest_force_shared_crt ON CACHE BOOL \"\" FORCE)",
+			"set(INSTALL_GTEST OFF CACHE BOOL \"\" FORCE)",
+			"FetchContent_Declare(",
+			"\tgoogletest",
+			"\tGIT_REPOSITORY https://github.com/google/googletest.git",
+			"\tGIT_TAG ${1:v1.14.0}",
+			")",
+			"FetchContent_MakeAvailable(googletest)"
+		],
+		"description": "Add the snippet to use gtest"
+	},
+	"Set c++ standard": {
+		"prefix": "cxx",
+		"body": [
+			"set(CMAKE_CXX_STANDDARD ${1:14})",
+			"set(CMAKE_CXX_STANDDARD_REQUIRED ON)"
+		],
+		"description": "Add the snippet to set c++ standard"
+	},
+	"install()": {
+		"prefix": "inst",
+		"body": [
+			"install(",
+			"\t${1|FILES,TARGETS|} ${2:source_files}",
+			"\tDESTINATION ${3:target_path}",
+			")"
+		],
+		"description": "Add the snippet for install()"
+	},
+	"add_test()": {
+		"prefix": "adt",
+		"body": [
+			"add_test(",
+			"\t${1:test_myTest} ${1}",
+			")"
+		],
+		"description": "Add the snippet for add_test()"
+	}
+}

@@ -51,7 +51,7 @@
             "//SYSUT1   DD *",
             "${3}",
             "/*",
-            "//SYSUT2   DD      DISP=NEW,DSN=${4:A.B.C)",
+            "//SYSUT2   DD      DISP=NEW,DSN=${4:A.B.C}",
             "//SYSPRINT DD      SYSOUT=*",
             "$0"
         ],

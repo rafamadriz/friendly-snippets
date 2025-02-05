@@ -1,7 +1,7 @@
 {
     "require": {
         "prefix": "req",
-        "body": ["require(\"${1:module}\")"],
+        "body": ["require(${1:module})"],
         "description": "Require module"
     },
     "return": {
@@ -12,26 +12,24 @@
     "assigment": {
         "prefix": "ll",
         "body": ["local ${1:varName} = ${0:value}"],
-        "description": "create a variable"
+        "description": "define a variable"
     },
     "local": {
         "prefix": "l",
         "body": ["local ${0}"],
-        "description": "create a variable"
+        "description": "declare a variable"
     },
     "locreq": {
         "prefix": "lreq",
-        "body": ["local ${1:var} = require(\"${2:module}\")"],
+        "body": ["local ${1:var} = require(${2:module})"],
         "description": "Require module as a variable"
     },
     "class": {
         "prefix": "cl",
         "body": [
-            "${1:className} = {}\n",
+            "${1:M} = {}\n",
             "$1.${2:new} = function($3)",
-            "\tlocal ${4:varName} = ${5:value}\n",
-            "\t${6: --code}\n",
-            "\treturn $4",
+            "\t${6}",
             "end"
         ],
         "description": "Create a class"
@@ -56,22 +54,22 @@
     "forline": {
         "prefix": "forline",
         "body": [
-            "f = io.open(${1:\"${2:filename}\"}, \"${3:r}\")\n",
+            "local f = io.open(${1:${2:filename}}, \"${3:r}\")\n",
             "while true do",
             "\tline = f:read()",
             "\tif line == nil then break end\n",
-            "\t${0:-- code}",
+            "\t${0}",
             "end"
         ],
         "description": "read file line by line"
     },
     "function": {
         "prefix": "fu",
-        "body": ["function ${1:name}($2)", "\t${0:-- code}", "end"]
+        "body": ["function ${1:name}($2)", "\t${0}", "end"]
     },
     "inline-function": {
         "prefix": "f=",
-        "body": ["local ${1:name} = function($2)", "\t${0:-- code}", "end"]
+        "body": ["local ${1:name} = function($2)", "\t${0}", "end"]
     },
     "print": {
         "prefix": "p",

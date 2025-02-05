@@ -165,7 +165,7 @@
     },
     "If-Else Statement": {
         "prefix": "ifelse",
-        "body": ["if (${1:condition}) {", "\t$0", "} else {", "\t", "}"],
+        "body": ["if (${1:condition}) {", "\t$2", "} else {", "\t$0", "}"],
         "description": "If-Else Statement"
     },
     "New Statement": {

@@ -1,0 +1,53 @@
+{
+    "Remix loader function": {
+        "prefix": "rxl",
+        "body": [
+            "import { type LoaderFunction, json } from '@remix-run/node'",
+            "import { useLoaderData } from '@remix-run/react'",
+            "",
+            "export const loader: LoaderFunction = async () => {",
+            "\treturn json({ ok: true })",
+            "}"
+        ],
+        "description": "Remix loader function"
+    },
+    "Remix action function": {
+        "prefix": "rxa",
+        "body": [
+            "import { type ActionFunction, json } from '@remix-run/node'",
+            "",
+            "export const action: ActionFunction = async ({ request }) => {",
+            "\treturn json({ ok: true })",
+            "}"
+        ],
+        "description": "Remix action function"
+    },
+    "Remix meta function": {
+        "prefix": "rxm",
+        "body": [
+            "import { type MetaFunction } from '@remix-run/node'",
+            "",
+            "export const meta: MetaFunction = () => {",
+            "\treturn [",
+            "\t\t{ title: ''},",
+            "\t\t{ name: 'description', content: ''}",
+            "\t]",
+            "}"
+        ],
+        "description": "Remix meta function"
+    },
+    "Remix links function": {
+        "prefix": "rxi",
+        "body": [
+            "import { type LinksFunction } from '@remix-run/node'",
+            "",
+            "export const links: LinksFunction = () => {",
+            "\treturn [",
+            "\t\t{",
+            "\t\t}",
+            "\t]",
+            "}"
+        ],
+        "description": "Remix links function"
+    }
+}

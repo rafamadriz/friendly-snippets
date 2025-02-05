@@ -120,7 +120,7 @@
 
     "element in array": {
         "prefix": "in",
-        "body": ["${1:element} in ${$2:array}"]
+        "body": ["${1:element} in ${2:array}"]
     },
 
     "GDScript template": {
