@@ -281,14 +281,14 @@
     "#guard": {
       "prefix": "#guard",
       "body": [
-        "#ifndef _INCLUDE_${WORKSPACE_NAME/(.*)/${1:/upcase}/}_${TM_DIRECTORY/.*[\\\/](.*)/${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_",
-        "#define _INCLUDE_${WORKSPACE_NAME/(.*)/${1:/upcase}/}_${TM_DIRECTORY/.*[\\\/](.*)/${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_",
+        "#ifndef _${WORKSPACE_NAME/(.*)/${1:/upcase}/}_${TM_DIRECTORY/.*[\\\/](.*)/${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_",
+        "#define _${WORKSPACE_NAME/(.*)/${1:/upcase}/}_${TM_DIRECTORY/.*[\\\/](.*)/${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_",
         "",
         "$0",
         "",
-        "#endif  // _INCLUDE_${WORKSPACE_NAME/(.*)/${1:/upcase}/}_${TM_DIRECTORY/.*[\\\/](.*)/${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_"
+        "#endif  // _${WORKSPACE_NAME/(.*)/${1:/upcase}/}_${TM_DIRECTORY/.*[\\\/](.*)/${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_"
       ],
-      "description": "header guard. format :\n\t_INCLUDE_<workspacename>_<dirname>_<filename>_<extension>_"
+      "description": "header guard. format :\n\t_<workspacename>_<dirname>_<filename>_<extension>_"
     },
     "sca": {
       "prefix": "sca",
