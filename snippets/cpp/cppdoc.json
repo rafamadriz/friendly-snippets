@@ -51,6 +51,46 @@
         ],
         "description": "Example that demostrates how to use a function. It can be used several times."
     },
+    "@interface": {
+        "prefix": "@interface",
+        "body": [
+            "/**",
+            " * @interface ${1:InterfaceName}$0",
+            " *",
+            " * @brief ${2:Description.}",
+            " */"
+        ],
+        "description": "Provide description for an interface class. This tag is a synonym of @interface."
+    },
+    "@class": {
+        "prefix": "@class",
+        "body": [
+            "/**",
+            " * @interface ${1:InterfaceName}$0",
+            " *",
+            " * @brief ${2:Description.}",
+            " */"
+        ],
+        "description": "Provide description for an implementation class. This tag is a synonym of @class."
+    },
+    "@exclass": {
+        "prefix": "@exclass",
+        "body": [
+            "/**",
+            " * @exception ${1:InterfaceName}$0",
+            " *",
+            " * @brief ${2:Description.}",
+            " */"
+        ],
+        "description": "Provide description for an exception class. This tag is a synonym of @class."
+    },
+    "@throw": {
+        "prefix": "@throw",
+        "body": [
+            "@throw ${1:ExceptionName} ${2:Description.}$0"
+        ],
+        "description": "Indicates the exceptions that can be thrown by a function. This tag is a synonym of @throw."
+    },
     "@throws": {
         "prefix": "@throws",
         "body": [
