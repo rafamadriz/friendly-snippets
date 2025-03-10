@@ -1,0 +1,29 @@
+{
+    "TikZ picture": {
+        "prefix": "tikzpicture",
+        "body": [
+            "\\begin{tikzpicture}",
+            "\t$0",
+            "\\end{tikzpicture}"
+        ],
+        "description": "Add a TikZ picture"
+    },
+    "Figure with TikZ picture": {
+        "prefix": "figuretikz",
+        "body": [
+            "\\begin{figure}",
+            "\t\\centering",
+            "\t\\begin{tikzpicture}",
+            "\t\t$0",
+            "\t\\end{tikzpicture}",
+            "\t\\caption{$3}\\label{fig:$4}",
+            "\\end{figure}"
+        ],
+        "description": "Add a figure with a TikZ picture"
+    },
+    "Scope": {
+        "prefix": "scope",
+        "body": ["\\begin{scope}", "\t$0", "\\end{scope}"],
+        "description": "TikZ scope"
+    }
+}
