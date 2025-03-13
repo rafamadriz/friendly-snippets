@@ -28,6 +28,17 @@
         ],
         "description": "A simple C++ comment block for classes, including short summary, and details. Useful when you prefer to add the other documentation tags manually."
     },
+    "@brief": {
+        "prefix": "@brief",
+        "body": [
+            "/**",
+            " * @brief ${1:A one-line summary.}$0",
+            " *",
+            " * ${2:Description.}",
+            " */"
+        ],
+        "description": "Indicates that a comment block contains a brief description about the entity."
+    },
     "@param": {
         "prefix": "@param",
         "body": [
@@ -83,6 +94,28 @@
             " */"
         ],
         "description": "Provide description for an exception class. This tag is a synonym of @class."
+    },
+    "@enum": {
+        "prefix": "@enum",
+        "body": [
+            "/**",
+            " * @enum ${1:EnumName}$0",
+            " *",
+            " * @brief ${2:Description.}",
+            " */"
+        ],
+        "description": "Indicates that a comment block contains documentation for an enumeration."
+    },
+    "@namespace": {
+        "prefix": "@namespace",
+        "body": [
+            "/**",
+            " * @namespace ${1:NamespaceName}$0",
+            " *",
+            " * @brief ${2:Description.}",
+            " */"
+        ],
+        "description": "Indicates that a comment block contains documentation for a namespace."
     },
     "@throw": {
         "prefix": "@throw",
