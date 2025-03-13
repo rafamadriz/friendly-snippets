@@ -117,6 +117,17 @@
         ],
         "description": "Indicates that a comment block contains documentation for a namespace."
     },
+    "@file": {
+        "prefix": "@file",
+        "body": [
+            "/**",
+            " * @file ${1:${TM_FILENAME}}$0",
+            " *",
+            " * @brief ${2:Description.}",
+            " */"
+        ],
+        "description": "Indicates that a comment block contains documentation for a source or header file."
+    },
     "@throw": {
         "prefix": "@throw",
         "body": [
