@@ -81,10 +81,10 @@
     "description": "for loop with index"
   },
   "function": {
-    "prefix": "fn",
+    "prefix": "func",
     "body": [
-      "fn ${1:fn_name}(${2:args}) ${3:return_type}",
-      "    return ${4:pass}",
+      "fn ${1:fn_name}(${2:args}) ${3:return_type} {",
+      "    return ${4:value}",
       "}"
     ],
     "description": "function"
