@@ -32,5 +32,99 @@
       "}"
     ],
     "description": "if / else statement"
+  },
+  "if error handling": {
+    "prefix": "iferr",
+    "body": [
+      "if (${1:condition}) |${2}| {",
+      "    ${3:pass}",
+      "} else |${4:err}| switch (${4:err}) {",
+      "    ${5:err_value} => ${6:action}",
+      "}"
+    ],
+    "description": "if statement error handling"
+  },
+  "while": {
+    "prefix": "while",
+    "body": [
+      "while (${1:condition}) {",
+      "    ${2:pass}",
+      "}"
+    ],
+    "description": "while loop"
+  },
+  "while w/ continue expr": {
+    "prefix": "whilec",
+    "body": [
+      "while (${1:condition}) : (${2:continue_exp}) {",
+      "    ${3:pass}",
+      "}"
+    ],
+    "description": "while loop with continue expression"
+  },
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for (${1:iterable}) |${2:item}| {",
+      "    ${3:pass}",
+      "}"
+    ],
+    "description": "for loop"
+  },
+  "for w/ index": {
+    "prefix": "fori",
+    "body": [
+      "for (${1:iterable}, ${2:ind_range}) |${3}, ${4}| {",
+      "    ${5:pass}",
+      "}"
+    ],
+    "description": "for loop with index"
+  },
+  "function": {
+    "prefix": "fn",
+    "body": [
+      "fn ${1:fn_name}(${2:args}) ${3:return_type}",
+      "    return ${4:pass}",
+      "}"
+    ],
+    "description": "function"
+  },
+  "switch": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:expr}) {",
+      "    ${2:value} => {${3:action}},",
+      "    else => {${4:action}},",
+      "}"
+    ],
+    "description": "switch"
+  },
+  "enum": {
+    "prefix": "enum",
+    "body": [
+      "const ${1:Name} = enum { ${2:named_values} };"
+    ],
+    "description": "enum"
+  },
+  "enum w/ type": {
+    "prefix": "tenum",
+    "body": [
+      "const ${1:Name}(${2:type}) = enum { ${3:named_values} };"
+    ],
+    "description": "enum with type specification"
+  },
+  "struct": {
+    "prefix": "struct",
+    "body": [
+      "const ${1:Name} = struct { ${2:named_field}: ${3:field_type} };"
+    ],
+    "description": "struct"
+  },
+  "struct w/ defaults": {
+    "prefix": "structd",
+    "body": [
+      "const ${1:Name} = struct { ${2:named_field}: ${3:field_type} = ${4:default_value} };"
+    ],
+    "description": "struct with defaults"
   }
 }
