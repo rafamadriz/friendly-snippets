@@ -36,7 +36,7 @@
   "if error handling": {
     "prefix": "iferr",
     "body": [
-      "if (${1:condition}) |${2}| {",
+      "if (${1:condition}) |${2:value}| {",
       "    ${3:pass}",
       "} else |${4:err}| switch (${4:err}) {",
       "    ${5:err_value} => ${6:action}",
@@ -74,7 +74,7 @@
   "for w/ index": {
     "prefix": "fori",
     "body": [
-      "for (${1:iterable}, ${2:ind_range}) |${3}, ${4}| {",
+      "for (${1:iterable}, ${2:ind_range}) |${3:value}, ${4:index}| {",
       "    ${5:pass}",
       "}"
     ],
