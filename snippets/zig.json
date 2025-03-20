@@ -89,6 +89,13 @@
     ],
     "description": "function"
   },
+  "error": {
+    "prefix": "error",
+    "body": [
+      "const ${1:Name} = error { ${2:named_errors} };"
+    ],
+    "description": "error set"
+  },
   "switch": {
     "prefix": "switch",
     "body": [
@@ -126,5 +133,19 @@
       "const ${1:Name} = struct { ${2:named_field}: ${3:field_type} = ${4:default_value} };"
     ],
     "description": "struct with defaults"
+  },
+  "union": {
+    "prefix": "union",
+    "body": [
+      "const ${1:Name} = union { ${2:named_field}: ${3:field_type} };"
+    ],
+    "description": "union"
+  },
+  "tagged union": {
+    "prefix": "tagunion",
+    "body": [
+      "const ${1:Name} = union(${2:TagEnum}) { ${3:named_field}: ${4:field_type} };"
+    ],
+    "description": "tagged union"
   }
 }
