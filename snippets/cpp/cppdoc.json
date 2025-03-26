@@ -133,20 +133,27 @@
         "body": [
             "@throw ${1:ExceptionName} ${2:Description.}$0"
         ],
-        "description": "Indicates the exceptions that can be thrown by a function. This tag is a synonym of @throw."
+        "description": "Indicates the single exception that can be thrown by a function."
     },
     "@throws": {
         "prefix": "@throws",
         "body": [
             "@throws ${1:ExceptionName} ${2:Description.}$0"
         ],
-        "description": "Indicates the exceptions that can be thrown by a function. This tag is a synonym of @exception."
+        "description": "Indicates the multiple exceptions that can be thrown by a function."
     },
     "@exception": {
         "prefix": "@exception",
         "body": [
             "@exception ${1:ExceptionName} ${2:Description.}$0"
         ],
-        "description": "Indicates the exceptions that can be thrown by a function. This tag is a synonym of @throws."
+        "description": "Indicates the exceptions that can be thrown by a function."
+    },
+    "<a>": {
+        "prefix": "<a",
+        "body": [
+            "<a href=\"${1:Url}\">${2:Link text}</a>$0"
+        ],
+        "description": "Specify url with custom link texts. Refer: doxygen.nl/manual/autolink.html"
     }
 }
