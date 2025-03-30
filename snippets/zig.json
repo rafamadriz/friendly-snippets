@@ -147,5 +147,36 @@
       "const ${1:Name} = union(${2:TagEnum}) { ${3:named_field}: ${4:field_type} };"
     ],
     "description": "tagged union"
+  },
+  "page_allocator": {
+    "prefix": "page_allocator",
+    "body": [
+      "const ${1:allocator} = std.heap.page_allocator;",
+      "const ${2:memory} = try ${1:allocator}.alloc(u8, ${3:size});",
+      "defer ${1:allocator}.free(${2:memory});"
+    ],
+    "description": "page allocator"
+  },
+  "FixedBufferAllocator": {
+    "prefix": "FixedBufferAllocator",
+    "body": [
+      "var ${1:buffer}: [${2:size}]u8 = undefined;",
+      "var ${3:fba} = std.heap.FixedBufferAllocator.init(&${1:buffer});",
+      "const ${4:allocator} = ${3:fba}.allocator();",
+      "const ${5:memory} = try ${4:allocator}.alloc(u8, ${6:size});",
+      "defer ${4:allocator}.free(${5:memory});"
+    ],
+    "description": "fixed buffer allocator"
+  },
+  "DebugAllocator": {
+    "prefix": "DebugAllocator",
+    "body": [
+      "var ${1:gpa} = std.heap.DebugAllocator(.{}).init;",
+      "const ${2:allocator} = ${1:gpa}.allocator();",
+      "defer _ = ${1:gpa}.deinit();",
+      "const ${3:memory} = try ${2:allocator}.alloc(u8, ${4:size});",
+      "defer ${2:allocator}.free(${3:memory});"
+    ],
+    "description": "debug allocator"
   }
 }
