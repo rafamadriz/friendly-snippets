@@ -269,12 +269,12 @@
     "#guard": {
       "prefix": "#guard",
       "body": [
-        "#ifndef INCLUDE${TM_DIRECTORY/.*[\\\/](.*)/_${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_",
-        "#define INCLUDE${TM_DIRECTORY/.*[\\\/](.*)/_${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_",
+        "#ifndef INCLUDE${TM_DIRECTORY/.*[\\/\\\\](.*)/_${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_",
+        "#define INCLUDE${TM_DIRECTORY/.*[\\/\\\\](.*)/_${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_",
         "",
         "$0",
         "",
-        "#endif  // INCLUDE${TM_DIRECTORY/.*[\\\/](.*)/_${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_"
+        "#endif  // INCLUDE${TM_DIRECTORY/.*[\\/\\\\](.*)/_${1:/upcase}/}${TM_FILENAME_BASE/(.*)/_${1:/upcase}/}${TM_FILENAME/.*\\.(.*)/_${1:/upcase}/}_"
       ],
       "description": "header guard. format :\n\tINCLUDE_<dirname>_<filename>_<extension>_"
     },
