@@ -27,4 +27,4 @@ jobs:
           commit_message: "CI: format JSON files"
           only_changed: true
           # This part is also where you can pass other options, for example:
-          prettier_options: --tab-width 4 --parser json --write **/*.json
+          prettier_options: --tab-width 4 --parser json --write "**/*.json"
