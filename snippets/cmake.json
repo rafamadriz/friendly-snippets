@@ -229,8 +229,8 @@
 	"Set c++ standard": {
 		"prefix": "cxx",
 		"body": [
-			"set(CMAKE_CXX_STANDDARD ${1:14})",
-			"set(CMAKE_CXX_STANDDARD_REQUIRED ON)"
+			"set(CMAKE_CXX_STANDARD ${1:14})",
+			"set(CMAKE_CXX_STANDARD_REQUIRED ON)"
 		],
 		"description": "Add the snippet to set c++ standard"
 	},
