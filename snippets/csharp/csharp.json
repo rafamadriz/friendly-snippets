@@ -52,9 +52,16 @@
   "Console.WriteLine": {
     "prefix": "cw",
     "body": [
-      "System.Console.WriteLine($0);"
+      "Console.WriteLine($0);"
     ],
     "description": "Console.WriteLine"
+  },
+  "Console.ReadLine": {
+    "prefix": "cr",
+    "body": [
+      "Console.ReadLine($0);"
+    ],
+    "description": "Console.ReadLine"
   },
   "do...while loop": {
     "prefix": "do",
