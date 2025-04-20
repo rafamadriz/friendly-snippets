@@ -141,6 +141,10 @@
                 "path": "./snippets/frameworks/rails.json"
             },
             {
+                "language": "rspec",
+                "path": "./snippets/ruby/rspec.json"
+            },
+            {
                 "language": "rust",
                 "path": "./snippets/rust/rust.json"
             },
