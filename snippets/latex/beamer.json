@@ -1,0 +1,25 @@
+{
+    "frame": {
+        "prefix": "frame",
+        "body": [
+            "\\begin{frame}{$1}",
+            "\t$0",
+            "\\end{frame}"
+        ],
+        "description": "beamer frame"
+    },
+    "only": {
+        "prefix": "only",
+        "body": "\\only<${1}>{\n\t${0:${TM_SELECTED_TEXT}}\n}",
+        "description": "\\only wrap"
+    },
+    "block": {
+        "prefix": "block",
+        "body": [
+            "\\begin{block}{$1}",
+            "\t$0",
+            "\\end{block}"
+        ],
+        "description": "beamer block"
+    }
+}
