@@ -37,8 +37,8 @@
     },
     "while": {
         "prefix": "while",
-        "body": ["while ($1) {", "\t$2", "}"],
-        "description": ""
+        "body": ["while ($1) {", "\t$0", "}"],
+        "description": "'while' loop snippet"
     },
     "foreach": {
         "prefix": "foreach",
