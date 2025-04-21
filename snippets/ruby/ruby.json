@@ -29,6 +29,26 @@
             "end"
         ]
     },
+    "Ruby Benchmark Measure": {
+        "prefix": "benchm",
+        "body": [
+            "require 'benchmark'",
+            "",
+            "puts Benchmark.measure { ${1:# benchmark code} }"
+        ]
+    },
+    "Ruby Benchmark BM": {
+        "prefix": "benchbm",
+        "body": [
+            "require 'benchmark'",
+            "",
+            "n = ${1:50000}",
+            "Benchmark.bm do |x|",
+            "  x.report(\"${2:Task 1}\") { n.times { ${3:\"task 1\"} } }",
+            "  x.report(\"${4:Task 2}\") { n.times { ${5:\"task 2\"} } }",
+            "end"
+        ]
+    },
     "Class definition with initialize": {
         "prefix": "class init",
         "body": [
