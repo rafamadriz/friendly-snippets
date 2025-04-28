@@ -595,6 +595,10 @@
             {
                  "language": "zig",
                  "path": "./snippets/zig.json"
+            },
+            {
+                 "language": "v",
+                 "path": "./snippets/v.json"
             }
         ]
     }

@@ -1,0 +1,272 @@
+{
+    "assert": {
+        "body": ["assert ${1:expression}"],
+        "description": "Snippet for testing 'assert'",
+        "prefix": "as"
+    },
+    "unimpl": {
+        "body": ["assert false, 'unimplemented'"],
+        "description": "Snippet for unimplemented 'assert'",
+        "prefix": "unimpl"
+    },
+    "unreach": {
+        "body": ["assert false, 'unreachable'"],
+        "description": "Snippet for unreachable 'assert'",
+        "prefix": "unreach"
+    },
+    "break": {
+        "body": ["break$0"],
+        "description": "Snippet for 'break'",
+        "prefix": "br"
+    },
+    "const": {
+        "body": ["const ${1:name} = ${2:value}"],
+        "description": "Snippet for 'const'",
+        "prefix": "co"
+    },
+    "const.multiply": {
+        "body": ["const (", "\t$0", ")"],
+        "description": "Snippet for multiply 'const'",
+        "prefix": "cons"
+    },
+    "continue": {
+        "body": ["continue$0"],
+        "description": "Snippet for 'continue'",
+        "prefix": "con"
+    },
+    "defer": {
+        "body": ["defer {", "\t$0", "}"],
+        "description": "Snippet for 'defer' block",
+        "prefix": "def"
+    },
+    "else": {
+        "body": ["else {", "\t$0", "}"],
+        "description": "Snippet for 'else' statement",
+        "prefix": "el"
+    },
+    "elseif": {
+        "body": ["else if ${1:expression} {", "\t$0", "}"],
+        "description": "Snippet for 'else if' statement",
+        "prefix": "elf"
+    },
+    "enum": {
+        "body": ["enum ${1:name} {", "\t$0", "}"],
+        "description": "Snippet for 'enum'",
+        "prefix": "en"
+    },
+    "flag": {
+        "body": ["#flag ${1:-flag}"],
+        "description": "Snippet for '#flag'",
+        "prefix": "fl"
+    },
+    "fn.eprint": {
+        "body": ["eprint('${1:text}')"],
+        "description": "Snippet for standart based function 'eprint'",
+        "prefix": "epr"
+    },
+    "fn.eprintln": {
+        "body": ["eprintln('${1:text}')"],
+        "description": "Snippet for standart based function 'eprintln'",
+        "prefix": "eprl"
+    },
+    "fn.init": {
+        "body": ["fn init() {", "\t$0", "}"],
+        "description": "Snippet for 'init' function",
+        "prefix": "finit"
+    },
+    "fn.main": {
+        "body": ["fn main() {", "\t$0", "}"],
+        "description": "Snippet for 'main' function",
+        "prefix": "fmain"
+    },
+    "fn.print": {
+        "body": ["print('${1:text}')"],
+        "description": "Snippet for standart based function 'print'",
+        "prefix": "pr"
+    },
+    "fn.println": {
+        "body": ["println('${1:text}')"],
+        "description": "Snippet for standart based function 'println'",
+        "prefix": "prl"
+    },
+    "for": {
+        "body": ["for {", "\t$0", "}"],
+        "description": "Snippet for pure infinity loop 'for'",
+        "prefix": "for"
+    },
+    "for.index": {
+        "body": ["for ${1:i} := 0; $1 < ${3:count}; $1++ {", "\t$0", "}"],
+        "description": "Snippet for index loop 'for'",
+        "prefix": "for"
+    },
+    "foreach": {
+        "body": ["for ${1:variable} in ${2:array} {", "\t$0", "}"],
+        "description": "Snippet for foreach 'for'",
+        "prefix": "fore"
+    },
+    "foreach.index": {
+        "body": ["for ${1:_}, ${2:variable} in ${3:array} {", "\t$0", "}"],
+        "description": "Snippet for index based loop 'for'",
+        "prefix": "fore"
+    },
+    "function": {
+        "body": ["fn ${1:name}() {", "\t$0", "}"],
+        "description": "Snippet for function 'fn'",
+        "prefix": "fn"
+    },
+    "go": {
+        "body": ["go ${1:function}($0)"],
+        "description": "Snippet for concurrency 'go'",
+        "prefix": "go"
+    },
+    "goto": {
+        "body": ["goto ${1:label}"],
+        "description": "Snippet for 'goto' label",
+        "prefix": "got"
+    },
+    "if": {
+        "body": ["if ${1:expression} {", "\t$0", "}"],
+        "description": "Snippet for 'if' statement",
+        "prefix": "if"
+    },
+    "if.compile": {
+        "body": ["\\$if ${1:expression} {", "\t$0", "}"],
+        "description": "Snippet for compile time 'if'",
+        "prefix": "$i"
+    },
+    "ifelse": {
+        "body": ["if ${1:expression} {", "\t$0", "} else {", "\t$0", "}"],
+        "description": "Snippet for 'if-else' statement",
+        "prefix": "ie"
+    },
+    "import": {
+        "body": ["import ${1:module}"],
+        "description": "Snippet for 'import' module",
+        "prefix": "imp"
+    },
+    "include": {
+        "body": ["#include <${1:name}>"],
+        "description": "Snippet for C '#include'",
+        "prefix": "inc"
+    },
+    "interface": {
+        "body": ["interface ${1:name} {$0}"],
+        "description": "Snippet for 'interface'",
+        "prefix": "inte"
+    },
+    "map": {
+        "body": ["map[${1:key}]${2:value}{$0}"],
+        "description": "Snippet for 'map'",
+        "prefix": "map"
+    },
+    "match": {
+        "body": ["match ${1:expression} {", "\t$0", "}"],
+        "description": "Snippet for 'match' statement",
+        "prefix": "ma"
+    },
+    "module": {
+        "body": ["module ${1:name}"],
+        "description": "Snippet for 'module'",
+        "prefix": "mod"
+    },
+    "public.function": {
+        "body": ["pub fn ${1:name}() {", "\t$0", "}"],
+        "description": "Snippet for public function 'pub fn'",
+        "prefix": "pub"
+    },
+    "return": {
+        "body": ["return ${1:value}"],
+        "description": "Snippet for 'return'",
+        "prefix": "ret"
+    },
+    "struct": {
+        "body": ["struct ${1:Name} {", "\t$0", "}"],
+        "description": "Snippet for 'struct'",
+        "prefix": "stru"
+    },
+    "type": {
+        "body": ["type ${1:name} = ${2:type}"],
+        "description": "Snippet for 'type' definition",
+        "prefix": "ty"
+    },
+    "type.bool": {
+        "body": ["bool"],
+        "description": "Snippet for Boolean",
+        "prefix": "bool"
+    },
+    "type.byte": {
+        "body": ["byte"],
+        "description": "Snippet for Unsigned 8-bit Integer",
+        "prefix": "byte"
+    },
+    "type.byteptr": {
+        "body": ["byteptr"],
+        "description": "Snippet for Byte*",
+        "prefix": "bptr"
+    },
+    "type.f32": {
+        "body": ["f32"],
+        "description": "Snippet for 32-bit FloatingPoint",
+        "prefix": "float"
+    },
+    "type.f64": {
+        "body": ["f64"],
+        "description": "Snippet for 64-bit FloatingPoint",
+        "prefix": "float64"
+    },
+    "type.i8": {
+        "body": ["i8"],
+        "description": "Snippet for Signed 8-bit Integer",
+        "prefix": "int8"
+    },
+    "type.i16": {
+        "body": ["i16"],
+        "description": "Snippet for Signed 16-bit Integer",
+        "prefix": "int16"
+    },
+    "type.i64": {
+        "body": ["i64"],
+        "description": "Snippet for Signed 64-bit Integer",
+        "prefix": "int64"
+    },
+    "type.int": {
+        "body": ["int"],
+        "description": "Snippet for Signed 32-bit Integer",
+        "prefix": "int"
+    },
+    "type.rune": {
+        "body": ["rune"],
+        "description": "Snippet for Represents a Unicode CodePoint",
+        "prefix": "rune"
+    },
+    "type.string": {
+        "body": ["string"],
+        "description": "Snippet for String",
+        "prefix": "str"
+    },
+    "type.u16": {
+        "body": ["u16"],
+        "description": "Snippet for Unsigned 16-bit Integer",
+        "prefix": "u16"
+    },
+    "type.u32": {
+        "body": ["u32"],
+        "description": "Snippet for Unsigned 32-bit Integer",
+        "prefix": "u32"
+    },
+    "type.u64": {
+        "body": ["u64"],
+        "description": "Snippet for Unsigned 64-bit Integer",
+        "prefix": "u64"
+    },
+    "type.voidptr": {
+        "body": ["voidptr"],
+        "description": "Snippet for void*",
+        "prefix": "vptr"
+    },
+    "type.charptr": {
+        "body": ["charptr"],
+        "description": "Snippet for char*",
+        "prefix": "cptr"
+    }
+}
