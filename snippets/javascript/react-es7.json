@@ -218,14 +218,7 @@
     "reactArrowFunctionComponent": {
         "prefix": "rafc",
         "body": [
-<<<<<<< HEAD
-            "import React from 'react'",
-            "",
-            "export const ${TM_FILENAME_BASE} = () => {",
-=======
-
             "export const ${1:${TM_FILENAME_BASE}} = () => {",
->>>>>>> upstream/main
             "  return (",
             "    <div>${0}</div>",
             "  )",
@@ -255,14 +248,7 @@
     "reactArrowFunctionExportComponent": {
         "prefix": "rafce",
         "body": [
-<<<<<<< HEAD
-            "import React from 'react'",
-            "",
-            "const ${TM_FILENAME_BASE} = () => {",
-=======
-
             "const ${1:${TM_FILENAME_BASE}} = () => {",
->>>>>>> upstream/main
             "  return (",
             "    <div>${0}</div>",
             "  )",
@@ -481,14 +467,7 @@
     "reactFunctionalComponent": {
         "prefix": "rfc",
         "body": [
-<<<<<<< HEAD
-            "import React from 'react'",
-            "",
-            "export default function ${TM_FILENAME_BASE}() {",
-=======
-
             "export default function ${1:${TM_FILENAME_BASE}}() {",
->>>>>>> upstream/main
             "  return (",
             "    <div>${0}</div>",
             "  )",
@@ -576,14 +555,7 @@
     "reactFunctionalExportComponent": {
         "prefix": "rfce",
         "body": [
-<<<<<<< HEAD
-            "import React from 'react'",
-            "",
-            "function ${TM_FILENAME_BASE}() {",
-=======
-
             "function ${1:${TM_FILENAME_BASE}}() {",
->>>>>>> upstream/main
             "  return (",
             "    <div>${0}</div>",
             "  )",
@@ -1059,14 +1031,8 @@
         "prefix": "rnf",
         "body": [
             "import { View, Text } from 'react-native'",
-<<<<<<< HEAD
-            "import React from 'react'",
             "",
-            "export default function ${TM_FILENAME_BASE}() {",
-=======
-
             "export default function ${1:${TM_FILENAME_BASE}}() {",
->>>>>>> upstream/main
             "  return (",
             "    <View>",
             "      <Text>${0}</Text>",
@@ -1079,14 +1045,8 @@
         "prefix": "rnfs",
         "body": [
             "import { StyleSheet, Text, View } from 'react-native'",
-<<<<<<< HEAD
-            "import React from 'react'",
             "",
-            "export default function ${TM_FILENAME_BASE}() {",
-=======
-
             "export default function ${1:${TM_FILENAME_BASE}}() {",
->>>>>>> upstream/main
             "  return (",
             "    <View>",
             "      <Text>${0}</Text>",
@@ -1101,14 +1061,8 @@
         "prefix": "rnfe",
         "body": [
             "import { View, Text } from 'react-native'",
-<<<<<<< HEAD
-            "import React from 'react'",
             "",
-            "const ${TM_FILENAME_BASE} = () => {",
-=======
-
             "const ${1:${TM_FILENAME_BASE}} = () => {",
->>>>>>> upstream/main
             "  return (",
             "    <View>",
             "      <Text>${0}</Text>",
@@ -1123,14 +1077,8 @@
         "prefix": "rnfes",
         "body": [
             "import { StyleSheet, Text, View } from 'react-native'",
-<<<<<<< HEAD
-            "import React from 'react'",
             "",
-            "const ${TM_FILENAME_BASE} = () => {",
-=======
-
             "const ${1:${TM_FILENAME_BASE}} = () => {",
->>>>>>> upstream/main
             "  return (",
             "    <View>",
             "      <Text>${0}</Text>",
