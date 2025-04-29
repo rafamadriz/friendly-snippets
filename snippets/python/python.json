@@ -10,14 +10,24 @@
         "description": "Ignore specific line diagnostic in pyright (ignore all is unsafe)"
     },
     "Multiline string": {
-        "prefix": "#ss",
+        "prefix": "#s",
         "body": ["\"\"\"$0", "\"\"\""],
-        "description": "Snippet to avoid autopair plugin annoyances when typing multiple \""
+        "description": "Snippet to avoid weird autopair plugin behaviour"
     },
     "One-line multiline string": {
-        "prefix": "#s",
+        "prefix": "#ss",
         "body": "\"\"\"$0\"\"\"",
-        "description": "Snippet to avoid autopair plugin annoyances when typing multiple \""
+        "description": "Snippet to avoid weird autopair plugin behaviour"
+    },
+    "Single-quote multiline string": {
+        "prefix": "#q",
+        "body": ["'''$0", "'''"],
+        "description": "Snippet to avoid weird autopair plugin behaviour"
+    },
+    "One-line single-quote multiline string": {
+        "prefix": "#qq",
+        "body": "'''$0'''",
+        "description": "Snippet to avoid weird autopair plugin behaviour"
     },
     "self": {
         "prefix": "s",
