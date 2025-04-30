@@ -45,6 +45,13 @@
         ],
         "description": "I give you back the time and date (Y-m-d H:M)"
     },
+    "timestamp": {
+        "prefix": "timestamp",
+        "body": [
+            "${CURRENT_SECOND_UNIX}"
+        ],
+        "dsecription": "I give you back the current timestamp (seconds since unix epoch)"
+    },
     "uuid": {
         "prefix": "uuid",
         "body": "${UUID}",
