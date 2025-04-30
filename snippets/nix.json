@@ -28,7 +28,7 @@
             "fetchFrom${1|GitHub,GitLab,Gitea,Gitiles,BitBucket,Savannah,RepoOrCz,SourceHut|} {",
             "  owner = \"$2\";",
             "  repo = \"$3\";",
-            "  rev = \"${4:v\\${version\\}}\";",
+            "  tag = \"${4:v\\${version\\}}\";",
             "  hash = \"${5:sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=}\";",
             "};"
         ],
