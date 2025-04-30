@@ -96,12 +96,40 @@
     },
     "with": {
         "prefix": "with",
-        "body": ["with $1; $0;"],
+        "body": [
+            "with $1; $0;"
+        ],
         "description": "with expression"
     },
     "inherit": {
         "prefix": "inherit",
-        "body": ["inherit $1;"],
+        "body": [
+            "inherit $1;"
+        ],
         "description": "inherit expression"
+    },
+    "module": {
+        "prefix": "module",
+        "body": [
+            "{ lib, config, pkgs, ... }:",
+            "",
+            "let",
+            "  cfg = config.${1:modulePath};",
+            "in",
+            "{",
+            "  imports = [",
+            "    $1",
+            "  ];",
+            "",
+            "  options.${1:modulePath} = {",
+            "    $2",
+            "  };",
+            "",
+            "  config = {",
+            "    $3",
+            "  };",
+            "}"
+        ],
+        "description": "Nix module system template"
     }
 }
