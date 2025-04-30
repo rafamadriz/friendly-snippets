@@ -616,5 +616,15 @@
     "prefix": "a-trackby",
     "description": "TrackBy Function",
     "body": ["${1:trackBy}(index: number, ${2:name}: ${3:model}): ${4:number} {", "  return ${2:name}${5:.id};$0", "}"]
+  },
+  "Angular Writable Signal": {
+    "prefix": "a-signal",
+    "body": ["${1:variable}: WritableSignal<${2:T}> = signal(${3:defaultValue});${0}"],
+    "description": "Angular Writable Signal"
+  },
+  "Angular Computed Signal": {
+    "prefix": "a-computedSignal",
+    "body": ["${1:variable}: Signal<${2:T}> = computed(() => ${3:expression});${0}"],
+    "description": "Angular Writable Signal"
   }
 }
