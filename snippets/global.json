@@ -7,7 +7,7 @@
         "description": "Snippet to put copyright"
     },
     "diso": {
-        "prefix": "diso",
+        "prefix": ["diso", "dateISO"],
         "body": [
             "${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}T${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}"
         ],
@@ -21,14 +21,14 @@
     "dateDMY": {
       "prefix": "dateDMY",
       "body": ["${CURRENT_DATE}/${CURRENT_MONTH}/${CURRENT_YEAR}"],
-      "description": "Put date in (DD/MM/YY) format"
+      "description": "Put date in (D/M/Y) format"
     },
     "dateMDY": {
         "prefix": "dateMDY",
         "body": ["${CURRENT_MONTH}/${CURRENT_DATE}/${CURRENT_YEAR}"],
-        "description": "Put the date in (m/D/Y) format"
+        "description": "Put the date in (M/D/Y) format"
     },
-    "time": {
+    "timeHM": {
         "prefix": "time",
         "body": ["${CURRENT_HOUR}:${CURRENT_MINUTE}"],
         "description": "I give you back the time (H:M)"
@@ -38,12 +38,24 @@
         "body": ["${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}"],
         "description": "I give you back the time (H:M:S)"
     },
-    "datetime": {
+    "datetimeYMDHM": {
         "prefix": "datetime",
         "body": [
             "${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}"
         ],
         "description": "I give you back the time and date (Y-m-d H:M)"
+    },
+    "datetimeYMDHMS": {
+        "prefix": "datetimeYMDHMS",
+        "body": [
+            "${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}"
+        ],
+        "description": "I give you back the time and date (Y-m-d H:M:S)"
+    },
+    "dateGER": {
+      "prefix": "dateGER",
+      "body": ["${CURRENT_DATE}.${CURRENT_MONTH}.${CURRENT_YEAR}"],
+      "description": "Put date in (D.M.Y) format"
     },
     "uuid": {
         "prefix": "uuid",
