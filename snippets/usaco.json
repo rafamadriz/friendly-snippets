@@ -1,0 +1,7 @@
+{
+  {
+    "prefix": "usaco",
+    "body": ["/*", "\t$0", "ID: INSERT_USER", "\t$0", "PROB: INSERT_PROB", "\t$0", "LANG: INSERT_LANG", "\t$0", "*/"],
+    "description": "Usaco header"
+  },
+}
