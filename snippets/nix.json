@@ -82,6 +82,46 @@
         ],
         "description": "Nixpkgs' stdenv.mkDerivation template"
     },
+    "pkgs.mkShell": {
+        "prefix": "mks",
+        "body": [
+            "{pkgs ? import <nixpkgs> {}, ...}:",
+            "pkgs.mkShell {",
+            "  shellHook = ''",
+            "    $1",
+            "  '';",
+            "",
+            "  env = {",
+            "    $2",
+            "  };",
+            "",
+            "  packages = [",
+            "    $3",
+            "  ];",
+            "}"
+        ],
+        "description": "mkShell template"
+    },
+    "flake": {
+        "prefix": "flake",
+        "body": [
+            "{",
+            "  description = \"${1:A flake}\";",
+            "",
+            "  inputs = {",
+            "    nixpkgs.url = \"github:NixOS/nixpkgs/nixos-unstable\";",
+            "    flake-utils.url = \"github:numtide/flake-utils\";",
+            "    $2",
+            "  };",
+            "",
+            "  outputs = inputs @ { self, nixpkgs, flake-utils, ... }: ",
+            "    flake-utils.lib.eachDefaultSystem (system: {",
+            "      $3",
+            "    });",
+            "}"
+        ],
+        "description": "simple flake template with flake-utils"
+    },
     "meta": {
         "prefix": "meta",
         "body": [
