@@ -21,5 +21,25 @@
             "\\end{block}"
         ],
         "description": "beamer block"
+    },
+    "columns": {
+        "prefix": "columns",
+        "body": [
+            "\\begin{columns}",
+            "\t\\begin{column}{${1:.49\\textwidth}}",
+            "\t\t${0:${TM_SELECTED_TEXT}}",
+            "\t\\end{column}",
+            "\\end{columns}"
+        ],
+        "description": "columns block"
+    },
+    "column": {
+        "prefix": "column",
+        "body": [
+            "\\begin{column}{${1:.49\\textwidth}}",
+            "\t${0:${TM_SELECTED_TEXT}}",
+            "\\end{column}"
+        ],
+        "description": "column block"
     }
 }
