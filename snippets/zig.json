@@ -123,16 +123,9 @@
   "struct": {
     "prefix": "struct",
     "body": [
-      "const ${1:Name} = struct { ${2:named_field}: ${3:field_type} };"
+      "const ${1:Name} = struct { ${2:named_field}: ${3:field_type} ${0: = default_or_end} };"
     ],
-    "description": "struct"
-  },
-  "struct w/ defaults": {
-    "prefix": "structd",
-    "body": [
-      "const ${1:Name} = struct { ${2:named_field}: ${3:field_type} = ${4:default_value} };"
-    ],
-    "description": "struct with defaults"
+    "description": "struct with optional default value"
   },
   "union": {
     "prefix": "union",
