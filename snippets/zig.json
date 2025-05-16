@@ -21,5 +21,155 @@
       "b.installArtifact(exe);"
     ],
     "description": "Building an exe"
-  }     
+  },
+  "if/else": {
+    "prefix": "ifelse",
+    "body": [
+      "if (${1:condition}) {",
+      "    ${2:pass}",
+      "} else {",
+      "    ${3:pass}",
+      "}"
+    ],
+    "description": "if / else statement"
+  },
+  "if error handling": {
+    "prefix": "iferr",
+    "body": [
+      "if (${1:condition}) |${2:value}| {",
+      "    ${3:pass}",
+      "} else |${4:err}| switch (${4:err}) {",
+      "    ${5:err_value} => ${6:action}",
+      "}"
+    ],
+    "description": "if statement error handling"
+  },
+  "while": {
+    "prefix": "while",
+    "body": [
+      "while (${1:condition}) {",
+      "    ${2:pass}",
+      "}"
+    ],
+    "description": "while loop"
+  },
+  "while w/ continue expr": {
+    "prefix": "whilec",
+    "body": [
+      "while (${1:condition}) : (${2:continue_exp}) {",
+      "    ${3:pass}",
+      "}"
+    ],
+    "description": "while loop with continue expression"
+  },
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for (${1:iterable}) |${2:item}| {",
+      "    ${3:pass}",
+      "}"
+    ],
+    "description": "for loop"
+  },
+  "for w/ index": {
+    "prefix": "fori",
+    "body": [
+      "for (${1:iterable}, ${2:ind_range}) |${3:value}, ${4:index}| {",
+      "    ${5:pass}",
+      "}"
+    ],
+    "description": "for loop with index"
+  },
+  "function": {
+    "prefix": "func",
+    "body": [
+      "fn ${1:fn_name}(${2:args}) ${3:return_type} {",
+      "    return ${4:value}",
+      "}"
+    ],
+    "description": "function"
+  },
+  "error": {
+    "prefix": "error",
+    "body": [
+      "const ${1:Name} = error { ${2:named_errors} };"
+    ],
+    "description": "error set"
+  },
+  "switch": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:expr}) {",
+      "    ${2:value} => {${3:action}},",
+      "    else => {${4:action}},",
+      "}"
+    ],
+    "description": "switch"
+  },
+  "enum": {
+    "prefix": "enum",
+    "body": [
+      "const ${1:Name} = enum { ${2:named_values} };"
+    ],
+    "description": "enum"
+  },
+  "enum w/ type": {
+    "prefix": "tenum",
+    "body": [
+      "const ${1:Name}(${2:type}) = enum { ${3:named_values} };"
+    ],
+    "description": "enum with type specification"
+  },
+  "struct": {
+    "prefix": "struct",
+    "body": [
+      "const ${1:Name} = struct { ${2:named_field}: ${3:field_type} ${0: = default_or_end} };"
+    ],
+    "description": "struct with optional default value"
+  },
+  "union": {
+    "prefix": "union",
+    "body": [
+      "const ${1:Name} = union { ${2:named_field}: ${3:field_type} };"
+    ],
+    "description": "union"
+  },
+  "tagged union": {
+    "prefix": "tagunion",
+    "body": [
+      "const ${1:Name} = union(${2:TagEnum}) { ${3:named_field}: ${4:field_type} };"
+    ],
+    "description": "tagged union"
+  },
+  "page_allocator": {
+    "prefix": "page_allocator",
+    "body": [
+      "const ${1:allocator} = std.heap.page_allocator;",
+      "const ${2:memory} = try ${1:allocator}.alloc(u8, ${3:size});",
+      "defer ${1:allocator}.free(${2:memory});"
+    ],
+    "description": "page allocator"
+  },
+  "FixedBufferAllocator": {
+    "prefix": "FixedBufferAllocator",
+    "body": [
+      "var ${1:buffer}: [${2:size}]u8 = undefined;",
+      "var ${3:fba} = std.heap.FixedBufferAllocator.init(&${1:buffer});",
+      "const ${4:allocator} = ${3:fba}.allocator();",
+      "const ${5:memory} = try ${4:allocator}.alloc(u8, ${6:size});",
+      "defer ${4:allocator}.free(${5:memory});"
+    ],
+    "description": "fixed buffer allocator"
+  },
+  "DebugAllocator": {
+    "prefix": "DebugAllocator",
+    "body": [
+      "var ${1:gpa} = std.heap.DebugAllocator(.{}).init;",
+      "const ${2:allocator} = ${1:gpa}.allocator();",
+      "defer _ = ${1:gpa}.deinit();",
+      "const ${3:memory} = try ${2:allocator}.alloc(u8, ${4:size});",
+      "defer ${2:allocator}.free(${3:memory});"
+    ],
+    "description": "debug allocator"
+  }
 }
