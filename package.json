@@ -338,19 +338,31 @@
                 "path": "./snippets/frameworks/angular/jsonc.json"
             },
             {
-                "language": "python",
+                "language": [
+                    "python",
+                    "django"
+                ],
                 "path": "./snippets/python/python.json"
             },
             {
-                "language": "python",
+                "language": [
+                    "python",
+                    "django"
+                ],
                 "path": "./snippets/python/comprehension.json"
             },
             {
-                "language": "python",
+                "language": [
+                    "python",
+                    "django"
+                ],
                 "path": "./snippets/python/unittest.json"
             },
             {
-                "language": "python",
+                "language": [
+                    "python",
+                    "django"
+                ],
                 "path": "./snippets/python/debug.json"
             },
             {
