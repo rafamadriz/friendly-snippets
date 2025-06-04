@@ -717,5 +717,19 @@
         "prefix": "interface",
         "description": "Creates a normal interface.",
         "body": ["public interface ${TM_FILENAME_BASE} {", "\t$0", "}"]
+    },
+    "Attribute: SerializeField": {
+        "prefix": "sfield",
+        "body": [
+            "[SerializeField] private $0;"
+        ],
+        "description": "Force Unity to serialize a private field."
+    },
+    "MonoBehaviour RequireComponent": {
+        "prefix": "RequireComponent",
+        "body": [
+            "[RequireComponent(typeof($0))]"
+        ],
+        "description": "Automatically adds required components as dependencies."
     }
 }
