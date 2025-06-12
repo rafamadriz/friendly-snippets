@@ -15,7 +15,7 @@
         "description": "superscript"
     },
     "etc": {
-        "prefix": "...",
+        "prefix": "dots",
         "body": "\\dots",
         "description": "\\dots"
     },
