@@ -588,10 +588,14 @@
                  "language": "loremipsum",
                  "path": "./snippets/loremipsum.json"
             },
-	    {
-		"language": "cmake",
-		"path": "./snippets/cmake.json"
-	    },
+            {
+                "language": "cmake",
+                "path": "./snippets/cmake.json"
+            },
+            {
+                 "language": "matlab",
+                 "path": "./snippets/matlab.json"
+            },
             {
                  "language": "zig",
                  "path": "./snippets/zig.json"
