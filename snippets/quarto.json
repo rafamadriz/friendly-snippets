@@ -676,5 +676,25 @@
     "body": "Fig. \\ref{fig-$1}",
     "description": "refer to a label for a wrap figure",
     "prefix": "@wrap"
+  },
+  "Condition when format": {
+    "prefix": [
+      "contwhenfmt"
+    ],
+    "body": [
+      "::::::: {.content-visible when-format=\"$0\"}",
+      "$1",
+      ":::::::"
+    ]
+  },
+  "Condition unless format": {
+    "prefix": [
+      "contunlessfmt"
+    ],
+    "body": [
+      "::::::: {.content-visible unless-format=\"$0\"}",
+      "$1",
+      ":::::::"
+    ]
   }
 }
