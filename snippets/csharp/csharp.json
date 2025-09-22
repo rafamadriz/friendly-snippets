@@ -520,5 +520,27 @@
       "}"
     ],
     "description": "Create new class"
+  },
+  "MSTest Test Class": {
+    "prefix": "tc",
+    "body": [
+      "[TestClass]",
+      "public sealed class ${1:ClassName}Test",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "create mstest test class"
+  },
+  "MSTest Test Method": {
+    "prefix": "tm",
+    "body": [
+      "[TestMethod]",
+      "public void ${1:TestName}()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "create mstest test method"
   }
 }
