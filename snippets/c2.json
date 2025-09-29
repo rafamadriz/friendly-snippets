@@ -1,0 +1,144 @@
+{
+  "main": {
+    "prefix": "main",
+    "body": [
+        "public fn i32 main(i32 argc, const char** argv) {",
+        "   ${1:/* code */}",
+        "   return 0;",
+        "}"
+    ],
+    "description": "main(..)"
+  },
+  "main2": {
+    "prefix": "mainv",
+    "body": [
+        "public fn i32 main() {",
+        "   ${1:/* code */}",
+        "   return 0;",
+        "}"
+    ],
+    "description": "main()"
+  },
+  "module": {
+    "prefix": "module",
+    "body": [
+        "module ${1:/* module name */};"
+    ],
+    "description": "module name"
+  },
+  "import": {
+    "prefix": "import",
+    "body": [
+        "import ${1:stdio}${2: local};"
+    ],
+    "description": "import libname"
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+        "if(${1:/* condition */}) {",
+        "   ${0:/* code */}",
+        "}"
+    ],
+    "description": "if(..) {..}"
+  },
+  "else": {
+    "prefix": "else",
+    "body": [
+        "else {",
+        "   ${0:/* code */}",
+        "}"
+    ],
+    "description": "else {..}"
+  },
+  "if_else": {
+    "prefix": "ife",
+    "body": [
+        "if(${1:/* condition */}) {",
+        "   ${2:/* code */}",
+        "} else {",
+        "   ${0:/* code */}",
+        "}"
+    ],
+    "description": "if/else"
+  },
+  "do_while": {
+    "prefix": "do",
+    "body": [
+        "do {",
+        "   ${2:/* code */}",
+        "} while(${1:/* condition */});"
+    ],
+    "description": "do {..} while(..)"
+  },
+  "while": {
+    "prefix": "while",
+    "body": [
+        "while(${1:/* condition */}) {",
+        "   ${0:/* code */}",
+        "}"
+    ],
+    "description": "while(..) {..}"
+  },
+  "for": {
+    "prefix": "for",
+    "body": [
+        "for(${1:u32 i=0}; ${2:i<n}; ${3:++i}) {",
+        "   ${0:/* code */}",
+        "}"
+    ],
+    "description": "for(..) {..}"
+  },
+  "fn": {
+    "prefix": "fn",
+    "body": [
+        "fn ${1:void} ${2:name}(${3}) {",
+        "   ${0:/* code */}",
+        "}"
+    ],
+    "description": "fn {type} {name}(..) {..}"
+  },
+  "fn_attribs": {
+    "prefix": "fna",
+    "body": [
+        "fn ${1:void} ${2:name}(${3}) @(${4:noused}) {",
+        "   ${0:/* code */}",
+        "}"
+    ],
+    "description": "fn {type} {name}(..) @(..) {..}"
+  },
+  "fn_cname": {
+    "prefix": "fnc",
+    "body": [
+        "fn ${1:void} ${2:name}(${3}) @(${4:cname=\"${5:c_func}\"});"
+    ],
+    "description": "fn {type} {name}(..) @(cname=\"{c_func}\");"
+  },
+  "enum": {
+    "prefix": "enum",
+    "body": [
+        "type ${1:/* name */} enum ${2:u32} {",
+        "   ${0:/* fields */}",
+        "}"
+    ],
+    "description": "type {name} enum {type} {..}"
+  },
+  "struct": {
+    "prefix": "struct",
+    "body": [
+        "type ${1:/* name */} struct {",
+        "   ${0:/* fields */}",
+        "}"
+    ],
+    "description": "type {name} struct {..}"
+  },
+  "struct_cname": {
+    "prefix": "structc",
+    "body": [
+        "type ${1:/* name */} struct @(${2:crame=\"${3:c_func}\"}${4:, opaque}) {",
+        "   ${0:/* fields */}",
+        "}"
+    ],
+    "description": "type {name} struct @(cname=\"{c_func} {opaque}\") {..}"
+  }
+}
