@@ -69,12 +69,9 @@
             "\tcase ${2:low - high}:",
                 "\t\t${3:/* code */}",
                 "\t\tbreak;",
-            "\t${4:default:",
-                "\t\t${5:/* code */}",
-                "\t\tbreak;}",
         "}"
     ],
-    "description": "switch(..) {case.. default:..}"
+    "description": "switch(..) {case..}"
   },
   "case": {
     "prefix": "case",
