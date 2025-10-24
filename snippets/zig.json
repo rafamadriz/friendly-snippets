@@ -14,9 +14,11 @@
         "body": [
             "const exe = b.addExecutable(.{",
             "    .name = \"${1}\",",
-            "    .root_source_file = b.path(\"${2:path}\"),",
-            "    .target = target,",
-            "    .optimize = optimize,",
+            "    .root_module = b.createModule(.{",
+            "        .root_source_file = b.path(\"${2:path}\"),",
+            "        .target = target,",
+            "        .optimize = optimize,",
+            "    }),",
             "});",
             "b.installArtifact(exe);"
         ],
