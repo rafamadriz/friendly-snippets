@@ -70,5 +70,10 @@
         "prefix": ["lt"],
         "body": ["<%= link_to $1, $2 %>"],
         "description": "link_to helper"
+    },
+    "pry": {
+        "prefix": ["pry"],
+        "body": ["<% require 'pry'; binding.pry %>"],
+        "description": "Insert pry debugger"
     }
 }
