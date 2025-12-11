@@ -135,11 +135,6 @@
         "description": "Theme tag: section",
         "body": ["{% section '${1:snippet}' %}"]
     },
-    "Tag raw": {
-        "prefix": "raw",
-        "description": "Theme tag: raw",
-        "body": ["{% raw %}$1{% endraw %}"]
-    },
     "Tag layout": {
         "prefix": "layout",
         "description": "Theme tag: layout",
@@ -195,10 +190,65 @@
         "description": "HTML tag: style",
         "body": ["{% style %}", "\t$1", "{% endstyle %}"]
     },
+    "Tag comment": {
+        "prefix": "comment",
+        "description": "Syntax tag: comment",
+        "body": ["{% comment %}", "\t$1", "{% endcomment %}"]
+    },
+    "Tag inline comment": {
+        "prefix": "inline-comment",
+        "description": "Syntax tag: inline comment",
+        "body": ["{% # $1 %}"]
+    },
+    "Tag doc": {
+        "prefix": "doc",
+        "description": "Syntax tag: doc",
+        "body": ["{% doc %}", "\t$1", "{% enddoc %}"]
+    },
+    "Tag echo": {
+        "prefix": "echo",
+        "description": "Syntax tag: echo",
+        "body": ["{% echo $1 %}"]
+    },
+    "Tag liquid": {
+        "prefix": "liquid",
+        "description": "Syntax tag: liquid",
+        "body": ["{% liquid", "\t$1", "%}"]
+    },
+    "Tag raw": {
+        "prefix": "raw",
+        "description": "Syntax tag: raw",
+        "body": ["{% raw %}", "\t$1", "{% endraw %}"]
+    },
     "Tag comment, whitespaced": {
         "prefix": "comment-",
-        "description": "Comment tag: comment, whitespaced",
-        "body": ["{%- comment -%}$1{%- endcomment -%}"]
+        "description": "Syntax tag: comment, whitespaced",
+        "body": ["{%- comment -%}", "$1", "{%- endcomment -%}"]
+    },
+    "Tag inline comment, whitespaced": {
+        "prefix": "inline-comment",
+        "description": "Syntax tag: inline comment, whitespaced",
+        "body": ["{%- # $1 -%}"]
+    },
+    "Tag doc, whitespaced": {
+        "prefix": "doc-",
+        "description": "Syntax tag: doc, whitespaced",
+        "body": ["{%- doc -%}", "\t$1", "{%- enddoc -%}"]
+    },
+    "Tag echo, whitespaced": {
+        "prefix": "echo-",
+        "description": "Syntax tag: echo, whitespaced",
+        "body": ["{%- echo $1 -%}"]
+    },
+    "Tag liquid, whitespaced": {
+        "prefix": "liquid-",
+        "description": "Syntax tag: liquid, whitespaced",
+        "body": ["{%- liquid", "\t$1", "-%}"]
+    },
+    "Tag raw, whitespaced": {
+        "prefix": "raw-",
+        "description": "Syntax tag: raw, whitespaced",
+        "body": ["{%- raw -%}", "\t$1", "{%- endraw -%}"]
     },
     "Tag if, whitespaced": {
         "prefix": "if-",
