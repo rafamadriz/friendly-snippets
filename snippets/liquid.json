@@ -120,16 +120,6 @@
         "description": "Variable tag: capture",
         "body": ["{% capture ${1:variable} %}$2{% endcapture %}"]
     },
-    "Tag include": {
-        "prefix": "include",
-        "description": "Theme tag: include",
-        "body": ["{% include '${1:snippet}' %}"]
-    },
-    "Tag include with parameters": {
-        "prefix": "includewith",
-        "description": "Theme tag: include with parameters",
-        "body": ["{% include '${1:snippet}', ${2:variable}: ${3:value} %}"]
-    },
     "Tag render": {
         "prefix": "render",
         "description": "Theme tag: render",
@@ -180,11 +170,6 @@
         "prefix": "stylesheet",
         "description": "Stylesheet tag: stylesheet",
         "body": ["{% stylesheet %}", "\t$1", "{% endstylesheet %}"]
-    },
-    "Tag stylesheet for scss": {
-        "prefix": "stylesheet_scss",
-        "description": "Stylesheet tag: stylesheet for scss",
-        "body": ["{% stylesheet '${1:scss}' %}", "\t$2", "{% endstylesheet %}"]
     },
     "Tag javascript": {
         "prefix": "javascript",
