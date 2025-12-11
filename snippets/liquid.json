@@ -110,15 +110,25 @@
         "description": "Variable tag: increment",
         "body": ["{% increment ${1:variable} %}"]
     },
+    "Tag increment, whitespaced": {
+        "prefix": "increment-",
+        "description": "Variable tag: increment, whitespaced",
+        "body": ["{%- increment ${1:variable} -%}"]
+    },
     "Tag decrement": {
         "prefix": "decrement",
         "description": "Variable tag: decrement",
         "body": ["{% decrement ${1:variable} %}"]
     },
+    "Tag decrement, whitespaced": {
+        "prefix": "decrement-",
+        "description": "Variable tag: decrement, whitespaced",
+        "body": ["{%- decrement ${1:variable} -%}"]
+    },
     "Tag capture": {
         "prefix": "capture",
         "description": "Variable tag: capture",
-        "body": ["{% capture ${1:variable} %}$2{% endcapture %}"]
+        "body": ["{% capture ${1:variable} %}", "\t$2", "{% endcapture %}"]
     },
     "Tag render": {
         "prefix": "render",
@@ -419,7 +429,7 @@
     "Tag capture, whitespaced": {
         "prefix": "capture-",
         "description": "Variable tag: capture, whitespaced",
-        "body": ["{%- capture ${1:variable} -%}$2{%- endcapture -%}"]
+        "body": ["{%- capture ${1:variable} -%}", "\t$2", "{%- endcapture -%}"]
     },
     "Tag paginate, whitespaced": {
         "prefix": "paginate-",
