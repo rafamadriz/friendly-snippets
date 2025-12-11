@@ -541,6 +541,16 @@
         "description": "Array filter: uniq",
         "body": "| uniq"
     },
+    "Filter item_count_for_variant": {
+        "prefix": "item_count_for_variant",
+        "description": "Cart filter: item_count_for_variant",
+        "body": "| item_count_for_variant: ${1:variant_id}"
+    },
+    "Filter line_items_for": {
+        "prefix": "line_items_for",
+        "description": "Cart filter: line_items_for",
+        "body": "| line_items_for: ${1:product}"
+    },
     "Filter img tag": {
         "prefix": "img_tag",
         "description": "HTML filter: img tag",
