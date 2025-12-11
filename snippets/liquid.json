@@ -4,15 +4,30 @@
         "description": "Control flow tag: if",
         "body": ["{% if ${1:condition} %}", "\t$2", "{% endif %}"]
     },
+    "Tag if, whitespaced": {
+        "prefix": "if-",
+        "description": "Control flow tag: if, whitespaced",
+        "body": ["{%- if ${1:condition} -%}", "\t$2", "{%- endif -%}"]
+    },
     "Tag else": {
         "prefix": "else",
         "description": "Control flow tag: else",
         "body": ["{% else %}", "\t"]
     },
+    "Tag else, whitespaced": {
+        "prefix": "else-",
+        "description": "Control flow tag: else, whitespaced",
+        "body": ["{%- else -%}", "\t"]
+    },
     "Tag elsif": {
         "prefix": "elsif",
         "description": "Control flow tag: elsif",
         "body": ["{% elsif ${1:condition} %}", "\t"]
+    },
+    "Tag elsif, whitespaced": {
+        "prefix": "elsif-",
+        "description": "Control flow tag: elsif, whitespaced",
+        "body": ["{%- elsif ${1:condition} -%}", "\t"]
     },
     "Tag if else": {
         "prefix": "ifelse",
@@ -25,10 +40,26 @@
             "{% endif %}"
         ]
     },
+    "Tag if else, whitespaced": {
+        "prefix": "ifelse-",
+        "description": "Control flow tag: if else, whitespaced",
+        "body": [
+            "{%- if ${1:condition} -%}",
+            "\t$2",
+            "{%- else -%}",
+            "\t$3",
+            "{%- endif -%}"
+        ]
+    },
     "Tag unless": {
         "prefix": "unless",
         "description": "Control flow tag: unless",
         "body": ["{% unless ${1:condition} %}", "\t$2", "{% endunless %}"]
+    },
+    "Tag unless, whitespaced": {
+        "prefix": "unless-",
+        "description": "Control flow tag: unless, whitespaced",
+        "body": ["{%- unless ${1:condition} -%}", "\t$2", "{%- endunless -%}"]
     },
     "Tag case": {
         "prefix": "case",
@@ -42,20 +73,47 @@
             "{% endcase %}"
         ]
     },
+    "Tag case, whitespaced": {
+        "prefix": "case-",
+        "description": "Control flow tag: case, whitespaced",
+        "body": [
+            "{%- case ${1:variable} -%}",
+            "\t{%- when ${2:condition} -%}",
+            "\t\t$3",
+            "\t{%- else -%}",
+            "\t\t$4",
+            "{%- endcase -%}"
+        ]
+    },
     "Tag when": {
         "prefix": "when",
         "description": "Control flow tag: when",
         "body": ["{% when ${1:condition} %}", "$0"]
+    },
+    "Tag when, whitespaced": {
+        "prefix": "when-",
+        "description": "Control flow tag: when, whitespaced",
+        "body": ["{%- when ${1:condition} -%}", "$0"]
     },
     "Tag cycle": {
         "prefix": "cycle",
         "description": "Iteration tag: cycle",
         "body": ["{% cycle '${1:odd}', '${2:even}' %}"]
     },
+    "Tag cycle, whitespaced": {
+        "prefix": "cycle-",
+        "description": "Iteration tag: cycle, whitespaced",
+        "body": ["{%- cycle '${1:odd}', '${2:even}' -%}"]
+    },
     "Tag cycle group": {
         "prefix": "cyclegroup",
         "description": "Iteration tag: cycle group",
         "body": ["{% cycle '${1:group name}': '${2:odd}', '${3:even}' %}"]
+    },
+    "Tag cycle group, whitespaced": {
+        "prefix": "cyclegroup-",
+        "description": "Iteration tag: cycle group, whitespaced",
+        "body": ["{%- cycle '${1:group name}': '${2:odd}', '${3:even}' -%}"]
     },
     "Tag for": {
         "prefix": "for",
@@ -64,6 +122,15 @@
             "{% for ${1:item} in ${2:collection} %}",
             "\t$3",
             "{% endfor %}"
+        ]
+    },
+    "Tag for, whitespaced": {
+        "prefix": "for-",
+        "description": "Iteration tag: for, whitespaced",
+        "body": [
+            "{%- for ${1:item} in ${2:collection} -%}",
+            "\t$3",
+            "{%- endfor -%}"
         ]
     },
     "Tag Option limit": {
@@ -86,10 +153,20 @@
         "description": "Iteration tag: break",
         "body": ["{% break %}"]
     },
+    "Tag break, whitespaced": {
+        "prefix": "break-",
+        "description": "Iteration tag: break, whitespaced",
+        "body": ["{%- break -%}"]
+    },
     "Tag continue": {
         "prefix": "continue",
         "description": "Iteration tag: continue",
         "body": ["{% continue %}"]
+    },
+    "Tag continue, whitespaced": {
+        "prefix": "continue-",
+        "description": "Iteration tag: continue, whitespaced",
+        "body": ["{%- continue -%}"]
     },
     "Tag tablerow": {
         "prefix": "tablerow",
@@ -100,10 +177,24 @@
             "{% endtablerow %}"
         ]
     },
+    "Tag tablerow, whitespaced": {
+        "prefix": "tablerow-",
+        "description": "Iteration tag: tablerow, whitespaced",
+        "body": [
+            "{%- tablerow ${1:item} in ${2:collection} cols: ${3:2} -%}",
+            "\t$4",
+            "{%- endtablerow -%}"
+        ]
+    },
     "Tag assign": {
         "prefix": "assign",
         "description": "Variable tag: assign",
         "body": ["{% assign ${1:variable} = ${2:value} %}"]
+    },
+    "Tag assign, whitespaced": {
+        "prefix": "assign-",
+        "description": "Variable tag: assign, whitespaced",
+        "body": ["{%- assign ${1:variable} = ${2:value} -%}"]
     },
     "Tag increment": {
         "prefix": "increment",
@@ -129,6 +220,11 @@
         "prefix": "capture",
         "description": "Variable tag: capture",
         "body": ["{% capture ${1:variable} %}", "\t$2", "{% endcapture %}"]
+    },
+    "Tag capture, whitespaced": {
+        "prefix": "capture-",
+        "description": "Variable tag: capture, whitespaced",
+        "body": ["{%- capture ${1:variable} -%}", "\t$2", "{%- endcapture -%}"]
     },
     "Tag render": {
         "prefix": "render",
@@ -231,6 +327,17 @@
             "{% endpaginate %}"
         ]
     },
+    "Tag paginate, whitespaced": {
+        "prefix": "paginate-",
+        "description": "Theme tag: paginate, whitespaced",
+        "body": [
+            "{%- paginate ${1:collection.products} by ${2:12} -%}",
+            "\t{%- for ${3:product} in ${1:collection.products} -%}",
+            "\t\t$4",
+            "\t{%- endfor -%}",
+            "{%- endpaginate -%}"
+        ]
+    },
     "Tag Option window_size": {
         "prefix": "window_size",
         "description": "For paginate option",
@@ -238,7 +345,7 @@
     },
     "Tag schema": {
         "prefix": "schema",
-        "description": "Schema tag: schema",
+        "description": "Theme tag: schema",
         "body": [
             "{% schema %}",
             "\t{",
@@ -288,178 +395,6 @@
             "{% endform %}"
         ]
     },
-    "Tag style": {
-        "prefix": "style",
-        "description": "HTML tag: style",
-        "body": ["{% style %}", "\t$1", "{% endstyle %}"]
-    },
-    "Tag comment": {
-        "prefix": "comment",
-        "description": "Syntax tag: comment",
-        "body": ["{% comment %}", "\t$1", "{% endcomment %}"]
-    },
-    "Tag inline comment": {
-        "prefix": "inline-comment",
-        "description": "Syntax tag: inline comment",
-        "body": ["{% # $1 %}"]
-    },
-    "Tag doc": {
-        "prefix": "doc",
-        "description": "Syntax tag: doc",
-        "body": ["{% doc %}", "\t$1", "{% enddoc %}"]
-    },
-    "Tag echo": {
-        "prefix": "echo",
-        "description": "Syntax tag: echo",
-        "body": ["{% echo $1 %}"]
-    },
-    "Tag liquid": {
-        "prefix": "liquid",
-        "description": "Syntax tag: liquid",
-        "body": ["{% liquid", "\t$1", "%}"]
-    },
-    "Tag raw": {
-        "prefix": "raw",
-        "description": "Syntax tag: raw",
-        "body": ["{% raw %}", "\t$1", "{% endraw %}"]
-    },
-    "Tag comment, whitespaced": {
-        "prefix": "comment-",
-        "description": "Syntax tag: comment, whitespaced",
-        "body": ["{%- comment -%}", "$1", "{%- endcomment -%}"]
-    },
-    "Tag inline comment, whitespaced": {
-        "prefix": "inline-comment",
-        "description": "Syntax tag: inline comment, whitespaced",
-        "body": ["{%- # $1 -%}"]
-    },
-    "Tag doc, whitespaced": {
-        "prefix": "doc-",
-        "description": "Syntax tag: doc, whitespaced",
-        "body": ["{%- doc -%}", "\t$1", "{%- enddoc -%}"]
-    },
-    "Tag echo, whitespaced": {
-        "prefix": "echo-",
-        "description": "Syntax tag: echo, whitespaced",
-        "body": ["{%- echo $1 -%}"]
-    },
-    "Tag liquid, whitespaced": {
-        "prefix": "liquid-",
-        "description": "Syntax tag: liquid, whitespaced",
-        "body": ["{%- liquid", "\t$1", "-%}"]
-    },
-    "Tag raw, whitespaced": {
-        "prefix": "raw-",
-        "description": "Syntax tag: raw, whitespaced",
-        "body": ["{%- raw -%}", "\t$1", "{%- endraw -%}"]
-    },
-    "Tag if, whitespaced": {
-        "prefix": "if-",
-        "description": "Control flow tag: if, whitespaced",
-        "body": ["{%- if ${1:condition} -%}", "\t$2", "{%- endif -%}"]
-    },
-    "Tag else, whitespaced": {
-        "prefix": "else-",
-        "description": "Control flow tag: else, whitespaced",
-        "body": ["{%- else -%}", "\t"]
-    },
-    "Tag elsif, whitespaced": {
-        "prefix": "elsif-",
-        "description": "Control flow tag: elsif, whitespaced",
-        "body": ["{%- elsif ${1:condition} -%}", "\t"]
-    },
-    "Tag if else, whitespaced": {
-        "prefix": "ifelse-",
-        "description": "Control flow tag: if else, whitespaced",
-        "body": [
-            "{%- if ${1:condition} -%}",
-            "\t$2",
-            "{%- else -%}",
-            "\t$3",
-            "{%- endif -%}"
-        ]
-    },
-    "Tag unless, whitespaced": {
-        "prefix": "unless-",
-        "description": "Control flow tag: unless, whitespaced",
-        "body": ["{%- unless ${1:condition} -%}", "\t$2", "{%- endunless -%}"]
-    },
-    "Tag case, whitespaced": {
-        "prefix": "case-",
-        "description": "Control flow tag: case, whitespaced",
-        "body": [
-            "{%- case ${1:variable} -%}",
-            "\t{%- when ${2:condition} -%}",
-            "\t\t$3",
-            "\t{%- else -%}",
-            "\t\t$4",
-            "{%- endcase -%}"
-        ]
-    },
-    "Tag when, whitespaced": {
-        "prefix": "when-",
-        "description": "Control flow tag: when, whitespaced",
-        "body": ["{%- when ${1:condition} -%}", "$0"]
-    },
-    "Tag cycle, whitespaced": {
-        "prefix": "cycle-",
-        "description": "Iteration tag: cycle, whitespaced",
-        "body": ["{%- cycle '${1:odd}', '${2:even}' -%}"]
-    },
-    "Tag cycle group, whitespaced": {
-        "prefix": "cyclegroup-",
-        "description": "Iteration tag: cycle group, whitespaced",
-        "body": ["{%- cycle '${1:group name}': '${2:odd}', '${3:even}' -%}"]
-    },
-    "Tag for, whitespaced": {
-        "prefix": "for-",
-        "description": "Iteration tag: for, whitespaced",
-        "body": [
-            "{%- for ${1:item} in ${2:collection} -%}",
-            "\t$3",
-            "{%- endfor -%}"
-        ]
-    },
-    "Tag break, whitespaced": {
-        "prefix": "break-",
-        "description": "Iteration tag: break, whitespaced",
-        "body": ["{%- break -%}"]
-    },
-    "Tag continue, whitespaced": {
-        "prefix": "continue-",
-        "description": "Iteration tag: continue, whitespaced",
-        "body": ["{%- continue -%}"]
-    },
-    "Tag tablerow, whitespaced": {
-        "prefix": "tablerow-",
-        "description": "Iteration tag: tablerow, whitespaced",
-        "body": [
-            "{%- tablerow ${1:item} in ${2:collection} cols: ${3:2} -%}",
-            "\t$4",
-            "{%- endtablerow -%}"
-        ]
-    },
-    "Tag assign, whitespaced": {
-        "prefix": "assign-",
-        "description": "Variable tag: assign, whitespaced",
-        "body": ["{%- assign ${1:variable} = ${2:value} -%}"]
-    },
-    "Tag capture, whitespaced": {
-        "prefix": "capture-",
-        "description": "Variable tag: capture, whitespaced",
-        "body": ["{%- capture ${1:variable} -%}", "\t$2", "{%- endcapture -%}"]
-    },
-    "Tag paginate, whitespaced": {
-        "prefix": "paginate-",
-        "description": "Theme tag: paginate, whitespaced",
-        "body": [
-            "{%- paginate ${1:collection.products} by ${2:12} -%}",
-            "\t{%- for ${3:product} in ${1:collection.products} -%}",
-            "\t\t$4",
-            "\t{%- endfor -%}",
-            "{%- endpaginate -%}"
-        ]
-    },
     "Tag form, whitespaced": {
         "prefix": "form-",
         "description": "HTML tag: form, whitespaced",
@@ -469,10 +404,75 @@
             "{%- endform -%}"
         ]
     },
+    "Tag style": {
+        "prefix": "style",
+        "description": "HTML tag: style",
+        "body": ["{% style %}", "\t$1", "{% endstyle %}"]
+    },
     "Tag style, whitespaced": {
         "prefix": "style-",
         "description": "HTML tag: style, whitespaced",
         "body": ["{%- style -%}", "\t$1", "{%- endstyle -%}"]
+    },
+    "Tag comment": {
+        "prefix": "comment",
+        "description": "Syntax tag: comment",
+        "body": ["{% comment %}", "\t$1", "{% endcomment %}"]
+    },
+    "Tag comment, whitespaced": {
+        "prefix": "comment-",
+        "description": "Syntax tag: comment, whitespaced",
+        "body": ["{%- comment -%}", "$1", "{%- endcomment -%}"]
+    },
+    "Tag inline comment": {
+        "prefix": "inline-comment",
+        "description": "Syntax tag: inline comment",
+        "body": ["{% # $1 %}"]
+    },
+    "Tag inline comment, whitespaced": {
+        "prefix": "inline-comment",
+        "description": "Syntax tag: inline comment, whitespaced",
+        "body": ["{%- # $1 -%}"]
+    },
+    "Tag doc": {
+        "prefix": "doc",
+        "description": "Syntax tag: doc",
+        "body": ["{% doc %}", "\t$1", "{% enddoc %}"]
+    },
+    "Tag doc, whitespaced": {
+        "prefix": "doc-",
+        "description": "Syntax tag: doc, whitespaced",
+        "body": ["{%- doc -%}", "\t$1", "{%- enddoc -%}"]
+    },
+    "Tag echo": {
+        "prefix": "echo",
+        "description": "Syntax tag: echo",
+        "body": ["{% echo $1 %}"]
+    },
+    "Tag echo, whitespaced": {
+        "prefix": "echo-",
+        "description": "Syntax tag: echo, whitespaced",
+        "body": ["{%- echo $1 -%}"]
+    },
+    "Tag liquid": {
+        "prefix": "liquid",
+        "description": "Syntax tag: liquid",
+        "body": ["{% liquid", "\t$1", "%}"]
+    },
+    "Tag liquid, whitespaced": {
+        "prefix": "liquid-",
+        "description": "Syntax tag: liquid, whitespaced",
+        "body": ["{%- liquid", "\t$1", "-%}"]
+    },
+    "Tag raw": {
+        "prefix": "raw",
+        "description": "Syntax tag: raw",
+        "body": ["{% raw %}", "\t$1", "{% endraw %}"]
+    },
+    "Tag raw, whitespaced": {
+        "prefix": "raw-",
+        "description": "Syntax tag: raw, whitespaced",
+        "body": ["{%- raw -%}", "\t$1", "{%- endraw -%}"]
     },
     "Filter join": {
         "prefix": "join",
@@ -589,6 +589,36 @@
         "description": "HTML filter: stylesheet tag",
         "body": "| stylesheet_tag"
     },
+    "Filter time_tag": {
+        "prefix": "time_tag",
+        "description": "HTML filter: time_tag",
+        "body": "| time_tag: '${1:datetime}'"
+    },
+    "Filter inline_asset_content": {
+        "prefix": "inline_asset_content",
+        "description": "HTML filter: inline_asset_content",
+        "body": "| inline_asset_content"
+    },
+    "Filter highlight": {
+        "prefix": "highlight",
+        "description": "HTML filter: highlight",
+        "body": "| highlight: '${1:terms}'"
+    },
+    "Filter link_to": {
+        "prefix": "link_to",
+        "description": "HTML filter: link_to",
+        "body": "| link_to: '${1:url}'"
+    },
+    "Filter placeholder_svg_tag": {
+        "prefix": "placeholder_svg_tag",
+        "description": "HTML filter: placeholder_svg_tag",
+        "body": "| placeholder_svg_tag: '${1:placeholder}'"
+    },
+    "Filter preload_tag": {
+        "prefix": "preload_tag",
+        "description": "HTML filter: preload_tag",
+        "body": "| preload_tag: as: '${1:style}'"
+    },
     "Filter abs": {
         "prefix": "abs",
         "description": "Math filter: abs",
@@ -633,6 +663,16 @@
         "prefix": "modulo",
         "description": "Math filter: modulo",
         "body": "| modulo: ${1:2}"
+    },
+    "Filter at_least": {
+        "prefix": "at_least",
+        "description": "Math filter: at_least",
+        "body": "| at_least: ${1:min}"
+    },
+    "Filter at_most": {
+        "prefix": "at_most",
+        "description": "Math filter: at_most",
+        "body": "| at_most: ${1:max}"
     },
     "Filter money": {
         "prefix": "money",
@@ -789,6 +829,71 @@
         "description": "String filter: url param escape",
         "body": "| url_param_escape"
     },
+    "Filter hmac_sha1": {
+        "prefix": "hmac_sha1",
+        "description": "String filter: hmac_sha1",
+        "body": "| hmac_sha1: '${1:secret}'"
+    },
+    "Filter hmac_sha256": {
+        "prefix": "hmac_sha256",
+        "description": "String filter: hmac_sha256",
+        "body": "| hmac_sha256: '${1:secret}'"
+    },
+    "Filter sha1": {
+        "prefix": "sha1",
+        "description": "String filter: sha1",
+        "body": "| sha1"
+    },
+    "Filter sha256": {
+        "prefix": "sha256",
+        "description": "String filter: sha256",
+        "body": "| sha256"
+    },
+    "Filter base64_decode": {
+        "prefix": "base64_decode",
+        "description": "String filter: base64_decode",
+        "body": "| base64_decode"
+    },
+    "Filter base64_encode": {
+        "prefix": "base64_encode",
+        "description": "String filter: base64_encode",
+        "body": "| base64_encode"
+    },
+    "Filter base64_url_safe_decode": {
+        "prefix": "base64_url_safe_decode",
+        "description": "String filter: base64_url_safe_decode",
+        "body": "| base64_url_safe_decode"
+    },
+    "Filter base64_url_safe_encode": {
+        "prefix": "base64_url_safe_encode",
+        "description": "String filter: base64_url_safe_encode",
+        "body": "| base64_url_safe_encode"
+    },
+    "Filter escape_once": {
+        "prefix": "escape_once",
+        "description": "String filter: escape_once",
+        "body": "| escape_once"
+    },
+    "Filter remove_last": {
+        "prefix": "remove_last",
+        "description": "String filter: remove_last",
+        "body": "| remove_last: '${1:string}'"
+    },
+    "Filter replace_last": {
+        "prefix": "replace_last",
+        "description": "String filter: replace_last",
+        "body": "| replace_last: '${1:target}', '${2:replacement}'"
+    },
+    "Filter url_decode": {
+        "prefix": "url_decode",
+        "description": "String filter: url_decode",
+        "body": "| url_decode"
+    },
+    "Filter camelize": {
+        "prefix": "camelize",
+        "description": "String filter: camelize",
+        "body": "| camelize"
+    },
     "Filter asset url": {
         "prefix": "asset_url",
         "description": "URL filter: asset url",
@@ -853,6 +958,21 @@
         "prefix": "highlight_active_tag",
         "description": "Collection filter: highlight_active_tag",
         "body": "| highlight_active_tag"
+    },
+    "Filter link_to_add_tag": {
+        "prefix": "link_to_add_tag",
+        "description": "Tag filter: link_to_add_tag",
+        "body": "| link_to_add_tag: '${1:tag}'"
+    },
+    "Filter link_to_remove_tag": {
+        "prefix": "link_to_remove_tag",
+        "description": "Tag filter: link_to_remove_tag",
+        "body": "| link_to_remove_tag: '${1:tag}'"
+    },
+    "Filter link_to_tag": {
+        "prefix": "link_to_tag",
+        "description": "Tag filter: link_to_tag",
+        "body": "| link_to_tag: '${1:tag}'"
     },
     "Filter brightness_difference": {
         "prefix": "brightness_difference",
@@ -1009,41 +1129,6 @@
         "description": "Format filter: weight_with_unit",
         "body": "| weight_with_unit"
     },
-    "Filter class_list": {
-        "prefix": "class_list",
-        "description": "HTML filter: class_list",
-        "body": "| class_list"
-    },
-    "Filter time_tag": {
-        "prefix": "time_tag",
-        "description": "HTML filter: time_tag",
-        "body": "| time_tag: '${1:datetime}'"
-    },
-    "Filter inline_asset_content": {
-        "prefix": "inline_asset_content",
-        "description": "HTML filter: inline_asset_content",
-        "body": "| inline_asset_content"
-    },
-    "Filter highlight": {
-        "prefix": "highlight",
-        "description": "HTML filter: highlight",
-        "body": "| highlight: '${1:terms}'"
-    },
-    "Filter link_to": {
-        "prefix": "link_to",
-        "description": "HTML filter: link_to",
-        "body": "| link_to: '${1:url}'"
-    },
-    "Filter placeholder_svg_tag": {
-        "prefix": "placeholder_svg_tag",
-        "description": "HTML filter: placeholder_svg_tag",
-        "body": "| placeholder_svg_tag: '${1:placeholder}'"
-    },
-    "Filter preload_tag": {
-        "prefix": "preload_tag",
-        "description": "HTML filter: preload_tag",
-        "body": "| preload_tag: as: '${1:style}'"
-    },
     "Filter currency_selector": {
         "prefix": "currency_selector",
         "description": "Localization filter: currency_selector",
@@ -1058,16 +1143,6 @@
         "prefix": "format_address",
         "description": "Localization filter: format_address",
         "body": "| format_address"
-    },
-    "Filter at_least": {
-        "prefix": "at_least",
-        "description": "Math filter: at_least",
-        "body": "| at_least: ${1:min}"
-    },
-    "Filter at_most": {
-        "prefix": "at_most",
-        "description": "Math filter: at_most",
-        "body": "| at_most: ${1:max}"
     },
     "Filter external_video_tag": {
         "prefix": "external_video_tag",
@@ -1133,86 +1208,6 @@
         "prefix": "payment_type_svg_tag",
         "description": "Payment filter: payment_type_svg_tag",
         "body": "| payment_type_svg_tag"
-    },
-    "Filter hmac_sha1": {
-        "prefix": "hmac_sha1",
-        "description": "String filter: hmac_sha1",
-        "body": "| hmac_sha1: '${1:secret}'"
-    },
-    "Filter hmac_sha256": {
-        "prefix": "hmac_sha256",
-        "description": "String filter: hmac_sha256",
-        "body": "| hmac_sha256: '${1:secret}'"
-    },
-    "Filter sha1": {
-        "prefix": "sha1",
-        "description": "String filter: sha1",
-        "body": "| sha1"
-    },
-    "Filter sha256": {
-        "prefix": "sha256",
-        "description": "String filter: sha256",
-        "body": "| sha256"
-    },
-    "Filter base64_decode": {
-        "prefix": "base64_decode",
-        "description": "String filter: base64_decode",
-        "body": "| base64_decode"
-    },
-    "Filter base64_encode": {
-        "prefix": "base64_encode",
-        "description": "String filter: base64_encode",
-        "body": "| base64_encode"
-    },
-    "Filter base64_url_safe_decode": {
-        "prefix": "base64_url_safe_decode",
-        "description": "String filter: base64_url_safe_decode",
-        "body": "| base64_url_safe_decode"
-    },
-    "Filter base64_url_safe_encode": {
-        "prefix": "base64_url_safe_encode",
-        "description": "String filter: base64_url_safe_encode",
-        "body": "| base64_url_safe_encode"
-    },
-    "Filter escape_once": {
-        "prefix": "escape_once",
-        "description": "String filter: escape_once",
-        "body": "| escape_once"
-    },
-    "Filter remove_last": {
-        "prefix": "remove_last",
-        "description": "String filter: remove_last",
-        "body": "| remove_last: '${1:string}'"
-    },
-    "Filter replace_last": {
-        "prefix": "replace_last",
-        "description": "String filter: replace_last",
-        "body": "| replace_last: '${1:target}', '${2:replacement}'"
-    },
-    "Filter url_decode": {
-        "prefix": "url_decode",
-        "description": "String filter: url_decode",
-        "body": "| url_decode"
-    },
-    "Filter camelize": {
-        "prefix": "camelize",
-        "description": "String filter: camelize",
-        "body": "| camelize"
-    },
-    "Filter link_to_add_tag": {
-        "prefix": "link_to_add_tag",
-        "description": "Tag filter: link_to_add_tag",
-        "body": "| link_to_add_tag: '${1:tag}'"
-    },
-    "Filter link_to_remove_tag": {
-        "prefix": "link_to_remove_tag",
-        "description": "Tag filter: link_to_remove_tag",
-        "body": "| link_to_remove_tag: '${1:tag}'"
-    },
-    "Filter link_to_tag": {
-        "prefix": "link_to_tag",
-        "description": "Tag filter: link_to_tag",
-        "body": "| link_to_tag: '${1:tag}'"
     },
     "Shopify Schema blocks": {
         "prefix": "_blocks",
