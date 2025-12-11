@@ -476,10 +476,40 @@
         "description": "Array filter: concat",
         "body": "| concat: ${1:array}"
     },
+    "Filter compact": {
+        "prefix": "compact",
+        "description": "Array filter: compact",
+        "body": "| compact"
+    },
     "Filter map": {
         "prefix": "map",
         "description": "Array filter: map",
         "body": "| map: '${1:key}'"
+    },
+    "Filter find": {
+        "prefix": "find",
+        "description": "Array filter: find",
+        "body": "| find: '${1:key}', '${2:value}'"
+    },
+    "Filter find index": {
+        "prefix": "find_index",
+        "description": "Array filter: find_index",
+        "body": "| find_index: '${1:key}', '${2:value}'"
+    },
+    "Filter has": {
+        "prefix": "has",
+        "description": "Array filter: has",
+        "body": "| has: '${1:key}', '${2:value}'"
+    },
+    "Filter reject": {
+        "prefix": "reject",
+        "description": "Array filter: reject",
+        "body": "| reject: '${1:key}', '${2:value}'"
+    },
+    "Filter where": {
+        "prefix": "where",
+        "description": "Array filter: where",
+        "body": "| where: '${1:key}', '${2:value}'"
     },
     "Filter reverse": {
         "prefix": "reverse",
@@ -495,6 +525,16 @@
         "prefix": "sort",
         "description": "Array filter: sort",
         "body": "| sort: '${1:key}'"
+    },
+    "Filter sort_natural": {
+        "prefix": "sort_natural",
+        "description": "Array filter: sort_natural",
+        "body": "| sort_natural: '${1:key}'"
+    },
+    "Filter sum": {
+        "prefix": "sum",
+        "description": "Array filter: sum",
+        "body": "| sum: '${1:key}'"
     },
     "Filter uniq": {
         "prefix": "uniq",
