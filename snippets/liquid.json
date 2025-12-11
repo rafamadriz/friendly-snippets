@@ -176,6 +176,20 @@
         "description": "Javascript tag: javascript",
         "body": ["{% javascript %}", "\t$4", "{% endjavascript %}"]
     },
+    "Tag form": {
+        "prefix": "form",
+        "description": "HTML tag: form",
+        "body": [
+            "{% form '${1|activate_customer_password,cart,contact,create_customer,customer,customer_address,customer_address:new,customer_login,guest_login,localization,new_comment,product,recover_customer_password,reset_customer_password,storefront_password|}'$2 %}",
+            "\t$3",
+            "{% endform %}"
+        ]
+    },
+    "Tag style": {
+        "prefix": "style",
+        "description": "HTML tag: style",
+        "body": ["{% style %}", "\t$1", "{% endstyle %}"]
+    },
     "Tag comment, whitespaced": {
         "prefix": "comment-",
         "description": "Comment tag: comment, whitespaced",
@@ -271,6 +285,20 @@
         "prefix": "capture-",
         "description": "Variable tag: capture, whitespaced",
         "body": ["{%- capture ${1:variable} -%}$2{%- endcapture -%}"]
+    },
+    "Tag form, whitespaced": {
+        "prefix": "form-",
+        "description": "HTML tag: form, whitespaced",
+        "body": [
+            "{%- form '${1|activate_customer_password,cart,contact,create_customer,customer,customer_address,customer_address:new,customer_login,guest_login,localization,new_comment,product,recover_customer_password,reset_customer_password,storefront_password|}'$2 -%}",
+            "\t$3",
+            "{%- endform -%}"
+        ]
+    },
+    "Tag style, whitespaced": {
+        "prefix": "style-",
+        "description": "HTML tag: style, whitespaced",
+        "body": ["{%- style -%}", "\t$1", "{%- endstyle -%}"]
     },
     "Filter join": {
         "prefix": "join",
