@@ -791,6 +791,441 @@
         "description": "URL filter: img url",
         "body": "| img_url: '${1:medium}'"
     },
+    "Filter file url": {
+        "prefix": "file_url",
+        "description": "Hosted file filter: file url",
+        "body": "| file_url"
+    },
+    "Filter file img url": {
+        "prefix": "file_img_url",
+        "description": "Hosted file filter: file img url",
+        "body": "| file_img_url: '${1:medium}'"
+    },
+    "Filter global asset url": {
+        "prefix": "global_asset_url",
+        "description": "Hosted file filter: global asset url",
+        "body": "| global_asset_url"
+    },
+    "Filter shopify asset url": {
+        "prefix": "shopify_asset_url",
+        "description": "Hosted file filter: shopify asset url",
+        "body": "| shopify_asset_url"
+    },
+    "Filter link_to_type": {
+        "prefix": "link_to_type",
+        "description": "Collection filter: link_to_type",
+        "body": "| link_to_type"
+    },
+    "Filter link_to_vendor": {
+        "prefix": "link_to_vendor",
+        "description": "Collection filter: link_to_vendor",
+        "body": "| link_to_vendor"
+    },
+    "Filter sort_by": {
+        "prefix": "sort_by",
+        "description": "Collection filter: sort_by",
+        "body": "| sort_by: '${1:sort_key}'"
+    },
+    "Filter url_for_type": {
+        "prefix": "url_for_type",
+        "description": "Collection filter: url_for_type",
+        "body": "| url_for_type"
+    },
+    "Filter url_for_vendor": {
+        "prefix": "url_for_vendor",
+        "description": "Collection filter: url_for_vendor",
+        "body": "| url_for_vendor"
+    },
+    "Filter within": {
+        "prefix": "within",
+        "description": "Collection filter: within",
+        "body": "| within: ${1:collection}"
+    },
+    "Filter highlight_active_tag": {
+        "prefix": "highlight_active_tag",
+        "description": "Collection filter: highlight_active_tag",
+        "body": "| highlight_active_tag"
+    },
+    "Filter brightness_difference": {
+        "prefix": "brightness_difference",
+        "description": "Color filter: brightness_difference",
+        "body": "| brightness_difference: '${1:color}'"
+    },
+    "Filter color_brightness": {
+        "prefix": "color_brightness",
+        "description": "Color filter: color_brightness",
+        "body": "| color_brightness"
+    },
+    "Filter color_contrast": {
+        "prefix": "color_contrast",
+        "description": "Color filter: color_contrast",
+        "body": "| color_contrast: '${1:color}'"
+    },
+    "Filter color_darken": {
+        "prefix": "color_darken",
+        "description": "Color filter: color_darken",
+        "body": "| color_darken: ${1:amount}"
+    },
+    "Filter color_desaturate": {
+        "prefix": "color_desaturate",
+        "description": "Color filter: color_desaturate",
+        "body": "| color_desaturate: ${1:amount}"
+    },
+    "Filter color_difference": {
+        "prefix": "color_difference",
+        "description": "Color filter: color_difference",
+        "body": "| color_difference: '${1:color}'"
+    },
+    "Filter color_extract": {
+        "prefix": "color_extract",
+        "description": "Color filter: color_extract",
+        "body": "| color_extract: '${1:component}'"
+    },
+    "Filter color_lighten": {
+        "prefix": "color_lighten",
+        "description": "Color filter: color_lighten",
+        "body": "| color_lighten: ${1:amount}"
+    },
+    "Filter color_mix": {
+        "prefix": "color_mix",
+        "description": "Color filter: color_mix",
+        "body": "| color_mix: '${1:color}', ${2:amount}"
+    },
+    "Filter color_modify": {
+        "prefix": "color_modify",
+        "description": "Color filter: color_modify",
+        "body": "| color_modify: '${1:attribute}', ${2:amount}"
+    },
+    "Filter color_saturate": {
+        "prefix": "color_saturate",
+        "description": "Color filter: color_saturate",
+        "body": "| color_saturate: ${1:amount}"
+    },
+    "Filter color_to_hex": {
+        "prefix": "color_to_hex",
+        "description": "Color filter: color_to_hex",
+        "body": "| color_to_hex"
+    },
+    "Filter color_to_hsl": {
+        "prefix": "color_to_hsl",
+        "description": "Color filter: color_to_hsl",
+        "body": "| color_to_hsl"
+    },
+    "Filter color_to_oklch": {
+        "prefix": "color_to_oklch",
+        "description": "Color filter: color_to_oklch",
+        "body": "| color_to_oklch"
+    },
+    "Filter color_to_rgb": {
+        "prefix": "color_to_rgb",
+        "description": "Color filter: color_to_rgb",
+        "body": "| color_to_rgb"
+    },
+    "Filter hex_to_rgba": {
+        "prefix": "hex_to_rgba",
+        "description": "Color filter: hex_to_rgba",
+        "body": "| hex_to_rgba"
+    },
+    "Filter customer_login_link": {
+        "prefix": "customer_login_link",
+        "description": "Customer filter: customer_login_link",
+        "body": "| customer_login_link"
+    },
+    "Filter customer_logout_link": {
+        "prefix": "customer_logout_link",
+        "description": "Customer filter: customer_logout_link",
+        "body": "| customer_logout_link"
+    },
+    "Filter customer_register_link": {
+        "prefix": "customer_register_link",
+        "description": "Customer filter: customer_register_link",
+        "body": "| customer_register_link"
+    },
+    "Filter avatar": {
+        "prefix": "avatar",
+        "description": "Customer filter: avatar",
+        "body": "| avatar"
+    },
+    "Filter login_button": {
+        "prefix": "login_button",
+        "description": "Customer filter: login_button",
+        "body": "| login_button"
+    },
+    "Filter date": {
+        "prefix": "date",
+        "description": "Date filter: date",
+        "body": "| date: '${1:format}'"
+    },
+    "Filter default_errors": {
+        "prefix": "default_errors",
+        "description": "Default filter: default_errors",
+        "body": "| default_errors"
+    },
+    "Filter default": {
+        "prefix": "default",
+        "description": "Default filter: default",
+        "body": "| default: ${1:default_value}"
+    },
+    "Filter default_pagination": {
+        "prefix": "default_pagination",
+        "description": "Default filter: default_pagination",
+        "body": "| default_pagination"
+    },
+    "Filter font_face": {
+        "prefix": "font_face",
+        "description": "Font filter: font_face",
+        "body": "| font_face"
+    },
+    "Filter font_modify": {
+        "prefix": "font_modify",
+        "description": "Font filter: font_modify",
+        "body": "| font_modify: '${1:property}', '${2:value}'"
+    },
+    "Filter font_url": {
+        "prefix": "font_url",
+        "description": "Font filter: font_url",
+        "body": "| font_url"
+    },
+    "Filter json": {
+        "prefix": "json",
+        "description": "Format filter: json",
+        "body": "| json"
+    },
+    "Filter structured_data": {
+        "prefix": "structured_data",
+        "description": "Format filter: structured_data",
+        "body": "| structured_data"
+    },
+    "Filter unit_price_with_measurement": {
+        "prefix": "unit_price_with_measurement",
+        "description": "Format filter: unit_price_with_measurement",
+        "body": "| unit_price_with_measurement: ${1:unit_price_measurement}"
+    },
+    "Filter weight_with_unit": {
+        "prefix": "weight_with_unit",
+        "description": "Format filter: weight_with_unit",
+        "body": "| weight_with_unit"
+    },
+    "Filter class_list": {
+        "prefix": "class_list",
+        "description": "HTML filter: class_list",
+        "body": "| class_list"
+    },
+    "Filter time_tag": {
+        "prefix": "time_tag",
+        "description": "HTML filter: time_tag",
+        "body": "| time_tag: '${1:datetime}'"
+    },
+    "Filter inline_asset_content": {
+        "prefix": "inline_asset_content",
+        "description": "HTML filter: inline_asset_content",
+        "body": "| inline_asset_content"
+    },
+    "Filter highlight": {
+        "prefix": "highlight",
+        "description": "HTML filter: highlight",
+        "body": "| highlight: '${1:terms}'"
+    },
+    "Filter link_to": {
+        "prefix": "link_to",
+        "description": "HTML filter: link_to",
+        "body": "| link_to: '${1:url}'"
+    },
+    "Filter placeholder_svg_tag": {
+        "prefix": "placeholder_svg_tag",
+        "description": "HTML filter: placeholder_svg_tag",
+        "body": "| placeholder_svg_tag: '${1:placeholder}'"
+    },
+    "Filter preload_tag": {
+        "prefix": "preload_tag",
+        "description": "HTML filter: preload_tag",
+        "body": "| preload_tag: as: '${1:style}'"
+    },
+    "Filter currency_selector": {
+        "prefix": "currency_selector",
+        "description": "Localization filter: currency_selector",
+        "body": "| currency_selector"
+    },
+    "Filter translate": {
+        "prefix": "t",
+        "description": "Localization filter: translate",
+        "body": "| t"
+    },
+    "Filter format_address": {
+        "prefix": "format_address",
+        "description": "Localization filter: format_address",
+        "body": "| format_address"
+    },
+    "Filter at_least": {
+        "prefix": "at_least",
+        "description": "Math filter: at_least",
+        "body": "| at_least: ${1:min}"
+    },
+    "Filter at_most": {
+        "prefix": "at_most",
+        "description": "Math filter: at_most",
+        "body": "| at_most: ${1:max}"
+    },
+    "Filter external_video_tag": {
+        "prefix": "external_video_tag",
+        "description": "Media filter: external_video_tag",
+        "body": "| external_video_tag"
+    },
+    "Filter external_video_url": {
+        "prefix": "external_video_url",
+        "description": "Media filter: external_video_url",
+        "body": "| external_video_url: attribute: '${1:attribute}'"
+    },
+    "Filter image_tag": {
+        "prefix": "image_tag",
+        "description": "Media filter: image_tag",
+        "body": "| image_tag"
+    },
+    "Filter media_tag": {
+        "prefix": "media_tag",
+        "description": "Media filter: media_tag",
+        "body": "| media_tag"
+    },
+    "Filter model_viewer_tag": {
+        "prefix": "model_viewer_tag",
+        "description": "Media filter: model_viewer_tag",
+        "body": "| model_viewer_tag"
+    },
+    "Filter video_tag": {
+        "prefix": "video_tag",
+        "description": "Media filter: video_tag",
+        "body": "| video_tag"
+    },
+    "Filter article_img_url": {
+        "prefix": "article_img_url",
+        "description": "Media filter: article_img_url",
+        "body": "| article_img_url: '${1:size}'"
+    },
+    "Filter collection_img_url": {
+        "prefix": "collection_img_url",
+        "description": "Media filter: collection_img_url",
+        "body": "| collection_img_url: '${1:size}'"
+    },
+    "Filter image_url": {
+        "prefix": "image_url",
+        "description": "Media filter: image_url",
+        "body": "| image_url: width: ${1:width}, height: ${2:height}"
+    },
+    "Filter product_img_url": {
+        "prefix": "product_img_url",
+        "description": "Media filter: product_img_url",
+        "body": "| product_img_url: '${1:size}'"
+    },
+    "Filter metafield_tag": {
+        "prefix": "metafield_tag",
+        "description": "Metafield filter: metafield_tag",
+        "body": "| metafield_tag"
+    },
+    "Filter metafield_text": {
+        "prefix": "metafield_text",
+        "description": "Metafield filter: metafield_text",
+        "body": "| metafield_text"
+    },
+    "Filter payment_button": {
+        "prefix": "payment_button",
+        "description": "Payment filter: payment_button",
+        "body": "| payment_button"
+    },
+    "Filter payment_terms": {
+        "prefix": "payment_terms",
+        "description": "Payment filter: payment_terms",
+        "body": "| payment_terms"
+    },
+    "Filter payment_type_img_url": {
+        "prefix": "payment_type_img_url",
+        "description": "Payment filter: payment_type_img_url",
+        "body": "| payment_type_img_url"
+    },
+    "Filter payment_type_svg_tag": {
+        "prefix": "payment_type_svg_tag",
+        "description": "Payment filter: payment_type_svg_tag",
+        "body": "| payment_type_svg_tag"
+    },
+    "Filter hmac_sha1": {
+        "prefix": "hmac_sha1",
+        "description": "String filter: hmac_sha1",
+        "body": "| hmac_sha1: '${1:secret}'"
+    },
+    "Filter hmac_sha256": {
+        "prefix": "hmac_sha256",
+        "description": "String filter: hmac_sha256",
+        "body": "| hmac_sha256: '${1:secret}'"
+    },
+    "Filter sha1": {
+        "prefix": "sha1",
+        "description": "String filter: sha1",
+        "body": "| sha1"
+    },
+    "Filter sha256": {
+        "prefix": "sha256",
+        "description": "String filter: sha256",
+        "body": "| sha256"
+    },
+    "Filter base64_decode": {
+        "prefix": "base64_decode",
+        "description": "String filter: base64_decode",
+        "body": "| base64_decode"
+    },
+    "Filter base64_encode": {
+        "prefix": "base64_encode",
+        "description": "String filter: base64_encode",
+        "body": "| base64_encode"
+    },
+    "Filter base64_url_safe_decode": {
+        "prefix": "base64_url_safe_decode",
+        "description": "String filter: base64_url_safe_decode",
+        "body": "| base64_url_safe_decode"
+    },
+    "Filter base64_url_safe_encode": {
+        "prefix": "base64_url_safe_encode",
+        "description": "String filter: base64_url_safe_encode",
+        "body": "| base64_url_safe_encode"
+    },
+    "Filter escape_once": {
+        "prefix": "escape_once",
+        "description": "String filter: escape_once",
+        "body": "| escape_once"
+    },
+    "Filter remove_last": {
+        "prefix": "remove_last",
+        "description": "String filter: remove_last",
+        "body": "| remove_last: '${1:string}'"
+    },
+    "Filter replace_last": {
+        "prefix": "replace_last",
+        "description": "String filter: replace_last",
+        "body": "| replace_last: '${1:target}', '${2:replacement}'"
+    },
+    "Filter url_decode": {
+        "prefix": "url_decode",
+        "description": "String filter: url_decode",
+        "body": "| url_decode"
+    },
+    "Filter camelize": {
+        "prefix": "camelize",
+        "description": "String filter: camelize",
+        "body": "| camelize"
+    },
+    "Filter link_to_add_tag": {
+        "prefix": "link_to_add_tag",
+        "description": "Tag filter: link_to_add_tag",
+        "body": "| link_to_add_tag: '${1:tag}'"
+    },
+    "Filter link_to_remove_tag": {
+        "prefix": "link_to_remove_tag",
+        "description": "Tag filter: link_to_remove_tag",
+        "body": "| link_to_remove_tag: '${1:tag}'"
+    },
+    "Filter link_to_tag": {
+        "prefix": "link_to_tag",
+        "description": "Tag filter: link_to_tag",
+        "body": "| link_to_tag: '${1:tag}'"
+    },
     "Shopify Schema": {
         "prefix": "_schema",
         "body": [
