@@ -239,7 +239,25 @@
     "Tag schema": {
         "prefix": "schema",
         "description": "Schema tag: schema",
-        "body": ["{% schema %}", "\t{", "\t\t$1", "\t}", "{% endschema %}"]
+        "body": [
+            "{% schema %}",
+            "\t{",
+            "\t\t\"name\": \"$1\",",
+            "\t\t\"tag\": \"${2|section,article,aside,div,footer,header|}\",",
+            "\t\t\"class\": \"$3\",",
+            "\t\t\"settings\": [",
+            "\t\t\t$4",
+            "\t\t],",
+            "\t\t\"presets\": [",
+            "\t\t\t{",
+            "\t\t\t\t\"name\": \"$1\",",
+            "\t\t\t\t\"settings\": {",
+            "\t\t\t\t}",
+            "\t\t\t}",
+            "\t\t]",
+            "\t}",
+            "{% endschema %}"
+        ]
     },
     "Tag stylesheet": {
         "prefix": "stylesheet",
@@ -1195,21 +1213,6 @@
         "prefix": "link_to_tag",
         "description": "Tag filter: link_to_tag",
         "body": "| link_to_tag: '${1:tag}'"
-    },
-    "Shopify Schema": {
-        "prefix": "_schema",
-        "body": [
-            "{% schema %}",
-            "\t{",
-            "\t\t\"name\": \"$1\",",
-            "\t\t\"class\": \"$2\",",
-            "\t\t\"settings\": [",
-            "\t\t$3",
-            "\t\t]",
-            "\t}",
-            "{% endschema %}",
-            ""
-        ]
     },
     "Shopify Schema blocks": {
         "prefix": "_blocks",
