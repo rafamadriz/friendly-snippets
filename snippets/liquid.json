@@ -641,11 +641,6 @@
         "description": "String filter: append",
         "body": "| append: '${1:string}'"
     },
-    "Filter camelcase": {
-        "prefix": "camelcase",
-        "description": "String filter: camelcase",
-        "body": "| camelcase"
-    },
     "Filter capitalize": {
         "prefix": "capitalize",
         "description": "String filter: capitalize",
@@ -786,11 +781,6 @@
         "description": "URL filter: asset img url",
         "body": "| asset_img_url: '${1:medium}'"
     },
-    "Filter img url": {
-        "prefix": "img_url",
-        "description": "URL filter: img url",
-        "body": "| img_url: '${1:medium}'"
-    },
     "Filter file url": {
         "prefix": "file_url",
         "description": "Hosted file filter: file url",
@@ -920,11 +910,6 @@
         "prefix": "color_to_rgb",
         "description": "Color filter: color_to_rgb",
         "body": "| color_to_rgb"
-    },
-    "Filter hex_to_rgba": {
-        "prefix": "hex_to_rgba",
-        "description": "Color filter: hex_to_rgba",
-        "body": "| hex_to_rgba"
     },
     "Filter customer_login_link": {
         "prefix": "customer_login_link",
@@ -1096,25 +1081,10 @@
         "description": "Media filter: video_tag",
         "body": "| video_tag"
     },
-    "Filter article_img_url": {
-        "prefix": "article_img_url",
-        "description": "Media filter: article_img_url",
-        "body": "| article_img_url: '${1:size}'"
-    },
-    "Filter collection_img_url": {
-        "prefix": "collection_img_url",
-        "description": "Media filter: collection_img_url",
-        "body": "| collection_img_url: '${1:size}'"
-    },
     "Filter image_url": {
         "prefix": "image_url",
         "description": "Media filter: image_url",
         "body": "| image_url: width: ${1:width}, height: ${2:height}"
-    },
-    "Filter product_img_url": {
-        "prefix": "product_img_url",
-        "description": "Media filter: product_img_url",
-        "body": "| product_img_url: '${1:size}'"
     },
     "Filter metafield_tag": {
         "prefix": "metafield_tag",
