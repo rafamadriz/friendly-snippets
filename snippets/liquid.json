@@ -1077,7 +1077,7 @@
     "Filter external_video_url": {
         "prefix": "external_video_url",
         "description": "Media filter: external_video_url",
-        "body": "| external_video_url: attribute: '${1:attribute}'"
+        "body": "| external_video_url: ${1:attribute}: '${2:attribute}'"
     },
     "Filter image_tag": {
         "prefix": "image_tag",
@@ -1229,6 +1229,43 @@
             ""
         ]
     },
+    "Shopify Schema enabled_on": {
+        "prefix": "_enabled_on",
+        "body": [
+            "\"enabled_on\": {",
+            "\t\"templates\": [\"${1:product}\"]$2",
+            "},$3"
+        ]
+    },
+    "Shopify Schema disabled_on": {
+        "prefix": "_disabled_on",
+        "body": [
+            "\"disabled_on\": {",
+            "\t\"templates\": [\"${1:page}\"]$2",
+            "},$3"
+        ]
+    },
+    "Shopify Schema locales": {
+        "prefix": "_locales",
+        "body": [
+            "\"locales\": {",
+            "\t\"${1:en}\": {",
+            "\t\t\"name\": \"$2\",",
+            "\t\t\"settings\": {",
+            "\t\t\t\"${3:setting_id}\": \"$4\"",
+            "\t\t},",
+            "\t\t\"blocks\": {",
+            "\t\t\t\"${5:block_type}\": {",
+            "\t\t\t\t\"name\": \"$6\",",
+            "\t\t\t\t\"settings\": {",
+            "\t\t\t\t\t\"${7:block_setting}\": \"$8\"",
+            "\t\t\t\t}",
+            "\t\t\t}",
+            "\t\t}",
+            "\t},$9",
+            "},$10"
+        ]
+    },
     "Shopify Schema text": {
         "prefix": "_text",
         "body": [
@@ -1311,6 +1348,19 @@
             "},$5"
         ]
     },
+    "Shopify Schema number": {
+        "prefix": "_number",
+        "body": [
+            "{",
+            "\t\"type\": \"number\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"default\": ${3:0},",
+            "\t\"placeholder\": \"$4\",",
+            "\t\"info\": \"$5\"",
+            "},$6"
+        ]
+    },
     "Shopify Schema range": {
         "prefix": "_range",
         "body": [
@@ -1334,6 +1384,98 @@
             "\t\"id\": \"$1\",",
             "\t\"label\": \"$2\",",
             "\t\"default\": \"$3\",",
+            "\t\"info\": \"$4\"",
+            "},$5"
+        ]
+    },
+    "Shopify Schema color background": {
+        "prefix": "_color_background",
+        "body": [
+            "{",
+            "\t\"type\": \"color_background\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"default\": \"$3\",",
+            "\t\"info\": \"$4\"",
+            "},$5"
+        ]
+    },
+    "Shopify Schema color scheme": {
+        "prefix": "_color_scheme",
+        "body": [
+            "{",
+            "\t\"type\": \"color_scheme\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"default\": \"${3:background}\",",
+            "\t\"info\": \"$4\"",
+            "},$5"
+        ]
+    },
+    "Shopify Schema color scheme group": {
+        "prefix": "_color_scheme_group",
+        "body": [
+            "{",
+            "\t\"type\": \"color_scheme_group\",",
+            "\t\"id\": \"$1\",",
+            "\t\"definition\": [",
+            "\t\t{ \"type\": \"color\", \"id\": \"background\", \"label\": \"Background\", \"default\": \"#ffffff\" },",
+            "\t\t{ \"type\": \"color_background\", \"id\": \"background_gradient\", \"label\": \"Background gradient\" },",
+            "\t\t{ \"type\": \"color\", \"id\": \"text\", \"label\": \"Text\", \"default\": \"#000000\" }",
+            "\t],",
+            "\t\"role\": {",
+            "\t\t\"text\": \"text\",",
+            "\t\t\"background\": { \"solid\": \"background\", \"gradient\": \"background_gradient\" }",
+            "\t},",
+            "\t\"label\": \"$2\"",
+            "},$3"
+        ]
+    },
+    "Shopify Schema metaobject": {
+        "prefix": "_metaobject",
+        "body": [
+            "{",
+            "\t\"type\": \"metaobject\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"metaobject_type\": \"$3\",",
+            "\t\"info\": \"$4\"",
+            "},$5"
+        ]
+    },
+    "Shopify Schema metaobject list": {
+        "prefix": "_metaobject_list",
+        "body": [
+            "{",
+            "\t\"type\": \"metaobject_list\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"metaobject_type\": \"$3\",",
+            "\t\"limit\": ${4:4},",
+            "\t\"info\": \"$5\"",
+            "},$6"
+        ]
+    },
+    "Shopify Schema product list": {
+        "prefix": "_product_list",
+        "body": [
+            "{",
+            "\t\"type\": \"product_list\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"limit\": ${3:4},",
+            "\t\"info\": \"$4\"",
+            "},$5"
+        ]
+    },
+    "Shopify Schema collection list": {
+        "prefix": "_collection_list",
+        "body": [
+            "{",
+            "\t\"type\": \"collection_list\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"limit\": ${3:4},",
             "\t\"info\": \"$4\"",
             "},$5"
         ]
@@ -1423,11 +1565,21 @@
             "\t\"type\": \"video_url\",",
             "\t\"id\": \"$1\",",
             "\t\"label\": \"$2\",",
-            "\t\"accept\": [$7\"youtube\", \"vimeo\"],",
-            "\t\"default\": \"$3\",",
-            "\t\"info\": \"$4\",",
-            "\t\"placeholder\": \"$5\"",
+            "\t\"accept\": [\"${3|youtube,vimeo|}\"],",
+            "\t\"placeholder\": \"$4\",",
+            "\t\"info\": \"$5\"",
             "},$6"
+        ]
+    },
+    "Shopify Schema video hosted": {
+        "prefix": "_video_hosted",
+        "body": [
+            "{",
+            "\t\"type\": \"video\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"info\": \"$3\"",
+            "},$4"
         ]
     },
     "Shopify Schema richtext": {
@@ -1438,6 +1590,40 @@
             "\t\"id\": \"$1\",",
             "\t\"label\": \"$2\",",
             "\t\"default\": \"<p>$3</p>\"",
+            "},$4"
+        ]
+    },
+    "Shopify Schema inline richtext": {
+        "prefix": "_inline_richtext",
+        "body": [
+            "{",
+            "\t\"type\": \"inline_richtext\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"default\": \"$3\"",
+            "},$4"
+        ]
+    },
+    "Shopify Schema liquid": {
+        "prefix": "_liquid",
+        "body": [
+            "{",
+            "\t\"type\": \"liquid\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"default\": \"$3\",",
+            "\t\"info\": \"$4\"",
+            "},$5"
+        ]
+    },
+    "Shopify Schema text alignment": {
+        "prefix": "_text_alignment",
+        "body": [
+            "{",
+            "\t\"type\": \"text_alignment\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"default\": \"${3|left,center,right|}\"",
             "},$4"
         ]
     },
