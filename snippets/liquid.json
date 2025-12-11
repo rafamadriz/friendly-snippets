@@ -125,25 +125,90 @@
         "description": "Theme tag: render",
         "body": ["{% render '${1:snippet}' %}"]
     },
+    "Tag render, whitespaced": {
+        "prefix": "render-",
+        "description": "Theme tag: render, whitespaced",
+        "body": ["{%- render '${1:snippet}' -%}"]
+    },
     "Tag render with parameters": {
         "prefix": "renderwith",
         "description": "Theme tag: render with parameters",
         "body": ["{% render '${1:snippet}', ${2:variable}: ${3:value} %}"]
+    },
+    "Tag render with parameters, whitespaced": {
+        "prefix": "renderwith-",
+        "description": "Theme tag: render with parameters, whitespaced",
+        "body": ["{%- render '${1:snippet}', ${2:variable}: ${3:value} -%}"]
+    },
+    "Tag render forloop": {
+        "prefix": "renderfor",
+        "description": "Theme tag: render forloop",
+        "body": ["{% render '$1' for ${2:array} as ${3:item} %}"]
+    },
+    "Tag render forloop, whitespaced": {
+        "prefix": "renderfor-",
+        "description": "Theme tag: render forloop, whitespaced",
+        "body": ["{%- render '$1' for ${2:array} as ${3:item} -%}"]
+    },
+    "Tag content_for blocks": {
+        "prefix": "content_for",
+        "description": "Theme tag: content_for blocks",
+        "body": ["{% content_for 'blocks' %}"]
+    },
+    "Tag content_for blocks, whitespaced": {
+        "prefix": "content_for-",
+        "description": "Theme tag: content_for blocks, whitespaced",
+        "body": ["{%- content_for 'blocks' -%}"]
+    },
+    "Tag content_for block": {
+        "prefix": "content_for_block",
+        "description": "Theme tag: content_for block",
+        "body": ["{% content_for 'block', type: '$1', id: '$2' %}"]
+    },
+    "Tag content_for block, whitespaced": {
+        "prefix": "content_for_block-",
+        "description": "Theme tag: content_for block, whitespaced",
+        "body": ["{%- content_for 'block', type: '$1', id: '$2' -%}"]
     },
     "Tag section": {
         "prefix": "section",
         "description": "Theme tag: section",
         "body": ["{% section '${1:snippet}' %}"]
     },
+    "Tag section, whitespaced": {
+        "prefix": "section-",
+        "description": "Theme tag: section, whitespaced",
+        "body": ["{%- section '${1:snippet}' -%}"]
+    },
+    "Tag sections": {
+        "prefix": "sections",
+        "description": "Theme tag: sections",
+        "body": ["{% sections '${1:snippet}' %}"]
+    },
+    "Tag sections, whitespaced": {
+        "prefix": "sections-",
+        "description": "Theme tag: sections, whitespaced",
+        "body": ["{%- sections '${1:snippet}' -%}"]
+    },
     "Tag layout": {
         "prefix": "layout",
         "description": "Theme tag: layout",
         "body": ["{% layout '${1:layout}' %}"]
     },
+    "Tag layout, whitespaced": {
+        "prefix": "layout-",
+        "description": "Theme tag: layout, whitespaced",
+        "body": ["{%- layout '${1:layout}' -%}"]
+    },
     "Tag no layout": {
         "prefix": "layoutnone",
         "description": "Theme tag: layout none",
         "body": ["{% layout none %}"]
+    },
+    "Tag no layout, whitespaced": {
+        "prefix": "layoutnone-",
+        "description": "Theme tag: layout none, whitespaced",
+        "body": ["{%- layout none -%}"]
     },
     "Tag paginate": {
         "prefix": "paginate",
@@ -168,13 +233,23 @@
     },
     "Tag stylesheet": {
         "prefix": "stylesheet",
-        "description": "Stylesheet tag: stylesheet",
+        "description": "Theme tag: stylesheet",
         "body": ["{% stylesheet %}", "\t$1", "{% endstylesheet %}"]
+    },
+    "Tag stylesheet, whitespaced": {
+        "prefix": "stylesheet-",
+        "description": "Theme tag: stylesheet, whitespaced",
+        "body": ["{%- stylesheet -%}", "\t$1", "{%- endstylesheet -%}"]
     },
     "Tag javascript": {
         "prefix": "javascript",
-        "description": "Javascript tag: javascript",
-        "body": ["{% javascript %}", "\t$4", "{% endjavascript %}"]
+        "description": "Theme tag: javascript",
+        "body": ["{% javascript %}", "\t$1", "{% endjavascript %}"]
+    },
+    "Tag javascript, whitespaced": {
+        "prefix": "javascript-",
+        "description": "Theme tag: javascript, whitespaced",
+        "body": ["{%- javascript -%}", "\t$1", "{%- endjavascript -%}"]
     },
     "Tag form": {
         "prefix": "form",
