@@ -161,6 +161,11 @@
             "{% endpaginate %}"
         ]
     },
+    "Tag Option window_size": {
+        "prefix": "window_size",
+        "description": "For paginate option",
+        "body": ["window_size: ${1:1}"]
+    },
     "Tag schema": {
         "prefix": "schema",
         "description": "Schema tag: schema",
@@ -262,6 +267,11 @@
             "{%- endfor -%}"
         ]
     },
+    "Tag break, whitespaced": {
+        "prefix": "break-",
+        "description": "Iteration tag: break, whitespaced",
+        "body": ["{%- break -%}"]
+    },
     "Tag continue, whitespaced": {
         "prefix": "continue-",
         "description": "Iteration tag: continue, whitespaced",
@@ -285,6 +295,17 @@
         "prefix": "capture-",
         "description": "Variable tag: capture, whitespaced",
         "body": ["{%- capture ${1:variable} -%}$2{%- endcapture -%}"]
+    },
+    "Tag paginate, whitespaced": {
+        "prefix": "paginate-",
+        "description": "Theme tag: paginate, whitespaced",
+        "body": [
+            "{%- paginate ${1:collection.products} by ${2:12} -%}",
+            "\t{%- for ${3:product} in ${1:collection.products} -%}",
+            "\t\t$4",
+            "\t{%- endfor -%}",
+            "{%- endpaginate -%}"
+        ]
     },
     "Tag form, whitespaced": {
         "prefix": "form-",
