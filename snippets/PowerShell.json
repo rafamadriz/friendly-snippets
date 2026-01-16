@@ -58,7 +58,7 @@
     "Class Property": {
         "prefix": "class-property",
         "description": "Properties are variables declared at class scope. A property may be of any built-in type or an instance of another class. Classes have no restriction in the number of properties they have. More: Get-Help about_Classes",
-        "body": ["[${1:propertyType}] \\$${0:PropertyName"]
+        "body": ["[${1:propertyType}] \\$${0:PropertyName}"]
     },
     "Comment Block": {
         "prefix": ["block-comment"],
