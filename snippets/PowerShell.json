@@ -50,15 +50,15 @@
         "prefix": "class-method",
         "description": "Defines the actions that a class can perform. Methods may take parameters that provide input data. Methods can return output. Data returned by a method can be any defined data type. More: Get-Help about_Classes",
         "body": [
-            "[${1:void}] ${2:MethodName}($${3:OptionalParameters}) {",
-            "\t${0:${TM_SELECTED_TEXT:<# Action to perform. You can use $$this to reference the current instance of this class #>}}",
+            "[${1:void}] ${2:MethodName}(\\$${3:OptionalParameters}) {",
+            "\t${0:${TM_SELECTED_TEXT:<# Action to perform. You can use \\$this to reference the current instance of this class #>}}",
             "}"
         ]
     },
     "Class Property": {
         "prefix": "class-property",
         "description": "Properties are variables declared at class scope. A property may be of any built-in type or an instance of another class. Classes have no restriction in the number of properties they have. More: Get-Help about_Classes",
-        "body": ["[${1:propertyType}] $${0:PropertyName}"]
+        "body": ["[${1:propertyType}] \\$${0:PropertyName"]
     },
     "Comment Block": {
         "prefix": ["block-comment"],
@@ -122,7 +122,7 @@
         "prefix": "for",
         "description": "Creates a loop that runs commands in a command block while a specified condition evaluates to $true. A typical use of the for loop is to iterate an array of values and to operate on a subset of these values. More: Get-Help about_For",
         "body": [
-            "for ($${1:i} = 0; $${1:i} -lt $${2:array}.Count; $${1:i}++) {",
+            "for (\\$${1:i} = 0; \\$${1:i} -lt \\$${2:array}.Count; \\$${1:i}++) {",
             "\t${0:${TM_SELECTED_TEXT:<# Action that will repeat until the condition is met #>}}",
             "}"
         ]
@@ -131,8 +131,8 @@
         "prefix": "forr",
         "description": "reversed for loop snippet",
         "body": [
-            "for ($${1:i} = $${2:array}.Count - 1; $${1:i} -ge 0 ; $${1:i}--) {",
-            "\t${0:${$TM_SELECTED_TEXT}}",
+            "for (\\$${1:i} = \\$${2:array}.Count - 1; \\$${1:i} -ge 0 ; \\$${1:i}--) {",
+            "\t${0:${TM_SELECTED_TEXT}}",
             "}"
         ]
     },
@@ -140,8 +140,8 @@
         "prefix": "foreach",
         "description": "Iterate through a collection, assigning a variable to the current item on each loop rather than using the automatic variable $PSItem. More: Get-Help about_Foreach",
         "body": [
-            "foreach ($${1:currentItemName} in $${2:collection}) {",
-            "\t${0:${TM_SELECTED_TEXT:<# $${1} is the current item #>}}",
+            "foreach (\\$${1:currentItemName} in \\$${2:collection}) {",
+            "\t${0:${TM_SELECTED_TEXT}}",
             "}"
         ]
     },
@@ -149,8 +149,8 @@
         "prefix": "foreach-item",
         "description": "Quicker definition of foreach, just highlight the variable name of the collection you want to use and type 'item' then enter then tab. More: Get-Help about_Foreach",
         "body": [
-            "foreach (${1/(.*)/$1Item/} in ${1:${TM_SELECTED_TEXT:collection}}) {",
-            "\t${0:${1/(.*)/$1Item/}}",
+            "foreach (\\$${1:item} in \\$${TM_SELECTED_TEXT:collection}) {",
+            "\t${0}",
             "}"
         ]
     },
@@ -375,7 +375,7 @@
     "Hidden Property": {
         "prefix": "class-proph-hidden",
         "description": "Useful for creating internal properties and methods within a class that are hidden from users. More: Get-Help about_Hidden",
-        "body": ["hidden [${1:string}] $${0:PropertyName}"]
+        "body": ["hidden [${1:string}] \\$${0:PropertyName}"]
     },
     "IArgumentCompleter Class": {
         "prefix": "iargument-completer",
@@ -485,14 +485,14 @@
             "function $1 {",
             "  [CmdletBinding()]",
             "  param(",
-            "    [parameter(ValueFromPipeline)]$$2",
+            "    [parameter(ValueFromPipeline)]\\$$2",
             "  )",
             "",
             "  begin {",
             "    [Collections.ArrayList]\\$inputObjects = @()",
             "  }",
             "  process {",
-            "    [void]\\$inputObjects.Add($$2)",
+            "    [void]\\$inputObjects.Add(\\$$2)",
             "  }",
             "  end {",
             "    \\$inputObjects | Foreach -Parallel {",
@@ -509,7 +509,7 @@
             "# ${1:Parameter help description}",
             "[Parameter(${2:AttributeValues})]",
             "[${3:ParameterType}]",
-            "$${0:ParameterName}"
+            "\\$${0:ParameterName}"
         ]
     },
     "Parameter_Block": {
@@ -520,7 +520,7 @@
             "param (",
             "    [Parameter()]",
             "    [${1:TypeName}]",
-            "    $${2:ParameterName}$0",
+            "    \\$${2:ParameterName}$0",
             ")"
         ]
     },
@@ -540,7 +540,7 @@
             "[Alias(\"PSPath\")]",
             "[ValidateNotNullOrEmpty()]",
             "[string[]]",
-            "$${2:LiteralPath}$0"
+            "\\$${2:LiteralPath}$0"
         ]
     },
     "Parameter-Path": {
@@ -557,7 +557,7 @@
             "[Alias(\"PSPath\")]",
             "[ValidateNotNullOrEmpty()]",
             "[string[]]",
-            "$${3:ParameterName}$0"
+            "\\$${3:ParameterName}$0"
         ]
     },
     "Parameter-Path-Wildcards": {
@@ -574,7 +574,7 @@
             "[ValidateNotNullOrEmpty()]",
             "[SupportsWildcards()]",
             "[string[]]",
-            "$${3:ParameterName}$0"
+            "\\$${3:ParameterName}$0"
         ]
     },
     "Parameter: Suppress PSScriptAnalyzer Rule": {
@@ -633,10 +633,10 @@
         "prefix": "splat",
         "description": "Use a hashtable to capture the parameters of a function and then pass them to a function in a concise way. More: Get-Help about_Splatting",
         "body": [
-            "$${1/[^\\w]/_/}Params = @{",
+            "\\$${1:${TM_SELECTED_TEXT}}Params = @{",
             "\t${2:Parameter} = ${0:Value}",
             "}",
-            "${1:${TM_SELECTED_TEXT}} @${1/[^\\w]/_/}Params"
+            "${1:${TM_SELECTED_TEXT}} @${1:${TM_SELECTED_TEXT}}Params"
         ]
     },
     "Suppress PSScriptAnalyzer Rule": {
@@ -663,7 +663,7 @@
         "prefix": "ternary",
         "description": "[PS 7+] Simplified version of if-else popular in other languages that works in Powershell. More: Get-Help about_If",
         "body": [
-            "(${1:${TM_SELECTED_TEXT:condition}}) ? $(${2:<#Action if True#>}) : $(${0:<#Action If False#>})"
+            "(${1:${TM_SELECTED_TEXT:condition}}) ? \\$(${2:<#Action if True#>}) : \\$(${0:<#Action If False#>})"
         ]
     },
     "try-catch": {
