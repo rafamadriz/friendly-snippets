@@ -546,10 +546,7 @@
                 "path": "./snippets/reason.json"
             },
             {
-                "language": [
-                    "ocaml",
-                    "ocamlinterface"
-                ],
+                "language": ["ocaml", "ocamlinterface"],
                 "path": "./snippets/ocaml/ocaml.json"
             },
             {
@@ -581,22 +578,21 @@
                 "path": "./snippets/beancount.json"
             },
             {
-                 "language": "rst",
-                 "path": "./snippets/rst.json"
+                "language": "rst",
+                "path": "./snippets/rst.json"
             },
             {
-                 "language": "loremipsum",
-                 "path": "./snippets/loremipsum.json"
+                "language": "loremipsum",
+                "path": "./snippets/loremipsum.json"
             },
-	    {
-		"language": "cmake",
-		"path": "./snippets/cmake.json"
-	    },
             {
-                 "language": "zig",
-                 "path": "./snippets/zig.json"
+                "language": "cmake",
+                "path": "./snippets/cmake.json"
+            },
+            {
+                "language": "zig",
+                "path": "./snippets/zig.json"
             }
         ]
     }
 }
-
