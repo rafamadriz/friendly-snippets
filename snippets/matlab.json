@@ -1,0 +1,73 @@
+{
+    "if": {
+        "prefix": "if",
+        "body": ["if ${1:condition}", "\t$0", "end"],
+        "description": "if statement"
+    },
+    "else": {
+        "prefix": "else",
+        "body": ["else ${1:condition}", "\t$0"],
+        "description": "else statement"
+    },
+    "else if": {
+        "prefix": ["elseif","elif"],
+        "body": ["elseif ${1:condition}", "\t$0"],
+        "description": "else statement"
+    },
+    "switch": {
+        "prefix": "switch",
+        "body": [
+			"switch ${1:expression}",
+			"\tcase ${2:pattern}",
+			"\t\t$3",
+			"\t$0",
+			"end"
+		],
+        "description": "switch statement"
+    },
+    "case": {
+        "prefix": "case",
+        "body": ["case ${1:pattern}", "\t$0"],
+        "description": "switch match statement"
+    },
+    "for": {
+        "prefix": "for",
+        "body": ["for ${1:value} = ${2:range}", "\t$0", "end"],
+        "description": "for statement"
+    },
+    "while": {
+        "prefix": "while",
+        "body": ["while ${1:condition}", "\t$0", "end"],
+        "description": "while statement"
+    },
+    "try/catch": {
+        "prefix": "try",
+        "body": [
+			"try",
+			"\t${1:statement}",
+			"catch ${2:exception}",
+			"\t${3:statement}",
+			"\t$0",
+			"end"
+		],
+        "description": "try/catch statement"
+    },
+    "function": {
+        "prefix": "func",
+        "body": [
+            "function ${1:return_value} = ${2:name}(${3:args})",
+            "\t$0",
+            "end"
+        ],
+        "description": "function statement"
+    },
+    "function without return": {
+        "prefix": "nfunc",
+        "body": [
+            "function ${1:name}(${2:args})",
+            "\t$0",
+            "end"
+        ],
+        "description": "function wihout return value"
+    }
+}
