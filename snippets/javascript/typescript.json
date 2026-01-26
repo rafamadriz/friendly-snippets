@@ -168,10 +168,38 @@
         "body": ["if (${1:condition}) {", "\t$2", "} else {", "\t$0", "}"],
         "description": "If-Else Statement"
     },
+    "module export": {
+        "prefix": "e",
+        "body": "export ${1:member}"
+    },
+    "module export const": {
+        "prefix": "ec",
+        "body": "export const ${1:member}: ${2:Type} = ${3:value}"
+    },
+    "export named function": {
+        "prefix": "ef",
+        "body": "export function ${1:member}(${2:arguments}): ${3:ReturnType} {\n\t${0}\n}"
+    },
+    "module default export": {
+        "prefix": "ed",
+        "body": "export default ${1:member}"
+    },
+    "module default export function": {
+        "prefix": "edf",
+        "body": "export default function ${1:name}(${2:arguments}): ${3:ReturnType} {\n\t${0}\n}"
+    },
+    "module default export async function": {
+        "prefix": "edaf",
+        "body": "export default async function ${1:name}(${2:arguments}): Promise<${3:ReturnType}> {\n\t${0}\n}"
+    },
     "New Statement": {
         "prefix": "new",
         "body": ["const ${1:name} = new ${2:type}(${3:arguments});$0"],
         "description": "New Statement"
+    },
+    "reactComment": {
+        "prefix": "cmmt",
+        "body": ["{/* ${1: comment} */}"]
     },
     "Switch Statement": {
         "prefix": "switch",

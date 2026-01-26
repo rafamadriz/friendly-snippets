@@ -43,7 +43,7 @@
     },
     "area": {
         "prefix": "area",
-        "body": "<area shape=\"$1\" coords=\"$2\" href=\"$3\" alt=\"$4\">$5",
+        "body": "<area shape=\"$1\" coords=\"$2\" href=\"$3\" alt=\"$4\" />$5",
         "description": "HTML - Defines an area inside an image map",
         "scope": "text.html"
     },
@@ -73,7 +73,7 @@
     },
     "base": {
         "prefix": "base",
-        "body": "<base href=\"$1\" target=\"$2\">$3",
+        "body": "<base href=\"$1\" target=\"$2\" />$3",
         "description": "HTML - Defines a base URL for all the links in a page",
         "scope": "text.html"
     },
@@ -109,7 +109,7 @@
     },
     "br": {
         "prefix": "br",
-        "body": "<br>",
+        "body": "<br />",
         "description": "HTML - Inserts a single line break",
         "scope": "text.html"
     },
@@ -145,7 +145,7 @@
     },
     "col": {
         "prefix": "col",
-        "body": "<col>$2",
+        "body": "<col />$2",
         "description": "HTML - Defines attributes for table columns",
         "scope": "text.html"
     },
@@ -223,7 +223,7 @@
     },
     "embed": {
         "prefix": "embed",
-        "body": "<embed src=\"$1\">$2",
+        "body": "<embed src=\"$1\" />$2",
         "description": "HTML - Defines external interactive content ot plugin",
         "scope": "text.html"
     },
@@ -313,7 +313,7 @@
     },
     "hr": {
         "prefix": "hr",
-        "body": "<hr>",
+        "body": "<hr />",
         "description": "HTML - Defines a horizontal rule",
         "scope": "text.html"
     },
@@ -356,13 +356,13 @@
     },
     "img": {
         "prefix": "img",
-        "body": "<img src=\"$1\" alt=\"$2\">$3",
+        "body": "<img src=\"$1\" alt=\"$2\" />$3",
         "description": "HTML - Defines an image",
         "scope": "text.html"
     },
     "input": {
         "prefix": "input",
-        "body": "<input type=\"$1\" name=\"$2\" value=\"$3\">$4",
+        "body": "<input type=\"$1\" name=\"$2\" value=\"$3\" />$4",
         "description": "HTML - Defines an input field",
         "scope": "text.html"
     },
@@ -374,7 +374,7 @@
     },
     "keygen": {
         "prefix": "keygen",
-        "body": "<keygen name=\"$1\">$2",
+        "body": "<keygen name=\"$1\" />$2",
         "description": "HTML - Defines a generated key in a form",
         "scope": "text.html"
     },
@@ -386,7 +386,7 @@
     },
     "label": {
         "prefix": "label",
-        "body": "<label for=\"$1\">$2</label>$3",
+        "body": "<label>$2</label>$3",
         "description": "HTML - Defines an inline window",
         "scope": "text.html"
     },
@@ -440,7 +440,7 @@
     },
     "meta": {
         "prefix": "meta",
-        "body": "<meta name=\"$1\" content=\"$2\">$3",
+        "body": "<meta name=\"$1\" content=\"$2\" />$3",
         "description": "HTML - Defines meta information",
         "scope": "text.html"
     },
@@ -500,7 +500,7 @@
     },
     "param": {
         "prefix": "param",
-        "body": "<param name=\"$1\" value=\"$2\">$3",
+        "body": "<param name=\"$1\" value=\"$2\" />$3",
         "description": "HTML - Defines a parameter for an object",
         "scope": "text.html"
     },
@@ -680,7 +680,7 @@
     },
     "track": {
         "prefix": "track",
-        "body": "<track src=\"$1\" kind=\"$2\" srclang=\"$3\" label=\"$4\">$5",
+        "body": "<track src=\"$1\" kind=\"$2\" srclang=\"$3\" label=\"$4\" />$5",
         "description": "HTML - Defines a table row",
         "scope": "text.html"
     },
@@ -712,73 +712,73 @@
         "description": "HTML - Defines a video",
         "scope": "text.html"
     },
-"div.": {
+    "div.": {
         "prefix": "div.",
         "body": ["<div class=\"$1\">", "\t$2", "</div>"],
         "description": "HTML - Defines a section in a document",
         "scope": "text.html"
     },
-"div#": {
+    "div#": {
         "prefix": "div#",
         "body": ["<div id=\"$1\">", "\t$2", "</div>"],
         "description": "HTML - Defines a section in a document",
         "scope": "text.html"
     },
-"div.#": {
+    "div.#": {
         "prefix": "div.#",
         "body": ["<div class=\"$1\" id=\"$2\">", "\t$3", "</div>"],
         "description": "HTML - Defines a section in a document",
         "scope": "text.html"
     },
-"p.": {
+    "p.": {
         "prefix": "p.",
         "body": ["<p class=\"$1\">$2</p>"],
         "description": "HTML - Defines a paragraph",
         "scope": "text.html"
     },
-"p#": {
+    "p#": {
         "prefix": "p#",
         "body": ["<p id=\"$1\">$2</p>"],
         "description": "HTML - Defines a paragraph",
         "scope": "text.html"
     },
-"p.#": {
+    "p.#": {
         "prefix": "p.#",
         "body": ["<p class=\"$1\" id=\"$2\">$3</p>"],
         "description": "HTML - Defines a paragraph",
         "scope": "text.html"
     },
-"ul.": {
+    "ul.": {
         "prefix": "ul.",
         "body": ["<ul class=\"$1\">", "\t$2", "</ul>"],
         "description": "HTML - Defines an unordered list",
         "scope": "text.html"
     },
-"ul#": {
+    "ul#": {
         "prefix": "ul#",
         "body": ["<ul id=\"$1\">", "\t$2", "</ul>"],
         "description": "HTML - Defines an unordered list",
         "scope": "text.html"
     },
-"ul.#": {
+    "ul.#": {
         "prefix": "ul.#",
         "body": ["<ul class=\"$1\" id=\"$2\">", "\t$3", "</ul>"],
         "description": "HTML - Defines an unordered list",
         "scope": "text.html"
     },
-"ol.": {
+    "ol.": {
         "prefix": "ol.",
         "body": ["<ol class=\"$1\">", "\t$2", "</ol>"],
         "description": "HTML - Defines an ordered list",
         "scope": "text.html"
     },
-"ol#": {
+    "ol#": {
         "prefix": "ol#",
         "body": ["<ol id=\"$1\">", "\t$2", "</ol>"],
         "description": "HTML - Defines an ordered list",
         "scope": "text.html"
     },
-"ol.#": {
+    "ol.#": {
         "prefix": "ol.#",
         "body": ["<ol class=\"$1\" id=\"$2\">", "\t$3", "</ol>"],
         "description": "HTML - Defines an ordered list",

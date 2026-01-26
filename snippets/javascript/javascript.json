@@ -319,6 +319,10 @@
         "prefix": "edf",
         "body": "export default function ${1:name} (${2:arguments}) {\n\t${0}\n}"
     },
+    "module default export async function": {
+        "prefix": "edaf",
+        "body": "export default async function ${1:name} (${2:arguments}) {\n\t${0}\n}"
+    },
     "import module": {
         "prefix": "im",
         "body": "import ${2:*} from '${1:module}'"
