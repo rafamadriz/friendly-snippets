@@ -1,0 +1,185 @@
+{
+  "main": {
+    "prefix": "main",
+    "body": [
+        "public fn i32 main(i32 argc, const char** argv) {",
+        "\t${1:/* code */}",
+        "\treturn 0;",
+        "}"
+    ],
+    "description": "main(..)"
+  },
+  "main2": {
+    "prefix": "main2",
+    "body": [
+        "public fn i32 main() {",
+        "\t${1:/* code */}",
+        "\treturn 0;",
+        "}"
+    ],
+    "description": "main()"
+  },
+  "module": {
+    "prefix": "module",
+    "body": [
+        "module ${1:/* module name */};"
+    ],
+    "description": "module name"
+  },
+  "import": {
+    "prefix": "import",
+    "body": [
+        "import ${1:${2:stdio} as ${3:io}}${5: local};"
+    ],
+    "description": "import libname"
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+        "if(${1:/* condition */}) {",
+        "\t${2:/* code */}",
+        "}"
+    ],
+    "description": "if(..) {..}"
+  },
+  "else": {
+    "prefix": "else",
+    "body": [
+        "else {",
+        "\t${1:/* code */}",
+        "}"
+    ],
+    "description": "else {..}"
+  },
+  "if_else": {
+    "prefix": "ifelse",
+    "body": [
+        "if(${1:/* condition */}) {",
+        "\t${2:/* code */}",
+        "} else {",
+        "\t${3:/* code */}",
+        "}"
+    ],
+    "description": "if/else"
+  },
+  "switch": {
+    "prefix": "switch",
+    "body": [
+        "switch(${1:/* condition */}) {",
+            "\tcase ${2:low - high}:",
+                "\t\t${3:/* code */}",
+                "\t\tbreak;",
+        "}"
+    ],
+    "description": "switch(..) {case..}"
+  },
+  "case": {
+    "prefix": "case",
+    "body": [
+        "case ${2:low - high}:",
+            "\t${3:/* code */}",
+            "\tbreak;"
+    ],
+    "description": "case..: ... break"
+  },
+  "default": {
+    "prefix": "default",
+    "body": [
+        "default:",
+            "\t${3:/* code */}",
+            "\tbreak;"
+    ],
+    "description": "default: .. break"
+  },
+  "do_while": {
+    "prefix": "do",
+    "body": [
+        "do {",
+        "\t${2:/* code */}",
+        "} while(${1:/* condition */});"
+    ],
+    "description": "do {..} while(..)"
+  },
+  "while": {
+    "prefix": "while",
+    "body": [
+        "while(${1:/* condition */}) {",
+        "\t${2:/* code */}",
+        "}"
+    ],
+    "description": "while(..) {..}"
+  },
+  "for": {
+    "prefix": "for",
+    "body": [
+        "for(${1:i32 i=0}; ${2:i<${3:n}}; ${4:++i}) {",
+        "\t${5:/* code */}",
+        "}"
+    ],
+    "description": "for(..) {..}"
+  },
+  "fn": {
+    "prefix": "fn",
+    "body": [
+        "fn ${1:void} ${2:/*name*/}(${3}) {",
+        "\t${4:/* code */}",
+        "}"
+    ],
+    "description": "fn {type} {name}(..) {..}"
+  },
+  "fn_attrib": {
+    "prefix": "fnc",
+    "body": [
+        "fn ${1:void} ${2:/*name*/}(${3})${4: @(${5:cname=\"${6:c_func}\"${7:, opaque}})}${8:;}"
+    ],
+    "description": "fn {type} {name}(..) @(..);"
+  },
+  "enum": {
+    "prefix": "enum",
+    "body": [
+        "type ${1:/* name */} enum ${2:u32} {",
+        "\t${3:/* fields */}",
+        "}"
+    ],
+    "description": "type {name} enum {type} {..}"
+  },
+  "enum_attrib": {
+    "prefix": "enum_",
+    "body": [
+        "type ${1:/* name */} enum ${2:u32}${3: @(${4:cname=\"${5:c_func}\"${6:, opaque}})}${7:;}"
+    ],
+    "description": "type {name} enum {type} @(..);"
+  },
+  "union": {
+    "prefix": "union",
+    "body": [
+        "${1:type ${2:/* name */} }union $3{",
+        "\t${4:/* fields */}",
+        "}"
+    ],
+    "description": "type {name} union {type} {..}"
+  },
+  "union_attrib": {
+    "prefix": "union_",
+    "body": [
+        "type ${1:/* name */} union${2: @(${3:cname=\"${4:c_func}\"${5:, opaque}})}${7:;}"
+    ],
+    "description": "type {name} union {type} @(..);"
+  },
+  "struct": {
+    "prefix": "struct",
+    "body": [
+        "${1:type ${2:/* name */} }struct $3{",
+        "\t${4:/* fields */}",
+        "}"
+    ],
+    "description": "type {name} struct {..}"
+  },
+  "struct_cname": {
+    "prefix": "struct_",
+    "body": [
+        "type ${1:/* name */} struct ${2: @(${3:cname=\"${4:c_func}\"${5:, opaque}})}${7:;}"
+    ],
+    "description": "type {name} struct @(..);"
+  }
+}
