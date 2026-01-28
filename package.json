@@ -201,6 +201,22 @@
                 "path": "./snippets/shell/shelldoc.json"
             },
             {
+                "language": ["typst"],
+                "path": "./snippets/typst/layout.json"
+            },
+            {
+                "language": ["typst"],
+                "path": "./snippets/typst/visualize.json"
+            },
+            {
+                "language": ["typst"],
+                "path": "./snippets/typst/markup.json"
+            },
+            {
+                "language": ["typst"],
+                "path": "./snippets/typst/maths.json"
+            },
+            {
                 "language": ["markdown", "rmd"],
                 "path": "./snippets/markdown.json"
             },

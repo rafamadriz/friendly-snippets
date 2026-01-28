@@ -1,0 +1,34 @@
+{
+    "cases": {
+        "prefix": ["cases", "maths.cases"],
+        "body": [
+            "$ f(x, y) := cases(",
+            "  1 \"if\" (x dot y)/2 <= 0,",
+            "  2 \"if\" x \"is even\",",
+            "  3 \"if\" x in NN,",
+            "  4 \"else\",",
+            ") $"
+        ],
+        "description": [
+            "A case distinction.",
+            " ",
+            "Content across different branches can be aligned with the & symbol."
+        ]
+    },
+    "equation": {
+        "prefix": ["equation", "maths.equation"],
+        "body": [
+            "$ sum_(k=1)^n k = (n(n+1)) / 2 $"
+        ],
+        "description": [
+            "A mathematical equation.",
+            " ",
+            "Can be displayed inline with text or as a separate block."
+        ]
+    },
+    "frac": {
+        "prefix": ["frac", "maths.frac"],
+        "body": ["$ ((${0:x}+1)) / 2 = frac(a, b) $"],
+        "description": "A mathematical fraction."
+    }
+}
