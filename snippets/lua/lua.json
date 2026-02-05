@@ -95,12 +95,12 @@
         "description": "Assign a function to a local variable"
     },
     "anonymous-function": {
-        "prefix": "f)",
+        "prefix": "fa",
         "body": ["function($1)", "\t${0}", "end"],
         "description": "Create an anonymous function"
     },
     "member-function": {
-        "prefix": "f,",
+        "prefix": "fm",
         "body": ["${1:name} = function($2)", "\t${0}", "end,"],
         "description": "Assign a function to a table key"
     },
