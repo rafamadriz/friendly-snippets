@@ -2,7 +2,7 @@
     "statefulComponent": {
         "prefix": "rnc",
         "body": [
-            "import React, { Component } from 'react';",
+            "import { Component } from 'react';",
             "",
             "import { View } from 'react-native';",
             "",
@@ -20,7 +20,7 @@
     "statefulReduxComponent": {
         "prefix": "rnrc",
         "body": [
-            "import React, { Component } from 'react';",
+            "import { Component } from 'react';",
             "",
             "import { View } from 'react-native';",
             "",
@@ -51,8 +51,7 @@
     "statelessComponent": {
         "prefix": "rnsc",
         "body": [
-            "import React from 'react';",
-            "",
+
             "import { View } from 'react-native';",
             "",
             "// import { Container } from './styles';",
@@ -67,7 +66,7 @@
     "componentFunctional": {
         "prefix": "rnfc",
         "body": [
-            "import React from 'react';",
+            
             "import { View } from 'react-native';",
             "",
             "// import { Container } from './styles';",
@@ -84,7 +83,7 @@
     "componentFunctionalTypescript": {
         "prefix": "rnfcc",
         "body": [
-            "import React from 'react';",
+            
             "import { View } from 'react-native';",
             "",
             "// import { Container } from './styles';",

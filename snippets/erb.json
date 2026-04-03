@@ -56,9 +56,19 @@
         "body": ["<%= $1 %>"],
         "description": "render block pe"
     },
+    "comment": {
+        "prefix": ["pc"],
+        "body": ["<%# $1 %>"],
+        "description": "erb print comment"
+    },
     "exec": {
         "prefix": ["er", "%"],
         "body": ["<% $1 %>"],
         "description": "erb exec block"
+    },
+    "link_to": {
+        "prefix": ["lt"],
+        "body": ["<%= link_to $1, $2 %>"],
+        "description": "link_to helper"
     }
 }

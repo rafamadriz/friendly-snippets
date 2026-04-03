@@ -1,6 +1,6 @@
 {
     "copyright": {
-        "prefix": "c)",
+        "prefix": "copyright",
         "body": [
             "Copyright (c) ${CURRENT_YEAR} ${0:Author}. All Rights Reserved."
         ],

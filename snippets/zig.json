@@ -1,12 +1,12 @@
 {
   "Import": {
     "prefix": "import",
-    "body": ["const ${1} = @import(\"${1}\")"],
+    "body": ["const ${1} = @import(\"${1}\");"],
     "description": "Importing Libraries"
   },
   "CImport": {
     "prefix": "cimport",
-    "body": ["const c = @cImport({", "    @cDefine(\"${1}\")", "});"],
+    "body": ["const c = @cImport({", "    @cDefine(\"${1}\");", "});"],
     "description": "Importing C Header Files"
   },
   "buildExe": {

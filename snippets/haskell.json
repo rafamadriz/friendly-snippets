@@ -106,7 +106,7 @@
     },
     "lambda": {
         "prefix": ["\\", "lambda"],
-        "body": ["\\${1:x} -> ${2:undefined}$0"],
+        "body": ["\\\\${1:x} -> ${2:undefined}$0"],
         "description": "lambda function"
     },
     "pragma": {
