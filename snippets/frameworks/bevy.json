@@ -1,6 +1,6 @@
 {
     "Bevy Prelude": {
-        "prefix": "prelude",
+        "prefix": "bevy",
         "body": "use bevy::prelude::*;",
         "description": "Import Bevy prelude"
     },
