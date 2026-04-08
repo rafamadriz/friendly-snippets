@@ -154,6 +154,10 @@
             },
             {
                 "language": "rust",
+                "path": "./snippets/frameworks/bevy.json"
+            },
+            {
+                "language": "rust",
                 "path": "./snippets/frameworks/relm4/workers.json"
             },
             {
