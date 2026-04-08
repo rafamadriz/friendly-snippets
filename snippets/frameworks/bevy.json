@@ -29,8 +29,8 @@
     },
     "Bevy Resource": {
         "prefix": "resource",
-        "body": ["#[derive(Resource)]", "pub struct ${1:MyResource} {", "\t$0", "}"],
-        "description": "Bevy Resource struct"
+        "body": ["#[derive(Resource)]", "pub struct ${1:MyResource}($0);"],
+        "description": "Bevy Resource tuple"
     },
     "Bevy Event": {
         "prefix": "event",
@@ -39,7 +39,7 @@
     },
     "Bevy Bundle": {
         "prefix": "bundle",
-        "body": ["#[derive(Bundle)]", "pub struct ${1:MyBundle} {", "\t$0", "}"],
+        "body": ["#[derive(Bundle)]", "pub struct ${1:MyBundle} {$0}"],
         "description": "Bevy Bundle struct"
     },
     "Bevy State": {
