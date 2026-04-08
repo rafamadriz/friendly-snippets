@@ -153,7 +153,7 @@
                 "path": "./snippets/rust/rustdoc.json"
             },
             {
-                "language": "rust",
+                "language": "bevy",
                 "path": "./snippets/frameworks/bevy.json"
             },
             {
