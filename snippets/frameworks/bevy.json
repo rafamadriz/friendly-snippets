@@ -97,7 +97,7 @@
     "Bevy Observer": {
         "prefix": "observer",
         "body": [
-            "fn ${1:on_add}(trigger: On<Add, ${2:MyComponent}>, mut commands: Commands) {",
+            "fn ${1:my_observer}(trigger: On<${2:Add}, ${3:MyComponent}>, mut commands: Commands) {",
             "\t$0",
             "}"
         ],
