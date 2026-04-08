@@ -80,17 +80,17 @@
         "description": "Bevy Res system parameter"
     },
     "Bevy ResMut param": {
-        "prefix": "res mut",
+        "prefix": "resmut",
         "body": "mut ${1:name}: ResMut<${2}>",
         "description": "Bevy ResMut system parameter"
     },
     "Bevy EventWriter param": {
-        "prefix": "event writer",
+        "prefix": "eventwriter",
         "body": "mut ${1:events}: EventWriter<${2}>",
         "description": "Bevy EventWriter system parameter"
     },
     "Bevy EventReader param": {
-        "prefix": "event reader",
+        "prefix": "eventreader",
         "body": "mut ${1:events}: EventReader<${2}>",
         "description": "Bevy EventReader system parameter"
     },
@@ -102,5 +102,10 @@
             "}"
         ],
         "description": "Bevy Observer system"
+    },
+    "Bevy System": {
+        "prefix": "system",
+        "body": ["fn ${1:my_system}(${2:args}) {", "\t$0", "}"],
+        "description": "Bevy System function"
     }
 }
