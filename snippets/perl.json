@@ -23,7 +23,7 @@
       "if ( ${1:condition} ) {",
       "\t${2:body}",
       "} elsif ( ${3:condition} ) {",
-      "\t${3:body}",
+      "\t${4:body}",
       "}"
     ]
   },
