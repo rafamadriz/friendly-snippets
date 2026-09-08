@@ -279,7 +279,9 @@
     },
     "fputs": {
         "prefix": "fputs",
-        "body": ["fputs(\"${2:This is a simpler printf.\\n}\", ${1:stdout});$0"],
+        "body": [
+            "fputs(\"${2:This is a simpler printf.\\n}\", ${1:stdout});$0"
+        ],
         "description": "puts() snippet"
     },
     "printf": {

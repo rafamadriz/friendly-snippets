@@ -24,17 +24,12 @@
     },
     "function __construct": {
         "prefix": "con",
-        "body": [
-            "public function __construct(${1: priarg}) {",
-            "}"
-        ],
+        "body": ["public function __construct(${1: priarg}) {", "}"],
         "description": "Create __construct method using the last php syntax."
     },
     "Private argument": {
         "prefix": "priarg",
-        "body": [
-            "${1:private} ${2:${3:Type} \\$${4:var}${5: = ${6:null}}}"
-        ],
+        "body": ["${1:private} ${2:${3:Type} \\$${4:var}${5: = ${6:null}}}"],
         "description": "Private argument to use on __construct method."
     },
     "function __construct (php 7 or lower)": {
@@ -254,13 +249,7 @@
     },
     "enum …": {
         "prefix": "enum",
-        "body": [
-            "enum ${1:EnumName}",
-            "{",
-            "\tcase $0;",
-            "}",
-            ""
-        ],
+        "body": ["enum ${1:EnumName}", "{", "\tcase $0;", "}", ""],
         "description": "Enum definition"
     }
 }
