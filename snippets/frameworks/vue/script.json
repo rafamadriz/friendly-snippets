@@ -33,7 +33,7 @@
         "prefix": "defineEmitsTS",
         "body": [
             "const ${1:emit} = defineEmits<{",
-            "\t(e: '${2:event}', ${3:id}: ${4:type}: ${5:type}) ",
+            "\t(e: '${2:event}', ${3:id}: ${4:type}): void",
             "\t$0",
             "}>()"
         ],
