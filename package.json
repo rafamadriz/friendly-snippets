@@ -84,6 +84,10 @@
                 "path": "./snippets/eelixir.json"
             },
             {
+                "language": "fish",
+                "path": "./snippets/fish.json"
+            },
+            {
                 "language": "fortran",
                 "path": "./snippets/fortran.json"
             },

@@ -1,0 +1,137 @@
+{
+  "shebang": {
+    "prefix": "shebang",
+    "description": "shebang",
+    "body": "#!/usr/bin/env fish"
+  },
+  "if operator": {
+    "prefix": "if",
+    "description": "if operator",
+    "body": [
+      "if ${1:condition}",
+      "\t$0",
+      "end"
+    ]
+  },
+  "if else operator": {
+    "prefix": "if-else",
+    "description": "if operator",
+    "body": [
+      "if ${1:condition}",
+      "\t${2:echo}",
+      "else",
+      "\t$0",
+      "end"
+    ]
+  },
+  "else operator": {
+    "prefix": "else",
+    "description": "else operator",
+    "body": [
+      "else",
+      "\t$0"
+    ]
+  },
+  "if compare with comparison operator": {
+    "prefix": "if-compare",
+    "description": "if operator",
+    "body": [
+      "if test ${1:first} ${2|=,!=,-eq,-ne,-gt,-ge,-lt,-le,-nt,-ot,-ef|} ${3:second}",
+      "\t$0",
+      "end"
+    ]
+  },
+  "if else with comparison operator": {
+    "prefix": "if-compare-else",
+    "description": "if else operator",
+    "body": [
+      "if test ${1:first} ${2|=,!=,-eq,-ne,-gt,-ge,-lt,-le,-nt,-ot,-ef|} ${3:second}",
+      "\t${4:echo}",
+      "else",
+      "\t$0",
+      "end"
+    ]
+  },
+  "while operator": {
+    "prefix": "while",
+    "description": "while operator",
+    "body": [
+      "while ${1:condition}",
+      "\t$0",
+      "end"
+    ]
+  },
+  "while with comparison operator": {
+    "prefix": "while-compare",
+    "description": "while operator",
+    "body": [
+      "while test ${1:first} ${2|=,!=,-eq,-ne,-gt,-ge,-lt,-le,-nt,-ot,-ef|} ${3:second}",
+      "\t$0",
+      "end"
+    ]
+  },
+  "for operator": {
+    "prefix": "for",
+    "description": "for operator",
+    "body": [
+      "for ${1:item} in ${2:collection}",
+      "\t$0",
+      "end"
+    ]
+  },
+  "switch operator": {
+    "prefix": "switch",
+    "description": "switch operator",
+    "body": [
+      "switch ${1:variable}",
+      "\tcase ${2:glob}",
+      "\t\t${3:echo}",
+      "\tcase \"*\"",
+      "\t\t$0",
+      "end"
+    ]
+  },
+  "case operator": {
+    "prefix": "case",
+    "description": "case operator",
+    "body": [
+      "case ${1:glob}",
+      "\t$0"
+    ]
+  },
+  "function definition": {
+    "prefix": "function",
+    "description": "function definition",
+    "body": [
+      "function ${1:name}",
+      "\t$0",
+      "end"
+    ]
+  },
+  "function with arguments definition": {
+    "prefix": "function-arguments",
+    "description": "function definition",
+    "body": [
+      "function ${1:name} ${2|--arguments,-a|} ${3:arguments}",
+      "\t$0",
+      "end"
+    ]
+  },
+  "function with documentation definition": {
+    "prefix": "function-description",
+    "description": "function description",
+    "body": [
+      "function ${1:name} ${2|--description,-d|} ${3:description}",
+      "\t$0",
+      "end"
+    ]
+  },
+  "begin end block": {
+    "prefix": "begin",
+    "description": "begin end block",
+    "body": [
+      "begin",
+      "\t$0",
+      "end"
+    ]
+  }
