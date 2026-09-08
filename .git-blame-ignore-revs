@@ -1,0 +1,4 @@
+# Reformat-only commits that git blame should skip.
+# git blame --ignore-revs-file=.git-blame-ignore-revs
+# (GitHub reads this file automatically in the blame view.)
+7c71d4f8e0320c94100eb98a93627ade61209116 # style: enforce Prettier + StyLua formatting repo-wide
