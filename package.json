@@ -489,6 +489,10 @@
                 "path": "./snippets/latex/bibtex.json"
             },
             {
+                "language": ["latex-tikz"],
+                "path": "./snippets/latex/tikz.json"
+            },
+            {
                 "language": "twig",
                 "path": "./snippets/frameworks/twig.json"
             },
