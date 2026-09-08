@@ -556,6 +556,10 @@
                 "path": "./snippets/objc.json"
             },
             {
+                "language": "bevy",
+                "path": "./snippets/frameworks/bevy.json"
+            },
+            {
                 "language": "unreal",
                 "path": "./snippets/frameworks/unreal.json"
             },

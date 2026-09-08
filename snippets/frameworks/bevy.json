@@ -1,0 +1,111 @@
+{
+    "Bevy Prelude": {
+        "prefix": "bevy",
+        "body": "use bevy::prelude::*;",
+        "description": "Import Bevy prelude"
+    },
+    "Bevy Plugin (struct)": {
+        "prefix": "plugin",
+        "body": [
+            "pub struct ${1:MyPlugin};",
+            "",
+            "impl Plugin for ${1:MyPlugin} {",
+            "\tfn build(&self, app: &mut App) {",
+            "\t\t$0",
+            "\t}",
+            "}"
+        ],
+        "description": "Bevy Plugin struct with impl"
+    },
+    "Bevy Plugin (fn)": {
+        "prefix": "plugin",
+        "body": ["fn ${1:my_plugin}(app: &mut App) {", "\t$0", "}"],
+        "description": "Bevy Plugin as a function"
+    },
+    "Bevy Component": {
+        "prefix": "component",
+        "body": ["#[derive(Component)]", "pub struct ${1:MyComponent};"],
+        "description": "Bevy Component unit struct"
+    },
+    "Bevy Resource": {
+        "prefix": "resource",
+        "body": ["#[derive(Resource)]", "pub struct ${1:MyResource}($0);"],
+        "description": "Bevy Resource tuple"
+    },
+    "Bevy Event": {
+        "prefix": "event",
+        "body": ["#[derive(Event)]", "pub struct ${1:MyEvent};"],
+        "description": "Bevy Event struct"
+    },
+    "Bevy Bundle": {
+        "prefix": "bundle",
+        "body": ["#[derive(Bundle)]", "pub struct ${1:MyBundle} {$0}"],
+        "description": "Bevy Bundle struct"
+    },
+    "Bevy State": {
+        "prefix": "state",
+        "body": [
+            "#[derive(States, Default, Clone, Copy, PartialEq, Eq, Hash, Debug)]",
+            "pub enum ${1:MyState} {",
+            "\t#[default]",
+            "\t${2:InitialState},",
+            "\t$0",
+            "}"
+        ],
+        "description": "Bevy States enum"
+    },
+    "Bevy SystemSet": {
+        "prefix": "systemset",
+        "body": [
+            "#[derive(SystemSet, Debug, Clone, PartialEq, Eq, Hash)]",
+            "pub enum ${1:MySet} {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Bevy SystemSet enum"
+    },
+    "Bevy Query param": {
+        "prefix": "query",
+        "body": "${1:query}: Query<${2}>",
+        "description": "Bevy Query system parameter"
+    },
+    "Bevy Commands param": {
+        "prefix": "commands",
+        "body": "mut commands: Commands",
+        "description": "Bevy Commands system parameter"
+    },
+    "Bevy Res param": {
+        "prefix": "res",
+        "body": "${1:name}: Res<${2}>",
+        "description": "Bevy Res system parameter"
+    },
+    "Bevy ResMut param": {
+        "prefix": "resmut",
+        "body": "mut ${1:name}: ResMut<${2}>",
+        "description": "Bevy ResMut system parameter"
+    },
+    "Bevy EventWriter param": {
+        "prefix": "eventwriter",
+        "body": "mut ${1:events}: EventWriter<${2}>",
+        "description": "Bevy EventWriter system parameter"
+    },
+    "Bevy EventReader param": {
+        "prefix": "eventreader",
+        "body": "mut ${1:events}: EventReader<${2}>",
+        "description": "Bevy EventReader system parameter"
+    },
+    "Bevy Observer": {
+        "prefix": "observer",
+        "body": [
+            "fn ${1:my_observer}(trigger: On<${2:Add}, ${3:MyComponent}>, mut commands: Commands) {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Bevy Observer system"
+    },
+    "Bevy System": {
+        "prefix": "system",
+        "body": ["fn ${1:my_system}(${2:args}) {", "\t$0", "}"],
+        "description": "Bevy System function"
+    }
+}
