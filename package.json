@@ -23,6 +23,10 @@
                 "path": "./snippets/license.json"
             },
             {
+                "language": "odin",
+                "path": "./snippets/odin.json"
+            },
+            {
                 "language": "c",
                 "path": "./snippets/c/c.json"
             },
