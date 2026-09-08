@@ -79,7 +79,7 @@
         "prefix": "defs",
         "body": [
             "@spec ${1:name}(${2:args}) :: ${3:no_return}",
-            "def $1{4:args} do",
+            "def $1(${4:args}) do",
             "  $0",
             "end"
         ]
@@ -91,7 +91,7 @@
             "${1:doc}",
             "\"\"\"",
             "@spec ${2:name}(${3:args}) :: ${4:no_return}",
-            "def $2{5:args} do",
+            "def $2({5:args}) do",
             "  $0",
             "end"
         ]
