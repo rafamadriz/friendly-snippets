@@ -393,6 +393,10 @@
                 "path": "./snippets/python/debug.json"
             },
             {
+                "language": "python-expects",
+                "path": "./snippets/python/expects.json"
+            },
+            {
                 "language": "pydoc",
                 "path": "./snippets/python/pydoc.json"
             },

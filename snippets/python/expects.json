@@ -1,0 +1,62 @@
+{
+  "Assert equal": {
+    "prefix": "ase",
+    "body": "expect(${1:expected}).to(equal(${2:actual})$0"
+  },
+  "Assert not equal": {
+    "prefix": "asne",
+    "body": "expect(${1:expected}).not_to(equal(${2:actual})$0"
+  },
+  "Assert raises": {
+    "prefix": "asr",
+    "body": "expect(${1:expected}).to(raise_error)$0"
+  },
+  "Assert True": {
+    "prefix": "ast",
+    "body": "expect(${1:expected}).to(be_true)$0"
+  },
+  "Assert False": {
+    "prefix": "asf",
+    "body": "expect(${1:expected}).to(be_false)$0"
+  },
+  "Assert is": {
+    "prefix": "asi",
+    "body": "expect(${1:expected}).to(be(${2:actual})$0"
+  },
+  "Assert is not": {
+    "prefix": "asint",
+    "body": "expect(${1:expected}).not_to(be(${2:actual})$0"
+  },
+  "Assert is None": {
+    "prefix": "asino",
+    "body": "expect(${1:expected}).to(be_none)$0"
+  },
+  "Assert is not None": {
+    "prefix": "asinno",
+    "body": "expect(${1:expected}).not_to(be_none)$0"
+  },
+  "Assert Empty": {
+    "prefix": "ase",
+    "body": "expect(${1:expected}).to(be_empty)$0"
+  },
+  "Assert not Empty": {
+    "prefix": "asne",
+    "body": "expect(${1:expected}).not_to(be_empty)$0"
+  },
+  "Assert in": {
+    "prefix": "asin",
+    "body": "expect(${1:expected}).to(contain(${1:actual}))$0"
+  },
+  "Assert not in": {
+    "prefix": "asni",
+    "body": "expect(${1:expected}).not_to(contain(${1:actual}))$0"
+  },
+  "Assert key": {
+    "prefix": "ask",
+    "body": "expect(${1:expected}).to(have_key(${1:actual}))$0"
+  },
+  "Assert not key": {
+    "prefix": "asnk",
+    "body": "expect(${1:expected}).not_to(have_key(${1:actual}))$0"
+  }
+}
