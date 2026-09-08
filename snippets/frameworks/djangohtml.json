@@ -223,6 +223,6 @@
     "partialdef": {
         "prefix": "partialdef",
         "description": "partialdef tag django template",
-        "body": ["{⅜ partialdef $1 %}", "$2", "{% endpartialdef %}"]
+        "body": ["{% partialdef $1 %}", "$2", "{% endpartialdef %}"]
     }
 }
