@@ -51,7 +51,6 @@
     "statelessComponent": {
         "prefix": "rnsc",
         "body": [
-
             "import { View } from 'react-native';",
             "",
             "// import { Container } from './styles';",
@@ -66,7 +65,6 @@
     "componentFunctional": {
         "prefix": "rnfc",
         "body": [
-            
             "import { View } from 'react-native';",
             "",
             "// import { Container } from './styles';",
@@ -83,7 +81,6 @@
     "componentFunctionalTypescript": {
         "prefix": "rnfcc",
         "body": [
-            
             "import { View } from 'react-native';",
             "",
             "// import { Container } from './styles';",

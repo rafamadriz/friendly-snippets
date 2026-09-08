@@ -7,11 +7,7 @@
     "block": {
         "prefix": "block",
         "description": "block tag django template",
-        "body": [
-            "{% block ${1:blockname} %}",
-            "$2",
-            "{% endblock $1 %}"
-        ]
+        "body": ["{% block ${1:blockname} %}", "$2", "{% endblock $1 %}"]
     },
     "comment": {
         "prefix": "comment",
