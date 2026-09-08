@@ -214,5 +214,15 @@
         "prefix": "mediaurl",
         "description": "",
         "body": ["{{ MEDIA_URL }}"]
+    },
+    "querystring": {
+        "prefix": "querystring",
+        "description": "querystring tag django template",
+        "body": ["{% querystring $1=$2 %}"]
+    },
+    "partialdef": {
+        "prefix": "partialdef",
+        "description": "partialdef tag django template",
+        "body": ["{% partialdef $1 %}", "$2", "{% endpartialdef %}"]
     }
 }
