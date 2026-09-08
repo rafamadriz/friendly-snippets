@@ -99,10 +99,20 @@
         "body": ["- [${1| ,x|}] ${2:text}", "${0}"],
         "description": "Insert task list"
     },
+    "Create list of todos": {
+        "prefix": "todo",
+        "body": ["- [${1| ,x|}] ${2:text}", "${0}"],
+        "description": "Create list of todos"
+    },
     "Insert task list 2": {
         "prefix": "task2",
         "body": ["- [${1| ,x|}] ${2:text}", "- [${3| ,x|}] ${4:text}", "${0}"],
         "description": "Insert task list with 2 tasks"
+    },
+    "Create list of 2 todos": {
+        "prefix": "todo2",
+        "body": ["- [${1| ,x|}] ${2:text}", "- [${3| ,x|}] ${4:text}", "${0}"],
+        "description": "Create list of 2 todos"
     },
     "Insert task list 3": {
         "prefix": "task3",
@@ -113,6 +123,16 @@
             "${0}"
         ],
         "description": "Insert task list with 3 tasks"
+    },
+    "Create list of 3 todos": {
+        "prefix": "todo3",
+        "body": [
+            "- [${1| ,x|}] ${2:text}",
+            "- [${3| ,x|}] ${4:text}",
+            "- [${5| ,x|}] ${6:text}",
+            "${0}"
+        ],
+        "description": "Create list of 3 todos"
     },
     "Insert task list 4": {
         "prefix": "task4",
@@ -125,6 +145,17 @@
         ],
         "description": "Insert task list with 4 tasks"
     },
+    "Create list of 4 todos": {
+        "prefix": "todo4",
+        "body": [
+            "- [${1| ,x|}] ${2:text}",
+            "- [${3| ,x|}] ${4:text}",
+            "- [${5| ,x|}] ${6:text}",
+            "- [${7| ,x|}] ${8:text}",
+            "${0}"
+        ],
+        "description": "Create list of 4 todos"
+    },
     "Insert task list 5": {
         "prefix": "task5",
         "body": [
@@ -136,6 +167,18 @@
             "${0}"
         ],
         "description": "Insert task list with 5 tasks"
+    },
+    "Create list of 5 todos": {
+        "prefix": "todo5",
+        "body": [
+            "- [${1| ,x|}] ${2:text}",
+            "- [${3| ,x|}] ${4:text}",
+            "- [${5| ,x|}] ${6:text}",
+            "- [${7| ,x|}] ${8:text}",
+            "- [${9| ,x|}] ${10:text}",
+            "${0}"
+        ],
+        "description": "Create list of 5 todos"
     },
     "Insert table": {
         "prefix": "table",
