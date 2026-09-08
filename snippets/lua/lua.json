@@ -11,7 +11,7 @@
     },
     "assigment": {
         "prefix": "ll",
-        "body": ["local ${1:varName} = ${0:value}"],
+        "body": ["local ${1:varName} = ${2:value}"],
         "description": "Define a variable"
     },
     "local": {
