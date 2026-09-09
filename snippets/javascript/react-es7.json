@@ -54,7 +54,6 @@
     "typescriptReactFunctionalExportComponent": {
         "prefix": "tsrfce",
         "body": [
-
             "type Props = {}",
             "",
             "function ${TM_FILENAME_BASE}({}: Props) {",
@@ -70,7 +69,6 @@
     "typescriptReactFunctionalComponent": {
         "prefix": "tsrfc",
         "body": [
-
             "type Props = {}",
             "",
             "export default function ${TM_FILENAME_BASE}({}: Props) {",
@@ -84,7 +82,6 @@
     "typescriptReactArrowFunctionExportComponent": {
         "prefix": "tsrafce",
         "body": [
-
             "type Props = {}",
             "",
             "const ${TM_FILENAME_BASE} = (props: Props) => {",
@@ -100,7 +97,6 @@
     "typescriptReactArrowFunctionComponent": {
         "prefix": "tsrafc",
         "body": [
-
             "type Props = {}",
             "",
             "const ${TM_FILENAME_BASE} = (props: Props) => {",
@@ -230,7 +226,6 @@
     "reactArrowFunctionComponentWithPropTypes": {
         "prefix": "rafcp",
         "body": [
-
             "import PropTypes from 'prop-types'",
             "",
             "const ${TM_FILENAME_BASE} = props => {",
@@ -491,7 +486,6 @@
     "reactFunctionalComponentRedux": {
         "prefix": "rfcredux",
         "body": [
-
             "import { connect } from 'react-redux'",
             "",
             "export const ${TM_FILENAME_BASE} = (props) => {",
@@ -536,7 +530,6 @@
     "reactFunctionalComponentWithPropTypes": {
         "prefix": "rfcp",
         "body": [
-
             "import PropTypes from 'prop-types'",
             "",
             "function ${TM_FILENAME_BASE}(props) {",
@@ -716,9 +709,7 @@
     },
     "useState": {
         "prefix": "useStateSnippet",
-        "body": [
-            "const [${1:state}, set${2:State}] = useState(${3:initValue})"
-        ]
+        "body": ["const [${1:state}, set${2:State}] = useState(${3:initValue})"]
     },
     "importAs": {
         "prefix": "ima",
@@ -1225,7 +1216,6 @@
     "setupReactComponentTestWithRedux": {
         "prefix": "srtest",
         "body": [
-
             "import renderer from 'react-test-renderer'",
             "import { Provider } from 'react-redux'",
             "",
@@ -1294,7 +1284,6 @@
     "setupReactTest": {
         "prefix": "stest",
         "body": [
-
             "import renderer from 'react-test-renderer'",
             "",
             "import { ${TM_FILENAME_BASE} } from '../${TM_FILENAME_BASE}'",
@@ -1514,7 +1503,6 @@
     "hocComponentWithRedux": {
         "prefix": "hocredux",
         "body": [
-
             "import { connect } from 'react-redux'",
             "import PropTypes from 'prop-types'",
             "",
@@ -1537,7 +1525,6 @@
     "hocComponent": {
         "prefix": "hoc",
         "body": [
-
             "import PropTypes from 'prop-types'",
             "",
             "export default (WrappedComponent) => {",
