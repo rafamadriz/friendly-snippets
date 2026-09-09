@@ -10,14 +10,24 @@
         "description": "Ignore specific line diagnostic in pyright (ignore all is unsafe)"
     },
     "Multiline string": {
-        "prefix": "#",
+        "prefix": "#s",
         "body": ["\"\"\"$0", "\"\"\""],
-        "description": "Snippet to avoid autopair plugin annoyances when typing multiple \""
+        "description": "Snippet to avoid weird autopair plugin behaviour"
     },
     "One-line multiline string": {
-        "prefix": "##",
+        "prefix": "#ss",
         "body": "\"\"\"$0\"\"\"",
-        "description": "Snippet to avoid autopair plugin annoyances when typing multiple \""
+        "description": "Snippet to avoid weird autopair plugin behaviour"
+    },
+    "Single-quote multiline string": {
+        "prefix": "#q",
+        "body": ["'''$0", "'''"],
+        "description": "Snippet to avoid weird autopair plugin behaviour"
+    },
+    "One-line single-quote multiline string": {
+        "prefix": "#qq",
+        "body": "'''$0'''",
+        "description": "Snippet to avoid weird autopair plugin behaviour"
     },
     "self": {
         "prefix": "s",
@@ -133,16 +143,6 @@
         "body": ["def ${1:fname}($2) -> ${3:None}:", "\t${4:pass}"],
         "description": "Function definition with return type"
     },
-    "Async Function": {
-        "prefix": "adef",
-        "body": ["async def ${1:fname}($2):", "\t${3:pass}"],
-        "description": "Async function definition"
-    },
-    "Async Function w/ return type": {
-        "prefix": "adeft",
-        "body": ["async def ${1:fname}($2) -> ${3:None}:", "\t${4:pass}"],
-        "description": "Async function definition with return type"
-    },
     "class": {
         "prefix": "class",
         "body": ["class ${1:classname}:", "\t${2:pass}"],
@@ -165,24 +165,19 @@
         "description": "Class definition template"
     },
     "Method": {
-        "prefix": "defs",
+        "prefix": "defm",
         "body": ["def ${1:mname}(self$2):", "\t${3:pass}"],
         "description": "Class method definition"
     },
     "Method w/ return type": {
-        "prefix": "defst",
+        "prefix": "defmt",
         "body": ["def ${1:mname}(self$2) -> ${3:None}:", "\t${4:pass}"],
         "description": "Class method definition"
     },
-    "Async method": {
-        "prefix": "adefs",
-        "body": ["async def ${1:mname}(self$2):", "\t${3:pass}"],
-        "description": "Async class method definition"
-    },
-    "Async method w/ return type": {
-        "prefix": "adefst",
-        "body": ["async def ${1:mname}(self$2) -> ${3:None}:", "\t${4:pass}"],
-        "description": "Async class method definition"
+    "Init method": {
+        "prefix": "defi",
+        "body": ["def __init__(self$1):", "\t${2:pass}"],
+        "description": "Class method definition"
     },
     "property template": {
         "prefix": "property",
@@ -265,5 +260,25 @@
         "prefix": "#mark",
         "body": "# %% [markdown]",
         "description": "Add a new markdown cell"
+    },
+    "Async Function": {
+        "prefix": "adef",
+        "body": ["async def ${1:fname}($2):", "\t${3:pass}"],
+        "description": "Async function definition"
+    },
+    "Async Function w/ return type": {
+        "prefix": "adeft",
+        "body": ["async def ${1:fname}($2) -> ${3:None}:", "\t${4:pass}"],
+        "description": "Async function definition with return type"
+    },
+    "Async method": {
+        "prefix": "adefs",
+        "body": ["async def ${1:mname}(self$2):", "\t${3:pass}"],
+        "description": "Async class method definition"
+    },
+    "Async method w/ return type": {
+        "prefix": "adefst",
+        "body": ["async def ${1:mname}(self$2) -> ${3:None}:", "\t${4:pass}"],
+        "description": "Async class method definition with return type"
     }
 }
