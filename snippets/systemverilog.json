@@ -630,7 +630,7 @@
     "uvm_shutdown_phase": {
         "prefix": ["uvm_phase_shutdown", "uvm_shutdown_phase"],
         "body": [
-            "virtual task shutdown_phase(uvm_pase phase);",
+            "virtual task shutdown_phase(uvm_phase phase);",
             "\t$1",
             "endtask: shutdown_phase"
         ],
