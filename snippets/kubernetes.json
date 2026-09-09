@@ -468,5 +468,57 @@
             "---",
             "$0"
         ]
+    },
+    "k8s Kustomization File": {
+        "prefix": "k-kustomization",
+        "description": "k8s Kustomization File",
+        "body": [
+            "# https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/",
+            "apiVersion: kustomize.config.k8s.io/v1beta1",
+            "kind: Kustomization",
+            "metadata:",
+            "  namespace: ${1:default} # this will set the namespace for all KRM objects mentioned in this kustomize file",
+            "# resources:",
+            "# - ...",
+            "# generators:",
+            "# - ...",
+            "# transformers:",
+            "# - ...",
+            "# validators:",
+            "# - ...",
+            "$0"
+        ]
+    },
+    "k8s Helm Chart Inflation Generator": {
+        "prefix": "k-helm-generator-file",
+        "description": "k8s Helm Chart Inflation Generator",
+        "body": [
+            "# https://kubectl.docs.kubernetes.io/references/kustomize/builtins/#_helmchartinflationgenerator_",
+            "apiVersion: builtin",
+            "kind: HelmChartInflationGenerator",
+            "metadata:",
+            "  name: ${1:my-chart-generator} # Name of this generator",
+            "name: ${3:chart-name} # Name of the chart you want to use",
+            "namespace: ${4:default}",
+            "repo: ${5:https://charts.example.com/}",
+            "version: ${6:1.0.0}",
+            "releaseName: ${7:my-release}",
+            "valuesFile: ${8:values.yaml}",
+            "---",
+            "$0"
+        ]
+    },
+    "k8s Namespace": {
+        "prefix": "k-namespace",
+        "description": "k8s Namespace",
+        "body": [
+            "# https://kubernetes.io/docs/tasks/administer-cluster/namespaces/",
+            "apiVersion: v1",
+            "kind: Namespace",
+            "metadata:",
+            "  name: ${1:default}",
+            "---",
+            "$0"
+        ]
     }
 }
