@@ -1,30 +1,23 @@
-name: Format JSON files
+name: Style check
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
+  pull_request:
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   prettier:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          # Make sure the actual branch is checked out when running on pull requests
-          ref: ${{ github.head_ref }}
+      - uses: actions/checkout@v6
+      - run: npx --yes prettier --check "**/*.json"
 
-      - name: Format JSON
-        uses: creyD/prettier_action@v4.3
+  stylua:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: JohnnyMorganz/stylua-action@v5
         with:
-          commit_message: "CI: format JSON files"
-          only_changed: true
-          # This part is also where you can pass other options, for example:
-          prettier_options: --tab-width 4 --parser json --write **/*.json
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version: 2.5.2
+          args: --check debug/

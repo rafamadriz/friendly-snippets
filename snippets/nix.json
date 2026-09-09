@@ -1,20 +1,12 @@
 {
     "ifelse": {
         "prefix": "if",
-        "body": [
-            "if $1 then",
-            "  $2",
-            "else$0"
-        ],
+        "body": ["if $1 then", "  $2", "else$0"],
         "description": "if-else block"
     },
     "letin": {
         "prefix": "let",
-        "body": [
-            "let",
-            "  $1",
-            "in $0"
-        ],
+        "body": ["let", "  $1", "in $0"],
         "description": "let-in block"
     },
     "hash": {
@@ -46,14 +38,7 @@
     },
     "package-arguments": {
         "prefix": "pkg",
-        "body": [
-            "{ lib",
-            ", ${1:stdenv}",
-            ", $2",
-            "}:",
-            "",
-            "$0"
-        ],
+        "body": ["{ lib", ", ${1:stdenv}", ", $2", "}:", "", "$0"],
         "description": "Package arguments, starting with { lib"
     },
     "stdenv.mkDerivation": {

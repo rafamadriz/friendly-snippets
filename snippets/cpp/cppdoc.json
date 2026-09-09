@@ -37,9 +37,7 @@
     },
     "@return": {
         "prefix": "@return",
-        "body": [
-            "@return ${1:Type and description of the returned value.}$0"
-        ],
+        "body": ["@return ${1:Type and description of the returned value.}$0"],
         "description": "Type and description of the returned value."
     },
     "@example": {
@@ -53,16 +51,12 @@
     },
     "@throws": {
         "prefix": "@throws",
-        "body": [
-            "@throws ${1:ExceptionName} ${2:Description.}$0"
-        ],
+        "body": ["@throws ${1:ExceptionName} ${2:Description.}$0"],
         "description": "Indicates the exceptions that can be thrown by a function. This tag is a synonym of @exception."
     },
     "@exception": {
         "prefix": "@exception",
-        "body": [
-            "@exception ${1:ExceptionName} ${2:Description.}$0"
-        ],
+        "body": ["@exception ${1:ExceptionName} ${2:Description.}$0"],
         "description": "Indicates the exceptions that can be thrown by a function. This tag is a synonym of @throws."
     }
 }

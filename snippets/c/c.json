@@ -279,7 +279,9 @@
     },
     "fputs": {
         "prefix": "fputs",
-        "body": ["fputs(\"${2:This is a simpler printf.\\n}\", ${1:stdout});$0"],
+        "body": [
+            "fputs(\"${2:This is a simpler printf.\\n}\", ${1:stdout});$0"
+        ],
         "description": "puts() snippet"
     },
     "printf": {
@@ -299,7 +301,7 @@
     },
     "snprintf": {
         "prefix": "snprintf",
-        "body": ["snprintf(${1:buf}, ${2:max}, \"${3:%s}\\n\"$3);$0"],
+        "body": ["snprintf(${1:buf}, ${2:max}, \"${3:%s}\\n\"$4);$0"],
         "description": "snprintf() snippet"
     },
     "scanf": {

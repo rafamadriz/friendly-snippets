@@ -79,6 +79,11 @@
         "body": ["begin", "\t$0", "end"],
         "description": "Code snippet to create a begin block."
     },
+    "let": {
+        "prefix": ["le", "let"],
+        "body": ["let", "\t$0", "end"],
+        "description": "Code snippet to create a let block."
+    },
     "main": {
         "prefix": "main",
         "body": ["function main()", "\t$0", "end", "\nmain()"],
