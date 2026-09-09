@@ -103,6 +103,16 @@
         "body": ["for ${1:value} in ${2:iterable}:", "\t${3:pass}"],
         "description": "for loop"
     },
+    "async for": {
+        "prefix": "afor",
+        "body": ["async for ${1:item} in ${2:aiterable}:", "\t${3:pass}"],
+        "description": "Async for loop"
+    },
+    "async generator": {
+        "prefix": "agen",
+        "body": ["async def ${1:gen_name}($2):", "\t${3:yield $4}"],
+        "description": "Async generator function"
+    },
     "for w/ range": {
         "prefix": "forr",
         "body": ["for ${1:value} in range($2):", "\t${3:pass}"],
@@ -112,6 +122,11 @@
         "prefix": "with",
         "body": ["with ${1:expression} as ${2:target}:", "\t${3:pass}"],
         "description": "'with' statement"
+    },
+    "async with": {
+        "prefix": "awith",
+        "body": ["async with ${1:expression} as ${2:var}:", "\t${3:pass}"],
+        "description": "Async context manager"
     },
     "lambda": {
         "prefix": "lambda",
@@ -245,5 +260,25 @@
         "prefix": "#mark",
         "body": "# %% [markdown]",
         "description": "Add a new markdown cell"
+    },
+    "Async Function": {
+        "prefix": "adef",
+        "body": ["async def ${1:fname}($2):", "\t${3:pass}"],
+        "description": "Async function definition"
+    },
+    "Async Function w/ return type": {
+        "prefix": "adeft",
+        "body": ["async def ${1:fname}($2) -> ${3:None}:", "\t${4:pass}"],
+        "description": "Async function definition with return type"
+    },
+    "Async method": {
+        "prefix": "adefs",
+        "body": ["async def ${1:mname}(self$2):", "\t${3:pass}"],
+        "description": "Async class method definition"
+    },
+    "Async method w/ return type": {
+        "prefix": "adefst",
+        "body": ["async def ${1:mname}(self$2) -> ${3:None}:", "\t${4:pass}"],
+        "description": "Async class method definition with return type"
     }
 }
