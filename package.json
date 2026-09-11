@@ -1,5 +1,6 @@
 {
     "name": "friendly-snippets",
+    "type": "module",
     "engines": {
         "vscode": "^1.11.0"
     },
