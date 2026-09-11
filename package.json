@@ -335,7 +335,7 @@
                 "path": "./snippets/frameworks/remix-ts.json"
             },
             {
-                "language": "terraform",
+                "language": ["terraform", "opentofu"],
                 "path": "./snippets/terraform.json"
             },
             {
