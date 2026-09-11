@@ -1,0 +1,64 @@
+{
+    "defn": {
+        "prefix": ["defn"],
+        "body": [
+            "(defn ${1:name} [${2:args}]",
+            "  ${3:body}",
+            ")"
+        ],
+        "description": "Define function"
+    },
+    "defnd": {
+        "prefix": ["defnd"],
+        "body": [
+            "(defn ${1:name}",
+            "  \"${2:doc}\"",
+            "  ${3:body}",
+            ")"
+        ],
+        "description": "Define function with docstring"
+    },
+    "fn": {
+        "prefix": ["fn"],
+        "body": [
+            "(fn [${1:args}]",
+            "  ${2:body})"
+        ],
+        "description": "Define unnamed function"
+    },
+    "ns": {
+        "prefix": ["ns"],
+        "body": [
+            "(ns ${1:namespace}",
+            "  (:require",
+            "    [${2:lib} :as ${3:alias}]))"
+        ],
+        "description": "Define namespace"
+    },
+    "nsm": {
+        "prefix": ["nsm"],
+        "body": ["(ns ${1:namespace})"],
+        "description": "Define minimal namespace"
+    },
+    "let": {
+        "prefix": ["let"],
+        "body": [
+            "(let [${1:binds}]",
+            "  ${2:body})"
+        ],
+        "description": "Let statement"
+    },
+    "if": {
+        "prefix": ["if"],
+        "body": [
+            "(if ${1:cond}",
+            "  ${2:body}",
+            "  ${3:body})"
+        ],
+        "description": "If statement"
+    },
+    "assoc": {
+        "prefix": ["assoc"],
+        "body": ["(assoc ${1:map} :${2:key} ${3:val})"]
+    }
+}
