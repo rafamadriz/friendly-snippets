@@ -44,13 +44,18 @@ const err = (f, name, msg) => { errors++; console.error(`ERROR ${f}${name ? ` [$
 const errorsOnly = process.argv.includes('--errors-only');
 const warn = errorsOnly ? (f, name, msg) => {} : (f, name, msg) => { warnings++; console.warn(`WARN  ${f}${name ? ` [${name}]` : ''}: ${msg}`); };
 
-/** Find the matching `}` for a `{` at index open (with escape handling). */
+/** Find the matching `}` for a `{` at index open (escape handling).
+ * Only `${` opens a nested construct — a bare `{` (or a `{` after an
+ * escaped `\$`) is literal placeholder text, e.g. `${2:\${SOURCES\}}`. */
 function matchBrace(s, open) {
   let depth = 0;
+  let prevDollar = false; // previous char was an UNescaped $
   for (let j = open; j < s.length; j++) {
-    if (s[j] === '\\') { j++; continue; }
-    if (s[j] === '{') depth++;
-    else if (s[j] === '}') { depth--; if (depth === 0) return j; }
+    const ch = s[j];
+    if (ch === '\\') { j++; prevDollar = false; continue; }
+    if (ch === '{') { if (j === open || prevDollar) depth++; }
+    else if (ch === '}') { depth--; if (depth === 0) return j; }
+    prevDollar = ch === '$';
   }
   return -1;
 }
@@ -223,9 +228,12 @@ function validateFile(file) {
     } else {
       err(file, name, `invalid body (must be string or string[]): ${JSON.stringify(body)?.slice(0, 60)}`);
     }
-    // description
-    if ('description' in snip && typeof snip.description !== 'string') {
-      err(file, name, `description must be a string, got ${typeof snip.description}`);
+    // description — string or array of strings (LuaSnip renders string[] as a
+    // multi-line description, and VS Code ignores non-string descriptions)
+    const d = snip.description;
+    if ('description' in snip && !(typeof d === 'string' || (Array.isArray(d) && d.every((x) => typeof x === 'string' && x.length > 0)))) {
+      const kind = Array.isArray(d) ? 'array with non-string/empty items' : typeof d;
+      err(file, name, `description must be a string or string[], got ${kind}`);
     } else if (!('description' in snip)) {
       warn(file, name, 'missing description (consistency — reviews on #376, #232)');
     }

@@ -68,6 +68,16 @@ const CLEAN = f('clean.json', {
     body: 'just text ${1:with a stop}$0',
     description: 'string body form',
   },
+  escapedNestedBraces: {
+    prefix: 'enb',
+    body: ['add_executable(', '\t${1:exe}', '\t${2:\\${SOURCES\\}}', ')'],
+    description: 'literal ${SOURCES} via escapes; bare { is not a nested stop',
+  },
+  arrayDescription: {
+    prefix: 'ad',
+    body: 'snippet ${1:body}',
+    description: ['summary line', 'detail line'],
+  },
   multilineBacktick: {
     prefix: 'mlb',
     body: ['const x = `starts', 'and $0 ends`'],
@@ -111,6 +121,9 @@ const BROKEN = [
   [{ prefix: 'kj', body: '$${1:i} $${1:j} $0', description: 'x' }, 'defined twice with different placeholders'],
   [{ prefix: 'kk', body: '${1 } $0', description: 'x' }, 'whitespace in head'],
   [{ prefix: 'kl', body: [], description: 'x' }, 'empty body'],
+  [{ prefix: 'km', body: '${2:{a:"1", b:"2"\\}} $0', description: 'x' }, null], // escaped \} closes nothing
+  [{ prefix: 'kn', body: '$0', description: 42 }, 'description must be a string or string[]'],
+  [{ prefix: 'ko', body: '$0', description: ['ok', 7] }, 'description must be a string or string[]'],
 ];
 
 const brokenObjs = { snip0: { prefix: 'dup', body: '$0', description: '' } }; // baseline; also the first 'dup' prefix
