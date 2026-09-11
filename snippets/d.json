@@ -1,0 +1,239 @@
+{
+    "Comment block": {
+        "prefix": "/",
+        "body": "/*$0 */"
+    },
+    "Multiline comment": {
+        "prefix": "//",
+        "body": ["/*$0", " */"]
+    },
+
+    "Module": {
+        "prefix": "module",
+        "body": "module $1;$0"
+    },
+    "Import": {
+        "prefix": "import",
+        "body": "import $1;$0"
+    },
+
+    "Main": {
+        "prefix": "main",
+        "body": ["void main()", "{", "    $0", "}"]
+    },
+    "Main with arguments": {
+        "prefix": "maina",
+        "body": ["void main(string[] args)", "{", "    $0", "}"]
+    },
+
+    "Alias this": {
+        "prefix": "alias this",
+        "body": "alias $1 this;$0"
+    },
+    "Alias": {
+        "prefix": "alias",
+        "body": "alias $1 = $2;$0"
+    },
+    "Struct": {
+        "prefix": "struct",
+        "body": ["struct $1", "{", "    $0", "}"]
+    },
+    "Class": {
+        "prefix": "class",
+        "body": ["class $1", "{", "    $0", "}"]
+    },
+    "Interface": {
+        "prefix": "interface",
+        "body": ["interface $1", "{", "    $0", "}"]
+    },
+    "Union": {
+        "prefix": "union",
+        "body": ["union $1", "{", "    $0", "}"]
+    },
+    "Enum": {
+        "prefix": "enum",
+        "body": ["enum $1", "{", "    $0", "}"]
+    },
+    "Mixin template": {
+        "prefix": "mixin template",
+        "body": ["mixin template $1($2)", "{", "    $0", "}"]
+    },
+    "Template": {
+        "prefix": "template",
+        "body": ["template $1($2)", "{", "    $0", "}"]
+    },
+
+    "Version": {
+        "prefix": "version",
+        "body": ["version ($1)", "{", "    $0", "}"]
+    },
+    "Debug": {
+        "prefix": "debug",
+        "body": ["debug", "{", "    $0", "}"]
+    },
+    "Scope": {
+        "prefix": "scope",
+        "body": ["scope ($1)", "{", "    $0", "}"]
+    },
+    "With": {
+        "prefix": "with",
+        "body": ["with ($1)", "{", "    $0", "}"]
+    },
+    "If": {
+        "prefix": "if",
+        "body": ["if ($1)", "{", "    $0", "}"]
+    },
+    "Else static if": {
+        "prefix": "else static if",
+        "body": ["else static if ($1)", "{", "    $0", "}"]
+    },
+    "Else if": {
+        "prefix": "else if",
+        "body": ["else if ($1)", "{", "    $0", "}"]
+    },
+    "Else": {
+        "prefix": "else",
+        "body": ["else", "{", "    $0", "}"]
+    },
+    "Switch": {
+        "prefix": "switch",
+        "body": ["switch ($1)", "{", "    $0", "}"]
+    },
+    "Case": {
+        "prefix": "case",
+        "body": ["case $1:", "    $0", "    break;"]
+    },
+    "Default": {
+        "prefix": "default",
+        "body": ["default:", "    $0", "    break;"]
+    },
+    "While": {
+        "prefix": "while",
+        "body": ["while ($1)", "{", "    $0", "}"]
+    },
+    "Do while": {
+        "prefix": "do while",
+        "body": ["do", "{", "    $0", "} while ($1);"]
+    },
+    "Indexed for loop": {
+        "prefix": "for",
+        "body": ["for (${1:size_t} ${2:i}; $2 < ${3:count}; $2++)", "{", "    $0", "}"]
+    },
+    "Reversed indexed for loop": {
+        "prefix": "forr",
+        "body": ["for (${1:size_t} ${2:i} = ${3:count} - 1; $2 >= 0; $2--)", "{", "    $0", "}"]
+    },
+    "For each": {
+        "prefix": "foreach",
+        "body": ["foreach (${2:item}; $1)", "{", "    $0", "}"]
+    },
+    "For each reverse": {
+        "prefix": "foreach_reverse",
+        "body": ["foreach_reverse (${2:item}; $1)", "{", "    $0", "}"]
+    },
+
+    "Constructor": {
+        "prefix": "constructor",
+        "body": ["this($1)", "{", "    $0", "}"]
+    },
+    "Destructor": {
+        "prefix": "destructor",
+        "body": ["~this()", "{", "    $0", "}"]
+    },
+
+    "In": {
+        "prefix": "in",
+        "body": ["in", "{", "    $0", "}"]
+    },
+    "Out": {
+        "prefix": "out",
+        "body": ["out (${1:result})", "{", "    $0", "}"]
+    },
+    "Do": {
+        "prefix": "do",
+        "body": ["do", "{", "    $0", "}"]
+    },
+
+    "Traits": {
+        "prefix": "traits",
+        "body": "__traits($1)$0"
+    },
+    "Assert": {
+        "prefix": "assert",
+        "body": "assert($1)$0"
+    },
+    "Deprecated": {
+        "prefix": "deprecated",
+        "body": "deprecated($1)$0"
+    },
+    "Pragma": {
+        "prefix": "pragma",
+        "body": "pragma($1)$0"
+    },
+    "Mangle": {
+        "prefix": "mangle",
+        "body": "pragma(mangle, $1)$0"
+    },
+    "Start address": {
+        "prefix": "startaddress",
+        "body": "pragma(startaddress, $1);$0"
+    },
+    "Msg": {
+        "prefix": "msg",
+        "body": "pragma(msg, $1);$0"
+    },
+    "Crt constructor": {
+        "prefix": "crt_constructor",
+        "body": "pragma(crt_constructor, $1)$0"
+    },
+    "Crt destructor": {
+        "prefix": "crt_destructor",
+        "body": "pragma(crt_destructor, $1)$0"
+    },
+    "Linker directive": {
+        "prefix": "linkerDirective",
+        "body": "pragma(linkerDirective, $1);$0"
+    },
+    "Lib": {
+        "prefix": "lib",
+        "body": "pragma(lib, $1);$0"
+    },
+    "Inline": {
+        "prefix": "inline",
+        "body": "pragma(inline, true)$0"
+    },
+    "No inline": {
+        "prefix": "noinline",
+        "body": "pragma(inline, false)$0"
+    },
+    "Align": {
+        "prefix": "align",
+        "body": "align($1)$0"
+    },
+
+    "Try": {
+        "prefix": "try",
+        "body": ["try", "{", "    $0", "}"]
+    },
+    "Catch": {
+        "prefix": "catch",
+        "body": ["catch ($1)", "{", "    $0", "}"]
+    },
+    "Finally": {
+        "prefix": "finally",
+        "body": ["finally", "{", "    $0", "}"]
+    },
+
+    "Asm": {
+        "prefix": "asm",
+        "body": ["asm", "{", "    $0", "}"]
+    },
+    "Extern": {
+        "prefix": "extern",
+        "body": "extern($1)$0"
+    },
+    "Unit test": {
+        "prefix": "test",
+        "body": ["unittest", "{", "    $0", "}"]
+    }
+}
