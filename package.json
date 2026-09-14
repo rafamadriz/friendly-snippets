@@ -36,6 +36,10 @@
                 "path": "./snippets/cpp/cpp.json"
             },
             {
+                "language": "d",
+                "path": "./snippets/d.json"
+            },
+            {
                 "language": "cppdoc",
                 "path": "./snippets/cpp/cppdoc.json"
             },
