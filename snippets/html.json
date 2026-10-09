@@ -327,12 +327,12 @@
         "prefix": "html5",
         "body": [
             "<!DOCTYPE html>",
-            "<html lang=\"$1en\">",
+            "<html lang=\"${1:en}\">",
             "\t<head>",
             "\t\t<meta charset=\"UTF-8\">",
             "\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
             "\t\t<title>$2</title>",
-            "\t\t<link href=\"$3css/style.css\" rel=\"stylesheet\">",
+            "\t\t<link href=\"${3:css/style.css}\" rel=\"stylesheet\">",
             "\t</head>",
             "\t<body>",
             "\t$0",
@@ -712,73 +712,73 @@
         "description": "HTML - Defines a video",
         "scope": "text.html"
     },
-"div.": {
+    "div.": {
         "prefix": "div.",
         "body": ["<div class=\"$1\">", "\t$2", "</div>"],
         "description": "HTML - Defines a section in a document",
         "scope": "text.html"
     },
-"div#": {
+    "div#": {
         "prefix": "div#",
         "body": ["<div id=\"$1\">", "\t$2", "</div>"],
         "description": "HTML - Defines a section in a document",
         "scope": "text.html"
     },
-"div.#": {
+    "div.#": {
         "prefix": "div.#",
         "body": ["<div class=\"$1\" id=\"$2\">", "\t$3", "</div>"],
         "description": "HTML - Defines a section in a document",
         "scope": "text.html"
     },
-"p.": {
+    "p.": {
         "prefix": "p.",
         "body": ["<p class=\"$1\">$2</p>"],
         "description": "HTML - Defines a paragraph",
         "scope": "text.html"
     },
-"p#": {
+    "p#": {
         "prefix": "p#",
         "body": ["<p id=\"$1\">$2</p>"],
         "description": "HTML - Defines a paragraph",
         "scope": "text.html"
     },
-"p.#": {
+    "p.#": {
         "prefix": "p.#",
         "body": ["<p class=\"$1\" id=\"$2\">$3</p>"],
         "description": "HTML - Defines a paragraph",
         "scope": "text.html"
     },
-"ul.": {
+    "ul.": {
         "prefix": "ul.",
         "body": ["<ul class=\"$1\">", "\t$2", "</ul>"],
         "description": "HTML - Defines an unordered list",
         "scope": "text.html"
     },
-"ul#": {
+    "ul#": {
         "prefix": "ul#",
         "body": ["<ul id=\"$1\">", "\t$2", "</ul>"],
         "description": "HTML - Defines an unordered list",
         "scope": "text.html"
     },
-"ul.#": {
+    "ul.#": {
         "prefix": "ul.#",
         "body": ["<ul class=\"$1\" id=\"$2\">", "\t$3", "</ul>"],
         "description": "HTML - Defines an unordered list",
         "scope": "text.html"
     },
-"ol.": {
+    "ol.": {
         "prefix": "ol.",
         "body": ["<ol class=\"$1\">", "\t$2", "</ol>"],
         "description": "HTML - Defines an ordered list",
         "scope": "text.html"
     },
-"ol#": {
+    "ol#": {
         "prefix": "ol#",
         "body": ["<ol id=\"$1\">", "\t$2", "</ol>"],
         "description": "HTML - Defines an ordered list",
         "scope": "text.html"
     },
-"ol.#": {
+    "ol.#": {
         "prefix": "ol.#",
         "body": ["<ol class=\"$1\" id=\"$2\">", "\t$3", "</ol>"],
         "description": "HTML - Defines an ordered list",

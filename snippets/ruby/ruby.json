@@ -1,7 +1,13 @@
 {
     "Exception block": {
         "prefix": "begin",
-        "body": ["begin", "\t$1", "rescue ${2:StandardError} => ${3:exception}", "\t$0", "end"]
+        "body": [
+            "begin",
+            "\t$1",
+            "rescue ${2:StandardError} => ${3:exception}",
+            "\t$0",
+            "end"
+        ]
     },
     "Exception block with ensure": {
         "prefix": "begin ensure",
@@ -26,6 +32,26 @@
             "\t$5",
             "ensure",
             "\t$0",
+            "end"
+        ]
+    },
+    "Ruby Benchmark Measure": {
+        "prefix": "benchm",
+        "body": [
+            "require 'benchmark'",
+            "",
+            "puts Benchmark.measure { ${1:# benchmark code} }"
+        ]
+    },
+    "Ruby Benchmark BM": {
+        "prefix": "benchbm",
+        "body": [
+            "require 'benchmark'",
+            "",
+            "n = ${1:50000}",
+            "Benchmark.bm do |x|",
+            "  x.report(\"${2:Task 1}\") { n.times { ${3:\"task 1\"} } }",
+            "  x.report(\"${4:Task 2}\") { n.times { ${5:\"task 2\"} } }",
             "end"
         ]
     },
@@ -61,7 +87,15 @@
     },
     "if elsif else": {
         "prefix": "ifee",
-        "body": ["if ${1:test}", "\t$2", "elsif ${3:test}", "\t$4", "else", "\t$0", "end"]
+        "body": [
+            "if ${1:test}",
+            "\t$2",
+            "elsif ${3:test}",
+            "\t$4",
+            "else",
+            "\t$0",
+            "end"
+        ]
     },
     "case": {
         "prefix": "case",

@@ -11,25 +11,30 @@
         "prefix": "ifr",
         "body": "if (!${1:condition}) {\n\treturn null\n}"
     },
-    "reactClassCompoment": {
+    "reactClassComponent": {
         "prefix": "rcc",
         "body": "import { Component } from 'react'\n\nclass ${TM_FILENAME_BASE} extends Component {\n\trender () {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}\n\nexport default ${1}",
         "description": "Creates a React component class"
     },
-    "reactJustClassCompoment": {
+    "reactJustClassComponent": {
         "prefix": "rcjc",
         "body": "class ${TM_FILENAME_BASE} extends Component {\n\trender () {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}\n",
         "description": "Creates a React component class"
     },
-    "reactClassCompomentPropTypes": {
+    "reactClassComponentPropTypes": {
         "prefix": "rccp",
         "body": "import { Component, PropTypes } from 'react'\n\nclass ${TM_FILENAME_BASE} extends Component {\n\trender () {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}\n\n${1}.propTypes = {\n\n}\n\nexport default ${1}",
         "description": "Creates a React component class with PropTypes"
     },
-    "reactClassCompomentWithMethods": {
+    "reactClassComponentWithMethods": {
         "prefix": "rcfc",
         "body": "import { Component, PropTypes } from 'react'\n\nclass ${TM_FILENAME_BASE} extends Component {\n\tconstructor(props) {\n\t\tsuper(props)\n\n\t}\n\n\tcomponentWillMount () {\n\n\t}\n\n\tcomponentDidMount () {\n\n\t}\n\n\tcomponentWillReceiveProps (nextProps) {\n\n\t}\n\n\tshouldComponentUpdate (nextProps, nextState) {\n\n\t}\n\n\tcomponentWillUpdate (nextProps, nextState) {\n\n\t}\n\n\tcomponentDidUpdate (prevProps, prevState) {\n\n\t}\n\n\tcomponentWillUnmount () {\n\n\t}\n\n\trender () {\n\t\treturn (\n\t\t\t<div>\n\n\t\t\t</div>\n\t\t)\n\t}\n}\n\n${1}.propTypes = {\n\n}\n\nexport default ${1}",
         "description": "Creates a React component class with PropTypes and all lifecycle methods"
+    },
+    "reactJSXClassName": {
+        "prefix": "cla",
+        "body": "className=\"${1:classes}\"$0",
+        "description": "JSX className attribute for React components"
     },
     "reactFunctionComponent": {
         "prefix": "rfc",
