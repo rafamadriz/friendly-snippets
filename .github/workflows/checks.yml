@@ -1,0 +1,40 @@
+name: Snippet checks
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: npx --yes prettier --check "**/*.json"
+
+  stylua:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: JohnnyMorganz/stylua-action@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version: 2.5.2
+          args: --check debug/
+
+  # Validates snippet definitions (structure, prefixes, VS Code snippet
+  # grammar). Non-blocking until the existing baseline of errors is cleaned
+  # up; remove `continue-on-error` once `node debug/validate-snippets.js`
+  # exits 0 on main.
+  snippets:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v6
+      - run: node debug/validate-snippets.js
+
+  snippet-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: node debug/test-validate-snippets.js

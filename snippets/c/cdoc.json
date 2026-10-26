@@ -37,9 +37,7 @@
     },
     "@return": {
         "prefix": "@return",
-        "body": [
-            "@return ${1:Type and description of the returned value.}$0"
-        ],
+        "body": ["@return ${1:Type and description of the returned value.}$0"],
         "description": "Type and description of the returned value."
     },
     "@example": {
@@ -53,44 +51,32 @@
     },
     "@note": {
         "prefix": "@note",
-        "body": [
-            "@note ${1:Text.}$0"
-        ],
+        "body": ["@note ${1:Text.}$0"],
         "description": "Anything worth mentioning that wouldn't fit in the description, or other documentation tags."
     },
     "@warning": {
         "prefix": "@warning",
-        "body": [
-            "@warning ${1:Text.}$0"
-        ],
+        "body": ["@warning ${1:Text.}$0"],
         "description": "Indicates special considerations when using the function."
     },
     "@see": {
         "prefix": "@see",
-        "body": [
-            "@see ${1:Text.}$0"
-        ],
+        "body": ["@see ${1:Text.}$0"],
         "description": "References another function, or piece of documentation."
     },
     "@deprecated": {
         "prefix": "@deprecated",
-        "body": [
-            "@deprecated ${1:Text.}$0"
-        ],
+        "body": ["@deprecated ${1:Text.}$0"],
         "description": "Marks the function as deprecated, and no longer recommended for use."
     },
     "@todo": {
         "prefix": "@todo",
-        "body": [
-            "@todo ${1:Text.}$0"
-        ],
+        "body": ["@todo ${1:Text.}$0"],
         "description": "Used to mark areas of the code that require improvement."
     },
     "@fixme": {
         "prefix": "@fixme",
-        "body": [
-            "@fixme ${1:Text.}$0"
-        ],
+        "body": ["@fixme ${1:Text.}$0"],
         "description": "Used to mark areas of the code that require fixing."
     }
 }

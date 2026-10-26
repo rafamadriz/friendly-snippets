@@ -96,7 +96,7 @@
     "when_in_case": {
         "prefix": "cwhen, whenc",
         "description": "when alternative of a case statement",
-        "body": [ "when ${1:choice} => $0" ]
+        "body": ["when ${1:choice} => $0"]
     },
     "with_select": {
         "prefix": "with",
@@ -129,13 +129,7 @@
     "if_else": {
         "prefix": "ifelse",
         "description": "If else Statement",
-        "body": [
-            "if ${1:condition} then",
-            "\t$0",
-            "else",
-            "\t",
-            "end if;"
-        ]
+        "body": ["if ${1:condition} then", "\t$0", "else", "\t", "end if;"]
     },
     "for": {
         "prefix": "for",
@@ -189,37 +183,27 @@
     "signal": {
         "prefix": "signal",
         "description": "Signal declaration",
-        "body": [
-            "signal ${1:signal_name} : ${2:std_logic};"
-        ]
+        "body": ["signal ${1:signal_name} : ${2:std_logic};"]
     },
     "signal initialised": {
         "prefix": "sigi, signali",
         "description": "Signal declaration with initialisation",
-        "body": [
-            "signal ${1:signal_name} : ${2:std_logic} := ${3:'0'};"
-        ]
+        "body": ["signal ${1:signal_name} : ${2:std_logic} := ${3:'0'};"]
     },
     "variable": {
         "prefix": "variable",
         "description": "variable declaration",
-        "body": [
-            "variable ${1:var_name} : ${2:integer};"
-        ]
+        "body": ["variable ${1:var_name} : ${2:integer};"]
     },
     "variable initialised": {
         "prefix": "vari, variablei",
         "description": "Variable declaration with initialisation",
-        "body": [
-            "variable ${1:var_name} : ${2:integer} := ${3:0};"
-        ]
+        "body": ["variable ${1:var_name} : ${2:integer} := ${3:0};"]
     },
     "constant": {
         "prefix": "constant",
         "description": "Constant declaration with initialisation",
-        "body": [
-            "constant ${1:const_name} : ${2:integer} := ${3:0};"
-        ]
+        "body": ["constant ${1:const_name} : ${2:integer} := ${3:0};"]
     },
     "function": {
         "prefix": "function, pfunc",
@@ -323,9 +307,9 @@
         "body": "signed(${1:7} ${2|downto,to|} ${3:0})"
     },
     "signed initialised": {
-      "prefix": "sii",
-      "description": "signed Type initialised",
-      "body": "signed(${1:7} ${2|downto,to|} ${3:0}) := (others => '0');"
+        "prefix": "sii",
+        "description": "signed Type initialised",
+        "body": "signed(${1:7} ${2|downto,to|} ${3:0}) := (others => '0');"
     },
     "unsigned": {
         "prefix": "uns",

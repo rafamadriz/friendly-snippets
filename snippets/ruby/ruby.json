@@ -1,7 +1,13 @@
 {
     "Exception block": {
         "prefix": "begin",
-        "body": ["begin", "\t$1", "rescue ${2:StandardError} => ${3:exception}", "\t$0", "end"]
+        "body": [
+            "begin",
+            "\t$1",
+            "rescue ${2:StandardError} => ${3:exception}",
+            "\t$0",
+            "end"
+        ]
     },
     "Exception block with ensure": {
         "prefix": "begin ensure",
@@ -81,7 +87,15 @@
     },
     "if elsif else": {
         "prefix": "ifee",
-        "body": ["if ${1:test}", "\t$2", "elsif ${3:test}", "\t$4", "else", "\t$0", "end"]
+        "body": [
+            "if ${1:test}",
+            "\t$2",
+            "elsif ${3:test}",
+            "\t$4",
+            "else",
+            "\t$0",
+            "end"
+        ]
     },
     "case": {
         "prefix": "case",

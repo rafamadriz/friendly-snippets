@@ -31,12 +31,7 @@
     },
     "example": {
         "prefix": "Example",
-        "body": [
-            " * Example:",
-            " * ```",
-            " * Write me later",
-            " * ```"
-        ],
+        "body": [" * Example:", " * ```", " * Write me later", " * ```"],
         "description": "While there is no dedicated tag for examples on Kotlin, we can still include them as plain text. This allows you illustrate the usage or behavior of a particular code element."
     },
     "@param": {
@@ -55,47 +50,32 @@
     },
     "@example": {
         "prefix": "@example",
-        "body": [
-            "@example",
-            "```",
-            "${1:Write me later}$0",
-            "```"
-        ],
+        "body": ["@example", "```", "${1:Write me later}$0", "```"],
         "description": "Adds an example to the documentation."
     },
     "@see": {
         "prefix": "@see",
-        "body": [
-            "@see ${1:idenfitier.}$0"
-        ],
+        "body": ["@see ${1:idenfitier.}$0"],
         "description": "References another item or piece of documentation."
     },
     "@throws": {
         "prefix": "@throws",
-        "body": [
-            "@throws ${1:IOException} ${2:Description.}$0"
-        ],
+        "body": ["@throws ${1:IOException} ${2:Description.}$0"],
         "description": "Documents an exception which can be thrown by a method. Since Kotlin does not have checked exceptions, there is also no expectation that all possible exceptions are documented, but you can still use this tag when it provides useful information for users of the class. Synonym of @exception."
     },
     "@exception": {
         "prefix": "@exception",
-        "body": [
-            "@exception ${1:IOException} ${2:Description.}$0"
-        ],
+        "body": ["@exception ${1:IOException} ${2:Description.}$0"],
         "description": "Documents an exception which can be thrown by a method. Since Kotlin does not have checked exceptions, there is also no expectation that all possible exceptions are documented, but you can still use this tag when it provides useful information for users of the class. Synonym of @throws."
     },
     "@since": {
         "prefix": "@since",
-        "body": [
-            "@since ${1:1.0}$0"
-        ],
+        "body": ["@since ${1:1.0}$0"],
         "description": "Version of Java when the the product was implemented."
     },
     "@author": {
         "prefix": "@author",
-        "body": [
-            "@author ${1:name}$0"
-        ],
+        "body": ["@author ${1:name}$0"],
         "description": "You can provide one @author tag, multiple @author tags, or no @author tags. For classes and interfaces only, required."
     },
     "@Deprecated": {
@@ -108,38 +88,27 @@
     },
     "@constructor": {
         "prefix": "@constructor",
-        "body": [
-            "@constructor ${1:Description.}$0"
-        ],
+        "body": ["@constructor ${1:Description.}$0"],
         "description": "Documents the primary constructor of a class."
     },
     "@receiver": {
         "prefix": "@receiver",
-        "body": [
-            "@receiver ${1:Description}$0"
-        ],
+        "body": ["@receiver ${1:Description}$0"],
         "description": "Documents the receiver of an extension function."
     },
     "@property": {
         "prefix": "@property",
-        "body": [
-            "@property ${1:name}$0"
-        ],
+        "body": ["@property ${1:name}$0"],
         "description": "Documents the property of a class which has the specified name. This tag can be used for documenting properties declared in the primary constructor, where putting a doc comment directly before the property definition would be awkward."
     },
     "@sample": {
         "prefix": "@sample",
-        "body": [
-            "@sample ${1:identifier}$0"
-        ],
+        "body": ["@sample ${1:identifier}$0"],
         "description": "Embeds the body of the function with the specified qualified name into the documentation for the current element, in order to show an example of how the element could be used."
     },
     "@suppress": {
         "prefix": "@suppress",
-        "body": [
-            "@suppress$0"
-        ],
+        "body": ["@suppress$0"],
         "description": "Excludes the element from the generated documentation. Can be used for elements which are not part of the official API of a module but still have to be visible externally."
     }
 }
-
