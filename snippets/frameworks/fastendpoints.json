@@ -1,0 +1,333 @@
+{
+  "Endpoint Request only": {
+    "prefix": "fe_req",
+    "body": [
+      "public sealed class ${1:BaseName}Endpoint: Endpoint<${1:BaseName}Request>",
+      "{",
+      "\tpublic override void Configure()",
+      "\t{",
+      "\t\t${2:Get}(\"${3:insert-route-here}\");",
+      "\t}",
+      "",
+      "\tpublic override async Task HandleAsync(${1:BaseName}Request req, CancellationToken ct)",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Endpoint with Request only"
+  },
+  "Endpoint Request and Response": {
+    "prefix": "fe_reqres",
+    "body": [
+      "public sealed class ${1:BaseName}Endpoint: Endpoint<${1:BaseName}Request, ${1:BaseName}Response>",
+      "{",
+      "\tpublic override void Configure()",
+      "\t{",
+      "\t\t${2:Get}(\"${3:insert-route-here}\");",
+      "\t}",
+      "",
+      "\tpublic override async Task<${1:BaseName}Response> HandleAsync(${1:BaseName}Request req, CancellationToken ct)",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Endpoint with Request and Response"
+  },
+  "Endpoint w/o Request": {
+    "prefix": "fe_noreq",
+    "body": [
+      "public sealed class ${1:BaseName}Endpoint: EndpointWithoutRequest",
+      "{",
+      "\tpublic override void Configure()",
+      "\t{",
+      "\t\t${2:Get}(\"${3:insert-route-here}\");",
+      "\t}",
+      "",
+      "\tpublic override async Task HandleAsync(CancellationToken ct)",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Endpoint without Request"
+  },
+  "Endpoint w/o Request w/ Response": {
+    "prefix": "fe_res",
+    "body": [
+      "public sealed class ${1:BaseName}Endpoint: EndpointWithoutRequest<${1:BaseName}Response>",
+      "{",
+      "\tpublic override void Configure()",
+      "\t{",
+      "\t\t${2:Get}(\"${3:insert-route-here}\");",
+      "\t}",
+      "",
+      "\tpublic override async Task<${1:BaseName}Response> HandleAsync(CancellationToken ct)",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Endpoint without Request with Response"
+  },
+  "Request & Response DTOs": {
+    "prefix": "fe_dtos",
+    "body": [
+      "public class ${1:BaseName}Request {}",
+      "public class ${1:BaseName}Response {}"
+    ],
+    "description": "Request & Response DTOs"
+  },
+  "Endpoint Validator": {
+    "prefix": "fe_val",
+    "body": [
+      "public class ${1:BaseName}Validator: Validator<${1:BaseName}Request>",
+      "{",
+      "\tpublic ${1:BaseName}Validator()",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Endpoint Validator"
+  },
+  "Endpoint Mapper": {
+    "prefix": "fe_map",
+    "body": [
+      "public sealed class ${1:BaseName}Mapper: Mapper<${1:BaseName}Request, ${1:BaseName}Response, ${2:Entity}>",
+      "{",
+      "\tpublic override ${2:Entity} ToEntity(${1:BaseName}Request req)",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "",
+      "\tpublic override ${1:BaseName}Response FromEntity(${2:Entity} entity)",
+      "\t{",
+      "\t\t",
+      "\t}",
+      "}"
+    ],
+    "description": "Endpoint Mapper"
+  },
+  "Endpoint Summary": {
+    "prefix": "fe_sum",
+    "body": [
+      "public sealed class ${1:BaseName}Summary: Summary<${1:BaseName}Endpoint, ${1:BaseName}Request>",
+      "{",
+      "\tpublic ${1:BaseName}Summary()",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Endpoint Summary"
+  },
+  "Full Vertical Slice": {
+    "prefix": "fe_full",
+    "body": [
+      "public sealed class ${1:BaseName}Endpoint: Endpoint<${1:BaseName}Request, ${1:BaseName}Response, ${1:BaseName}Mapper>",
+      "{",
+      "\tpublic override void Configure()",
+      "\t{",
+      "\t\t${2:Get}(\"${3:insert-route-here}\");",
+      "\t}",
+      "",
+      "\tpublic override async Task<${1:BaseName}Response> HandleAsync(${1:BaseName}Request req, CancellationToken ct)",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}",
+      "",
+      "public class ${1:BaseName}Request {}",
+      "",
+      "public class ${1:BaseName}Response {}",
+      "",
+      "public class ${1:BaseName}Validator: Validator<${1:BaseName}Request>",
+      "{",
+      "\tpublic ${1:BaseName}Validator()",
+      "\t{",
+      "\t\t",
+      "\t}",
+      "}",
+      "",
+      "public class ${1:BaseName}Mapper: Mapper<${1:BaseName}Request, ${1:BaseName}Response, ${4:Entity}>",
+      "{",
+      "\tpublic override ${4:Entity} ToEntity(${1:BaseName}Request req)",
+      "\t{",
+      "\t\t",
+      "\t}",
+      "",
+      "\tpublic override ${1:BaseName}Response FromEntity(${4:Entity} entity)",
+      "\t{",
+      "\t\t",
+      "\t}",
+      "}"
+    ],
+    "description": "Set of classes for a full vertical slice"
+  },
+  "Event Handler": {
+    "prefix": "fe_eh",
+    "body": [
+      "public sealed class ${1:BaseName}EventHandler: IEventHandler<${1:BaseName}Event>",
+      "{",
+      "\tpublic async Task HandleAsync(${1:BaseName}Event @event, CancellationToken ct)",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Event Handler"
+  },
+  "Command w/o Result": {
+    "prefix": "fe_cmd_nores",
+    "body": [
+      "public sealed class ${1:BaseName}Command: ICommand",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "Command without Result"
+  },
+  "Command w/ Result": {
+    "prefix": "fe_cmd_res",
+    "body": [
+      "public sealed class ${1:BaseName}Command: ICommand<${2:TResult}>",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "Command with Result"
+  },
+  "Command Handler w/ Result": {
+    "prefix": "fe_cmd_handler_res",
+    "body": [
+      "public sealed class ${1:BaseName}CommandHandler: ICommandHandler<${1:BaseName}Command, ${2:TResult}>",
+      "{",
+      "\tpublic async Task<${2:TResult}> ExecuteAsync(${1:BaseName}Command command, CancellationToken ct)",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Command Handler with Result"
+  },
+  "Command Handler w/o Result": {
+    "prefix": "fe_cmd_handler_nores",
+    "body": [
+      "public sealed class ${1:BaseName}CommandHandler: ICommandHandler<${1:BaseName}Command>",
+      "{",
+      "\tpublic async Task ExecuteAsync(${1:BaseName}Command command, CancellationToken ct)",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Command Handler without Result"
+  },
+  "Preprocessor": {
+    "prefix": "fe_preproc",
+    "body": [
+      "public sealed class ${1:Preprocessor}<TRequest>: IPreProcessor<TRequest>",
+      "{",
+      "\tpublic async Task PreProcessAsync(TRequest req, HttpContext ctx, List<ValidationFailure> failures, CancellationToken ct)",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Preprocessor"
+  },
+  "Post Processor": {
+    "prefix": "fe_postproc",
+    "body": [
+      "public sealed class ${1:PostProcessor}<TRequest, TResponse>: IPostProcessor<TRequest, TResponse>",
+      "{",
+      "\tpublic async Task PostProcessAsync(TRequest req, TResponse res, HttpContext ctx, IReadOnlyCollection<ValidationFailure> failures, CancellationToken ct)",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Post Processor"
+  },
+  "Global Preprocessor": {
+    "prefix": "fe_global_preproc",
+    "body": [
+      "public sealed class ${1:GlobalPreProcessor}: IGlobalPreProcessor",
+      "{",
+      "\tpublic async Task PreProcessAsync(object req, HttpContext ctx, List<ValidationFailure> failures, CancellationToken ct)",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Global Preprocessor"
+  },
+  "Global Post Processor": {
+    "prefix": "fe_global_postproc",
+    "body": [
+      "public sealed class ${1:GlobalPostProcessor}: IGlobalPostProcessor",
+      "{",
+      "\tpublic async Task PostProcessAsync(object req, object? res, HttpContext ctx, IReadOnlyCollection<ValidationFailure> failures, CancellationToken ct)",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Global Post Processor"
+  },
+  "Test Fixture": {
+    "prefix": "fe_test_fixture",
+    "body": [
+      "public class ${1:App}Fixture: TestFixture<Program>",
+      "{",
+      "\tpublic ${1:App}Fixture(IMessageSink sink) : base(sink) { }",
+      "\t",
+      "\tprotected override async Task SetupAsync()",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "\t",
+      "\tprotected override void ConfigureServices(IServiceCollection s)",
+      "\t{",
+      "\t\t",
+      "\t}",
+      "\t",
+      "\tprotected override async Task TearDownAsync()",
+      "\t{",
+      "\t\t",
+      "\t}",
+      "}"
+    ],
+    "description": "Test Fixture"
+  },
+  "Test Class": {
+    "prefix": "fe_test_class",
+    "body": [
+      "public class ${1:My}Tests: TestClass<${2:App}Fixture>",
+      "{",
+      "\tpublic ${1:My}Tests(${2:App}Fixture fixture, ITestOutputHelper outputHelper)",
+      "\t\t: base(fixture, outputHelper) { }",
+      "\t",
+      "\t[Fact]",
+      "\tpublic async Task ${3:Name_Of_The_Test}()",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Test Class"
+  },
+  "Test Method": {
+    "prefix": "fe_test_method",
+    "body": [
+      "[Fact]",
+      "public async Task ${1:Name_Of_The_Test}()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "Test Method"
+  }
+}
