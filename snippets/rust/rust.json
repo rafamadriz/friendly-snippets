@@ -344,14 +344,16 @@
         "prefix": "modtest",
         "body": [
             "#[cfg(test)]",
-            "mod test {",
+            "mod tests {",
+            "    use super::*;",
+            "",
             "    #[test]",
             "    fn ${1:name}() {",
             "        ${2:todo!();}",
             "    }",
             "}"
         ],
-        "description": "#[cfg(test)]\nmod test {...}"
+        "description": "#[cfg(test)]\nmod tests {...}"
     },
     "test": {
         "prefix": "test",
