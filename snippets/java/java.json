@@ -161,5 +161,35 @@
         "prefix": "import",
         "body": ["import ${1:PackageName}"],
         "description": "Import statement"
+    },
+    "comment": {
+        "prefix": "/**",
+        "body": [
+            "/**",
+            " * ${1:A one-line summary.}",
+            " *",
+            " * ${2:Description.}$0",
+            " *",
+            " * @param ${4:name}  ${5:Type and description of the parameter.}",
+            " * @return ${6:Type and description of the returned object.}",
+            " *",
+            " * @example",
+            " * ```",
+            " * ${7:Write me later}",
+            " * ```",
+            " */"
+        ],
+        "description": "A Java comment block including short summary, description, param, return, and examples."
+    },
+    "comment_simple": {
+        "prefix": "/*",
+        "body": [
+            "/**",
+            " * ${1:A one-line summary.}",
+            " *",
+            " * ${2:Description.}$0",
+            " */"
+        ],
+        "description": "A simple Java comment block with short summary and description. Useful when the user prefers to manually add the other documentation tags."
     }
 }
