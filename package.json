@@ -32,6 +32,10 @@
                 "path": "./snippets/c/cdoc.json"
             },
             {
+                "language": "clojure",
+                "path": "./snippets/clojure.json"
+            },
+            {
                 "language": "cpp",
                 "path": "./snippets/cpp/cpp.json"
             },
