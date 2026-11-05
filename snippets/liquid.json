@@ -256,6 +256,26 @@
         "description": "Theme tag: render forloop, whitespaced",
         "body": ["{%- render '$1' for ${2:array} as ${3:item} -%}"]
     },
+    "Tag block": {
+        "prefix": "block",
+        "description": "Theme tag: block",
+        "body": ["{% block '${1:block}' %}", "\t$2", "{% endblock %}"]
+    },
+    "Tag block, whitespaced": {
+        "prefix": "block-",
+        "description": "Theme tag: block, whitespaced",
+        "body": ["{%- block '${1:block}' -%}", "\t$2", "{%- endblock -%}"]
+    },
+    "Tag partial": {
+        "prefix": "partial",
+        "description": "Theme tag: partial",
+        "body": ["{% partial '${1:name}' %}", "\t$2", "{% endpartial %}"]
+    },
+    "Tag partial, whitespaced": {
+        "prefix": "partial-",
+        "description": "Theme tag: partial, whitespaced",
+        "body": ["{%- partial '${1:name}' -%}", "\t$2", "{%- endpartial -%}"]
+    },
     "Tag content_for blocks": {
         "prefix": "content_for",
         "description": "Theme tag: content_for blocks",
