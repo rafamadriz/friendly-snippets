@@ -1400,6 +1400,20 @@
             "},$5"
         ]
     },
+    "Shopify Schema color palette": {
+        "prefix": "_color_palette",
+        "description": "Theme settings schema: color_palette (settings_schema.json only)",
+        "body": [
+            "{",
+            "\t\"type\": \"color_palette\",",
+            "\t\"id\": \"${1:colors}\",",
+            "\t\"default\": {",
+            "\t\t\"primary\": \"${2:#121212}\",",
+            "\t\t\"secondary\": \"${3:#ffffff}\"",
+            "\t}",
+            "},$4"
+        ]
+    },
     "Shopify Schema color scheme": {
         "prefix": "_color_scheme",
         "body": [
@@ -1647,6 +1661,18 @@
             "\t\"label\": \"$2\",",
             "\t\"info\": \"$3\"",
             "},$4"
+        ]
+    },
+    "Shopify Schema article list": {
+        "prefix": "_article_list",
+        "body": [
+            "{",
+            "\t\"type\": \"article_list\",",
+            "\t\"id\": \"$1\",",
+            "\t\"label\": \"$2\",",
+            "\t\"limit\": ${3:4},",
+            "\t\"info\": \"$4\"",
+            "},$5"
         ]
     },
     "Shopify Schema header": {
