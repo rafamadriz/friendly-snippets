@@ -430,7 +430,7 @@
         "body": ["{% # $1 %}"]
     },
     "Tag inline comment, whitespaced": {
-        "prefix": "inline-comment",
+        "prefix": "inline-comment-",
         "description": "Syntax tag: inline comment, whitespaced",
         "body": ["{%- # $1 -%}"]
     },
