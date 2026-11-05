@@ -574,16 +574,6 @@
         "description": "Cart filter: line_items_for",
         "body": "| line_items_for: ${1:product}"
     },
-    "Filter img tag": {
-        "prefix": "img_tag",
-        "description": "HTML filter: img tag",
-        "body": "| img_tag"
-    },
-    "Filter img tag with parameters": {
-        "prefix": "img_tag_param",
-        "description": "HTML filter: img tag with parameters",
-        "body": "| img_tag: '${1:alt}', '${2:class}'"
-    },
     "Filter script tag": {
         "prefix": "script_tag",
         "description": "HTML filter: script tag",
@@ -1148,11 +1138,6 @@
         "prefix": "weight_with_unit",
         "description": "Format filter: weight_with_unit",
         "body": "| weight_with_unit"
-    },
-    "Filter currency_selector": {
-        "prefix": "currency_selector",
-        "description": "Localization filter: currency_selector",
-        "body": "| currency_selector"
     },
     "Filter translate": {
         "prefix": "t",
