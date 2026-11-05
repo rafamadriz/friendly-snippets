@@ -559,6 +559,11 @@
         "description": "Array filter: uniq",
         "body": "| uniq"
     },
+    "Filter applicable_disclosures": {
+        "prefix": "applicable_disclosures",
+        "description": "Array filter: applicable_disclosures",
+        "body": "| applicable_disclosures"
+    },
     "Filter item_count_for_variant": {
         "prefix": "item_count_for_variant",
         "description": "Cart filter: item_count_for_variant",
@@ -694,6 +699,11 @@
         "description": "Money filter: money without currency",
         "body": "| money_without_currency"
     },
+    "Filter money_amount": {
+        "prefix": "money_amount",
+        "description": "Money filter: money_amount",
+        "body": "| money_amount"
+    },
     "Filter append": {
         "prefix": "append",
         "description": "String filter: append",
@@ -723,6 +733,11 @@
         "prefix": "md5",
         "description": "String filter: md5",
         "body": "| md5"
+    },
+    "Filter blake3": {
+        "prefix": "blake3",
+        "description": "String filter: blake3",
+        "body": "| blake3"
     },
     "Filter newline to br": {
         "prefix": "newline_to_br",
@@ -1118,6 +1133,11 @@
         "prefix": "structured_data",
         "description": "Format filter: structured_data",
         "body": "| structured_data"
+    },
+    "Filter standard_event_data": {
+        "prefix": "standard_event_data",
+        "description": "Format filter: standard_event_data",
+        "body": "| standard_event_data: 'view'"
     },
     "Filter unit_price_with_measurement": {
         "prefix": "unit_price_with_measurement",
