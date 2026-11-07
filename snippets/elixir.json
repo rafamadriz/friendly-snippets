@@ -9,15 +9,30 @@
         "body": ["def ${1:name}() do", "  $0", "end"],
         "description": "Define a function"
     },
+    "defa": {
+        "prefix": "defa",
+        "body": ["def ${1:name}(${2:args}) do", "  $0", "end"],
+        "description": "Define a function with arguments"
+    },
     "defp": {
         "prefix": "defp",
         "body": ["defp ${1:name}() do", "  $0", "end"],
         "description": "Define a private function"
     },
+    "defpa": {
+        "prefix": "defpa",
+        "body": ["defp ${1:name}(${2:args}) do", "  $0", "end"],
+        "description": "Define a private function with arguments"
+    },
     "df": {
         "prefix": "df",
         "body": "def ${1:name}(), do: $0",
         "description": "Define a one-liner function"
+    },
+    "dfa": {
+        "prefix": "dfa",
+        "body": "def ${1:name}(${2:args}), do: $0",
+        "description": "Define a one-liner function with arguments"
     },
     "dfw": {
         "prefix": "dfw",
@@ -79,7 +94,7 @@
         "prefix": "defs",
         "body": [
             "@spec ${1:name}(${2:args}) :: ${3:no_return}",
-            "def $1{4:args} do",
+            "def $1(${4:args}) do",
             "  $0",
             "end"
         ]
@@ -91,7 +106,7 @@
             "${1:doc}",
             "\"\"\"",
             "@spec ${2:name}(${3:args}) :: ${4:no_return}",
-            "def $2{5:args} do",
+            "def $2({5:args}) do",
             "  $0",
             "end"
         ]

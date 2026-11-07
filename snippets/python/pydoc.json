@@ -30,7 +30,7 @@
             "\"\"\""
         ],
         "description": "A simple Python docstring comment. Useful when you prefer to add the docstrings manually on functions."
-    },    
+    },
     "module docstring": {
         "prefix": "###module",
         "body": [
@@ -150,11 +150,7 @@
     },
     "raises docstring": {
         "prefix": "###raises",
-        "body": [
-            "Raises:",
-            "    ${1:ErrorName}: ${2:Error description.}$0"
-        ],
+        "body": ["Raises:", "    ${1:ErrorName}: ${2:Error description.}$0"],
         "description": "A Python docstring for methods when we want to be exclicit about the errors it Raises. Use it only when is relevant."
     }
-
 }

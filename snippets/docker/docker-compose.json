@@ -329,7 +329,7 @@
         "body": ["healthcheck:", "\t\ttest: ${1:command}"],
         "description": ""
     },
-        "DockerCompose": {
+    "DockerCompose": {
         "prefix": "docker-compose",
         "body": [
             "version: '3'",

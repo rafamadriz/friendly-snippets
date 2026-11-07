@@ -264,11 +264,7 @@
     },
     "for": {
         "prefix": "for",
-        "body": [
-            "for ${1:pat} in ${2:expr} {",
-            "    ${3:todo!();}",
-            "}"
-        ],
+        "body": ["for ${1:pat} in ${2:expr} {", "    ${3:todo!();}", "}"],
         "description": "for … in … { … }"
     },
     "if-let": {
@@ -296,12 +292,7 @@
     },
     "inline-fn": {
         "prefix": "inline-fn",
-        "body": [
-            "#[inline]",
-            "pub fn ${1:name}() {",
-            "    ${2:todo!();}",
-            "}"
-        ],
+        "body": ["#[inline]", "pub fn ${1:name}() {", "    ${2:todo!();}", "}"],
         "description": "inlined function"
     },
     "macro_rules": {
@@ -316,9 +307,7 @@
     },
     "match": {
         "prefix": "match",
-        "body": [
-            "match ${1:expr} {}"
-        ],
+        "body": ["match ${1:expr} {}"],
         "description": "match … { … }"
     },
     "mod-block": {
@@ -366,12 +355,7 @@
     },
     "test": {
         "prefix": "test",
-        "body": [
-            "#[test]",
-            "fn ${1:name}() {",
-            "    ${2:todo!();}",
-            "}"
-        ],
+        "body": ["#[test]", "fn ${1:name}() {", "    ${2:todo!();}", "}"],
         "description": "#[test]"
     },
     "trait": {
