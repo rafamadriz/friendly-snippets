@@ -448,7 +448,7 @@
             "      terminationGracePeriodSeconds: 10",
             "      containers:",
             "      - name: ${1:myapp}",
-            "        image: ${4:${1:myapp}-slim:1.16.1}",
+            "        image: ${4:debian:latest}",
             "        ports:",
             "        - containerPort: ${5:80}",
             "          name: ${1:myapp}",
