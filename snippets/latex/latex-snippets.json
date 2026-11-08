@@ -279,9 +279,8 @@
         "prefix": "figure",
         "body": [
             "\\begin{figure}",
-            "\t\\begin{center}",
-            "\t\t\\includegraphics[width=0.95\\textwidth]{figures/$1}",
-            "\t\\end{center}",
+            "\t\\centering",
+            "\t\\includegraphics[width=0.95\\textwidth]{figures/$1}",
             "\t\\caption{$3}\\label{fig:$4}",
             "\\end{figure}",
             "$0"
