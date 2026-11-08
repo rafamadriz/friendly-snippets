@@ -165,20 +165,20 @@
         "description": "with tag django template",
         "body": ["{% with $1 as $2 %}", "$3", "{% endwith %}"]
     },
-    "trans": {
-        "prefix": "trans",
-        "description": "trans tag django template",
-        "body": ["{% trans \"$1\" %}"]
+    "translate": {
+        "prefix": "translate",
+        "description": "translate tag django template",
+        "body": ["{% translate \"$1\" %}"]
     },
-    "blocktrans": {
-        "prefix": "blocktrans",
-        "description": "blocktrans tag django template",
-        "body": ["{% blocktrans %}", "  $1", "{% endblocktrans %}"]
+    "blocktranslate": {
+        "prefix": "blocktranslate",
+        "description": "blocktranslate tag django template",
+        "body": ["{% blocktranslate %}", "  $1", "{% endblocktranslate %}"]
     },
-    "blocktransinline": {
-        "prefix": "blocktransinline",
-        "description": "blocktrans tag django template (single line)",
-        "body": ["{% blocktrans %}$1{% endblocktrans %}"]
+    "blocktranslateinline": {
+        "prefix": "blocktranslateinline",
+        "description": "blocktranslate tag django template (single line)",
+        "body": ["{% blocktranslate %}$1{% endblocktranslate %}"]
     },
     "super": {
         "prefix": "super",
