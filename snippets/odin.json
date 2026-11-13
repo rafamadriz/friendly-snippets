@@ -1,0 +1,90 @@
+{
+    "package": {
+        "prefix": ["package"],
+        "body": ["package ${1:main}$0"]
+    },
+    "import": {
+        "prefix": ["import"],
+        "body": ["import \"$1\"$0"]
+    },
+    "named import": {
+        "prefix": ["nimport"],
+        "body": ["import $2 \"$1\"$0"]
+    },
+    "procedure": {
+        "prefix": ["proc"],
+        "body": [
+            "$1 :: proc($2) {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "main": {
+        "prefix": ["main"],
+        "body": [
+            "main :: proc() {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "function": {
+        "prefix": ["fn"],
+        "body": [
+            "$1 :: proc($2) -> $3 {",
+            "\treturn $0",
+            "}"
+        ]
+    },
+    "struct": {
+        "prefix": ["struct"],
+        "body": [
+            "$1 :: struct {",
+            "",
+            "}"
+        ]
+    },
+    "union": {
+        "prefix": ["union"],
+        "body": [
+            "$1 :: union {",
+            "",
+            "}"
+        ]
+    },
+    "enum": {
+        "prefix": ["enum"],
+        "body": [
+            "$1 :: enum {",
+            "",
+            "}"
+        ]
+    },
+    "const": {
+        "prefix": ["const"],
+        "body": ["$1 :: $0"]
+    },
+    "if": {
+        "prefix": ["if"],
+        "body": ["if $1 {", "\t$0", "}"]
+    },
+    "if else": {
+        "prefix": ["ife"],
+        "body": ["if $1 {", "\t$0", "}", "else", "{", "", "}"]
+    },
+    "switch": {
+        "prefix": ["switch"],
+        "body": ["switch $1 {", "\t$0", "}"]
+    },
+    "for in": {
+        "prefix": ["ifor"],
+        "body": ["for $1 in $2 {", "\t$0", "}"]
+    },
+    "for loop": {
+        "prefix": ["lfor"],
+        "body": ["for ${1:i} := 0; $1 <= $2; $1 += 1 {", "\t$0", "}"]
+    },
+    "for": {
+        "prefix": ["for"],
+        "body": ["for $1 {", "\t$0", "}"]
+    }
+}
