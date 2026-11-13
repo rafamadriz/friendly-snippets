@@ -438,6 +438,10 @@
                 "path": "./snippets/frameworks/django/django_rest/views.json"
             },
             {
+                "language": "pytorch",
+                "path": "./snippets/frameworks/pytorch.json"
+            },
+            {
                 "language": "flutter",
                 "path": "./snippets/frameworks/flutter.json"
             },

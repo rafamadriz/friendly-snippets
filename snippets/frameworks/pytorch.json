@@ -1,0 +1,150 @@
+{
+    "PyTorch import header": {
+        "prefix": "ptimport",
+        "body": [
+            "import torch",
+            "import torch.nn as nn",
+            "import torch.nn.functional as F",
+            "$0"
+        ],
+        "description": "Import torch, torch.nn as nn and torch.nn.functional as F"
+    },
+    "PyTorch nn.Module class": {
+        "prefix": "ptmodule",
+        "body": [
+            "class ${1:Model}(nn.Module):",
+            "\t\"\"\"${2:Model description.}\"\"\"",
+            "",
+            "\tdef __init__(self, ${3:in_dim: int, out_dim: int}) -> None:",
+            "\t\tsuper().__init__()",
+            "\t\t${4:self.proj = nn.Linear(in_dim, out_dim)}",
+            "",
+            "\tdef forward(self, x: torch.Tensor) -> torch.Tensor:",
+            "\t\treturn ${5:self.proj(x)}$0"
+        ],
+        "description": "nn.Module subclass with __init__ and typed forward"
+    },
+    "PyTorch map-style Dataset": {
+        "prefix": "ptdataset",
+        "body": [
+            "class ${1:MyDataset}(Dataset):",
+            "\tdef __init__(self, ${2:samples}):",
+            "\t\tself.$2 = $2",
+            "",
+            "\tdef __len__(self) -> int:",
+            "\t\treturn len(self.$2)",
+            "",
+            "\tdef __getitem__(self, idx: int):",
+            "\t\t${3:sample} = self.$2[idx]",
+            "\t\treturn $3$0"
+        ],
+        "description": "Map-style torch.utils.data.Dataset subclass with __init__, __len__ and __getitem__; needs from torch.utils.data import Dataset"
+    },
+    "PyTorch DataLoader": {
+        "prefix": "ptdataloader",
+        "body": [
+            "${1:train_loader} = DataLoader(",
+            "\t${2:train_dataset},",
+            "\tbatch_size=${3:32},",
+            "\tshuffle=${4|True,False|},",
+            "\tnum_workers=${5:4},",
+            "\tpin_memory=${6|True,False|},",
+            ")$0"
+        ],
+        "description": "DataLoader with batch_size, shuffle, num_workers and pin_memory; needs from torch.utils.data import DataLoader"
+    },
+    "PyTorch train one epoch": {
+        "prefix": "pttrain",
+        "body": [
+            "def ${1:train_one_epoch}(model, loader, optimizer, loss_fn, device):",
+            "\tmodel.train()",
+            "\ttotal_loss = 0.0",
+            "\tfor inputs, targets in loader:",
+            "\t\tinputs = inputs.to(device, non_blocking=True)",
+            "\t\ttargets = targets.to(device, non_blocking=True)",
+            "\t\toptimizer.zero_grad()",
+            "\t\toutputs = model(inputs)",
+            "\t\tloss = loss_fn(outputs, targets)",
+            "\t\tloss.backward()",
+            "\t\toptimizer.step()",
+            "\t\ttotal_loss += loss.item()",
+            "\treturn total_loss / len(loader)$0"
+        ],
+        "description": "One-epoch training loop (zero_grad, forward, loss, backward, step) returning mean batch loss"
+    },
+    "PyTorch evaluate": {
+        "prefix": "pteval",
+        "body": [
+            "@torch.${1|inference_mode,no_grad|}()",
+            "def ${2:evaluate}(model, loader, loss_fn, device):",
+            "\tmodel.eval()",
+            "\ttotal_loss, correct, num_samples = 0.0, 0, 0",
+            "\tfor inputs, targets in loader:",
+            "\t\tinputs = inputs.to(device, non_blocking=True)",
+            "\t\ttargets = targets.to(device, non_blocking=True)",
+            "\t\toutputs = model(inputs)",
+            "\t\ttotal_loss += loss_fn(outputs, targets).item() * targets.size(0)",
+            "\t\tcorrect += (outputs.argmax(dim=1) == targets).sum().item()",
+            "\t\tnum_samples += targets.size(0)",
+            "\treturn total_loss / num_samples, correct / num_samples$0"
+        ],
+        "description": "Evaluation loop in eval mode without autograd, returning sample-weighted mean loss and accuracy"
+    },
+    "PyTorch fit loop": {
+        "prefix": "ptfit",
+        "body": [
+            "best_val_loss = float(\"inf\")",
+            "for epoch in range(${1:num_epochs}):",
+            "\ttrain_loss = ${2:train_one_epoch}(${3:model, train_loader, optimizer, loss_fn, device})",
+            "\tval_loss, val_acc = ${4:evaluate}(${5:model, val_loader, loss_fn, device})",
+            "\tprint(",
+            "\t\tf\"epoch {epoch + 1}/{$1} train_loss={train_loss:.4f} \"",
+            "\t\tf\"val_loss={val_loss:.4f} val_acc={val_acc:.4f}\"",
+            "\t)",
+            "\tif val_loss < best_val_loss:",
+            "\t\tbest_val_loss = val_loss",
+            "\t\t${6:torch.save(model.state_dict(), \"best.pt\")}$0"
+        ],
+        "description": "Epoch driver: train, evaluate, log, and track the best validation loss"
+    },
+    "PyTorch device selection": {
+        "prefix": "ptdevice",
+        "body": [
+            "if torch.cuda.is_available():",
+            "\t${1:device} = torch.device(\"cuda\")",
+            "elif torch.backends.mps.is_available():",
+            "\t$1 = torch.device(\"mps\")",
+            "else:",
+            "\t$1 = torch.device(\"cpu\")",
+            "$0"
+        ],
+        "description": "Pick the best available device: CUDA, then Apple MPS, then CPU"
+    },
+    "PyTorch save checkpoint": {
+        "prefix": "ptsave",
+        "body": [
+            "torch.save(",
+            "\t{",
+            "\t\t\"epoch\": ${1:epoch},",
+            "\t\t\"model_state_dict\": ${2:model}.state_dict(),",
+            "\t\t\"optimizer_state_dict\": ${3:optimizer}.state_dict(),",
+            "\t\t\"loss\": ${4:loss},",
+            "\t},",
+            "\t${5:\"checkpoint.pt\"},",
+            ")",
+            "$0"
+        ],
+        "description": "Save a training checkpoint dict (epoch, model and optimizer state_dict, loss) that loads with weights_only=True"
+    },
+    "PyTorch load checkpoint": {
+        "prefix": "ptload",
+        "body": [
+            "checkpoint = torch.load(${1:\"checkpoint.pt\"}, map_location=${2:\"cpu\"}, weights_only=True)",
+            "${3:model}.load_state_dict(checkpoint[\"model_state_dict\"])",
+            "${4:optimizer}.load_state_dict(checkpoint[\"optimizer_state_dict\"])",
+            "start_epoch = checkpoint[\"epoch\"] + 1",
+            "$0"
+        ],
+        "description": "Resume from a ptsave checkpoint with map_location and weights_only=True"
+    }
+}
